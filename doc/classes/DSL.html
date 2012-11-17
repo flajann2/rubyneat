@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DSL</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            DSL 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rubyneat/dsl_rb.html">rubyneat/dsl.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-RubyNEAT+DSL">RubyNEAT <a href="DSL.html">DSL</a></h1>
+
+<p><a href="DSL.html">DSL</a> is a doman-specific language for RubyNEAT to
+allow you to configure the <a href="NEAT.html">NEAT</a> engine for various
+evolutionary projects.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-condition_boolean_vector">condition_boolean_vector</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-define">define</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-evolve">evolve</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fitness">fitness</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-query">query</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-report">report</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-run_engine">run_engine</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-uncondition_boolean_vector">uncondition_boolean_vector</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="NEAT.html">
+              NEAT
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="NEAT/BasicNeuronTypes.html">
+              NEAT::BasicNeuronTypes
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-condition_boolean_vector">
+            
+              <b>condition_boolean_vector</b>(vec)
+            
+            <a href="../classes/DSL.html#method-i-condition_boolean_vector" name="method-i-condition_boolean_vector" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Helper function to Condition boolean vectors to be +1 if true, -1 if false</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-condition_boolean_vector_source')" id="l_method-i-condition_boolean_vector_source">show</a>
+                
+              </p>
+              <div id="method-i-condition_boolean_vector_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">condition_boolean_vector</span>(<span class="ruby-identifier">vec</span>)
+  <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">?</span> <span class="ruby-number">1</span> <span class="ruby-operator">:</span> <span class="ruby-number">-1</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-define">
+            
+              <b>define</b>(name = NEAT.random_name_generator, &amp;block)
+            
+            <a href="../classes/DSL.html#method-i-define" name="method-i-define" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="DSL.html">DSL</a> – Define defines the parameters to the
+controller.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-define_source')" id="l_method-i-define_source">show</a>
+                
+              </p>
+              <div id="method-i-define_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 14</span>
+ <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">define</span>(<span class="ruby-identifier">name</span> = <span class="ruby-constant">NEAT</span>.<span class="ruby-identifier">random_name_generator</span>, &amp;<span class="ruby-identifier">block</span>)
+   [
+    <span class="ruby-value">:inputs</span>, 
+    <span class="ruby-value">:outputs</span>, 
+    <span class="ruby-value">:hidden</span>  <span class="ruby-comment"># we really don't care about mapping hidden neurons, but we'll ignore them later.</span>
+   ].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">iometh</span><span class="ruby-operator">|</span>
+     <span class="ruby-identifier">instance_eval</span> <span class="ruby-node">%Q[
+def #{iometh}(nodes = nil, &amp;block)
+  neui = unless nodes.nil?
+           nodes
+         else
+           block.()
+         end
+  NEAT::controller.neural_#{iometh} = if neui.kind_of? Hash
+                                        neui
+                                      else
+                                        Hash[neui.map{|n| [NEAT::random_name_generator, n]}]
+                                      end
+end]</span>
+   <span class="ruby-keyword">end</span>  
+   <span class="ruby-identifier">block</span>.(<span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>)
+ <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-evolve">
+            
+              <b>evolve</b>(&amp;block)
+            
+            <a href="../classes/DSL.html#method-i-evolve" name="method-i-evolve" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="DSL.html">DSL</a> – Run evolution</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-evolve_source')" id="l_method-i-evolve_source">show</a>
+                
+              </p>
+              <div id="method-i-evolve_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">evolve</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># Query function is called with the sequence (time evalution) number,</span>
+  <span class="ruby-comment"># and returns an array or hash of parameters that will be given</span>
+  <span class="ruby-comment"># to the input nodes. In the case of hash, the keys in the hash</span>
+  <span class="ruby-comment"># shall correspond to the names given to the input neurons.</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">query</span>(&amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">query_func</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># fitness function calls the block with 2 vectors or two hashes, input and output</span>
+  <span class="ruby-comment"># vectors of the critter being evaluated for fitness, as well as a sequence</span>
+  <span class="ruby-comment"># number that can be used to index what the actual output should be.</span>
+  <span class="ruby-comment"># |vin, vout, seq|</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fitness</span>(&amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">fitness_func</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Helper function to</span>
+  <span class="ruby-comment"># Condition boolean vectors to be +1 if true, -1 if false</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">condition_boolean_vector</span>(<span class="ruby-identifier">vec</span>)
+    <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">?</span> <span class="ruby-number">1</span> <span class="ruby-operator">:</span> <span class="ruby-number">-1</span>}
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Helper function to</span>
+  <span class="ruby-comment"># Uncondition boolean vectors to be +1 if true, -1 if false</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">uncondition_boolean_vector</span>(<span class="ruby-identifier">vec</span>)
+    <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0.0</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>}
+  <span class="ruby-keyword">end</span>
+
+
+  <span class="ruby-identifier">block</span>.(<span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fitness">
+            
+              <b>fitness</b>(&amp;block)
+            
+            <a href="../classes/DSL.html#method-i-fitness" name="method-i-fitness" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>fitness function calls the block with 2 vectors or two hashes, input and
+output vectors of the critter being evaluated for fitness, as well as a
+sequence number that can be used to index what the actual output should be.
+|vin, vout, seq|</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fitness_source')" id="l_method-i-fitness_source">show</a>
+                
+              </p>
+              <div id="method-i-fitness_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fitness</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">fitness_func</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(m, *args, &amp;block)
+            
+            <a href="../classes/DSL.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>This is used to handle the details of our <a href="DSL.html">DSL</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># we want to catch parameters settings here.    </span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">respond_to?</span> (<span class="ruby-identifier">assignment</span> = (<span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">'='</span>).<span class="ruby-identifier">to_sym</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NeatException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Missing value(s) to %s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">m</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">val</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>
+    <span class="ruby-comment"># puts &quot;Caught method %s with parameter of %s&quot; % [assignment, val]</span>
+    <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">assignment</span>, <span class="ruby-identifier">val</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-query">
+            
+              <b>query</b>(&amp;block)
+            
+            <a href="../classes/DSL.html#method-i-query" name="method-i-query" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Query function is called with the sequence (time evalution) number, and
+returns an array or hash of parameters that will be given to the input
+nodes. In the case of hash, the keys in the hash shall correspond to the
+names given to the input neurons.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-query_source')" id="l_method-i-query_source">show</a>
+                
+              </p>
+              <div id="method-i-query_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">query</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">query_func</span> = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-report">
+            
+              <b>report</b>(&amp;block)
+            
+            <a href="../classes/DSL.html#method-i-report" name="method-i-report" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Report on evaluations</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-report_source')" id="l_method-i-report_source">show</a>
+                
+              </p>
+              <div id="method-i-report_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">report</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-run_engine">
+            
+              <b>run_engine</b>(&amp;block)
+            
+            <a href="../classes/DSL.html#method-i-run_engine" name="method-i-run_engine" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Run the engine. The block is called on each generation.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-run_engine_source')" id="l_method-i-run_engine_source">show</a>
+                
+              </p>
+              <div id="method-i-run_engine_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">run_engine</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">end_run_func</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">controller</span>.<span class="ruby-identifier">run</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-uncondition_boolean_vector">
+            
+              <b>uncondition_boolean_vector</b>(vec)
+            
+            <a href="../classes/DSL.html#method-i-uncondition_boolean_vector" name="method-i-uncondition_boolean_vector" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Helper function to Uncondition boolean vectors to be +1 if true, -1 if
+false</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-uncondition_boolean_vector_source')" id="l_method-i-uncondition_boolean_vector_source">show</a>
+                
+              </p>
+              <div id="method-i-uncondition_boolean_vector_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/dsl.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">uncondition_boolean_vector</span>(<span class="ruby-identifier">vec</span>)
+  <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0.0</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

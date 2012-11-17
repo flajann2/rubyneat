@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NEAT::Expressor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            NEAT::Expressor 
+            
+                <span class="parent">&lt; 
+                    
+                    Operator
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rubyneat/expressor_rb.html">rubyneat/expressor.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-Basis+of+all+expressors.+">Basis of all expressors. </h1>
+
+<pre>Expressor object turn genotypes into phenotypes.</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-express-21">express!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-express_expression-21">express_expression!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-express_genes-21">express_genes!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-express_neurons-21">express_neurons!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(c)
+            
+            <a href="../../classes/NEAT/Expressor.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/expressor.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-keyword">super</span>      
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-express-21">
+            
+              <b>express!</b>(critter)
+            
+            <a href="../../classes/NEAT/Expressor.html#method-i-express-21" name="method-i-express-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Take the genotype of the critter and create a phenotype from the genotype.</p>
+
+<p>In the phenotype, it creates a function called stimulate(), which is called
+with the input parameters and returns a response in the form of a response
+hash (which corresponds directly to the output neurons).</p>
+
+<p>This implenetation assumes an acyclic graph (feed forward) and cannot
+handle cycles at all. Later we may fix this or create a type of <a
+href="Expressor.html">Expressor</a> that can.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-express-21_source')" id="l_method-i-express-21_source">show</a>
+                
+              </p>
+              <div id="method-i-express-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/expressor.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">express!</span>(<span class="ruby-identifier">critter</span>)
+  <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">ready_for_expression!</span>
+  <span class="ruby-identifier">express_neurons!</span> <span class="ruby-identifier">critter</span>
+  <span class="ruby-identifier">express_genes!</span> <span class="ruby-identifier">critter</span>
+  <span class="ruby-identifier">express_expression!</span> <span class="ruby-identifier">critter</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-express_expression-21">
+            
+              <b>express_expression!</b>(critter)
+            
+            <a href="../../classes/NEAT/Expressor.html#method-i-express_expression-21" name="method-i-express_expression-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-express_expression-21_source')" id="l_method-i-express_expression-21_source">show</a>
+                
+              </p>
+              <div id="method-i-express_expression-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/expressor.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">express_expression!</span>(<span class="ruby-identifier">critter</span>)
+  <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">phenotype</span>.<span class="ruby-identifier">express!</span>      
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-express_genes-21">
+            
+              <b>express_genes!</b>(critter)
+            
+            <a href="../../classes/NEAT/Expressor.html#method-i-express_genes-21" name="method-i-express_genes-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>What this really does is create the function that calls all the functions.</p>
+
+<p>This makes use of the <a href="Graph.html">Graph</a> plugin for Neurons.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-express_genes-21_source')" id="l_method-i-express_genes-21_source">show</a>
+                
+              </p>
+              <div id="method-i-express_genes-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/expressor.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">express_genes!</span>(<span class="ruby-identifier">critter</span>)
+  <span class="ruby-identifier">g</span> = <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">genotype</span>
+  <span class="ruby-identifier">p</span> = <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">phenotype</span>
+
+  <span class="ruby-comment"># 'stimulate' function call</span>
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;  def #{NEAT::STIMULUS}(&quot;</span>
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_inputs</span>.<span class="ruby-identifier">reject</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">sym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_inputs</span>[<span class="ruby-identifier">sym</span>].<span class="ruby-identifier">bias?</span> }.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">sym</span>, <span class="ruby-identifier">neu</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sym</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>)
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;)\n&quot;</span>
+
+  <span class="ruby-comment"># Assign all the parameters to instance variables.</span>
+  <span class="ruby-comment"># FIXME: Later eliminate this step!!! We can either fix the code</span>
+  <span class="ruby-comment"># to use local variables or add the logic to check for parameter inputs.</span>
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_inputs</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">sym</span>, <span class="ruby-identifier">neu</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;    @#{sym} = #{sym}\n&quot;</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  
+  <span class="ruby-comment"># Resolve the order in which we shall call the neurons</span>
+  <span class="ruby-ivar">@resolved</span> = <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-constant">Graph</span><span class="ruby-operator">::</span><span class="ruby-constant">DependencyResolver</span>[<span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_outputs</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span>, <span class="ruby-identifier">neu</span><span class="ruby-operator">|</span> <span class="ruby-identifier">neu</span>}].<span class="ruby-identifier">resolve!</span>
+
+  <span class="ruby-comment"># And now call them in that order!</span>
+  <span class="ruby-ivar">@resolved</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">neu</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">neu</span>.<span class="ruby-identifier">input?</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;    @#{neu.name} = #{neu.name}(&quot;</span>
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_gene_map</span>[<span class="ruby-identifier">neu</span>.<span class="ruby-identifier">name</span>].<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">gene</span><span class="ruby-operator">|</span>
+        <span class="ruby-string">&quot;%s * @%s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">gene</span>.<span class="ruby-identifier">weight</span>, <span class="ruby-identifier">gene</span>.<span class="ruby-identifier">in_neuron</span>]
+      }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;)\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># And now return the result as a vector of outputs.</span>
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;    return [&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_outputs</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">sym</span>, <span class="ruby-identifier">neu</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;@#{sym}&quot;</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">','</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;]\n  end\n&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">p</span>.<span class="ruby-identifier">express!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-express_neurons-21">
+            
+              <b>express_neurons!</b>(critter)
+            
+            <a href="../../classes/NEAT/Expressor.html#method-i-express_neurons-21" name="method-i-express_neurons-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Express Neurons as methods</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-express_neurons-21_source')" id="l_method-i-express_neurons-21_source">show</a>
+                
+              </p>
+              <div id="method-i-express_neurons-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/expressor.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">express_neurons!</span>(<span class="ruby-identifier">critter</span>)
+  <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">genotype</span>.<span class="ruby-identifier">neurons</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">neuron</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">neuron</span>.<span class="ruby-identifier">express</span>(<span class="ruby-identifier">critter</span>.<span class="ruby-identifier">phenotype</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">neuron</span>.<span class="ruby-identifier">input?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">neuron</span>.<span class="ruby-identifier">bias?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,131 @@
+require 'rubyneat/rubyneat'
+require 'distribution'
+module NEAT
+  #= Evolver -- Basis of all evolvers.
+  # All evolvers shall derive from this basic evolver (or this one can be
+  # used as is). Here, we'll have many different evolutionary operators
+  # that will perform operations on the various critters in the population.
+  #
+  
+  class Evolver < Operator
+    # Generate the initial genes for a given genotype.
+    # We key genes off their innovation numbers.
+    def gen_initial_genes!(genotype)
+      genotype.genes = {}
+      genotype.neural_inputs.each do |s1, input|
+        genotype.neural_outputs.each do |s2, output|
+          g = Critter::Genotype::Gene[genotype, input, output, NEAT::controller.gaussian]
+          genotype.genes[g.innovation] = g
+        end
+      end
+    end
+
+    # Here we clone the population and then evolve it
+    # on the basis of fitness and novelty, etc.
+    #
+    # Returns  the newly-evolved population.
+    def evolve(population)
+      @npop = population.clone
+      
+      # Population sorting and evaluation for breeding, mutations, etc.
+      prepare_speciation!
+      prepare_fitness!
+      prepare_novelty!
+
+      # Do it!
+      if @controller.parms.mate_only_prob.nil? or rand > @controller.parms.mate_only_prob
+        mutate_perturb_gene_weights!
+        mutate_change_gene_weights!
+        mutate_add_neurons!
+        mutate_change_neurons!
+        mutate_add_genes!
+        mutate_reenable_genes!
+      else
+        puts "*** Mating only!"
+      end
+      mate!
+
+      return @npop
+    end
+    
+    # Here we specify evolutionary operators.
+    protected
+    
+    def prepare_speciation!
+      @npop.speciate!
+      puts "SPECIES:"
+      pp @npop.species
+    end
+
+    # Sort species within the basis of fitness
+    def prepare_fitness!
+      @npop.species.each do |k, sp|
+        sp.sort!{|c1, c2| c2.fitness <=> c1.fitness }
+      end
+    end
+
+    def prepare_novelty!
+    end
+
+    # Perturb existing gene weights by adding a guassian to them.
+    def mutate_perturb_gene_weights!
+      @gperturb = Distribution::Normal::rng(0, @controller.parms.mutate_perturb_gene_weights_sd) if @gperturb.nil?
+      @npop.critters.each do |critter|
+        critter.genotype.genes.each do |innov, gene|
+          if rand < @controller.parms.mutate_perturb_gene_weights_prob
+            gene.weight += per = @gperturb.()
+            puts "Peterburbed gene #{gene}.#{innov} by #{per}"
+          end
+        end
+      end
+    end
+
+    def mutate_change_gene_weights!
+      puts "mutate_change_gene_weights! NIY"
+    end
+
+    def mutate_add_genes!
+      puts "mutate_add_genes! NIY"
+    end
+
+    def mutate_reenable_genes!
+      puts "mutate_reenable_genes! NIY"
+    end
+
+
+    def mutate_add_neurons!
+      puts "mutate_add_neurons! NIY"
+    end
+
+    def mutate_change_neurons!
+      puts "mutate_change_neurons! NIY"
+    end
+
+    # Here we select candidates for mating. We must look at species and fitness
+    # to make the selection for mating.
+    def mate!
+      popsize = @controller.parms.population_size
+      surv = @controller.parms.survival_threshold
+      mlist = [] # list of chosen mating pairs of critters [crit1, crit2]
+
+      # species list already sorted in descending order of fitness
+      @npop.species.each do |k, sp|
+        spsel = sp[0, sp.size * surv]
+        spsel = sp if spsel.empty?
+        sp.size.times do
+          mlist << [spsel[rand spsel.size], spsel[rand spsel.size]]
+        end
+      end
+      mlist.each do |crit1, crit2|
+        sex crit1, crit2
+      end
+    end
+    
+    protected
+    # mate the given critters and return a baby.
+    def sex(crit1, crit2)
+      baby = Critter.new(@npop, true)
+      return baby
+    end
+  end
+end

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NEAT::Graph::DependencyResolver</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            NEAT::Graph::DependencyResolver 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../NeatOb.html">NEAT::NeatOb</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rubyneat/rubyneat_rb.html">rubyneat/rubyneat.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Create an instantiation of this and pass it a list of nodes to resolve.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-5B-5D">[]</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-resolve">resolve</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-resolve-21">resolve!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-5B-5D">
+            
+              <b>[]</b>(*outs)
+            
+            <a href="../../../classes/NEAT/Graph/DependencyResolver.html#method-c-5B-5D" name="method-c-5B-5D" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a DepedencyResolver from either an array of outputs or a parmeter
+list of outputs.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-5B-5D_source')" id="l_method-c-5B-5D_source">show</a>
+                
+              </p>
+              <div id="method-c-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-operator">[]</span>(*<span class="ruby-identifier">outs</span>)
+  <span class="ruby-identifier">outs</span> = <span class="ruby-identifier">outs</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">outs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-constant">DependencyResolver</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">outs</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(outputs)
+            
+            <a href="../../../classes/NEAT/Graph/DependencyResolver.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Given a list of output nodes, we shall work backwards from them to resolve
+their dependencies.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">outputs</span>)
+  <span class="ruby-ivar">@outputs</span> = <span class="ruby-identifier">outputs</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-resolve">
+            
+              <b>resolve</b>()
+            
+            <a href="../../../classes/NEAT/Graph/DependencyResolver.html#method-i-resolve" name="method-i-resolve" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Resolve dependencies, and return [dependency_list, circular_ref_node_list]
+Note that circular_ref_node_list shall be nil if there are no dependencies!</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resolve_source')" id="l_method-i-resolve_source">show</a>
+                
+              </p>
+              <div id="method-i-resolve_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve</span>
+  <span class="ruby-ivar">@resolved</span> = []
+  <span class="ruby-ivar">@unresolved</span> = []
+  <span class="ruby-ivar">@circular</span> = []
+  <span class="ruby-ivar">@outputs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">onode</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rdep</span> <span class="ruby-identifier">onode</span>
+  <span class="ruby-keyword">end</span>
+  [<span class="ruby-ivar">@resolved</span>, <span class="ruby-ivar">@circular</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@circular</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-resolve-21">
+            
+              <b>resolve!</b>()
+            
+            <a href="../../../classes/NEAT/Graph/DependencyResolver.html#method-i-resolve-21" name="method-i-resolve-21" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Throw an exception if dependencies are found. We only return the dependency
+list since we throw an exception on circular  dependencies.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resolve-21_source')" id="l_method-i-resolve-21_source">show</a>
+                
+              </p>
+              <div id="method-i-resolve-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve!</span>
+  <span class="ruby-identifier">dl</span>, <span class="ruby-identifier">cl</span> = <span class="ruby-identifier">resolve</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NeatException</span>(<span class="ruby-string">&quot;Circular Dependency Detected: %s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">cl</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">dl</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    

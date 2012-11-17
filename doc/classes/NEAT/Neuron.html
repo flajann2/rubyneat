@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NEAT::Neuron</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            NEAT::Neuron 
+            
+                <span class="parent">&lt; 
+                    
+                    NeatOb
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rubyneat/neuron_rb.html">rubyneat/neuron.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-Neuron+--+Basis+of+all+Neat+Neuron+types."><a href="Neuron.html">Neuron</a> – Basis of all Neat <a href="Neuron.html">Neuron</a> types.</h1>
+
+<pre>Normally contains primatives which aids in its
+own expression, but the details of this remains to be worked out.</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-bias-3F">bias?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-bias-3F">bias?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-express">express</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-inherited">inherited</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-input-3F">input?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-input-3F">input?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-neuronTypes">neuronTypes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-output-3F">output?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Math
+          
+        </li>
+      
+        <li>
+          
+            <a href="Graph.html">
+              NEAT::Graph
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>genotype</td>
+            <td class='attr-desc'><p>Genotype to which we belong</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>output</td>
+            <td class='attr-desc'><p>This is true if this is an output neuron.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>trait</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-bias-3F">
+            
+              <b>bias?</b>()
+            
+            <a href="../../classes/NEAT/Neuron.html#method-c-bias-3F" name="method-c-bias-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-bias-3F_source')" id="l_method-c-bias-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-bias-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">bias?</span> ; <span class="ruby-keyword">false</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-inherited">
+            
+              <b>inherited</b>(clazz)
+            
+            <a href="../../classes/NEAT/Neuron.html#method-c-inherited" name="method-c-inherited" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-inherited_source')" id="l_method-c-inherited_source">show</a>
+                
+              </p>
+              <div id="method-c-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">clazz</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# Neuron subclassed by #{clazz}.&quot;</span>
+  <span class="ruby-identifier">@@neurons</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">clazz</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-input-3F">
+            
+              <b>input?</b>()
+            
+            <a href="../../classes/NEAT/Neuron.html#method-c-input-3F" name="method-c-input-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Class is is of Input type?</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-input-3F_source')" id="l_method-c-input-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-input-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">input?</span> ; <span class="ruby-keyword">false</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-neuronTypes">
+            
+              <b>neuronTypes</b>()
+            
+            <a href="../../classes/NEAT/Neuron.html#method-c-neuronTypes" name="method-c-neuronTypes" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>List of distinct neuron types (classes)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-neuronTypes_source')" id="l_method-c-neuronTypes_source">show</a>
+                
+              </p>
+              <div id="method-c-neuronTypes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">neuronTypes</span> ; <span class="ruby-identifier">@@neurons</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-bias-3F">
+            
+              <b>bias?</b>()
+            
+            <a href="../../classes/NEAT/Neuron.html#method-i-bias-3F" name="method-i-bias-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bias-3F_source')" id="l_method-i-bias-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-bias-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bias?</span> ; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">bias?</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-express">
+            
+              <b>express</b>(instance)
+            
+            <a href="../../classes/NEAT/Neuron.html#method-i-express" name="method-i-express" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Function must be implemented by subclasses for phenotype generation.
+Basically, an instance is passed to this function and it will add a
+function to sum all inputs and a apply an operator to the sum.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-express_source')" id="l_method-i-express_source">show</a>
+                
+              </p>
+              <div id="method-i-express_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">express</span>(<span class="ruby-identifier">instance</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NeatException</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&quot;express() must be implemented by subclass.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-input-3F">
+            
+              <b>input?</b>()
+            
+            <a href="../../classes/NEAT/Neuron.html#method-i-input-3F" name="method-i-input-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-input-3F_source')" id="l_method-i-input-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-input-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">input?</span> ; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">input?</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-output-3F">
+            
+              <b>output?</b>()
+            
+            <a href="../../classes/NEAT/Neuron.html#method-i-output-3F" name="method-i-output-3F" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiation is of outout type?</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-output-3F_source')" id="l_method-i-output-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-output-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">output?</span> ; <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@output</span> ; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>    
