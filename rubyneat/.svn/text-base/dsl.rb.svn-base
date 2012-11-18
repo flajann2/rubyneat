@@ -84,7 +84,7 @@ module DSL
     if NEAT::controller.parms.respond_to? (assignment = (m.to_s + '=').to_sym)
       raise NeatException.new("Missing value(s) to %s" % m) if args.empty?
       val = (args.size == 1) ? args[0] : args
-      # puts "Caught method %s with parameter of %s" % [assignment, val]
+      $log.debug { "Caught method %s with parameter of %s" % [assignment, val] }
       NEAT::controller.parms.send(assignment, val)
     else
       super

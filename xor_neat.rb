@@ -70,7 +70,7 @@ define "XOR System" do
   hash_on_fitness = false
   start_population_size 10
   population_size 100
-  max_generations 10
+  max_generations 5
 
   # Evolver probabilities and SDs
   mutate_perturb_gene_weights_prob 0.2
@@ -92,6 +92,7 @@ define "XOR System" do
   max_species 50
   dropoff_age 15
 
+  # Sequencing
   start_sequence_at 0
   end_sequence_at 2 ** XOR_INPUTS - 1
 end
@@ -103,7 +104,7 @@ evolve do
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
     inp = condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
-    puts "Query called with seq %s, inputs=%s" % [seq, inp]
+    $log.info "Query called with seq %s, inputs=%s" % [seq, inp]
     inp
   }
 
@@ -121,6 +122,6 @@ end
 
 # The block here is called upon the completion of each generation
 run_engine do |c|
-  puts "Run of generation %s completed, history count %d" % [c.generation_num, 
+  $log.info "Run of generation %s completed, history count %d" % [c.generation_num, 
                                                              c.population_history.size]
 end

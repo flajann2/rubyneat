@@ -16,7 +16,7 @@ module DSLSetup
   end
 
   # This defines the controller
-  define "XOR System" do
+  define "Default Setup" do
     # Define the IO neurons
     inputs {
       cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
@@ -56,8 +56,8 @@ module DSLSetup
 
   # The block here is called upon the completion of each generation
   run_engine do |c|
-    puts "Run of generation %s completed, history count %d" % [c.generation_num, 
-                                                               c.population_history.size]
+    log.info { "Run of generation %s completed, history count %d" % [c.generation_num, 
+                                                                     c.population_history.size] }
   end
 end
 
@@ -109,7 +109,7 @@ describe NEAT do
       depres = NEAT::Graph::DependencyResolver.new([nodes_ff.last])
       dr, cl = depres.resolve
 
-      puts "\n**** dr=%s\n**** cl=%s" % [dr, cl]
+      log.debug { "\n**** dr=%s\n**** cl=%s" % [dr, cl] }
 
       dr.size.should == 5
       cl.nil?.should == true
@@ -124,7 +124,7 @@ describe NEAT do
       depres = NEAT::Graph::DependencyResolver.new([nodes_c.last])
       dr, cl = depres.resolve
 
-      puts "\nxxxx dr=%s\nxxxx cl=%s" % [dr, cl]
+      log.debug { "\nxxxx dr=%s\nxxxx cl=%s" % [dr, cl] }
 
       dr.size.should == 5
       cl.nil?.should_not == true

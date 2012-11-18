@@ -26,78 +26,6 @@ trader
 
 f8d8b292-f4b6-11dc-bd37-f54c37aa4f20
 
-rubyneat.rb
-file
-1368
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
-
-expressor.rb
-file
-1368
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
-
-population.rb
-file
-1368
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
-
 default_neat.rb
 file
 1368
@@ -173,40 +101,6 @@ file
 
 deleted
 
-Gemfile
-file
-
-
-
-
-2011-12-10T21:58:14.629999Z
-cc93337d1c04d19ebd4604bf951b959e
-2011-12-10T22:48:00.105060Z
-1145
-trader
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-139
-
 neuron.rb
 file
 1368
@@ -230,6 +124,40 @@ file
 
 
 deleted
+
+Gemfile
+file
+1369
+
+
+
+2012-11-18T11:55:44.496611Z
+87c959d3c7fc6eace6f7e2c00dda1cd5
+2012-11-18T16:17:30.612439Z
+1369
+trader
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+154
 
 critter.rb
 file
@@ -257,14 +185,14 @@ deleted
 
 xor_neat.rb
 file
-1368
+1369
 
 
 
-2012-11-17T17:14:31.704525Z
-df83f11eb40d4a6c0fbd37d03615fa88
-2012-11-17T17:04:06.224737Z
-1368
+2012-11-18T16:16:31.436631Z
+23d9f2261ebce57a330737c35510ad91
+2012-11-18T16:17:30.612439Z
+1369
 trader
 has-props
 
@@ -287,33 +215,9 @@ has-props
 
 
 
-3910
+3934
 
 gendocs
-file
-1368
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-deleted
-
-dsl.rb
 file
 1368
 
@@ -361,6 +265,102 @@ file
 
 deleted
 
+dsl.rb
+file
+1368
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
 rubyneat
 dir
+
+rubyneat.rb
+file
+1368
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+population.rb
+file
+1368
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+expressor.rb
+file
+1368
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
 

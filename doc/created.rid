@@ -1,13 +1,14 @@
-Sat, 17 Nov 2012 12:19:35 -0500
+Sun, 18 Nov 2012 09:10:48 -0500
 ./rubyneat/rubyneat_spec.rb	Sat, 17 Nov 2012 12:14:16 -0500
 ./rubyneat/population.rb	Sat, 17 Nov 2012 12:14:16 -0500
+./rubyneat/foo.rb	Sun, 18 Nov 2012 08:12:59 -0500
 ./rubyneat/expressor.rb	Sat, 17 Nov 2012 12:14:16 -0500
-./rubyneat/evolver.rb	Sat, 17 Nov 2012 12:14:16 -0500
+./rubyneat/evolver.rb	Sat, 17 Nov 2012 14:27:12 -0500
 ./rubyneat/default_neat.rb	Sat, 17 Nov 2012 12:14:16 -0500
 ./rubyneat/neuron.rb	Sat, 17 Nov 2012 12:14:16 -0500
-./rubyneat/rubyneat.rb	Sat, 17 Nov 2012 12:14:16 -0500
+./rubyneat/rubyneat.rb	Sun, 18 Nov 2012 09:05:23 -0500
 ./rubyneat/critter.rb	Sat, 17 Nov 2012 12:14:16 -0500
 ./rubyneat/evaluator.rb	Sat, 17 Nov 2012 12:14:16 -0500
 ./rubyneat/dsl.rb	Sat, 17 Nov 2012 12:14:16 -0500
-./Gemfile	Sat, 10 Dec 2011 16:58:14 -0500
-./xor_neat.rb	Sat, 17 Nov 2012 12:14:31 -0500
+./Gemfile	Sun, 18 Nov 2012 06:55:44 -0500
+./xor_neat.rb	Sat, 17 Nov 2012 14:39:41 -0500

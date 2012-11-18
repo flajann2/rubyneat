@@ -90,7 +90,7 @@ module NEAT
         wearein = false
         @species.each do |ck, list|
           delta = crit.compare(ck)
-          puts "delta for #{crit} and #{ck} is #{delta}"
+          log.debug { "delta for #{crit} and #{ck} is #{delta}" }
           if delta < threshold
             list << crit
             wearein = true

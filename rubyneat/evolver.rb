@@ -34,14 +34,16 @@ module NEAT
 
       # Do it!
       if @controller.parms.mate_only_prob.nil? or rand > @controller.parms.mate_only_prob
+        log.debug "[[[ Neuron Giggling!"
         mutate_perturb_gene_weights!
         mutate_change_gene_weights!
         mutate_add_neurons!
         mutate_change_neurons!
         mutate_add_genes!
         mutate_reenable_genes!
+        log.debug "]]] End Neuron Giggling!\n"
       else
-        puts "*** Mating only!"
+        log.debug "*** Mating only!"
       end
       mate!
 
@@ -53,8 +55,8 @@ module NEAT
     
     def prepare_speciation!
       @npop.speciate!
-      puts "SPECIES:"
-      pp @npop.species
+      log.debug "SPECIES:"
+      NEAT::dpp @npop.species
     end
 
     # Sort species within the basis of fitness
@@ -74,31 +76,31 @@ module NEAT
         critter.genotype.genes.each do |innov, gene|
           if rand < @controller.parms.mutate_perturb_gene_weights_prob
             gene.weight += per = @gperturb.()
-            puts "Peterburbed gene #{gene}.#{innov} by #{per}"
+            log.debug{ "Peturbed gene #{gene}.#{innov} by #{per}" }
           end
         end
       end
     end
 
     def mutate_change_gene_weights!
-      puts "mutate_change_gene_weights! NIY"
+      log.error "mutate_change_gene_weights! NIY"
     end
 
     def mutate_add_genes!
-      puts "mutate_add_genes! NIY"
+      log.error "mutate_add_genes! NIY"
     end
 
     def mutate_reenable_genes!
-      puts "mutate_reenable_genes! NIY"
+      log.error "mutate_reenable_genes! NIY"
     end
 
 
     def mutate_add_neurons!
-      puts "mutate_add_neurons! NIY"
+      log.error "mutate_add_neurons! NIY"
     end
 
     def mutate_change_neurons!
-      puts "mutate_change_neurons! NIY"
+      log.error "mutate_change_neurons! NIY"
     end
 
     # Here we select candidates for mating. We must look at species and fitness

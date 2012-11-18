@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   remote: http://gems.github.com/
   specs:
+    aquarium (0.5.1)
     archive-tar-minitar (0.5.2)
     bson (1.7.1)
     bson_ext (1.7.1)
@@ -36,6 +37,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aquarium
   bson_ext
   distribution
   mongo

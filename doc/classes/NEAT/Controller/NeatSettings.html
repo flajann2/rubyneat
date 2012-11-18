@@ -40,7 +40,7 @@
   
     <div class="description">
       
-<p>Various parameters affecting evolution Based somewhat on the C version of
+<p>Various parameters affecting evolution. Based somewhat on the C version of
 <a href="../../NEAT.html">NEAT</a>.</p>
 
     </div>
@@ -141,6 +141,16 @@
             </td>
             <td class='attr-name'>end_sequence_at</td>
             <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>evolved_substrate_switch</td>
+            <td class='attr-desc'><p>Enable Evolved Substrate HyperNEAT. Meaningless unless <a
+href="NeatSettings.html#attribute-i-hyper_switch">#hyper_switch</a> is also
+enabled.</p></td>
           </tr>
         
           <tr valign='top'>
@@ -496,7 +506,7 @@ mate.</p></td>
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 336</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 356</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
   <span class="ruby-keyword">super</span>
   <span class="ruby-ivar">@start_sequence_at</span> = <span class="ruby-number">0</span>

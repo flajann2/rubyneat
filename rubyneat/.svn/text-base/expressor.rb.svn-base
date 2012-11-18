@@ -68,7 +68,7 @@ module NEAT
 
       # And now return the result as a vector of outputs.
       p.code += "    return [" + g.neural_outputs.map{|sym, neu| "@#{sym}"}.join(',') + "]\n  end\n"
-      puts p.code
+      log.debug p.code
       p.express!
     end
 

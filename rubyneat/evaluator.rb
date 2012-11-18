@@ -21,7 +21,7 @@ module NEAT
     def evaluate!(critter)
       vin = @controller.query_func.(@controller.seq_num)
       vout = critter.phenotype.stimulate *vin
-      puts "critter #{critter.name}: vin=#{vin}. vout=#{vout}"
+      log.debug "critter #{critter.name}: vin=#{vin}. vout=#{vout}"
       @crit_hist[critter] = {} unless @crit_hist.member? critter
       @crit_hist[critter][@controller.seq_num] = [vin, vout] 
     end
@@ -31,7 +31,7 @@ module NEAT
       fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func.(vio[0], vio[1], seq) }
       # Average the fitness vector to get a scalar fitness.
       critter.fitness = fitvec.reduce {|a,r| a+r} / fitvec.size.to_f
-      puts "Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}"
+      log.debug "Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}"
     end
   end
 end

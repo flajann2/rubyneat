@@ -228,12 +228,14 @@ novelty, etc.</p>
 
   <span class="ruby-comment"># Do it!</span>
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">mate_only_prob</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">rand</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">mate_only_prob</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;[[[ Neuron Giggling!&quot;</span>
     <span class="ruby-identifier">mutate_perturb_gene_weights!</span>
     <span class="ruby-identifier">mutate_change_gene_weights!</span>
     <span class="ruby-identifier">mutate_add_neurons!</span>
     <span class="ruby-identifier">mutate_change_neurons!</span>
     <span class="ruby-identifier">mutate_add_genes!</span>
     <span class="ruby-identifier">mutate_reenable_genes!</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;]]] End Neuron Giggling!\n&quot;</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;*** Mating only!&quot;</span>
   <span class="ruby-keyword">end</span>
@@ -317,7 +319,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mate-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 106</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mate!</span>
   <span class="ruby-identifier">popsize</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">population_size</span>
   <span class="ruby-identifier">surv</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">survival_threshold</span>
@@ -366,7 +368,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mutate_add_genes-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 87</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 89</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mutate_add_genes!</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;mutate_add_genes! NIY&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -401,7 +403,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mutate_add_neurons-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 96</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mutate_add_neurons!</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;mutate_add_neurons! NIY&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -436,7 +438,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mutate_change_gene_weights-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 83</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mutate_change_gene_weights!</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;mutate_change_gene_weights! NIY&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -471,7 +473,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mutate_change_neurons-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 100</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mutate_change_neurons!</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;mutate_change_neurons! NIY&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -506,14 +508,14 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mutate_perturb_gene_weights-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 71</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mutate_perturb_gene_weights!</span>
   <span class="ruby-ivar">@gperturb</span> = <span class="ruby-constant">Distribution</span><span class="ruby-operator">::</span><span class="ruby-constant">Normal</span><span class="ruby-operator">::</span><span class="ruby-identifier">rng</span>(<span class="ruby-number">0</span>, <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">mutate_perturb_gene_weights_sd</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@gperturb</span>.<span class="ruby-identifier">nil?</span>
   <span class="ruby-ivar">@npop</span>.<span class="ruby-identifier">critters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">critter</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">genotype</span>.<span class="ruby-identifier">genes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">innov</span>, <span class="ruby-identifier">gene</span><span class="ruby-operator">|</span>
       <span class="ruby-keyword">if</span> <span class="ruby-identifier">rand</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">mutate_perturb_gene_weights_prob</span>
         <span class="ruby-identifier">gene</span>.<span class="ruby-identifier">weight</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">per</span> = <span class="ruby-ivar">@gperturb</span>.()
-        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Peterburbed gene #{gene}.#{innov} by #{per}&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Peturbed gene #{gene}.#{innov} by #{per}&quot;</span>
       <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
@@ -549,7 +551,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-mutate_reenable_genes-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 91</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 93</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mutate_reenable_genes!</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;mutate_reenable_genes! NIY&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -584,7 +586,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-prepare_fitness-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 61</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare_fitness!</span>
   <span class="ruby-ivar">@npop</span>.<span class="ruby-identifier">species</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">sp</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">sp</span>.<span class="ruby-identifier">sort!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">c1</span>, <span class="ruby-identifier">c2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c2</span>.<span class="ruby-identifier">fitness</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">c1</span>.<span class="ruby-identifier">fitness</span> }
@@ -621,7 +623,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-prepare_novelty-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 67</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare_novelty!</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
@@ -655,7 +657,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-prepare_speciation-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 54</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare_speciation!</span>
   <span class="ruby-ivar">@npop</span>.<span class="ruby-identifier">speciate!</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;SPECIES:&quot;</span>
@@ -692,7 +694,7 @@ to make the selection for mating.</p>
                 
               </p>
               <div id="method-i-sex_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 126</span>
+                <pre><span class="ruby-comment"># File rubyneat/evolver.rb, line 128</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sex</span>(<span class="ruby-identifier">crit1</span>, <span class="ruby-identifier">crit2</span>)
   <span class="ruby-identifier">baby</span> = <span class="ruby-constant">Critter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@npop</span>, <span class="ruby-keyword">true</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">baby</span>

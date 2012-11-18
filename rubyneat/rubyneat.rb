@@ -1,6 +1,8 @@
 require 'distribution'
 require 'yaml'
 require 'pp'
+require 'logger'
+require 'stringio'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the NeuroEvolution by Augmented Topologies.
@@ -13,6 +15,9 @@ We make no effort to support Ruby versions less than 1.9.2. I know this will
 be a problem to some, but you are strongly urgerd to upgrade.
 
 =end
+
+$log = Logger.new(STDOUT)
+$log.level = Logger::DEBUG
 
 =begin rdoc
 = NEAT -- Module for RubyNEAT.
@@ -43,9 +48,14 @@ Our initial inclination  is to put all of that functionality in the Conroller.
 module NEAT
   @rng_count = 0
   @rng_names = %w{aaa bee cex dee flo kis lee mor cie lou gir sex quo sam lac hin pee  
-                  cru ste sew fla nac zac pae por lie lox pox nez fez whi poo sho
+                  cur set sew flat nac zac pae por lie lox pox nez fez wib poo sho
                   nuz tux que bsh shi her him can muk fuk kit kat uno dos ant mic
-                  aa be nz oo py tt my of ze mu pi zz qu fl tr as sd fg gh hj bc}
+                  aa be nz oo py tt my of ze mu pi zz qu fl tr as sd fg gh hj bc
+                  lion tame monk busy honk tape slap zonk funk tear flip shop soap
+                  quay mony stir moot shoo slim fate trat beep kook love hate 
+                  mire hair lips funk open shut case lace joop lute doze fuzz
+                  mean nice soil vote kick apes snak huge sine pine gray nook fool
+                  woot hail smel tell jell suut gage phat}
   def self.random_name_generator
     @rng_count += 1
     s = ""
@@ -59,8 +69,20 @@ module NEAT
   # for the singleton method expression of the critter.
   STIMULUS = :stimulate
 
+  # Mixin for new innovation numbers.
   def self.new_innovation; @controller.new_innovation; end
+
+  # Mixin for the gaussian object.
   def self.gaussian ; @controller.gaussian; end
+
+  # PrettyPrint to log.debug
+  def self.dpp ob
+    sio = StringIO.new
+    PP::pp ob, sio
+    sio.lines.each do |line|
+      $log.debug line
+    end
+  end
 
   # Basis of all NEAT objects
   class NeatOb
@@ -70,13 +92,24 @@ module NEAT
     # Who's your daddy?
     attr_reader :controller
 
+    def log ; $log ; end
+
+    # Initializer for all NEAT objects. Requires that
+    # the controller object is specified for all classes
+    # with the exception of the Controller itself or the
+    # Controller's NeatSettings.
     def initialize(controller = nil, name = nil)
       @name = unless name.nil?
                 name
               else
                 NEAT::random_name_generator
               end
-      @controller = controller
+      unless controller.nil?
+        @controller = controller
+      else
+        raise NeatException.new "Controller Needed!" unless self.is_a?(Controller) or                                                             self.is_a?(Controller::NeatSettings)
+        @controller = self unless self.is_a? Controller::NeatSettings
+      end
     end
 
     def to_s
@@ -165,7 +198,7 @@ module NEAT
             else
               # we found a circular reference.
               @circular << inode
-              puts "Dependency found: %s" % inode
+              log.warn "Dependency found: %s" % inode
             end
           end
         }
@@ -243,7 +276,10 @@ module NEAT
     # Also report_hook to dump reports for the user, etc.
     attr_accessor :end_run_func, :report_hook
 
-    # Various parameters affecting evolution
+    # Logger object for all of RubyNEAT
+    attr_reader :log
+
+    # Various parameters affecting evolution.
     # Based somewhat on the C version of NEAT.
     class NeatSettings < NeatOb
       ## RubyNEAT specific
@@ -328,6 +364,10 @@ module NEAT
       # setup will be necessary.
       attr_accessor :hyper_switch
 
+      # Enable Evolved Substrate HyperNEAT. Meaningless unless
+      # hyper_switch is also enabled.
+      attr_accessor :evolved_substrate_switch
+
       # Enable RT-NEAT, for gradual evolution suitable for
       # games and other human-interactive systems.
       attr_accessor :real_time_switch
@@ -351,6 +391,7 @@ module NEAT
     #- parameters -- NeatParameters object, or a path to a YAML file to create this.
     def initialize(neural_inputs = nil, neural_outputs = nil, parameters = NeatSettings.new)
       super(self)
+
       @glob_innov_num = 0
       @gaussian = Distribution::Normal.rng
       @population_history = []
@@ -424,8 +465,6 @@ module NEAT
   def self.controller=(controller) ; @controller = controller ; end
   def self.create_controller(*parms); @controller = Controller.new(*parms); end
 end
-
-
 
 # We put all the internal requires at the end to avoid conflicts.
 require 'rubyneat/neuron'

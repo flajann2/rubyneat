@@ -34,7 +34,7 @@ module NEAT
     def output? ; !!@output ; end
 
     def self.inherited(clazz)
-      puts "# Neuron subclassed by #{clazz}."
+      $log.debug { "# Neuron subclassed by #{clazz}." }
       @@neurons << clazz
     end
 

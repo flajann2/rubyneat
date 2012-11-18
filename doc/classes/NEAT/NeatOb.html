@@ -140,7 +140,10 @@
           
           
             <div class="description">
-              
+              <p>Initializer for all <a href="../NEAT.html">NEAT</a> objects. Requires that
+the controller object is specified for all classes with the exception of
+the <a href="Controller.html">Controller</a> itself or the Controller’s
+NeatSettings.</p>
             </div>
           
           
@@ -156,14 +159,18 @@
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 73</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">controller</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-ivar">@name</span> = <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">nil?</span>
             <span class="ruby-identifier">name</span>
           <span class="ruby-keyword">else</span>
             <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-identifier">random_name_generator</span>
           <span class="ruby-keyword">end</span>
-  <span class="ruby-ivar">@controller</span> = <span class="ruby-identifier">controller</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@controller</span> = <span class="ruby-identifier">controller</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NeatException</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&quot;Controller Needed!&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Controller</span>) <span class="ruby-keyword">or</span>                                                             <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Controller</span><span class="ruby-operator">::</span><span class="ruby-constant">NeatSettings</span>)
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -198,7 +205,7 @@
                 
               </p>
               <div id="method-i-to_s_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 82</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 98</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
   <span class="ruby-string">&quot;%s&lt;%s&gt;&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>]
 <span class="ruby-keyword">end</span></pre>
