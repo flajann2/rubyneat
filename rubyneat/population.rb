@@ -8,13 +8,15 @@ module NEAT
   # expression, all the phenotypes shall be created individually.
   #
   class Population < NeatOb
-    # Ordered list or hash of input neuron classes (all critters generated here shall have this)
+    # Ordered list or hash of input neuron classes 
+    # (all critters generated here shall have this)
     attr_accessor :input_neurons
 
     # List of possible neuron classes for hidden neurons.
     attr_accessor :hidden_neurons
 
-    # Ordered list or hash of output neuron classes (all critters generated here shall have this)
+    # Ordered list or hash of output neuron classes
+    # (all critters generated here shall have this)
     attr_accessor :output_neurons
 
     attr_accessor :traits

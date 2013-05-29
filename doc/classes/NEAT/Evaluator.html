@@ -153,7 +153,7 @@
   <span class="ruby-identifier">fitvec</span> = <span class="ruby-ivar">@crit_hist</span>[<span class="ruby-identifier">critter</span>].<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">seq</span>, <span class="ruby-identifier">vio</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">fitness_func</span>.(<span class="ruby-identifier">vio</span>[<span class="ruby-number">0</span>], <span class="ruby-identifier">vio</span>[<span class="ruby-number">1</span>], <span class="ruby-identifier">seq</span>) }
   <span class="ruby-comment"># Average the fitness vector to get a scalar fitness.</span>
   <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">fitness</span> = <span class="ruby-identifier">fitvec</span>.<span class="ruby-identifier">reduce</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span><span class="ruby-operator">+</span><span class="ruby-identifier">r</span>} <span class="ruby-operator">/</span> <span class="ruby-identifier">fitvec</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_f</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}&quot;</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -195,7 +195,7 @@ vector from the critter.</p>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">evaluate!</span>(<span class="ruby-identifier">critter</span>)
   <span class="ruby-identifier">vin</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">query_func</span>.(<span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">seq_num</span>)
   <span class="ruby-identifier">vout</span> = <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">phenotype</span>.<span class="ruby-identifier">stimulate</span> *<span class="ruby-identifier">vin</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;critter #{critter.name}: vin=#{vin}. vout=#{vout}&quot;</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;critter #{critter.name}: vin=#{vin}. vout=#{vout}&quot;</span>
   <span class="ruby-ivar">@crit_hist</span>[<span class="ruby-identifier">critter</span>] = {} <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@crit_hist</span>.<span class="ruby-identifier">member?</span> <span class="ruby-identifier">critter</span>
   <span class="ruby-ivar">@crit_hist</span>[<span class="ruby-identifier">critter</span>][<span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">seq_num</span>] = [<span class="ruby-identifier">vin</span>, <span class="ruby-identifier">vout</span>] 
 <span class="ruby-keyword">end</span></pre>

@@ -303,7 +303,7 @@ href="Expressor.html">Expressor</a> that can.</p>
 
   <span class="ruby-comment"># And now return the result as a vector of outputs.</span>
   <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;    return [&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">neural_outputs</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">sym</span>, <span class="ruby-identifier">neu</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;@#{sym}&quot;</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">','</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;]\n  end\n&quot;</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">code</span>
   <span class="ruby-identifier">p</span>.<span class="ruby-identifier">express!</span>
 <span class="ruby-keyword">end</span></pre>
               </div>

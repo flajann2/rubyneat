@@ -118,15 +118,31 @@ module NEAT
           mlist << [spsel[rand spsel.size], spsel[rand spsel.size]]
         end
       end
-      mlist.each do |crit1, crit2|
+      @npop.critters = mlist.map do |crit1, crit2|
         sex crit1, crit2
       end
     end
     
     protected
-    # mate the given critters and return a baby.
+    # Mate the given critters and return a baby.
+    # This is rather involved, and relies heavily on the Innovation Numbers.
+    #
+    # Some definitions:
+    #
+    ## Matching Gene
+    ### 2 genes with matching innovation numbers.
+    ## Disjoint Gene
+    ### A gene in one has an innovation number in the range of innovation numbers
+    ### of the other.
+    ## Excess Gene
+    ### Gene in one critter that has an innovation number outside of the range
+    ### of innovation numbers of the other.
+    #
+    # Excess and Disjoint genes are always included from the more fit parent.
+    # Matching genes are randomly chosen. For now, we make it 50/50.
     def sex(crit1, crit2)
       baby = Critter.new(@npop, true)
+      #
       return baby
     end
   end

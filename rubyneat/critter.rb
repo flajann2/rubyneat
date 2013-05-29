@@ -64,7 +64,12 @@ module NEAT
     class Genotype < NeatOb
       # Critter to which we belong
       attr_accessor :critter
-      attr_accessor :genes, :neurons
+
+      # Genes keyed by innovation numbers
+      attr_accessor :genes
+
+      # List of neurons hashed by name
+      attr_accessor :neurons
 
       # Instantiations of neural inputs and outputs
       attr_reader :neural_inputs, :neural_outputs

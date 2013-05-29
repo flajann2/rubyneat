@@ -273,7 +273,7 @@ own expression, but the details of this remains to be worked out.</pre>
               <div id="method-c-inherited_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File rubyneat/neuron.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">clazz</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# Neuron subclassed by #{clazz}.&quot;</span>
+  <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> { <span class="ruby-node">&quot;# Neuron subclassed by #{clazz}.&quot;</span> }
   <span class="ruby-identifier">@@neurons</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">clazz</span>
 <span class="ruby-keyword">end</span></pre>
               </div>

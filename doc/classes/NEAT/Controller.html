@@ -224,6 +224,14 @@ reports for the user, etc.</p></td>
         
           <tr valign='top'>
             <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>log</td>
+            <td class='attr-desc'><p>Logger object for all of RubyNEAT</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
               [RW]
             </td>
             <td class='attr-name'>neural_hidden</td>
@@ -358,9 +366,10 @@ this.</p>
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 372</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 392</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">neural_inputs</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">neural_outputs</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">parameters</span> = <span class="ruby-constant">NeatSettings</span>.<span class="ruby-identifier">new</span>)
   <span class="ruby-keyword">super</span>(<span class="ruby-keyword">self</span>)
+
   <span class="ruby-ivar">@glob_innov_num</span> = <span class="ruby-number">0</span>
   <span class="ruby-ivar">@gaussian</span> = <span class="ruby-constant">Distribution</span><span class="ruby-operator">::</span><span class="ruby-constant">Normal</span>.<span class="ruby-identifier">rng</span>
   <span class="ruby-ivar">@population_history</span> = []
@@ -416,7 +425,7 @@ this.</p>
                 
               </p>
               <div id="method-i-gaussian_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 398</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 419</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gaussian</span> ; <span class="ruby-ivar">@gaussian</span>.() ; <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -449,7 +458,7 @@ this.</p>
                 
               </p>
               <div id="method-i-new_innovation_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 397</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 418</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">new_innovation</span> ; <span class="ruby-ivar">@glob_innov_num</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>; <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -482,7 +491,7 @@ this.</p>
                 
               </p>
               <div id="method-i-run_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 401</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 422</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">run</span>
   <span class="ruby-identifier">pre_run_initialize</span>
   (<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-ivar">@parms</span>.<span class="ruby-identifier">max_generations</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gen_number</span><span class="ruby-operator">|</span>

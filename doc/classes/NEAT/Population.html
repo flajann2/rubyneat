@@ -462,7 +462,7 @@ hash</p>
     <span class="ruby-identifier">wearein</span> = <span class="ruby-keyword">false</span>
     <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ck</span>, <span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
       <span class="ruby-identifier">delta</span> = <span class="ruby-identifier">crit</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">ck</span>)
-      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;delta for #{crit} and #{ck} is #{delta}&quot;</span>
+      <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> { <span class="ruby-node">&quot;delta for #{crit} and #{ck} is #{delta}&quot;</span> }
       <span class="ruby-keyword">if</span> <span class="ruby-identifier">delta</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">threshold</span>
         <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">crit</span>
         <span class="ruby-identifier">wearein</span> = <span class="ruby-keyword">true</span>

@@ -50,17 +50,6 @@
 
 <p>We create all the neuron types for this system here.</p>
 
-<h1 id="label-RubyNEAT+--+a+Ruby+Implementation+of+the+NeuroEvolution+by+Augmented+Topologies.">RubyNEAT – a Ruby Implementation of the NeuroEvolution by Augmented Topologies.</h1>
-
-<p>The RubyNEAT system incorporates the basis of the <a
-href="NEAT.html">NEAT</a> alorithm. Flexibility is the key here, allowing
-RubyNEAT to be leverage in a varitety of applications.</p>
-
-<h3 id="label-Requirements">Requirements</h3>
-
-<p>We make no effort to support Ruby versions less than 1.9.2. I know this
-will be a problem to some, but you are strongly urgerd to upgrade.</p>
-
 <h1 id="label-NEAT+--+Module+for+RubyNEAT."><a href="NEAT.html">NEAT</a> – Module for RubyNEAT.</h1>
 
 <h2 id="label-Synopsis">Synopsis</h2>
@@ -204,6 +193,18 @@ Conroller.</p>
           </ul>
         </dd>
       
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dpp">dpp</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
         <dt>G</dt>
         <dd>
           <ul>
@@ -309,7 +310,7 @@ the singleton method expression of the critter.</p></td>
                 
               </p>
               <div id="method-c-controller_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 443</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 464</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">controller</span> ; <span class="ruby-ivar">@controller</span> ; <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -342,7 +343,7 @@ the singleton method expression of the critter.</p></td>
                 
               </p>
               <div id="method-c-controller-3D_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 444</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 465</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">controller=</span>(<span class="ruby-identifier">controller</span>) ; <span class="ruby-ivar">@controller</span> = <span class="ruby-identifier">controller</span> ; <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -375,8 +376,47 @@ the singleton method expression of the critter.</p></td>
                 
               </p>
               <div id="method-c-create_controller_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 445</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 466</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">create_controller</span>(*<span class="ruby-identifier">parms</span>); <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">Controller</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">parms</span>); <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-dpp">
+            
+              <b>dpp</b>(ob)
+            
+            <a href="../classes/NEAT.html#method-c-dpp" name="method-c-dpp" class="permalink">Link</a>
+          </div>
+          
+          
+            <div class="description">
+              <p>PrettyPrint to log.debug</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dpp_source')" id="l_method-c-dpp_source">show</a>
+                
+              </p>
+              <div id="method-c-dpp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">dpp</span> <span class="ruby-identifier">ob</span>
+  <span class="ruby-identifier">sio</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-constant">PP</span><span class="ruby-operator">::</span><span class="ruby-identifier">pp</span> <span class="ruby-identifier">ob</span>, <span class="ruby-identifier">sio</span>
+  <span class="ruby-identifier">sio</span>.<span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
               </div>
             </div>
             
@@ -408,7 +448,7 @@ the singleton method expression of the critter.</p></td>
                 
               </p>
               <div id="method-c-gaussian_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 71</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 76</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">gaussian</span> ; <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">gaussian</span>; <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -441,7 +481,7 @@ the singleton method expression of the critter.</p></td>
                 
               </p>
               <div id="method-c-new_innovation_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 68</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">new_innovation</span>; <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">new_innovation</span>; <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -474,7 +514,7 @@ the singleton method expression of the critter.</p></td>
                 
               </p>
               <div id="method-c-random_name_generator_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 54</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">random_name_generator</span>
   <span class="ruby-ivar">@rng_count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
   <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;&quot;</span>

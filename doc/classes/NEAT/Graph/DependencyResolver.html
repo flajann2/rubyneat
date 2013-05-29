@@ -152,7 +152,7 @@ list of outputs.</p>
                 
               </p>
               <div id="method-c-5B-5D_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 146</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 163</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-operator">[]</span>(*<span class="ruby-identifier">outs</span>)
   <span class="ruby-identifier">outs</span> = <span class="ruby-identifier">outs</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">outs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
   <span class="ruby-constant">DependencyResolver</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">outs</span>
@@ -189,7 +189,7 @@ their dependencies.</p>
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 139</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">outputs</span>)
   <span class="ruby-ivar">@outputs</span> = <span class="ruby-identifier">outputs</span>
   <span class="ruby-keyword">super</span>
@@ -228,7 +228,7 @@ Note that circular_ref_node_list shall be nil if there are no dependencies!</p>
                 
               </p>
               <div id="method-i-resolve_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 154</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 171</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve</span>
   <span class="ruby-ivar">@resolved</span> = []
   <span class="ruby-ivar">@unresolved</span> = []
@@ -270,7 +270,7 @@ list since we throw an exception on circular  dependencies.</p>
                 
               </p>
               <div id="method-i-resolve-21_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 167</span>
+                <pre><span class="ruby-comment"># File rubyneat/rubyneat.rb, line 184</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resolve!</span>
   <span class="ruby-identifier">dl</span>, <span class="ruby-identifier">cl</span> = <span class="ruby-identifier">resolve</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NeatException</span>(<span class="ruby-string">&quot;Circular Dependency Detected: %s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">cl</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">nil?</span>
