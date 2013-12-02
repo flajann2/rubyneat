@@ -1,4 +1,5 @@
 =begin rdoc
+=RubyNEAT ()Neural Evolution via Augmented Topologies)
 =end
 
 require 'rubyneat/rubyneat'

@@ -4,12 +4,13 @@
 
 =end
 
+# Be sure lib is added to the library path
+$:.unshift File.join( %w{ lib neater } )
+
 require 'pp'
 require 'slop'
 require 'rubyneat'
 
-# Be sure lib is added to the library path
-$:.unshift File.join( %w{ lib } )
 
 opts = Slop.parse do
   banner 'Usage: neat [commands] [options] ...'
@@ -30,7 +31,11 @@ opts = Slop.parse do
     on :v, :verbose, 'Verbose mode'
 
     run do |opts, args|
-      pp args
+      args.map do |proj|
+        "#{proj}_neat"
+      end.each do |file|
+        load file
+      end
     end
   end
 

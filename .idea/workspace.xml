@@ -13,7 +13,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1386015238122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
-    <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386005490395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386026021962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -90,25 +90,25 @@
           <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/xor_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="0" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
+                <state line="30" column="56" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="neat.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="neat.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+                <state line="8" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="0.16620499" vertical-offset="0" max-vertical-offset="780">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rubyneat.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="0" selection-start="69" selection-end="69" vertical-scroll-proportion="0.10387812" vertical-offset="0" max-vertical-offset="722">
+                <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
                   <folding />
                 </state>
               </provider>
@@ -129,11 +129,11 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
-        <option value="$PROJECT_DIR$/xor_neat.rb" />
         <option value="$PROJECT_DIR$/bin/neat" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/bin/neat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
+        <option value="$PROJECT_DIR$/xor_neat.rb" />
+        <option value="$PROJECT_DIR$/bin/neat.rb" />
       </list>
     </option>
   </component>
@@ -325,7 +325,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/bin" />
     <property name="recentsLimit" value="5" />
   </component>
-  <component name="RunManager" selected="Ruby.neat">
+  <component name="RunManager" selected="Ruby.xor_neat">
     <configuration default="false" name="xor_neat" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="rubyneat" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -493,8 +493,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.neat" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.xor_neat" />
+        <item index="0" class="java.lang.String" itemvalue="Ruby.xor_neat" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.neat" />
       </list>
     </recent_temporary>
   </component>
@@ -608,13 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xor_neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1495" selection-end="1495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="10" selection-start="174" selection-end="174" vertical-scroll-proportion="0.23571429" vertical-offset="0" max-vertical-offset="700">
@@ -650,16 +643,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+        <state line="44" column="0" selection-start="1324" selection-end="1324" vertical-scroll-proportion="0.33240998" vertical-offset="420" max-vertical-offset="1875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xor_neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="56" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="69" selection-end="69" vertical-scroll-proportion="0.10387812" vertical-offset="0" max-vertical-offset="722">
+        <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="142" selection-end="142" vertical-scroll-proportion="0.16620499" vertical-offset="0" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
