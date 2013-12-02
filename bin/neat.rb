@@ -6,6 +6,7 @@
 
 require 'pp'
 require 'slop'
+require 'rubyneat'
 
 # Be sure lib is added to the library path
 $:.unshift File.join( %w{ lib } )
@@ -18,7 +19,7 @@ opts = Slop.parse do
   end
 
   command :console do
-    
+
   end
 
   command :list do
