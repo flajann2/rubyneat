@@ -5,5 +5,5 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RubyNEAT::Application.load_tasks
+# RubyNEAT::Application.load_tasks
 # Rakefile (END)

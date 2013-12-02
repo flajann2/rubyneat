@@ -55,7 +55,7 @@ module NEAT
                   quay mony stir moot shoo slim fate trat beep kook love hate 
                   mire hair lips funk open shut case lace joop lute doze fuzz
                   mean nice soil vote kick apes snak huge sine pine gray nook fool
-                  woot hail smel tell jell suut gage phat}
+                  woot hail smel tell jell suut gage phat pinoy spain rey bloke zit}
   def self.random_name_generator
     @rng_count += 1
     s = ""
@@ -125,7 +125,7 @@ module NEAT
   # for other structures.)
   #
   # This is a mixin for Neuron and whatever else you'd like.
-  # the contained class is for evaluation, and may be instaintiated seperately.
+  # the contained class is for evaluation, and may be instantiated separately.
   module Graph
     # clear and initialize the graph.
 
@@ -158,8 +158,8 @@ module NEAT
         super
       end
       
-      # Create a DepedencyResolver from either
-      # an array of outputs or a parmeter list of outputs.
+      # Create a DependencyResolver from either
+      # an array of outputs or a parameter list of outputs.
       def self.[](*outs)
         outs = outs.first if outs.first.kind_of? Array
         DependencyResolver.new outs
@@ -188,7 +188,7 @@ module NEAT
       end
 
       private
-      # resursive resolution of nodes
+      # recursive resolution of nodes
       def rdep(node)
         @unresolved << node
         node.inputs.each { |inode|
@@ -234,9 +234,9 @@ module NEAT
   require 'rubyneat/evaluator'
 
   #= Controller for all operations of RubyNEAT
-  # This object contails all the specifications and details for
+  # This object contains all the specifications and details for
   # evolving and evaluation of the RubyNEAT system.  It is 
-  # a type of "World", if you will, for the entntire enterprise.
+  # a type of "World", if you will, for the entire enterprise.
   #
   # Your application shall only have one Controller. 
   class Controller < NeatOb
@@ -256,7 +256,7 @@ module NEAT
     # instantiations of these) name: InputNeuralClass (usually InputNeuron)
     attr_accessor :neural_inputs, :neural_outputs, :neural_hidden
 
-    # Parameters for evolution (NeatParmeters)
+    # Parameters for evolution (NeatParameters)
     attr_accessor :parms
 
     # population object and class specification

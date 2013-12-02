@@ -1,11 +1,11 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env neat
 require 'rubyneat/dsl'
 =begin rdoc
 = XOR Test for RubyNEAT
 
 The XOR testis the most fundamental test given to neural networks to
 see if they can handle representing the function, which usually entails
-a hidden layer. RubyNEAT generates hidden layers, so this would repeesent
+a hidden layer. RubyNEAT generates hidden layers, so this would represent
 a good "First Test" of what RubyNEAT can do.
 
 Also, we need to work out the details of the RubyNEAT UI, so this also
@@ -15,7 +15,7 @@ Here we shall treat signals <0 as a logical false, and >0 as a logical true.
 +1/-1 shall represent the input nodes, and we shall have only one output node.
 
 We shall also experiment with signal shaping so that the output node
-explicitely coerces the signal to true/false.
+explicitly coerces the signal to true/false.
 
 == Notes
 We shall have a callback for grabbing the data, and another for fitness
@@ -23,14 +23,14 @@ evaluation. Both shall be passed a tcnt parameter, which represents "time"
 or some other cardinal in the walk through of the data space. Fitness shall 
 return something between +/-1.
 
-There shall be also a novelty measure, as a seperate paramenter internal to the 
+There shall be also a novelty measure, as a separate parameter internal to the
 Evaluator. Some sort of logic shall reside in the evaluator choose actual "fitness" 
-over the fintness result vs. novelty.
+over the fitness result vs. novelty.
 
 === Naming issues
 For input and output neurons, the names of them shall be specified
-up front. The names of neurons only need be unique on a per-criter basis. And
-it makes all the sense in the world to have the IO neurons specifially named
+up front. The names of neurons only need be unique on a per-critter basis. And
+it makes all the sense in the world to have the IO neurons specifically named
 so that linkages to the "outside world" can be maintained.
 
 For this reason, we incorporate as a requirement names for the IO neurons.
