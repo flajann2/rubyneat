@@ -3,11 +3,14 @@
 =RubyNEAT Launcher
 
 =end
+require 'pp'
 
 # Be sure lib is added to the library path
-$:.unshift File.join( %w{ lib neater } )
+%w{ lib neater }.each do |dir|
+  $:.unshift File.join([Dir.pwd, dir])
+end
+pp Dir.pwd
 
-require 'pp'
 require 'slop'
 require 'rubyneat'
 
@@ -32,7 +35,7 @@ opts = Slop.parse do
 
     run do |opts, args|
       args.map do |proj|
-        "#{proj}_neat"
+        "#{proj}_neat.rb"
       end.each do |file|
         load file
       end
