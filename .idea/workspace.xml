@@ -12,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1386077549543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1387135424781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386026021962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -43,7 +43,7 @@
           <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/application.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="150">
+                <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
                   <folding />
                 </state>
               </provider>
@@ -52,16 +52,16 @@
           <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="127" column="0" selection-start="3932" selection-end="3932" vertical-scroll-proportion="0.0" vertical-offset="1362" max-vertical-offset="1995">
+                <state line="123" column="0" selection-start="3737" selection-end="3737" vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="1995">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="83" column="0" selection-start="2486" selection-end="2486" vertical-scroll-proportion="0.90316904" vertical-offset="732" max-vertical-offset="1755">
+                <state line="54" column="24" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1755">
                   <folding />
                 </state>
               </provider>
@@ -76,19 +76,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Rakefile">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="7215">
+                <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.33333334" vertical-offset="1008" max-vertical-offset="7215">
                   <folding />
                 </state>
               </provider>
@@ -107,10 +98,33 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="neat.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="neat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="0" selection-start="305" selection-end="305" vertical-scroll-proportion="0.48305085" vertical-offset="0" max-vertical-offset="825">
+                <state line="12" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="825">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="prettyprint.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/prettyprint.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="266" column="0" selection-start="7540" selection-end="7540" vertical-scroll-proportion="0.33333334" vertical-offset="3288" max-vertical-offset="5505">
+                  <folding>
+                    <element signature="e#1247#9854#1" expanded="false" />
+                    <element signature="e#4346#4666#0" expanded="false" />
+                    <element signature="e#1247#9854#1" expanded="false" />
+                    <element signature="e#5323#5409#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pp.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/pp.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="218" column="0" selection-start="6137" selection-end="6137" vertical-scroll-proportion="0.0" vertical-offset="3078" max-vertical-offset="7830">
                   <folding />
                 </state>
               </provider>
@@ -211,36 +225,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Tests" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="rubyneat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="rubyneat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="lib/rubyneat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -335,11 +319,41 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Tests" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="rubyneat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="rubyneat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lib/rubyneat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="usage.statistics" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -526,29 +540,49 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="1917" y="-3" width="1926" height="1171" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14140876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12966916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39922103" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1307364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990244" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39922103" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3990244" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2692683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2181987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -576,6 +610,62 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="17" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0" vertical-offset="2168" max-vertical-offset="4050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="0" selection-start="3932" selection-end="3932" vertical-scroll-proportion="0.0" vertical-offset="1362" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="0" selection-start="2486" selection-end="2486" vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/pp.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="0" selection-start="4863" selection-end="4863" vertical-scroll-proportion="0.0" vertical-offset="2471" max-vertical-offset="7830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="7215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="686" max-vertical-offset="2325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="163" column="17" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4050">
@@ -734,42 +824,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/prettyprint.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+        <state line="242" column="0" selection-start="7167" selection-end="7167" vertical-scroll-proportion="0.3321739" vertical-offset="3439" max-vertical-offset="6015" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="2325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="24" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1755">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="17" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0" vertical-offset="2168" max-vertical-offset="4050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/prettyprint.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="0" selection-start="7167" selection-end="7167" vertical-scroll-proportion="0.3321739" vertical-offset="3439" max-vertical-offset="6015" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="305" selection-end="305" vertical-scroll-proportion="0.48305085" vertical-offset="0" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="0" selection-start="3932" selection-end="3932" vertical-scroll-proportion="0.0" vertical-offset="1362" max-vertical-offset="1995">
+        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.23809524" vertical-offset="0" max-vertical-offset="567">
           <folding />
         </state>
       </provider>
@@ -781,24 +857,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="2325">
+        <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="17" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0" vertical-offset="2168" max-vertical-offset="4050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="0" selection-start="3737" selection-end="3737" vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="1995">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="7215">
+        <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.33333334" vertical-offset="1008" max-vertical-offset="7215">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="0" selection-start="2486" selection-end="2486" vertical-scroll-proportion="0.90316904" vertical-offset="732" max-vertical-offset="1755">
+        <state line="12" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="825">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/pp.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="0" selection-start="6137" selection-end="6137" vertical-scroll-proportion="0.0" vertical-offset="3078" max-vertical-offset="7830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/prettyprint.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="266" column="0" selection-start="7540" selection-end="7540" vertical-scroll-proportion="0.33333334" vertical-offset="3288" max-vertical-offset="5505">
+          <folding>
+            <element signature="e#1247#9854#1" expanded="false" />
+            <element signature="e#4346#4666#0" expanded="false" />
+            <element signature="e#1247#9854#1" expanded="false" />
+            <element signature="e#5323#5409#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
