@@ -3,6 +3,7 @@ GEM
   remote: http://gems.github.com/
   specs:
     aquarium (0.5.1)
+    awesome_print (1.2.0)
     bson (1.9.2)
     bson_ext (1.9.2)
       bson (~> 1.9.2)
@@ -28,6 +29,7 @@ PLATFORMS
 
 DEPENDENCIES
   aquarium
+  awesome_print
   bson_ext
   debase
   distribution

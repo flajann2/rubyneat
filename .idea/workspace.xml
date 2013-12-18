@@ -12,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1387135424781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1387400270626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386026021962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -43,7 +43,7 @@
           <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/application.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+                <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="150">
                   <folding />
                 </state>
               </provider>
@@ -52,34 +52,25 @@
           <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="123" column="0" selection-start="3737" selection-end="3737" vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="1995">
+                <state line="123" column="0" selection-start="3737" selection-end="3737" vertical-scroll-proportion="0.0" vertical-offset="1402" max-vertical-offset="1995">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="24" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1755">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pp.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/pp.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="177" column="0" selection-start="4863" selection-end="4863" vertical-scroll-proportion="0.0" vertical-offset="2471" max-vertical-offset="7830">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="rubyneat.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.33333334" vertical-offset="1008" max-vertical-offset="7215">
+                <state line="419" column="0" selection-start="13489" selection-end="13489" vertical-scroll-proportion="0.33275864" vertical-offset="6092" max-vertical-offset="7155">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="logger.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/logger.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="13" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
                   <folding />
                 </state>
               </provider>
@@ -88,7 +79,7 @@
           <file leaf-file-name="evolver.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="686" max-vertical-offset="2325">
+                <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="2325">
                   <folding />
                 </state>
               </provider>
@@ -101,30 +92,61 @@
           <file leaf-file-name="neat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="12" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="825">
+                <state line="39" column="0" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="825">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="prettyprint.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/prettyprint.rb">
+          <file leaf-file-name="formatter.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/formatter.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="266" column="0" selection-start="7540" selection-end="7540" vertical-scroll-proportion="0.33333334" vertical-offset="3288" max-vertical-offset="5505">
-                  <folding>
-                    <element signature="e#1247#9854#1" expanded="false" />
-                    <element signature="e#4346#4666#0" expanded="false" />
-                    <element signature="e#1247#9854#1" expanded="false" />
-                    <element signature="e#5323#5409#0" expanded="false" />
-                  </folding>
+                <state line="42" column="0" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="6195">
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="pp.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/pp.rb">
+          <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="218" column="0" selection-start="6137" selection-end="6137" vertical-scroll-proportion="0.0" vertical-offset="3078" max-vertical-offset="7830">
+                <state line="77" column="0" selection-start="2311" selection-end="2311" vertical-scroll-proportion="0.3322091" vertical-offset="958" max-vertical-offset="1755">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="inspector.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/inspector.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="103" column="0" selection-start="3245" selection-end="3245" vertical-scroll-proportion="0.0" vertical-offset="1352" max-vertical-offset="2655">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="kernel.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/kernel.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="formatter.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/gems/2.0.0/gems/awesome_print-1.2.0/lib/awesome_print/formatter.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="42" column="0" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="6195">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Gemfile">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="14" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="300">
                   <folding />
                 </state>
               </provider>
@@ -144,12 +166,12 @@
       <list>
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/Rakefile" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
         <option value="$PROJECT_DIR$/bin/neat" />
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
         <option value="$PROJECT_DIR$/xor_neat.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/bin/neat.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
       </list>
     </option>
   </component>
@@ -225,6 +247,36 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Tests" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="rubyneat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="rubyneat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lib/rubyneat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -319,36 +371,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Tests" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="rubyneat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="rubyneat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="lib/rubyneat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,13 +385,13 @@
     <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RunManager" selected="Ruby.neat">
-    <configuration default="false" name="xor_neat" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="rubyneat" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+    <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <envs />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
@@ -379,12 +401,33 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/xor_neat.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RunnerSettings RunnerId="RubyDebugRunner" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CapistranoRunConfigurationType" factoryName="Capistrano">
+      <module name="" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="WORK DIR" VALUE="" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CAPISTRANO_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_TASK_NAME" VALUE="" />
+      <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_TASK_ARGS" VALUE="" />
+      <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_STAGE" VALUE="" />
       <method />
     </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
@@ -468,6 +511,122 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
+    <configuration default="true" type="RubyRemoteDebugConfigurationType" factoryName="Ruby remote debug">
+      <RUBY_REMOTE_DEBUG_CONFIG NAME="REMOTE_HOST" VALUE="localhost" />
+      <RUBY_REMOTE_DEBUG_CONFIG NAME="PORT" VALUE="1234" />
+      <RUBY_REMOTE_DEBUG_CONFIG NAME="DISPATCHER_PORT" VALUE="26162" />
+      <RUBY_REMOTE_DEBUG_CONFIG NAME="REMOTE_ROOT" VALUE="" />
+      <RUBY_REMOTE_DEBUG_CONFIG NAME="LOCAL_ROOT" VALUE="$PROJECT_DIR$/spec" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RackRunConfigurationType" factoryName="Rack">
+      <module name="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RACK_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RACK_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
+      <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RACK_CONFIG_SETTINGS_ID NAME="CONFIG_FILE" VALUE="" />
+      <RACK_CONFIG_SETTINGS_ID NAME="RACK_SERVER_TYPE" VALUE="Default" />
+      <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CommandRunConfigurationType" factoryName="Gem Command">
+      <module name="" />
+      <COMMAND_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <COMMAND_RUN_CONFIGURATION NAME="WORK DIR" VALUE="" />
+      <COMMAND_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="false" />
+      <COMMAND_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="" />
+      <COMMAND_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="GEM_NAME" VALUE="" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_NAME" VALUE="" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="EXECUTABLE_ARGS" VALUE="" />
+      <COMMAND_CONFIG_SETTINGS_ID NAME="WORKING_DIR" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ZeusRunConfigurationType" factoryName="Zeus Server">
+      <module name="" />
+      <ZEUS_RUN_CONFIGURATION NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <ZEUS_RUN_CONFIGURATION NAME="WORK DIR" VALUE="" />
+      <ZEUS_RUN_CONFIGURATION NAME="SHOULD_USE_SDK" VALUE="false" />
+      <ZEUS_RUN_CONFIGURATION NAME="ALTERN_SDK_NAME" VALUE="" />
+      <ZEUS_RUN_CONFIGURATION NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <ZEUS_RUN_CONFIG_SETTING NAME="ZEUS_COMMAND_NAME" VALUE="" />
+      <ZEUS_RUN_CONFIG_SETTING NAME="ZEUS_COMMAND_ARGS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="IrbRunConfigurationType" factoryName="IRB console">
+      <module name="" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
       <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
       <module name="" />
@@ -504,15 +663,38 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
       <method />
     </configuration>
+    <configuration default="true" type="SporkRunConfigurationType" factoryName="Spork DRb">
+      <module name="" />
+      <SPORK_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <SPORK_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <SPORK_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <SPORK_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <SPORK_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <SPORK_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <SPORK_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <SPORK_RUN_CONFIG NAME="TEST_FRAMEWORK_ARGS" VALUE="RSPEC" />
+      <SPORK_RUN_CONFIG NAME="SPORK_RUN_CONFIG" VALUE="RSPEC" />
+      <method />
+    </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Ruby.neat" />
       <item index="1" class="java.lang.String" itemvalue="Ruby.xor_neat" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.xor_neat" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -569,11 +751,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14140876" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1307364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990244" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14034152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3962999" sideWeight="0.7406617" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3990244" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2692683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3962999" sideWeight="0.25933832" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2687439" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -610,6 +792,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.0" vertical-offset="1008" max-vertical-offset="7215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="686" max-vertical-offset="2325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="163" column="17" selection-start="4942" selection-end="4942" vertical-scroll-proportion="0.0" vertical-offset="2168" max-vertical-offset="4050">
@@ -647,9 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
@@ -703,9 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
@@ -759,16 +951,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/rubyneat/rubyneat_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="27" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2085">
-          <folding />
-        </state>
+        <state line="33" column="27" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2085" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="225" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
@@ -790,9 +978,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/foo.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1075">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1075" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/foobar.yaml">
@@ -802,9 +988,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/rubyneat/rubyneat_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="27" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2085">
-          <folding />
-        </state>
+        <state line="33" column="27" selection-start="835" selection-end="835" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2085" />
       </provider>
     </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb">
@@ -817,49 +1001,43 @@
         <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.12465374" vertical-offset="0" max-vertical-offset="722" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="11" selection-start="161" selection-end="161" vertical-scroll-proportion="0.20775624" vertical-offset="0" max-vertical-offset="722">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/prettyprint.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="242" column="0" selection-start="7167" selection-end="7167" vertical-scroll-proportion="0.3321739" vertical-offset="3439" max-vertical-offset="6015" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="679" max-vertical-offset="2325">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="24" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="732" max-vertical-offset="1755">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.23809524" vertical-offset="0" max-vertical-offset="567">
+        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.23809524" vertical-offset="0" max-vertical-offset="567" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/prettyprint.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="291" column="41" selection-start="8089" selection-end="8089" vertical-scroll-proportion="0.0" vertical-offset="3990" max-vertical-offset="5760" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/pp.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="218" column="0" selection-start="6137" selection-end="6137" vertical-scroll-proportion="0.27665707" vertical-offset="3078" max-vertical-offset="7830" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/pp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="0" selection-start="4863" selection-end="4863" vertical-scroll-proportion="0.0" vertical-offset="2471" max-vertical-offset="7830">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="8" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+        <state line="177" column="0" selection-start="4863" selection-end="4863" vertical-scroll-proportion="0.31944445" vertical-offset="2471" max-vertical-offset="7830">
           <folding />
         </state>
       </provider>
@@ -871,43 +1049,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
+    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/gems/2.0.0/gems/awesome_print-1.2.0/lib/awesome_print/formatter.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="0" selection-start="3737" selection-end="3737" vertical-scroll-proportion="0.0" vertical-offset="1406" max-vertical-offset="1995">
+        <state line="42" column="0" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="6195">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2934" selection-end="2934" vertical-scroll-proportion="0.33333334" vertical-offset="1008" max-vertical-offset="7215">
+        <state line="58" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0" vertical-offset="677" max-vertical-offset="2325">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="825">
+        <state line="39" column="0" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="825">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/pp.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/inspector.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="218" column="0" selection-start="6137" selection-end="6137" vertical-scroll-proportion="0.0" vertical-offset="3078" max-vertical-offset="7830">
+        <state line="103" column="0" selection-start="3245" selection-end="3245" vertical-scroll-proportion="0.0" vertical-offset="1352" max-vertical-offset="2655">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/prettyprint.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/logger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="266" column="0" selection-start="7540" selection-end="7540" vertical-scroll-proportion="0.33333334" vertical-offset="3288" max-vertical-offset="5505">
-          <folding>
-            <element signature="e#1247#9854#1" expanded="false" />
-            <element signature="e#4346#4666#0" expanded="false" />
-            <element signature="e#1247#9854#1" expanded="false" />
-            <element signature="e#5323#5409#0" expanded="false" />
-          </folding>
+        <state line="13" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/kernel.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/formatter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1558" selection-end="1558" vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="6195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="2311" selection-end="2311" vertical-scroll-proportion="0.3322091" vertical-offset="958" max-vertical-offset="1755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="0" selection-start="3737" selection-end="3737" vertical-scroll-proportion="0.0" vertical-offset="1402" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="419" column="0" selection-start="13489" selection-end="13489" vertical-scroll-proportion="0.33275864" vertical-offset="6092" max-vertical-offset="7155">
+          <folding />
         </state>
       </provider>
     </entry>

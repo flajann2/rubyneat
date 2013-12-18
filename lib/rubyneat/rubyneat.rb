@@ -1,8 +1,7 @@
 require 'distribution'
 require 'yaml'
-require 'pp'
 require 'logger'
-require 'stringio'
+require 'awesome_print'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the NeuroEvolution by Augmented Topologies.
@@ -18,6 +17,7 @@ be a problem to some, but you are strongly urgerd to upgrade.
 
 $log = Logger.new(STDOUT)
 $log.level = Logger::DEBUG
+AwesomePrint.defaults = { plain: true }
 
 =begin rdoc
 = NEAT -- Module for RubyNEAT.
@@ -77,11 +77,7 @@ module NEAT
 
   # PrettyPrint to log.debug
   def self.dpp ob
-    sio = StringIO.new
-    PP::pp ob, sio
-    sio.lines.each do |line|
-      $log.debug line
-    end
+    #$log.ap ob
   end
 
   # Basis of all NEAT objects
