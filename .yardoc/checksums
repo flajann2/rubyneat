@@ -3,9 +3,9 @@ lib/rubyneat/foo.rb a976f0292a6d641f848bf7585da8587df92784df
 lib/rubyneat/dsl.rb 63cf869ae03037597c34395879cce2f21eba81fa
 lib/rubyneat/neuron.rb 1b008fda5fada33e1fc1d5b6ba8bf84d2fcffe57
 lib/rubyneat/critter.rb cb75c7205a3885623a0e7a9067fed766b611d03f
-lib/rubyneat/evolver.rb 2350122f1766c3cf6ac07bb748f4af165e0d929d
+lib/rubyneat/evolver.rb e1d8eaf6841b0d62fa73a806b7c9ce4a61b6d539
 lib/rubyneat/rubyneat.rb 2934db1efd48d99b1e4f5f5293a6b6a29bf20b03
-lib/rubyneat/expressor.rb 82df598d29733a7cae55102ce4624e1784c5d057
+lib/rubyneat/expressor.rb 969a3dd4786a42f61576f53ea3272d286eb1144c
 lib/rubyneat/evaluator.rb 7b3486fa0b3534d35a949c6a0627ea2f524c4907
 lib/rubyneat/population.rb 4c01c952af803e63e0b66e966319dc282849e86c
 lib/rubyneat/default_neat.rb f8710a3aeb81abb6c94d6cafeb54f338600fd395
