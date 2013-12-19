@@ -5,10 +5,14 @@ ruby '2.0.0'
 
 gem 'mongo'
 gem 'bson_ext'
-gem 'rspec'
 gem 'distribution'
 #gem 'debugger'
 gem 'debase'
 gem 'aquarium'
 gem 'slop'
 gem 'awesome_print'
+
+group :development do
+  gem 'rspec'
+  gem 'yard'
+end

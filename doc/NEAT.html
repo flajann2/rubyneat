@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: NEAT
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (N)</a> &raquo;
+    
+    
+    <span class="title">NEAT</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: NEAT
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="DSL.html" title="DSL (module)">DSL</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/rubyneat/neuron.rb<span class="defines">,<br />
+  lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/population.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h1 id="label-NEAT+--+Module+for+RubyNEAT.">NEAT – Module for RubyNEAT.</h1>
+
+<h2 id="label-Synopsis">Synopsis</h2>
+
+<p>We have a Population of Critters, and each Critter represents a network of
+Neurons and a connection list specifying how those Neurons are connected.</p>
+
+<p>Each Neuron has an inplicit genotype and phenotype component. Neurons, from
+the Ruby persoective, contain their own code to produce their own
+phenotypes.</p>
+
+<p>There are input Neurons and output Neurons. The input Neurons are special,
+as they do not contain any input from other nodes, but serve as interfaces
+from the “real world”. Thier range of inputs are open, and it shall be up
+to the input Neuron&#39;s phenotype generators to condition those inputs,
+if need be, to someething more suiable for the neural network.</p>
+
+<h2 id="label-Issues">Issues</h2>
+
+<h3 id="label-Multicore+%2F+Cloud+Computing">Multicore / Cloud Computing</h3>
+
+<p>Some thought needs to be given to how to make this anenable to multiple
+processes so that we can leverage the power of multicore systems as well as
+multiple computers in the Cloud, etc.</p>
+
+<p>Our initial inclination  is to put all of that functionality in the
+Conroller.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="NEAT/BasicNeuronTypes.html" title="NEAT::BasicNeuronTypes (module)">BasicNeuronTypes</a></span>, <span class='object_link'><a href="NEAT/Graph.html" title="NEAT::Graph (module)">Graph</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="NEAT/Controller.html" title="NEAT::Controller (class)">Controller</a></span>, <span class='object_link'><a href="NEAT/Critter.html" title="NEAT::Critter (class)">Critter</a></span>, <span class='object_link'><a href="NEAT/Evaluator.html" title="NEAT::Evaluator (class)">Evaluator</a></span>, <span class='object_link'><a href="NEAT/Evolver.html" title="NEAT::Evolver (class)">Evolver</a></span>, <span class='object_link'><a href="NEAT/Expressor.html" title="NEAT::Expressor (class)">Expressor</a></span>, <span class='object_link'><a href="NEAT/NeatException.html" title="NEAT::NeatException (class)">NeatException</a></span>, <span class='object_link'><a href="NEAT/NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span>, <span class='object_link'><a href="NEAT/Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span>, <span class='object_link'><a href="NEAT/Operator.html" title="NEAT::Operator (class)">Operator</a></span>, <span class='object_link'><a href="NEAT/Population.html" title="NEAT::Population (class)">Population</a></span>, <span class='object_link'><a href="NEAT/Trait.html" title="NEAT::Trait (class)">Trait</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="STIMULUS-constant" class="">STIMULUS =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Name of the stimulus method in NEAT::Critter::Phenotype to use for the
+singleton method expression of the critter.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='symbol'>:stimulate</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#controller-class_method" title="controller (class method)">+ (Object) <strong>controller</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#controller%3D-class_method" title="controller= (class method)">+ (Object) <strong>controller=</strong>(controller) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_controller-class_method" title="create_controller (class method)">+ (Object) <strong>create_controller</strong>(*parms) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dpp-class_method" title="dpp (class method)">+ (Object) <strong>dpp</strong>(ob) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>PrettyPrint to log.debug.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gaussian-class_method" title="gaussian (class method)">+ (Object) <strong>gaussian</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Mixin for the gaussian object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_innovation-class_method" title="new_innovation (class method)">+ (Object) <strong>new_innovation</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Mixin for new innovation numbers.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#random_name_generator-class_method" title="random_name_generator (class method)">+ (Object) <strong>random_name_generator</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="controller-class_method">
+  
+    + (<tt>Object</tt>) <strong>controller</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+460</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 460</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="controller=-class_method">
+  
+    + (<tt>Object</tt>) <strong>controller=</strong>(controller) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+461</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 461</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller='>controller=</span><span class='lparen'>(</span><span class='id identifier rubyid_controller'>controller</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_controller-class_method">
+  
+    + (<tt>Object</tt>) <strong>create_controller</strong>(*parms) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+462</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 462</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_controller'>create_controller</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='const'>Controller</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dpp-class_method">
+  
+    + (<tt>Object</tt>) <strong>dpp</strong>(ob) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>PrettyPrint to log.debug</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dpp'>dpp</span> <span class='id identifier rubyid_ob'>ob</span>
+  <span class='comment'>#$log.ap ob
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="gaussian-class_method">
+  
+    + (<tt>Object</tt>) <strong>gaussian</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Mixin for the gaussian object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_innovation-class_method">
+  
+    + (<tt>Object</tt>) <strong>new_innovation</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Mixin for new innovation numbers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="random_name_generator-class_method">
+  
+    + (<tt>Object</tt>) <strong>random_name_generator</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_random_name_generator'>random_name_generator</span>
+  <span class='ivar'>@rng_count</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='id identifier rubyid_s'>s</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_s'>s</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='ivar'>@rng_names</span><span class='lbracket'>[</span><span class='id identifier rubyid_rand'>rand</span> <span class='ivar'>@rng_names</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span> 
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_s'>s</span> <span class='op'>+=</span> <span class='ivar'>@rng_count</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Dec 19 13:02:17 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

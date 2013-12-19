@@ -73,32 +73,37 @@ module NEAT
     def mutate_perturb_gene_weights!
       @gperturb = Distribution::Normal::rng(0, @controller.parms.mutate_perturb_gene_weights_sd) if @gperturb.nil?
       @npop.critters.each do |critter|
-        critter.genotype.genes.each do |innov, gene|
+        critter.genotype.genes.each { |innov, gene|
           if rand < @controller.parms.mutate_perturb_gene_weights_prob
             gene.weight += per = @gperturb.()
-            log.debug{ "Peturbed gene #{gene}.#{innov} by #{per}" }
+            log.debug { "Peturbed gene #{gene}.#{innov} by #{per}" }
           end
-        end
+        }
       end
     end
 
+    # TODO Finish mutate_change_gene_weights!
     def mutate_change_gene_weights!
       log.error "mutate_change_gene_weights! NIY"
     end
 
+    # TODO Finish mutate_add_genes!
     def mutate_add_genes!
       log.error "mutate_add_genes! NIY"
     end
 
+    # TODO Finish mutate_reenable_genes!
     def mutate_reenable_genes!
       log.error "mutate_reenable_genes! NIY"
     end
 
 
+    # TODO Finish mutate_add_neurons!
     def mutate_add_neurons!
       log.error "mutate_add_neurons! NIY"
     end
 
+    # TODO Finish mutate_change_neurons!
     def mutate_change_neurons!
       log.error "mutate_change_neurons! NIY"
     end
@@ -142,7 +147,7 @@ module NEAT
     # Matching genes are randomly chosen. For now, we make it 50/50.
     def sex(crit1, crit2)
       baby = Critter.new(@npop, true)
-      #
+      # TODO we need to finish the sex here!
       return baby
     end
   end

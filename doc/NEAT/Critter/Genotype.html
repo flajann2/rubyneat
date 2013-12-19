@@ -1,0 +1,946 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: NEAT::Critter::Genotype
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (G)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../NEAT.html" title="NEAT (module)">NEAT</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Critter.html" title="NEAT::Critter (class)">Critter</a></span></span>
+     &raquo; 
+    <span class="title">Genotype</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: NEAT::Critter::Genotype
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></li>
+          
+            <li class="next">NEAT::Critter::Genotype</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/rubyneat/critter.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h1 id="label-Genotype+part+of+the+Critter">Genotype part of the Critter</h1>
+
+<p>List of connections, basically.</p>
+
+<p>Also, basic phentypic expression (which may be overriden by the expressor)</p>
+
+<h1 id="label-Notes">Notes</h1>
+
+<p>Currently, all lists of neurons and genes are Hashes. The neurons are
+indexed by their own names, and the genes are indexed by their innovation
+numbers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Genotype/Gene.html" title="NEAT::Critter::Genotype::Gene (class)">Gene</a></span>
+    
+  
+</p>
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#critter-instance_method" title="#critter (instance method)">- (Object) <strong>critter</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Critter to which we belong.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#genes-instance_method" title="#genes (instance method)">- (Object) <strong>genes</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Genes keyed by innovation numbers.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#neural_gene_map-instance_method" title="#neural_gene_map (instance method)">- (Object) <strong>neural_gene_map</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Map neurons to the genes that marks them as output { oneu_name =&gt; [
+gene_1, gene_2,… gene_n], …} Just take the in_neuron name and the weight to
+do the call to that neuron function with the appropriate weights.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#neural_inputs-instance_method" title="#neural_inputs (instance method)">- (Object) <strong>neural_inputs</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Instantiations of neural inputs and outputs.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#neural_outputs-instance_method" title="#neural_outputs (instance method)">- (Object) <strong>neural_outputs</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Instantiations of neural inputs and outputs.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#neurons-instance_method" title="#neurons (instance method)">- (Object) <strong>neurons</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>List of neurons hashed by name.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#controller-instance_method" title="NEAT::NeatOb#controller (method)">#controller</a></span>, <span class='object_link'><a href="../NeatOb.html#name-instance_method" title="NEAT::NeatOb#name (method)">#name</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#forget%21-instance_method" title="#forget! (instance method)">- (Object) <strong>forget!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Make the neurons forget their wiring.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Genotype) <strong>initialize</strong>(critter, mating = false) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of Genotype.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize_copy-instance_method" title="#initialize_copy (instance method)">- (Object) <strong>initialize_copy</strong>(source) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Deep-copy the neurons and genes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#wire%21-instance_method" title="#wire! (instance method)">- (Object) <strong>wire!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Wire up the neurons based on the genes.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="NEAT::Critter::Genotype (class)">Genotype</a></span></tt>) <strong>initialize</strong>(critter, mating = false) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of Genotype</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 83</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='comma'>,</span> <span class='id identifier rubyid_mating'>mating</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='kw'>super</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
+  <span class='ivar'>@critter</span> <span class='op'>=</span> <span class='id identifier rubyid_critter'>critter</span>
+
+  <span class='comment'># Initialize basic structures
+</span>  <span class='ivar'>@neural_inputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='ivar'>@critter</span><span class='period'>.</span><span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_input_neurons'>input_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='op'>|</span> 
+                          <span class='lbracket'>[</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='comma'>,</span> <span class='id identifier rubyid_sym'>sym</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+                        <span class='rbrace'>}</span><span class='rbracket'>]</span>
+
+  <span class='ivar'>@neural_outputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='ivar'>@critter</span><span class='period'>.</span><span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_output_neurons'>output_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='op'>|</span> 
+                          <span class='lbracket'>[</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='comma'>,</span> <span class='id identifier rubyid_sym'>sym</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+                        <span class='rbrace'>}</span><span class='rbracket'>]</span>
+  <span class='ivar'>@neurons</span> <span class='op'>=</span> <span class='ivar'>@neural_inputs</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
+  <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span> <span class='ivar'>@neural_outputs</span>
+
+  <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evolver'>evolver</span><span class='period'>.</span><span class='id identifier rubyid_gen_initial_genes!'>gen_initial_genes!</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_mating'>mating</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="critter=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="critter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>critter</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Critter to which we belong</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_critter'>critter</span>
+  <span class='ivar'>@critter</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="genes=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="genes-instance_method">
+  
+    - (<tt>Object</tt>) <strong>genes</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Genes keyed by innovation numbers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_genes'>genes</span>
+  <span class='ivar'>@genes</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="neural_gene_map-instance_method">
+  
+    - (<tt>Object</tt>) <strong>neural_gene_map</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Map neurons to the genes that marks them as output { oneu_name =&gt; [
+gene_1, gene_2,… gene_n], …} Just take the in_neuron name and the weight to
+do the call to that neuron function with the appropriate weights</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 81</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_neural_gene_map'>neural_gene_map</span>
+  <span class='ivar'>@neural_gene_map</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="neural_inputs-instance_method">
+  
+    - (<tt>Object</tt>) <strong>neural_inputs</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Instantiations of neural inputs and outputs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span>
+  <span class='ivar'>@neural_inputs</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="neural_outputs-instance_method">
+  
+    - (<tt>Object</tt>) <strong>neural_outputs</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Instantiations of neural inputs and outputs</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_neural_outputs'>neural_outputs</span>
+  <span class='ivar'>@neural_outputs</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="neurons=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="neurons-instance_method">
+  
+    - (<tt>Object</tt>) <strong>neurons</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>List of neurons hashed by name</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_neurons'>neurons</span>
+  <span class='ivar'>@neurons</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="forget!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>forget!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Make the neurons forget their wiring.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 112</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_forget!'>forget!</span>
+  <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span>
+    <span class='id identifier rubyid_neu'>neu</span><span class='period'>.</span><span class='id identifier rubyid_clear_graph'>clear_graph</span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@neural_gene_map</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_copy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize_copy</strong>(source) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deep-copy the neurons and genes. Question: Do we really need to deep-copy
+the neurons? There is the possibility of modifying the neurons themselves,
+so for now we do this.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize_copy'>initialize_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='rparen'>)</span>
+  <span class='kw'>super</span>
+  <span class='ivar'>@neurons</span> <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_neurons'>neurons</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
+  <span class='ivar'>@genes</span> <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="wire!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>wire!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Wire up the neurons based on the genes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 120</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_wire!'>wire!</span>
+  <span class='id identifier rubyid_forget!'>forget!</span>
+  <span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_innov'>innov</span><span class='comma'>,</span> <span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span>
+      <span class='ivar'>@neurons</span><span class='lbracket'>[</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_out_neuron'>out_neuron</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='ivar'>@neurons</span><span class='lbracket'>[</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_in_neuron'>in_neuron</span><span class='rbracket'>]</span>
+      <span class='ivar'>@neural_gene_map</span><span class='lbracket'>[</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_out_neuron'>out_neuron</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='ivar'>@neural_gene_map</span><span class='lbracket'>[</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_out_neuron'>out_neuron</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='ivar'>@neural_gene_map</span><span class='lbracket'>[</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_out_neuron'>out_neuron</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_gene'>gene</span> <span class='kw'>unless</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_in_neuron'>in_neuron</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Dec 19 13:02:18 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

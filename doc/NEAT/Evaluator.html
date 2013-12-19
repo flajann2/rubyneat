@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: NEAT::Evaluator
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (E)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../NEAT.html" title="NEAT (module)">NEAT</a></span></span>
+     &raquo; 
+    <span class="title">Evaluator</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: NEAT::Evaluator
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Operator.html" title="NEAT::Operator (class)">Operator</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="Operator.html" title="NEAT::Operator (class)">Operator</a></span></li>
+          
+            <li class="next">NEAT::Evaluator</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/rubyneat/evaluator.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h1 id="label-Evaluator+evaluates+phenotype+of+critter+for+fitness%2C+novelty%2C+etc.">Evaluator evaluates phenotype of critter for fitness, novelty, etc.</h1>
+
+<p>We can have a chain of these evaluators whose outputs are summed, etc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#controller-instance_method" title="NEAT::NeatOb#controller (method)">#controller</a></span>, <span class='object_link'><a href="NeatOb.html#name-instance_method" title="NEAT::NeatOb#name (method)">#name</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#analyze_for_fitness%21-instance_method" title="#analyze_for_fitness! (instance method)">- (Object) <strong>analyze_for_fitness!</strong>(critter) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Analyze the evaluation and compute a fitness for the given critter.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evaluate%21-instance_method" title="#evaluate! (instance method)">- (Object) <strong>evaluate!</strong>(critter) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Evaluate one step of a sequence of evaluations.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ready_for_evaluation-instance_method" title="#ready_for_evaluation (instance method)">- (Object) <strong>ready_for_evaluation</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is call prior to any sequence evaluation.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">NEAT::NeatOb</a></span></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="analyze_for_fitness!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>analyze_for_fitness!</strong>(critter) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Analyze the evaluation and compute a fitness for the given critter.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_analyze_for_fitness!'>analyze_for_fitness!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_fitvec'>fitvec</span> <span class='op'>=</span> <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_seq'>seq</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='op'>|</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func'>fitness_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seq'>seq</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='comment'># Average the fitness vector to get a scalar fitness.
+</span>  <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span> <span class='op'>=</span> <span class='id identifier rubyid_fitvec'>fitvec</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span><span class='id identifier rubyid_r'>r</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='op'>+</span><span class='id identifier rubyid_r'>r</span><span class='rbrace'>}</span> <span class='op'>/</span> <span class='id identifier rubyid_fitvec'>fitvec</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span>
+  <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Fitness Vector: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_fitvec'>fitvec</span><span class='embexpr_end'>}</span><span class='tstring_content'>, fitness of </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span><span class='embexpr_end'>}</span><span class='tstring_content'> assigned to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="evaluate!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>evaluate!</strong>(critter) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Evaluate one step of a sequence of evaluations. For time series and
+realtime ongoing evaluations, everything is.</p>
+
+<p>Returns [vin, vout], where vin in the input vector, and vout in the output
+vector from the critter.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_evaluate!'>evaluate!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_vin'>vin</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func'>query_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_vout'>vout</span> <span class='op'>=</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_stimulate'>stimulate</span> <span class='op'>*</span><span class='id identifier rubyid_vin'>vin</span>
+  <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>critter </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: vin=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vin'>vin</span><span class='embexpr_end'>}</span><span class='tstring_content'>. vout=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vout'>vout</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='ivar'>@crit_hist</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_critter'>critter</span>
+  <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_vin'>vin</span><span class='comma'>,</span> <span class='id identifier rubyid_vout'>vout</span><span class='rbracket'>]</span> 
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ready_for_evaluation-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ready_for_evaluation</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This is call prior to any sequence evaluation. Here, we clean up persistent
+tracking information, etc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span>
+  <span class='ivar'>@crit_hist</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Dec 19 13:02:18 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

@@ -17,7 +17,7 @@ module NEAT
     # in the form of a response hash (which corresponds directly to the
     # output neurons).
     #
-    # This implenetation assumes an acyclic graph (feed forward)
+    # This implementation assumes an acyclic graph (feed forward)
     # and cannot handle cycles at all. Later we may fix this or create
     # a type of Expressor that can.
     def express!(critter)

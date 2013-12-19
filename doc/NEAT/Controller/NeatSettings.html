@@ -1,0 +1,3492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: NEAT::Controller::NeatSettings
+  
+    &mdash; Documentation by YARD 0.8.7.3
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (N)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../NEAT.html" title="NEAT (module)">NEAT</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Controller.html" title="NEAT::Controller (class)">Controller</a></span></span>
+     &raquo; 
+    <span class="title">NeatSettings</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: NEAT::Controller::NeatSettings
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></li>
+          
+            <li class="next">NEAT::Controller::NeatSettings</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/rubyneat/rubyneat.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Various parameters affecting evolution. Based somewhat on the C version of
+NEAT.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#age_significance-instance_method" title="#age_significance (instance method)">- (Object) <strong>age_significance</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>based on the C version of NEAT.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#babies_stolen-instance_method" title="#babies_stolen (instance method)">- (Object) <strong>babies_stolen</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute babies_stolen.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compatibility_threshold-instance_method" title="#compatibility_threshold (instance method)">- (Object) <strong>compatibility_threshold</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Species compatability threshold.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#disjoint_coefficient-instance_method" title="#disjoint_coefficient (instance method)">- (Object) <strong>disjoint_coefficient</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Speciation coffficient.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dropoff_age-instance_method" title="#dropoff_age (instance method)">- (Object) <strong>dropoff_age</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Species Peality age for not making progress.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end_sequence_at-instance_method" title="#end_sequence_at (instance method)">- (Object) <strong>end_sequence_at</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute end_sequence_at.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#evolved_substrate_switch-instance_method" title="#evolved_substrate_switch (instance method)">- (Object) <strong>evolved_substrate_switch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enable Evolved Substrate HyperNEAT.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#excess_coefficient-instance_method" title="#excess_coefficient (instance method)">- (Object) <strong>excess_coefficient</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Speciation coffficient.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#feature_selection_switch-instance_method" title="#feature_selection_switch (instance method)">- (Object) <strong>feature_selection_switch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enable FS-NEAT.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hash_on_fitness-instance_method" title="#hash_on_fitness (instance method)">- (Object) <strong>hash_on_fitness</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set to true to returned named parameters as hashes to the fitness function
+(the default is to do ordered arrays).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hyper_switch-instance_method" title="#hyper_switch (instance method)">- (Object) <strong>hyper_switch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enable HyperNEAT.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#interspecies_mate_rate-instance_method" title="#interspecies_mate_rate (instance method)">- (Object) <strong>interspecies_mate_rate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Ratio of mating are actually interspecies.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#linktrait_mutation_sig-instance_method" title="#linktrait_mutation_sig (instance method)">- (Object) <strong>linktrait_mutation_sig</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute linktrait_mutation_sig.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mate_multipoint_avg_prob-instance_method" title="#mate_multipoint_avg_prob (instance method)">- (Object) <strong>mate_multipoint_avg_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mate_multipoint_avg_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mate_multipoint_prob-instance_method" title="#mate_multipoint_prob (instance method)">- (Object) <strong>mate_multipoint_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mate_multipoint_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mate_only_prob-instance_method" title="#mate_only_prob (instance method)">- (Object) <strong>mate_only_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mate_only_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mate_singlepoint_prob-instance_method" title="#mate_singlepoint_prob (instance method)">- (Object) <strong>mate_singlepoint_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mate_singlepoint_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_generations-instance_method" title="#max_generations (instance method)">- (Object) <strong>max_generations</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Maximum number of generations to run, if given.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_species-instance_method" title="#max_species (instance method)">- (Object) <strong>max_species</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Max target number of species (will result in the compatability_coeifficient
+being adjusted automatically.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_add_gene_prob-instance_method" title="#mutate_add_gene_prob (instance method)">- (Object) <strong>mutate_add_gene_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_add_gene_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_add_neuron_prob-instance_method" title="#mutate_add_neuron_prob (instance method)">- (Object) <strong>mutate_add_neuron_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_add_neuron_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_change_gene_weights_prob-instance_method" title="#mutate_change_gene_weights_prob (instance method)">- (Object) <strong>mutate_change_gene_weights_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>For gene weights perturbations and changes (complete overwrites).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_change_gene_weights_sd-instance_method" title="#mutate_change_gene_weights_sd (instance method)">- (Object) <strong>mutate_change_gene_weights_sd</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>For gene weights perturbations and changes (complete overwrites).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_gene_reenable_prob-instance_method" title="#mutate_gene_reenable_prob (instance method)">- (Object) <strong>mutate_gene_reenable_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_gene_reenable_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_gene_trait_prob-instance_method" title="#mutate_gene_trait_prob (instance method)">- (Object) <strong>mutate_gene_trait_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_gene_trait_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_neuron_trait_prob-instance_method" title="#mutate_neuron_trait_prob (instance method)">- (Object) <strong>mutate_neuron_trait_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_neuron_trait_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_only_prob-instance_method" title="#mutate_only_prob (instance method)">- (Object) <strong>mutate_only_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_only_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_perturb_gene_weights_prob-instance_method" title="#mutate_perturb_gene_weights_prob (instance method)">- (Object) <strong>mutate_perturb_gene_weights_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>For gene weights perturbations and changes (complete overwrites).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_perturb_gene_weights_sd-instance_method" title="#mutate_perturb_gene_weights_sd (instance method)">- (Object) <strong>mutate_perturb_gene_weights_sd</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>For gene weights perturbations and changes (complete overwrites).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_random_trait_prob-instance_method" title="#mutate_random_trait_prob (instance method)">- (Object) <strong>mutate_random_trait_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_random_trait_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutate_toggle_enable_prob-instance_method" title="#mutate_toggle_enable_prob (instance method)">- (Object) <strong>mutate_toggle_enable_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutate_toggle_enable_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mutdiff_coefficient-instance_method" title="#mutdiff_coefficient (instance method)">- (Object) <strong>mutdiff_coefficient</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute mutdiff_coefficient.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#neuron_trait_mut_sig-instance_method" title="#neuron_trait_mut_sig (instance method)">- (Object) <strong>neuron_trait_mut_sig</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute neuron_trait_mut_sig.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#newlink_tries-instance_method" title="#newlink_tries (instance method)">- (Object) <strong>newlink_tries</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute newlink_tries.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#population_size-instance_method" title="#population_size (instance method)">- (Object) <strong>population_size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If set, will start off at the specified size and  grow to the bigger
+population size.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#print_every-instance_method" title="#print_every (instance method)">- (Object) <strong>print_every</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute print_every.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#real_time_switch-instance_method" title="#real_time_switch (instance method)">- (Object) <strong>real_time_switch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Enable RT-NEAT, for gradual evolution suitable for games and other
+human-interactive systems.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recur_only_prob-instance_method" title="#recur_only_prob (instance method)">- (Object) <strong>recur_only_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute recur_only_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#recur_prob-instance_method" title="#recur_prob (instance method)">- (Object) <strong>recur_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute recur_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_population_size-instance_method" title="#start_population_size (instance method)">- (Object) <strong>start_population_size</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If set, will start off at the specified size and  grow to the bigger
+population size.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_sequence_at-instance_method" title="#start_sequence_at (instance method)">- (Object) <strong>start_sequence_at</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute start_sequence_at.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#survival_threshold-instance_method" title="#survival_threshold (instance method)">- (Object) <strong>survival_threshold</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>factor (0 to 1) of the top percentage of the species that&#39;s allowed to
+mate.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#trait_mutation_power-instance_method" title="#trait_mutation_power (instance method)">- (Object) <strong>trait_mutation_power</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute trait_mutation_power.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#trait_param_mut_prob-instance_method" title="#trait_param_mut_prob (instance method)">- (Object) <strong>trait_param_mut_prob</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute trait_param_mut_prob.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#weigh_mut_power-instance_method" title="#weigh_mut_power (instance method)">- (Object) <strong>weigh_mut_power</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute weigh_mut_power.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#weight_coefficient-instance_method" title="#weight_coefficient (instance method)">- (Object) <strong>weight_coefficient</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Speciation coffficient.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#controller-instance_method" title="NEAT::NeatOb#controller (method)">#controller</a></span>, <span class='object_link'><a href="../NeatOb.html#name-instance_method" title="NEAT::NeatOb#name (method)">#name</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (NeatSettings) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set up defaults for mandatory entries.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="NEAT::Controller::NeatSettings (class)">NeatSettings</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set up defaults for mandatory entries.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 372</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='kw'>super</span>
+  <span class='ivar'>@start_sequence_at</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='ivar'>@end_sequence_at</span> <span class='op'>=</span> <span class='int'>100</span>
+  <span class='ivar'>@max_generations</span> <span class='op'>=</span> <span class='int'>1000</span>
+
+  <span class='comment'># Default operators
+</span>  <span class='ivar'>@evaluator</span> <span class='op'>=</span> <span class='const'>Evaluator</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>self</span>
+  <span class='ivar'>@expressor</span> <span class='op'>=</span> <span class='const'>Expressor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>self</span>
+  <span class='ivar'>@evolver</span> <span class='op'>=</span> <span class='const'>Evolver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="age_significance=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="age_significance-instance_method">
+  
+    - (<tt>Object</tt>) <strong>age_significance</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>based on the C version of NEAT</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+288
+289
+290</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 288</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_age_significance'>age_significance</span>
+  <span class='ivar'>@age_significance</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="babies_stolen=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="babies_stolen-instance_method">
+  
+    - (<tt>Object</tt>) <strong>babies_stolen</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute babies_stolen</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+289
+290
+291</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 289</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_babies_stolen'>babies_stolen</span>
+  <span class='ivar'>@babies_stolen</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="compatibility_threshold=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="compatibility_threshold-instance_method">
+  
+    - (<tt>Object</tt>) <strong>compatibility_threshold</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Species compatability threshold</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 292</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compatibility_threshold'>compatibility_threshold</span>
+  <span class='ivar'>@compatibility_threshold</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="disjoint_coefficient=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="disjoint_coefficient-instance_method">
+  
+    - (<tt>Object</tt>) <strong>disjoint_coefficient</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Speciation coffficient</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+295
+296
+297</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_disjoint_coefficient'>disjoint_coefficient</span>
+  <span class='ivar'>@disjoint_coefficient</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="dropoff_age=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="dropoff_age-instance_method">
+  
+    - (<tt>Object</tt>) <strong>dropoff_age</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Species Peality age for not making progress</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+302
+303
+304</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 302</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dropoff_age'>dropoff_age</span>
+  <span class='ivar'>@dropoff_age</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="end_sequence_at=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="end_sequence_at-instance_method">
+  
+    - (<tt>Object</tt>) <strong>end_sequence_at</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute end_sequence_at</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+341
+342
+343</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 341</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_end_sequence_at'>end_sequence_at</span>
+  <span class='ivar'>@end_sequence_at</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="evolved_substrate_switch=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="evolved_substrate_switch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>evolved_substrate_switch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enable Evolved Substrate HyperNEAT. Meaningless unless hyper_switch is also
+enabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+365
+366
+367</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 365</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_evolved_substrate_switch'>evolved_substrate_switch</span>
+  <span class='ivar'>@evolved_substrate_switch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="excess_coefficient=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="excess_coefficient-instance_method">
+  
+    - (<tt>Object</tt>) <strong>excess_coefficient</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Speciation coffficient</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+295
+296
+297</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_excess_coefficient'>excess_coefficient</span>
+  <span class='ivar'>@excess_coefficient</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="feature_selection_switch=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="feature_selection_switch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>feature_selection_switch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enable FS-NEAT</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+356
+357
+358</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 356</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_feature_selection_switch'>feature_selection_switch</span>
+  <span class='ivar'>@feature_selection_switch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="hash_on_fitness=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="hash_on_fitness-instance_method">
+  
+    - (<tt>Object</tt>) <strong>hash_on_fitness</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set to true to returned named parameters as hashes to the fitness function
+(the default is to do ordered arrays)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+285
+286
+287</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 285</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hash_on_fitness'>hash_on_fitness</span>
+  <span class='ivar'>@hash_on_fitness</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="hyper_switch=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="hyper_switch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>hyper_switch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enable HyperNEAT. This will result in the critters being interpreted as
+CPPNs for substrate weights. Additional setup will be necessary.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+361
+362
+363</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 361</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hyper_switch'>hyper_switch</span>
+  <span class='ivar'>@hyper_switch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="interspecies_mate_rate=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="interspecies_mate_rate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>interspecies_mate_rate</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Ratio of mating are actually interspecies</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+305
+306
+307</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 305</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_interspecies_mate_rate'>interspecies_mate_rate</span>
+  <span class='ivar'>@interspecies_mate_rate</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="linktrait_mutation_sig=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="linktrait_mutation_sig-instance_method">
+  
+    - (<tt>Object</tt>) <strong>linktrait_mutation_sig</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute linktrait_mutation_sig</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+307
+308
+309</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 307</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_linktrait_mutation_sig'>linktrait_mutation_sig</span>
+  <span class='ivar'>@linktrait_mutation_sig</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mate_multipoint_avg_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mate_multipoint_avg_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mate_multipoint_avg_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mate_multipoint_avg_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+308
+309
+310</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 308</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mate_multipoint_avg_prob'>mate_multipoint_avg_prob</span>
+  <span class='ivar'>@mate_multipoint_avg_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mate_multipoint_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mate_multipoint_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mate_multipoint_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mate_multipoint_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+309
+310
+311</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 309</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mate_multipoint_prob'>mate_multipoint_prob</span>
+  <span class='ivar'>@mate_multipoint_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mate_only_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mate_only_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mate_only_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mate_only_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+310
+311
+312</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 310</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mate_only_prob'>mate_only_prob</span>
+  <span class='ivar'>@mate_only_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mate_singlepoint_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mate_singlepoint_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mate_singlepoint_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mate_singlepoint_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+311
+312
+313</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 311</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mate_singlepoint_prob'>mate_singlepoint_prob</span>
+  <span class='ivar'>@mate_singlepoint_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="max_generations=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="max_generations-instance_method">
+  
+    - (<tt>Object</tt>) <strong>max_generations</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Maximum number of generations to run, if given.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+314
+315
+316</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 314</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_max_generations'>max_generations</span>
+  <span class='ivar'>@max_generations</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="max_species=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="max_species-instance_method">
+  
+    - (<tt>Object</tt>) <strong>max_species</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Max target number of species (will result in the compatability_coeifficient
+being adjusted automatically</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+299
+300
+301</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 299</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_max_species'>max_species</span>
+  <span class='ivar'>@max_species</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_add_gene_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_add_gene_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_add_gene_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_add_gene_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+316
+317
+318</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 316</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_add_gene_prob'>mutate_add_gene_prob</span>
+  <span class='ivar'>@mutate_add_gene_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_add_neuron_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_add_neuron_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_add_neuron_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_add_neuron_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+317
+318
+319</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 317</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_add_neuron_prob'>mutate_add_neuron_prob</span>
+  <span class='ivar'>@mutate_add_neuron_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_change_gene_weights_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_change_gene_weights_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_change_gene_weights_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>For gene weights perturbations and changes (complete overwrites)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+324
+325
+326</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 324</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_change_gene_weights_prob'>mutate_change_gene_weights_prob</span>
+  <span class='ivar'>@mutate_change_gene_weights_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_change_gene_weights_sd=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_change_gene_weights_sd-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_change_gene_weights_sd</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>For gene weights perturbations and changes (complete overwrites)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+324
+325
+326</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 324</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_change_gene_weights_sd'>mutate_change_gene_weights_sd</span>
+  <span class='ivar'>@mutate_change_gene_weights_sd</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_gene_reenable_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_gene_reenable_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_gene_reenable_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_gene_reenable_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+319
+320
+321</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 319</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_gene_reenable_prob'>mutate_gene_reenable_prob</span>
+  <span class='ivar'>@mutate_gene_reenable_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_gene_trait_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_gene_trait_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_gene_trait_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_gene_trait_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+321
+322
+323</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 321</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_gene_trait_prob'>mutate_gene_trait_prob</span>
+  <span class='ivar'>@mutate_gene_trait_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_neuron_trait_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_neuron_trait_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_neuron_trait_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_neuron_trait_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+329
+330
+331</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 329</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_neuron_trait_prob'>mutate_neuron_trait_prob</span>
+  <span class='ivar'>@mutate_neuron_trait_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_only_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_only_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_only_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_only_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+330
+331
+332</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 330</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_only_prob'>mutate_only_prob</span>
+  <span class='ivar'>@mutate_only_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_perturb_gene_weights_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_perturb_gene_weights_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_perturb_gene_weights_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>For gene weights perturbations and changes (complete overwrites)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+324
+325
+326</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 324</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_perturb_gene_weights_prob'>mutate_perturb_gene_weights_prob</span>
+  <span class='ivar'>@mutate_perturb_gene_weights_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_perturb_gene_weights_sd=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_perturb_gene_weights_sd-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_perturb_gene_weights_sd</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>For gene weights perturbations and changes (complete overwrites)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+324
+325
+326</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 324</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_perturb_gene_weights_sd'>mutate_perturb_gene_weights_sd</span>
+  <span class='ivar'>@mutate_perturb_gene_weights_sd</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_random_trait_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_random_trait_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_random_trait_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_random_trait_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+331
+332
+333</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 331</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_random_trait_prob'>mutate_random_trait_prob</span>
+  <span class='ivar'>@mutate_random_trait_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutate_toggle_enable_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutate_toggle_enable_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate_toggle_enable_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutate_toggle_enable_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+332
+333
+334</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 332</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate_toggle_enable_prob'>mutate_toggle_enable_prob</span>
+  <span class='ivar'>@mutate_toggle_enable_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="mutdiff_coefficient=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="mutdiff_coefficient-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutdiff_coefficient</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute mutdiff_coefficient</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+333
+334
+335</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 333</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mutdiff_coefficient'>mutdiff_coefficient</span>
+  <span class='ivar'>@mutdiff_coefficient</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="neuron_trait_mut_sig=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="neuron_trait_mut_sig-instance_method">
+  
+    - (<tt>Object</tt>) <strong>neuron_trait_mut_sig</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute neuron_trait_mut_sig</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+335
+336
+337</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 335</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_neuron_trait_mut_sig'>neuron_trait_mut_sig</span>
+  <span class='ivar'>@neuron_trait_mut_sig</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="newlink_tries=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="newlink_tries-instance_method">
+  
+    - (<tt>Object</tt>) <strong>newlink_tries</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute newlink_tries</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+334
+335
+336</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 334</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_newlink_tries'>newlink_tries</span>
+  <span class='ivar'>@newlink_tries</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="population_size=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="population_size-instance_method">
+  
+    - (<tt>Object</tt>) <strong>population_size</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If set, will start off at the specified size and  grow to the bigger
+population size</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+339
+340
+341</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 339</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_population_size'>population_size</span>
+  <span class='ivar'>@population_size</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="print_every=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="print_every-instance_method">
+  
+    - (<tt>Object</tt>) <strong>print_every</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute print_every</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+343
+344
+345</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 343</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_print_every'>print_every</span>
+  <span class='ivar'>@print_every</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="real_time_switch=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="real_time_switch-instance_method">
+  
+    - (<tt>Object</tt>) <strong>real_time_switch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Enable RT-NEAT, for gradual evolution suitable for games and other
+human-interactive systems.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+369
+370
+371</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 369</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_real_time_switch'>real_time_switch</span>
+  <span class='ivar'>@real_time_switch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="recur_only_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="recur_only_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>recur_only_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute recur_only_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+344
+345
+346</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 344</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_recur_only_prob'>recur_only_prob</span>
+  <span class='ivar'>@recur_only_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="recur_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="recur_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>recur_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute recur_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+345
+346
+347</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 345</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_recur_prob'>recur_prob</span>
+  <span class='ivar'>@recur_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="start_population_size=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="start_population_size-instance_method">
+  
+    - (<tt>Object</tt>) <strong>start_population_size</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>If set, will start off at the specified size and  grow to the bigger
+population size</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+339
+340
+341</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 339</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_start_population_size'>start_population_size</span>
+  <span class='ivar'>@start_population_size</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="start_sequence_at=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="start_sequence_at-instance_method">
+  
+    - (<tt>Object</tt>) <strong>start_sequence_at</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute start_sequence_at</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+341
+342
+343</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 341</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_start_sequence_at'>start_sequence_at</span>
+  <span class='ivar'>@start_sequence_at</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="survival_threshold=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="survival_threshold-instance_method">
+  
+    - (<tt>Object</tt>) <strong>survival_threshold</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>factor (0 to 1) of the top percentage of the species that&#39;s allowed to
+mate.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+349
+350
+351</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 349</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_survival_threshold'>survival_threshold</span>
+  <span class='ivar'>@survival_threshold</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="trait_mutation_power=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="trait_mutation_power-instance_method">
+  
+    - (<tt>Object</tt>) <strong>trait_mutation_power</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute trait_mutation_power</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+351
+352
+353</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 351</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_trait_mutation_power'>trait_mutation_power</span>
+  <span class='ivar'>@trait_mutation_power</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="trait_param_mut_prob=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="trait_param_mut_prob-instance_method">
+  
+    - (<tt>Object</tt>) <strong>trait_param_mut_prob</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute trait_param_mut_prob</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+352
+353
+354</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 352</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_trait_param_mut_prob'>trait_param_mut_prob</span>
+  <span class='ivar'>@trait_param_mut_prob</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="weigh_mut_power=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="weigh_mut_power-instance_method">
+  
+    - (<tt>Object</tt>) <strong>weigh_mut_power</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute weigh_mut_power</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+353
+354
+355</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 353</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_weigh_mut_power'>weigh_mut_power</span>
+  <span class='ivar'>@weigh_mut_power</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="weight_coefficient=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="weight_coefficient-instance_method">
+  
+    - (<tt>Object</tt>) <strong>weight_coefficient</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Speciation coffficient</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+295
+296
+297</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_weight_coefficient'>weight_coefficient</span>
+  <span class='ivar'>@weight_coefficient</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+</div>
+
+    <div id="footer">
+  Generated on Thu Dec 19 13:02:18 2013 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.3 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
