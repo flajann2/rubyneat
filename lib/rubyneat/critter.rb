@@ -85,6 +85,7 @@ module NEAT
         @critter = critter
 
         # Initialize basic structures
+        @genes = nil
         @neural_inputs = Hash[@critter.population.input_neurons.map { |sym, ineu| 
                                 [sym, ineu.new(@controller, sym)]
                               }]
@@ -125,6 +126,9 @@ module NEAT
             @neural_gene_map[gene.out_neuron] = [] if @neural_gene_map[gene.out_neuron].nil?
             @neural_gene_map[gene.out_neuron] << gene unless gene.in_neuron.nil?
           end
+        end unless @genes.nil?
+        if @genes.nil?
+          $log.error "Genes Not Present"
         end
       end
 
@@ -156,6 +160,7 @@ module NEAT
           @genotype = genotype
           @enabled = true
           @innovation = NEAT::new_innovation
+          @in_neuron = @out_neuron = nil
         end
 
         def enabled? ; @enabled ; end
