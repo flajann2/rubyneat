@@ -435,13 +435,13 @@ module NEAT
         end
         @population.analyze!
         @population.speciate!
-        @population.evolve
+        new_pop = @population.evolve
 
         ## Report hook for evaluation
         @report_hook.(@population) unless @report_hook.nil?
 
         ## Evolve population
-        @population = @population.evolve
+        @population = new_pop
 
         ## Finish up this run
         @end_run_func.(self) unless @end_run_func.nil?
