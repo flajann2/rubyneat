@@ -1,5 +1,4 @@
-require 'rubyneat/rubyneat'
-require 'rubyneat/dsl'
+require 'rubyneat'
 
 module DSLSetup
   include DSL

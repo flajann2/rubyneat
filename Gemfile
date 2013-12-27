@@ -15,4 +15,6 @@ gem 'awesome_print'
 group :development do
   gem 'rspec'
   gem 'yard'
+  gem 'guard'
+  gem 'guard-rspec'
 end
