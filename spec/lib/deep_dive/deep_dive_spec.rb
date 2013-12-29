@@ -65,11 +65,12 @@ describe DeepDive do
     it 'deep'
   end
 
-  context 'arrays and hashes' do
+  context 'enumerables' do
     it 'makes copies of the arrayed objects' do
       cfb = @foobar.dclone
       cfb.arr.size.should > 0
-      (0 .. cfb.arr.size).each do |i|
+      (0 ... cfb.arr.size).each do |i|
+        cfb.arr[i].should_not be_nil
         cfb.arr[i].should_not == @foobar.arr[i]
       end
     end
@@ -83,4 +84,3 @@ describe DeepDive do
     end
   end
 end
-
