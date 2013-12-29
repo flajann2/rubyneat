@@ -15,16 +15,18 @@ for deep cloning or deep duping.
 =end
 
 module DeepDive
-  def odup
-    _odup dupit: true
+  # #ddup is a Deep Dive's replacement for #dup.
+  def ddup
+    _replicate dupit: true
   end
 
-  def oclone
-    _odup dupit: false
+  # #dclone is Deep Dive's replacement for #clone.
+  def dclone
+    _replicate dupit: false
   end
 
-  # not meant to be called externally. Use either odup or oclone.
-  def _odup(dupit: true, oc: {})
+  # not meant to be called externally. Use either ddup or dclone.
+  def _replicate(dupit: true, oc: {})
     unless oc.member? self
       copy = oc[self] = if dupit
                           dup
@@ -34,11 +36,11 @@ module DeepDive
       copy.instance_variables.map do |var|
         [var, instance_variable_get(var)]
       end.reject do |var, ob|
-        not ob.respond_to? :_odup
+        not ob.respond_to? :_replicate
       end.reject do |var, ob|
         self.class.excluded? var
       end.each do |var, value|
-        copy.instance_variable_set(var, value._odup(oc: oc, dupit: dupit))
+        copy.instance_variable_set(var, value._replicate(oc: oc, dupit: dupit))
       end
     end
     oc[self]

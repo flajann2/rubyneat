@@ -14,7 +14,7 @@ class Bar < FooBase
 end
 
 class FooBar < FooBase
-  attr_accessor :a, :b, :c, :changeme, :dontcopy
+  attr_accessor :a, :b, :c, :changeme, :dontcopy, :arr, :hsh
   exclude :dontcopy
 end
 
@@ -23,6 +23,8 @@ describe DeepDive do
     @foo = Foo.new
     @bar = Bar.new
     @foobar = FooBar.new
+    @foobar.arr = [@foo, @bar, @foobar]
+    @foobar.hsh = {foo: @foo, bar: @bar, foobar: @foobar}
 
     @foo.a = 'foo just around'
     @bar.a = 'bar hanging around'
@@ -35,7 +37,7 @@ describe DeepDive do
 
   context 'clone' do
     it 'simple' do
-      cfoo = @foo.oclone
+      cfoo = @foo.dclone
       cfoo.should_not == nil
       cfoo.should_not == @foo
       @foo.b.changeme = 'changed'
@@ -46,21 +48,39 @@ describe DeepDive do
 
     it 'exclusion' do
       @foobar.dontcopy = @bar
-      cfoobar = @foobar.oclone
+      cfoobar = @foobar.dclone
       cfoobar.dontcopy.should == @foobar.dontcopy
 
       @foo.a = @bar
-      cfoo = @foo.oclone
+      cfoo = @foo.dclone
       cfoo.a.should_not == @foo.a
     end
   end
 
   context 'dup' do
     it 'simple' do
-      cfoo = @foo.odup
+      cfoo = @foo.ddup
       cfoo.should_not == nil
     end
     it 'deep'
+  end
+
+  context 'arrays and hashes' do
+    it 'makes copies of the arrayed objects' do
+      cfb = @foobar.dclone
+      cfb.arr.size.should > 0
+      (0 .. cfb.arr.size).each do |i|
+        cfb.arr[i].should_not == @foobar.arr[i]
+      end
+    end
+
+    it 'makes copies of the hashed objects' do
+      cfb = @foobar.dclone
+      cfb.hsh.size.should > 0
+      cfb.hsh.each do |k, o|
+        cfb.hsh[k].should_not == @foobar.hsh[k]
+      end
+    end
   end
 end
 
