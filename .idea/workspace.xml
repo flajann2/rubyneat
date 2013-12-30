@@ -37,17 +37,15 @@
             <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="84" column="14" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1965">
-                  <folding>
-                    <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Gemfile">
+          <file leaf-file-name="rubyneat.gemspec" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/rubyneat.gemspec">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="0" selection-start="316" selection-end="316" vertical-scroll-proportion="0.33066133" vertical-offset="0" max-vertical-offset="998">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11535">
                   <folding />
                 </state>
               </provider>
@@ -60,7 +58,7 @@
           <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Rakefile">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="28" column="26" selection-start="725" selection-end="725" vertical-scroll-proportion="0.4208417" vertical-offset="0" max-vertical-offset="998">
+                <state line="41" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.61623245" vertical-offset="0" max-vertical-offset="998">
                   <folding />
                 </state>
               </provider>
@@ -98,8 +96,8 @@
         <option value="$PROJECT_DIR$/lib/deep_dive/deep_dive.rb" />
         <option value="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb" />
         <option value="$PROJECT_DIR$/spec/lib/deep_dive/deep_dive_spec.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/Rakefile" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -803,9 +801,7 @@
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="95" column="0" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0" vertical-offset="1425" max-vertical-offset="1950">
-          <folding>
-            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,25 +995,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="14" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1965">
-          <folding>
-            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="26" selection-start="725" selection-end="725" vertical-scroll-proportion="0.4208417" vertical-offset="0" max-vertical-offset="998">
+        <state line="41" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.61623245" vertical-offset="0" max-vertical-offset="998">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="316" selection-end="316" vertical-scroll-proportion="0.33066133" vertical-offset="0" max-vertical-offset="998">
+        <state line="24" column="0" selection-start="362" selection-end="362" vertical-scroll-proportion="0.36072144" vertical-offset="0" max-vertical-offset="998">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="14" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rubyneat.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11535">
           <folding />
         </state>
       </provider>

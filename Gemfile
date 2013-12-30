@@ -19,4 +19,6 @@ group :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'semver'
+  gem "jeweler", "~> 1.8.7"
+  gem "simplecov"
 end
