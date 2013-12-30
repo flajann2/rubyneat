@@ -37,15 +37,38 @@
             <entry file="file://$PROJECT_DIR$/lib/deep_dive/deep_dive.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="97" column="0" selection-start="3222" selection-end="3222" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1965">
-                  <folding />
+                  <folding>
+                    <marker date="1388358966740" expanded="true" signature="1500:1585" placeholder="#..." />
+                    <marker date="1388358966740" expanded="true" signature="1607:3272" placeholder=" ... end" />
+                    <marker date="1388358966740" expanded="true" signature="1612:1906" placeholder="#..." />
+                    <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+                    <marker date="1388358966740" expanded="true" signature="1976:2331" placeholder="unless ... end" />
+                    <marker date="1388358966740" expanded="true" signature="1991:2248" placeholder="case ... end" />
+                    <marker date="1388358966740" expanded="true" signature="2335:2488" placeholder="#..." />
+                    <marker date="1388358966740" expanded="true" signature="2543:3029" placeholder="#..." />
+                    <marker date="1388358966740" expanded="true" signature="3069:3266" placeholder=" ... end" />
+                    <marker date="1388358966740" expanded="true" signature="3105:3243" placeholder="unless ... end" />
+                    <marker date="1388358966740" expanded="true" signature="3146:3218" placeholder="do ... end" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="deep_dive.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="deep_dive.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="67" column="14" selection-start="2122" selection-end="2122" vertical-scroll-proportion="0.2538071" vertical-offset="755" max-vertical-offset="1965">
+                <state line="84" column="14" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1965">
+                  <folding>
+                    <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Gemfile">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="22" column="0" selection-start="316" selection-end="316" vertical-scroll-proportion="0.33066133" vertical-offset="0" max-vertical-offset="998">
                   <folding />
                 </state>
               </provider>
@@ -55,10 +78,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="deep_dive_spec.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="deep_dive_spec.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/spec/lib/deep_dive/deep_dive_spec.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="80" column="28" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.81963927" vertical-offset="382" max-vertical-offset="1380">
+                <state line="51" column="49" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1380">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Rakefile">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="28" column="26" selection-start="725" selection-end="725" vertical-scroll-proportion="0.4208417" vertical-offset="0" max-vertical-offset="998">
                   <folding />
                 </state>
               </provider>
@@ -77,7 +109,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/config/application.rb" />
-        <option value="$PROJECT_DIR$/Rakefile" />
         <option value="$PROJECT_DIR$/bin/neat" />
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
         <option value="$PROJECT_DIR$/xor_neat.rb" />
@@ -94,10 +125,11 @@
         <option value="$PROJECT_DIR$/lib/oread.rb" />
         <option value="$PROJECT_DIR$/lib/deepdive/deepdive.rb" />
         <option value="$PROJECT_DIR$/lib/deep_dive.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/deep_dive/deep_dive.rb" />
         <option value="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb" />
         <option value="$PROJECT_DIR$/spec/lib/deep_dive/deep_dive_spec.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/Rakefile" />
       </list>
     </option>
   </component>
@@ -349,7 +381,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../deep_dive" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -841,14 +873,28 @@
     <entry file="file://$PROJECT_DIR$/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="33" selection-start="1990" selection-end="1990" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
-          <folding />
+          <folding>
+            <marker date="1388358966740" expanded="true" signature="1500:1585" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="1607:3272" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="1612:1906" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="1976:2331" placeholder="unless ... end" />
+            <marker date="1388358966740" expanded="true" signature="1991:2248" placeholder="case ... end" />
+            <marker date="1388358966740" expanded="true" signature="2335:2488" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="2543:3029" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="3069:3266" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="3105:3243" placeholder="unless ... end" />
+            <marker date="1388358966740" expanded="true" signature="3146:3218" placeholder="do ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="95" column="0" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0" vertical-offset="1425" max-vertical-offset="1950">
-          <folding />
+          <folding>
+            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -862,7 +908,19 @@
     <entry file="file://$PROJECT_DIR$/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="41" selection-start="1043" selection-end="1043" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1110">
-          <folding />
+          <folding>
+            <marker date="1388358966740" expanded="true" signature="1500:1585" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="1607:3272" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="1612:1906" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="1976:2331" placeholder="unless ... end" />
+            <marker date="1388358966740" expanded="true" signature="1991:2248" placeholder="case ... end" />
+            <marker date="1388358966740" expanded="true" signature="2335:2488" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="2543:3029" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="3069:3266" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="3105:3243" placeholder="unless ... end" />
+            <marker date="1388358966740" expanded="true" signature="3146:3218" placeholder="do ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,17 +1112,22 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="998" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="196" selection-end="196" vertical-scroll-proportion="0.18036072" vertical-offset="0" max-vertical-offset="998">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="97" column="0" selection-start="3222" selection-end="3222" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1965">
-          <folding />
+          <folding>
+            <marker date="1388358966740" expanded="true" signature="1500:1585" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="1607:3272" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="1612:1906" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="1976:2331" placeholder="unless ... end" />
+            <marker date="1388358966740" expanded="true" signature="1991:2248" placeholder="case ... end" />
+            <marker date="1388358966740" expanded="true" signature="2335:2488" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="2543:3029" placeholder="#..." />
+            <marker date="1388358966740" expanded="true" signature="3069:3266" placeholder=" ... end" />
+            <marker date="1388358966740" expanded="true" signature="3105:3243" placeholder="unless ... end" />
+            <marker date="1388358966740" expanded="true" signature="3146:3218" placeholder="do ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,14 +1140,30 @@
     </entry>
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="14" selection-start="2122" selection-end="2122" vertical-scroll-proportion="0.2538071" vertical-offset="755" max-vertical-offset="1965">
-          <folding />
+        <state line="84" column="14" selection-start="2695" selection-end="2695" vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1965">
+          <folding>
+            <marker date="1388358966740" expanded="true" signature="1948:2329" placeholder=" ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/lib/deep_dive/deep_dive_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="28" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.81963927" vertical-offset="382" max-vertical-offset="1380">
+        <state line="51" column="49" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="382" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rakefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="26" selection-start="725" selection-end="725" vertical-scroll-proportion="0.4208417" vertical-offset="0" max-vertical-offset="998">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="316" selection-end="316" vertical-scroll-proportion="0.33066133" vertical-offset="0" max-vertical-offset="998">
           <folding />
         </state>
       </provider>

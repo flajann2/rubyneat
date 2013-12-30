@@ -11,6 +11,7 @@ gem 'debase'
 gem 'aquarium'
 gem 'slop'
 gem 'awesome_print'
+gem 'deep_dive'
 
 group :development do
   gem 'rspec'
