@@ -78,13 +78,13 @@
   
   
     <dt class="r1">Included in:</dt>
-    <dd class="r1"><span class='object_link'><a href="DSL.html" title="DSL (module)">DSL</a></span></dd>
+    <dd class="r1"><span class='object_link'><a href="NEAT/DSL.html" title="NEAT::DSL (module)">DSL</a></span></dd>
     
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/rubyneat/neuron.rb<span class="defines">,<br />
-  lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/population.rb</span>
+    <dd class="r2 last">lib/rubyneat/dsl.rb<span class="defines">,<br />
+  lib/rubyneat/neuron.rb,<br /> lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/population.rb</span>
 </dd>
   
 </dl>
@@ -131,7 +131,7 @@ Conroller.</p>
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="NEAT/BasicNeuronTypes.html" title="NEAT::BasicNeuronTypes (module)">BasicNeuronTypes</a></span>, <span class='object_link'><a href="NEAT/Graph.html" title="NEAT::Graph (module)">Graph</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="NEAT/BasicNeuronTypes.html" title="NEAT::BasicNeuronTypes (module)">BasicNeuronTypes</a></span>, <span class='object_link'><a href="NEAT/DSL.html" title="NEAT::DSL (module)">DSL</a></span>, <span class='object_link'><a href="NEAT/Graph.html" title="NEAT::Graph (module)">Graph</a></span>
     
   
     
@@ -362,10 +362,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-460</pre>
+464</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 460</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 464</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -388,10 +388,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-461</pre>
+465</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 461</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 465</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller='>controller=</span><span class='lparen'>(</span><span class='id identifier rubyid_controller'>controller</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -414,10 +414,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-462</pre>
+466</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 462</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 466</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_controller'>create_controller</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='const'>Controller</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -451,12 +451,12 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-79
 80
-81</pre>
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dpp'>dpp</span> <span class='id identifier rubyid_ob'>ob</span>
   <span class='comment'>#$log.ap ob
@@ -492,10 +492,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-76</pre>
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 77</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -529,10 +529,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-73</pre>
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -555,17 +555,17 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-59
 60
 61
 62
 63
 64
 65
-66</pre>
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_random_name_generator'>random_name_generator</span>
   <span class='ivar'>@rng_count</span> <span class='op'>+=</span> <span class='int'>1</span>
@@ -585,7 +585,7 @@ singleton method expression of the critter.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Dec 29 20:55:08 2013 by
+  Generated on Tue Dec 31 11:21:36 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

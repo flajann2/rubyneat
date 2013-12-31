@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fred Mitchell"]
-  s.date = "2013-12-30"
+  s.date = "2013-12-31"
   s.description = "\n  NEAT Algorithm for Ruby.\n  "
   s.email = "fred@lrcsoft.com"
   s.executables = ["neat", "neat.rb"]
@@ -21,8 +21,6 @@ Gem::Specification.new do |s|
     ".idea/misc.xml",
     ".idea/modules.xml",
     ".idea/rubyneat.iml",
-    ".idea/runConfigurations/neat.xml",
-    ".idea/runConfigurations/xor_neat.xml",
     ".idea/scopes/scope_settings.xml",
     ".idea/vcs.xml",
     ".idea/workspace.xml",
@@ -112,6 +110,9 @@ Gem::Specification.new do |s|
     "lib/rubyneat/population.rb",
     "lib/rubyneat/rubyneat.rb",
     "neater/xor_neat.rb",
+    "pkg/rubyneat-0.0.4.gem",
+    "pkg/rubyneat-0.0.5.gem",
+    "rubyneat.gemspec",
     "spec/lib/rubyneat/rubyneat_spec.rb"
   ]
   s.homepage = "https://github.com/flajann2/rubyneat"

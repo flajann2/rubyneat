@@ -877,7 +877,8 @@ create this.</p>
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
-<div id="constructor_details" class="method_details_list">
+
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -912,10 +913,6 @@ this.</p>
       <pre class="lines">
 
 
-388
-389
-390
-391
 392
 393
 394
@@ -936,10 +933,14 @@ this.</p>
 409
 410
 411
-412</pre>
+412
+413
+414
+415
+416</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 388</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 392</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_neural_inputs'>neural_inputs</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_neural_outputs'>neural_outputs</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_parameters'>parameters</span> <span class='op'>=</span> <span class='const'>NeatSettings</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
@@ -1005,12 +1006,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-273
-274
-275</pre>
+277
+278
+279</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 273</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 277</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_end_run_func'>end_run_func</span>
   <span class='ivar'>@end_run_func</span>
@@ -1048,12 +1049,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-262
-263
-264</pre>
+266
+267
+268</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 262</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 266</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluator'>evaluator</span>
   <span class='ivar'>@evaluator</span>
@@ -1091,12 +1092,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-262
-263
-264</pre>
+266
+267
+268</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 262</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 266</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluator_class'>evaluator_class</span>
   <span class='ivar'>@evaluator_class</span>
@@ -1134,12 +1135,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-263
-264
-265</pre>
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolver'>evolver</span>
   <span class='ivar'>@evolver</span>
@@ -1177,12 +1178,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-263
-264
-265</pre>
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 263</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolver_class'>evolver_class</span>
   <span class='ivar'>@evolver_class</span>
@@ -1220,12 +1221,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-261
-262
-263</pre>
+265
+266
+267</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expressor'>expressor</span>
   <span class='ivar'>@expressor</span>
@@ -1263,12 +1264,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-261
-262
-263</pre>
+265
+266
+267</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 261</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expressor_class'>expressor_class</span>
   <span class='ivar'>@expressor_class</span>
@@ -1306,12 +1307,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-269
-270
-271</pre>
+273
+274
+275</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 273</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness_func'>fitness_func</span>
   <span class='ivar'>@fitness_func</span>
@@ -1349,12 +1350,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-246
-247
-248</pre>
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 246</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generation_num'>generation_num</span>
   <span class='ivar'>@generation_num</span>
@@ -1392,12 +1393,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-240
-241
-242</pre>
+244
+245
+246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 240</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 244</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_glob_innov_num'>glob_innov_num</span>
   <span class='ivar'>@glob_innov_num</span>
@@ -1435,12 +1436,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-276
-277
-278</pre>
+280
+281
+282</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 276</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 280</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span>
   <span class='ivar'>@log</span>
@@ -1479,12 +1480,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-253
-254
-255</pre>
+257
+258
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_hidden'>neural_hidden</span>
   <span class='ivar'>@neural_hidden</span>
@@ -1523,12 +1524,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-253
-254
-255</pre>
+257
+258
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span>
   <span class='ivar'>@neural_inputs</span>
@@ -1567,12 +1568,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-253
-254
-255</pre>
+257
+258
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_outputs'>neural_outputs</span>
   <span class='ivar'>@neural_outputs</span>
@@ -1610,12 +1611,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-249
-250
-251</pre>
+253
+254
+255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 249</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 253</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neuron_catalog'>neuron_catalog</span>
   <span class='ivar'>@neuron_catalog</span>
@@ -1653,12 +1654,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-256
-257
-258</pre>
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 256</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parms'>parms</span>
   <span class='ivar'>@parms</span>
@@ -1696,12 +1697,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-259
-260
-261</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 259</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 263</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population'>population</span>
   <span class='ivar'>@population</span>
@@ -1739,12 +1740,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-259
-260
-261</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 259</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 263</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_class'>population_class</span>
   <span class='ivar'>@population_class</span>
@@ -1782,12 +1783,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-259
-260
-261</pre>
+263
+264
+265</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 259</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 263</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_history'>population_history</span>
   <span class='ivar'>@population_history</span>
@@ -1825,12 +1826,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-266
-267
-268</pre>
+270
+271
+272</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 270</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query_func'>query_func</span>
   <span class='ivar'>@query_func</span>
@@ -1869,12 +1870,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-273
-274
-275</pre>
+277
+278
+279</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 273</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 277</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_hook'>report_hook</span>
   <span class='ivar'>@report_hook</span>
@@ -1912,12 +1913,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-243
-244
-245</pre>
+247
+248
+249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_seq_num'>seq_num</span>
   <span class='ivar'>@seq_num</span>
@@ -1949,10 +1950,10 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-415</pre>
+419</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 415</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 419</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@gaussian</span><span class='period'>.</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1975,10 +1976,10 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-414</pre>
+418</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 414</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 418</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='ivar'>@glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2012,10 +2013,6 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-418
-419
-420
-421
 422
 423
 424
@@ -2043,10 +2040,14 @@ report_hook to dump reports for the user, etc.</p>
 446
 447
 448
-449</pre>
+449
+450
+451
+452
+453</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 418</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 422</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
@@ -2090,7 +2091,7 @@ report_hook to dump reports for the user, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Dec 29 20:55:09 2013 by
+  Generated on Tue Dec 31 11:21:38 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

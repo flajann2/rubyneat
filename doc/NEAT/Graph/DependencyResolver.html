@@ -257,7 +257,8 @@ dependencies!.</p>
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
   <p class="inherited"><span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
-<div id="constructor_details" class="method_details_list">
+
+  <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
@@ -287,13 +288,13 @@ their dependencies.</p>
       <pre class="lines">
 
 
-152
-153
-154
-155</pre>
+156
+157
+158
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 152</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_outputs'>outputs</span><span class='rparen'>)</span>
   <span class='ivar'>@outputs</span> <span class='op'>=</span> <span class='id identifier rubyid_outputs'>outputs</span>
@@ -338,13 +339,13 @@ list of outputs.</p>
       <pre class="lines">
 
 
-159
-160
-161
-162</pre>
+163
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='op'>[]</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_outs'>outs</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_outs'>outs</span> <span class='op'>=</span> <span class='id identifier rubyid_outs'>outs</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span> <span class='kw'>if</span> <span class='id identifier rubyid_outs'>outs</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span> <span class='const'>Array</span>
@@ -388,18 +389,18 @@ Note that circular_ref_node_list shall be nil if there are no dependencies!</p>
       <pre class="lines">
 
 
-167
-168
-169
-170
 171
 172
 173
 174
-175</pre>
+175
+176
+177
+178
+179</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resolve'>resolve</span>
   <span class='ivar'>@resolved</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -442,14 +443,14 @@ list since we throw an exception on circular  dependencies.</p>
       <pre class="lines">
 
 
-180
-181
-182
-183
-184</pre>
+184
+185
+186
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 184</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resolve!'>resolve!</span>
   <span class='id identifier rubyid_dl'>dl</span><span class='comma'>,</span> <span class='id identifier rubyid_cl'>cl</span> <span class='op'>=</span> <span class='id identifier rubyid_resolve'>resolve</span>
@@ -466,7 +467,7 @@ list since we throw an exception on circular  dependencies.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Dec 29 20:55:09 2013 by
+  Generated on Tue Dec 31 11:21:37 2013 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
