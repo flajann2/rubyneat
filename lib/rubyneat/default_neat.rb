@@ -4,7 +4,7 @@ require 'rubyneat/dsl'
 Here all default parameters are defined.
 =end
 
-include DSL
+include NEAT::DSL
 
 define "Default Parameters" do
 end

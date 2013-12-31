@@ -87,7 +87,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="xor_neat.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="36" column="0" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.13831967" vertical-offset="405" max-vertical-offset="1995">
@@ -109,10 +109,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="23" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0751503" vertical-offset="0" max-vertical-offset="998">
+                <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="default_neat.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/rubyneat/default_neat.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="10" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.1503006" vertical-offset="0" max-vertical-offset="998">
                   <folding />
                 </state>
               </provider>
@@ -172,9 +181,10 @@
         <option value="$PROJECT_DIR$/lib/rubyneat/population.rb" />
         <option value="$PROJECT_DIR$/bin/neat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/rndsl.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
         <option value="$PROJECT_DIR$/neater/xor_neat.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/default_neat.rb" />
       </list>
     </option>
   </component>
@@ -894,7 +904,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17342582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14834578" sideWeight="0.49928674" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14834578" sideWeight="0.49928674" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39609757" sideWeight="0.7406617" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14194237" sideWeight="0.5007133" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1146,13 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0751503" vertical-offset="0" max-vertical-offset="998">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="6" selection-start="561" selection-end="561" vertical-scroll-proportion="0.31563127" vertical-offset="0" max-vertical-offset="4125">
@@ -1212,6 +1215,20 @@
     <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.13831967" vertical-offset="405" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/default_neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.1503006" vertical-offset="0" max-vertical-offset="998">
           <folding />
         </state>
       </provider>

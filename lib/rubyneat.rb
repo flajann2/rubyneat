@@ -3,4 +3,4 @@
 =end
 
 require 'rubyneat/rubyneat'
-require 'rubyneat/rndsl'
+require 'rubyneat/dsl'
