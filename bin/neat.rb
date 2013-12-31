@@ -4,6 +4,7 @@
 
 =end
 require 'pp'
+require 'semver'
 
 # Be sure lib is added to the library path
 %w{ lib neater }.each do |dir|
@@ -19,7 +20,7 @@ opts = Slop.parse do
   banner 'Usage: neat [commands] [options] ...'
 
   on :version, 'Version information' do
-    puts 'v0.0.0'
+    puts SemVer.find.format "%M.%m.%p%s"
   end
 
   command :console do

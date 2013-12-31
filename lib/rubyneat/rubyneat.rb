@@ -2,6 +2,7 @@ require 'distribution'
 require 'yaml'
 require 'logger'
 require 'awesome_print'
+require 'deep_dive'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the NeuroEvolution by Augmented Topologies.
@@ -82,6 +83,9 @@ module NEAT
 
   # Basis of all NEAT objects
   class NeatOb
+    include DeepDive
+    exclude :controller, :name
+
     # Designation of this particular object instance
     attr_reader :name
 

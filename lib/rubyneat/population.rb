@@ -30,6 +30,9 @@ module NEAT
     # Hash list of species lists
     attr_reader :species
 
+    # in a deep dive, exclude the following from replication.
+    exclude :input_neurons, :output_neurons
+
     # Create initial (ramdom) population of critters
     def initialize(c)
       super

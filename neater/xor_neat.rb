@@ -37,7 +37,7 @@ For this reason, we incorporate as a requirement names for the IO neurons.
 
 For the bias neuron, that will have a name too, but can simply be called :bias.
 =end
-include DSL
+include NEAT::DSL
 
 # The number of inputs to the xor function
 XOR_INPUTS = 2

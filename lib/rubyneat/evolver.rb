@@ -25,7 +25,7 @@ module NEAT
     #
     # Returns  the newly-evolved population.
     def evolve(population)
-      @npop = population.clone
+      @npop = population.dclone
       
       # Population sorting and evaluation for breeding, mutations, etc.
       prepare_speciation!
