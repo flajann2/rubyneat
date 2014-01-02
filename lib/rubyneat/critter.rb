@@ -98,16 +98,6 @@ module NEAT
 
         @controller.evolver.gen_initial_genes!(self) unless mating
       end
-      
-      # Deep-copy the neurons and genes.
-      # Question: Do we really need to deep-copy the neurons?
-      # There is the possibility of modifying the neurons themselves,
-      # so for now we do this.
-      def initialize_copy(source)
-        super
-        @neurons = source.neurons.clone
-        @genes = source.genes.clone
-      end
 
       # Make the neurons forget their wiring.
       def forget!
