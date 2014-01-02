@@ -58,12 +58,9 @@ module NEAT
                   mean nice soil vote kick apes snak huge sine pine gray nook fool
                   woot hail smel tell jell suut gage phat pinoy spain rey bloke zit}
   def self.random_name_generator
-    @rng_count += 1
-    s = ""
-    3.times do
-      s += "#{@rng_names[rand @rng_names.size]}_" 
-    end
-    s += @rng_count.to_s
+    (0..3).map {
+      @rng_names[rand @rng_names.size]
+    }.push(@rng_count += 1).join('_').to_sym
   end
 
   # Name of the stimulus method in NEAT::Critter::Phenotype to use

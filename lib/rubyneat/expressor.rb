@@ -60,6 +60,7 @@ module NEAT
       @resolved.each do |neu|
         unless neu.input?
           p.code += "    @#{neu.name} = #{neu.name}("
+          raise NeatException.new("No gene present for #{neu.name}") unless g.neural_gene_map.member? neu.name
           p.code += g.neural_gene_map[neu.name].map{ |gene|
             "%s * @%s" % [gene.weight, gene.in_neuron]
           }.join(", ") + ")\n"

@@ -6,7 +6,8 @@ ruby '2.0.0'
 gem 'mongo'
 gem 'bson_ext'
 gem 'distribution'
-#gem 'debugger'
+#gem 'gsl'
+gem 'statistics2'
 gem 'debase'
 gem 'aquarium'
 gem 'slop'
@@ -21,4 +22,5 @@ group :development do
   gem 'semver'
   gem "jeweler", "~> 1.8.7"
   gem "simplecov"
+  #gem 'debugger'
 end

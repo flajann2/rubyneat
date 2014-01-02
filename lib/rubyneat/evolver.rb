@@ -66,6 +66,7 @@ module NEAT
       end
     end
 
+    #TODO: write novelty code
     def prepare_novelty!
     end
 
