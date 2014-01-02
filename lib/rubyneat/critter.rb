@@ -23,14 +23,6 @@ module NEAT
       @genotype = Genotype.new(self, mating)
     end
 
-    # We deep-copy the genotype here, since we
-    # obviously need it to be seperate.
-    def initialize_copy(source)
-      super
-      @genotype = source.genotype.clone
-      @genotype.critter = self
-    end
-
     # Get the Critter ready for the Expressor to
     # express the geneotype.
     def ready_for_expression!
