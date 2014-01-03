@@ -164,8 +164,8 @@ module NEAT
         ## innov -- innovation number of gene (optional)
         def self.[](genotype, input, output, weight = 0.0, innov = nil)
           g = Gene.new genotype
-          g.in_neuron = (input.kind_of? Symbol) ? input.name : input
-          g.out_neuron = (output.kind_of? Symbol) ? output.name : output
+          g.in_neuron = (input.kind_of? Symbol) ? input : input.name
+          g.out_neuron = (output.kind_of? Symbol) ? output : output.name
           g.weight = weight
           g.innovation = innov unless innov.nil?
           return g
