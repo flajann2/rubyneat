@@ -1,4 +1,4 @@
-require 'rubyneat/rubyneat'
+require 'rubyneat'
 require 'distribution'
 module NEAT
   #= Evolver -- Basis of all evolvers.
@@ -137,9 +137,11 @@ module NEAT
     #
     ## Matching Gene
     ### 2 genes with matching innovation numbers.
+    #
     ## Disjoint Gene
     ### A gene in one has an innovation number in the range of innovation numbers
     ### of the other.
+    #
     ## Excess Gene
     ### Gene in one critter that has an innovation number outside of the range
     ### of innovation numbers of the other.
@@ -148,7 +150,22 @@ module NEAT
     # Matching genes are randomly chosen. For now, we make it 50/50.
     def sex(crit1, crit2)
       baby = Critter.new(@npop, true)
-      # TODO we need to finish the sex here!
+      a = crit1.genotype.genes.keys.to_set
+      b = crit2.genotype.genes.keys.to_set
+      disjoint = (a - b) + (b - a)
+      joint = (a + b) - disjoint
+      baby.genotype.neucleate { |gtype|
+        joint.map { |innov|
+          g1 = crit1.genotype.genes[innov]
+          g2 = crit2.genotype.genes[innov]
+          Critter::Genotype::Gene[gtype,
+                                  g1.in_neuron, g1.out_neuron,
+                                  (g1.weight + g2.weight) / 2.0,
+                                  innov]
+        } + disjoint.map { |innov|
+          (crit1.genotype.genes[innov] || crit2.genotype.genes[innov]).clone
+        }
+      }
       return baby
     end
   end

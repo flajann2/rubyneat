@@ -91,6 +91,15 @@ module NEAT
         @controller.evolver.gen_initial_genes!(self) unless mating
       end
 
+      # We add genes given here to the genome.
+      # An array of genes is returned from the block
+      # and we simply add them in.
+      def neucleate(&block)
+        @genes = Hash[block.(self).map { |g|
+            g.genotype = self
+            [g.innovation, g] }]
+      end
+
       # Make the neurons forget their wiring.
       def forget!
         @neurons.each do |name, neu|
@@ -148,11 +157,17 @@ module NEAT
         def enabled? ; @enabled ; end
 
         # Create a new Gene and set it up fully.
-        def self.[](genotype, input, output, weight = 0.0)
+        ## genotype -- genotype
+        ## input -- name of input neuron connection
+        ## output -- name of output neuron connection
+        ## weight -- weight to give neuron (optional)
+        ## innov -- innovation number of gene (optional)
+        def self.[](genotype, input, output, weight = 0.0, innov = nil)
           g = Gene.new genotype
-          g.in_neuron = input.name
-          g.out_neuron = output.name
+          g.in_neuron = (input.kind_of? Symbol) ? input.name : input
+          g.out_neuron = (output.kind_of? Symbol) ? output.name : output
           g.weight = weight
+          g.innovation = innov unless innov.nil?
           return g
         end
 

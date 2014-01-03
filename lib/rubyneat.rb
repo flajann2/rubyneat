@@ -4,3 +4,4 @@
 
 require 'rubyneat/rubyneat'
 require 'rubyneat/dsl'
+require 'set'
