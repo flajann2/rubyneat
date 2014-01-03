@@ -34,7 +34,7 @@ module NEAT
     exclude :input_neurons, :output_neurons
 
     # Create initial (ramdom) population of critters
-    def initialize(c)
+    def initialize(c, &block)
       super
       @input_neurons = c.neural_inputs.clone
       @output_neurons = c.neural_outputs.clone
@@ -46,6 +46,7 @@ module NEAT
       @critters = (0 ... c.parms.start_population_size || c.parms.population_size).map do
         Critter.new(self)
       end
+      block.(self) unless block.nil?
     end
     
     # Express the entire population.

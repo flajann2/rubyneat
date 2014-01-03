@@ -362,7 +362,7 @@ comprises Genes and Neurons.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Critter) <strong>initialize</strong>(pop, mating = false) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Critter) <strong>initialize</strong>(pop, mating = false, &amp;block) </a>
     
 
     
@@ -380,30 +380,6 @@ comprises Genes and Neurons.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Critter construction.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#initialize_copy-instance_method" title="#initialize_copy (instance method)">- (Object) <strong>initialize_copy</strong>(source) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>We deep-copy the genotype here, since we obviously need it to be seperate.</p>
 </div></span>
   
 </li>
@@ -454,7 +430,7 @@ comprises Genes and Neurons.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="NEAT::Critter (class)">Critter</a></span></tt>) <strong>initialize</strong>(pop, mating = false) 
+    - (<tt><span class='object_link'><a href="" title="NEAT::Critter (class)">Critter</a></span></tt>) <strong>initialize</strong>(pop, mating = false, &amp;block) 
   
 
   
@@ -482,15 +458,17 @@ constructed by the Expressor operator.</p>
 21
 22
 23
-24</pre>
+24
+25</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 20</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_pop'>pop</span><span class='comma'>,</span> <span class='id identifier rubyid_mating'>mating</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_pop'>pop</span><span class='comma'>,</span> <span class='id identifier rubyid_mating'>mating</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_pop'>pop</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
   <span class='ivar'>@population</span> <span class='op'>=</span> <span class='id identifier rubyid_pop'>pop</span>
   <span class='ivar'>@genotype</span> <span class='op'>=</span> <span class='const'>Genotype</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_mating'>mating</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -759,18 +737,18 @@ which normalizes the E and D terms by N.</p>
       <pre class="lines">
 
 
-233
-234
-235
-236
-237
-238
-239
-240
-241</pre>
+245
+246
+247
+248
+249
+250
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 245</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='id identifier rubyid_oc'>oc</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_c1'>c1</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span><span class='period'>.</span><span class='id identifier rubyid_excess_coefficient'>excess_coefficient</span>
@@ -813,12 +791,12 @@ Returns the result.</p>
       <pre class="lines">
 
 
-49
-50
-51</pre>
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluate!'>evaluate!</span>
   <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evaluator'>evaluator</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span> <span class='kw'>self</span>
@@ -854,60 +832,15 @@ Returns the result.</p>
       <pre class="lines">
 
 
-42
-43
-44</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span>
   <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_expressor'>expressor</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span> <span class='kw'>self</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="initialize_copy-instance_method">
-  
-    - (<tt>Object</tt>) <strong>initialize_copy</strong>(source) 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>We deep-copy the genotype here, since we obviously need it to be seperate.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-28
-29
-30
-31
-32</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 28</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_initialize_copy'>initialize_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='rparen'>)</span>
-  <span class='kw'>super</span>
-  <span class='ivar'>@genotype</span> <span class='op'>=</span> <span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
-  <span class='ivar'>@genotype</span><span class='period'>.</span><span class='id identifier rubyid_critter'>critter</span> <span class='op'>=</span> <span class='kw'>self</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -940,13 +873,13 @@ Returns the result.</p>
       <pre class="lines">
 
 
-36
-37
-38
-39</pre>
+29
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_ready_for_expression!'>ready_for_expression!</span>
   <span class='ivar'>@genotype</span><span class='period'>.</span><span class='id identifier rubyid_wire!'>wire!</span>
@@ -962,7 +895,7 @@ Returns the result.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jan  2 10:45:00 2014 by
+  Generated on Fri Jan  3 15:58:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

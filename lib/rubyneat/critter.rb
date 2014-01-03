@@ -96,17 +96,29 @@ module NEAT
       # We add genes given here to the genome.
       # An array of genes is returned from the block
       # and we simply add them in.
-      def neucleate(&block)
-        @genes = Hash[block.(self).map { |g|
-            g.genotype = self
-            [g.innovation, g] }]
+      def neucleate(clean: true, &block)
+        genes = Hash[block.(self).map { |g|
+          g.genotype = self
+          [g.innovation, g] }]
+        if clean
+          @genes = genes
+        else
+          @genes.merge! genes
+        end
+        nuke_redundancies!
+      end
+
+      # Remove any redundancies in the genome,
+      # any genes refering to the same two neurons.
+      # Simply choose one and delete the rest.
+      # TODO: implement nuke_redundancies!
+      def nuke_redundancies!
+        log.error "nuke_redundancies! NIY"
       end
 
       # Make the neurons forget their wiring.
       def forget!
-        @neurons.each do |name, neu|
-          neu.clear_graph
-        end
+        @neurons.each { |name, neu| neu.clear_graph }
         @neural_gene_map = {}
       end
 

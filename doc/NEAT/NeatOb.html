@@ -301,6 +301,9 @@ the Controller&#39;s NeatSettings.</p>
       <pre class="lines">
 
 
+98
+99
+100
 101
 102
 103
@@ -310,17 +313,14 @@ the Controller&#39;s NeatSettings.</p>
 107
 108
 109
-110
-111
-112
-113</pre>
+110</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_controller'>controller</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='ivar'>@name</span> <span class='op'>=</span> <span class='kw'>unless</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-            <span class='id identifier rubyid_name'>name</span>
+            <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
           <span class='kw'>else</span>
             <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_random_name_generator'>random_name_generator</span>
           <span class='kw'>end</span>
@@ -369,12 +369,12 @@ the Controller&#39;s NeatSettings.</p>
       <pre class="lines">
 
 
-93
-94
-95</pre>
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_controller'>controller</span>
   <span class='ivar'>@controller</span>
@@ -412,12 +412,12 @@ the Controller&#39;s NeatSettings.</p>
       <pre class="lines">
 
 
-90
-91
-92</pre>
+87
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 87</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='ivar'>@name</span>
@@ -449,10 +449,10 @@ the Controller&#39;s NeatSettings.</p>
       <pre class="lines">
 
 
-95</pre>
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span> <span class='semicolon'>;</span> <span class='gvar'>$log</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -475,12 +475,12 @@ the Controller&#39;s NeatSettings.</p>
       <pre class="lines">
 
 
-115
-116
-117</pre>
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%s&lt;%s&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
@@ -495,7 +495,7 @@ the Controller&#39;s NeatSettings.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jan  2 10:45:00 2014 by
+  Generated on Fri Jan  3 15:58:49 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

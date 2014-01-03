@@ -58,7 +58,7 @@ module NEAT
                   mean nice soil vote kick apes snak huge sine pine gray nook fool
                   woot hail smel tell jell suut gage phat pinoy spain rey bloke zit}
   def self.random_name_generator
-    (0..3).map {
+    (1..3).map {
       @rng_names[rand @rng_names.size]
     }.push(@rng_count += 1).join('_').to_sym
   end
@@ -97,7 +97,7 @@ module NEAT
     # Controller's NeatSettings.
     def initialize(controller = nil, name = nil)
       @name = unless name.nil?
-                name
+                name.to_sym
               else
                 NEAT::random_name_generator
               end
@@ -150,9 +150,10 @@ module NEAT
 
       # Given a list of output nodes, we shall work backwards
       # from them to resolve their dependencies.
-      def initialize(outputs)
+      def initialize(outputs, &block)
         @outputs = outputs
         super
+        block.(self) unless block.nil?
       end
       
       # Create a DependencyResolver from either
@@ -386,7 +387,7 @@ module NEAT
     #- neural_inputs -- array of input classes
     #- neural_outputs -- array of output classes
     #- parameters -- NeatParameters object, or a path to a YAML file to create this.
-    def initialize(neural_inputs = nil, neural_outputs = nil, parameters = NeatSettings.new)
+    def initialize(neural_inputs = nil, neural_outputs = nil, parameters = NeatSettings.new, &block)
       super(self)
 
       @glob_innov_num = 0
@@ -410,6 +411,7 @@ module NEAT
                else # load it from a file
                  open(parameters, 'r') { |fd| YAML::load fd.read }
                end
+      block.(self) unless block.nil?
     end
 
     def new_innovation ; @glob_innov_num += 1; end
