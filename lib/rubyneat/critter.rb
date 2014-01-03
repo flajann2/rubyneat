@@ -17,10 +17,11 @@ module NEAT
 
     # Critter construction. We construct the genotype.
     # The phenotype will be constructed by the Expressor operator.
-    def initialize(pop, mating = false)
+    def initialize(pop, mating = false, &block)
       super pop.controller
       @population = pop
       @genotype = Genotype.new(self, mating)
+      block.(self) unless block.nil?
     end
 
     # Get the Critter ready for the Expressor to
@@ -72,7 +73,7 @@ module NEAT
       # the call to that neuron function with the appropriate weights
       attr_reader :neural_gene_map
 
-      def initialize(critter, mating = false)
+      def initialize(critter, mating = false, &block)
         super critter.controller
         @critter = critter
 
@@ -89,6 +90,7 @@ module NEAT
         @neurons.merge! @neural_outputs
 
         @controller.evolver.gen_initial_genes!(self) unless mating
+        block.(self) unless block.nil?
       end
 
       # We add genes given here to the genome.
@@ -135,7 +137,7 @@ module NEAT
         attr_accessor :genotype
 
         # innovation number
-        attr_reader :innovation
+        attr_accessor :innovation
 
         # input neuron's name (where our output goes)
         # ouptut neuron's name (neuron to be queried)
@@ -146,12 +148,13 @@ module NEAT
         # Is this gene enabled?
         attr_accessor :enabled
 
-        def initialize(genotype)
+        def initialize(genotype, &block)
           super genotype.controller
           @genotype = genotype
           @enabled = true
           @innovation = NEAT::new_innovation
           @in_neuron = @out_neuron = nil
+          block.(self) unless block.nil?
         end
 
         def enabled? ; @enabled ; end
