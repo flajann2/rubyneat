@@ -119,5 +119,45 @@ module NEAT
       @species.evaluate!
     end
 
+    #== Generate a report on the state of this population.
+    #
+    def report
+      {
+          fitness: report_fitness,
+          fitness_species: report_fitness_species,
+          best_critter: report_best_fit,
+      }
+    end
+
+    def best_critter
+      @critters.max {|a, b| a.fitness <=> b.fitness}
+    end
+
+    def worst_critter
+      @critters.min {|a, b| a.fitness <=> b.fitness}
+    end
+
+    protected
+    # report on many fitness metrics
+    def report_fitness
+      {
+          overall: @critters.map{|critter| critter.fitness}.reduce{|m, f| m + f} / @critters.size,
+          best: best_critter.fitness,
+          worst: worst_critter.fitness,
+      }
+    end
+
+    # report on the best and worst species
+    def report_fitness_species
+      {
+        best: nil,
+        worst: nil,
+      }
+    end
+
+    # Find the best fit critter
+    def report_best_fit
+
+    end
   end
 end

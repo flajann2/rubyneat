@@ -45,9 +45,7 @@ XOR_INPUTS = 2
 # Basic xor function we shall evolve a net for. Only goes true
 # on one and only one true input, false otherwise.
 def xor(*inp)
-  p = 0
-  inp.each {|i| p += 1 if i > 0}
-  return p == 1
+  inp.reduce {|p, i| p + ((i > 0) ? 1 : 0) } == 1
 end
 
 # This defines the controller
@@ -117,11 +115,12 @@ evolve do
   }
 end
 
-report do
+report do |rept|
+  $log.info "REPORT #{rept.to_yaml}"
 end
 
 # The block here is called upon the completion of each generation
 run_engine do |c|
-  $log.info "Run of generation %s completed, history count %d" % [c.generation_num, 
-                                                             c.population_history.size]
+  $log.info "Run of generation %s completed, history count %d" %
+        [c.generation_num, c.population_history.size]
 end

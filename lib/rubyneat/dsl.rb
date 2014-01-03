@@ -64,12 +64,12 @@ module NEAT
         vec.map{|o| o > 0.0 ? true : false}
       end
 
-
       block.(NEAT::controller)
     end
 
     # Report on evaluations
     def report(&block)
+      NEAT::controller.report_hook = block
     end
 
     # Run the engine. The block is called on each generation.

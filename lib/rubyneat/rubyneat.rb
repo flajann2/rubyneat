@@ -441,7 +441,7 @@ module NEAT
         new_pop = @population.evolve
 
         ## Report hook for evaluation
-        @report_hook.(@population) unless @report_hook.nil?
+        @report_hook.(@population.report) unless @report_hook.nil?
 
         ## Evolve population
         @population = new_pop
