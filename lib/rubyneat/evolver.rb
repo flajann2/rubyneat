@@ -150,6 +150,13 @@ module NEAT
     # Matching genes are randomly chosen. For now, we make it 50/50.
     def sex(crit1, crit2)
       Critter.new(@npop, true) do |baby|
+        fitcrit = if crit1.fitness > crit2.fitness
+                    crit1
+                  elsif crit2.fitness > crit1.fitness
+                    crit2
+                  else
+                    (rand(2) == 1) ? crit1 : crit2
+                  end
         a = crit1.genotype.genes.keys.to_set
         b = crit2.genotype.genes.keys.to_set
         disjoint = (a - b) + (b - a)
@@ -160,11 +167,11 @@ module NEAT
             g2 = crit2.genotype.genes[innov]
             Critter::Genotype::Gene[gtype,
                                     g1.in_neuron, g1.out_neuron,
-                                    (g1.weight + g2.weight) / 2.0,
+                                    (rand(2) == 1) ? g1.weight : g2.weight,
                                     innov]
           } + disjoint.map { |innov|
-            (crit1.genotype.genes[innov] || crit2.genotype.genes[innov]).clone
-          }
+            fitcrit.genotype.genes[innov].clone unless fitcrit.genotype.genes[innov].nil?
+          }.reject{|i| i.nil? }
         }
       end
     end
