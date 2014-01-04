@@ -31,6 +31,9 @@ Jeweler::Tasks.new do |gem|
   gem.email = "fred@lrcsoft.com"
   gem.authors = ["Fred Mitchell"]
   # dependencies defined in Gemfile
+
+  # Exclude the Neural Docs directory
+  gem.files.exclude 'Neural_Docs/*'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
