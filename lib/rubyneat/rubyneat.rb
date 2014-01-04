@@ -90,6 +90,7 @@ module NEAT
     attr_reader :controller
 
     def log ; $log ; end
+    def self.log ; $log; end
 
     # Initializer for all NEAT objects. Requires that
     # the controller object is specified for all classes
@@ -104,7 +105,7 @@ module NEAT
       unless controller.nil?
         @controller = controller
       else
-        raise NeatException.new "Controller Needed!" unless self.is_a?(Controller) or                                                             self.is_a?(Controller::NeatSettings)
+        raise NeatException.new "Controller Needed!" unless self.is_a?(Controller) or self.is_a?(Controller::NeatSettings)
         @controller = self unless self.is_a? Controller::NeatSettings
       end
     end
@@ -115,95 +116,6 @@ module NEAT
   end
 
   class NeatException < Exception
-  end
-
-  # General graph representation
-  # (mainly used for Neurons, but could be used
-  # for other structures.)
-  #
-  # This is a mixin for Neuron and whatever else you'd like.
-  # the contained class is for evaluation, and may be instantiated separately.
-  module Graph
-    # clear and initialize the graph.
-
-    def clear_graph
-      @g_inputs = []
-    end
-
-    def << (input)
-      @g_inputs << input
-      self
-    end
-
-    # Add a single input
-    def add (input)
-      @g_inputs << input
-    end
-
-    # Get list of inputs
-    def inputs
-      @g_inputs
-    end
-
-    # Create an instantiation of this and pass it a list of nodes to resolve.
-    class DependencyResolver < NeatOb
-
-      # Given a list of output nodes, we shall work backwards
-      # from them to resolve their dependencies.
-      def initialize(outputs, &block)
-        @outputs = outputs
-        super
-        block.(self) unless block.nil?
-      end
-      
-      # Create a DependencyResolver from either
-      # an array of outputs or a parameter list of outputs.
-      def self.[](*outs)
-        outs = outs.first if outs.first.kind_of? Array
-        DependencyResolver.new outs
-      end
-
-
-      # Resolve dependencies, and return [dependency_list, circular_ref_node_list]
-      # Note that circular_ref_node_list shall be nil if there are no dependencies!
-      def resolve
-        @resolved = []
-        @unresolved = []
-        @circular = []
-        @outputs.each do |onode|
-          rdep onode
-        end
-        [@resolved, @circular.empty? ? nil : @circular]
-      end
-
-      # Throw an exception if dependencies are found.
-      # We only return the dependency list since we throw an exception on circular 
-      # dependencies.
-      def resolve!
-        dl, cl = resolve
-        raise NeatException("Circular Dependency Detected: %s" % cl) unless cl.nil?
-        dl
-      end
-
-      private
-      # recursive resolution of nodes
-      def rdep(node)
-        @unresolved << node
-        node.inputs.each { |inode|
-          if not @resolved.member? inode
-            unless @unresolved.member? inode
-              rdep inode
-            else
-              # we found a circular reference.
-              @circular << inode
-              log.warn "Dependency found: %s" % inode
-            end
-          end
-        }
-        @resolved << node
-        @unresolved.delete node
-      end
-    end
   end
 
   #= Base class of operators in RubyNEAT,
@@ -387,7 +299,11 @@ module NEAT
     #- neural_inputs -- array of input classes
     #- neural_outputs -- array of output classes
     #- parameters -- NeatParameters object, or a path to a YAML file to create this.
-    def initialize(neural_inputs = nil, neural_outputs = nil, parameters = NeatSettings.new, &block)
+    def initialize(neural_inputs: nil,
+                   neural_outputs: nil,
+                   neural_hidden: nil,
+                   parameters: NeatSettings.new,
+                      &block)
       super(self)
 
       @glob_innov_num = 0
@@ -395,9 +311,10 @@ module NEAT
       @population_history = []
       @evolver = Evolver.new self
       @expressor = Expressor.new self
-      @neuron_catalog = Neuron::neuronTypes.clone
+      @neuron_catalog = Neuron::neuron_types.clone
       @neural_inputs = neural_inputs
       @neural_outputs = neural_outputs
+      @neural_hidden = neural_hidden
 
       # Default classes for population and operators, etc.
       @population_class = NEAT::Population

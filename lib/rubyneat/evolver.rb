@@ -109,7 +109,7 @@ module NEAT
       @npop.critters.each do |critter|
         if rand < @controller.parms.mutate_add_neuron_prob
           log.info "mutate_add_neurons! for #{critter}"
-          @critter_op.add_neuron_to critter
+          @critter_op.add_neuron! critter
         end
       end
     end
@@ -199,8 +199,15 @@ module NEAT
       # gene, and split it into two genes with an intervening
       # neuron. The old gene is not replaced, but disabled. 2 new genes are
       # created along with the new neuron.
-      def add_neuron_to(crit)
-
+      def add_neuron!(crit)
+        gene = crit.genotype.genes.values.sample
+        neu = controller.neural_hidden.values.sample.new(controller)
+        g1 = Critter::Genotype::Gene[crit.genotype, gene.in_neuron, neu.name, gene.weight]
+        g2 = Critter::Genotype::Gene[crit.genotype, neu.name, gene.out_neuron, gene.weight]
+        gene.enabled = false
+        crit.genotype.add_neurons neu
+        crit.genotype.add_genes g1, g2
+        log.debug "add_neuron!: neu #{neu}, g1 #{g1}, g2 #{g2}"
       end
     end
   end

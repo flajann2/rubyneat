@@ -40,7 +40,7 @@ For the bias neuron, that will have a name too, but can simply be called :bias.
 include NEAT::DSL
 
 # The number of inputs to the xor function
-XOR_INPUTS = 2
+XOR_INPUTS = 3
 
 # Basic xor function we shall evolve a net for. Only goes true
 # on one and only one true input, false otherwise.
@@ -75,10 +75,10 @@ define "XOR System" do
   mutate_perturb_gene_weights_sd 0.3
   mutate_change_gene_weights_prob 0.002
   mutate_change_gene_weights_sd 1.00
-  mutate_add_neuron_prob 0.2
-  
+  mutate_add_neuron_prob 1.0 #0.2
+
   interspecies_mate_rate 0.03
-  mate_only_prob 0.7
+  mate_only_prob 0.0 #0.7
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
@@ -122,6 +122,6 @@ end
 
 # The block here is called upon the completion of each generation
 run_engine do |c|
-  $log.info "Run of generation %s completed, history count %d" %
+  $log.info "******** Run of generation %s completed, history count %d ********" %
         [c.generation_num, c.population_history.size]
 end

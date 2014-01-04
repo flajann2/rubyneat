@@ -3,5 +3,6 @@
 =end
 
 require 'rubyneat/rubyneat'
+require 'rubyneat/graph'
 require 'rubyneat/dsl'
 require 'set'

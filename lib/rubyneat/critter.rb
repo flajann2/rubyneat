@@ -79,11 +79,11 @@ module NEAT
 
         # Initialize basic structures
         @genes = nil
-        @neural_inputs = Hash[@critter.population.input_neurons.map { |sym, ineu| 
+        @neural_inputs = Hash[@critter.population.input_neurons.map { |sym, ineu|
                                 [sym, ineu.new(@controller, sym)]
                               }]
 
-        @neural_outputs = Hash[@critter.population.output_neurons.map { |sym, ineu| 
+        @neural_outputs = Hash[@critter.population.output_neurons.map { |sym, ineu|
                                 [sym, ineu.new(@controller, sym)]
                               }]
         @neurons = @neural_inputs.clone
@@ -96,6 +96,8 @@ module NEAT
       # We add genes given here to the genome.
       # An array of genes is returned from the block
       # and we simply add them in.
+      # @param [boolean] clean
+      # @param [Proc] block
       def neucleate(clean: true, &block)
         genes = Hash[block.(self).map { |g|
           g.genotype = self
@@ -113,7 +115,7 @@ module NEAT
       # Simply choose one and delete the rest.
       # TODO: implement nuke_redundancies!
       def nuke_redundancies!
-        log.error "nuke_redundancies! NIY"
+        log.error 'nuke_redundancies! NIY'
       end
 
       # Make the neurons forget their wiring.
@@ -127,13 +129,31 @@ module NEAT
         forget!
         @genes.each do |innov, gene|
           if gene.enabled?
+            raise NeatException.new "Can't find #{gene.out_neuron}" if @neurons[gene.out_neuron].nil?
             @neurons[gene.out_neuron] << @neurons[gene.in_neuron]
             @neural_gene_map[gene.out_neuron] = [] if @neural_gene_map[gene.out_neuron].nil?
             @neural_gene_map[gene.out_neuron] << gene unless gene.in_neuron.nil?
           end
         end unless @genes.nil?
         if @genes.nil?
-          $log.error "Genes Not Present"
+          $log.error 'Genes Not Present'
+        end
+      end
+
+      # Add new neurons to the fold
+      def add_neurons(*neus)
+        neus.each do |neu|
+          @neurons[neu.name] = neu
+        end
+      end
+
+      # Genes added here MUST correspond to pre-existing neurons.
+      # Be sure to do add_neurons first!!!!
+      def add_genes(*genes)
+        genes.each do |gene|
+          raise NeatException.new "Neuron #{gene.in_neuron} missing" unless @neurons.member? gene.in_neuron
+          raise NeatException.new "Neuron #{gene.out_neuron} missing" unless @neurons.member? gene.out_neuron
+          @genes[gene.innovation] = gene
         end
       end
 
@@ -214,7 +234,7 @@ module NEAT
       # Take what is in code and express that!
       def express!
         instance_eval @code
-        return self
+        self
       end
 
       # This function is re-written by Expressor -- with parameters and all.

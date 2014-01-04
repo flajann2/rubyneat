@@ -1,4 +1,6 @@
-require 'rubyneat/rubyneat'
+require 'rubyneat'
+require 'rubyneat/graph'
+
 =begin rdoc
 = Neuron Types
 
@@ -21,7 +23,7 @@ module NEAT
     attr_accessor :output
 
     # List of neuron types defined.
-    @@neurons = []
+    @@neuron_types = []
 
     # Class is is of Input type?
     def self.input? ; false ; end
@@ -35,11 +37,11 @@ module NEAT
 
     def self.inherited(clazz)
       $log.debug { "# Neuron subclassed by #{clazz}." }
-      @@neurons << clazz
+      @@neuron_types << clazz
     end
 
     # List of distinct neuron types (classes)
-    def self.neuronTypes ; @@neurons ; end
+    def self.neuron_types; @@neuron_types ; end
 
     # Function must be implemented by subclasses for phenotype
     # generation. Basically, an instance is passed to this function
@@ -79,7 +81,7 @@ The basic types to RubyNEAT are represented here.
 
     #= Special class of neuron that provides a bias signal.
     # FIXME: The bias value is not behaving as expected because
-    # the instance is not the neuron, but the phenotype.
+    # FIXME: the instance is not the neuron, but the phenotype.
     class BiasNeuron < InputNeuron
       def self.bias? ; true ; end
       attr_accessor :neu_bias
