@@ -42,7 +42,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rubyneat.gemspec" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="rubyneat.gemspec" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/rubyneat.gemspec">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="34" column="26" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.5156724" vertical-offset="0" max-vertical-offset="2550">
@@ -100,7 +100,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Rakefile" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="Rakefile" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Rakefile">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="35" column="34" selection-start="906" selection-end="906" vertical-scroll-proportion="0.52395207" vertical-offset="0" max-vertical-offset="1005">
@@ -1183,16 +1183,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rakefile">
+    <entry file="file://$PROJECT_DIR$/rubyneat.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="34" selection-start="906" selection-end="906" vertical-scroll-proportion="0.52395207" vertical-offset="0" max-vertical-offset="1005">
+        <state line="34" column="26" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.5156724" vertical-offset="0" max-vertical-offset="2550">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rubyneat.gemspec">
+    <entry file="file://$PROJECT_DIR$/Rakefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="26" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.5156724" vertical-offset="0" max-vertical-offset="2550">
+        <state line="35" column="34" selection-start="906" selection-end="906" vertical-scroll-proportion="0.52395207" vertical-offset="0" max-vertical-offset="1005">
           <folding />
         </state>
       </provider>
