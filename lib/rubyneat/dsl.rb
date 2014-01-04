@@ -2,7 +2,7 @@ require 'rubyneat/rubyneat'
 
 =begin rdoc
 = RubyNEAT DSL
-DSL is a doman-specific language for RubyNEAT to allow you to configure the NEAT engine
+DSL is a domain-specific language for RubyNEAT to allow you to configure the NEAT engine
 for various evolutionary projects.
 =end
 module NEAT
@@ -10,7 +10,7 @@ module NEAT
     include NEAT
     include NEAT::BasicNeuronTypes
 
-    # RNDSL -- Define defines the parameters to the controller.
+    # DSL -- Define defines the parameters to the controller.
     def define(name = NEAT.random_name_generator, &block)
       [
        :inputs,

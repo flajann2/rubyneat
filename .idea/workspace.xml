@@ -12,8 +12,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1388764968515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@deep_dive.coverage" NAME="deep_dive Coverage Results" MODIFIED="1388355972875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/deep_dive" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1388764968515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386026021962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@Run_spec__oread_spec___rubyneat.coverage" NAME="Run spec 'oread_spec': rubyneat Coverage Results" MODIFIED="1388361175336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
   </component>
@@ -33,10 +33,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="neat.rb" pinned="true" current="false" current-in-tab="false">
+          <file leaf-file-name="neat.rb" pinned="true" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="40" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="840">
+                <state line="22" column="40" selection-start="403" selection-end="403" vertical-scroll-proportion="0.32934132" vertical-offset="0" max-vertical-offset="1002">
                   <folding />
                 </state>
               </provider>
@@ -45,7 +45,7 @@
           <file leaf-file-name="critter.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="101" column="20" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="4305">
+                <state line="89" column="39" selection-start="2768" selection-end="2768" vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="4305">
                   <folding />
                 </state>
               </provider>
@@ -60,10 +60,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="443" column="40" selection-start="14401" selection-end="14401" vertical-scroll-proportion="0.5856269" vertical-offset="6262" max-vertical-offset="7200">
+                <state line="254" column="42" selection-start="8104" selection-end="8104" vertical-scroll-proportion="0.0" vertical-offset="3256" max-vertical-offset="7200">
                   <folding />
                 </state>
               </provider>
@@ -76,16 +76,16 @@
           <file leaf-file-name="evolver.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="153" column="25" selection-start="4738" selection-end="4738" vertical-scroll-proportion="0.0" vertical-offset="2106" max-vertical-offset="2775">
+                <state line="109" column="0" selection-start="3145" selection-end="3204" vertical-scroll-proportion="0.0" vertical-offset="1216" max-vertical-offset="3195">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="xor_neat.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="118" column="36" selection-start="3708" selection-end="3708" vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="1980">
+                <state line="78" column="2" selection-start="2670" selection-end="2670" vertical-scroll-proportion="0.5508982" vertical-offset="618" max-vertical-offset="1995">
                   <folding />
                 </state>
               </provider>
@@ -103,16 +103,16 @@
           <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="71" column="42" selection-start="2335" selection-end="2335" vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="1770">
+                <state line="12" column="6" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="population.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="population.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="147" column="7" selection-start="4317" selection-end="4317" vertical-scroll-proportion="0.7376312" vertical-offset="1083" max-vertical-offset="1905">
+                <state line="45" column="6" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1905">
                   <folding>
                     <element signature="e#2408#3642#0" expanded="false" />
                   </folding>
@@ -155,11 +155,11 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/evolver.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
-        <option value="$PROJECT_DIR$/neater/xor_neat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/population.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/evolver.rb" />
+        <option value="$PROJECT_DIR$/neater/xor_neat.rb" />
       </list>
     </option>
   </component>
@@ -824,23 +824,23 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32944608" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16773163" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16932908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14909478" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32555878" sideWeight="0.72949946" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32555878" sideWeight="0.72949946" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14909478" sideWeight="0.5004859" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.393586" sideWeight="0.27050054" order="7" side_tool="true" content_ui="tabs" x="5262" y="0" width="501" height="405" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2677702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2181987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1102,9 +1102,7 @@
     </entry>
     <entry file="file:///bigoldsystem/home/trader/.gem/ruby/2.0.0/gems/ruby-debug-ide-0.4.22/lib/ruby-debug-ide.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="0" selection-start="2138" selection-end="2138" vertical-scroll-proportion="0.3322785" vertical-offset="1110" max-vertical-offset="2220">
-          <folding />
-        </state>
+        <state line="88" column="0" selection-start="2138" selection-end="2138" vertical-scroll-proportion="0.3322785" vertical-offset="1110" max-vertical-offset="2220" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/neuron.rb">
@@ -1116,9 +1114,7 @@
     </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/gems/2.0.0/gems/deep_dive-0.0.4/lib/deep_dive/deep_dive.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.29204893" vertical-offset="349" max-vertical-offset="2100">
-          <folding />
-        </state>
+        <state line="36" column="0" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.29204893" vertical-offset="349" max-vertical-offset="2100" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
@@ -1128,54 +1124,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="25" selection-start="4738" selection-end="4738" vertical-scroll-proportion="0.0" vertical-offset="2106" max-vertical-offset="2775">
-          <folding />
+        <state line="45" column="6" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1905">
+          <folding>
+            <element signature="e#2408#3642#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="20" selection-start="3155" selection-end="3155" vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="4305">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="840">
+        <state line="12" column="6" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="443" column="40" selection-start="14401" selection-end="14401" vertical-scroll-proportion="0.5856269" vertical-offset="6262" max-vertical-offset="7200">
+        <state line="254" column="42" selection-start="8104" selection-end="8104" vertical-scroll-proportion="0.0" vertical-offset="3256" max-vertical-offset="7200">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="42" selection-start="2335" selection-end="2335" vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="1770">
+        <state line="109" column="0" selection-start="3145" selection-end="3204" vertical-scroll-proportion="0.0" vertical-offset="1216" max-vertical-offset="3195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="39" selection-start="2768" selection-end="2768" vertical-scroll-proportion="0.0" vertical-offset="791" max-vertical-offset="4305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="40" selection-start="403" selection-end="403" vertical-scroll-proportion="0.32934132" vertical-offset="0" max-vertical-offset="1002">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="36" selection-start="3708" selection-end="3708" vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="1980">
+        <state line="78" column="2" selection-start="2670" selection-end="2670" vertical-scroll-proportion="0.5508982" vertical-offset="618" max-vertical-offset="1995">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="7" selection-start="4317" selection-end="4317" vertical-scroll-proportion="0.7376312" vertical-offset="1083" max-vertical-offset="1905">
-          <folding>
-            <element signature="e#2408#3642#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -8,6 +8,13 @@ module NEAT
   #
   
   class Evolver < Operator
+    attr_reader :npop
+
+    def initialize(c)
+      super
+      @critter_op = CritterOp.new self
+    end
+
     # Generate the initial genes for a given genotype.
     # We key genes off their innovation numbers.
     def gen_initial_genes!(genotype)
@@ -98,10 +105,13 @@ module NEAT
       log.error "mutate_reenable_genes! NIY"
     end
 
-
-    # TODO Finish mutate_add_neurons!
     def mutate_add_neurons!
-      log.error "mutate_add_neurons! NIY"
+      @npop.critters.each do |critter|
+        if rand < @controller.parms.mutate_add_neuron_prob
+          log.info "mutate_add_neurons! for #{critter}"
+          @critter_op.add_neuron_to critter
+        end
+      end
     end
 
     # TODO Finish mutate_change_neurons!
@@ -173,6 +183,24 @@ module NEAT
             fitcrit.genotype.genes[innov].clone unless fitcrit.genotype.genes[innov].nil?
           }.reject{|i| i.nil? }
         }
+      end
+    end
+
+    # A set of Critter Genotype operators.
+    class CritterOp < NeatOb
+      def initialize(evol)
+        super evol.controller
+        @evolver = evol
+        @npop = evol.npop
+      end
+
+      #= Add a neuron to given critter
+      # Here, we add a neuron by randomly picking a
+      # gene, and split it into two genes with an intervening
+      # neuron. The old gene is not replaced, but disabled. 2 new genes are
+      # created along with the new neuron.
+      def add_neuron_to(crit)
+
       end
     end
   end

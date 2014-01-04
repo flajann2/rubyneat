@@ -75,6 +75,7 @@ define "XOR System" do
   mutate_perturb_gene_weights_sd 0.3
   mutate_change_gene_weights_prob 0.002
   mutate_change_gene_weights_sd 1.00
+  mutate_add_neuron_prob 0.2
   
   interspecies_mate_rate 0.03
   mate_only_prob 0.7
