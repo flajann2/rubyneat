@@ -447,6 +447,28 @@ shall have this).</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#best_critter-instance_method" title="#best_critter (instance method)">- (Object) <strong>best_critter</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#evaluate%21-instance_method" title="#evaluate! (instance method)">- (Object) <strong>evaluate!</strong> </a>
     
 
@@ -545,6 +567,30 @@ shall have this).</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#report-instance_method" title="#report (instance method)">- (Object) <strong>report</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<h2 id="label-Generate+a+report+on+the+state+of+this+population.">Generate a report on the state of this population.</h2>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#speciate%21-instance_method" title="#speciate! (instance method)">- (Object) <strong>speciate!</strong> </a>
     
 
@@ -565,6 +611,28 @@ singleton methods: * @species.member? – checks all of the lists for
 membership, not just the hash * @<a href="crit">species</a>.fitness –
 fitness of the entire species.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#worst_critter-instance_method" title="#worst_critter (instance method)">- (Object) <strong>worst_critter</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -1144,6 +1212,36 @@ shall have this)</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="best_critter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>best_critter</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_best_critter'>best_critter</span>
+  <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="evaluate!-instance_method">
   
     - (<tt>Object</tt>) <strong>evaluate!</strong> 
@@ -1260,6 +1358,55 @@ shall have this)</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span>
    <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_critter'>critter</span><span class='op'>|</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<h2 id="label-Generate+a+report+on+the+state+of+this+population.">Generate a report on the state of this population.</h2>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+124
+125
+126
+127
+128
+129
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 124</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span>
+  <span class='lbrace'>{</span>
+      <span class='label'>fitness:</span> <span class='id identifier rubyid_report_fitness'>report_fitness</span><span class='comma'>,</span>
+      <span class='label'>fitness_species:</span> <span class='id identifier rubyid_report_fitness_species'>report_fitness_species</span><span class='comma'>,</span>
+      <span class='label'>best_critter:</span> <span class='id identifier rubyid_report_best_fit'>report_best_fit</span><span class='comma'>,</span>
+  <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1394,12 +1541,42 @@ hash</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="worst_critter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>worst_critter</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 136</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_worst_critter'>worst_critter</span>
+  <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Fri Jan  3 15:58:50 2014 by
+  Generated on Sat Jan  4 09:06:04 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

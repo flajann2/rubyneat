@@ -2074,7 +2074,7 @@ report_hook to dump reports for the user, etc.</p>
     <span class='id identifier rubyid_new_pop'>new_pop</span> <span class='op'>=</span> <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_evolve'>evolve</span>
 
     <span class='comment'>## Report hook for evaluation
-</span>    <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+</span>    <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 
     <span class='comment'>## Evolve population
 </span>    <span class='ivar'>@population</span> <span class='op'>=</span> <span class='id identifier rubyid_new_pop'>new_pop</span>
@@ -2093,7 +2093,7 @@ report_hook to dump reports for the user, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan  3 15:58:49 2014 by
+  Generated on Sat Jan  4 09:06:03 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

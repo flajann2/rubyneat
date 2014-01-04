@@ -5,15 +5,16 @@
 
 Gem::Specification.new do |s|
   s.name = "rubyneat"
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fred Mitchell"]
-  s.date = "2013-12-31"
+  s.date = "2014-01-04"
   s.description = "\n  NEAT Algorithm for Ruby.\n  "
   s.email = "fred@lrcsoft.com"
   s.executables = ["neat", "neat.rb"]
   s.files = [
+    ".directory",
     ".idea/.name",
     ".idea/.rakeTasks",
     ".idea/dictionaries/trader.xml",
@@ -21,6 +22,8 @@ Gem::Specification.new do |s|
     ".idea/misc.xml",
     ".idea/modules.xml",
     ".idea/rubyneat.iml",
+    ".idea/runConfigurations/neat.xml",
+    ".idea/runConfigurations/xor_neat.xml",
     ".idea/scopes/scope_settings.xml",
     ".idea/vcs.xml",
     ".idea/workspace.xml",
@@ -73,6 +76,7 @@ Gem::Specification.new do |s|
     "doc/NEAT/Critter/Genotype.html",
     "doc/NEAT/Critter/Genotype/Gene.html",
     "doc/NEAT/Critter/Phenotype.html",
+    "doc/NEAT/DSL.html",
     "doc/NEAT/Evaluator.html",
     "doc/NEAT/Evolver.html",
     "doc/NEAT/Expressor.html",
@@ -112,6 +116,7 @@ Gem::Specification.new do |s|
     "neater/xor_neat.rb",
     "pkg/rubyneat-0.0.4.gem",
     "pkg/rubyneat-0.0.5.gem",
+    "projectFilesBackup/.idea/rubyneat.iml",
     "rubyneat.gemspec",
     "spec/lib/rubyneat/rubyneat_spec.rb"
   ]
@@ -128,6 +133,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<mongo>, [">= 0"])
       s.add_runtime_dependency(%q<bson_ext>, [">= 0"])
       s.add_runtime_dependency(%q<distribution>, [">= 0"])
+      s.add_runtime_dependency(%q<statistics2>, [">= 0"])
       s.add_runtime_dependency(%q<debase>, [">= 0"])
       s.add_runtime_dependency(%q<aquarium>, [">= 0"])
       s.add_runtime_dependency(%q<slop>, [">= 0"])
@@ -144,6 +150,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<mongo>, [">= 0"])
       s.add_dependency(%q<bson_ext>, [">= 0"])
       s.add_dependency(%q<distribution>, [">= 0"])
+      s.add_dependency(%q<statistics2>, [">= 0"])
       s.add_dependency(%q<debase>, [">= 0"])
       s.add_dependency(%q<aquarium>, [">= 0"])
       s.add_dependency(%q<slop>, [">= 0"])
@@ -161,6 +168,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<mongo>, [">= 0"])
     s.add_dependency(%q<bson_ext>, [">= 0"])
     s.add_dependency(%q<distribution>, [">= 0"])
+    s.add_dependency(%q<statistics2>, [">= 0"])
     s.add_dependency(%q<debase>, [">= 0"])
     s.add_dependency(%q<aquarium>, [">= 0"])
     s.add_dependency(%q<slop>, [">= 0"])
