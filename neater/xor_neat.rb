@@ -66,19 +66,19 @@ define "XOR System" do
   ## Settings
   # General
   hash_on_fitness = false
-  start_population_size 3 #10
+  start_population_size 15
   population_size 100
-  max_generations 20
+  max_generations 50
 
   # Evolver probabilities and SDs
   mutate_perturb_gene_weights_prob 0.2
   mutate_perturb_gene_weights_sd 0.3
   mutate_change_gene_weights_prob 0.002
   mutate_change_gene_weights_sd 1.00
-  mutate_add_neuron_prob 1.0 #0.2
+  mutate_add_neuron_prob 0.2
 
   interspecies_mate_rate 0.03
-  mate_only_prob 1.0 #0.7
+  mate_only_prob 0.5 #0.7
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
@@ -118,6 +118,7 @@ end
 
 report do |rept|
   $log.info "REPORT #{rept.to_yaml}"
+  exit if rept[:fitness][:best] >= 0.999
 end
 
 # The block here is called upon the completion of each generation
