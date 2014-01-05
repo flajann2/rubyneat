@@ -1,4 +1,4 @@
-require 'rubyneat/rubyneat'
+require 'rubyneat'
 
 =begin rdoc
 = Critter
@@ -86,7 +86,7 @@ module NEAT
         @neural_outputs = Hash[@critter.population.output_neurons.map { |sym, ineu|
                                 [sym, ineu.new(@controller, sym)]
                               }]
-        @neurons = @neural_inputs.clone
+        @neurons = @neural_inputs.dclone
         @neurons.merge! @neural_outputs
 
         @controller.evolver.gen_initial_genes!(self) unless mating
@@ -155,6 +155,26 @@ module NEAT
           raise NeatException.new "Neuron #{gene.out_neuron} missing" unless @neurons.member? gene.out_neuron
           @genes[gene.innovation] = gene
         end
+      end
+
+      # We take the neural hashes (presumably from other neurons), and innervate them.
+      # We do this in distinctions based on the neuron's names.
+      # FIXME We need to randomly select a neuron in the case of clashes.
+      # @param [Hash] hneus -- hashes of neurons to innervate
+      def innervate!(*hneus)
+        hneus.each do |neus|
+          @neurons.merge! neus
+        end
+      end
+
+      # TODO implement prune!
+      # Go through the list of neurons and drop
+      # any neurons not referenced by the genes.
+      #
+      # Then go through the genes and drop any that
+      # are dangling (i.e. no matching neurons)
+      def prune!
+        log.error "prune! NIY"
       end
 
       #= Gene Specification

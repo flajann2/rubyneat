@@ -156,6 +156,10 @@ module NEAT
     ### Gene in one critter that has an innovation number outside of the range
     ### of innovation numbers of the other.
     #
+    ## Neurons
+    ### Distinct Neurons from both crit1 and crit2 must be present in
+    ### the baby.
+    #
     # Excess and Disjoint genes are always included from the more fit parent.
     # Matching genes are randomly chosen. For now, we make it 50/50.
     def sex(crit1, crit2)
@@ -183,6 +187,9 @@ module NEAT
             fitcrit.genotype.genes[innov].clone unless fitcrit.genotype.genes[innov].nil?
           }.reject{|i| i.nil? }
         }
+        baby.genotype.innervate! crit1.genotype.neurons, crit2.genotype.neurons
+        baby.genotype.prune!
+        baby.genotype.wire!
       end
     end
 

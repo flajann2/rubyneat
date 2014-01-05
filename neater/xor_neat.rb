@@ -40,7 +40,7 @@ For the bias neuron, that will have a name too, but can simply be called :bias.
 include NEAT::DSL
 
 # The number of inputs to the xor function
-XOR_INPUTS = 3
+XOR_INPUTS = 2
 
 # Basic xor function we shall evolve a net for. Only goes true
 # on one and only one true input, false otherwise.
@@ -66,7 +66,7 @@ define "XOR System" do
   ## Settings
   # General
   hash_on_fitness = false
-  start_population_size 10
+  start_population_size 2 #10
   population_size 100
   max_generations 5
 

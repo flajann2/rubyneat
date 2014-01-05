@@ -137,7 +137,7 @@
     <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.0, RVM: ruby-2.0.0-p353) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debase (v0.0.9, RVM: ruby-2.0.0-p353) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debugger-ruby_core_source (v1.3.1, RVM: ruby-2.0.0-p353) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="deep_dive (v0.0.6, RVM: ruby-2.0.0-p353) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="deep_dive (v0.1.0, RVM: ruby-2.0.0-p353) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, RVM: ruby-2.0.0-p353) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="distribution (v0.7.0, RVM: ruby-2.0.0-p353) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="docile (v1.1.1, RVM: ruby-2.0.0-p353) [gem]" level="application" />
