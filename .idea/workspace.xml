@@ -12,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1388905190290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1388951379391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@deep_dive.coverage" NAME="deep_dive Coverage Results" MODIFIED="1388355972875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/deep_dive" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386026021962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@Run_spec__oread_spec___rubyneat.coverage" NAME="Run spec 'oread_spec': rubyneat Coverage Results" MODIFIED="1388361175336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
@@ -42,19 +42,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="critter.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="175" column="10" selection-start="5642" selection-end="5642" vertical-scroll-proportion="0.0" vertical-offset="2427" max-vertical-offset="4905">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="neuron.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/neuron.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="25" column="23" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1770">
+                <state line="47" column="50" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="1770">
                   <folding />
                 </state>
               </provider>
@@ -69,10 +60,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="graph.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="graph.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/graph.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="75" column="0" selection-start="1988" selection-end="1988" vertical-scroll-proportion="0.97536945" vertical-offset="531" max-vertical-offset="1455">
+                <state line="30" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="1500">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="critter.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="194" column="90" selection-start="6490" selection-end="6490" vertical-scroll-proportion="0.88590604" vertical-offset="2382" max-vertical-offset="5175">
                   <folding />
                 </state>
               </provider>
@@ -85,7 +85,7 @@
           <file leaf-file-name="evolver.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="190" column="28" selection-start="6094" selection-end="6094" vertical-scroll-proportion="0.7600671" vertical-offset="2397" max-vertical-offset="3405">
+                <state line="164" column="8" selection-start="4954" selection-end="4954" vertical-scroll-proportion="0.105704695" vertical-offset="2397" max-vertical-offset="3405">
                   <folding />
                 </state>
               </provider>
@@ -103,7 +103,7 @@
           <file leaf-file-name="expressor.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="74" column="0" selection-start="2661" selection-end="2661" vertical-scroll-proportion="0.0" vertical-offset="552" max-vertical-offset="1290">
+                <state line="56" column="0" selection-start="1927" selection-end="2022" vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1290">
                   <folding />
                 </state>
               </provider>
@@ -164,11 +164,11 @@
         <option value="$PROJECT_DIR$/rubyneat.gemspec" />
         <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/graph.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/neuron.rb" />
         <option value="$PROJECT_DIR$/neater/xor_neat.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/evolver.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/graph.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
       </list>
     </option>
   </component>
@@ -879,16 +879,10 @@
           <properties exception="NEAT::NeatException" />
           <option name="timeStamp" value="31" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb</url>
-          <line>360</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/rubyneat/graph.rb</url>
-          <line>75</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="ruby-exception">
+          <properties exception="NEAT::Graph::GraphException" />
+          <option name="timeStamp" value="96" />
+        </breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -898,7 +892,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="96" />
+      <option name="time" value="97" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1129,13 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="18" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="163" selection-end="163" vertical-scroll-proportion="0.16551724" vertical-offset="0" max-vertical-offset="725">
@@ -1150,13 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="0" selection-start="2661" selection-end="2661" vertical-scroll-proportion="0.0" vertical-offset="552" max-vertical-offset="1290">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="8" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.0" vertical-offset="582" max-vertical-offset="2535">
@@ -1164,23 +1144,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="190" column="28" selection-start="6094" selection-end="6094" vertical-scroll-proportion="0.7600671" vertical-offset="2397" max-vertical-offset="3405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/neuron.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="23" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="10" selection-start="5642" selection-end="5642" vertical-scroll-proportion="0.0" vertical-offset="2427" max-vertical-offset="4905">
+        <state line="15" column="18" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
           <folding />
         </state>
       </provider>
@@ -1192,9 +1158,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/neuron.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="50" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="1770">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/graph.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="1988" selection-end="1988" vertical-scroll-proportion="0.97536945" vertical-offset="531" max-vertical-offset="1455">
+        <state line="30" column="0" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="1500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="1927" selection-end="2022" vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="164" column="8" selection-start="4954" selection-end="4954" vertical-scroll-proportion="0.105704695" vertical-offset="2397" max-vertical-offset="3405">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="90" selection-start="6490" selection-end="6490" vertical-scroll-proportion="0.88590604" vertical-offset="2382" max-vertical-offset="5175">
           <folding />
         </state>
       </provider>

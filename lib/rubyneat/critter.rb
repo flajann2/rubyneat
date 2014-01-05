@@ -86,7 +86,7 @@ module NEAT
         @neural_outputs = Hash[@critter.population.output_neurons.map { |sym, ineu|
                                 [sym, ineu.new(@controller, sym)]
                               }]
-        @neurons = @neural_inputs.dclone
+        @neurons = @neural_inputs.clone # this must be a shallow clone!
         @neurons.merge! @neural_outputs
 
         @controller.evolver.gen_initial_genes!(self) unless mating
@@ -121,7 +121,7 @@ module NEAT
       # Make the neurons forget their wiring.
       def forget!
         @neurons.each { |name, neu| neu.clear_graph }
-        @neural_gene_map = {}
+        @neural_gene_map = Hash.new {|h, k| h[k] = [] }
       end
 
       # Wire up the neurons based on the genes.
@@ -131,7 +131,6 @@ module NEAT
           if gene.enabled?
             raise NeatException.new "Can't find #{gene.out_neuron}" if @neurons[gene.out_neuron].nil?
             @neurons[gene.out_neuron] << @neurons[gene.in_neuron]
-            @neural_gene_map[gene.out_neuron] = [] if @neural_gene_map[gene.out_neuron].nil?
             @neural_gene_map[gene.out_neuron] << gene unless gene.in_neuron.nil?
           end
         end unless @genes.nil?
@@ -163,18 +162,37 @@ module NEAT
       # @param [Hash] hneus -- hashes of neurons to innervate
       def innervate!(*hneus)
         hneus.each do |neus|
-          @neurons.merge! neus
+          @neurons.merge! neus.dclone
         end
       end
 
-      # TODO implement prune!
       # Go through the list of neurons and drop
       # any neurons not referenced by the genes.
       #
       # Then go through the genes and drop any that
       # are dangling (i.e. no matching neurons)
+      #
+      # Then make sure that @neural_inputs and @neural_outputs reference the actual
+      # instance neurons in @neurons
       def prune!
-        log.error "prune! NIY"
+        # Take care of dangling neurons
+        neunames = @genes.values.map{|g| [g.in_neuron, g.out_neuron]}.flatten.to_set
+        @neurons = Hash[@neurons.values.reject do |n|
+          not neunames.member? n.name
+        end.map do |n|
+          [n.name, n]
+        end]
+
+        # Take care of dangling genes
+        @genes = Hash[@genes.values.reject do |gene|
+          not (@neurons.member?(gene.in_neuron) and @neurons.member?(gene.out_neuron))
+        end.map do |gene|
+          [gene.name, gene]
+        end]
+
+        # Make sure @neural_inputs and @neural_outputs are consistent
+        @neural_inputs = Hash[@neural_inputs.values.map{|n| [n.name, @neurons[n.name]]}]
+        @neural_outputs = Hash[@neural_outputs.values.map{|n| [n.name, @neurons[n.name]]}]
       end
 
       #= Gene Specification

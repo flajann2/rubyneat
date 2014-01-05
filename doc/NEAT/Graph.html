@@ -83,7 +83,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/rubyneat/rubyneat.rb</dd>
+    <dd class="r2 last">lib/rubyneat/graph.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -109,7 +109,7 @@ class is for evaluation, and may be instantiated separately.</p>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Graph/DependencyResolver.html" title="NEAT::Graph::DependencyResolver (class)">DependencyResolver</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Graph/DependencyResolver.html" title="NEAT::Graph::DependencyResolver (class)">DependencyResolver</a></span>, <span class='object_link'><a href="Graph/GraphException.html" title="NEAT::Graph::GraphException (class)">GraphException</a></span>
     
   
 </p>
@@ -246,13 +246,13 @@ class is for evaluation, and may be instantiated separately.</p>
       <pre class="lines">
 
 
-133
-134
-135
-136</pre>
+19
+20
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 133</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/graph.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
   <span class='ivar'>@g_inputs</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_input'>input</span>
@@ -289,12 +289,12 @@ class is for evaluation, and may be instantiated separately.</p>
       <pre class="lines">
 
 
-139
-140
-141</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 139</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/graph.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span> <span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='rparen'>)</span>
   <span class='ivar'>@g_inputs</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_input'>input</span>
@@ -330,12 +330,12 @@ class is for evaluation, and may be instantiated separately.</p>
       <pre class="lines">
 
 
-129
-130
-131</pre>
+15
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/graph.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_graph'>clear_graph</span>
   <span class='ivar'>@g_inputs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -371,14 +371,16 @@ class is for evaluation, and may be instantiated separately.</p>
       <pre class="lines">
 
 
-144
-145
-146</pre>
+30
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/graph.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inputs'>inputs</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>GraphException</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Graph Failure -- input is nil</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='ivar'>@g_inputs</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
   <span class='ivar'>@g_inputs</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -391,7 +393,7 @@ class is for evaluation, and may be instantiated separately.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan  4 09:06:02 2014 by
+  Generated on Sun Jan  5 16:10:37 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

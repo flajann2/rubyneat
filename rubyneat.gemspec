@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fred Mitchell"]
-  s.date = "2014-01-04"
+  s.date = "2014-01-05"
   s.description = "\n  NEAT Algorithm for Ruby.\n  "
   s.email = "fred@lrcsoft.com"
   s.executables = ["neat", "neat.rb"]
@@ -62,6 +62,7 @@ Gem::Specification.new do |s|
     "doc/NEAT/Expressor.html",
     "doc/NEAT/Graph.html",
     "doc/NEAT/Graph/DependencyResolver.html",
+    "doc/NEAT/Graph/GraphException.html",
     "doc/NEAT/NeatException.html",
     "doc/NEAT/NeatOb.html",
     "doc/NEAT/Neuron.html",
@@ -90,6 +91,7 @@ Gem::Specification.new do |s|
     "lib/rubyneat/evolver.rb",
     "lib/rubyneat/expressor.rb",
     "lib/rubyneat/foo.rb",
+    "lib/rubyneat/graph.rb",
     "lib/rubyneat/neuron.rb",
     "lib/rubyneat/population.rb",
     "lib/rubyneat/rubyneat.rb",

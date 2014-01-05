@@ -8,8 +8,10 @@ module NEAT
   # This is a mixin for Neuron and whatever else you'd like.
   # the contained class is for evaluation, and may be instantiated separately.
   module Graph
-    # clear and initialize the graph.
+    class GraphException < Exception
+    end
 
+    # clear and initialize the graph.
     def clear_graph
       @g_inputs = []
     end
@@ -26,6 +28,7 @@ module NEAT
 
     # Get list of inputs
     def inputs
+      raise GraphException.new "Graph Failure -- input is nil" if @g_inputs.nil?
       @g_inputs
     end
 
@@ -65,7 +68,7 @@ module NEAT
       # dependencies.
       def resolve!
         dl, cl = resolve
-        raise NeatException("Circular Dependency Detected: %s" % cl) unless cl.nil?
+        raise GraphException("Circular Dependency Detected: %s" % cl) unless cl.nil?
         dl
       end
 
