@@ -45,7 +45,7 @@ XOR_INPUTS = 2
 # Basic xor function we shall evolve a net for. Only goes true
 # on one and only one true input, false otherwise.
 def xor(*inp)
-  inp.reduce {|p, i| p + ((i > 0) ? 1 : 0) } == 1
+  inp.map{|n| (n > 0) ? 1 : 0}.reduce {|p, i| p + ((i > 0) ? 1 : 0) } == 1
 end
 
 # This defines the controller
@@ -66,9 +66,9 @@ define "XOR System" do
   ## Settings
   # General
   hash_on_fitness = false
-  start_population_size 2 #10
+  start_population_size 3 #10
   population_size 100
-  max_generations 5
+  max_generations 20
 
   # Evolver probabilities and SDs
   mutate_perturb_gene_weights_prob 0.2
@@ -78,7 +78,7 @@ define "XOR System" do
   mutate_add_neuron_prob 1.0 #0.2
 
   interspecies_mate_rate 0.03
-  mate_only_prob 0.0 #0.7
+  mate_only_prob 1.0 #0.7
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
@@ -108,10 +108,10 @@ evolve do
   }
 
   fitness { |vin, vout, seq|
-    #bin = uncondition_boolean_vector vin
-    bout, = uncondition_boolean_vector vout
-    actual = xor(*vin)
-    #puts "Fitness called with bin=%s, bout=%s, actual=%s, seq=%s" % [bin, bout, actual, seq]
+    bin = uncondition_boolean_vector vin
+    bout = uncondition_boolean_vector vout
+    actual = [xor(*vin)]
+    puts "Fitness called with bin=%s, bout=%s, actual=%s, seq=%s" % [bin, bout, actual, seq]
     (bout == actual) ? 1.0 : 0.0
   }
 end
