@@ -174,6 +174,8 @@ module NEAT
       #
       # Then make sure that @neural_inputs and @neural_outputs reference the actual
       # instance neurons in @neurons
+      #
+      # TODO add this circularity check to prune!
       def prune!
         # Take care of dangling neurons
         neunames = @genes.values.map{|g| [g.in_neuron, g.out_neuron]}.flatten.to_set

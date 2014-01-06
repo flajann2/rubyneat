@@ -913,12 +913,6 @@ this.</p>
       <pre class="lines">
 
 
-302
-303
-304
-305
-306
-307
 308
 309
 310
@@ -943,10 +937,16 @@ this.</p>
 329
 330
 331
-332</pre>
+332
+333
+334
+335
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 302</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 308</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>neural_inputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>neural_outputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
@@ -1962,10 +1962,10 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-335</pre>
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 335</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 341</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@gaussian</span><span class='period'>.</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1988,10 +1988,10 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-334</pre>
+340</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 334</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 340</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='ivar'>@glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2025,12 +2025,6 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-338
-339
-340
-341
-342
-343
 344
 345
 346
@@ -2056,10 +2050,17 @@ report_hook to dump reports for the user, etc.</p>
 366
 367
 368
-369</pre>
+369
+370
+371
+372
+373
+374
+375
+376</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 338</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 344</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
@@ -2070,7 +2071,8 @@ report_hook to dump reports for the user, etc.</p>
                            <span class='kw'>else</span>
                              <span class='ivar'>@population</span> <span class='op'>=</span> <span class='ivar'>@population_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
                            <span class='kw'>end</span>
-    
+    <span class='ivar'>@population_history</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span> <span class='kw'>unless</span> <span class='ivar'>@population_history</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;=</span> <span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_max_population_history'>max_population_history</span>
+
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span>
 
     <span class='comment'>## Evaluate population
@@ -2103,7 +2105,7 @@ report_hook to dump reports for the user, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Jan  5 16:10:39 2014 by
+  Generated on Sun Jan  5 21:25:21 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

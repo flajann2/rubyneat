@@ -2,10 +2,10 @@ lib/rubyneat.rb 1da1fbcf4887eff825e525710f40a9c4a13814a4
 lib/rubyneat/foo.rb a976f0292a6d641f848bf7585da8587df92784df
 lib/rubyneat/dsl.rb 4fb9015cd5f977a762e959d5ef2c2f35b30df7be
 lib/rubyneat/graph.rb 045de27661e267a043024e1c772f6402b8e260da
-lib/rubyneat/neuron.rb d27e94e570292cec40c81b3f2232e9e7c4a2d737
-lib/rubyneat/critter.rb 7ebbcb0c4be1cc43c33392ff7c9a6e1a95539ec9
-lib/rubyneat/evolver.rb 3ac64f4f0c67b11c14a7b371010ab980b9c7d19f
-lib/rubyneat/rubyneat.rb ca4191982be67bf00e27b0e0ac59805e465ca22d
+lib/rubyneat/neuron.rb e0b48f3e4a760a7b00779d32d97dd29bc9480398
+lib/rubyneat/critter.rb 37f89f917bc93276469c26c62ce28eb3f6cb1fa4
+lib/rubyneat/evolver.rb a81a2efed3706f2c140dc5b15d459bb6b9a85f62
+lib/rubyneat/rubyneat.rb 003d4a38199406a792a400ed6908816ed1f21a35
 lib/rubyneat/expressor.rb 245f9827e1071678a8b949394fb9d56c638e1804
 lib/rubyneat/evaluator.rb 7b3486fa0b3534d35a949c6a0627ea2f524c4907
 lib/rubyneat/population.rb 3c0db09b7f8304c1cf96c12f83a826313ceaf81b

@@ -95,9 +95,13 @@ module NEAT
       log.error "mutate_change_gene_weights! NIY"
     end
 
-    # TODO Finish mutate_add_genes!
     def mutate_add_genes!
-      log.error "mutate_add_genes! NIY"
+      @npop.critters.each do |critter|
+        if rand < @controller.parms.mutate_add_gene_prob
+          log.debug "mutate_add_genes! for #{critter}"
+          @critter_op.add_gene! critter
+        end
+      end
     end
 
     # TODO Finish mutate_reenable_genes!
@@ -108,7 +112,7 @@ module NEAT
     def mutate_add_neurons!
       @npop.critters.each do |critter|
         if rand < @controller.parms.mutate_add_neuron_prob
-          log.info "mutate_add_neurons! for #{critter}"
+          log.debug "mutate_add_neurons! for #{critter}"
           @critter_op.add_neuron! critter
         end
       end
@@ -215,6 +219,34 @@ module NEAT
         crit.genotype.add_neurons neu
         crit.genotype.add_genes g1, g2
         log.debug "add_neuron!: neu #{neu}, g1 #{g1}, g2 #{g2}"
+      end
+
+      #= Add a gene to the genome
+      # Unlike adding a new neuron, adding a new gene
+      # could result in a circular dependency. If so,
+      # and if recurrency is switched off, we must detect
+      # this condition and switch off the offending neurons.
+      #
+      # Obviously, this might result in a loss of functionality, but
+      # oh well.
+      #
+      # An easy and obvious check is to make sure we don't
+      # accept any inputs from output neurons, and we don't
+      # do any outputs to input neurons.
+      #
+      # the actual recurrency checks will be in prune!
+      def add_gene!(crit)
+        n1 = crit.genotype.neurons.values.sample # input
+        n2 = crit.genotype.neurons.values.sample # output
+
+        # Sanity checks!
+        unless n1 == n2 or n1.output? or n2.input?
+          # At this point, the only thing remaining is a possibility or recurrency.
+          # We don't care about that here, as it will be handled in prune!
+          gene = Critter::Genotype::Gene[crit.genotype, n1.name, n2.name, NEAT::controller.gaussian]
+          crit.genotype.add_genes
+          log.debug "add_gene! Added gene #{gene} to #{crit}"
+        end
       end
     end
   end

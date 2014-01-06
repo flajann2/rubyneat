@@ -40,7 +40,9 @@ For the bias neuron, that will have a name too, but can simply be called :bias.
 include NEAT::DSL
 
 # The number of inputs to the xor function
-XOR_INPUTS = 2
+XOR_INPUTS = 4
+
+$log.level = Logger::INFO
 
 # Basic xor function we shall evolve a net for. Only goes true
 # on one and only one true input, false otherwise.
@@ -66,19 +68,21 @@ define "XOR System" do
   ## Settings
   # General
   hash_on_fitness = false
-  start_population_size 15
-  population_size 100
-  max_generations 50
+  start_population_size 50
+  population_size 5
+  max_generations 20
+  max_population_history 10
 
   # Evolver probabilities and SDs
   mutate_perturb_gene_weights_prob 0.2
   mutate_perturb_gene_weights_sd 0.3
-  mutate_change_gene_weights_prob 0.002
-  mutate_change_gene_weights_sd 1.00
-  mutate_add_neuron_prob 0.2
+  mutate_change_gene_weights_prob 0.02
+  mutate_change_gene_weights_sd 0.50
+  mutate_add_neuron_prob 0.5
+  mutate_add_gene_prob 0.5
 
   interspecies_mate_rate 0.03
-  mate_only_prob 0.5 #0.7
+  mate_only_prob 0.2 #0.7
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
@@ -103,7 +107,7 @@ evolve do
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
     inp = condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
-    $log.info "Query called with seq %s, inputs=%s" % [seq, inp]
+    #$log.debug "Query called with seq %s, inputs=%s" % [seq, inp]
     inp
   }
 
@@ -111,7 +115,7 @@ evolve do
     bin = uncondition_boolean_vector vin
     bout = uncondition_boolean_vector vout
     actual = [xor(*vin)]
-    puts "Fitness called with bin=%s, bout=%s, actual=%s, seq=%s" % [bin, bout, actual, seq]
+    $log.debug "Fitness called with bin=%s, bout=%s, actual=%s, seq=%s" % [bin, bout, actual, seq]
     (bout == actual) ? 1.0 : 0.0
   }
 end

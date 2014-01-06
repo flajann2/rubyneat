@@ -227,6 +227,9 @@ module NEAT
       # Maximum number of generations to run, if given.
       attr_accessor :max_generations
 
+      # Maximun number of populations to maintain in the history buffer.
+      attr_accessor :max_population_history
+
       attr_accessor :mutate_add_gene_prob
       attr_accessor :mutate_add_neuron_prob
 
@@ -281,6 +284,9 @@ module NEAT
       # Enable RT-NEAT, for gradual evolution suitable for
       # games and other human-interactive systems.
       attr_accessor :real_time_switch
+
+      # If true, allow for recurrent networks.
+      attr_accessor :recurrency_switch
 
       # Set up defaults for mandatory entries.
       def initialize
@@ -344,7 +350,8 @@ module NEAT
                                else
                                  @population = @population_class.new(self)
                                end
-        
+        @population_history.shift unless @population_history.size <= @parms.max_population_history
+
         @population.express!
 
         ## Evaluate population

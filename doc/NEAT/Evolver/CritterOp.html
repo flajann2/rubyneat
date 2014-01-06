@@ -135,6 +135,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#add_gene%21-instance_method" title="#add_gene! (instance method)">- (Object) <strong>add_gene!</strong>(crit) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<h1 id="label-Add+a+gene+to+the+genome+Unlike+adding+a+new+neuron%2C+adding+a+new+gene+could+result+in+a+circular+dependency.">Add a gene to the genome Unlike adding a new neuron, adding a new gene could result in a circular dependency.</h1>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#add_neuron%21-instance_method" title="#add_neuron! (instance method)">- (Object) <strong>add_neuron!</strong>(crit) </a>
     
 
@@ -226,14 +250,14 @@
       <pre class="lines">
 
 
-198
-199
-200
-201
-202</pre>
+202
+203
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 202</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_evol'>evol</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_evol'>evol</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
@@ -253,7 +277,79 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="add_neuron!-instance_method">
+  <h3 class="signature first" id="add_gene!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add_gene!</strong>(crit) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<h1 id="label-Add+a+gene+to+the+genome">Add a gene to the genome</h1>
+
+<p>Unlike adding a new neuron, adding a new gene could result in a circular
+dependency. If so, and if recurrency is switched off, we must detect this
+condition and switch off the offending neurons.</p>
+
+<p>Obviously, this might result in a loss of functionality, but oh well.</p>
+
+<p>An easy and obvious check is to make sure we don&#39;t accept any inputs
+from output neurons, and we don&#39;t do any outputs to input neurons.</p>
+
+<p>the actual recurrency checks will be in prune!</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_gene!'>add_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_n1'>n1</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_neurons'>neurons</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span> <span class='comment'># input
+</span>  <span class='id identifier rubyid_n2'>n2</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_neurons'>neurons</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span> <span class='comment'># output
+</span>
+  <span class='comment'># Sanity checks!
+</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_n1'>n1</span> <span class='op'>==</span> <span class='id identifier rubyid_n2'>n2</span> <span class='kw'>or</span> <span class='id identifier rubyid_n1'>n1</span><span class='period'>.</span><span class='id identifier rubyid_output?'>output?</span> <span class='kw'>or</span> <span class='id identifier rubyid_n2'>n2</span><span class='period'>.</span><span class='id identifier rubyid_input?'>input?</span>
+    <span class='comment'># At this point, the only thing remaining is a possibility or recurrency.
+</span>    <span class='comment'># We don&#39;t care about that here, as it will be handled in prune!
+</span>    <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='const'>Critter</span><span class='op'>::</span><span class='const'>Genotype</span><span class='op'>::</span><span class='const'>Gene</span><span class='lbracket'>[</span><span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='comma'>,</span> <span class='id identifier rubyid_n1'>n1</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_n2'>n2</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_add_genes'>add_genes</span>
+    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>add_gene! Added gene </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gene'>gene</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_crit'>crit</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_neuron!-instance_method">
   
     - (<tt>Object</tt>) <strong>add_neuron!</strong>(crit) 
   
@@ -282,19 +378,19 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
-209
-210
-211
-212
 213
 214
 215
 216
 217
-218</pre>
+218
+219
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 209</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 213</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_neuron!'>add_neuron!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span>
@@ -316,7 +412,7 @@ disabled. 2 new genes are created along with the new neuron.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Jan  5 16:10:38 2014 by
+  Generated on Sun Jan  5 21:25:21 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

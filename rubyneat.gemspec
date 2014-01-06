@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "rubyneat"
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Fred Mitchell"]
-  s.date = "2014-01-05"
+  s.date = "2014-01-06"
   s.description = "\n  NEAT Algorithm for Ruby.\n  "
   s.email = "fred@lrcsoft.com"
   s.executables = ["neat", "neat.rb"]

@@ -1264,6 +1264,8 @@ neurons)</p>
 <p>Then make sure that @neural_inputs and @neural_outputs reference the actual
 instance neurons in @neurons</p>
 
+<p>TODO add this circularity check to prune!</p>
+
 
   </div>
 </div>
@@ -1276,8 +1278,6 @@ instance neurons in @neurons</p>
       <pre class="lines">
 
 
-177
-178
 179
 180
 181
@@ -1295,10 +1295,12 @@ instance neurons in @neurons</p>
 193
 194
 195
-196</pre>
+196
+197
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 179</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prune!'>prune!</span>
   <span class='comment'># Take care of dangling neurons
@@ -1391,7 +1393,7 @@ instance neurons in @neurons</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Jan  5 16:10:38 2014 by
+  Generated on Sun Jan  5 21:25:21 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

@@ -18,7 +18,12 @@ module NEAT
     # Genotype to which we belong
     attr_reader :genotype
     attr_accessor :trait
-    
+
+    # (assigned by wire!) Heirarchy number in the Genome / Critter
+    # We need this to assure we add genes in the proper order.
+    # This will be recalculated every time a new neuron is added.
+    attr_accessor :heirarchy_number
+
     # This is true if this is an output neuron.
     attr_accessor :output
 

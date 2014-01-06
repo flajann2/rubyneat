@@ -160,7 +160,7 @@ instance is not the neuron, but the phenotype.</p>
   
   
   <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="../Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Neuron.html#genotype-instance_method" title="NEAT::Neuron#genotype (method)">#genotype</a></span>, <span class='object_link'><a href="../Neuron.html#output-instance_method" title="NEAT::Neuron#output (method)">#output</a></span>, <span class='object_link'><a href="../Neuron.html#trait-instance_method" title="NEAT::Neuron#trait (method)">#trait</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../Neuron.html#genotype-instance_method" title="NEAT::Neuron#genotype (method)">#genotype</a></span>, <span class='object_link'><a href="../Neuron.html#heirarchy_number-instance_method" title="NEAT::Neuron#heirarchy_number (method)">#heirarchy_number</a></span>, <span class='object_link'><a href="../Neuron.html#output-instance_method" title="NEAT::Neuron#output (method)">#output</a></span>, <span class='object_link'><a href="../Neuron.html#trait-instance_method" title="NEAT::Neuron#trait (method)">#trait</a></span></p>
 
   
   
@@ -335,13 +335,13 @@ instance is not the neuron, but the phenotype.</p>
       <pre class="lines">
 
 
-89
-90
-91
-92</pre>
+94
+95
+96
+97</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_n'>n</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -385,12 +385,12 @@ instance is not the neuron, but the phenotype.</p>
       <pre class="lines">
 
 
-87
-88
-89</pre>
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 92</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neu_bias'>neu_bias</span>
   <span class='ivar'>@neu_bias</span>
@@ -444,10 +444,10 @@ instance is not the neuron, but the phenotype.</p>
       <pre class="lines">
 
 
-86</pre>
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_bias?'>bias?</span> <span class='semicolon'>;</span> <span class='kw'>true</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -487,12 +487,12 @@ instance is not the neuron, but the phenotype.</p>
       <pre class="lines">
 
 
-95
-96
-97</pre>
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 100</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express'>express</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='ivar'>@name</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='float'>1.00</span> <span class='rbrace'>}</span>
@@ -507,7 +507,7 @@ instance is not the neuron, but the phenotype.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Jan  5 16:10:38 2014 by
+  Generated on Sun Jan  5 21:25:21 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
