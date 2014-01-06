@@ -1,2 +1,6 @@
 # Ignore any log files
-**/*.log
+*.log
+
+# Ignore tmp directories
+tmp
+
