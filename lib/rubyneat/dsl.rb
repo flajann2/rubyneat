@@ -9,6 +9,7 @@ module NEAT
   module DSL
     include NEAT
     include NEAT::BasicNeuronTypes
+    include Math
 
     # DSL -- Define defines the parameters to the controller.
     def define(name = NEAT.random_name_generator, &block)
@@ -62,6 +63,13 @@ module NEAT
       # Uncondition boolean vectors to be +1 if true, -1 if false
       def uncondition_boolean_vector(vec)
         vec.map{|o| o > 0.0 ? true : false}
+      end
+
+      # Helper function to do a simple fitness calculation
+      # on the basis of the sum of the square of the diffences
+      # of the element in the two vectors.
+      def simple_fitness_error(v1, v2)
+        sqrt v1.zip(v2).map{|a, b| (a - b) ** 2.0}.reduce{|m, c| m + c}
       end
 
       block.(NEAT::controller)

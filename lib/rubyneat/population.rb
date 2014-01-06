@@ -123,9 +123,10 @@ module NEAT
     #
     def report
       {
-          fitness: report_fitness,
+          fitness:         report_fitness,
           fitness_species: report_fitness_species,
-          best_critter: report_best_fit,
+          best_critter:    report_best_fit,
+          worst_critter:   report_worst_fit,
       }
     end
 
@@ -157,7 +158,12 @@ module NEAT
 
     # Find the best fit critter
     def report_best_fit
+      best_critter.phenotype.code
+    end
 
+    # Find the worst fit critter
+    def report_worst_fit
+      worst_critter.phenotype.code
     end
   end
 end

@@ -148,7 +148,7 @@ module NEAT
   # evolving and evaluation of the RubyNEAT system.  It is 
   # a type of "World", if you will, for the entire enterprise.
   #
-  # Your application shall only have one Controller. 
+  # Your application shall only have one Controller.
   class Controller < NeatOb
     # global innovation number
     attr_reader :glob_innov_num
@@ -191,6 +191,7 @@ module NEAT
 
     # Various parameters affecting evolution.
     # Based somewhat on the C version of NEAT.
+    # TODO not all of these parameters are implemented yet!!!
     class NeatSettings < NeatOb
       ## RubyNEAT specific
       
@@ -250,6 +251,12 @@ module NEAT
       attr_accessor :mutdiff_coefficient
       attr_accessor :newlink_tries
       attr_accessor :neuron_trait_mut_sig
+
+      # fitness costs, if given, use in the computation of fitness
+      # AFTER the overall fitness for the applied stimuli have been
+      # caclulated.
+      attr_accessor :fitness_cost_per_neuron
+      attr_accessor :fitness_cost_per_gene
 
       # If set, will start off at the specified size and 
       # grow to the bigger population size

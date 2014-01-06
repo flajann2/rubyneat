@@ -40,9 +40,9 @@ For the bias neuron, that will have a name too, but can simply be called :bias.
 include NEAT::DSL
 
 # The number of inputs to the xor function
-XOR_INPUTS = 4
+XOR_INPUTS = 2
 
-$log.level = Logger::INFO
+$log.level = Logger::DEBUG
 
 # Basic xor function we shall evolve a net for. Only goes true
 # on one and only one true input, false otherwise.
@@ -70,7 +70,7 @@ define "XOR System" do
   hash_on_fitness = false
   start_population_size 50
   population_size 5
-  max_generations 20
+  max_generations 100
   max_population_history 10
 
   # Evolver probabilities and SDs
@@ -86,6 +86,10 @@ define "XOR System" do
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
+
+  # Fitness costs
+  fitness_cost_per_neuron 0.016
+  fitness_cost_per_gene   0.001
 
   # Speciation
   compatibility_threshold 4.0
@@ -106,23 +110,29 @@ evolve do
   query { |seq|
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
-    inp = condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
-    #$log.debug "Query called with seq %s, inputs=%s" % [seq, inp]
-    inp
+    condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
   }
 
   fitness { |vin, vout, seq|
     bin = uncondition_boolean_vector vin
     bout = uncondition_boolean_vector vout
-    actual = [xor(*vin)]
-    $log.debug "Fitness called with bin=%s, bout=%s, actual=%s, seq=%s" % [bin, bout, actual, seq]
-    (bout == actual) ? 1.0 : 0.0
+    bactual = [xor(*vin)]
+    vactual = condition_boolean_vector bactual
+    fit = 2.00 - simple_fitness_error(vout, vactual)
+    bfit = (bout == bactual) ? 'T' : 'F'
+    $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%5.2f, seq=%s" % [bfit,
+                                                                                      bin,
+                                                                                      bout,
+                                                                                      bactual,
+                                                                                      vout,
+                                                                                      fit,
+                                                                                      seq]
+    fit
   }
 end
 
 report do |rept|
   $log.info "REPORT #{rept.to_yaml}"
-  exit if rept[:fitness][:best] >= 0.999
 end
 
 # The block here is called upon the completion of each generation
