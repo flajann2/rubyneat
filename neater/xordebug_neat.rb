@@ -1,49 +1,15 @@
 #!/usr/bin/env neat
 require 'rubyneat/dsl'
 require 'xor_lib'
-=begin rdoc
-= XOR Test for RubyNEAT
 
-The XOR testis the most fundamental test given to neural networks to
-see if they can handle representing the function, which usually entails
-a hidden layer. RubyNEAT generates hidden layers, so this would represent
-a good "First Test" of what RubyNEAT can do.
-
-Also, we need to work out the details of the RubyNEAT UI, so this also
-serves as a playground for that as well.
-
-Here we shall treat signals <0 as a logical false, and >0 as a logical true.
-+1/-1 shall represent the input nodes, and we shall have only one output node.
-
-We shall also experiment with signal shaping so that the output node
-explicitly coerces the signal to true/false.
-
-== Notes
-We shall have a callback for grabbing the data, and another for fitness
-evaluation. Both shall be passed a tcnt parameter, which represents "time" 
-or some other cardinal in the walk through of the data space. Fitness shall 
-return something between +/-1.
-
-There shall be also a novelty measure, as a separate parameter internal to the
-Evaluator. Some sort of logic shall reside in the evaluator choose actual "fitness" 
-over the fitness result vs. novelty.
-
-=== Naming issues
-For input and output neurons, the names of them shall be specified
-up front. The names of neurons only need be unique on a per-critter basis. And
-it makes all the sense in the world to have the IO neurons specifically named
-so that linkages to the "outside world" can be maintained.
-
-For this reason, we incorporate as a requirement names for the IO neurons.
-
-For the bias neuron, that will have a name too, but can simply be called :bias.
-=end
 include NEAT::DSL
+
+#= DEBUGGING FOR RubyNEAT
 
 # The number of inputs to the xor function
 XOR_INPUTS = 2
 
-$log.level = Logger::INFO
+$log.level = Logger::DEBUG
 
 # This defines the controller
 define "XOR System" do
@@ -60,12 +26,12 @@ define "XOR System" do
   # of unique flag.
   hidden sig: SigmoidNeuron
 
-  ## Settings
-  # General
+  ### Settings
+  ## General
   hash_on_fitness = false
-  start_population_size 200
-  population_size 200
-  max_generations 1000
+  start_population_size 10
+  population_size 10
+  max_generations 100
   max_population_history 10
 
   ## Evolver probabilities and SDs
@@ -82,14 +48,14 @@ define "XOR System" do
   mutate_add_gene_prob 0.1
 
   interspecies_mate_rate 0.03
-  mate_only_prob 0.02 #0.7
+  mate_only_prob 0.10 #0.7
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.016
-  fitness_cost_per_gene   0.001
+  fitness_cost_per_neuron 0.0016
+  fitness_cost_per_gene   0.0001
 
   # Speciation
   compatibility_threshold 4.0

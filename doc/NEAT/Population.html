@@ -567,6 +567,30 @@ shall have this).</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#mutate%21-instance_method" title="#mutate! (instance method)">- (Object) <strong>mutate!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Mutate the genes and neurons.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#report-instance_method" title="#report (instance method)">- (Object) <strong>report</strong> </a>
     
 
@@ -1091,14 +1115,14 @@ shall have this)</p>
       <pre class="lines">
 
 
-85
-86
-87
-88
-89</pre>
+90
+91
+92
+93
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='ivar'>@species</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_sp'>sp</span><span class='op'>|</span>
@@ -1149,12 +1173,12 @@ shall have this)</p>
       <pre class="lines">
 
 
-81
-82
-83</pre>
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='ivar'>@species</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_li'>li</span><span class='op'>|</span> <span class='id identifier rubyid_li'>li</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_crit'>crit</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_t1'>t1</span><span class='comma'>,</span> <span class='id identifier rubyid_t2'>t2</span><span class='op'>|</span> <span class='id identifier rubyid_t1'>t1</span> <span class='kw'>or</span> <span class='id identifier rubyid_t2'>t2</span> <span class='rbrace'>}</span>
@@ -1196,12 +1220,12 @@ shall have this)</p>
       <pre class="lines">
 
 
-63
-64
-65</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_analyze!'>analyze!</span>
    <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_critter'>critter</span><span class='op'>|</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evaluator'>evaluator</span><span class='period'>.</span><span class='id identifier rubyid_analyze_for_fitness!'>analyze_for_fitness!</span> <span class='id identifier rubyid_critter'>critter</span> <span class='rbrace'>}</span>
@@ -1226,12 +1250,12 @@ shall have this)</p>
       <pre class="lines">
 
 
-132
-133
-134</pre>
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_best_critter'>best_critter</span>
   <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span><span class='rbrace'>}</span>
@@ -1267,12 +1291,12 @@ shall have this)</p>
       <pre class="lines">
 
 
-58
-59
-60</pre>
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluate!'>evaluate!</span>
    <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_critter'>critter</span><span class='op'>|</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span> <span class='rbrace'>}</span>
@@ -1308,12 +1332,12 @@ shall have this)</p>
       <pre class="lines">
 
 
-69
-70
-71</pre>
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolve'>evolve</span>
   <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evolver'>evolver</span><span class='period'>.</span><span class='id identifier rubyid_evolve'>evolve</span> <span class='kw'>self</span>
@@ -1349,6 +1373,47 @@ shall have this)</p>
       <pre class="lines">
 
 
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span>
+   <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_critter'>critter</span><span class='op'>|</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mutate!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>mutate!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Mutate the genes and neurons.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 53
 54
 55</pre>
@@ -1356,8 +1421,8 @@ shall have this)</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 53</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span>
-   <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_critter'>critter</span><span class='op'>|</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span> <span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_mutate!'>mutate!</span>
+  <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evolver'>evolver</span><span class='period'>.</span><span class='id identifier rubyid_mutate!'>mutate!</span> <span class='kw'>self</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1390,22 +1455,24 @@ shall have this)</p>
       <pre class="lines">
 
 
-124
-125
-126
-127
-128
 129
-130</pre>
+130
+131
+132
+133
+134
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span>
   <span class='lbrace'>{</span>
-      <span class='label'>fitness:</span> <span class='id identifier rubyid_report_fitness'>report_fitness</span><span class='comma'>,</span>
+      <span class='label'>fitness:</span>         <span class='id identifier rubyid_report_fitness'>report_fitness</span><span class='comma'>,</span>
       <span class='label'>fitness_species:</span> <span class='id identifier rubyid_report_fitness_species'>report_fitness_species</span><span class='comma'>,</span>
-      <span class='label'>best_critter:</span> <span class='id identifier rubyid_report_best_fit'>report_best_fit</span><span class='comma'>,</span>
+      <span class='label'>best_critter:</span>    <span class='id identifier rubyid_report_best_fit'>report_best_fit</span><span class='comma'>,</span>
+      <span class='label'>worst_critter:</span>   <span class='id identifier rubyid_report_worst_fit'>report_worst_fit</span><span class='comma'>,</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1446,11 +1513,6 @@ hash</p>
       <pre class="lines">
 
 
-78
-79
-80
-81
-82
 83
 84
 85
@@ -1488,10 +1550,15 @@ hash</p>
 117
 118
 119
-120</pre>
+120
+121
+122
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_speciate!'>speciate!</span>
   <span class='comment'># We blow away existing species and create our own member? function
@@ -1514,8 +1581,8 @@ hash</p>
     <span class='id identifier rubyid_wearein'>wearein</span> <span class='op'>=</span> <span class='kw'>false</span>
     <span class='ivar'>@species</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_ck'>ck</span><span class='comma'>,</span> <span class='id identifier rubyid_list'>list</span><span class='op'>|</span>
       <span class='id identifier rubyid_delta'>delta</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='id identifier rubyid_ck'>ck</span><span class='rparen'>)</span>
-      <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>delta for </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_crit'>crit</span><span class='embexpr_end'>}</span><span class='tstring_content'> and </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_ck'>ck</span><span class='embexpr_end'>}</span><span class='tstring_content'> is </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_delta'>delta</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
-      <span class='kw'>if</span> <span class='id identifier rubyid_delta'>delta</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_threshold'>threshold</span>
+      <span class='comment'>#log.debug { &quot;delta for #{crit} and #{ck} is #{delta}&quot; }
+</span>      <span class='kw'>if</span> <span class='id identifier rubyid_delta'>delta</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_threshold'>threshold</span>
         <span class='id identifier rubyid_list'>list</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_crit'>crit</span>
         <span class='id identifier rubyid_wearein'>wearein</span> <span class='op'>=</span> <span class='kw'>true</span>
         <span class='kw'>break</span>
@@ -1556,12 +1623,12 @@ hash</p>
       <pre class="lines">
 
 
-136
-137
-138</pre>
+142
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/population.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_worst_critter'>worst_critter</span>
   <span class='ivar'>@critters</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_b'>b</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span><span class='rbrace'>}</span>
@@ -1576,7 +1643,7 @@ hash</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Jan  6 11:16:38 2014 by
+  Generated on Mon Jan  6 19:54:49 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>

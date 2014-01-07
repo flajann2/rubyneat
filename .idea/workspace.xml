@@ -51,15 +51,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="256" column="19" selection-start="8797" selection-end="8797" vertical-scroll-proportion="0.0" vertical-offset="3303" max-vertical-offset="6165">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="graph.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/graph.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -72,16 +63,25 @@
           <file leaf-file-name="critter.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="178" column="0" selection-start="5760" selection-end="5760" vertical-scroll-proportion="0.0" vertical-offset="2409" max-vertical-offset="5205">
+                <state line="201" column="29" selection-start="6657" selection-end="6657" vertical-scroll-proportion="0.0" vertical-offset="2476" max-vertical-offset="5310">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+          <file leaf-file-name="xordebug_neat.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/neater/xordebug_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="70" column="30" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.318" vertical-offset="732" max-vertical-offset="1890">
+                <state line="49" column="29" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.48" vertical-offset="255" max-vertical-offset="1710">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="369" column="0" selection-start="12574" selection-end="12574" vertical-scroll-proportion="0.0" vertical-offset="5056" max-vertical-offset="6180">
                   <folding />
                 </state>
               </provider>
@@ -94,7 +94,7 @@
           <file leaf-file-name="evolver.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="242" column="50" selection-start="8055" selection-end="8055" vertical-scroll-proportion="0.0" vertical-offset="3235" max-vertical-offset="3885">
+                <state line="93" column="9" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="4080">
                   <folding />
                 </state>
               </provider>
@@ -103,7 +103,7 @@
           <file leaf-file-name="expressor.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="56" column="0" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="1290">
+                <state line="12" column="43" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="1290">
                   <folding />
                 </state>
               </provider>
@@ -112,7 +112,7 @@
           <file leaf-file-name="population.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="165" column="34" selection-start="4704" selection-end="4704" vertical-scroll-proportion="0.0" vertical-offset="1638" max-vertical-offset="2625">
+                <state line="91" column="14" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="2700">
                   <folding />
                 </state>
               </provider>
@@ -121,25 +121,16 @@
           <file leaf-file-name="evaluator.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/evaluator.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+                <state line="37" column="0" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="43" column="0" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0" vertical-offset="275" max-vertical-offset="2220">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="foo_aquarium_example.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/foo_aquarium_example.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="978">
+                <state line="70" column="0" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.285" vertical-offset="765" max-vertical-offset="2220">
                   <folding />
                 </state>
               </provider>
@@ -181,11 +172,14 @@
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/graph.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/neuron.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/evolver.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/population.rb" />
-        <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
+        <option value="$PROJECT_DIR$/neater/xor_lib.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/evaluator.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/population.rb" />
+        <option value="$PROJECT_DIR$/lib/rubyneat/evolver.rb" />
+        <option value="$PROJECT_DIR$/neater/xordebug_neat.rb" />
         <option value="$PROJECT_DIR$/neater/xor_neat.rb" />
       </list>
     </option>
@@ -422,7 +416,13 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="debugger.present.asked" value="true" />
   </component>
-  <component name="RunManager" selected="Ruby.neat">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/neater" />
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Ruby.xordebug_neat">
     <configuration default="false" name="Run spec 'oread_spec': rubyneat" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="rubyneat" />
@@ -786,11 +786,56 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <list size="4">
+    <configuration default="false" name="xor_neat" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="rubyneat" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/xor_neat.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="xordebug_neat" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="rubyneat" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/neater" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/neat.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="run xordebug" />
+      <method />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Ruby.neat" />
       <item index="1" class="java.lang.String" itemvalue="Ruby.xor_neat" />
       <item index="2" class="java.lang.String" itemvalue="RSpec.Run spec 'oread_spec': rubyneat" />
       <item index="3" class="java.lang.String" itemvalue="Ruby.deep_dive" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.xordebug_neat" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -928,20 +973,10 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="100" />
+      <option name="time" value="101" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/rvm/gems/ruby-2.0.0-p353/gems/awesome_print-1.2.0/lib/awesome_print/core_ext/logger.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="390" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="390" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="90" column="8" selection-start="3148" selection-end="3148" vertical-scroll-proportion="0.0" vertical-offset="1157" max-vertical-offset="7155">
@@ -1149,23 +1184,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/graph.rb">
+    <entry file="file://$PROJECT_DIR$/foo_aquarium_example.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="8" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1500">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="978">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+    <entry file="file://$PROJECT_DIR$/neater/xor_lib.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="0" selection-start="5760" selection-end="5760" vertical-scroll-proportion="0.0" vertical-offset="2409" max-vertical-offset="5205">
+        <state line="8" column="0" selection-start="223" selection-end="223" vertical-scroll-proportion="0.12" vertical-offset="0" max-vertical-offset="1000">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="50" selection-start="8055" selection-end="8055" vertical-scroll-proportion="0.0" vertical-offset="3235" max-vertical-offset="3885">
+        <state line="68" column="62" selection-start="2339" selection-end="2339" vertical-scroll-proportion="0.288" vertical-offset="732" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="43" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="1290">
           <folding />
         </state>
       </provider>
@@ -1177,27 +1219,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1927" selection-end="1927" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="1290">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evaluator.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1000">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="34" selection-start="4704" selection-end="4704" vertical-scroll-proportion="0.0" vertical-offset="1638" max-vertical-offset="2625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/neuron.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="13" selection-start="873" selection-end="873" vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1845">
@@ -1205,30 +1226,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/graph.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="256" column="19" selection-start="8797" selection-end="8797" vertical-scroll-proportion="0.0" vertical-offset="3303" max-vertical-offset="6165">
+        <state line="91" column="8" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1500">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="30" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.318" vertical-offset="732" max-vertical-offset="1890">
+        <state line="201" column="29" selection-start="6657" selection-end="6657" vertical-scroll-proportion="0.0" vertical-offset="2476" max-vertical-offset="5310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/rubyneat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="369" column="0" selection-start="12574" selection-end="12574" vertical-scroll-proportion="0.0" vertical-offset="5056" max-vertical-offset="6180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evaluator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1522" selection-end="1522" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="14" selection-start="2860" selection-end="2860" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="2700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/evolver.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="9" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.0" vertical-offset="1171" max-vertical-offset="4080">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.0" vertical-offset="275" max-vertical-offset="2220">
+        <state line="70" column="0" selection-start="2346" selection-end="2346" vertical-scroll-proportion="0.285" vertical-offset="765" max-vertical-offset="2220">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/foo_aquarium_example.rb">
+    <entry file="file://$PROJECT_DIR$/neater/xordebug_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="978">
+        <state line="49" column="29" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.48" vertical-offset="255" max-vertical-offset="1710">
           <folding />
         </state>
       </provider>

@@ -378,6 +378,30 @@ do the call to that neuron function with the appropriate weights.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#fitness_cost-instance_method" title="#fitness_cost (instance method)">- (Object) <strong>fitness_cost</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculate the cost of this genotype.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#forget%21-instance_method" title="#forget! (instance method)">- (Object) <strong>forget!</strong> </a>
     
 
@@ -1007,6 +1031,49 @@ add_neurons first!!!!</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="fitness_cost-instance_method">
+  
+    - (<tt>Object</tt>) <strong>fitness_cost</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculate the cost of this genotype.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201
+202
+203
+204</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 201</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fitness_cost'>fitness_cost</span>
+  <span class='id identifier rubyid_p'>p</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span>
+  <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_neuron'>fitness_cost_per_neuron</span> <span class='op'>*</span> <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>+</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_gene'>fitness_cost_per_gene</span> <span class='op'>*</span> <span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="forget!-instance_method">
   
     - (<tt>Object</tt>) <strong>forget!</strong> 
@@ -1393,7 +1460,7 @@ instance neurons in @neurons</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Jan  6 11:16:37 2014 by
+  Generated on Mon Jan  6 19:54:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
