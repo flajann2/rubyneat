@@ -48,7 +48,12 @@ module NEAT
       end
       block.(self) unless block.nil?
     end
-    
+
+    # Mutate the genes and neurons.
+    def mutate!
+      @controller.evolver.mutate! self
+    end
+
     # Express the entire population.
     def express!
        @critters.each { |critter| critter.express! }
@@ -96,7 +101,7 @@ module NEAT
         wearein = false
         @species.each do |ck, list|
           delta = crit.compare(ck)
-          log.debug { "delta for #{crit} and #{ck} is #{delta}" }
+          #log.debug { "delta for #{crit} and #{ck} is #{delta}" }
           if delta < threshold
             list << crit
             wearein = true

@@ -30,7 +30,7 @@ module NEAT
     def analyze_for_fitness!(critter)
       fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func.(vio[0], vio[1], seq) }
       # Average the fitness vector to get a scalar fitness.
-      critter.fitness = fitvec.reduce {|a,r| a+r} / fitvec.size.to_f
+      critter.fitness = fitvec.reduce {|a,r| a+r} / fitvec.size.to_f - critter.genotype.fitness_cost
       log.debug "Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}"
     end
   end

@@ -358,7 +358,7 @@ module NEAT
                                  @population = @population_class.new(self)
                                end
         @population_history.shift unless @population_history.size <= @parms.max_population_history
-
+        @population.mutate!
         @population.express!
 
         ## Evaluate population
@@ -367,6 +367,7 @@ module NEAT
           @seq_num = snum
           @population.evaluate!
         end
+
         @population.analyze!
         @population.speciate!
         new_pop = @population.evolve

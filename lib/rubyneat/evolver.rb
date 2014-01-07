@@ -27,6 +27,24 @@ module NEAT
       end
     end
 
+    # Here we mutate the population.
+    def mutate!(population)
+      @npop = population
+
+      if @controller.parms.mate_only_prob.nil? or rand > @controller.parms.mate_only_prob
+        log.debug "[[[ Neuron and Gene Giggling!"
+        mutate_perturb_gene_weights!
+        mutate_change_gene_weights!
+        mutate_add_neurons!
+        mutate_change_neurons!
+        mutate_add_genes!
+        mutate_reenable_genes!
+        log.debug "]]] End Neuron and Gene Giggling!\n"
+      else
+        log.debug "*** Mating only!"
+      end
+    end
+
     # Here we clone the population and then evolve it
     # on the basis of fitness and novelty, etc.
     #
@@ -39,19 +57,6 @@ module NEAT
       prepare_fitness!
       prepare_novelty!
 
-      # Do it!
-      if @controller.parms.mate_only_prob.nil? or rand > @controller.parms.mate_only_prob
-        log.debug "[[[ Neuron Giggling!"
-        mutate_perturb_gene_weights!
-        mutate_change_gene_weights!
-        mutate_add_neurons!
-        mutate_change_neurons!
-        mutate_add_genes!
-        mutate_reenable_genes!
-        log.debug "]]] End Neuron Giggling!\n"
-      else
-        log.debug "*** Mating only!"
-      end
       mate!
 
       return @npop
@@ -90,9 +95,17 @@ module NEAT
       end
     end
 
-    # TODO Finish mutate_change_gene_weights!
+    # Totally change weights to something completely different
     def mutate_change_gene_weights!
-      log.error "mutate_change_gene_weights! NIY"
+      @gchange = Distribution::Normal::rng(0, @controller.parms.mutate_change_gene_weights_sd) if @gchange.nil?
+      @npop.critters.each do |critter|
+        critter.genotype.genes.each { |innov, gene|
+          if rand < @controller.parms.mutate_change_gene_weights_prob
+            gene.weight = chg = @gchange.()
+            log.debug { "Change gene #{gene}.#{innov} by #{chg}" }
+          end
+        }
+      end
     end
 
     def mutate_add_genes!

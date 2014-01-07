@@ -197,6 +197,12 @@ module NEAT
         @neural_outputs = Hash[@neural_outputs.values.map{|n| [n.name, @neurons[n.name]]}]
       end
 
+      # Calculate the cost of this genotype.
+      def fitness_cost
+        p = @controller.parms
+        p.fitness_cost_per_neuron * @neurons.size + p.fitness_cost_per_gene * @genes.size
+      end
+
       #= Gene Specification
       # The Gene specifices a singlular input and
       # output neuron, which represents a connection
@@ -279,6 +285,7 @@ module NEAT
 
       # This function is re-written by Expressor -- with parameters and all.
       # It returns a "response" in the form of a response hash.
+      # TODO This *is* network activation, so we should rename this at a later date...
       def stimulate
         nil
       end
