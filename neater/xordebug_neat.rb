@@ -29,9 +29,9 @@ define "XOR System" do
   ### Settings
   ## General
   hash_on_fitness = false
-  start_population_size 10
-  population_size 10
-  max_generations 100
+  start_population_size 30
+  population_size 30
+  max_generations 400
   max_population_history 10
 
   ## Evolver probabilities and SDs
@@ -40,29 +40,34 @@ define "XOR System" do
   mutate_perturb_gene_weights_sd 0.30
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.01
+  mutate_change_gene_weights_prob 0.05
   mutate_change_gene_weights_sd 2.0
 
   # Adding new neurons and genes
-  mutate_add_neuron_prob 0.1
-  mutate_add_gene_prob 0.1
+  mutate_add_neuron_prob 0.20
+  mutate_add_gene_prob 0.40
+
+  # Switching genes on and off
+  mutate_gene_disable_prob 0.05
+  mutate_gene_reenable_prob 0.05
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
 
   # Mating
-  survival_threshold 0.2 # top 20% allowed to mate in a species.
+  survival_threshold 0.40 # top % allowed to mate in a species.
+  survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
   fitness_cost_per_neuron 0.0016
   fitness_cost_per_gene   0.0001
 
   # Speciation
-  compatibility_threshold 4.0
+  compatibility_threshold 90.0
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
-  max_species 50
+  max_species 20
   dropoff_age 15
 
   # Sequencing

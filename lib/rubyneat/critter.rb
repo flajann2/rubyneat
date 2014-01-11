@@ -236,6 +236,7 @@ module NEAT
         end
 
         def enabled? ; @enabled ; end
+        def disabled? ; not enabled? ; end
 
         # Create a new Gene and set it up fully.
         ## genotype -- genotype

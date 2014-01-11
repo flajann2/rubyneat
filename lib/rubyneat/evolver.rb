@@ -38,6 +38,7 @@ module NEAT
         mutate_add_neurons!
         mutate_change_neurons!
         mutate_add_genes!
+        mutate_disable_genes!
         mutate_reenable_genes!
         log.debug "]]] End Neuron and Gene Giggling!\n"
       else
@@ -117,9 +118,22 @@ module NEAT
       end
     end
 
-    # TODO Finish mutate_reenable_genes!
+    def mutate_disable_genes!
+      @npop.critters.each do |critter|
+        if rand < @controller.parms.mutate_gene_disable_prob
+          log.debug "mutate_disable_genes! for #{critter}"
+          @critter_op.disable_gene! critter
+        end
+      end
+    end
+
     def mutate_reenable_genes!
-      log.error "mutate_reenable_genes! NIY"
+      @npop.critters.each do |critter|
+        if rand < @controller.parms.mutate_gene_reenable_prob
+          log.debug "mutate_reenable_genes! for #{critter}"
+          @critter_op.reenable_gene! critter
+        end
+      end
     end
 
     def mutate_add_neurons!
@@ -139,18 +153,23 @@ module NEAT
     # Here we select candidates for mating. We must look at species and fitness
     # to make the selection for mating.
     def mate!
-      popsize = @controller.parms.population_size
-      surv = @controller.parms.survival_threshold
+      parm = @controller.parms
+      popsize = parm.population_size
+      surv = parm.survival_threshold
+      survmin = parm.survival_mininum_per_species
       mlist = [] # list of chosen mating pairs of critters [crit1, crit2]
 
       # species list already sorted in descending order of fitness
       @npop.species.each do |k, sp|
-        spsel = sp[0, sp.size * surv]
+        crem = [(sp.size * surv).ceil, survmin].max
+        log.warn "Minumum per species hit -- #{survmin}" unless crem > survmin
+        spsel = sp[0, crem]
         spsel = sp if spsel.empty?
         sp.size.times do
           mlist << [spsel[rand spsel.size], spsel[rand spsel.size]]
         end
       end
+
       @npop.critters = mlist.map do |crit1, crit2|
         sex crit1, crit2
       end
@@ -260,6 +279,18 @@ module NEAT
           crit.genotype.add_genes
           log.debug "add_gene! Added gene #{gene} to #{crit}"
         end
+      end
+
+      # Pick an enabled gene at random and disable it.
+      def disable_gene!(crit)
+        gene = crit.genotype.genes.values.reject{|gene| gene.disabled? }.sample
+        gene.enabled = false unless gene.nil?
+      end
+
+      # Pick a disabled gene at random and reenable it.
+      def reenable_gene!(crit)
+        gene = crit.genotype.genes.values.reject{|gene| gene.enabled? }.sample
+        gene.enabled = true unless gene.nil?
       end
     end
   end

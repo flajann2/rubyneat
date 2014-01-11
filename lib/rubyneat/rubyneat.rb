@@ -234,6 +234,7 @@ module NEAT
       attr_accessor :mutate_add_gene_prob
       attr_accessor :mutate_add_neuron_prob
 
+      attr_accessor :mutate_gene_disable_prob
       attr_accessor :mutate_gene_reenable_prob
 
       attr_accessor :mutate_gene_trait_prob
@@ -271,6 +272,7 @@ module NEAT
       # factor (0 to 1) of the top percentage of the species that's
       # allowed to mate.
       attr_accessor :survival_threshold
+      attr_accessor :survival_mininum_per_species
 
       attr_accessor :trait_mutation_power
       attr_accessor :trait_param_mut_prob

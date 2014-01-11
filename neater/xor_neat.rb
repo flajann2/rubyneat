@@ -86,6 +86,7 @@ define "XOR System" do
 
   # Mating
   survival_threshold 0.2 # top 20% allowed to mate in a species.
+  survival_mininum_per_species  6 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
   fitness_cost_per_neuron 0.016

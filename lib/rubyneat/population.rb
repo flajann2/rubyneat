@@ -94,15 +94,15 @@ module NEAT
       end
       
       # Some convience parms
-      threshold = @controller.parms.compatibility_threshold
+      parm = @controller.parms
 
       # And so now we iterate...
       @critters.each do |crit|
         wearein = false
         @species.each do |ck, list|
           delta = crit.compare(ck)
-          #log.debug { "delta for #{crit} and #{ck} is #{delta}" }
-          if delta < threshold
+          log.debug { "delta for #{crit} and #{ck} is #{delta}" }
+          if delta < parm.compatibility_threshold
             list << crit
             wearein = true
             break

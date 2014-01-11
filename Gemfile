@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
 
-ruby '2.0.0'
+#ruby '2.1.0'
 
 gem 'mongo'
 gem 'bson_ext'
@@ -23,4 +23,5 @@ group :development do
   gem "jeweler", "~> 1.8.7"
   gem "simplecov"
   #gem 'debugger'
+  gem 'ruby-debug-ide'
 end
