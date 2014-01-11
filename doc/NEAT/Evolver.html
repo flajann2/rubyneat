@@ -432,7 +432,6 @@ novelty, etc.</p>
       <pre class="lines">
 
 
-52
 53
 54
 55
@@ -443,10 +442,11 @@ novelty, etc.</p>
 60
 61
 62
-63</pre>
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolve'>evolve</span><span class='lparen'>(</span><span class='id identifier rubyid_population'>population</span><span class='rparen'>)</span>
   <span class='ivar'>@npop</span> <span class='op'>=</span> <span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_dclone'>dclone</span>
@@ -560,7 +560,8 @@ innovation numbers.</p>
 43
 44
 45
-46</pre>
+46
+47</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 31</span>
@@ -575,6 +576,7 @@ innovation numbers.</p>
     <span class='id identifier rubyid_mutate_add_neurons!'>mutate_add_neurons!</span>
     <span class='id identifier rubyid_mutate_change_neurons!'>mutate_change_neurons!</span>
     <span class='id identifier rubyid_mutate_add_genes!'>mutate_add_genes!</span>
+    <span class='id identifier rubyid_mutate_disable_genes!'>mutate_disable_genes!</span>
     <span class='id identifier rubyid_mutate_reenable_genes!'>mutate_reenable_genes!</span>
     <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>]]] End Neuron and Gene Giggling!\n</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>else</span>
@@ -591,9 +593,9 @@ innovation numbers.</p>
 </div>
 
     <div id="footer">
-  Generated on Mon Jan  6 19:54:48 2014 by
+  Generated on Sat Jan 11 14:36:34 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.3 (ruby-2.0.0).
+  0.8.7.3 (ruby-2.1.0).
 </div>
 
   </body>
