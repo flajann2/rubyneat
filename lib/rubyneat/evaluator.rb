@@ -20,10 +20,15 @@ module NEAT
     # and vout in the output vector from the critter.
     def evaluate!(critter)
       vin = @controller.query_func.(@controller.seq_num)
-      vout = critter.phenotype.stimulate *vin
-      log.debug "critter #{critter.name}: vin=#{vin}. vout=#{vout}"
       @crit_hist[critter] = {} unless @crit_hist.member? critter
-      @crit_hist[critter][@controller.seq_num] = [vin, vout] 
+      begin
+        vout = critter.phenotype.stimulate *vin
+        log.debug "critter #{critter.name}: vin=#{vin}. vout=#{vout}"
+        @crit_hist[critter][@controller.seq_num] = [vin, vout]
+      rescue Exception => e
+        log.error "Exception #{e} on code: #{critter.phenotype.code}"
+        @crit_hist[critter][@controller.seq_num] = [vin, :error]
+      end
     end
 
     # Analyze the evaluation and compute a fitness for the given critter.

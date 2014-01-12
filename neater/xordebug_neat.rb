@@ -85,20 +85,25 @@ evolve do
   }
 
   fitness { |vin, vout, seq|
-    bin = uncondition_boolean_vector vin
-    bout = uncondition_boolean_vector vout
-    bactual = [xor(*vin)]
-    vactual = condition_boolean_vector bactual
-    fit = 2.00 - simple_fitness_error(vout, vactual)
-    bfit = (bout == bactual) ? 'T' : 'F'
-    $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%5.2f, seq=%s" % [bfit,
-                                                                                      bin,
-                                                                                      bout,
-                                                                                      bactual,
-                                                                                      vout,
-                                                                                      fit,
-                                                                                      seq]
-    fit
+    unless vout == :error
+      bin = uncondition_boolean_vector vin
+      bout = uncondition_boolean_vector vout
+      bactual = [xor(*vin)]
+      vactual = condition_boolean_vector bactual
+      fit = 2.00 - simple_fitness_error(vout, vactual)
+      bfit = (bout == bactual) ? 'T' : 'F'
+      $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%5.2f, seq=%s" % [bfit,
+                                                                                           bin,
+                                                                                           bout,
+                                                                                           bactual,
+                                                                                           vout,
+                                                                                           fit,
+                                                                                           seq]
+      fit
+    else
+      $log.debug "Error on #{vin} [#{seq}]"
+      0.0
+    end
   }
 end
 

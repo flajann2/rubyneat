@@ -59,11 +59,15 @@ module NEAT
       # And now call them in that order!
       @resolved.each do |neu|
         unless neu.input?
-          p.code += "    @#{neu.name} = #{neu.name}("
-          raise NeatException.new("No gene present for #{neu.name}") unless g.neural_gene_map.member? neu.name
-          p.code += g.neural_gene_map[neu.name].map{ |gene|
-            "%s * @%s" % [gene.weight, gene.in_neuron]
-          }.join(", ") + ")\n"
+          if g.neural_gene_map.member? neu.name
+            p.code += "    @#{neu.name} = #{neu.name}("
+            p.code += g.neural_gene_map[neu.name].map{ |gene|
+              "%s * @%s" % [gene.weight, gene.in_neuron]
+            }.join(", ") + ")\n"
+          else
+            g.dangling_neurons = true
+            log.debug "Dangling neuron in critter #{critter} -- #{neu}"
+          end
         end
       end
 

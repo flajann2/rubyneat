@@ -67,6 +67,10 @@ module NEAT
       # Instantiations of neural inputs and outputs
       attr_reader :neural_inputs, :neural_outputs
 
+      # This will be set to true if there are dangling neurons.
+      attr_accessor :dangling_neurons
+      alias :dangling_neurons? :dangling_neurons
+
       # Map neurons to the genes that marks them as output
       # { oneu_name => [ gene_1, gene_2,... gene_n], ...}
       # Just take the in_neuron name and the weight to do
