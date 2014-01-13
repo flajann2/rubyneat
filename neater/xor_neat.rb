@@ -114,12 +114,14 @@ evolve do
     condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
   }
 
+  # Fitness is an error / cost function -- the better the fit, the closer
+  # to zero the fitness parameter will be.
   fitness { |vin, vout, seq|
     bin = uncondition_boolean_vector vin
     bout = uncondition_boolean_vector vout
     bactual = [xor(*vin)]
     vactual = condition_boolean_vector bactual
-    fit = 2.00 - simple_fitness_error(vout, vactual)
+    fit = simple_fitness_error(vout, vactual)
     bfit = (bout == bactual) ? 'T' : 'F'
     $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%5.2f, seq=%s" % [bfit,
                                                                                       bin,

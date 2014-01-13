@@ -72,10 +72,12 @@ module NEAT
       NEAT::dpp @npop.species
     end
 
-    # Sort species within the basis of fitness
+    # Sort species within the basis of fitness.
+    # Think of the fitness as an error / cost function.
+    # The better fit, the closer to zero the fitness parameter will be.
     def prepare_fitness!
       @npop.species.each do |k, sp|
-        sp.sort!{|c1, c2| c2.fitness <=> c1.fitness }
+        sp.sort!{|c1, c2| c1.fitness <=> c2.fitness }
       end
     end
 

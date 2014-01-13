@@ -31,25 +31,25 @@ define "XOR System" do
   hash_on_fitness = false
   start_population_size 30
   population_size 30
-  max_generations 400
+  max_generations 10000
   max_population_history 10
 
   ## Evolver probabilities and SDs
   # Perturbations
   mutate_perturb_gene_weights_prob 0.05
-  mutate_perturb_gene_weights_sd 0.30
+  mutate_perturb_gene_weights_sd 0.25
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.05
-  mutate_change_gene_weights_sd 2.0
+  mutate_change_gene_weights_prob 0.01
+  mutate_change_gene_weights_sd 0.25
 
   # Adding new neurons and genes
-  mutate_add_neuron_prob 0.20
-  mutate_add_gene_prob 0.40
+  mutate_add_neuron_prob 0.10
+  mutate_add_gene_prob 0.20
 
   # Switching genes on and off
-  mutate_gene_disable_prob 0.05
-  mutate_gene_reenable_prob 0.05
+  mutate_gene_disable_prob 0.001
+  mutate_gene_reenable_prob 0.001
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
@@ -59,11 +59,11 @@ define "XOR System" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.0016
-  fitness_cost_per_gene   0.0001
+  fitness_cost_per_neuron 0.001
+  fitness_cost_per_gene   0.005
 
   # Speciation
-  compatibility_threshold 90.0
+  compatibility_threshold 5.0
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
@@ -90,9 +90,9 @@ evolve do
       bout = uncondition_boolean_vector vout
       bactual = [xor(*vin)]
       vactual = condition_boolean_vector bactual
-      fit = 2.00 - simple_fitness_error(vout, vactual)
+      fit = simple_fitness_error(vout, vactual)
       bfit = (bout == bactual) ? 'T' : 'F'
-      $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%5.2f, seq=%s" % [bfit,
+      $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%6.3f, seq=%s" % [bfit,
                                                                                            bin,
                                                                                            bout,
                                                                                            bactual,

@@ -18,6 +18,8 @@ module NEAT
     #
     # Returns [vin, vout], where vin in the input vector,
     # and vout in the output vector from the critter.
+    # FIXME: this should not really have to deal with an error.
+    # FIXME: the error should be handled upstream from here.
     def evaluate!(critter)
       vin = @controller.query_func.(@controller.seq_num)
       @crit_hist[critter] = {} unless @crit_hist.member? critter
@@ -26,7 +28,7 @@ module NEAT
         log.debug "critter #{critter.name}: vin=#{vin}. vout=#{vout}"
         @crit_hist[critter][@controller.seq_num] = [vin, vout]
       rescue Exception => e
-        log.error "Exception #{e} on code: #{critter.phenotype.code}"
+        log.error "Exception #{e} on code:\n#{critter.phenotype.code}"
         @crit_hist[critter][@controller.seq_num] = [vin, :error]
       end
     end
@@ -35,7 +37,7 @@ module NEAT
     def analyze_for_fitness!(critter)
       fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func.(vio[0], vio[1], seq) }
       # Average the fitness vector to get a scalar fitness.
-      critter.fitness = fitvec.reduce {|a,r| a+r} / fitvec.size.to_f - critter.genotype.fitness_cost
+      critter.fitness = fitvec.reduce {|a,r| a+r} / fitvec.size.to_f + critter.genotype.fitness_cost
       log.debug "Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}"
     end
   end
