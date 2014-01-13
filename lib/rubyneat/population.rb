@@ -75,7 +75,7 @@ module NEAT
       @controller.evolver.evolve self
     end
    
-    # Group crtters into species
+    # Group critters into species
     # Note that the @species objects
     # have useful singleton methods:
     #* @species.member? -- checks all of the lists for membership, not just the hash
@@ -92,7 +92,27 @@ module NEAT
           sp.fitness = sp.map{|crit| crit.fitness}.reduce{|a,b| a+b} / sp.size
         end
       end
-      
+
+      def @species.compactify!(parm)
+        mutt = self[:mutt] = self.map { |k, splist| [k, splist]}.reject {|k, splist|
+          splist.size >= parm.smallest_species
+        }.map { |k, splist|
+          self.delete k
+          splist
+        }.flatten
+
+        # FIXME this code is not dry!!!!
+        def mutt.fitness=(fit)
+          @fitness = fit
+        end
+
+        def mutt.fitness
+          @fitness
+        end
+
+        self.delete :mutt if self[:mutt].empty?
+      end
+
       # Some convience parms
       parm = @controller.parms
 
@@ -108,6 +128,7 @@ module NEAT
             break
           end
         end
+
         # New species?
         unless wearein
           @species[crit] = species = [crit]
@@ -119,6 +140,9 @@ module NEAT
           end
         end
       end
+
+      # Compactify the species if less than smallest_species
+      @species.compactify! parm
 
       # And now we evaluate all species for fitness...
       @species.evaluate!

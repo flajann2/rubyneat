@@ -40,7 +40,7 @@ define "XOR System" do
   mutate_perturb_gene_weights_sd 0.25
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.01
+  mutate_change_gene_weights_prob 0.05
   mutate_change_gene_weights_sd 0.25
 
   # Adding new neurons and genes
@@ -48,8 +48,8 @@ define "XOR System" do
   mutate_add_gene_prob 0.20
 
   # Switching genes on and off
-  mutate_gene_disable_prob 0.001
-  mutate_gene_reenable_prob 0.001
+  mutate_gene_disable_prob 0.005
+  mutate_gene_reenable_prob 0.005
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
@@ -63,12 +63,13 @@ define "XOR System" do
   fitness_cost_per_gene   0.005
 
   # Speciation
-  compatibility_threshold 5.0
+  compatibility_threshold 15.0
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
   max_species 20
   dropoff_age 15
+  smallest_species 5
 
   # Sequencing
   start_sequence_at 0

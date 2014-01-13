@@ -216,6 +216,9 @@ module NEAT
       # Species Peality age for not making progress
       attr_accessor :dropoff_age
 
+      # Species smallest population allowed (coalse smaller species into one)
+      attr_accessor :smallest_species
+
       # Ratio of mating are actually interspecies
       attr_accessor :interspecies_mate_rate
 
