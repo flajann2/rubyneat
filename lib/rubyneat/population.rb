@@ -146,6 +146,12 @@ module NEAT
 
       # And now we evaluate all species for fitness...
       @species.evaluate!
+
+      # Dump for debugging reasons
+      @species.each do |k, sp|
+        log.debug ">> Species #{k} has #{sp.size} members with a #{sp.fitness} fitness"
+      end
+
     end
 
     #== Generate a report on the state of this population.
