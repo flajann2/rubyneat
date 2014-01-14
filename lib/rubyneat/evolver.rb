@@ -75,9 +75,19 @@ module NEAT
     # Sort species within the basis of fitness.
     # Think of the fitness as an error / cost function.
     # The better fit, the closer to zero the fitness parameter will be.
+    #
+    # If a compare block is specified in the DSL, then that function is called
+    # with the *fitness values* from critters c1 and c2. The default valuation
+    # is c1.fitness <=> c2.fitness. You may elect to evaluate them differently.
     def prepare_fitness!
       @npop.species.each do |k, sp|
-        sp.sort!{|c1, c2| c1.fitness <=> c2.fitness }
+        sp.sort!{|c1, c2|
+          unless @controller.compare_func.nil?
+            @controller.compare_func.(c1.fitness, c2.fitness)
+          else
+            c1.fitness <=> c2.fitness
+          end
+        }
       end
     end
 

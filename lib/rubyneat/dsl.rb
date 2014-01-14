@@ -37,7 +37,7 @@ module NEAT
 
     # DSL -- Run evolution
     def evolve(&block)
-      # Query function is called with the sequence (time evalution) number,
+      # Query function is called with the sequence (time evolution) number,
       # and returns an array or hash of parameters that will be given
       # to the input nodes. In the case of hash, the keys in the hash
       # shall correspond to the names given to the input neurons.
@@ -51,6 +51,19 @@ module NEAT
       # |vin, vout, seq|
       def fitness(&block)
         NEAT::controller.fitness_func = block
+      end
+
+      # Fitness ordering -- given 2 fitness numbers,
+      # use the <=> to compare them (or the equivalent, following
+      # the +1, 0, -1 that is in the sense of <=>)
+      def compare(&block)
+        NEAT::controller.compare_func = block
+      end
+
+      # Calculation to add the cost to the fitness, resulting in a fitness
+      # that incorporates the cost for sorting purposes.
+      def cost(&block)
+        NEAT::controller.cost_func = block
       end
 
       # Helper function to

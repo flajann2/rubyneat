@@ -34,10 +34,16 @@ module NEAT
     end
 
     # Analyze the evaluation and compute a fitness for the given critter.
+    # Note that if cost_func is set, we call that to integrate the cost to
+    # the fitness average fitness calculated for the fitness vector.
     def analyze_for_fitness!(critter)
       fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func.(vio[0], vio[1], seq) }
       # Average the fitness vector to get a scalar fitness.
-      critter.fitness = fitvec.reduce {|a,r| a+r} / fitvec.size.to_f + critter.genotype.fitness_cost
+      critter.fitness = unless @controller.cost_func.nil?
+                          @controller.cost_func.(fitvec, critter.genotype.fitness_cost)
+                        else
+                          fitvec.reduce {|a,r| a+r} / fitvec.size.to_f + critter.genotype.fitness_cost
+                        end
       log.debug "Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}"
     end
   end

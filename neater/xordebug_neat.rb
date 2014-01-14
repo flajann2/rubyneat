@@ -12,7 +12,7 @@ XOR_INPUTS = 2
 $log.level = Logger::DEBUG
 
 # This defines the controller
-define "XOR System" do
+define "XOR Debug System" do
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
@@ -36,20 +36,20 @@ define "XOR System" do
 
   ## Evolver probabilities and SDs
   # Perturbations
-  mutate_perturb_gene_weights_prob 0.05
+  mutate_perturb_gene_weights_prob 0.100
   mutate_perturb_gene_weights_sd 0.25
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.05
-  mutate_change_gene_weights_sd 0.25
+  mutate_change_gene_weights_prob 0.001
+  mutate_change_gene_weights_sd 2.00
 
   # Adding new neurons and genes
-  mutate_add_neuron_prob 0.10
+  mutate_add_neuron_prob 0.20
   mutate_add_gene_prob 0.20
 
   # Switching genes on and off
-  mutate_gene_disable_prob 0.005
-  mutate_gene_reenable_prob 0.005
+  mutate_gene_disable_prob 0.001
+  mutate_gene_reenable_prob 0.001
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
@@ -59,11 +59,11 @@ define "XOR System" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.001
-  fitness_cost_per_gene   0.005
+  fitness_cost_per_neuron 0.0005
+  fitness_cost_per_gene   0.00001
 
   # Speciation
-  compatibility_threshold 15.0
+  compatibility_threshold 2.5
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
@@ -84,6 +84,13 @@ evolve do
     # the least signficant bits.
     condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
   }
+
+  # Compare the fitness of two critters. We may choose a different ordering
+  # here.
+  compare {|f1, f2| f2 <=> f1 }
+
+  # Here we integrate the cost with the fitness.
+  cost {|fitvec, cost| (4 - (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2 - cost}
 
   fitness { |vin, vout, seq|
     unless vout == :error

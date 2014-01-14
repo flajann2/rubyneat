@@ -181,7 +181,11 @@ module NEAT
 
     # Fitness function that Critters shall be rated on.
     attr_accessor :fitness_func
-    
+
+    # Compare function for fitness
+    # Cost function for integrating in the cost to the fitness scalar.
+    attr_accessor :compare_func, :cost_func
+
     # End run function to call at the end of each generational run
     # Also report_hook to dump reports for the user, etc.
     attr_accessor :end_run_func, :report_hook
