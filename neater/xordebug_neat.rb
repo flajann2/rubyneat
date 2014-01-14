@@ -114,7 +114,7 @@ evolve do
       fit
     else
       $log.debug "Error on #{vin} [#{seq}]"
-      0.0
+      1.0
     end
   }
 end

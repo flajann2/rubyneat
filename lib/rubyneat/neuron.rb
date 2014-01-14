@@ -98,7 +98,7 @@ The basic types to RubyNEAT are represented here.
       
       # Just provides a bias signal      
       def express(instance)
-        instance.define_singleton_method(@name) { @neu_bias }
+        instance.define_singleton_method(@name) { 1.00 }
       end
     end
 
