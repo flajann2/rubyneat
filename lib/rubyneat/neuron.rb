@@ -98,7 +98,7 @@ The basic types to RubyNEAT are represented here.
       
       # Just provides a bias signal      
       def express(instance)
-        instance.define_singleton_method(@name) { 1.00 }
+        instance.define_singleton_method(@name) { @neu_bias }
       end
     end
 
@@ -114,12 +114,24 @@ The basic types to RubyNEAT are represented here.
       end
     end
 
+    # An alternative sigmoid-like function, but ranges -1 to +1
     class TanhNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
       def express(instance)
         instance.define_singleton_method(@name) {|*inputs|
           tanh(2.4 * inputs.reduce {|p, q| p + q})
+        }
+      end
+    end
+
+    # Sin function (CPPN) -- adjusted to have its +1 and -1 near TanhNeuron
+    class SineNeuron < Neuron
+      # create a function on the instance with our name
+      # that sums all inputs and produce a sigmoid output (using tanh)
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
+          sin(1.6 * inputs.reduce {|p, q| p + q})
         }
       end
     end
