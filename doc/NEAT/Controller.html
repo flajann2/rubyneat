@@ -804,6 +804,34 @@ report_hook to dump reports for the user, etc.</p>
 </li>
 
     
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stop_on_fit_func-instance_method" title="#stop_on_fit_func (instance method)">- (Object) <strong>stop_on_fit_func</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+</div></span>
+  
+</li>
+
+    
   </ul>
 
 
@@ -2084,6 +2112,50 @@ report_hook to dump reports for the user, etc.</p>
 </table>
 </div>
     
+      
+      <span id="stop_on_fit_func=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="stop_on_fit_func-instance_method">
+  
+    - (<tt>Object</tt>) <strong>stop_on_fit_func</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 187</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fit_func'>stop_on_fit_func</span>
+  <span class='ivar'>@stop_on_fit_func</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 
@@ -2202,7 +2274,11 @@ report_hook to dump reports for the user, etc.</p>
 390
 391
 392
-393</pre>
+393
+394
+395
+396
+397</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 360</span>
@@ -2234,6 +2310,10 @@ report_hook to dump reports for the user, etc.</p>
     <span class='comment'>## Report hook for evaluation
 </span>    <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 
+    <span class='comment'>## Exit if fitness criteria is reached
+</span>    <span class='comment'># FIXME handle this exit condition better!!!!!
+</span>    <span class='id identifier rubyid_exit'>exit</span> <span class='kw'>if</span> <span class='ivar'>@stop_on_fit_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='lbracket'>[</span><span class='symbol'>:fitness</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@stop_on_fit_func</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+
     <span class='comment'>## Evolve population
 </span>    <span class='ivar'>@population</span> <span class='op'>=</span> <span class='id identifier rubyid_new_pop'>new_pop</span>
 
@@ -2251,7 +2331,7 @@ report_hook to dump reports for the user, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Jan 14 11:50:45 2014 by
+  Generated on Tue Jan 14 14:46:24 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>
