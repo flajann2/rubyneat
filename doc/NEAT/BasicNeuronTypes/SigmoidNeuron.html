@@ -253,7 +253,7 @@ produce a sigmoid output (using tanh)</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express'>express</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='ivar'>@name</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='op'>*</span><span class='id identifier rubyid_inputs'>inputs</span><span class='op'>|</span>
-    <span class='id identifier rubyid_tanh'>tanh</span><span class='lparen'>(</span><span class='id identifier rubyid_inputs'>inputs</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='comma'>,</span> <span class='id identifier rubyid_q'>q</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span> <span class='op'>+</span> <span class='id identifier rubyid_q'>q</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+    <span class='float'>1.0</span> <span class='op'>/</span> <span class='lparen'>(</span><span class='float'>1.0</span> <span class='op'>+</span> <span class='id identifier rubyid_exp'>exp</span><span class='lparen'>(</span><span class='op'>-</span><span class='float'>4.9</span> <span class='op'>*</span> <span class='id identifier rubyid_inputs'>inputs</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='comma'>,</span> <span class='id identifier rubyid_q'>q</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span> <span class='op'>+</span> <span class='id identifier rubyid_q'>q</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -266,7 +266,7 @@ produce a sigmoid output (using tanh)</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 11 14:36:33 2014 by
+  Generated on Tue Jan 14 11:50:44 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

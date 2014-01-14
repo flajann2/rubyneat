@@ -169,6 +169,35 @@ numbers.</p>
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#dangling_neurons-instance_method" title="#dangling_neurons (instance method)">- (Object) <strong>dangling_neurons</strong> </a>
+    
+
+    
+      (also: #dangling_neurons?)
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This will be set to true if there are dangling neurons.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#genes-instance_method" title="#genes (instance method)">- (Object) <strong>genes</strong> </a>
     
 
@@ -616,10 +645,6 @@ genes.</p>
       <pre class="lines">
 
 
-76
-77
-78
-79
 80
 81
 82
@@ -634,10 +659,14 @@ genes.</p>
 91
 92
 93
-94</pre>
+94
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='comma'>,</span> <span class='id identifier rubyid_mating'>mating</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
@@ -705,6 +734,53 @@ genes.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_critter'>critter</span>
   <span class='ivar'>@critter</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="dangling_neurons=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="dangling_neurons-instance_method">
+  
+    - (<tt>Object</tt>) <strong>dangling_neurons</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='dangling_neurons?-instance_method'>dangling_neurons?</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This will be set to true if there are dangling neurons.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dangling_neurons'>dangling_neurons</span>
+  <span class='ivar'>@dangling_neurons</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -784,12 +860,12 @@ do the call to that neuron function with the appropriate weights</p>
       <pre class="lines">
 
 
-74
-75
-76</pre>
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_gene_map'>neural_gene_map</span>
   <span class='ivar'>@neural_gene_map</span>
@@ -962,16 +1038,16 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-151
-152
-153
-154
 155
 156
-157</pre>
+157
+158
+159
+160
+161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_genes'>add_genes</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_genes'>genes</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
@@ -1011,14 +1087,14 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-143
-144
-145
-146
-147</pre>
+147
+148
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_neurons'>add_neurons</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_neus'>neus</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_neus'>neus</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span>
@@ -1056,13 +1132,13 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-201
-202
-203
-204</pre>
+205
+206
+207
+208</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 201</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness_cost'>fitness_cost</span>
   <span class='id identifier rubyid_p'>p</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span>
@@ -1099,13 +1175,13 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-122
-123
-124
-125</pre>
+126
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 126</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_forget!'>forget!</span>
   <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span> <span class='id identifier rubyid_neu'>neu</span><span class='period'>.</span><span class='id identifier rubyid_clear_graph'>clear_graph</span> <span class='rbrace'>}</span>
@@ -1164,14 +1240,14 @@ need to randomly select a neuron in the case of clashes.</p>
       <pre class="lines">
 
 
-163
-164
-165
-166
-167</pre>
+167
+168
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_innervate!'>innervate!</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_hneus'>hneus</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_hneus'>hneus</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_neus'>neus</span><span class='op'>|</span>
@@ -1236,20 +1312,20 @@ the block and we simply add them in.</p>
       <pre class="lines">
 
 
-101
-102
-103
-104
 105
 106
 107
 108
 109
 110
-111</pre>
+111
+112
+113
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 101</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neucleate'>neucleate</span><span class='lparen'>(</span><span class='label'>clean:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_genes'>genes</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_g'>g</span><span class='op'>|</span>
@@ -1295,12 +1371,12 @@ nuke_redundancies!</p>
       <pre class="lines">
 
 
-117
-118
-119</pre>
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nuke_redundancies!'>nuke_redundancies!</span>
   <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>nuke_redundancies! NIY</span><span class='tstring_end'>&#39;</span></span>
@@ -1345,10 +1421,6 @@ instance neurons in @neurons</p>
       <pre class="lines">
 
 
-179
-180
-181
-182
 183
 184
 185
@@ -1364,10 +1436,14 @@ instance neurons in @neurons</p>
 195
 196
 197
-198</pre>
+198
+199
+200
+201
+202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 183</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prune!'>prune!</span>
   <span class='comment'># Take care of dangling neurons
@@ -1420,10 +1496,6 @@ instance neurons in @neurons</p>
       <pre class="lines">
 
 
-128
-129
-130
-131
 132
 133
 134
@@ -1432,10 +1504,14 @@ instance neurons in @neurons</p>
 137
 138
 139
-140</pre>
+140
+141
+142
+143
+144</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 128</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wire!'>wire!</span>
   <span class='id identifier rubyid_forget!'>forget!</span>
@@ -1460,7 +1536,7 @@ instance neurons in @neurons</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 11 14:36:34 2014 by
+  Generated on Tue Jan 14 11:50:44 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

@@ -1316,6 +1316,33 @@ human-interactive systems.</p>
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#smallest_species-instance_method" title="#smallest_species (instance method)">- (Object) <strong>smallest_species</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Species smallest population allowed (coalse smaller species into one).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#start_population_size-instance_method" title="#start_population_size (instance method)">- (Object) <strong>start_population_size</strong> </a>
     
 
@@ -1619,20 +1646,20 @@ mate.</p>
       <pre class="lines">
 
 
-301
-302
-303
-304
-305
-306
-307
 308
 309
 310
-311</pre>
+311
+312
+313
+314
+315
+316
+317
+318</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 301</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 308</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='kw'>super</span>
@@ -1683,12 +1710,12 @@ mate.</p>
       <pre class="lines">
 
 
-203
-204
-205</pre>
+207
+208
+209</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 203</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 207</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_age_significance'>age_significance</span>
   <span class='ivar'>@age_significance</span>
@@ -1726,12 +1753,12 @@ mate.</p>
       <pre class="lines">
 
 
-204
-205
-206</pre>
+208
+209
+210</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 208</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_babies_stolen'>babies_stolen</span>
   <span class='ivar'>@babies_stolen</span>
@@ -1769,12 +1796,12 @@ mate.</p>
       <pre class="lines">
 
 
-207
-208
-209</pre>
+211
+212
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 211</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compatibility_threshold'>compatibility_threshold</span>
   <span class='ivar'>@compatibility_threshold</span>
@@ -1812,12 +1839,12 @@ mate.</p>
       <pre class="lines">
 
 
-210
-211
-212</pre>
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 214</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disjoint_coefficient'>disjoint_coefficient</span>
   <span class='ivar'>@disjoint_coefficient</span>
@@ -1855,12 +1882,12 @@ mate.</p>
       <pre class="lines">
 
 
-217
-218
-219</pre>
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 217</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 221</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dropoff_age'>dropoff_age</span>
   <span class='ivar'>@dropoff_age</span>
@@ -1898,12 +1925,12 @@ mate.</p>
       <pre class="lines">
 
 
-266
-267
-268</pre>
+273
+274
+275</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 273</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_end_sequence_at'>end_sequence_at</span>
   <span class='ivar'>@end_sequence_at</span>
@@ -1942,12 +1969,12 @@ enabled.</p>
       <pre class="lines">
 
 
-291
-292
-293</pre>
+298
+299
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 291</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 298</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolved_substrate_switch'>evolved_substrate_switch</span>
   <span class='ivar'>@evolved_substrate_switch</span>
@@ -1985,12 +2012,12 @@ enabled.</p>
       <pre class="lines">
 
 
-210
-211
-212</pre>
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 214</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_excess_coefficient'>excess_coefficient</span>
   <span class='ivar'>@excess_coefficient</span>
@@ -2028,12 +2055,12 @@ enabled.</p>
       <pre class="lines">
 
 
-282
-283
-284</pre>
+289
+290
+291</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 282</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 289</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_feature_selection_switch'>feature_selection_switch</span>
   <span class='ivar'>@feature_selection_switch</span>
@@ -2071,12 +2098,12 @@ enabled.</p>
       <pre class="lines">
 
 
-260
-261
-262</pre>
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 267</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness_cost_per_gene'>fitness_cost_per_gene</span>
   <span class='ivar'>@fitness_cost_per_gene</span>
@@ -2115,12 +2142,12 @@ overall fitness for the applied stimuli have been caclulated.</p>
       <pre class="lines">
 
 
-259
-260
-261</pre>
+266
+267
+268</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 259</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 266</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness_cost_per_neuron'>fitness_cost_per_neuron</span>
   <span class='ivar'>@fitness_cost_per_neuron</span>
@@ -2159,12 +2186,12 @@ overall fitness for the applied stimuli have been caclulated.</p>
       <pre class="lines">
 
 
-200
-201
-202</pre>
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hash_on_fitness'>hash_on_fitness</span>
   <span class='ivar'>@hash_on_fitness</span>
@@ -2203,12 +2230,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-287
-288
-289</pre>
+294
+295
+296</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 287</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 294</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_hyper_switch'>hyper_switch</span>
   <span class='ivar'>@hyper_switch</span>
@@ -2246,12 +2273,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-220
-221
-222</pre>
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 220</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 227</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_interspecies_mate_rate'>interspecies_mate_rate</span>
   <span class='ivar'>@interspecies_mate_rate</span>
@@ -2289,12 +2316,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-222
-223
-224</pre>
+229
+230
+231</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_linktrait_mutation_sig'>linktrait_mutation_sig</span>
   <span class='ivar'>@linktrait_mutation_sig</span>
@@ -2332,12 +2359,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-223
-224
-225</pre>
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 223</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 230</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mate_multipoint_avg_prob'>mate_multipoint_avg_prob</span>
   <span class='ivar'>@mate_multipoint_avg_prob</span>
@@ -2375,12 +2402,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-224
-225
-226</pre>
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 224</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 231</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mate_multipoint_prob'>mate_multipoint_prob</span>
   <span class='ivar'>@mate_multipoint_prob</span>
@@ -2418,12 +2445,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-225
-226
-227</pre>
+232
+233
+234</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 225</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 232</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mate_only_prob'>mate_only_prob</span>
   <span class='ivar'>@mate_only_prob</span>
@@ -2461,12 +2488,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-226
-227
-228</pre>
+233
+234
+235</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 226</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 233</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mate_singlepoint_prob'>mate_singlepoint_prob</span>
   <span class='ivar'>@mate_singlepoint_prob</span>
@@ -2504,12 +2531,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-229
-230
-231</pre>
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 229</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 236</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_max_generations'>max_generations</span>
   <span class='ivar'>@max_generations</span>
@@ -2547,12 +2574,12 @@ CPPNs for substrate weights. Additional setup will be necessary.</p>
       <pre class="lines">
 
 
-232
-233
-234</pre>
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 239</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_max_population_history'>max_population_history</span>
   <span class='ivar'>@max_population_history</span>
@@ -2591,12 +2618,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-214
-215
-216</pre>
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 214</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 218</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_max_species'>max_species</span>
   <span class='ivar'>@max_species</span>
@@ -2634,12 +2661,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-234
-235
-236</pre>
+241
+242
+243</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 241</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_add_gene_prob'>mutate_add_gene_prob</span>
   <span class='ivar'>@mutate_add_gene_prob</span>
@@ -2677,12 +2704,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-235
-236
-237</pre>
+242
+243
+244</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 235</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 242</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_add_neuron_prob'>mutate_add_neuron_prob</span>
   <span class='ivar'>@mutate_add_neuron_prob</span>
@@ -2720,12 +2747,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-243
-244
-245</pre>
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_change_gene_weights_prob'>mutate_change_gene_weights_prob</span>
   <span class='ivar'>@mutate_change_gene_weights_prob</span>
@@ -2763,12 +2790,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-243
-244
-245</pre>
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_change_gene_weights_sd'>mutate_change_gene_weights_sd</span>
   <span class='ivar'>@mutate_change_gene_weights_sd</span>
@@ -2806,12 +2833,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-237
-238
-239</pre>
+244
+245
+246</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 237</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 244</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_gene_disable_prob'>mutate_gene_disable_prob</span>
   <span class='ivar'>@mutate_gene_disable_prob</span>
@@ -2849,12 +2876,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-238
-239
-240</pre>
+245
+246
+247</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 238</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 245</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_gene_reenable_prob'>mutate_gene_reenable_prob</span>
   <span class='ivar'>@mutate_gene_reenable_prob</span>
@@ -2892,12 +2919,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-240
-241
-242</pre>
+247
+248
+249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 240</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_gene_trait_prob'>mutate_gene_trait_prob</span>
   <span class='ivar'>@mutate_gene_trait_prob</span>
@@ -2935,12 +2962,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-248
-249
-250</pre>
+255
+256
+257</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 255</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_neuron_trait_prob'>mutate_neuron_trait_prob</span>
   <span class='ivar'>@mutate_neuron_trait_prob</span>
@@ -2978,12 +3005,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-249
-250
-251</pre>
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 249</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_only_prob'>mutate_only_prob</span>
   <span class='ivar'>@mutate_only_prob</span>
@@ -3021,12 +3048,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-243
-244
-245</pre>
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_perturb_gene_weights_prob'>mutate_perturb_gene_weights_prob</span>
   <span class='ivar'>@mutate_perturb_gene_weights_prob</span>
@@ -3064,12 +3091,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-243
-244
-245</pre>
+250
+251
+252</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_perturb_gene_weights_sd'>mutate_perturb_gene_weights_sd</span>
   <span class='ivar'>@mutate_perturb_gene_weights_sd</span>
@@ -3107,12 +3134,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-250
-251
-252</pre>
+257
+258
+259</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 250</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_random_trait_prob'>mutate_random_trait_prob</span>
   <span class='ivar'>@mutate_random_trait_prob</span>
@@ -3150,12 +3177,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-251
-252
-253</pre>
+258
+259
+260</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 251</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 258</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate_toggle_enable_prob'>mutate_toggle_enable_prob</span>
   <span class='ivar'>@mutate_toggle_enable_prob</span>
@@ -3193,12 +3220,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-252
-253
-254</pre>
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 252</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 259</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutdiff_coefficient'>mutdiff_coefficient</span>
   <span class='ivar'>@mutdiff_coefficient</span>
@@ -3236,12 +3263,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-254
-255
-256</pre>
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 254</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 261</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neuron_trait_mut_sig'>neuron_trait_mut_sig</span>
   <span class='ivar'>@neuron_trait_mut_sig</span>
@@ -3279,12 +3306,12 @@ being adjusted automatically</p>
       <pre class="lines">
 
 
-253
-254
-255</pre>
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_newlink_tries'>newlink_tries</span>
   <span class='ivar'>@newlink_tries</span>
@@ -3323,12 +3350,12 @@ population size</p>
       <pre class="lines">
 
 
-264
-265
-266</pre>
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 264</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_size'>population_size</span>
   <span class='ivar'>@population_size</span>
@@ -3366,12 +3393,12 @@ population size</p>
       <pre class="lines">
 
 
-268
-269
-270</pre>
+275
+276
+277</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 268</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 275</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_print_every'>print_every</span>
   <span class='ivar'>@print_every</span>
@@ -3410,12 +3437,12 @@ human-interactive systems.</p>
       <pre class="lines">
 
 
-295
-296
-297</pre>
+302
+303
+304</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 302</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_real_time_switch'>real_time_switch</span>
   <span class='ivar'>@real_time_switch</span>
@@ -3453,12 +3480,12 @@ human-interactive systems.</p>
       <pre class="lines">
 
 
-269
-270
-271</pre>
+276
+277
+278</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 276</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_recur_only_prob'>recur_only_prob</span>
   <span class='ivar'>@recur_only_prob</span>
@@ -3496,12 +3523,12 @@ human-interactive systems.</p>
       <pre class="lines">
 
 
-270
-271
-272</pre>
+277
+278
+279</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 270</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 277</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_recur_prob'>recur_prob</span>
   <span class='ivar'>@recur_prob</span>
@@ -3539,15 +3566,58 @@ human-interactive systems.</p>
       <pre class="lines">
 
 
-298
-299
-300</pre>
+305
+306
+307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 298</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 305</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_recurrency_switch'>recurrency_switch</span>
   <span class='ivar'>@recurrency_switch</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="smallest_species=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="smallest_species-instance_method">
+  
+    - (<tt>Object</tt>) <strong>smallest_species</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Species smallest population allowed (coalse smaller species into one)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 224</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_smallest_species'>smallest_species</span>
+  <span class='ivar'>@smallest_species</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -3583,12 +3653,12 @@ population size</p>
       <pre class="lines">
 
 
-264
-265
-266</pre>
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 264</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_population_size'>start_population_size</span>
   <span class='ivar'>@start_population_size</span>
@@ -3626,12 +3696,12 @@ population size</p>
       <pre class="lines">
 
 
-266
-267
-268</pre>
+273
+274
+275</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 273</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_start_sequence_at'>start_sequence_at</span>
   <span class='ivar'>@start_sequence_at</span>
@@ -3669,12 +3739,12 @@ population size</p>
       <pre class="lines">
 
 
-275
-276
-277</pre>
+282
+283
+284</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 275</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 282</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_survival_mininum_per_species'>survival_mininum_per_species</span>
   <span class='ivar'>@survival_mininum_per_species</span>
@@ -3713,12 +3783,12 @@ mate.</p>
       <pre class="lines">
 
 
-274
-275
-276</pre>
+281
+282
+283</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 274</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 281</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_survival_threshold'>survival_threshold</span>
   <span class='ivar'>@survival_threshold</span>
@@ -3756,12 +3826,12 @@ mate.</p>
       <pre class="lines">
 
 
-277
-278
-279</pre>
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 277</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 284</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trait_mutation_power'>trait_mutation_power</span>
   <span class='ivar'>@trait_mutation_power</span>
@@ -3799,12 +3869,12 @@ mate.</p>
       <pre class="lines">
 
 
-278
-279
-280</pre>
+285
+286
+287</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 278</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 285</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trait_param_mut_prob'>trait_param_mut_prob</span>
   <span class='ivar'>@trait_param_mut_prob</span>
@@ -3842,12 +3912,12 @@ mate.</p>
       <pre class="lines">
 
 
-279
-280
-281</pre>
+286
+287
+288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 279</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 286</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_weigh_mut_power'>weigh_mut_power</span>
   <span class='ivar'>@weigh_mut_power</span>
@@ -3885,12 +3955,12 @@ mate.</p>
       <pre class="lines">
 
 
-210
-211
-212</pre>
+214
+215
+216</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 214</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_weight_coefficient'>weight_coefficient</span>
   <span class='ivar'>@weight_coefficient</span>
@@ -3906,7 +3976,7 @@ mate.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 11 14:36:35 2014 by
+  Generated on Tue Jan 14 11:50:45 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

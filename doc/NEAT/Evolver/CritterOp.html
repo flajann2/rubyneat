@@ -298,14 +298,14 @@
       <pre class="lines">
 
 
-234
-235
-236
-237
-238</pre>
+246
+247
+248
+249
+250</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_evol'>evol</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_evol'>evol</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
@@ -361,22 +361,22 @@ from output neurons, and we don&#39;t do any outputs to input neurons.</p>
       <pre class="lines">
 
 
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282</pre>
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 270</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 282</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_gene!'>add_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_n1'>n1</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_neurons'>neurons</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span> <span class='comment'># input
@@ -426,19 +426,19 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254</pre>
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 257</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_neuron!'>add_neuron!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span>
@@ -481,13 +481,13 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
-285
-286
-287
-288</pre>
+297
+298
+299
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 285</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 297</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disable_gene!'>disable_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_disabled?'>disabled?</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span>
@@ -524,13 +524,13 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
-291
-292
-293
-294</pre>
+303
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 291</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 303</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reenable_gene!'>reenable_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span>
@@ -546,7 +546,7 @@ disabled. 2 new genes are created along with the new neuron.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 11 14:36:34 2014 by
+  Generated on Tue Jan 14 11:50:45 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

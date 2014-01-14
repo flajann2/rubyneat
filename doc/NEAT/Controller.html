@@ -138,6 +138,62 @@ for the entire enterprise.</p>
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#compare_func-instance_method" title="#compare_func (instance method)">- (Object) <strong>compare_func</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cost_func-instance_method" title="#cost_func (instance method)">- (Object) <strong>cost_func</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#end_run_func-instance_method" title="#end_run_func (instance method)">- (Object) <strong>end_run_func</strong> </a>
     
 
@@ -913,13 +969,6 @@ this.</p>
       <pre class="lines">
 
 
-317
-318
-319
-320
-321
-322
-323
 324
 325
 326
@@ -943,10 +992,17 @@ this.</p>
 344
 345
 346
-347</pre>
+347
+348
+349
+350
+351
+352
+353
+354</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 317</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 324</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>neural_inputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>neural_outputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
@@ -990,9 +1046,97 @@ this.</p>
     <h2>Instance Attribute Details</h2>
     
       
-      <span id="end_run_func=-instance_method"></span>
+      <span id="compare_func=-instance_method"></span>
       <div class="method_details first">
-  <h3 class="signature first" id="end_run_func-instance_method">
+  <h3 class="signature first" id="compare_func-instance_method">
+  
+    - (<tt>Object</tt>) <strong>compare_func</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 187</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_compare_func'>compare_func</span>
+  <span class='ivar'>@compare_func</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="cost_func=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="cost_func-instance_method">
+  
+    - (<tt>Object</tt>) <strong>cost_func</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 187</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cost_func'>cost_func</span>
+  <span class='ivar'>@cost_func</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="end_run_func=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="end_run_func-instance_method">
   
     - (<tt>Object</tt>) <strong>end_run_func</strong> 
   
@@ -1018,12 +1162,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-187
-188
-189</pre>
+191
+192
+193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 191</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_end_run_func'>end_run_func</span>
   <span class='ivar'>@end_run_func</span>
@@ -1448,12 +1592,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-190
-191
-192</pre>
+194
+195
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 194</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span>
   <span class='ivar'>@log</span>
@@ -1882,12 +2026,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-187
-188
-189</pre>
+191
+192
+193</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 191</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_hook'>report_hook</span>
   <span class='ivar'>@report_hook</span>
@@ -1962,10 +2106,10 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-350</pre>
+357</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 350</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 357</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@gaussian</span><span class='period'>.</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1988,10 +2132,10 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-349</pre>
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 349</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 356</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='ivar'>@glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2025,13 +2169,6 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-353
-354
-355
-356
-357
-358
-359
 360
 361
 362
@@ -2058,10 +2195,17 @@ report_hook to dump reports for the user, etc.</p>
 383
 384
 385
-386</pre>
+386
+387
+388
+389
+390
+391
+392
+393</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 353</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
@@ -2107,7 +2251,7 @@ report_hook to dump reports for the user, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 11 14:36:34 2014 by
+  Generated on Tue Jan 14 11:50:45 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

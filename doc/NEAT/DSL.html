@@ -115,7 +115,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#condition_boolean_vector-instance_method" title="#condition_boolean_vector (instance method)">- (Object) <strong>condition_boolean_vector</strong>(vec) </a>
+      <a href="#compare-instance_method" title="#compare (instance method)">- (Object) <strong>compare</strong>(&amp;block) </a>
     
 
     
@@ -130,7 +130,58 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Helper function to Condition boolean vectors to be +1 if true, -1 if false.</p>
+<p>Fitness ordering – given 2 fitness numbers, use the  to compare them (or
+the equivalent, following the +1, 0, -1 that is in the sense of ).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#condition_boolean_vector-instance_method" title="#condition_boolean_vector (instance method)">- (Object) <strong>condition_boolean_vector</strong>(vec, sig = :tanh) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Helper function to Condition boolean vectors to be +1 if true, -1 if false
+(0 if sigmoid).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cost-instance_method" title="#cost (instance method)">- (Object) <strong>cost</strong>(&amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Calculation to add the cost to the fitness, resulting in a fitness that
+incorporates the cost for sorting purposes.</p>
 </div></span>
   
 </li>
@@ -252,7 +303,7 @@ sequence number that can be used to index what the actual output should be.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Query function is called with the sequence (time evalution) number, and
+<p>Query function is called with the sequence (time evolution) number, and
 returns an array or hash of parameters that will be given to the input
 nodes.</p>
 </div></span>
@@ -336,7 +387,7 @@ of the square of the diffences of the element in the two vectors.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#uncondition_boolean_vector-instance_method" title="#uncondition_boolean_vector (instance method)">- (Object) <strong>uncondition_boolean_vector</strong>(vec) </a>
+      <a href="#uncondition_boolean_vector-instance_method" title="#uncondition_boolean_vector (instance method)">- (Object) <strong>uncondition_boolean_vector</strong>(vec, sig = :tanh) </a>
     
 
     
@@ -352,7 +403,7 @@ of the square of the diffences of the element in the two vectors.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Helper function to Uncondition boolean vectors to be +1 if true, -1 if
-false.</p>
+false FIXME we need a better discrimination function.</p>
 </div></span>
   
 </li>
@@ -412,20 +463,20 @@ false.</p>
       <pre class="lines">
 
 
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100</pre>
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='comment'># we want to catch parameters settings here.
@@ -451,9 +502,9 @@ false.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="condition_boolean_vector-instance_method">
+  <h3 class="signature first" id="compare-instance_method">
   
-    - (<tt>Object</tt>) <strong>condition_boolean_vector</strong>(vec) 
+    - (<tt>Object</tt>) <strong>compare</strong>(&amp;block) 
   
 
   
@@ -462,7 +513,9 @@ false.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Helper function to Condition boolean vectors to be +1 if true, -1 if false</p>
+<p>Fitness ordering – given 2 fitness numbers, use the &lt;=&gt; to compare
+them (or the equivalent, following the +1, 0, -1 that is in the sense of
+&lt;=&gt;)</p>
 
 
   </div>
@@ -476,15 +529,99 @@ false.</p>
       <pre class="lines">
 
 
-58
 59
-60</pre>
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 59</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_condition_boolean_vector'>condition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_b'>b</span> <span class='op'>?</span> <span class='int'>1</span> <span class='op'>:</span> <span class='op'>-</span><span class='int'>1</span><span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func'>compare_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="condition_boolean_vector-instance_method">
+  
+    - (<tt>Object</tt>) <strong>condition_boolean_vector</strong>(vec, sig = :tanh) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Helper function to Condition boolean vectors to be +1 if true, -1 if false
+(0 if sigmoid)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_condition_boolean_vector'>condition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='comma'>,</span> <span class='id identifier rubyid_sig'>sig</span> <span class='op'>=</span> <span class='symbol'>:tanh</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_b'>b</span> <span class='op'>?</span> <span class='int'>1</span> <span class='op'>:</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_sig'>sig</span> <span class='op'>==</span> <span class='symbol'>:sigmoid</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cost-instance_method">
+  
+    - (<tt>Object</tt>) <strong>cost</strong>(&amp;block) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculation to add the cost to the fitness, resulting in a fitness that
+incorporates the cost for sorting purposes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cost'>cost</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func'>cost_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -633,13 +770,27 @@ false.</p>
 73
 74
 75
-76</pre>
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolve'>evolve</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='comment'># Query function is called with the sequence (time evalution) number,
+  <span class='comment'># Query function is called with the sequence (time evolution) number,
 </span>  <span class='comment'># and returns an array or hash of parameters that will be given
 </span>  <span class='comment'># to the input nodes. In the case of hash, the keys in the hash
 </span>  <span class='comment'># shall correspond to the names given to the input neurons.
@@ -655,16 +806,30 @@ false.</p>
     <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func'>fitness_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
+  <span class='comment'># Fitness ordering -- given 2 fitness numbers,
+</span>  <span class='comment'># use the &lt;=&gt; to compare them (or the equivalent, following
+</span>  <span class='comment'># the +1, 0, -1 that is in the sense of &lt;=&gt;)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func'>compare_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Calculation to add the cost to the fitness, resulting in a fitness
+</span>  <span class='comment'># that incorporates the cost for sorting purposes.
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_cost'>cost</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func'>cost_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='kw'>end</span>
+
   <span class='comment'># Helper function to
-</span>  <span class='comment'># Condition boolean vectors to be +1 if true, -1 if false
-</span>  <span class='kw'>def</span> <span class='id identifier rubyid_condition_boolean_vector'>condition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_b'>b</span> <span class='op'>?</span> <span class='int'>1</span> <span class='op'>:</span> <span class='op'>-</span><span class='int'>1</span><span class='rbrace'>}</span>
+</span>  <span class='comment'># Condition boolean vectors to be +1 if true, -1 if false (0 if sigmoid)
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_condition_boolean_vector'>condition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='comma'>,</span> <span class='id identifier rubyid_sig'>sig</span> <span class='op'>=</span> <span class='symbol'>:tanh</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_b'>b</span> <span class='op'>?</span> <span class='int'>1</span> <span class='op'>:</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_sig'>sig</span> <span class='op'>==</span> <span class='symbol'>:sigmoid</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span><span class='rbrace'>}</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Helper function to
 </span>  <span class='comment'># Uncondition boolean vectors to be +1 if true, -1 if false
-</span>  <span class='kw'>def</span> <span class='id identifier rubyid_uncondition_boolean_vector'>uncondition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>&gt;</span> <span class='float'>0.0</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rbrace'>}</span>
+</span>  <span class='comment'># FIXME we need a better discrimination function
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_uncondition_boolean_vector'>uncondition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='comma'>,</span> <span class='id identifier rubyid_sig'>sig</span> <span class='op'>=</span> <span class='symbol'>:tanh</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_sig'>sig</span> <span class='op'>==</span> <span class='symbol'>:sigmoid</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='float'>0.5</span> <span class='op'>:</span> <span class='int'>0</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rbrace'>}</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Helper function to do a simple fitness calculation
@@ -737,7 +902,7 @@ sequence number that can be used to index what the actual output should be.
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Query function is called with the sequence (time evalution) number, and
+<p>Query function is called with the sequence (time evolution) number, and
 returns an array or hash of parameters that will be given to the input
 nodes. In the case of hash, the keys in the hash shall correspond to the
 names given to the input neurons.</p>
@@ -795,12 +960,12 @@ names given to the input neurons.</p>
       <pre class="lines">
 
 
-79
-80
-81</pre>
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 93</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_report_hook'>report_hook</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
@@ -836,13 +1001,13 @@ names given to the input neurons.</p>
       <pre class="lines">
 
 
-84
-85
-86
-87</pre>
+98
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run_engine'>run_engine</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_end_run_func'>end_run_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
@@ -880,12 +1045,12 @@ of the square of the diffences of the element in the two vectors.</p>
       <pre class="lines">
 
 
-71
-72
-73</pre>
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_simple_fitness_error'>simple_fitness_error</span><span class='lparen'>(</span><span class='id identifier rubyid_v1'>v1</span><span class='comma'>,</span> <span class='id identifier rubyid_v2'>v2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sqrt'>sqrt</span> <span class='id identifier rubyid_v1'>v1</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_v2'>v2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span> <span class='op'>-</span> <span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span> <span class='op'>**</span> <span class='float'>2.0</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_m'>m</span> <span class='op'>+</span> <span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span>
@@ -898,7 +1063,7 @@ of the square of the diffences of the element in the two vectors.</p>
       <div class="method_details ">
   <h3 class="signature " id="uncondition_boolean_vector-instance_method">
   
-    - (<tt>Object</tt>) <strong>uncondition_boolean_vector</strong>(vec) 
+    - (<tt>Object</tt>) <strong>uncondition_boolean_vector</strong>(vec, sig = :tanh) 
   
 
   
@@ -908,7 +1073,7 @@ of the square of the diffences of the element in the two vectors.</p>
   <div class="discussion">
     
 <p>Helper function to Uncondition boolean vectors to be +1 if true, -1 if
-false</p>
+false FIXME we need a better discrimination function</p>
 
 
   </div>
@@ -922,15 +1087,15 @@ false</p>
       <pre class="lines">
 
 
-64
-65
-66</pre>
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 78</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_uncondition_boolean_vector'>uncondition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>&gt;</span> <span class='float'>0.0</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rbrace'>}</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_uncondition_boolean_vector'>uncondition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='comma'>,</span> <span class='id identifier rubyid_sig'>sig</span> <span class='op'>=</span> <span class='symbol'>:tanh</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_sig'>sig</span> <span class='op'>==</span> <span class='symbol'>:sigmoid</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='float'>0.5</span> <span class='op'>:</span> <span class='int'>0</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -942,7 +1107,7 @@ false</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 11 14:36:33 2014 by
+  Generated on Tue Jan 14 11:50:44 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>
