@@ -12,6 +12,9 @@ require 'semver'
 end
 pp Dir.pwd
 
+NEATER = File.join [Dir.pwd, "neater"]
+NEATGLOB = NEATER + '/*_neat.rb'
+
 require 'slop'
 require 'rubyneat'
 
@@ -28,7 +31,9 @@ opts = Slop.parse do
   end
 
   command :list do
-
+    Dir.glob(NEATGLOB).sort.each do |ne|
+      puts File.basename(ne).gsub(%r{_neat\.rb}, '')
+    end
   end
 
   command :run do

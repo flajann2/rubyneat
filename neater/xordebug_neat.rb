@@ -121,6 +121,7 @@ end
 
 report do |rept|
   $log.info "REPORT #{rept.to_yaml}"
+  exit unless rept[:fitness][:best] < 15.0
 end
 
 # The block here is called upon the completion of each generation
