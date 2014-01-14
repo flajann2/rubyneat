@@ -46,10 +46,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="xorsin_neat.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="xorsin_neat.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/neater/xorsin_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="122" column="27" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.63235295" vertical-offset="1443" max-vertical-offset="2130">
+                <state line="122" column="27" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.0" vertical-offset="1443" max-vertical-offset="2130">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="logger.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/logger.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="522" column="0" selection-start="14861" selection-end="14861" vertical-scroll-proportion="0.33333334" vertical-offset="7626" max-vertical-offset="12120">
                   <folding />
                 </state>
               </provider>
@@ -851,7 +860,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1917" y="-3" width="1926" height="1171" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -859,7 +868,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14802982" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15388711" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37900874" sideWeight="0.8104366" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37900874" sideWeight="0.8104366" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15069222" sideWeight="0.50145775" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37900874" sideWeight="0.18956336" order="7" side_tool="true" content_ui="tabs" x="3223" y="694" width="501" height="405" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2677702" sideWeight="0.7225772" order="2" side_tool="false" content_ui="tabs" />
@@ -1204,7 +1213,7 @@
     </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/logger.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="522" column="0" selection-start="14861" selection-end="14861" vertical-scroll-proportion="0.3322034" vertical-offset="7634" max-vertical-offset="12120">
+        <state line="522" column="0" selection-start="14861" selection-end="14861" vertical-scroll-proportion="0.33333334" vertical-offset="7626" max-vertical-offset="12120">
           <folding />
         </state>
       </provider>
@@ -1246,7 +1255,7 @@
     </entry>
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/neater/xorsin_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="27" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.63235295" vertical-offset="1443" max-vertical-offset="2130">
+        <state line="122" column="27" selection-start="3632" selection-end="3632" vertical-scroll-proportion="0.0" vertical-offset="1443" max-vertical-offset="2130">
           <folding />
         </state>
       </provider>
