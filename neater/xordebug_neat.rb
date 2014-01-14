@@ -117,6 +117,11 @@ evolve do
       1.0
     end
   }
+
+  stop_on_fitness {|fitness, c|
+    puts "*** Generation Run #{c.generation_num} ***\n\n"
+    fitness[:best] >= 15
+  }
 end
 
 report do |rept|

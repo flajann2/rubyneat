@@ -117,11 +117,15 @@ evolve do
       1.00
     end
   }
+
+  stop_on_fitness {|fitness, c|
+    puts "*** Generation Run #{c.generation_num} ***\n\n"
+    fitness[:overall] >= 15
+  }
 end
 
 report do |rept|
   $log.info "REPORT #{rept.to_yaml}"
-  exit unless rept[:fitness][:best] < 15.0
 end
 
 # The block here is called upon the completion of each generation
@@ -129,3 +133,4 @@ run_engine do |c|
   $log.info "******** Run of generation %s completed, history count %d ********" %
         [c.generation_num, c.population_history.size]
 end
+

@@ -66,6 +66,12 @@ module NEAT
         NEAT::controller.cost_func = block
       end
 
+      # Stop the progression once the fitness criteria is reached
+      # for the most fit critter
+      def stop_on_fitness(&block)
+        NEAT::controller.stop_on_fit_func = block
+      end
+
       # Helper function to
       # Condition boolean vectors to be +1 if true, -1 if false (0 if sigmoid)
       def condition_boolean_vector(vec, sig = :tanh)

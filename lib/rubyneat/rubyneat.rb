@@ -184,7 +184,7 @@ module NEAT
 
     # Compare function for fitness
     # Cost function for integrating in the cost to the fitness scalar.
-    attr_accessor :compare_func, :cost_func
+    attr_accessor :compare_func, :cost_func, :stop_on_fit_func
 
     # End run function to call at the end of each generational run
     # Also report_hook to dump reports for the user, etc.
@@ -383,6 +383,10 @@ module NEAT
 
         ## Report hook for evaluation
         @report_hook.(@population.report) unless @report_hook.nil?
+
+        ## Exit if fitness criteria is reached
+        # FIXME handle this exit condition better!!!!!
+        exit if @stop_on_fit_func.(@population.report[:fitness], self) unless @stop_on_fit_func.nil?
 
         ## Evolve population
         @population = new_pop
