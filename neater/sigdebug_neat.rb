@@ -97,8 +97,8 @@ evolve do
 
   fitness { |vin, vout, seq|
     unless vout == :error
-      bin = uncondition_boolean_vector vin
-      bout = uncondition_boolean_vector vout
+      bin = uncondition_boolean_vector vin, :sigmoid
+      bout = uncondition_boolean_vector vout, :sigmoid
       bactual = [xor(*vin)]
       vactual = condition_boolean_vector bactual, :sigmoid
       fit = (bout == bactual) ? 0.00 : 1.00

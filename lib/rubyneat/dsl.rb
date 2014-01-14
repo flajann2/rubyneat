@@ -74,8 +74,9 @@ module NEAT
 
       # Helper function to
       # Uncondition boolean vectors to be +1 if true, -1 if false
-      def uncondition_boolean_vector(vec)
-        vec.map{|o| o > 0 ? true : false}
+      # FIXME we need a better discrimination function
+      def uncondition_boolean_vector(vec, sig = :tanh)
+        vec.map{|o| o > ((sig == :sigmoid) ? 0.5 : 0) ? true : false}
       end
 
       # Helper function to do a simple fitness calculation

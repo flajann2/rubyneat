@@ -119,7 +119,7 @@ The basic types to RubyNEAT are represented here.
       # that sums all inputs and produce a sigmoid output (using tanh)
       def express(instance)
         instance.define_singleton_method(@name) {|*inputs|
-          tanh(inputs.reduce {|p, q| p + q})
+          tanh(2.4 * inputs.reduce {|p, q| p + q})
         }
       end
     end
