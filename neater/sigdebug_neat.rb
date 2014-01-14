@@ -4,7 +4,7 @@ require 'xor_lib'
 
 include NEAT::DSL
 
-#= DEBUGGING FOR RubyNEAT
+#= DEBUGGING FOR RubyNEAT / Sigmoid
 
 # The number of inputs to the xor function
 XOR_INPUTS = 2
@@ -12,19 +12,19 @@ XOR_INPUTS = 2
 $log.level = Logger::DEBUG
 
 # This defines the controller
-define "XOR Debug System" do
+define "XOR Sigmoid Debug System" do
   # Define the IO neurons
   inputs {
     cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
     cinv[:bias] = BiasNeuron
     cinv
   }
-  outputs out: TanhNeuron
+  outputs out: SigmoidNeuron
 
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort
   # of unique flag.
-  hidden sig: TanhNeuron
+  hidden sig: SigmoidNeuron
 
   ### Settings
   ## General
@@ -82,7 +82,7 @@ evolve do
   query { |seq|
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
-    condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
+    condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}, :sigmoid
   }
 
   # Compare the fitness of two critters. We may choose a different ordering
@@ -100,7 +100,7 @@ evolve do
       bin = uncondition_boolean_vector vin
       bout = uncondition_boolean_vector vout
       bactual = [xor(*vin)]
-      vactual = condition_boolean_vector bactual
+      vactual = condition_boolean_vector bactual, :sigmoid
       fit = (bout == bactual) ? 0.00 : 1.00
       #simple_fitness_error(vout, vactual.map{|f| f * 0.50 })
       bfit = (bout == bactual) ? 'T' : 'F'

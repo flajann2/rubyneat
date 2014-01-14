@@ -109,9 +109,20 @@ The basic types to RubyNEAT are represented here.
       # that sums all inputs and produce a sigmoid output (using tanh)
       def express(instance)
         instance.define_singleton_method(@name) {|*inputs|
+          1.0 / (1.0 + exp(-4.9 * inputs.reduce {|p, q| p + q}))
+        }
+      end
+    end
+
+    class TanhNeuron < Neuron
+      # create a function on the instance with our name
+      # that sums all inputs and produce a sigmoid output (using tanh)
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
           tanh(inputs.reduce {|p, q| p + q})
         }
       end
     end
+
   end
 end

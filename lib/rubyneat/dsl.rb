@@ -67,15 +67,15 @@ module NEAT
       end
 
       # Helper function to
-      # Condition boolean vectors to be +1 if true, -1 if false
-      def condition_boolean_vector(vec)
-        vec.map{|b| b ? 1 : -1}
+      # Condition boolean vectors to be +1 if true, -1 if false (0 if sigmoid)
+      def condition_boolean_vector(vec, sig = :tanh)
+        vec.map{|b| b ? 1 : ((sig == :sigmoid) ? 0 : -1)}
       end
 
       # Helper function to
       # Uncondition boolean vectors to be +1 if true, -1 if false
       def uncondition_boolean_vector(vec)
-        vec.map{|o| o > 0.0 ? true : false}
+        vec.map{|o| o > 0 ? true : false}
       end
 
       # Helper function to do a simple fitness calculation
