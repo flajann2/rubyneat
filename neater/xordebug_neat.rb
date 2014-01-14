@@ -55,12 +55,12 @@ define "XOR Debug System" do
   mate_only_prob 0.10 #0.7
 
   # Mating
-  survival_threshold 0.40 # top % allowed to mate in a species.
+  survival_threshold 0.20 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.0005
-  fitness_cost_per_gene   0.00001
+  fitness_cost_per_neuron 0.01
+  fitness_cost_per_gene   0.01
 
   # Speciation
   compatibility_threshold 2.5
@@ -90,7 +90,10 @@ evolve do
   compare {|f1, f2| f2 <=> f1 }
 
   # Here we integrate the cost with the fitness.
-  cost {|fitvec, cost| (4 - (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2 - cost}
+  cost { |fitvec, cost|
+    $log.debug ">>>>>>> fitvec #{fitvec} cost #{cost}"
+    (4 - (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - cost
+  }
 
   fitness { |vin, vout, seq|
     unless vout == :error
@@ -98,7 +101,8 @@ evolve do
       bout = uncondition_boolean_vector vout
       bactual = [xor(*vin)]
       vactual = condition_boolean_vector bactual
-      fit = simple_fitness_error(vout, vactual)
+      fit = (bout == bactual) ? 0.00 : rand
+      #simple_fitness_error(vout, vactual.map{|f| f * 0.50 })
       bfit = (bout == bactual) ? 'T' : 'F'
       $log.debug "(%s) Fitness bin=%s, bout=%s, bactual=%s, vout=%s, fit=%6.3f, seq=%s" % [bfit,
                                                                                            bin,
