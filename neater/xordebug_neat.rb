@@ -28,7 +28,7 @@ define "XOR Debug System" do
 
   ### Settings
   ## General
-  hash_on_fitness = false
+  hash_on_fitness false
   start_population_size 30
   population_size 30
   max_generations 10000
@@ -37,33 +37,33 @@ define "XOR Debug System" do
   ## Evolver probabilities and SDs
   # Perturbations
   mutate_perturb_gene_weights_prob 0.100
-  mutate_perturb_gene_weights_sd 0.25
+  mutate_perturb_gene_weights_sd 0.50
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.001
+  mutate_change_gene_weights_prob 0.05
   mutate_change_gene_weights_sd 2.00
 
   # Adding new neurons and genes
-  mutate_add_neuron_prob 0.20
-  mutate_add_gene_prob 0.20
+  mutate_add_neuron_prob 0.35
+  mutate_add_gene_prob 0.50
 
   # Switching genes on and off
-  mutate_gene_disable_prob 0.001
-  mutate_gene_reenable_prob 0.001
+  mutate_gene_disable_prob 0.01
+  mutate_gene_reenable_prob 0.01
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
 
   # Mating
-  survival_threshold 0.20 # top % allowed to mate in a species.
+  survival_threshold 0.30 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.01
-  fitness_cost_per_gene   0.01
+  fitness_cost_per_neuron 0.0001
+  fitness_cost_per_gene   0.0001
 
   # Speciation
-  compatibility_threshold 2.5
+  compatibility_threshold 10
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
@@ -126,7 +126,6 @@ end
 
 report do |rept|
   $log.info "REPORT #{rept.to_yaml}"
-  exit unless rept[:fitness][:best] < 15.0
 end
 
 # The block here is called upon the completion of each generation

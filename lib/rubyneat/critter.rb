@@ -207,6 +207,12 @@ module NEAT
         p.fitness_cost_per_neuron * @neurons.size + p.fitness_cost_per_gene * @genes.size
       end
 
+      def to_s
+        super + "\ngenes:\n" + @genes.map{|gene|
+          gene.to_s }.join("\n") + "\nneurons:\n" + @neurons.map{|neu|
+          neu.to_s}.join("\n")
+      end
+
       #= Gene Specification
       # The Gene specifices a singlular input and
       # output neuron, which represents a connection
@@ -322,6 +328,11 @@ module NEAT
       d = disjoint(oc)
       w = weight_diff(oc)
       return c1 * e + c2 * d + c3 * w
+    end
+
+    # Critter print
+    def to_s
+      super + @genotype.to_s + "\n" + @phenotype.to_s + "\n"
     end
 
     private

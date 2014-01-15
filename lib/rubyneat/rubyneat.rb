@@ -379,6 +379,9 @@ module NEAT
 
         @population.analyze!
         @population.speciate!
+
+        log.debug @population.to_s
+
         new_pop = @population.evolve
 
         ## Report hook for evaluation

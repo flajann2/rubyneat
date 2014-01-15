@@ -580,6 +580,28 @@ genes.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#wire%21-instance_method" title="#wire! (instance method)">- (Object) <strong>wire!</strong> </a>
     
 
@@ -614,7 +636,7 @@ genes.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span></p>
 
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
@@ -1471,6 +1493,40 @@ instance neurons in @neurons</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - (<tt>Object</tt>) <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>super</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\ngenes:\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
+    <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\nneurons:\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span>
+    <span class='id identifier rubyid_neu'>neu</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="wire!-instance_method">
   
     - (<tt>Object</tt>) <strong>wire!</strong> 
@@ -1536,9 +1592,9 @@ instance neurons in @neurons</p>
 </div>
 
     <div id="footer">
-  Generated on Tue Jan 14 14:46:23 2014 by
+  Generated on Tue Jan 14 21:32:48 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.3 (ruby-2.1.0).
+  0.8.7.3 (ruby-2.0.0).
 </div>
 
   </body>

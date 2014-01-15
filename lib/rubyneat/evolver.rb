@@ -169,21 +169,29 @@ module NEAT
       popsize = parm.population_size
       surv = parm.survival_threshold
       survmin = parm.survival_mininum_per_species
-      mlist = [] # list of chosen mating pairs of critters [crit1, crit2]
+      mlist = [] # list of chosen mating pairs of critters [crit1, crit2], or [:carryover, crit]
 
-      # species list already sorted in descending order of fitness
+      # species list already sorted in descending order of fitness.
+      # We will generate the approximate number of  pairs that correspond
+      # to the survivial_threshold percentage of the population,
+      # then backfill with the most fit out of the top original population.
       @npop.species.each do |k, sp|
         crem = [(sp.size * surv).ceil, survmin].max
         log.warn "Minumum per species hit -- #{survmin}" unless crem > survmin
         spsel = sp[0, crem]
         spsel = sp if spsel.empty?
-        sp.size.times do
+        crem.times do
           mlist << [spsel[rand spsel.size], spsel[rand spsel.size]]
         end
       end
 
+      # And now for the backfilling
+      unless mlist.size >= @npop.critters.size
+        mlist += @npop.critters[0, @npop.critters.size - mlist.size].map{|crit| [:carryover, crit]}
+      end
+
       @npop.critters = mlist.map do |crit1, crit2|
-        sex crit1, crit2
+        (crit1 == :carryover) ? crit2 : sex(crit1, crit2)
       end
     end
     

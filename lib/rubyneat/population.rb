@@ -185,6 +185,10 @@ module NEAT
       end
     end
 
+    def to_s
+      super + "\npopulation:\n" + @critters.map{|crit| crit.to_s }.join("\n")
+    end
+
     protected
     # report on many fitness metrics
     def report_fitness
@@ -212,5 +216,6 @@ module NEAT
     def report_worst_fit
       worst_critter.phenotype.code
     end
+
   end
 end

@@ -1,6 +1,9 @@
 # Ignore any log files
 *.log
 
+# No archives
+*.bz2
+
 # Ignore tmp directories
 tmp
 
