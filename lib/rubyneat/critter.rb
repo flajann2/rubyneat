@@ -207,9 +207,9 @@ module NEAT
         p.fitness_cost_per_neuron * @neurons.size + p.fitness_cost_per_gene * @genes.size
       end
 
-      def to_s
-        super + "\ngenes:\n" + @genes.map{|gene|
-          gene.to_s }.join("\n") + "\nneurons:\n" + @neurons.map{|neu|
+      def dump_s
+        to_s + "\ngenes:\n" + @genes.map{|k, gene|
+          gene.to_s}.join("\n") + "\nneurons:\n" + @neurons.map{|k, neu|
           neu.to_s}.join("\n")
       end
 
@@ -266,6 +266,8 @@ module NEAT
         def to_s
           super + "[i%s,w%s,%s]" % [@innovation, @weight, self.enabled?]
         end
+        alias_method :dump_s, :to_s
+
       end
 
     end
@@ -331,8 +333,8 @@ module NEAT
     end
 
     # Critter print
-    def to_s
-      super + @genotype.to_s + "\n" + @phenotype.to_s + "\n"
+    def dump_s
+      to_s + @genotype.dump_s + "\n" + @phenotype.to_s + "\n"
     end
 
     private

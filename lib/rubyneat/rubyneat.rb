@@ -176,6 +176,13 @@ module NEAT
     attr_accessor :evaluator, :evaluator_class
     attr_accessor :evolver, :evolver_class
 
+    # Global verbosity level:
+    ## 1 - normal (the default)
+    ## 2 - really verbose
+    ## 3 - maximally verbose
+    # Use in conjunction with log.debug
+    attr_accessor :verbosity
+
     # Query function that Critters shall call.
     attr_accessor :query_func
 
@@ -327,16 +334,17 @@ module NEAT
                    parameters: NeatSettings.new,
                       &block)
       super(self)
-
+      @verbosity = 1
       @glob_innov_num = 0
       @gaussian = Distribution::Normal.rng
       @population_history = []
       @evolver = Evolver.new self
       @expressor = Expressor.new self
+
       @neuron_catalog = Neuron::neuron_types.clone
-      @neural_inputs = neural_inputs
+      @neural_inputs  = neural_inputs
       @neural_outputs = neural_outputs
-      @neural_hidden = neural_hidden
+      @neural_hidden  = neural_hidden
 
       # Default classes for population and operators, etc.
       @population_class = NEAT::Population
@@ -380,7 +388,7 @@ module NEAT
         @population.analyze!
         @population.speciate!
 
-        log.debug @population.to_s
+        $log.debug @population.dump_s unless @verbosity < 3
 
         new_pop = @population.evolve
 
@@ -388,7 +396,7 @@ module NEAT
         @report_hook.(@population.report) unless @report_hook.nil?
 
         ## Exit if fitness criteria is reached
-        # FIXME handle this exit condition better!!!!!
+        #FIXME handle this exit condition better!!!!!
         exit if @stop_on_fit_func.(@population.report[:fitness], self) unless @stop_on_fit_func.nil?
 
         ## Evolve population

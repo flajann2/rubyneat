@@ -185,8 +185,8 @@ module NEAT
       end
     end
 
-    def to_s
-      super + "\npopulation:\n" + @critters.map{|crit| crit.to_s }.join("\n")
+    def dump_s
+      to_s + "\npopulation:\n" + @critters.map{|crit| crit.dump_s }.join("\n")
     end
 
     protected
