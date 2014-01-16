@@ -9,8 +9,6 @@ include NEAT::DSL
 # The number of inputs to the xor function
 XOR_INPUTS = 2
 
-$log.level = Logger::DEBUG
-
 # This defines the controller
 define "XOR Sin CPPN Debug System" do
   # Define the IO neurons

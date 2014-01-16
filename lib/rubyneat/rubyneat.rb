@@ -17,7 +17,7 @@ be a problem to some, but you are strongly urgerd to upgrade.
 =end
 
 $log = Logger.new(STDOUT)
-$log.level = Logger::DEBUG
+$log.level = Logger::INFO
 AwesomePrint.defaults = { plain: true }
 
 =begin rdoc
