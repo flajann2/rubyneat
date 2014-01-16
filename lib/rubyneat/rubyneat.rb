@@ -424,7 +424,3 @@ end
 # We put all the internal requires at the end to avoid conflicts.
 require 'rubyneat/neuron'
 require 'rubyneat/population'
-
-END {
-  puts "RubyNEAT has ended"
-}

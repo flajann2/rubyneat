@@ -124,17 +124,3 @@ end
 # FIXME: This needs to better specified for cases in which there may be multiple
 # Controllers.
 require 'rubyneat/default_neat'
-
-BEGIN {
-  puts "RN::DSL evaluation of %s" % $0
-}
-
-END {
-  puts "RN::DSL Completed."
-  c = NEAT::controller
-  puts "parameters = %s" % c.parms
-  print "query = " 
-  p  c.query_func
-  print "fitness = " 
-  p c.fitness_func
-}
