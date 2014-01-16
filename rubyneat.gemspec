@@ -107,6 +107,7 @@ Gem::Specification.new do |s|
     "neater/xorsin_neat.rb",
     "pkg/rubyneat-0.0.7.gem",
     "pkg/rubyneat-0.1.4.gem",
+    "pkg/rubyneat-0.1.7.gem",
     "projectFilesBackup/.idea/rubyneat.iml",
     "rubyneat.gemspec",
     "spec/lib/rubyneat/rubyneat_spec.rb"
