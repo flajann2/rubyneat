@@ -96,14 +96,16 @@ The basic types to RubyNEAT are represented here.
         @neu_bias = 1.00
       end
       
-      # Just provides a bias signal      
+      # Just provides a bias signal
+      # FIXME: we had to hard-code the value here for now. Not a biggie,
+      # FIXME: but really should be @neu_bias
       def express(instance)
         instance.define_singleton_method(@name) { 1.00 }
       end
     end
 
     # The most commonly-used neuron for the hidden and output layers.
-    # We use tanh() for the sigmoid fuction
+    # We use the Logistic Function for the Sigmoid.
     class SigmoidNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
@@ -114,7 +116,7 @@ The basic types to RubyNEAT are represented here.
       end
     end
 
-    # An alternative sigmoid-like function, but ranges -1 to +1
+    # An alternative Sigmoid Function, but ranges -1 to +1
     class TanhNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
