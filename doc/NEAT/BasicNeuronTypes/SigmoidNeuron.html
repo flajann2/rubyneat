@@ -106,8 +106,8 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The most commonly-used neuron for the hidden and output layers. We use
-tanh() for the sigmoid fuction</p>
+<p>The most commonly-used neuron for the hidden and output layers. We use the
+Logistic Function for the Sigmoid.</p>
 
 
   </div>
@@ -242,14 +242,14 @@ produce a sigmoid output (using tanh)</p>
       <pre class="lines">
 
 
-110
 111
 112
 113
-114</pre>
+114
+115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express'>express</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='ivar'>@name</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='op'>*</span><span class='id identifier rubyid_inputs'>inputs</span><span class='op'>|</span>
@@ -266,7 +266,7 @@ produce a sigmoid output (using tanh)</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jan 16 13:23:21 2014 by
+  Generated on Fri Jan 17 15:59:17 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>
