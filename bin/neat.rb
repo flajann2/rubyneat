@@ -29,6 +29,7 @@ opts = Slop.parse do
   end
 
   command :console do
+    banner 'Run'
     run do
       # TODO Implement an interactive console
     end
@@ -44,7 +45,7 @@ opts = Slop.parse do
 
   command :run do
     on :log=, 'Debugging level [info|warn|error|debug]'
-    on :v, :verbose=, 'Verbose mode'
+    on :v, :verbose=, 'Verbose mode', as: Integer
 
     run do |opts, args|
       NEAT::controller.verbosity = opts[:v].to_i unless opts[:v].nil?
