@@ -29,6 +29,7 @@ module NEAT
     def ready_for_expression!
       @genotype.wire!
       @phenotype = NEAT::Critter::Phenotype[self]
+      @phenotype
     end
 
     # Exoress this critter using the Expressor plugin.

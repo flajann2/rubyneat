@@ -43,24 +43,26 @@ module NEAT
       g = critter.genotype
       p = critter.phenotype
 
-      # 'stimulate' function call
+      init_code = "\n  def initialize_neurons\n"
+
+      # 'stimulate' function call (really should be 'activate', but we'll reserve this for something else)
       p.code += "  def #{NEAT::STIMULUS}("
       p.code += g.neural_inputs.reject{ |sym| g.neural_inputs[sym].bias? }.map{|sym, neu| sym}.join(", ")
       p.code += ")\n"
 
       # Assign all the parameters to instance variables.
-      # FIXME: Later eliminate this step!!! We can either fix the code
-      # to use local variables or add the logic to check for parameter inputs.
       p.code += g.neural_inputs.map{|sym, neu| "    @#{sym} = #{sym}\n"}.join("")
-      
+      p.code += "    loop {\n"
+
       # Resolve the order in which we shall call the neurons
       @resolved = NEAT::Graph::DependencyResolver[g.neural_outputs.map{|s, neu| neu}].resolve!
 
       # And now call them in that order!
       @resolved.each do |neu|
         unless neu.input?
+          init_code += "    @#{neu.name} = 0\n"
           if g.neural_gene_map.member? neu.name
-            p.code += "    @#{neu.name} = #{neu.name}("
+            p.code += "      @#{neu.name} = #{neu.name}("
             p.code += g.neural_gene_map[neu.name].map{ |gene|
               "%s * @%s" % [gene.weight, gene.in_neuron]
             }.join(", ") + ")\n"
@@ -70,9 +72,16 @@ module NEAT
           end
         end
       end
+      init_code += "  end\n"
 
       # And now return the result as a vector of outputs.
-      p.code += "    return [" + g.neural_outputs.map{|sym, neu| "@#{sym}"}.join(',') + "]\n  end\n"
+      p.code += "     @_outvec = [" + g.neural_outputs.map{|sym, neu| "@#{sym}"}.join(',') + "]\n"
+      p.code += "     break unless block_given?\n"
+      p.code += "     break unless yield @_outvec\n"
+      p.code += "  }\n"
+      p.code += "  @_outvec\n"
+      p.code += "  end\n"
+      p.code += init_code
       log.debug p.code
       p.express!
     end
