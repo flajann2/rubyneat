@@ -4,10 +4,13 @@ require 'xor_lib'
 
 include NEAT::DSL
 
-#= DEBUGGING FOR RubyNEAT
+#= DEBUGGING FOR RubyNEAT using SineNeurons
 
 # The number of inputs to the xor function
-XOR_INPUTS = 5
+XOR_INPUTS = 4
+XOR_STATES = 2 ** XOR_INPUTS
+MAX_FIT    = 16
+ALMOST_FIT = MAX_FIT - 0.5
 
 # This defines the controller
 define "XOR Sin CPPN Debug System" do
@@ -17,12 +20,13 @@ define "XOR Sin CPPN Debug System" do
     cinv[:bias] = BiasNeuron
     cinv
   }
-  outputs out: SineNeuron
+  outputs out: TanhNeuron
 
   # Hidden neuron specification is optional. 
-  # The name given here is largely meaningless, but may be useful as some sort
+  # The key names given here is largely meaningless,
+  # but may be useful as some sort
   # of unique flag.
-  hidden sig: SineNeuron
+  hidden sin: SineNeuron, cos: CosineNeuron, tanh: TanhNeuron
 
   ### Settings
   ## General
@@ -34,11 +38,11 @@ define "XOR Sin CPPN Debug System" do
 
   ## Evolver probabilities and SDs
   # Perturbations
-  mutate_perturb_gene_weights_prob 0.100
+  mutate_perturb_gene_weights_prob 0.200
   mutate_perturb_gene_weights_sd 0.25
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.001
+  mutate_change_gene_weights_prob 0.01
   mutate_change_gene_weights_sd 2.00
 
   # Adding new neurons and genes
@@ -46,19 +50,19 @@ define "XOR Sin CPPN Debug System" do
   mutate_add_gene_prob 0.20
 
   # Switching genes on and off
-  mutate_gene_disable_prob 0.001
-  mutate_gene_reenable_prob 0.001
+  mutate_gene_disable_prob 0.01
+  mutate_gene_reenable_prob 0.01
 
   interspecies_mate_rate 0.03
-  mate_only_prob 0.10 #0.7
+  mate_only_prob 0.05
 
   # Mating
   survival_threshold 0.20 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.01
-  fitness_cost_per_gene   0.01
+  fitness_cost_per_neuron 0.00001
+  fitness_cost_per_gene   0.00001
 
   # Speciation
   compatibility_threshold 2.5
@@ -90,7 +94,7 @@ evolve do
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
     $log.debug ">>>>>>> fitvec #{fitvec} cost #{cost}"
-    (4 - (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - cost
+    (4 - 4 * (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - ((rand(10) == 0) ? cost : 0)
   }
 
   fitness { |vin, vout, seq|
@@ -117,8 +121,8 @@ evolve do
   }
 
   stop_on_fitness {|fitness, c|
-    puts "*** Generation Run #{c.generation_num} ***\n\n"
-    fitness[:best] >= 15.3
+    puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
+    fitness[:best] >= ALMOST_FIT
   }
 end
 

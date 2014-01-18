@@ -8,6 +8,9 @@ include NEAT::DSL
 
 # The number of inputs to the xor function
 XOR_INPUTS = 2
+XOR_STATES = 2 ** XOR_INPUTS
+MAX_FIT    = 16
+ALMOST_FIT = MAX_FIT - 0.5
 
 # This defines the controller
 define "XOR Debug System" do
@@ -22,32 +25,32 @@ define "XOR Debug System" do
   # Hidden neuron specification is optional. 
   # The name given here is largely meaningless, but may be useful as some sort
   # of unique flag.
-  hidden sig: TanhNeuron
+  hidden tan: TanhNeuron
 
   ### Settings
   ## General
   hash_on_fitness false
-  start_population_size 30
-  population_size 30
+  start_population_size 60
+  population_size 60
   max_generations 10000
   max_population_history 10
 
   ## Evolver probabilities and SDs
   # Perturbations
   mutate_perturb_gene_weights_prob 0.100
-  mutate_perturb_gene_weights_sd 0.50
+  mutate_perturb_gene_weights_sd 0.25
 
   # Complete Change of weight
-  mutate_change_gene_weights_prob 0.05
+  mutate_change_gene_weights_prob 0.01
   mutate_change_gene_weights_sd 2.00
 
   # Adding new neurons and genes
-  mutate_add_neuron_prob 0.35
-  mutate_add_gene_prob 0.50
+  mutate_add_neuron_prob 0.20
+  mutate_add_gene_prob 0.20
 
   # Switching genes on and off
-  mutate_gene_disable_prob 0.01
-  mutate_gene_reenable_prob 0.01
+  mutate_gene_disable_prob 0.001
+  mutate_gene_reenable_prob 0.001
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
@@ -57,11 +60,11 @@ define "XOR Debug System" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.0001
-  fitness_cost_per_gene   0.0001
+  fitness_cost_per_neuron 0.01
+  fitness_cost_per_gene   0.01
 
   # Speciation
-  compatibility_threshold 10
+  compatibility_threshold 2.5
   disjoint_coefficient 0.6
   excess_coefficient 0.6
   weight_coefficient 0.2
@@ -90,7 +93,7 @@ evolve do
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
     $log.debug ">>>>>>> fitvec #{fitvec} cost #{cost}"
-    (4 - (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - cost
+    (4 - 4*(fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - cost
   }
 
   fitness { |vin, vout, seq|
@@ -117,8 +120,8 @@ evolve do
   }
 
   stop_on_fitness {|fitness, c|
-    puts "*** Generation Run #{c.generation_num} ***\n\n"
-    fitness[:best] >= 15
+    puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
+    fitness[:best] >= ALMOST_FIT
   }
 end
 

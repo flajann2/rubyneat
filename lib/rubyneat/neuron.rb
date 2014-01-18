@@ -137,5 +137,16 @@ The basic types to RubyNEAT are represented here.
       end
     end
 
+    # Cosine function (CPPN) -- adjusted to have its +1 and -1 near TanhNeuron
+    class CosineNeuron < Neuron
+      # create a function on the instance with our name
+      # that sums all inputs and produce a sigmoid output (using tanh)
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
+          cos(1.6 * inputs.reduce {|p, q| p + q})
+        }
+      end
+    end
+
   end
 end
