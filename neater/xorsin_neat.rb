@@ -7,7 +7,7 @@ include NEAT::DSL
 #= DEBUGGING FOR RubyNEAT
 
 # The number of inputs to the xor function
-XOR_INPUTS = 2
+XOR_INPUTS = 5
 
 # This defines the controller
 define "XOR Sin CPPN Debug System" do
@@ -27,8 +27,8 @@ define "XOR Sin CPPN Debug System" do
   ### Settings
   ## General
   hash_on_fitness = false
-  start_population_size 30
-  population_size 30
+  start_population_size 60
+  population_size 60
   max_generations 10000
   max_population_history 10
 
@@ -118,7 +118,7 @@ evolve do
 
   stop_on_fitness {|fitness, c|
     puts "*** Generation Run #{c.generation_num} ***\n\n"
-    fitness[:overall] >= 15
+    fitness[:best] >= 15.3
   }
 end
 
