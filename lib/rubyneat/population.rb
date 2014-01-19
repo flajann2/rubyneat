@@ -49,6 +49,12 @@ module NEAT
       block.(self) unless block.nil?
     end
 
+    # Make sure all critters are reset and prepared for
+    # recurrent network evaluation.
+    def initialize_for_recurrence!
+      @critters.each {|crit| crit.initialize_neurons!}
+    end
+
     # Mutate the genes and neurons.
     def mutate!
       @controller.evolver.mutate! self

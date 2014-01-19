@@ -7,7 +7,7 @@ include NEAT::DSL
 #= DEBUGGING FOR RubyNEAT using SineNeurons
 
 # The number of inputs to the xor function
-XOR_INPUTS = 4
+XOR_INPUTS = 3
 XOR_STATES = 2 ** XOR_INPUTS
 MAX_FIT    = 16
 ALMOST_FIT = MAX_FIT - 0.5
@@ -81,11 +81,15 @@ end
 evolve do
   # This query shall return a vector result that will serve
   # as the inputs to the critter. 
-  query { |seq|
+  query { |seq| @seq = seq
     # We'll use the seq to create the xor sequences via
     # the least signficant bits.
     condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
   }
+
+  # This block is called directly by the neuron through its yield, if given.
+  # It will be called repeatedly until you return false here.
+  recurrence { |outvec| false }
 
   # Compare the fitness of two critters. We may choose a different ordering
   # here.

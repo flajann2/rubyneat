@@ -37,6 +37,13 @@ module NEAT
       @controller.expressor.express! self
     end
 
+    # This initializes neurons in preparation for recurrence.
+    # Note that the Critter should already have expressed its
+    # genotype before this is called.
+    def initialize_neurons!
+      @phenotype.initialize_neurons
+    end
+
     # A single evaluation step. Evaluate and
     # generate fitness, novelty, etc.
     # Returns the result.

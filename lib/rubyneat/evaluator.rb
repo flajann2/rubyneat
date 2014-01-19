@@ -7,8 +7,9 @@ module NEAT
 
     # This is call prior to any sequence evaluation. Here,
     # we clean up persistent tracking information, etc.
-    def ready_for_evaluation
+    def ready_for_evaluation(pop)
       @crit_hist = {}
+      pop.initialize_for_recurrence!
     end
 
     # Evaluate one step of a sequence of evaluations.
@@ -16,7 +17,7 @@ module NEAT
     # @controller.seq_num governs where in the sequence
     # everything is. 
     #
-    # Returns [vin, vout], where vin in the input vector,
+    # Returns [vin, vout], where vin is the input vector,
     # and vout in the output vector from the critter.
     # FIXME: this should not really have to deal with an error.
     # FIXME: the error should be handled upstream from here.
@@ -24,8 +25,8 @@ module NEAT
       vin = @controller.query_func.(@controller.seq_num)
       @crit_hist[critter] = {} unless @crit_hist.member? critter
       begin
-        vout = critter.phenotype.stimulate *vin
-        log.debug "critter #{critter.name}: vin=#{vin}. vout=#{vout}"
+        vout = critter.phenotype.stimulate *vin, &@controller.recurrence_func
+        log.debug "Critter #{critter.name}: vin=#{vin}. vout=#{vout}"
         @crit_hist[critter][@controller.seq_num] = [vin, vout]
       rescue Exception => e
         log.error "Exception #{e} on code:\n#{critter.phenotype.code}"

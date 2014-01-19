@@ -45,6 +45,10 @@ module NEAT
         NEAT::controller.query_func = block
       end
 
+      def recurrence(&block)
+        NEAT::controller.recurrence_func = block
+      end
+
       # fitness function calls the block with 2 vectors or two hashes, input and output
       # vectors of the critter being evaluated for fitness, as well as a sequence
       # number that can be used to index what the actual output should be.

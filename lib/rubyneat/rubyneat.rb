@@ -189,6 +189,9 @@ module NEAT
     # Fitness function that Critters shall be rated on.
     attr_accessor :fitness_func
 
+    # Recurrence function that Critters will yield to.
+    attr_accessor :recurrence_func
+
     # Compare function for fitness
     # Cost function for integrating in the cost to the fitness scalar.
     attr_accessor :compare_func, :cost_func, :stop_on_fit_func
@@ -379,7 +382,7 @@ module NEAT
         @population.express!
 
         ## Evaluate population
-        @evaluator.ready_for_evaluation
+        @evaluator.ready_for_evaluation @population
         (@parms.start_sequence_at .. @parms.end_sequence_at).each do |snum|
           @seq_num = snum
           @population.evaluate!

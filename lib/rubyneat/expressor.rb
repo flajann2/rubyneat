@@ -35,10 +35,26 @@ module NEAT
       end
     end
     
+    #= Expression of the Genotype as a Phenotype.
     # What this really does is create the function that calls
     # all the functions. 
     #
     # This makes use of the Graph plugin for Neurons.
+    #= Recurrency and Expression of Genes
+    # A simple approach has been taken here to allow for recurrency in
+    # our Critters. Basically, a looping construct has been put around the
+    # activation of the neurons so that recurrency can be done in 2 ways:
+    ## 1) Via yielding, thus treating the stimulus function as a enumerable.
+    ### In this approach, one would call the Critter's phenotype with a block of
+    ### code that would accept the output of the net. It would return 'true' to
+    ### continue the iteration, or 'false' to end the iteration.
+    ## 2) Via multiple calls to the Pheontype instance:
+    ### Since the value of the prior activation is preserved in the instance variables
+    ### of the phenotype, subsequent activations will iterate the network.
+    #== Cavets to recurrent activation
+    # For (2) above, the input neurons would be overwritten on each subsequent call.
+    # Since we do not allow recurrent connections to input neurons anyway, this should
+    # not be an issue, though we may allow for this at a future date.
     def express_genes!(critter)
       g = critter.genotype
       p = critter.phenotype
