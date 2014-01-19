@@ -7,10 +7,10 @@ include NEAT::DSL
 #= DEBUGGING FOR RubyNEAT using SineNeurons
 
 # The number of inputs to the xor function
-XOR_INPUTS = 3
+XOR_INPUTS = 4
 XOR_STATES = 2 ** XOR_INPUTS
-MAX_FIT    = 16
-ALMOST_FIT = MAX_FIT - 0.5
+MAX_FIT    = XOR_STATES
+ALMOST_FIT = (XOR_STATES - 0.5)
 
 # This defines the controller
 define "XOR Sin CPPN Debug System" do
@@ -20,7 +20,7 @@ define "XOR Sin CPPN Debug System" do
     cinv[:bias] = BiasNeuron
     cinv
   }
-  outputs out: TanhNeuron
+  outputs out: SineNeuron
 
   # Hidden neuron specification is optional. 
   # The key names given here is largely meaningless,
@@ -97,8 +97,9 @@ evolve do
 
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
-    $log.debug ">>>>>>> fitvec #{fitvec} cost #{cost}"
-    (4 - 4 * (fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - ((rand(10) == 0) ? cost : 0)
+    fit = (XOR_STATES - fitvec.reduce {|a,r| a+r}) - ((rand(5) == 0) ? cost : 0)
+    $log.debug ">>>>>>> fitvec #{fitvec} => #{fit}, cost #{cost}"
+    fit
   }
 
   fitness { |vin, vout, seq|
@@ -126,7 +127,7 @@ evolve do
 
   stop_on_fitness {|fitness, c|
     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
-    fitness[:best] >= ALMOST_FIT
+    fitness[:best] >= MAX_FIT - 0.5
   }
 end
 

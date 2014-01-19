@@ -47,10 +47,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="xorsin_neat.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="xorsin_neat.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/xorsin_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="100" column="64" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="2220">
+                <state line="129" column="35" selection-start="3998" selection-end="3998" vertical-scroll-proportion="0.7005988" vertical-offset="1233" max-vertical-offset="2235">
                   <folding />
                 </state>
               </provider>
@@ -65,10 +65,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="expressor.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="expressor.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/expressor.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="60" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.22446916" vertical-offset="678" max-vertical-offset="1725">
+                <state line="60" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="1725">
                   <folding />
                 </state>
               </provider>
@@ -99,7 +99,7 @@
           <file leaf-file-name="population.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/population.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="19" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.498004" vertical-offset="311" max-vertical-offset="3495">
+                <state line="131" column="24" selection-start="3984" selection-end="3984" vertical-scroll-proportion="0.43812376" vertical-offset="1526" max-vertical-offset="3495">
                   <folding />
                 </state>
               </provider>
@@ -128,7 +128,7 @@
           <file leaf-file-name="critter.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="41" column="37" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="5700">
+                <state line="138" column="46" selection-start="4287" selection-end="4287" vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="5700">
                   <folding />
                 </state>
               </provider>
@@ -184,11 +184,11 @@
         <option value="$PROJECT_DIR$/lib/rubyneat/expressor.rb" />
         <option value="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/expressor.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
-        <option value="$PROJECT_DIR$/neater/xorsin_neat.rb" />
         <option value="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/rubyneat.rb" />
         <option value="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/evaluator.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
         <option value="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/population.rb" />
+        <option value="$PROJECT_DIR$/neater/xorsin_neat.rb" />
       </list>
     </option>
   </component>
@@ -1061,13 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/neuron.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="2670" selection-end="2670" vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2370">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/rvm/rubies/ruby-2.0.0-p353/lib/ruby/gems/2.0.0/gems/distribution-0.7.0/lib/distribution/math_extension.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="219" column="8" selection-start="6766" selection-end="6766" vertical-scroll-proportion="0.33265924" vertical-offset="2956" max-vertical-offset="5715">
@@ -1089,19 +1082,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neater/xorsin_neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="64" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.0" vertical-offset="990" max-vertical-offset="2220">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="384" column="51" selection-start="13118" selection-end="13118" vertical-scroll-proportion="0.0" vertical-offset="3601" max-vertical-offset="4725">
           <folding>
             <element signature="e#7051#11111#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/expressor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="1725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="46" selection-start="4287" selection-end="4287" vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="5700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/neuron.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="0" selection-start="2670" selection-end="2670" vertical-scroll-proportion="0.0" vertical-offset="1233" max-vertical-offset="2370">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,23 +1119,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="37" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="5700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/population.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="19" selection-start="1770" selection-end="1770" vertical-scroll-proportion="0.498004" vertical-offset="311" max-vertical-offset="3495">
+        <state line="131" column="24" selection-start="3984" selection-end="3984" vertical-scroll-proportion="0.43812376" vertical-offset="1526" max-vertical-offset="3495">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/expressor.rb">
+    <entry file="file://$PROJECT_DIR$/neater/xorsin_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2477" selection-end="2477" vertical-scroll-proportion="0.22446916" vertical-offset="678" max-vertical-offset="1725">
+        <state line="129" column="35" selection-start="3998" selection-end="3998" vertical-scroll-proportion="0.7005988" vertical-offset="1233" max-vertical-offset="2235">
           <folding />
         </state>
       </provider>

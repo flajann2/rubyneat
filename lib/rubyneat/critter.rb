@@ -127,7 +127,7 @@ module NEAT
       # Simply choose one and delete the rest.
       # TODO: implement nuke_redundancies!
       def nuke_redundancies!
-        log.error 'nuke_redundancies! NIY'
+        log.warn 'nuke_redundancies! NIY'
       end
 
       # Make the neurons forget their wiring.

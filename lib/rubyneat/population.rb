@@ -127,7 +127,7 @@ module NEAT
         wearein = false
         @species.each do |ck, list|
           delta = crit.compare(ck)
-          log.debug { "delta for #{crit} and #{ck} is #{delta}" }
+          #log.debug { "delta for #{crit} and #{ck} is #{delta}" }
           if delta < parm.compatibility_threshold
             list << crit
             wearein = true
