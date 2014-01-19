@@ -97,7 +97,7 @@ evolve do
 
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
-    fit = (XOR_STATES - fitvec.reduce {|a,r| a+r}) - ((rand(5) == 0) ? cost : 0)
+    fit = (XOR_STATES - fitvec.reduce {|a,r| a+r}) - cost # ((rand(5) == 0) ? cost : 0)
     $log.debug ">>>>>>> fitvec #{fitvec} => #{fit}, cost #{cost}"
     fit
   }

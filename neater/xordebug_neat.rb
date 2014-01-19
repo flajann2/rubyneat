@@ -9,8 +9,8 @@ include NEAT::DSL
 # The number of inputs to the xor function
 XOR_INPUTS = 2
 XOR_STATES = 2 ** XOR_INPUTS
-MAX_FIT    = 16
-ALMOST_FIT = MAX_FIT - 0.5
+MAX_FIT    = XOR_STATES
+ALMOST_FIT = XOR_STATES - 0.5
 
 # This defines the controller
 define "XOR Debug System" do
@@ -60,8 +60,8 @@ define "XOR Debug System" do
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
   # Fitness costs
-  fitness_cost_per_neuron 0.01
-  fitness_cost_per_gene   0.01
+  fitness_cost_per_neuron 0 #0.00001
+  fitness_cost_per_gene   0 #0.00001
 
   # Speciation
   compatibility_threshold 2.5
@@ -92,8 +92,9 @@ evolve do
 
   # Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
-    $log.debug ">>>>>>> fitvec #{fitvec} cost #{cost}"
-    (4 - 4*(fitvec.reduce {|a,r| a+r} / fitvec.size.to_f)) ** 2.0 - cost
+    fit = XOR_STATES - fitvec.reduce {|a,r| a+r} - cost
+    $log.debug ">>>>>>> fitvec #{fitvec} => #{fit}, cost #{cost}"
+    fit
   }
 
   fitness { |vin, vout, seq|
