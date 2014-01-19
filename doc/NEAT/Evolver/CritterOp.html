@@ -347,7 +347,7 @@ condition and switch off the offending neurons.</p>
 <p>An easy and obvious check is to make sure we don&#39;t accept any inputs
 from output neurons, and we don&#39;t do any outputs to input neurons.</p>
 
-<p>the actual recurrency checks will be in prune!</p>
+<p>Constructs for handling recurrency are present in Expressor.</p>
 
 
   </div>
@@ -371,9 +371,7 @@ from output neurons, and we don&#39;t do any outputs to input neurons.</p>
 297
 298
 299
-300
-301
-302</pre>
+300</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 290</span>
@@ -384,11 +382,9 @@ from output neurons, and we don&#39;t do any outputs to input neurons.</p>
 </span>
   <span class='comment'># Sanity checks!
 </span>  <span class='kw'>unless</span> <span class='id identifier rubyid_n1'>n1</span> <span class='op'>==</span> <span class='id identifier rubyid_n2'>n2</span> <span class='kw'>or</span> <span class='id identifier rubyid_n1'>n1</span><span class='period'>.</span><span class='id identifier rubyid_output?'>output?</span> <span class='kw'>or</span> <span class='id identifier rubyid_n2'>n2</span><span class='period'>.</span><span class='id identifier rubyid_input?'>input?</span>
-    <span class='comment'># At this point, the only thing remaining is a possibility or recurrency.
-</span>    <span class='comment'># We don&#39;t care about that here, as it will be handled in prune!
-</span>    <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='const'>Critter</span><span class='op'>::</span><span class='const'>Genotype</span><span class='op'>::</span><span class='const'>Gene</span><span class='lbracket'>[</span><span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='comma'>,</span> <span class='id identifier rubyid_n1'>n1</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_n2'>n2</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_add_genes'>add_genes</span>
-    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>add_gene! Added gene </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gene'>gene</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_crit'>crit</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='const'>Critter</span><span class='op'>::</span><span class='const'>Genotype</span><span class='op'>::</span><span class='const'>Gene</span><span class='lbracket'>[</span><span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='comma'>,</span> <span class='id identifier rubyid_n1'>n1</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_n2'>n2</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_add_genes'>add_genes</span> <span class='id identifier rubyid_gene'>gene</span>
+    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>add_gene! Added gene </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gene'>gene</span><span class='embexpr_end'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_n1'>n1</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> -&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_n2'>n2</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>) to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_crit'>crit</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -481,13 +477,13 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
+303
+304
 305
-306
-307
-308</pre>
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 303</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disable_gene!'>disable_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_disabled?'>disabled?</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span>
@@ -524,13 +520,13 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
+309
+310
 311
-312
-313
-314</pre>
+312</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 311</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 309</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reenable_gene!'>reenable_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_gene'>gene</span> <span class='op'>=</span> <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sample'>sample</span>
@@ -546,7 +542,7 @@ disabled. 2 new genes are created along with the new neuron.</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 17 15:59:18 2014 by
+  Generated on Sat Jan 18 21:15:35 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

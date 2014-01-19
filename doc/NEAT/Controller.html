@@ -750,6 +750,33 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#recurrence_func-instance_method" title="#recurrence_func (instance method)">- (Object) <strong>recurrence_func</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Recurrence function that Critters will yield to.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#report_hook-instance_method" title="#report_hook (instance method)">- (Object) <strong>report_hook</strong> </a>
     
 
@@ -1025,9 +1052,6 @@ this.</p>
       <pre class="lines">
 
 
-331
-332
-333
 334
 335
 336
@@ -1056,10 +1080,13 @@ this.</p>
 359
 360
 361
-362</pre>
+362
+363
+364
+365</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 331</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 334</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>neural_inputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>neural_outputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
@@ -1132,12 +1159,12 @@ the fitness scalar.</p>
       <pre class="lines">
 
 
-194
-195
-196</pre>
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 197</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compare_func'>compare_func</span>
   <span class='ivar'>@compare_func</span>
@@ -1176,12 +1203,12 @@ the fitness scalar.</p>
       <pre class="lines">
 
 
-194
-195
-196</pre>
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 197</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cost_func'>cost_func</span>
   <span class='ivar'>@cost_func</span>
@@ -1220,12 +1247,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-198
-199
-200</pre>
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 201</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_end_run_func'>end_run_func</span>
   <span class='ivar'>@end_run_func</span>
@@ -1650,12 +1677,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-201
-202
-203</pre>
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 201</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 204</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span>
   <span class='ivar'>@log</span>
@@ -2056,6 +2083,49 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
 </div>
     
       
+      <span id="recurrence_func=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="recurrence_func-instance_method">
+  
+    - (<tt>Object</tt>) <strong>recurrence_func</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Recurrence function that Critters will yield to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+193
+194
+195</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 193</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_recurrence_func'>recurrence_func</span>
+  <span class='ivar'>@recurrence_func</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
       <span id="report_hook=-instance_method"></span>
       <div class="method_details ">
   <h3 class="signature " id="report_hook-instance_method">
@@ -2084,12 +2154,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-198
-199
-200</pre>
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 201</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_hook'>report_hook</span>
   <span class='ivar'>@report_hook</span>
@@ -2171,12 +2241,12 @@ the fitness scalar.</p>
       <pre class="lines">
 
 
-194
-195
-196</pre>
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 197</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fit_func'>stop_on_fit_func</span>
   <span class='ivar'>@stop_on_fit_func</span>
@@ -2252,10 +2322,10 @@ maximally verbose Use in conjunction with log.debug</p>
       <pre class="lines">
 
 
-365</pre>
+368</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 365</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 368</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@gaussian</span><span class='period'>.</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2278,10 +2348,10 @@ maximally verbose Use in conjunction with log.debug</p>
       <pre class="lines">
 
 
-364</pre>
+367</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 364</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 367</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='ivar'>@glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2315,9 +2385,6 @@ maximally verbose Use in conjunction with log.debug</p>
       <pre class="lines">
 
 
-368
-369
-370
 371
 372
 373
@@ -2355,10 +2422,13 @@ maximally verbose Use in conjunction with log.debug</p>
 405
 406
 407
-408</pre>
+408
+409
+410
+411</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 368</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 371</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
@@ -2374,7 +2444,7 @@ maximally verbose Use in conjunction with log.debug</p>
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span>
 
     <span class='comment'>## Evaluate population
-</span>    <span class='ivar'>@evaluator</span><span class='period'>.</span><span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span>
+</span>    <span class='ivar'>@evaluator</span><span class='period'>.</span><span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span> <span class='ivar'>@population</span>
     <span class='lparen'>(</span><span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_start_sequence_at'>start_sequence_at</span> <span class='op'>..</span> <span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_end_sequence_at'>end_sequence_at</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_snum'>snum</span><span class='op'>|</span>
       <span class='ivar'>@seq_num</span> <span class='op'>=</span> <span class='id identifier rubyid_snum'>snum</span>
       <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span>
@@ -2411,7 +2481,7 @@ maximally verbose Use in conjunction with log.debug</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 17 15:59:18 2014 by
+  Generated on Sat Jan 18 21:15:36 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

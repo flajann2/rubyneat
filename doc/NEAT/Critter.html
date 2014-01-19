@@ -412,6 +412,30 @@ comprises Genes and Neurons.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#initialize_neurons%21-instance_method" title="#initialize_neurons! (instance method)">- (Object) <strong>initialize_neurons!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This initializes neurons in preparation for recurrence.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#ready_for_expression%21-instance_method" title="#ready_for_expression! (instance method)">- (Object) <strong>ready_for_expression!</strong> </a>
     
 
@@ -761,18 +785,18 @@ which normalizes the E and D terms by N.</p>
       <pre class="lines">
 
 
-325
-326
-327
-328
-329
-330
-331
-332
-333</pre>
+333
+334
+335
+336
+337
+338
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 325</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 333</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='id identifier rubyid_oc'>oc</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_c1'>c1</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span><span class='period'>.</span><span class='id identifier rubyid_excess_coefficient'>excess_coefficient</span>
@@ -814,12 +838,12 @@ which normalizes the E and D terms by N.</p>
       <pre class="lines">
 
 
-336
-337
-338</pre>
+344
+345
+346</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 336</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 344</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dump_s'>dump_s</span>
   <span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='ivar'>@genotype</span><span class='period'>.</span><span class='id identifier rubyid_dump_s'>dump_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@phenotype</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
@@ -856,12 +880,12 @@ Returns the result.</p>
       <pre class="lines">
 
 
-42
-43
-44</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluate!'>evaluate!</span>
   <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evaluator'>evaluator</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span> <span class='kw'>self</span>
@@ -897,15 +921,57 @@ Returns the result.</p>
       <pre class="lines">
 
 
-35
 36
-37</pre>
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 36</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span>
   <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_expressor'>expressor</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize_neurons!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize_neurons!</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This initializes neurons in preparation for recurrence. Note that the
+Critter should already have expressed its genotype before this is called.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize_neurons!'>initialize_neurons!</span>
+  <span class='ivar'>@phenotype</span><span class='period'>.</span><span class='id identifier rubyid_initialize_neurons'>initialize_neurons</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -941,7 +1007,8 @@ Returns the result.</p>
 29
 30
 31
-32</pre>
+32
+33</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 29</span>
@@ -949,6 +1016,7 @@ Returns the result.</p>
 <span class='kw'>def</span> <span class='id identifier rubyid_ready_for_expression!'>ready_for_expression!</span>
   <span class='ivar'>@genotype</span><span class='period'>.</span><span class='id identifier rubyid_wire!'>wire!</span>
   <span class='ivar'>@phenotype</span> <span class='op'>=</span> <span class='const'>NEAT</span><span class='op'>::</span><span class='const'>Critter</span><span class='op'>::</span><span class='const'>Phenotype</span><span class='lbracket'>[</span><span class='kw'>self</span><span class='rbracket'>]</span>
+  <span class='ivar'>@phenotype</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -960,7 +1028,7 @@ Returns the result.</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 17 15:59:17 2014 by
+  Generated on Sat Jan 18 21:15:35 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

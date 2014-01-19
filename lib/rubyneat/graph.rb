@@ -83,7 +83,7 @@ module NEAT
             else
               # we found a circular reference.
               @circular << inode
-              log.warn "Dependency found: %s" % inode
+              #log.warn "Dependency found: %s" % inode
             end
           end
         }

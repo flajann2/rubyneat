@@ -187,7 +187,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ready_for_evaluation-instance_method" title="#ready_for_evaluation (instance method)">- (Object) <strong>ready_for_evaluation</strong> </a>
+      <a href="#ready_for_evaluation-instance_method" title="#ready_for_evaluation (instance method)">- (Object) <strong>ready_for_evaluation</strong>(pop) </a>
     
 
     
@@ -269,7 +269,6 @@ average fitness calculated for the fitness vector.</p>
       <pre class="lines">
 
 
-39
 40
 41
 42
@@ -278,10 +277,11 @@ average fitness calculated for the fitness vector.</p>
 45
 46
 47
-48</pre>
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_analyze_for_fitness!'>analyze_for_fitness!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_fitvec'>fitvec</span> <span class='op'>=</span> <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_seq'>seq</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='op'>|</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func'>fitness_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seq'>seq</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -313,7 +313,7 @@ average fitness calculated for the fitness vector.</p>
 <p>Evaluate one step of a sequence of evaluations. For time series and
 realtime ongoing evaluations, everything is.</p>
 
-<p>Returns [vin, vout], where vin in the input vector, and vout in the output
+<p>Returns [vin, vout], where vin is the input vector, and vout in the output
 vector from the critter. FIXME: this should not really have to deal with an
 error. FIXME: the error should be handled upstream from here.</p>
 
@@ -329,7 +329,6 @@ error. FIXME: the error should be handled upstream from here.</p>
       <pre class="lines">
 
 
-23
 24
 25
 26
@@ -340,17 +339,18 @@ error. FIXME: the error should be handled upstream from here.</p>
 31
 32
 33
-34</pre>
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluate!'>evaluate!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_vin'>vin</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func'>query_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rparen'>)</span>
   <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='ivar'>@crit_hist</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_critter'>critter</span>
   <span class='kw'>begin</span>
-    <span class='id identifier rubyid_vout'>vout</span> <span class='op'>=</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_stimulate'>stimulate</span> <span class='op'>*</span><span class='id identifier rubyid_vin'>vin</span>
-    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>critter </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: vin=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vin'>vin</span><span class='embexpr_end'>}</span><span class='tstring_content'>. vout=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vout'>vout</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_vout'>vout</span> <span class='op'>=</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_stimulate'>stimulate</span> <span class='op'>*</span><span class='id identifier rubyid_vin'>vin</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func'>recurrence_func</span>
+    <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Critter </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: vin=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vin'>vin</span><span class='embexpr_end'>}</span><span class='tstring_content'>. vout=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vout'>vout</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
     <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_vin'>vin</span><span class='comma'>,</span> <span class='id identifier rubyid_vout'>vout</span><span class='rbracket'>]</span>
   <span class='kw'>rescue</span> <span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
     <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_error'>error</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Exception </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_e'>e</span><span class='embexpr_end'>}</span><span class='tstring_content'> on code:\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -365,7 +365,7 @@ error. FIXME: the error should be handled upstream from here.</p>
       <div class="method_details ">
   <h3 class="signature " id="ready_for_evaluation-instance_method">
   
-    - (<tt>Object</tt>) <strong>ready_for_evaluation</strong> 
+    - (<tt>Object</tt>) <strong>ready_for_evaluation</strong>(pop) 
   
 
   
@@ -391,13 +391,15 @@ tracking information, etc.</p>
 
 10
 11
-12</pre>
+12
+13</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 10</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span><span class='lparen'>(</span><span class='id identifier rubyid_pop'>pop</span><span class='rparen'>)</span>
   <span class='ivar'>@crit_hist</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_pop'>pop</span><span class='period'>.</span><span class='id identifier rubyid_initialize_for_recurrence!'>initialize_for_recurrence!</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -409,7 +411,7 @@ tracking information, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Fri Jan 17 15:59:18 2014 by
+  Generated on Sat Jan 18 21:15:36 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>

@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Class: NEAT::BasicNeuronTypes::InputNeuron
+  Class: NEAT::BasicNeuronTypes::CosineNeuron
   
     &mdash; Documentation by YARD 0.8.7.3
   
@@ -31,10 +31,10 @@
     <div id="header">
       <div id="menu">
   
-    <a href="../../_index.html">Index (I)</a> &raquo;
+    <a href="../../_index.html">Index (C)</a> &raquo;
     <span class='title'><span class='object_link'><a href="../../NEAT.html" title="NEAT (module)">NEAT</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../BasicNeuronTypes.html" title="NEAT::BasicNeuronTypes (module)">BasicNeuronTypes</a></span></span>
      &raquo; 
-    <span class="title">InputNeuron</span>
+    <span class="title">CosineNeuron</span>
   
 
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
@@ -63,7 +63,7 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Class: NEAT::BasicNeuronTypes::InputNeuron
+    <div id="content"><h1>Class: NEAT::BasicNeuronTypes::CosineNeuron
   
   
   
@@ -82,7 +82,7 @@
           
             <li class="next"><span class='object_link'><a href="../Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span></li>
           
-            <li class="next">NEAT::BasicNeuronTypes::InputNeuron</li>
+            <li class="next">NEAT::BasicNeuronTypes::CosineNeuron</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -106,12 +106,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<h1 id="label-Special+class+of+Neuron+that+takes+input+from+the+%22real+world%22">Special class of Neuron that takes input from the “real world”</h1>
-
-<p>Name of this neuron equates to the parameter name of the input.</p>
-
-<p>All inputs are handled with this neuron. This type of  neuron only has one
-input – from the outside world.</p>
+<p>Cosine function (CPPN) – adjusted to have its +1 and -1 near TanhNeuron</p>
 
 
   </div>
@@ -119,11 +114,7 @@ input – from the outside world.</p>
 <div class="tags">
   
 
-</div><div id="subclasses">
-  <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="BiasNeuron.html" title="NEAT::BasicNeuronTypes::BiasNeuron (class)">BiasNeuron</a></span></p>
 </div>
-
 
 
 
@@ -140,37 +131,6 @@ input – from the outside world.</p>
   <p class="inherited"><span class='object_link'><a href="../NeatOb.html#controller-instance_method" title="NEAT::NeatOb#controller (method)">#controller</a></span>, <span class='object_link'><a href="../NeatOb.html#name-instance_method" title="NEAT::NeatOb#name (method)">#name</a></span></p>
 
 
-  
-    <h2>
-      Class Method Summary
-      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
-    </h2>
-
-    <ul class="summary">
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#input%3F-class_method" title="input? (class method)">+ (Boolean) <strong>input?</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-    </ul>
   
     <h2>
       Instance Method Summary
@@ -197,7 +157,8 @@ input – from the outside world.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Takes a single input and passes it as is.</p>
+<p>create a function on the instance with our name that sums all inputs and
+produce a sigmoid output (using tanh).</p>
 </div></span>
   
 </li>
@@ -216,7 +177,7 @@ input – from the outside world.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Neuron.html#bias%3F-instance_method" title="NEAT::Neuron#bias? (method)">#bias?</a></span>, <span class='object_link'><a href="../Neuron.html#bias%3F-class_method" title="NEAT::Neuron.bias? (method)">bias?</a></span>, <span class='object_link'><a href="../Neuron.html#inherited-class_method" title="NEAT::Neuron.inherited (method)">inherited</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-instance_method" title="NEAT::Neuron#input? (method)">#input?</a></span>, <span class='object_link'><a href="../Neuron.html#neuron_types-class_method" title="NEAT::Neuron.neuron_types (method)">neuron_types</a></span>, <span class='object_link'><a href="../Neuron.html#output%3F-instance_method" title="NEAT::Neuron#output? (method)">#output?</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../Neuron.html#bias%3F-instance_method" title="NEAT::Neuron#bias? (method)">#bias?</a></span>, <span class='object_link'><a href="../Neuron.html#bias%3F-class_method" title="NEAT::Neuron.bias? (method)">bias?</a></span>, <span class='object_link'><a href="../Neuron.html#inherited-class_method" title="NEAT::Neuron.inherited (method)">inherited</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-class_method" title="NEAT::Neuron.input? (method)">input?</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-instance_method" title="NEAT::Neuron#input? (method)">#input?</a></span>, <span class='object_link'><a href="../Neuron.html#neuron_types-class_method" title="NEAT::Neuron.neuron_types (method)">neuron_types</a></span>, <span class='object_link'><a href="../Neuron.html#output%3F-instance_method" title="NEAT::Neuron#output? (method)">#output?</a></span></p>
 
   
   
@@ -249,60 +210,6 @@ input – from the outside world.</p>
 </div>
 
 
-  <div id="class_method_details" class="method_details_list">
-    <h2>Class Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="input?-class_method">
-  
-    + (<tt>Boolean</tt>) <strong>input?</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-76</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 76</span>
-
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_input?'>input?</span> <span class='semicolon'>;</span> <span class='kw'>true</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-  </div>
-
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
@@ -319,7 +226,8 @@ input – from the outside world.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Takes a single input and passes it as is.</p>
+<p>create a function on the instance with our name that sums all inputs and
+produce a sigmoid output (using tanh)</p>
 
 
   </div>
@@ -333,18 +241,18 @@ input – from the outside world.</p>
       <pre class="lines">
 
 
-79
-80
-81
-82
-83</pre>
+144
+145
+146
+147
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express'>express</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='ivar'>@name</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_input'>input</span><span class='op'>|</span>
-    <span class='id identifier rubyid_input'>input</span>
+  <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='ivar'>@name</span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='op'>*</span><span class='id identifier rubyid_inputs'>inputs</span><span class='op'>|</span>
+    <span class='id identifier rubyid_cos'>cos</span><span class='lparen'>(</span><span class='float'>1.6</span> <span class='op'>*</span> <span class='id identifier rubyid_inputs'>inputs</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='comma'>,</span> <span class='id identifier rubyid_q'>q</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span> <span class='op'>+</span> <span class='id identifier rubyid_q'>q</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -357,7 +265,7 @@ input – from the outside world.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jan 18 21:15:34 2014 by
+  Generated on Sat Jan 18 21:15:35 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.1.0).
 </div>
