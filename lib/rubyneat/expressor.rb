@@ -71,7 +71,8 @@ module NEAT
       p.code += "    loop {\n"
 
       # Resolve the order in which we shall call the neurons
-      @resolved = NEAT::Graph::DependencyResolver[g.neural_outputs.map{|s, neu| neu}].resolve!
+      # TODO handle the dependency list if it comes back!
+      @resolved, @dependencies = NEAT::Graph::DependencyResolver[g.neural_outputs.map{|s, neu| neu}].resolve
 
       # And now call them in that order!
       @resolved.each do |neu|

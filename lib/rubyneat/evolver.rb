@@ -286,18 +286,16 @@ module NEAT
       # accept any inputs from output neurons, and we don't
       # do any outputs to input neurons.
       #
-      # the actual recurrency checks will be in prune!
+      # Constructs for handling recurrency are present in Expressor.
       def add_gene!(crit)
         n1 = crit.genotype.neurons.values.sample # input
         n2 = crit.genotype.neurons.values.sample # output
 
         # Sanity checks!
         unless n1 == n2 or n1.output? or n2.input?
-          # At this point, the only thing remaining is a possibility or recurrency.
-          # We don't care about that here, as it will be handled in prune!
           gene = Critter::Genotype::Gene[crit.genotype, n1.name, n2.name, NEAT::controller.gaussian]
-          crit.genotype.add_genes
-          log.debug "add_gene! Added gene #{gene} to #{crit}"
+          crit.genotype.add_genes gene
+          log.debug "add_gene! Added gene #{gene}(#{n1.name} -> #{n2.name}) to #{crit}"
         end
       end
 
