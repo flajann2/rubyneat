@@ -6,8 +6,8 @@
 require 'pp'
 require 'semver'
 
-# Be sure lib is added to the library path
-%w{ lib neater }.each do |dir|
+# Be sure rnlib is added to the library path
+%w{ lib neater neater/rnlib }.each do |dir|
   $:.unshift File.join([Dir.pwd, dir])
 end
 pp Dir.pwd
