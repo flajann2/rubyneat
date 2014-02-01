@@ -7,3 +7,7 @@
 # Ignore tmp directories
 tmp
 
+# ignore anything that begins with foo
+foo*
+Foo*
+FOO*
