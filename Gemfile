@@ -25,3 +25,7 @@ group :development do
   #gem 'debugger'
   gem 'ruby-debug-ide'
 end
+
+# For demo purposes, we include the gosu library, but
+# don't want this to be part of the mainstream.
+gem 'gosu', require: false

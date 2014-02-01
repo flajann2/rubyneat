@@ -32,6 +32,7 @@ GEM
       multi_json (~> 1.4)
       nokogiri (~> 1.5.2)
       oauth2
+    gosu (0.7.50)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -116,6 +117,7 @@ DEPENDENCIES
   debase
   deep_dive
   distribution
+  gosu
   guard
   guard-rspec
   jeweler (~> 1.8.7)
