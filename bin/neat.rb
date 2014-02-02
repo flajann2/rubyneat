@@ -10,7 +10,6 @@ require 'semver'
 %w{ lib neater neater/rnlib }.each do |dir|
   $:.unshift File.join([Dir.pwd, dir])
 end
-pp Dir.pwd
 
 NEATER = File.join [Dir.pwd, "neater"]
 NEATGLOB = NEATER + '/*_neat.rb'
@@ -19,7 +18,7 @@ require 'slop'
 require 'rubyneat'
 
 
-opts = Slop.parse do
+opts = Slop.parse(strict: true, help: true) do
   banner 'Usage: neat [commands] [options] ...'
 
   on :version, 'Version information' do
@@ -29,13 +28,14 @@ opts = Slop.parse do
   end
 
   command :console do
-    banner 'Run'
+    banner 'Usage: neat console [options]'
     run do
       # TODO Implement an interactive console
     end
   end
 
   command :list do
+    banner 'Usage: neat list [options]'
     run do |opts, args|
       Dir.glob(NEATGLOB).sort.each do |ne|
         puts File.basename(ne).gsub(%r{_neat\.rb}, '')
@@ -44,6 +44,7 @@ opts = Slop.parse do
   end
 
   command :run do
+    banner "Usage: neat run [options] neater_module ...\nFor a list of neater modules: neat list"
     on :log=, 'Debugging level [info|warn|error|debug]'
     on :v, :verbose=, 'Verbose mode', as: Integer
 
@@ -60,8 +61,6 @@ opts = Slop.parse do
   end
 
   run do |opts, args|
-    # TODO add some stuff here, or remove this block
+    puts opts
   end
 end
-
-puts opts
