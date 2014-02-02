@@ -16,9 +16,11 @@ module InvertedPendulum
       super(1280, 1024, false)
       self.caption = "RubyNEAT Inverted Pendulum Simulation"
 
-      @background_image = Gosu::Image.new(self, 'public/invpend_background.png', true)
-      @x = 0
-      @y = 0
+      @background = {image: Gosu::Image.new(self, 'public/background.png', true),
+                     x: 0,
+                     y: 0,
+                     scale: 0.9
+                    }
     end
 
     def update
@@ -26,9 +28,16 @@ module InvertedPendulum
     end
 
     def draw
-      @background_image.draw(@x, @y, 0)
+      @background[:image].draw(@background[:x],
+                               @background[:y],
+                               0,
+                               @background[:scale],
+                               @background[:scale])
+
       @cart.draw unless cart.nil?
     end
+
+    def needs_cursor?; true; end
   end
 
   class Cart
@@ -37,7 +46,7 @@ module InvertedPendulum
       @platform = {
           image: Gosu::Image.new(ipwin, 'public/platform.png', true),
           x: 500,
-          y: 400,
+          y: 900,
           dx: 0,
           dy: 0,
           scale: 0.2
@@ -59,7 +68,7 @@ module InvertedPendulum
           {
             image: Gosu::Image.new(ipwin, 'public/wheel.png', true),
             ang: 0,
-            dang: 0,
+            dang: 100,
             xoff: -0.7, # percentage from center
             yoff: 0.4, # percentage from center
             scale: 0.2
@@ -67,7 +76,7 @@ module InvertedPendulum
           {
             image: Gosu::Image.new(ipwin, 'public/wheel.png', true),
             ang: 0,
-            dang: 0,
+            dang: 12.33,
             xoff: 0.7,
             yoff: 0.4,
             scale: 0.2
@@ -76,7 +85,9 @@ module InvertedPendulum
     end
 
     def update
-
+      @dt = @ipwin.update_interval / 1000.0
+      puts @dt
+      @wheels.each {|w| w[:ang] += w[:dang] * @dt }
       self.update_cart
     end
 
@@ -93,17 +104,34 @@ module InvertedPendulum
       @wheels.each do |wl|
         ww = wl[:image].width * wl[:scale]
         wh = wl[:image].height * wl[:scale]
-        wl[:_x] = @platform[:x] + wl[:xoff] * pw / 2.0 - ww / 2.0
-        wl[:_y] = @platform[:y] + wl[:yoff] * ph / 2.0 - wh / 2.0
+        wl[:_x] = @platform[:x] + wl[:xoff] * pw / 2.0
+        wl[:_y] = @platform[:y] + wl[:yoff] * ph / 2.0
       end
+
+      # Pendulum
+      polew = @pole[:image].width * @pole[:scale]
+      poleh = @pole[:image].height * @pole[:scale]
+
+      @pole
     end
 
     def draw
-      @platform[:image].draw @platform[:_x], @platform[:_y], 0, @platform[:scale], @platform[:scale]
+      @platform[:image].draw(@platform[:_x],
+                             @platform[:_y],
+                             0,
+                             @platform[:scale],
+                             @platform[:scale])
+
       @wheels.each do |wh|
-        wh[:image].draw wh[:_x], wh[:_y], 0, wh[:scale], wh[:scale]
+        wh[:image].draw_rot(wh[:_x],
+                            wh[:_y],
+                            0,
+                            wh[:ang],
+                            0.5, 0.5,
+                            wh[:scale],
+                            wh[:scale])
       end
-      #@pole[:image].draw @pole[:x], @pole[:y], 0
+      @pole[:image].draw(@pole[:_x], @pole[:_y], 0)
     end
   end
 
