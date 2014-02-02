@@ -9,6 +9,8 @@ RubyNEAT.
 require 'gosu'
 
 module InvertedPendulum
+  include Math
+
   class InvPendWindow < Gosu::Window
     attr_accessor :cart
 
@@ -41,53 +43,88 @@ module InvertedPendulum
   end
 
   class Cart
-    def initialize(ipwin)
+    attr_accessor :pix_meters # pixels per meter
+
+    def initialize(ipwin, scale: 1.0)
+      @scale = scale
+      @cart_length = 5.0 # meters
+      @pix_meters = 640.0 * scale / @cart_length
       @ipwin = ipwin
       @platform = {
           image: Gosu::Image.new(ipwin, 'public/platform.png', true),
           x: 500,
-          y: 900,
-          dx: 0,
-          dy: 0,
-          scale: 0.2
+          y: 650,
+          dx: 0.50, #speed in meters per second
+          dy: 0, #speed in meters per second, this will always be zero
+          scale: 0.2 * scale,
+          length: nil, # in meters, calculated from the scaled pixel length.
+          height: nil, # in meters, calculated from the scaled pixel height
+          mass: 100 # in kg. included are the mass of the wheels.
+                    # We will not deal with the angular momentum of the wheels,
+                    # because that's beyond the scope of what this is supposed to
+                    # accomplish.
       }
+      @platform[:length] = @platform[:image].width * @platform[:scale] / @pix_meters
+      @platform[:height] = @platform[:image].height * @platform[:scale] / @pix_meters
 
       # Pole is relative to platform, and in the image is laying horizontal.
       @pole = {
           image: Gosu::Image.new(ipwin, 'public/pole.png', true),
-          xoff: 0.5, # percentage from center
-          yoff: 0,   # percentage from center
-          ang: 0,
-          dang: 0,
-          length: 0,
-          scale: 0.2
+          z: 0,
+          xoff: 1.0,
+          yoff: 0.5,
+          ang: 90.01, # angle is in degrees
+          dang: 10.0, # degrees per second
+          scale: 0.2 * scale,
+          length: nil, # in meters, calculated from the scaled pixel length.
+          mass: 100 # in kg. The mass of the pole is assumed to all reside at a point at
+                    # the knobby end.
       }
+      @pole[:length] = @pole[:image].width * @pole[:scale] / @pix_meters
 
       # Wheels is relative to platform
       @wheels = [
           {
             image: Gosu::Image.new(ipwin, 'public/wheel.png', true),
             ang: 0,
-            dang: 100,
+            dang: 100, #FIXME: delete this for this will be overwritten anyway
             xoff: -0.7, # percentage from center
             yoff: 0.4, # percentage from center
-            scale: 0.2
+            scale: 0.2 * scale
           },
           {
             image: Gosu::Image.new(ipwin, 'public/wheel.png', true),
             ang: 0,
-            dang: 12.33,
+            dang: 12.33, #FIXME: delete this for this will be overwritten anyway
             xoff: 0.7,
             yoff: 0.4,
-            scale: 0.2
+            scale: 0.2 * scale
           }
-      ]
+      ].map { |w|
+        # radius of wheel in meters, need this for rotational velocity calculation
+        w[:radius] = w[:image].width * w[:scale] / @pix_meters / 2.0
+        w[:circumference] = w[:radius] * 2.0 * PI
+        w
+      }
     end
 
     def update
+      ## Physics updates
       @dt = @ipwin.update_interval / 1000.0
-      puts @dt
-      @wheels.each {|w| w[:ang] += w[:dang] * @dt }
+
+      # platform physics
+      @platform[:x] += @platform[:dx] * @dt * @pix_meters
+
+      # wheels physics -- angular velocity of each wheel based
+      # on the linear velocity of the platform.
+      @wheels.each do |w|
+        w[:dang] = 360.0 * @platform[:dx] / w[:circumference]
+        w[:ang] += w[:dang] * @dt
+      end
+
+      @pole[:ang] += @pole[:dang] * @dt
+
+      # model update
       self.update_cart
     end
 
@@ -102,8 +139,8 @@ module InvertedPendulum
 
       # Wheels in their respective places
       @wheels.each do |wl|
-        ww = wl[:image].width * wl[:scale]
-        wh = wl[:image].height * wl[:scale]
+        #ww = wl[:image].width * wl[:scale]
+        #wh = wl[:image].height * wl[:scale]
         wl[:_x] = @platform[:x] + wl[:xoff] * pw / 2.0
         wl[:_y] = @platform[:y] + wl[:yoff] * ph / 2.0
       end
@@ -111,11 +148,19 @@ module InvertedPendulum
       # Pendulum
       polew = @pole[:image].width * @pole[:scale]
       poleh = @pole[:image].height * @pole[:scale]
-
-      @pole
+      @pole[:_x] = @platform[:x]
+      @pole[:_y] = @platform[:y]
     end
 
     def draw
+      @pole[:image].draw_rot( @pole[:_x],
+                              @pole[:_y],
+                              @pole[:z],
+                              @pole[:ang],
+                              @pole[:xoff], @pole[:yoff],
+                              @pole[:scale],
+                              @pole[:scale])
+
       @platform[:image].draw(@platform[:_x],
                              @platform[:_y],
                              0,
@@ -131,7 +176,6 @@ module InvertedPendulum
                             wh[:scale],
                             wh[:scale])
       end
-      @pole[:image].draw(@pole[:_x], @pole[:_y], 0)
     end
   end
 

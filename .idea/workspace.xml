@@ -71,7 +71,7 @@
               <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="82" column="9" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.61480075" vertical-offset="1152" max-vertical-offset="2448">
+                    <state line="121" column="13" selection-start="4221" selection-end="4221" vertical-scroll-proportion="0.61480075" vertical-offset="1854" max-vertical-offset="2448">
                       <folding />
                     </state>
                   </provider>
@@ -144,7 +144,7 @@
           <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="114" column="11" selection-start="3092" selection-end="3092" vertical-scroll-proportion="1.223" vertical-offset="829" max-vertical-offset="2808">
+                <state line="117" column="37" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.378" vertical-offset="1728" max-vertical-offset="3600">
                   <folding />
                 </state>
               </provider>
@@ -397,7 +397,7 @@
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="debugger.present.asked" value="true" />
-    <property name="SearchEverywhereHistory" value="#" />
+    <property name="SearchEverywhereHistory" value="&#10;#" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1176,13 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="9" selection-start="2825" selection-end="2825" vertical-scroll-proportion="0.61480075" vertical-offset="1152" max-vertical-offset="2448">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.67764705" vertical-offset="0" max-vertical-offset="425">
@@ -1197,9 +1190,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="13" selection-start="4221" selection-end="4221" vertical-scroll-proportion="0.61480075" vertical-offset="1854" max-vertical-offset="2448">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="11" selection-start="3092" selection-end="3092" vertical-scroll-proportion="1.223" vertical-offset="829" max-vertical-offset="2808">
+        <state line="117" column="37" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.378" vertical-offset="1728" max-vertical-offset="3600">
           <folding />
         </state>
       </provider>
