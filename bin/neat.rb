@@ -3,7 +3,6 @@
 =RubyNEAT Launcher
 
 =end
-require 'pp'
 require 'semver'
 
 # Be sure rnlib is added to the library path
