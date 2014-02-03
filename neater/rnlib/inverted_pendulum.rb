@@ -7,6 +7,7 @@ RubyNEAT.
 =end
 
 require 'gosu'
+require 'matrix'
 
 module InvertedPendulum
   include Math

@@ -144,7 +144,7 @@
           <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="117" column="37" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.378" vertical-offset="1728" max-vertical-offset="3600">
+                <state line="13" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="0.234" vertical-offset="0" max-vertical-offset="3618">
                   <folding />
                 </state>
               </provider>
@@ -1199,7 +1199,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="37" selection-start="3824" selection-end="3824" vertical-scroll-proportion="0.378" vertical-offset="1728" max-vertical-offset="3600">
+        <state line="13" column="0" selection-start="257" selection-end="257" vertical-scroll-proportion="0.234" vertical-offset="0" max-vertical-offset="3618">
           <folding />
         </state>
       </provider>
