@@ -7,3 +7,5 @@
 # Ignore tmp directories
 tmp
 
+# Ignore the .idea directory
+.idea
