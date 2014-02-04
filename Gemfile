@@ -1,7 +1,8 @@
-source 'http://rubygems.org'
-source 'http://gems.github.com'
+source 'https://rubygems.org'
 
-#ruby '2.1.0'
+gemspec
+
+ruby '2.1.0'
 
 gem 'mongo'
 gem 'bson_ext'
@@ -25,3 +26,7 @@ group :development do
   #gem 'debugger'
   gem 'ruby-debug-ide'
 end
+
+# For demo purposes, we include the gosu library, but
+# don't want this to be part of the mainstream.
+gem 'gosu', require: false

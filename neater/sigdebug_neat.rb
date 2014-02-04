@@ -1,6 +1,6 @@
 #!/usr/bin/env neat
 require 'rubyneat/dsl'
-require 'xor_lib'
+require 'xor'
 
 include NEAT::DSL
 

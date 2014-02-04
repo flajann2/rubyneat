@@ -7,5 +7,10 @@
 # Ignore tmp directories
 tmp
 
-# Ignore the .idea directory
+# ignore anything that begins with foo
+foo*
+Foo*
+FOO*
+
+# ignore idea
 .idea
