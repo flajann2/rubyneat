@@ -11,3 +11,6 @@ tmp
 foo*
 Foo*
 FOO*
+
+# ignore idea
+.idea
