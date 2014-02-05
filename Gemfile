@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gemspec
+#gemspec
 
 ruby '2.1.0'
 
