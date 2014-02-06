@@ -4,6 +4,16 @@
 Here we provide a graphic visualization of the inverted pendulum
 problem, so you can actually SEE the problem being solved by
 RubyNEAT.
+
+==Notes
+===Physical Quantities
+All physical quantities are in SI units.
+
+===Vectors
+* We use 3 dimensional vectors here, even though it's a 2D simulation, for the
+  simple reason that cross products require at least 3 components to a vector.
+* x and z are taken to be on the horizontal plane, and y is taken to be the vertical.
+* The sign of the *graphical* y will be reversed of the physical y.
 =end
 
 require 'gosu'
@@ -11,6 +21,22 @@ require 'matrix'
 
 module InvertedPendulum
   include Math
+  GC = 6.67384e-11 # m3 kg-1 s-2
+  ADTG = 9.81 # m/s**2, acceleration due to gravity on earth
+
+  # The following are array indicies of the vector.
+  X = 0 # Horizontal, cart travels in this coordinate.
+  Y = 1 # Vertical, gravitation acts in this coordinate
+  Z = 2 # Horizontal, purely there so the cross products work
+
+  GV = Vector[0, -ADTG, 0]
+
+  # We do this for speedier simulations, otherwise Vector is immutable.
+  class ::Vector
+    def []=(i, v)
+      @elements[i] = v
+    end
+  end
 
   class InvPendWindow < Gosu::Window
     attr_accessor :cart
@@ -53,17 +79,15 @@ module InvertedPendulum
       @ipwin = ipwin
       @platform = {
           image: Gosu::Image.new(ipwin, 'public/platform.png', true),
-          x: 500,
-          y: 650,
-          dx: 0.50, #speed in meters per second
-          dy: 0, #speed in meters per second, this will always be zero
+          pos: Vector[500 / @pix_meters, 650 / @pix_meters, 0],
+          vel: Vector[0.50, 0, 0],  #speed in meters per second
           scale: 0.2 * scale,
           length: nil, # in meters, calculated from the scaled pixel length.
           height: nil, # in meters, calculated from the scaled pixel height
-          mass: 100 # in kg. included are the mass of the wheels.
-                    # We will not deal with the angular momentum of the wheels,
-                    # because that's beyond the scope of what this is supposed to
-                    # accomplish.
+          mass: 100.0 # in kg. included are the mass of the wheels.
+                      # We will not deal with the angular momentum of the wheels,
+                      # because that's beyond the scope of what this is supposed to
+                      # accomplish.
       }
       @platform[:length] = @platform[:image].width * @platform[:scale] / @pix_meters
       @platform[:height] = @platform[:image].height * @platform[:scale] / @pix_meters
@@ -78,8 +102,8 @@ module InvertedPendulum
           dang: 10.0, # degrees per second
           scale: 0.2 * scale,
           length: nil, # in meters, calculated from the scaled pixel length.
-          mass: 100 # in kg. The mass of the pole is assumed to all reside at a point at
-                    # the knobby end.
+          mass: 100.0 # in kg. The mass of the pole is assumed to all reside at a point at
+                      # the knobby end.
       }
       @pole[:length] = @pole[:image].width * @pole[:scale] / @pix_meters
 
@@ -114,12 +138,14 @@ module InvertedPendulum
       @dt = @ipwin.update_interval / 1000.0
 
       # platform physics
-      @platform[:x] += @platform[:dx] * @dt * @pix_meters
+      @platform[:pos][X] += @platform[:vel][X] * @dt
+      @platform[:x] = @platform[:pos][X] * @pix_meters
+      @platform[:y] = @platform[:pos][Y] * @pix_meters
 
       # wheels physics -- angular velocity of each wheel based
       # on the linear velocity of the platform.
       @wheels.each do |w|
-        w[:dang] = 360.0 * @platform[:dx] / w[:circumference]
+        w[:dang] = 360.0 * @platform[:vel][X] / w[:circumference]
         w[:ang] += w[:dang] * @dt
       end
 
