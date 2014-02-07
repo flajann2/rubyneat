@@ -12,16 +12,16 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1388960332359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
-    <SUITE FILE_PATH="coverage/rubyneat@deep_dive.coverage" NAME="deep_dive Coverage Results" MODIFIED="1388355972875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/deep_dive" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@sigdebug_neat.coverage" NAME="sigdebug_neat Coverage Results" MODIFIED="1389713904245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@deep_dive.coverage" NAME="deep_dive Coverage Results" MODIFIED="1388355972875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/deep_dive" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@neat.coverage" NAME="neat Coverage Results" MODIFIED="1388960332359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@invpend_neat.coverage" NAME="invpend_neat Coverage Results" MODIFIED="1391349784545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xor_neat.coverage" NAME="xor_neat Coverage Results" MODIFIED="1386026021962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xorsin_neat__1_.coverage" NAME="xorsin_neat (1) Coverage Results" MODIFIED="1390081822326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/neater" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xorsin_neat.coverage" NAME="xorsin_neat Coverage Results" MODIFIED="1390094526871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@Run_spec__oread_spec___rubyneat.coverage" NAME="Run spec 'oread_spec': rubyneat Coverage Results" MODIFIED="1388361175336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
-    <SUITE FILE_PATH="coverage/rubyneat@xordebug_neat.coverage" NAME="xordebug_neat Coverage Results" MODIFIED="1389741622572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
     <SUITE FILE_PATH="coverage/rubyneat@xordebug_neat__1_.coverage" NAME="xordebug_neat (1) Coverage Results" MODIFIED="1389741554802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/bigoldsystem/home/trader/dev/ruby_projects/rubyneat/neater" MODULE_NAME="rubyneat" />
+    <SUITE FILE_PATH="coverage/rubyneat@xordebug_neat.coverage" NAME="xordebug_neat Coverage Results" MODIFIED="1389741622572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="rubyneat" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -89,10 +89,10 @@
         <splitter split-orientation="vertical" split-proportion="0.5">
           <split-first>
             <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="105" column="22" selection-start="3514" selection-end="3514" vertical-scroll-proportion="0.59196615" vertical-offset="1610" max-vertical-offset="4086">
+                    <state line="105" column="22" selection-start="3514" selection-end="3514" vertical-scroll-proportion="0.5761317" vertical-offset="1610" max-vertical-offset="4086">
                       <folding />
                     </state>
                   </provider>
@@ -102,10 +102,10 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="140" column="12" selection-start="4632" selection-end="4632" vertical-scroll-proportion="0.55982906" vertical-offset="2258" max-vertical-offset="4086">
+                    <state line="140" column="12" selection-start="4632" selection-end="4632" vertical-scroll-proportion="0.54469854" vertical-offset="2258" max-vertical-offset="4086">
                       <folding />
                     </state>
                   </provider>
@@ -740,7 +740,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814023" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15282215" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1544196" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16134185" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37877312" sideWeight="0.8104366" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15069222" sideWeight="0.50145775" order="2" side_tool="false" content_ui="tabs" />
@@ -749,12 +749,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2181987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -773,9 +773,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16187434" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14909478" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2677702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2677702" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1076,13 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.2535211" vertical-offset="0" max-vertical-offset="426">
@@ -1090,9 +1083,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="22" selection-start="3514" selection-end="3514" vertical-scroll-proportion="0.59196615" vertical-offset="1610" max-vertical-offset="4086">
+        <state line="140" column="12" selection-start="4632" selection-end="4632" vertical-scroll-proportion="0.54469854" vertical-offset="2258" max-vertical-offset="4086">
           <folding />
         </state>
       </provider>

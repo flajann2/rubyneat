@@ -32,7 +32,7 @@ GEM
       nokogiri (~> 1.5.2)
       oauth2
     gosu (0.7.50)
-    guard (2.3.0)
+    guard (2.4.0)
       formatador (>= 0.2.4)
       listen (~> 2.1)
       lumberjack (~> 1.0)
@@ -55,7 +55,7 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
-    listen (2.4.0)
+    listen (2.4.1)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
