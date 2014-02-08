@@ -22,19 +22,26 @@ require 'matrix'
 module InvertedPendulum
   include Math
   GC = 6.67384e-11 # m3 kg-1 s-2
-  ADTG = 9.81 # m/s**2, acceleration due to gravity on earth
+  ADTG = -9.81 # m/s**2, acceleration due to gravity on earth
+  TORAD = PI / 180.0 # converts degrees to radians, deg * TORAD
 
   # The following are array indicies of the vector.
   X = 0 # Horizontal, cart travels in this coordinate.
   Y = 1 # Vertical, gravitation acts in this coordinate
   Z = 2 # Horizontal, purely there so the cross products work
 
-  GV = Vector[0, -ADTG, 0]
+  GV = Vector[0, ADTG, 0]
 
   # We do this for speedier simulations, otherwise Vector is immutable.
   class ::Vector
     def []=(i, v)
       @elements[i] = v
+    end
+
+    # Given that self vector is a basis vector,
+    # compute the component vector for v.
+    def basis(v)
+      self * self.inner_product(v)
     end
   end
 
@@ -80,7 +87,7 @@ module InvertedPendulum
       @platform = {
           image: Gosu::Image.new(ipwin, 'public/platform.png', true),
           pos: Vector[500 / @pix_meters, 650 / @pix_meters, 0],
-          vel: Vector[0.50, 0, 0],  #speed in meters per second
+          vel: Vector[0.0, 0, 0],  #speed in meters per second
           scale: 0.2 * scale,
           length: nil, # in meters, calculated from the scaled pixel length.
           height: nil, # in meters, calculated from the scaled pixel height
@@ -98,9 +105,11 @@ module InvertedPendulum
           z: 0,
           xoff: 1.0,
           yoff: 0.5,
-          ang: 90.01, # angle is in degrees
-          dang: 10.0, # degrees per second
+          ang: 90.1, # angle is in degrees
+          dang: 0.0, # degrees per second
+          ddang: nil, # angular acceleration, degree / second ** 2
           scale: 0.2 * scale,
+          force: {}, # shall hold the 2 force vectors :shaft and :radial
           length: nil, # in meters, calculated from the scaled pixel length.
           mass: 100.0 # in kg. The mass of the pole is assumed to all reside at a point at
                       # the knobby end.
@@ -149,8 +158,20 @@ module InvertedPendulum
         w[:ang] += w[:dang] * @dt
       end
 
+      ## Pole (Pendulum) forces, accelerations, etc.
+      # basis vectors
+      ang = @pole[:ang] * TORAD
+      @pole[:force][:ishaft] = iShaft  = Vector[cos(ang), sin(ang), 0]
+      @pole[:force][:iradial] = iRadial = Vector[sin(ang), -cos(ang), 0]
+      @pole[:r] = r = iShaft * @pole[:length]
+      @pole[:force][:shaft] = iShaft.basis(GV * @pole[:mass])
+      @pole[:force][:radial] = radial = iRadial.basis(GV * @pole[:mass])
+      # the magnitude of the radial vector goes to the torque on
+      @pole[:force][:torque] = torque = r.cross_product(radial)
+      @pole[:alpha] = alpha = torque / (@pole[:mass] * (@pole[:length] ** 2.0))
+      @pole[:ddang] = -alpha[Z] / TORAD # the pseudo vector component Z is the signed magnitude
+      @pole[:dang] += @pole[:ddang] * @dt
       @pole[:ang] += @pole[:dang] * @dt
-
       # model update
       self.update_cart
     end
