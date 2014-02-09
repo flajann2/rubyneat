@@ -38,10 +38,10 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.48375">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5530672">
+        <splitter split-orientation="vertical" split-proportion="0.7624148">
           <split-first>
             <leaf>
-              <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
                   <provider selected="true" editor-type-id="text-editor">
                     <state line="1" column="22" selection-start="0" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="2574">
@@ -59,6 +59,15 @@
                   </provider>
                 </entry>
               </file>
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="81" column="34" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.43665767" vertical-offset="1134" max-vertical-offset="4842">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
             </leaf>
           </split-first>
           <split-second>
@@ -66,7 +75,7 @@
               <file leaf-file-name="invpend_neat.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.25411764" vertical-offset="0" max-vertical-offset="425">
+                    <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="396">
                       <folding />
                     </state>
                   </provider>
@@ -86,34 +95,17 @@
         </splitter>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.35443038">
-          <split-first>
-            <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="109" column="17" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.39009288" vertical-offset="1836" max-vertical-offset="4590">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state line="213" column="90" selection-start="7385" selection-end="7385" vertical-scroll-proportion="0.5616883" vertical-offset="3488" max-vertical-offset="4590">
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
+        <leaf>
+          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="180" column="26" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.65349543" vertical-offset="2595" max-vertical-offset="4842">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
       </split-second>
     </splitter>
   </component>
@@ -1078,7 +1070,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.25411764" vertical-offset="0" max-vertical-offset="425">
+        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
@@ -1092,7 +1084,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="90" selection-start="7385" selection-end="7385" vertical-scroll-proportion="0.5616883" vertical-offset="3488" max-vertical-offset="4590">
+        <state line="180" column="26" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.65349543" vertical-offset="2595" max-vertical-offset="4842">
           <folding />
         </state>
       </provider>

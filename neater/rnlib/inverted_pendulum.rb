@@ -79,19 +79,22 @@ module InvertedPendulum
   class Cart
     attr_accessor :pix_meters # pixels per meter
 
-    def initialize(ipwin, scale: 1.0)
+    def initialize(ipwin, scale: 0.50)
       @scale = scale
       @cart_length = 5.0 # meters
       @pix_meters = 640.0 * scale / @cart_length
       @ipwin = ipwin
       @cart = {
           image: Gosu::Image.new(ipwin, 'public/cart.png', true),
-          pos: Vector[500 / @pix_meters, 650 / @pix_meters, 0],
-          vel: Vector[0.0, 0, 0],  #speed in meters per second
+          pos: Vector[1000 / @pix_meters, 650 / @pix_meters, 0],
+          vel: Vector[0.0, 0, 0], #speed in meters per second
+          acc: Vector[0.0, 0, 0], #acceleration in meters per second squared
           scale: 0.2 * scale,
           length: nil, # in meters, calculated from the scaled pixel length.
           height: nil, # in meters, calculated from the scaled pixel height
-          basis: {},
+          basis: {
+              horiz: Vector[1.0, 0.0, 0.0], # The cart is resticted to movement on the x axis
+              vert: Vector[0.0, 1.0, 0.0]}, # so these basis vectors will never change.
           force: {},
           mass: 100.0 # in kg. included are the mass of the wheels.
                       # We will not deal with the angular momentum of the wheels,
@@ -149,22 +152,10 @@ module InvertedPendulum
       ## Physics updates
       @dt = @ipwin.update_interval / 1000.0
 
-      # cart physics
-      @cart[:pos][X] += @cart[:vel][X] * @dt
-      @cart[:x] = @cart[:pos][X] * @pix_meters
-      @cart[:y] = @cart[:pos][Y] * @pix_meters
-
-      # wheels physics -- angular velocity of each wheel based
-      # on the linear velocity of the cart.
-      @wheels.each do |w|
-        w[:dang] = 360.0 * @cart[:vel][X] / w[:circumference]
-        w[:ang] += w[:dang] * @dt
-      end
-
       ## Pole (Pendulum) forces, accelerations, etc.
       # basis vectors
       ang = @pole[:ang] * TORAD
-      @pole[:basis][:ishaft] = iShaft  = Vector[cos(ang), sin(ang), 0]
+      @pole[:basis][:ishaft] = iShaft   = Vector[cos(ang), sin(ang),  0]
       @pole[:basis][:iradial] = iRadial = Vector[sin(ang), -cos(ang), 0]
       @pole[:r] = r = iShaft * @pole[:length]
       @pole[:force][:shaft] = iShaft.basis(GV * @pole[:mass])
@@ -175,9 +166,32 @@ module InvertedPendulum
       @pole[:ddang] = -alpha[Z] / TORAD # the pseudo vector component Z is the signed magnitude
       @pole[:dang] += @pole[:ddang] * @dt
       @pole[:ang] += @pole[:dang] * @dt
-      pp @pole
-      ## Pole forces on cart [:force][:shaft]
 
+      ## Cart forces from pole [:force][:shaft]
+      @cart[:force][:shaft] = shaft = @pole[:force][:shaft]
+      @cart[:force][:horiz] = horiz = @cart[:basis][:horiz].basis shaft
+      @cart[:force][:vert] = @cart[:basis][:vert].basis shaft # not that we use the vert
+
+      # Now the horz force induces an acceleration on the cart.
+      # Any additions to the acceleration vector must be done after
+      # this point.
+      @cart[:acc] = horiz / @cart[:mass]
+
+      # Cart acceleration also affects angular torque
+      # TODO back transfer
+
+      # actual cart physics
+      @cart[:vel][X] += @cart[:acc][X] * @dt
+      @cart[:pos][X] += @cart[:vel][X] * @dt
+      @cart[:x] = @cart[:pos][X] * @pix_meters
+      @cart[:y] = @cart[:pos][Y] * @pix_meters
+
+      # wheels physics -- angular velocity of each wheel based
+      # on the linear velocity of the cart.
+      @wheels.each do |w|
+        w[:dang] = 360.0 * @cart[:vel][X] / w[:circumference]
+        w[:ang] += w[:dang] * @dt
+      end
 
       # model update
       self.update_cart
