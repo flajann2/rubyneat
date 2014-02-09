@@ -91,6 +91,8 @@ module InvertedPendulum
           scale: 0.2 * scale,
           length: nil, # in meters, calculated from the scaled pixel length.
           height: nil, # in meters, calculated from the scaled pixel height
+          basis: {},
+          force: {},
           mass: 100.0 # in kg. included are the mass of the wheels.
                       # We will not deal with the angular momentum of the wheels,
                       # because that's beyond the scope of what this is supposed to
@@ -103,13 +105,14 @@ module InvertedPendulum
       @pole = {
           image: Gosu::Image.new(ipwin, 'public/pole.png', true),
           z: 0,
-          xoff: 1.0,
+          xoff: 0.0,
           yoff: 0.5,
           ang: 45, # angle is in degrees
           dang: 0.0, # degrees per second
           ddang: nil, # angular acceleration, degree / second ** 2
           scale: 0.2 * scale,
           force: {}, # shall hold the 2 force vectors :shaft and :radial
+          basis: {}, # basis (unit) vectors
           length: nil, # in meters, calculated from the scaled pixel length.
           mass: 100.0 # in kg. The mass of the pole is assumed to all reside at a point at
                       # the knobby end.
@@ -161,8 +164,8 @@ module InvertedPendulum
       ## Pole (Pendulum) forces, accelerations, etc.
       # basis vectors
       ang = @pole[:ang] * TORAD
-      @pole[:force][:ishaft] = iShaft  = Vector[cos(ang), sin(ang), 0]
-      @pole[:force][:iradial] = iRadial = Vector[sin(ang), -cos(ang), 0]
+      @pole[:basis][:ishaft] = iShaft  = Vector[cos(ang), sin(ang), 0]
+      @pole[:basis][:iradial] = iRadial = Vector[sin(ang), -cos(ang), 0]
       @pole[:r] = r = iShaft * @pole[:length]
       @pole[:force][:shaft] = iShaft.basis(GV * @pole[:mass])
       @pole[:force][:radial] = radial = iRadial.basis(GV * @pole[:mass])
@@ -172,7 +175,7 @@ module InvertedPendulum
       @pole[:ddang] = -alpha[Z] / TORAD # the pseudo vector component Z is the signed magnitude
       @pole[:dang] += @pole[:ddang] * @dt
       @pole[:ang] += @pole[:dang] * @dt
-
+      pp @pole
       ## Pole forces on cart [:force][:shaft]
 
 
@@ -208,7 +211,7 @@ module InvertedPendulum
       @pole[:image].draw_rot( @pole[:_x],
                               @pole[:_y],
                               @pole[:z],
-                              @pole[:ang],
+                              -@pole[:ang], # negative because y is inverted on the canvas
                               @pole[:xoff], @pole[:yoff],
                               @pole[:scale],
                               @pole[:scale])

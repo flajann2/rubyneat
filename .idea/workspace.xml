@@ -86,13 +86,13 @@
         </splitter>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.37682572">
+        <splitter split-orientation="vertical" split-proportion="0.35443038">
           <split-first>
             <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="98" column="11" selection-start="3035" selection-end="3035" vertical-scroll-proportion="0.2601156" vertical-offset="1674" max-vertical-offset="4536">
+                    <state line="109" column="17" selection-start="3444" selection-end="3444" vertical-scroll-proportion="0.39009288" vertical-offset="1836" max-vertical-offset="4590">
                       <folding />
                     </state>
                   </provider>
@@ -102,10 +102,10 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="175" column="45" selection-start="6171" selection-end="6171" vertical-scroll-proportion="0.5935919" vertical-offset="2798" max-vertical-offset="4536">
+                    <state line="213" column="90" selection-start="7385" selection-end="7385" vertical-scroll-proportion="0.5616883" vertical-offset="3488" max-vertical-offset="4590">
                       <folding />
                     </state>
                   </provider>
@@ -1092,7 +1092,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="11" selection-start="3035" selection-end="3035" vertical-scroll-proportion="0.2601156" vertical-offset="1674" max-vertical-offset="4536">
+        <state line="213" column="90" selection-start="7385" selection-end="7385" vertical-scroll-proportion="0.5616883" vertical-offset="3488" max-vertical-offset="4590">
           <folding />
         </state>
       </provider>
