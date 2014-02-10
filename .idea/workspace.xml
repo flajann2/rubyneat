@@ -36,7 +36,7 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48375">
+    <splitter split-orientation="horizontal" split-proportion="0.3288426">
       <split-first>
         <splitter split-orientation="vertical" split-proportion="0.7624148">
           <split-first>
@@ -59,10 +59,10 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="81" column="34" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.43665767" vertical-offset="1134" max-vertical-offset="4842">
+                    <state line="96" column="17" selection-start="3005" selection-end="3005" vertical-scroll-proportion="0.42540622" vertical-offset="1440" max-vertical-offset="5472">
                       <folding />
                     </state>
                   </provider>
@@ -75,7 +75,7 @@
               <file leaf-file-name="invpend_neat.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="396">
+                    <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.56842107" vertical-offset="0" max-vertical-offset="396">
                       <folding />
                     </state>
                   </provider>
@@ -96,10 +96,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="180" column="26" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.65349543" vertical-offset="2595" max-vertical-offset="4842">
+                <state line="193" column="113" selection-start="7286" selection-end="7286" vertical-scroll-proportion="0.25581396" vertical-offset="3243" max-vertical-offset="5472">
                   <folding />
                 </state>
               </provider>
@@ -169,10 +169,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1917" />
+    <option name="x" value="3837" />
     <option name="y" value="-3" />
     <option name="width" value="1926" />
-    <option name="height" value="1171" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -725,7 +725,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1917" y="-3" width="1926" height="1171" extended-state="6" />
+    <frame x="3837" y="-3" width="1926" height="1087" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -733,7 +733,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814023" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1544196" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13045794" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16134185" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37877312" sideWeight="0.8104366" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15069222" sideWeight="0.50145775" order="2" side_tool="false" content_ui="tabs" />
@@ -803,6 +803,11 @@
           <line>70</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb</url>
+          <line>192</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -812,7 +817,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="130" />
+      <option name="time" value="131" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1070,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="396">
+        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.56842107" vertical-offset="0" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
@@ -1084,7 +1089,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="26" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.65349543" vertical-offset="2595" max-vertical-offset="4842">
+        <state line="96" column="17" selection-start="3005" selection-end="3005" vertical-scroll-proportion="0.42540622" vertical-offset="1440" max-vertical-offset="5472">
           <folding />
         </state>
       </provider>
