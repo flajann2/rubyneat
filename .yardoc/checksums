@@ -1,6 +1,6 @@
 lib/rubyneat.rb 1da1fbcf4887eff825e525710f40a9c4a13814a4
 lib/rubyneat/dsl.rb 537a8cb3bfed4911e3b2a25040131d0acbd6eb13
-lib/rubyneat/graph.rb 045de27661e267a043024e1c772f6402b8e260da
+lib/rubyneat/graph.rb b1b6605698590438ade2bed11f76fbb46f1758a0
 lib/rubyneat/neuron.rb bed0637d2b668d328bdbe5c65a8400e0b73bb65b
 lib/rubyneat/critter.rb 6caffc41daa1c6f78e0abf46246a2f6e9eb04d39
 lib/rubyneat/evolver.rb fc45db30b5915c03becf11dbd9a10fe64888f866
