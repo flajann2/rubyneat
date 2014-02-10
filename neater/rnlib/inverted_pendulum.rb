@@ -32,6 +32,16 @@ module InvertedPendulum
   Z = 2 # Horizontal, purely there so the cross products work
 
   GV = Vector[0, ADTG, 0]
+  ZERO_VECTOR = Vector[0,0,0]
+
+  # ID INPUTS
+  MOUSE_LB = 256
+  MOUSE_RB = 257
+  MOUSE_MB = 258
+  MOUSE_ROLL_BACK = 260
+  MOUSE_ROLL_FOREWARD = 259
+  MOUSE_SIDE_BACK = 268
+  MOUSE_SIDE_FOREWARD = 264
 
   # We do this for speedier simulations, otherwise Vector is immutable.
   class ::Vector
@@ -75,6 +85,16 @@ module InvertedPendulum
     end
 
     def needs_cursor?; true; end
+
+    def button_down(id)
+      pp id
+      @cart.button_down(id) unless @cart.nil?
+    end
+
+    def button_up(id)
+      pp id
+      @cart.button_up(id) unless @cart.nil?
+    end
   end
 
   class Cart
@@ -92,12 +112,17 @@ module InvertedPendulum
     #@param polemass -- in kg. The mass of the pole is assumed to all
     #                   reside at a point at
     #                   the knobby end.
+    #@param bang     -- per mouse event, how much bang (acceleration in m/s) to
+    #                   deliver to the cart
     def initialize(ipwin, scale: 0.50,
           ang: 90.1,
           xpos: 500.0,
           cartmass: 200.0,
-          polemass: 100.10)
+          polemass: 100.10,
+          bang: 0.40)
       @t = 0
+      @bang = bang
+      @thrust = 0 # accumulated bang
       @scale = scale
       @cart_length = 5.0 # meters
       @pix_meters = 640.0 * scale / @cart_length
@@ -165,6 +190,27 @@ module InvertedPendulum
       }
     end
 
+    # External input
+    # Return a thrust (acc) vector (really just x)
+    # based on thrust
+    def external_update
+      Vector[@thrust, 0, 0]
+    end
+
+    def button_down(id)
+      case id
+        when MOUSE_ROLL_FOREWARD
+          @thrust += @bang
+        when MOUSE_ROLL_BACK
+          @thrust -= @bang
+      end
+      pp @thrust
+    end
+
+    def button_up(id)
+
+    end
+
     def update
       ## Physics updates
       @dt = @ipwin.update_interval / 1000.0
@@ -200,6 +246,8 @@ module InvertedPendulum
       # this point.
       @cart[:acc] = horiz / (@cart[:mass] + @pole[:mass] * cos(ang).abs)
 
+      @cart[:acc] += external_update
+
       ## Cart acceleration also affects angular torque
       # FIXME: Note that recalculations are being done here, which
       # FIXME: are not DRY. Redo this properly later.
@@ -218,8 +266,8 @@ module InvertedPendulum
       @cart[:x] = @cart[:pos][X] * @pix_meters
       @cart[:y] = @cart[:pos][Y] * @pix_meters
 
-      puts '=' * 80
-      pp({pole: @pole, cart: @cart})
+      #puts '=' * 80
+      #pp({pole: @pole, cart: @cart})
 
       # wheels physics -- angular velocity of each wheel based
       # on the linear velocity of the cart.

@@ -36,9 +36,9 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3288426">
+    <splitter split-orientation="horizontal" split-proportion="0.4520635">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.7624148">
+        <splitter split-orientation="vertical" split-proportion="0.5864263">
           <split-first>
             <leaf>
               <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="false">
@@ -59,10 +59,22 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="96" column="17" selection-start="3005" selection-end="3005" vertical-scroll-proportion="0.42540622" vertical-offset="1440" max-vertical-offset="5472">
+                    <state line="107" column="53" selection-start="2934" selection-end="2934" vertical-scroll-proportion="2.953125" vertical-offset="414" max-vertical-offset="6336">
+                      <folding>
+                        <marker date="1392038917350" expanded="true" signature="2451:2515" placeholder=" ... end" />
+                        <marker date="1392038917350" expanded="true" signature="9584:9744" placeholder="#..." />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/Gemfile">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="17" column="21" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
                       <folding />
                     </state>
                   </provider>
@@ -75,7 +87,7 @@
               <file leaf-file-name="invpend_neat.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.56842107" vertical-offset="0" max-vertical-offset="396">
+                    <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.30337077" vertical-offset="0" max-vertical-offset="396">
                       <folding />
                     </state>
                   </provider>
@@ -96,10 +108,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="193" column="113" selection-start="7286" selection-end="7286" vertical-scroll-proportion="0.25581396" vertical-offset="3243" max-vertical-offset="5472">
+                <state line="121" column="19" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.5127353" vertical-offset="1715" max-vertical-offset="6336">
                   <folding />
                 </state>
               </provider>
@@ -805,7 +817,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb</url>
-          <line>192</line>
+          <line>238</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
       </breakpoints>
@@ -821,11 +833,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/neater/xoranalog_neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="36" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="2592" />
-      </provider>
-    </entry>
     <entry file="file:///bigoldsystem/home/trader/dev/ruby_projects/rubyneat/lib/rubyneat/graph.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="0" selection-start="1907" selection-end="1907" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="1800" />
@@ -933,13 +940,6 @@
     <entry file="file://$PROJECT_DIR$/lib/rubyneat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="163" selection-end="163" vertical-scroll-proportion="0.12" vertical-offset="0" max-vertical-offset="1000" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="122" selection-end="122" vertical-scroll-proportion="0.17213115" vertical-offset="0" max-vertical-offset="610">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/population.rb">
@@ -1075,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.56842107" vertical-offset="0" max-vertical-offset="396">
+        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.30337077" vertical-offset="0" max-vertical-offset="396">
           <folding />
         </state>
       </provider>
@@ -1087,9 +1087,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="21" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.1.0/gems/gosu-0.7.50/lib/gosu/patches.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="6" selection-start="1777" selection-end="1777" vertical-scroll-proportion="0.6069869" vertical-offset="650" max-vertical-offset="1566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="17" selection-start="3005" selection-end="3005" vertical-scroll-proportion="0.42540622" vertical-offset="1440" max-vertical-offset="5472">
+        <state line="121" column="19" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.5127353" vertical-offset="1715" max-vertical-offset="6336">
           <folding />
         </state>
       </provider>
