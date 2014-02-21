@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Fred Mitchell"]
-  s.date = "2014-02-04"
+  s.date = "2014-02-20"
   s.description = "\n  NEAT Algorithm for Ruby.\n  "
   s.email = "fred@lrcsoft.com"
   s.executables = ["neat", "neat.rb"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     ".idea/misc.xml",
     ".idea/modules.xml",
     ".idea/rubyneat.iml",
+    ".idea/runConfigurations/invpend_neat.xml",
     ".idea/runConfigurations/sigdebug_neat.xml",
     ".idea/runConfigurations/xor_neat.xml",
     ".idea/runConfigurations/xordebug_neat.xml",
@@ -89,6 +90,11 @@ Gem::Specification.new do |s|
     "doc/js/jquery.js",
     "doc/method_list.html",
     "doc/top-level-namespace.html",
+    "foo/foo_aquarium_example.rb",
+    "foo/foo_gosu.rb",
+    "foo/foo_rubygoo.rb",
+    "foo/foo_sdl.rb",
+    "foo/icon.png",
     "lib/rubyneat.rb",
     "lib/rubyneat/critter.rb",
     "lib/rubyneat/default_neat.rb",
@@ -131,7 +137,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "https://github.com/flajann2/rubyneat"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.1"
+  s.rubygems_version = "2.2.0"
   s.summary = "RubyNEAT NeuralEvolution by Augmented Topologies"
 
   if s.respond_to? :specification_version then
@@ -149,6 +155,14 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<awesome_print>, [">= 0"])
       s.add_runtime_dependency(%q<deep_dive>, [">= 0"])
       s.add_runtime_dependency(%q<gosu>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<yard>, [">= 0"])
+      s.add_development_dependency(%q<guard>, [">= 0"])
+      s.add_development_dependency(%q<guard-rspec>, [">= 0"])
+      s.add_development_dependency(%q<semver>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.8.7"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<ruby-debug-ide>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<yard>, [">= 0"])
       s.add_development_dependency(%q<guard>, [">= 0"])
@@ -193,6 +207,14 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<ruby-debug-ide>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<yard>, [">= 0"])
+      s.add_dependency(%q<guard>, [">= 0"])
+      s.add_dependency(%q<guard-rspec>, [">= 0"])
+      s.add_dependency(%q<semver>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<ruby-debug-ide>, [">= 0"])
     end
   else
     s.add_dependency(%q<rubyneat>, [">= 0"])
@@ -206,6 +228,14 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<awesome_print>, [">= 0"])
     s.add_dependency(%q<deep_dive>, [">= 0"])
     s.add_dependency(%q<gosu>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<yard>, [">= 0"])
+    s.add_dependency(%q<guard>, [">= 0"])
+    s.add_dependency(%q<guard-rspec>, [">= 0"])
+    s.add_dependency(%q<semver>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.8.7"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<ruby-debug-ide>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<yard>, [">= 0"])
     s.add_dependency(%q<guard>, [">= 0"])
