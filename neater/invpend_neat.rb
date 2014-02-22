@@ -16,7 +16,7 @@ invpend do |ipwin|
   c = cart do
     {
       scale: 0.20,
-      ang: 45,
+      ang: 80,
       xpos: 600.0,
       cartmass: 200.0, #kg
       polemass: 100.10, #kg, knobby end only

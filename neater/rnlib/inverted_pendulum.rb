@@ -123,7 +123,7 @@ module InvertedPendulum
           bang: 10.0,       # acceleration on a bang event
           thrust_decay: 2.0, # thrust decay percentage per second
           window_pix_width: 1280,
-          update_interval: 60,
+          update_interval: 16.666666,
           naked: false)
       @t = 0
       @bang = bang
