@@ -62,7 +62,7 @@ module InvertedPendulum
 
     def initialize(width: 1280, height: 1024)
       super(@pix_width = width, @pix_height = height, false)
-      self.caption = "RubyNEAT Inverted Pendulum Simulation"
+      self.caption = "RubyNEAT Inverted Pendulum Simulation -- use mouse wheel to bang the cart."
 
       @background = {image: Gosu::Image.new(self, 'public/background.png', true),
                      x: 0,
@@ -88,18 +88,17 @@ module InvertedPendulum
     def needs_cursor?; true; end
 
     def button_down(id)
-      pp id
       @cart.button_down(id) unless @cart.nil?
     end
 
     def button_up(id)
-      pp id
       @cart.button_up(id) unless @cart.nil?
     end
   end
 
   class Cart
     attr_accessor :pix_meters # pixels per meter
+    attr_accessor :ipwin
 
     #@param ipwin -- the windowed canvalss this will be shown.
     #@param scale -- visual scale on the canvas.
@@ -123,7 +122,9 @@ module InvertedPendulum
           polemass: 100.10,
           bang: 10.0,       # acceleration on a bang event
           thrust_decay: 2.0, # thrust decay percentage per second
-          window_pix_width: 1280)
+          window_pix_width: 1280,
+          update_interval: 60,
+          naked: false)
       @t = 0
       @bang = bang
       @thrust = 0 # accumulated bang
@@ -135,7 +136,6 @@ module InvertedPendulum
       @pix_width = @ipwin.nil? ? window_pix_width : @ipwin.pix_width
       @update_interval = ipwin.nil? ? update_interval : @ipwin.update_interval
       @cart = {
-          image: Gosu::Image.new(ipwin, 'public/cart.png', true),
           pos: Vector[xpos / @pix_meters, 650 / @pix_meters, 0],
           vel: Vector[0.0, 0, 0], #speed in meters per second
           acc: Vector[0.0, 0, 0], #acceleration in meters per second squared
@@ -148,12 +148,9 @@ module InvertedPendulum
           force: {},
           mass: cartmass
       }
-      @cart[:length] = @cart[:image].width * @cart[:scale] / @pix_meters
-      @cart[:height] = @cart[:image].height * @cart[:scale] / @pix_meters
 
       # Pole is relative to cart, and in the image is laying horizontal.
       @pole = {
-          image: Gosu::Image.new(ipwin, 'public/pole.png', true),
           z: 0,
           xoff: 0.0,
           yoff: 0.5,
@@ -169,12 +166,10 @@ module InvertedPendulum
           length: nil, # in meters, calculated from the scaled pixel length.
           mass: polemass
       }
-      @pole[:length] = @pole[:image].width * @pole[:scale] / @pix_meters
 
       # Wheels is relative to cart
       @wheels = [
           {
-            image: Gosu::Image.new(ipwin, 'public/wheel.png', true),
             ang: 0,
             dang: 100, #FIXME: delete this for this will be overwritten anyway
             xoff: -0.7, # percentage from center
@@ -182,19 +177,29 @@ module InvertedPendulum
             scale: 0.2 * scale
           },
           {
-            image: Gosu::Image.new(ipwin, 'public/wheel.png', true),
             ang: 0,
             dang: 12.33, #FIXME: delete this for this will be overwritten anyway
             xoff: 0.7,
             yoff: 0.4,
             scale: 0.2 * scale
           }
-      ].map { |w|
+      ]
+    end
+
+    def ipwin=(ipwin)
+      @ipwin = ipwin
+      @cart[:image] = Gosu::Image.new(ipwin, 'public/cart.png', true)
+      @pole[:image] = Gosu::Image.new(ipwin, 'public/pole.png', true)
+      @wheels.each {|w|
+        w[:image] = Gosu::Image.new(ipwin, 'public/wheel.png', true)
         # radius of wheel in meters, need this for rotational velocity calculation
         w[:radius] = w[:image].width * w[:scale] / @pix_meters / 2.0
         w[:circumference] = w[:radius] * 2.0 * PI
-        w
       }
+
+      @cart[:length] = @cart[:image].width * @cart[:scale] / @pix_meters
+      @cart[:height] = @cart[:image].height * @cart[:scale] / @pix_meters
+      @pole[:length] = @pole[:image].width * @pole[:scale] / @pix_meters
     end
 
     # Provide a bang for the cart.
@@ -205,11 +210,10 @@ module InvertedPendulum
     #             applied.
     def big_bang(bb = 0)
       # FIXME: this is temporary. Eventually this will call a callback in the Neater script.
-      t = @thrust
-      puts "#{t}, #{bb}"
+      v = Vector[@thrust, 0, 0]
       @thrust += @bang * bb
       @thrust -= @thrust * @thrust_decay * @dt
-      Vector[t, 0, 0]
+      v
     end
 
     def button_down(id)
@@ -351,9 +355,22 @@ module InvertedPendulum
     include Math
     def invpend(&block)
       @ipwin = InvPendWindow.new
-      @ipwin.cart = Cart.new ipwin: @ipwin
 
-      def show(&block)
+      def cart(&block)
+        @cart_params = block.()
+        unless @cart_params[:naked]
+          @cart = @ipwin.cart = Cart.new({ipwin: @ipwin}.merge @cart_params)
+        else
+          @cart = Cart.new(@cart_params)
+        end
+      end
+
+      def show(cart: @cart, &block)
+        unless cart.nil?
+          @ipwin.cart = cart
+          cart.ipwin = @ipwin
+        end
+
         @ipwin.show
       end
       block.(@ipwin)

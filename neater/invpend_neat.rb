@@ -11,6 +11,21 @@ include InvertedPendulum::DSL
 
 
 invpend do |ipwin|
-  puts "Inverted Pendulum"
-  show
+  puts "Inverted Pendulum -- use the mouse wheel to bang the cart yourself."
+
+  c = cart do
+    {
+      scale: 0.20,
+      ang: 45,
+      xpos: 600.0,
+      cartmass: 200.0, #kg
+      polemass: 100.10, #kg, knobby end only
+      bang: 10.0,       # acceleration on a bang event
+      thrust_decay: 2.0, # thrust decay percentage per second
+      window_pix_width: 1280,
+      naked: true  # Naked cart, not attached to a window.
+    }
+  end
+
+  show cart: c
 end

@@ -38,7 +38,7 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5">
+        <splitter split-orientation="vertical" split-proportion="0.6624514">
           <split-first>
             <leaf>
               <file leaf-file-name="neat.rb" pinned="false" current="false" current-in-tab="false">
@@ -77,10 +77,10 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="223" column="7" selection-start="7693" selection-end="7693" vertical-scroll-proportion="0.9027484" vertical-offset="3587" max-vertical-offset="6624">
+                    <state line="183" column="30" selection-start="6233" selection-end="6233" vertical-scroll-proportion="0.409375" vertical-offset="3032" max-vertical-offset="6930">
                       <folding />
                     </state>
                   </provider>
@@ -90,10 +90,10 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="208" column="23" selection-start="7334" selection-end="7334" vertical-scroll-proportion="0.3704497" vertical-offset="3571" max-vertical-offset="6624">
+                    <state line="367" column="26" selection-start="13014" selection-end="13014" vertical-scroll-proportion="0.46" vertical-offset="6468" max-vertical-offset="6930">
                       <folding />
                     </state>
                   </provider>
@@ -108,7 +108,7 @@
           <file leaf-file-name="invpend_neat.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="16" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.28771228" vertical-offset="0" max-vertical-offset="1001">
+                <state line="27" column="5" selection-start="618" selection-end="618" vertical-scroll-proportion="0.4855145" vertical-offset="0" max-vertical-offset="1001">
                   <folding />
                 </state>
               </provider>
@@ -171,8 +171,8 @@
         <option value="$PROJECT_DIR$/neater/xorsin_neat.rb" />
         <option value="$PROJECT_DIR$/neater/invped_neat.rb" />
         <option value="$PROJECT_DIR$/bin/neat.rb" />
-        <option value="$PROJECT_DIR$/neater/invpend_neat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
+        <option value="$PROJECT_DIR$/neater/invpend_neat.rb" />
         <option value="$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb" />
       </list>
     </option>
@@ -686,6 +686,7 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
     <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED" />
   </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -814,7 +815,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb</url>
-          <line>254</line>
+          <line>258</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
       </breakpoints>
@@ -1091,14 +1092,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.28771228" vertical-offset="0" max-vertical-offset="1001">
+        <state line="27" column="5" selection-start="618" selection-end="618" vertical-scroll-proportion="0.4855145" vertical-offset="0" max-vertical-offset="1001">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="7" selection-start="7693" selection-end="7693" vertical-scroll-proportion="0.9027484" vertical-offset="3587" max-vertical-offset="6624">
+        <state line="367" column="26" selection-start="13014" selection-end="13014" vertical-scroll-proportion="0.46" vertical-offset="6468" max-vertical-offset="6930">
           <folding />
         </state>
       </provider>
