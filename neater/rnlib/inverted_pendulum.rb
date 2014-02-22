@@ -58,9 +58,10 @@ module InvertedPendulum
 
   class InvPendWindow < Gosu::Window
     attr_accessor :cart
+    attr_reader :pix_width, :pix_height
 
-    def initialize
-      super(1280, 1024, false)
+    def initialize(width: 1280, height: 1024)
+      super(@pix_width = width, @pix_height = height, false)
       self.caption = "RubyNEAT Inverted Pendulum Simulation"
 
       @background = {image: Gosu::Image.new(self, 'public/background.png', true),
@@ -119,10 +120,12 @@ module InvertedPendulum
           xpos: 500.0,
           cartmass: 200.0,
           polemass: 100.10,
-          bang: 0.40)
+          bang: 20.0,       # acceleration on a bang event
+          thrust_decay: 0.10) # percent per second
       @t = 0
       @bang = bang
       @thrust = 0 # accumulated bang
+      @thrust_decay = thrust_decay
       @scale = scale
       @cart_length = 5.0 # meters
       @pix_meters = 640.0 * scale / @cart_length
@@ -194,7 +197,10 @@ module InvertedPendulum
     # Return a thrust (acc) vector (really just x)
     # based on thrust
     def external_update
-      Vector[@thrust, 0, 0]
+      # FIXME: this is temporary. Eventually this will call a callback in the Neater script.
+      t = @thrust
+      @thrust *= @thrust_decay * @dt
+      Vector[t, 0, 0]
     end
 
     def button_down(id)
@@ -305,7 +311,7 @@ module InvertedPendulum
     end
 
     def draw
-      @pole[:image].draw_rot( @pole[:_x],
+      @pole[:image].draw_rot( @pole[:_x] % @ipwin.pix_width,
                               @pole[:_y],
                               @pole[:z],
                               -@pole[:ang], # negative because y is inverted on the canvas
@@ -313,14 +319,14 @@ module InvertedPendulum
                               @pole[:scale],
                               @pole[:scale])
 
-      @cart[:image].draw(@cart[:_x],
+      @cart[:image].draw(@cart[:_x] % @ipwin.pix_width,
                              @cart[:_y],
                              0,
                              @cart[:scale],
                              @cart[:scale])
 
       @wheels.each do |wh|
-        wh[:image].draw_rot(wh[:_x],
+        wh[:image].draw_rot(wh[:_x] % @ipwin.pix_width,
                             wh[:_y],
                             0,
                             wh[:ang],
