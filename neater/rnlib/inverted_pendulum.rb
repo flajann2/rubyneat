@@ -115,13 +115,15 @@ module InvertedPendulum
     #                   the knobby end.
     #@param bang     -- per mouse event, how much bang (acceleration in m/s) to
     #                   deliver to the cart
-    def initialize(ipwin, scale: 0.50,
+    def initialize(ipwin: nil,
+          scale: 0.50,
           ang: 90.1,
           xpos: 500.0,
           cartmass: 200.0,
           polemass: 100.10,
-          bang: 20.0,       # acceleration on a bang event
-          thrust_decay: 0.10) # percent per second
+          bang: 10.0,       # acceleration on a bang event
+          thrust_decay: 2.0, # thrust decay percentage per second
+          window_pix_width: 1280)
       @t = 0
       @bang = bang
       @thrust = 0 # accumulated bang
@@ -130,6 +132,8 @@ module InvertedPendulum
       @cart_length = 5.0 # meters
       @pix_meters = 640.0 * scale / @cart_length
       @ipwin = ipwin
+      @pix_width = @ipwin.nil? ? window_pix_width : @ipwin.pix_width
+      @update_interval = ipwin.nil? ? update_interval : @ipwin.update_interval
       @cart = {
           image: Gosu::Image.new(ipwin, 'public/cart.png', true),
           pos: Vector[xpos / @pix_meters, 650 / @pix_meters, 0],
@@ -193,33 +197,39 @@ module InvertedPendulum
       }
     end
 
-    # External input
+    # Provide a bang for the cart.
     # Return a thrust (acc) vector (really just x)
     # based on thrust
-    def external_update
+    #@param bb -- bang factor, normally -1, 0, or 1, but could be
+    #             other values based on being a multiplier of the actual bang to be
+    #             applied.
+    def big_bang(bb = 0)
       # FIXME: this is temporary. Eventually this will call a callback in the Neater script.
       t = @thrust
-      @thrust *= @thrust_decay * @dt
+      puts "#{t}, #{bb}"
+      @thrust += @bang * bb
+      @thrust -= @thrust * @thrust_decay * @dt
       Vector[t, 0, 0]
     end
 
     def button_down(id)
-      case id
-        when MOUSE_ROLL_FOREWARD
-          @thrust += @bang
-        when MOUSE_ROLL_BACK
-          @thrust -= @bang
-      end
-      pp @thrust
+      big_bang  case id
+                  when MOUSE_ROLL_FOREWARD
+                    1.0
+                  when MOUSE_ROLL_BACK
+                    -1.0
+                  else
+                    0
+                end
     end
 
     def button_up(id)
-
+      # no op for now.
     end
 
     def update
       ## Physics updates
-      @dt = @ipwin.update_interval / 1000.0
+      @dt = @update_interval / 1000.0
       @t += @dt
 
       ## Pole (Pendulum) forces, accelerations, etc.
@@ -252,7 +262,7 @@ module InvertedPendulum
       # this point.
       @cart[:acc] = horiz / (@cart[:mass] + @pole[:mass] * cos(ang).abs)
 
-      @cart[:acc] += external_update
+      @cart[:acc] += big_bang
 
       ## Cart acceleration also affects angular torque
       # FIXME: Note that recalculations are being done here, which
@@ -311,7 +321,7 @@ module InvertedPendulum
     end
 
     def draw
-      @pole[:image].draw_rot( @pole[:_x] % @ipwin.pix_width,
+      @pole[:image].draw_rot( @pole[:_x] % @pix_width,
                               @pole[:_y],
                               @pole[:z],
                               -@pole[:ang], # negative because y is inverted on the canvas
@@ -319,14 +329,14 @@ module InvertedPendulum
                               @pole[:scale],
                               @pole[:scale])
 
-      @cart[:image].draw(@cart[:_x] % @ipwin.pix_width,
+      @cart[:image].draw(@cart[:_x] % @pix_width,
                              @cart[:_y],
                              0,
                              @cart[:scale],
                              @cart[:scale])
 
       @wheels.each do |wh|
-        wh[:image].draw_rot(wh[:_x] % @ipwin.pix_width,
+        wh[:image].draw_rot(wh[:_x] % @pix_width,
                             wh[:_y],
                             0,
                             wh[:ang],
@@ -341,7 +351,7 @@ module InvertedPendulum
     include Math
     def invpend(&block)
       @ipwin = InvPendWindow.new
-      @ipwin.cart = Cart.new @ipwin
+      @ipwin.cart = Cart.new ipwin: @ipwin
 
       def show(&block)
         @ipwin.show
