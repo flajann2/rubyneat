@@ -16,6 +16,15 @@ NEATGLOB = NEATER + '/*_neat.rb'
 require 'slop'
 require 'rubyneat'
 
+def list_neaters
+  Dir.glob(NEATGLOB).sort.each do |ne|
+    puts 'neat run ' + File.basename(ne).gsub(%r{_neat\.rb}, '')
+  end
+end
+
+def list_neurons
+  puts NEAT::Neuron.neuron_types.map{|n| n.name }.sort.join "\n"
+end
 
 opts = Slop.parse(strict: true, help: true) do
   banner 'Usage: neat [commands] [options] ...'
@@ -34,11 +43,19 @@ opts = Slop.parse(strict: true, help: true) do
   end
 
   command :list do
-    banner 'Usage: neat list [options]'
+    banner 'Usage: neat list options'
+    on :n, :neaters, 'list available neaters (default)'
+    on :u, :neurons, 'list available Neuron types'
     run do |opts, args|
-      Dir.glob(NEATGLOB).sort.each do |ne|
-        puts File.basename(ne).gsub(%r{_neat\.rb}, '')
+      opts.to_hash.map { |k, v| k }.reject{ |o| opts[o].nil? }.each do |o|
+        case o
+          when :neurons
+            list_neurons
+          when :neaters
+            list_neaters
+        end
       end
+
     end
   end
 
