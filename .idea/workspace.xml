@@ -53,7 +53,7 @@
               <file leaf-file-name="xor_neat.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state line="72" column="20" selection-start="647" selection-end="1791" vertical-scroll-proportion="0.578125" vertical-offset="926" max-vertical-offset="2574">
+                    <state line="137" column="0" selection-start="3994" selection-end="3994" vertical-scroll-proportion="0.83125" vertical-offset="1934" max-vertical-offset="2574">
                       <folding />
                     </state>
                   </provider>
@@ -113,17 +113,34 @@
         </splitter>
       </split-first>
       <split-second>
-        <leaf>
-          <file leaf-file-name="invpend_neat.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="26" column="3" selection-start="610" selection-end="610" vertical-scroll-proportion="0.053946055" vertical-offset="414" max-vertical-offset="1872">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="vertical" split-proportion="0.18677042">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="invpend_neat.rb" pinned="false" current="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="41" column="3" selection-start="925" selection-end="925" vertical-scroll-proportion="0.83536583" vertical-offset="601" max-vertical-offset="2808">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="invpend_neat.rb" pinned="false" current="true" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state line="132" column="3" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.9326683" vertical-offset="1628" max-vertical-offset="2808">
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -756,7 +773,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16134185" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37877312" sideWeight="0.8104366" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15069222" sideWeight="0.50145775" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37900874" sideWeight="0.18956336" order="7" side_tool="true" content_ui="tabs" x="3223" y="694" width="501" height="405" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37840468" sideWeight="0.18956336" order="7" side_tool="true" content_ui="tabs" x="3223" y="694" width="501" height="405" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2677702" sideWeight="0.7225772" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1103,14 +1120,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/xor_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="20" selection-start="647" selection-end="1791" vertical-scroll-proportion="0.578125" vertical-offset="926" max-vertical-offset="2574">
+        <state line="137" column="0" selection-start="3994" selection-end="3994" vertical-scroll-proportion="0.83125" vertical-offset="1934" max-vertical-offset="2574">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/invpend_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="3" selection-start="610" selection-end="610" vertical-scroll-proportion="0.053946055" vertical-offset="414" max-vertical-offset="1872">
+        <state line="132" column="3" selection-start="3350" selection-end="3350" vertical-scroll-proportion="0.9326683" vertical-offset="1628" max-vertical-offset="2808">
           <folding />
         </state>
       </provider>
