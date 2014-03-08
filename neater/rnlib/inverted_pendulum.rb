@@ -67,7 +67,7 @@ module InvertedPendulum
       @background = {image: Gosu::Image.new(self, 'public/background.png', true),
                      x: 0,
                      y: 0,
-                     scale: 0.9
+                     scale: 1.0
                     }
     end
 
@@ -118,6 +118,7 @@ module InvertedPendulum
           scale: 0.50,
           ang: 90.1,
           xpos: 500.0,
+          ypos: 845.0,
           cartmass: 200.0,
           polemass: 100.10,
           bang: 10.0,       # acceleration on a bang event
@@ -136,7 +137,7 @@ module InvertedPendulum
       @pix_width = @ipwin.nil? ? window_pix_width : @ipwin.pix_width
       @update_interval = ipwin.nil? ? update_interval : @ipwin.update_interval
       @cart = {
-          pos: Vector[xpos / @pix_meters, 650 / @pix_meters, 0],
+          pos: Vector[xpos / @pix_meters, ypos / @pix_meters, 0],
           vel: Vector[0.0, 0, 0], #speed in meters per second
           acc: Vector[0.0, 0, 0], #acceleration in meters per second squared
           scale: 0.2 * scale,

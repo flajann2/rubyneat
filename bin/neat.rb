@@ -39,6 +39,7 @@ opts = Slop.parse(strict: true, help: true) do
     banner 'Usage: neat console [options]'
     run do
       # TODO Implement an interactive console
+      puts "Interactive Console NIY"
     end
   end
 
