@@ -48,10 +48,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="inverted_pendulum.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="120" column="19" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.3698075" vertical-offset="1795" max-vertical-offset="6948">
+                <state line="120" column="19" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="6948">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Gemfile">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="11" selection-start="52" selection-end="52" vertical-scroll-proportion="0.072" vertical-offset="0" max-vertical-offset="1000">
                   <folding />
                 </state>
               </provider>
@@ -119,7 +128,6 @@
         <option value="$PROJECT_DIR$/rubyneat.gemspec" />
         <option value="$PROJECT_DIR$/lib/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/graph.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/rubyneat/population.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/evaluator.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/neuron.rb" />
@@ -147,6 +155,7 @@
         <option value="$PROJECT_DIR$/neater/invpend_neat.rb" />
         <option value="$PROJECT_DIR$/bin/neat.rb" />
         <option value="$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -715,8 +724,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297561" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32814023" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13365282" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16134185" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13365282" sideWeight="0.50145775" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16134185" sideWeight="0.49854228" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37877312" sideWeight="0.8104366" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15069222" sideWeight="0.50145775" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37840468" sideWeight="0.18956336" order="7" side_tool="true" content_ui="tabs" x="3223" y="694" width="501" height="405" />
@@ -1023,13 +1032,6 @@
         <state line="67" column="6" selection-start="1777" selection-end="1777" vertical-scroll-proportion="0.6069869" vertical-offset="650" max-vertical-offset="1566" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="21" selection-start="227" selection-end="227" vertical-scroll-proportion="0.42113322" vertical-offset="31" max-vertical-offset="684">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neater/xorsin_neat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="0" selection-start="1798" selection-end="1798" vertical-scroll-proportion="0.915625" vertical-offset="764" max-vertical-offset="2682" />
@@ -1068,7 +1070,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neater/rnlib/inverted_pendulum.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="19" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.3698075" vertical-offset="1795" max-vertical-offset="6948">
+        <state line="120" column="19" selection-start="3682" selection-end="3682" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="6948">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="52" selection-end="52" vertical-scroll-proportion="0.072" vertical-offset="0" max-vertical-offset="1000">
           <folding />
         </state>
       </provider>

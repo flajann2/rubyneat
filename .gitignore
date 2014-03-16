@@ -14,4 +14,4 @@ FOO*
 foo/*
 
 # ignore idea
-.idea
+**.idea

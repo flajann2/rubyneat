@@ -1,2 +1,0 @@
-export PATH="./bin:$PATH"
-rvm use 2.1.0
