@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class NEAT::Critter - rubyneat 0.3.4</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">NeatOb
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-compare">#compare</a>
+    
+    <li ><a href="#method-i-dump_s">#dump_s</a>
+    
+    <li ><a href="#method-i-evaluate-21">#evaluate!</a>
+    
+    <li ><a href="#method-i-express-21">#express!</a>
+    
+    <li ><a href="#method-i-initialize_neurons-21">#initialize_neurons!</a>
+    
+    <li ><a href="#method-i-ready_for_expression-21">#ready_for_expression!</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-NEAT::Critter">
+  <h1 id="class-NEAT::Critter" class="class">
+    class NEAT::Critter
+  </h1>
+
+  <section class="description">
+    
+<h1 id="class-NEAT::Critter-label-Critters+for+NEAT">Critters for <a href="../NEAT.html">NEAT</a><span><a href="#class-NEAT::Critter-label-Critters+for+NEAT">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre class="ruby"><span class="ruby-constant">The</span> <span class="ruby-constant">Critter</span> <span class="ruby-keyword">class</span> <span class="ruby-identifier">comprises</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">Genotype</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">Phenotype</span>.
+<span class="ruby-constant">The</span> <span class="ruby-constant">Genotype</span> <span class="ruby-identifier">comprises</span> <span class="ruby-constant">Genes</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">Neurons</span>.
+</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-fitness" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fitness</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Ratings assigned by <a href="Evaluator.html">Evaluator</a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-genotype" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">genotype</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-novelty" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">novelty</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Ratings assigned by <a href="Evaluator.html">Evaluator</a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-phenotype" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">phenotype</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-population" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">population</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(pop, mating = false, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Critter.html">Critter</a> construction. We construct the genotype.
+The phenotype will be constructed by the <a
+href="Expressor.html">Expressor</a> operator.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">pop</span>, <span class="ruby-identifier">mating</span> = <span class="ruby-keyword">false</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">super</span> <span class="ruby-identifier">pop</span>.<span class="ruby-identifier">controller</span>
+  <span class="ruby-ivar">@population</span> = <span class="ruby-identifier">pop</span>
+  <span class="ruby-ivar">@genotype</span> = <span class="ruby-constant">Genotype</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">mating</span>)
+  <span class="ruby-identifier">block</span>.(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-compare" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compare</span><span
+            class="method-args">(oc)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compare ourselves against another critter for compability.</p>
+
+<p>The function to be used here is:</p>
+
+<pre>distance = c1*E + c2*D + c3*W</pre>
+
+<p>Where:</p>
+
+<pre>E, D - The number of excess and disjoint genes repesctively.
+N - The number of genes in the largest genome.
+W - The sum of absolute weight differences.</pre>
+
+<p>This is a variation of the formulation suggested by the Stanley paper,
+which normalizes the E and D terms by N.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="compare-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compare</span>(<span class="ruby-identifier">oc</span>)
+  <span class="ruby-identifier">c1</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">excess_coefficient</span>
+  <span class="ruby-identifier">c2</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">disjoint_coefficient</span>
+  <span class="ruby-identifier">c3</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">weight_coefficient</span>
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">excess</span>(<span class="ruby-identifier">oc</span>)
+  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">disjoint</span>(<span class="ruby-identifier">oc</span>)
+  <span class="ruby-identifier">w</span> = <span class="ruby-identifier">weight_diff</span>(<span class="ruby-identifier">oc</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">c1</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c3</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">w</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-dump_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Critter.html">Critter</a> print</p>
+          
+          
+
+          
+          <div class="method-source-code" id="dump_s-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 344</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dump_s</span>
+  <span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@genotype</span>.<span class="ruby-identifier">dump_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@phenotype</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-evaluate-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A single evaluation step. Evaluate and generate fitness, novelty, etc.
+Returns the result.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate!</span>
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">evaluator</span>.<span class="ruby-identifier">evaluate!</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-express-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">express!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Exoress this critter using the <a href="Expressor.html">Expressor</a>
+plugin.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="express-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">express!</span>
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">expressor</span>.<span class="ruby-identifier">express!</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-initialize_neurons-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize_neurons!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This initializes neurons in preparation for recurrence. Note that the <a
+href="Critter.html">Critter</a> should already have expressed its genotype
+before this is called.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="initialize_neurons-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize_neurons!</span>
+  <span class="ruby-ivar">@phenotype</span>.<span class="ruby-identifier">initialize_neurons</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ready_for_expression-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ready_for_expression!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the <a href="Critter.html">Critter</a> ready for the <a
+href="Expressor.html">Expressor</a> to express the geneotype.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ready_for_expression-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/critter.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ready_for_expression!</span>
+  <span class="ruby-ivar">@genotype</span>.<span class="ruby-identifier">wire!</span>
+  <span class="ruby-ivar">@phenotype</span> = <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-constant">Critter</span><span class="ruby-operator">::</span><span class="ruby-constant">Phenotype</span>[<span class="ruby-keyword">self</span>]
+  <span class="ruby-ivar">@phenotype</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

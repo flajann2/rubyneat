@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class NEAT::Controller - rubyneat 0.3.4</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="NeatOb.html">NEAT::NeatOb</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-gaussian">#gaussian</a>
+    
+    <li ><a href="#method-i-new_innovation">#new_innovation</a>
+    
+    <li ><a href="#method-i-run">#run</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-NEAT::Controller">
+  <h1 id="class-NEAT::Controller" class="class">
+    class NEAT::Controller
+  </h1>
+
+  <section class="description">
+    
+<h1 id="class-NEAT::Controller-label-Controller+for+all+operations+of+RubyNEAT"><a href="Controller.html">Controller</a> for all operations of <a href="../RubyNEAT.html">RubyNEAT</a><span><a href="#class-NEAT::Controller-label-Controller+for+all+operations+of+RubyNEAT">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre>This object contains all the specifications and details for
+evolving and evaluation of the RubyNEAT system.  It is 
+a type of &quot;World&quot;, if you will, for the entire enterprise.
+
+Your application shall only have one Controller.</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-compare_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">compare_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-cost_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">cost_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-end_run_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">end_run_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>End run function to call at the end of each generational run Also <a
+href="Controller.html#attribute-i-report_hook">#report_hook</a> to dump
+reports for the user, etc.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-evaluator" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">evaluator</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-evaluator_class" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">evaluator_class</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-evolver" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">evolver</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-evolver_class" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">evolver_class</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-expressor" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">expressor</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-expressor_class" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">expressor_class</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-fitness_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fitness_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Fitness function that Critters shall be rated on.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-generation_num" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">generation_num</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Current generation count</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-glob_innov_num" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">glob_innov_num</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>global innovation number</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-log" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">log</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Logger object for all of <a href="../RubyNEAT.html">RubyNEAT</a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-neural_hidden" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">neural_hidden</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Class map of named input and output neurons (each critter will have 
+instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-neural_inputs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">neural_inputs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Class map of named input and output neurons (each critter will have 
+instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-neural_outputs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">neural_outputs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Class map of named input and output neurons (each critter will have 
+instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-neuron_catalog" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">neuron_catalog</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>catalog of neurons classes to use { weight =&gt; nclass, … }</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-parms" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">parms</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Parameters for evolution (NeatParameters)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-population" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">population</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>population object and class specification</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-population_class" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">population_class</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>population object and class specification</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-population_history" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">population_history</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>population object and class specification</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-query_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">query_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Query function that Critters shall call.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-recurrence_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">recurrence_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Recurrence function that Critters will yield to.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-report_hook" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">report_hook</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>End run function to call at the end of each generational run Also <a
+href="Controller.html#attribute-i-report_hook">#report_hook</a> to dump
+reports for the user, etc.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-seq_num" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">seq_num</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>current sequence number being evaluated</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-stop_on_fit_func" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">stop_on_fit_func</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Compare function for fitness Cost function for integrating in the cost to
+the fitness scalar.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-verbosity" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">verbosity</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Global verbosity level:</p>
+
+<pre>1 - normal (the default)
+2 - really verbose
+3 - maximally verbose</pre>
+
+<p>Use in conjunction with log.debug</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(neural_inputs: nil, neural_outputs: nil, neural_hidden: nil, parameters: NeatSettings.new, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p><a href="Controller.html#attribute-i-neural_inputs">#neural_inputs</a> –
+array of input classes</p>
+</li><li>
+<p><a href="Controller.html#attribute-i-neural_outputs">#neural_outputs</a> –
+array of output classes</p>
+</li><li>
+<p>parameters – NeatParameters object, or a path to a YAML file to create
+this.</p>
+</li></ul>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="NeatOb.html#method-c-new">NEAT::NeatOb.new</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">neural_inputs</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+               <span class="ruby-identifier">neural_outputs</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+               <span class="ruby-identifier">neural_hidden</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+               <span class="ruby-identifier">parameters</span><span class="ruby-operator">:</span> <span class="ruby-constant">NeatSettings</span>.<span class="ruby-identifier">new</span>,
+                  <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-ivar">@verbosity</span> = <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@glob_innov_num</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@gaussian</span> = <span class="ruby-constant">Distribution</span><span class="ruby-operator">::</span><span class="ruby-constant">Normal</span>.<span class="ruby-identifier">rng</span>
+  <span class="ruby-ivar">@population_history</span> = []
+  <span class="ruby-ivar">@evolver</span> = <span class="ruby-constant">Evolver</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-ivar">@expressor</span> = <span class="ruby-constant">Expressor</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>
+
+  <span class="ruby-ivar">@neuron_catalog</span> = <span class="ruby-constant">Neuron</span><span class="ruby-operator">::</span><span class="ruby-identifier">neuron_types</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@neural_inputs</span>  = <span class="ruby-identifier">neural_inputs</span>
+  <span class="ruby-ivar">@neural_outputs</span> = <span class="ruby-identifier">neural_outputs</span>
+  <span class="ruby-ivar">@neural_hidden</span>  = <span class="ruby-identifier">neural_hidden</span>
+
+  <span class="ruby-comment"># Default classes for population and operators, etc.</span>
+  <span class="ruby-ivar">@population_class</span> = <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-constant">Population</span>
+  <span class="ruby-ivar">@evaluator_class</span> = <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-constant">Evaluator</span>
+  <span class="ruby-ivar">@expressor_class</span> = <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-constant">Expressor</span>
+  <span class="ruby-ivar">@evolver_class</span> = <span class="ruby-constant">NEAT</span><span class="ruby-operator">::</span><span class="ruby-constant">Evolver</span>
+
+  <span class="ruby-comment"># Handle the parameters parameter. :-)</span>
+  <span class="ruby-ivar">@parms</span> = <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+             <span class="ruby-identifier">parameters</span>
+           <span class="ruby-keyword">else</span> <span class="ruby-comment"># load it from a file</span>
+             <span class="ruby-identifier">open</span>(<span class="ruby-identifier">parameters</span>, <span class="ruby-string">&#39;r&#39;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">fd</span><span class="ruby-operator">|</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span> <span class="ruby-identifier">fd</span>.<span class="ruby-identifier">read</span> }
+           <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">block</span>.(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-gaussian" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gaussian</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gaussian-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 368</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gaussian</span> ; <span class="ruby-ivar">@gaussian</span>.() ; <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_innovation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_innovation</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_innovation-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 367</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_innovation</span> ; <span class="ruby-ivar">@glob_innov_num</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Run this evolution.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 371</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+  <span class="ruby-identifier">pre_run_initialize</span>
+  (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-ivar">@parms</span>.<span class="ruby-identifier">max_generations</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gen_number</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@generation_num</span> = <span class="ruby-identifier">gen_number</span>
+    <span class="ruby-ivar">@population_history</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">nil?</span>
+                             <span class="ruby-ivar">@population</span>
+                           <span class="ruby-keyword">else</span>
+                             <span class="ruby-ivar">@population</span> = <span class="ruby-ivar">@population_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+                           <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@population_history</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@population_history</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@parms</span>.<span class="ruby-identifier">max_population_history</span>
+    <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">mutate!</span>
+    <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">express!</span>
+
+    <span class="ruby-comment">## Evaluate population</span>
+    <span class="ruby-ivar">@evaluator</span>.<span class="ruby-identifier">ready_for_evaluation</span> <span class="ruby-ivar">@population</span>
+    (<span class="ruby-ivar">@parms</span>.<span class="ruby-identifier">start_sequence_at</span> <span class="ruby-operator">..</span> <span class="ruby-ivar">@parms</span>.<span class="ruby-identifier">end_sequence_at</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">snum</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@seq_num</span> = <span class="ruby-identifier">snum</span>
+      <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">evaluate!</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">analyze!</span>
+    <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">speciate!</span>
+
+    <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">dump_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@verbosity</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">3</span>
+
+    <span class="ruby-identifier">new_pop</span> = <span class="ruby-ivar">@population</span>.<span class="ruby-identifier">evolve</span>
+
+    <span class="ruby-comment">## Report hook for evaluation</span>
+    <span class="ruby-ivar">@report_hook</span>.(<span class="ruby-ivar">@population</span>.<span class="ruby-identifier">report</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@report_hook</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-comment">## Exit if fitness criteria is reached</span>
+    <span class="ruby-comment">#FIXME handle this exit condition better!!!!!</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stop_on_fit_func</span>.(<span class="ruby-ivar">@population</span>.<span class="ruby-identifier">report</span>[<span class="ruby-value">:fitness</span>], <span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@stop_on_fit_func</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-comment">## Evolve population</span>
+    <span class="ruby-ivar">@population</span> = <span class="ruby-identifier">new_pop</span>
+
+    <span class="ruby-comment">## Finish up this run</span>
+    <span class="ruby-ivar">@end_run_func</span>.(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@end_run_func</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

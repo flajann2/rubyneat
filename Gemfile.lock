@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.5)
+    addressable (2.3.6)
     aquarium (0.5.1)
     awesome_print (1.2.0)
     bson (1.9.2)
@@ -35,9 +35,9 @@ GEM
       nokogiri (~> 1.5.2)
       oauth2
     gosu (0.7.50)
-    guard (2.5.1)
+    guard (2.6.0)
       formatador (>= 0.2.4)
-      listen (~> 2.6)
+      listen (~> 2.7)
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
@@ -63,11 +63,11 @@ GEM
       celluloid-io (>= 0.15.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    lumberjack (1.0.4)
+    lumberjack (1.0.5)
     method_source (0.8.2)
     mongo (1.9.2)
       bson (~> 1.9.2)
-    multi_json (1.9.0)
+    multi_json (1.9.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
     nio4r (1.0.0)
@@ -83,7 +83,7 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.4)
     rack (1.5.2)
-    rake (10.1.1)
+    rake (10.2.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -106,10 +106,11 @@ GEM
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
     slop (3.5.0)
+    spring (1.1.2)
     statistics2 (0.54)
-    thor (0.18.1)
+    thor (0.19.1)
     timers (1.1.0)
-    yard (0.8.7.3)
+    yard (0.8.7.4)
 
 PLATFORMS
   ruby
@@ -131,5 +132,6 @@ DEPENDENCIES
   semver
   simplecov
   slop
+  spring
   statistics2
   yard

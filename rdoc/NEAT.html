@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module NEAT - rubyneat 0.3.4</title>
+
+<link href="./fonts.css" rel="stylesheet">
+<link href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/search_index.js"></script>
+<script src="./js/search.js"></script>
+<script src="./js/searcher.js"></script>
+<script src="./js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#module-NEAT-label-Critter">Critter</a>
+    <li><a href="#module-NEAT-label-RubyNEAT+DSL">RubyNEAT DSL</a>
+    <li><a href="#module-NEAT-label-Neuron+Types">Neuron Types</a>
+    <li><a href="#module-NEAT-label-NEAT+--+Module+for+RubyNEAT.">NEAT – Module for RubyNEAT.</a>
+    <li><a href="#module-NEAT-label-Synopsis">Synopsis</a>
+    <li><a href="#module-NEAT-label-Issues">Issues</a>
+    <li><a href="#module-NEAT-label-Multicore+%2F+Cloud+Computing">Multicore / Cloud Computing</a>
+  </ul>
+</div>
+
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-controller">::controller</a>
+    
+    <li ><a href="#method-c-controller-3D">::controller=</a>
+    
+    <li ><a href="#method-c-create_controller">::create_controller</a>
+    
+    <li ><a href="#method-c-dpp">::dpp</a>
+    
+    <li ><a href="#method-c-gaussian">::gaussian</a>
+    
+    <li ><a href="#method-c-new_innovation">::new_innovation</a>
+    
+    <li ><a href="#method-c-random_name_generator">::random_name_generator</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-NEAT">
+  <h1 id="module-NEAT" class="module">
+    module NEAT
+  </h1>
+
+  <section class="description">
+    
+<h1 id="module-NEAT-label-Critter"><a href="NEAT/Critter.html">Critter</a><span><a href="#module-NEAT-label-Critter">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<h1 id="module-NEAT-label-RubyNEAT+DSL"><a href="RubyNEAT.html">RubyNEAT</a> <a href="NEAT/DSL.html">DSL</a><span><a href="#module-NEAT-label-RubyNEAT+DSL">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p><a href="NEAT/DSL.html">DSL</a> is a domain-specific language for <a
+href="RubyNEAT.html">RubyNEAT</a> to allow you to configure the <a
+href="NEAT.html">NEAT</a> engine for various evolutionary projects.</p>
+
+<h1 id="module-NEAT-label-Neuron+Types"><a href="NEAT/Neuron.html">Neuron</a> Types<span><a href="#module-NEAT-label-Neuron+Types">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<p>We create all the neuron types for this system here.</p>
+
+<h1 id="module-NEAT-label-NEAT+--+Module+for+RubyNEAT."><a href="NEAT.html">NEAT</a> – Module for <a href="RubyNEAT.html">RubyNEAT</a>.<span><a href="#module-NEAT-label-NEAT+--+Module+for+RubyNEAT.">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<h2 id="module-NEAT-label-Synopsis">Synopsis<span><a href="#module-NEAT-label-Synopsis">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<p>We have a <a href="NEAT/Population.html">Population</a> of Critters, and
+each <a href="NEAT/Critter.html">Critter</a> represents a network of
+Neurons and a connection list specifying how those Neurons are connected.</p>
+
+<p>Each <a href="NEAT/Neuron.html">Neuron</a> has an inplicit genotype and
+phenotype component. Neurons, from the Ruby persoective, contain their own
+code to produce their own phenotypes.</p>
+
+<p>There are input Neurons and output Neurons. The input Neurons are special,
+as they do not contain any input from other nodes, but serve as interfaces
+from the “real world”. Thier range of inputs are open, and it shall be up
+to the input Neuron&#39;s phenotype generators to condition those inputs,
+if need be, to someething more suiable for the neural network.</p>
+
+<h2 id="module-NEAT-label-Issues">Issues<span><a href="#module-NEAT-label-Issues">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<h3 id="module-NEAT-label-Multicore+%2F+Cloud+Computing">Multicore / Cloud Computing<span><a href="#module-NEAT-label-Multicore+%2F+Cloud+Computing">&para;</a> <a href="#documentation">&uarr;</a></span></h3>
+
+<p>Some thought needs to be given to how to make this anenable to multiple
+processes so that we can leverage the power of multicore systems as well as
+multiple computers in the Cloud, etc.</p>
+
+<p>Our initial inclination  is to put all of that functionality in the
+Conroller.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="STIMULUS">STIMULUS
+        
+        <dd><p>Name of the stimulus method in <a
+href="NEAT/Critter/Phenotype.html">NEAT::Critter::Phenotype</a> to use for
+the singleton method expression of the critter.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-controller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">controller</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="controller-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">controller</span> ; <span class="ruby-ivar">@controller</span> ; <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-controller-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">controller=</span><span
+            class="method-args">(controller)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="controller-3D-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 423</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">controller=</span>(<span class="ruby-identifier">controller</span>) ; <span class="ruby-ivar">@controller</span> = <span class="ruby-identifier">controller</span> ; <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-create_controller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_controller</span><span
+            class="method-args">(*parms)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_controller-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create_controller</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">parms</span>); <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">Controller</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">parms</span>); <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-dpp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dpp</span><span
+            class="method-args">(ob)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>PrettyPrint to log.debug</p>
+          
+          
+
+          
+          <div class="method-source-code" id="dpp-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dpp</span> <span class="ruby-identifier">ob</span>
+  <span class="ruby-comment">#$log.ap ob</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-gaussian" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gaussian</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mixin for the gaussian object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="gaussian-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">gaussian</span> ; <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">gaussian</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new_innovation" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_innovation</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mixin for new innovation numbers.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new_innovation-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new_innovation</span>; <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">new_innovation</span>; <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-random_name_generator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">random_name_generator</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="random_name_generator-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/rubyneat.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">random_name_generator</span>
+  (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>).<span class="ruby-identifier">map</span> {
+    <span class="ruby-ivar">@rng_names</span>[<span class="ruby-identifier">rand</span> <span class="ruby-ivar">@rng_names</span>.<span class="ruby-identifier">size</span>]
+  }.<span class="ruby-identifier">push</span>(<span class="ruby-ivar">@rng_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;_&#39;</span>).<span class="ruby-identifier">to_sym</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
