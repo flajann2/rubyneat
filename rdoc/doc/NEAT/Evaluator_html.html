@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Evaluator.html - rubyneat 0.3.4</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../doc/ControllerPoint_html.html">ControllerPoint.html</a>
+  
+    <li><a href="../../doc/CuteA_html.html">CuteA.html</a>
+  
+    <li><a href="../../doc/CuteB_html.html">CuteB.html</a>
+  
+    <li><a href="../../doc/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../doc/NEAT_html.html">NEAT.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes_html.html">BasicNeuronTypes.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/BiasNeuron_html.html">BiasNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/CosineNeuron_html.html">CosineNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/InputNeuron_html.html">InputNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/SigmoidNeuron_html.html">SigmoidNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/SineNeuron_html.html">SineNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/TanhNeuron_html.html">TanhNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/Controller_html.html">Controller.html</a>
+  
+    <li><a href="../../doc/NEAT/Controller/NeatSettings_html.html">NeatSettings.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter_html.html">Critter.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter/Genotype_html.html">Genotype.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter/Genotype/Gene_html.html">Gene.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter/Phenotype_html.html">Phenotype.html</a>
+  
+    <li><a href="../../doc/NEAT/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../doc/NEAT/Evaluator_html.html">Evaluator.html</a>
+  
+    <li><a href="../../doc/NEAT/Evolver_html.html">Evolver.html</a>
+  
+    <li><a href="../../doc/NEAT/Evolver/CritterOp_html.html">CritterOp.html</a>
+  
+    <li><a href="../../doc/NEAT/Expressor_html.html">Expressor.html</a>
+  
+    <li><a href="../../doc/NEAT/Graph_html.html">Graph.html</a>
+  
+    <li><a href="../../doc/NEAT/Graph/DependencyResolver_html.html">DependencyResolver.html</a>
+  
+    <li><a href="../../doc/NEAT/Graph/GraphException_html.html">GraphException.html</a>
+  
+    <li><a href="../../doc/NEAT/NeatException_html.html">NeatException.html</a>
+  
+    <li><a href="../../doc/NEAT/NeatOb_html.html">NeatOb.html</a>
+  
+    <li><a href="../../doc/NEAT/Neuron_html.html">Neuron.html</a>
+  
+    <li><a href="../../doc/NEAT/Operator_html.html">Operator.html</a>
+  
+    <li><a href="../../doc/NEAT/Population_html.html">Population.html</a>
+  
+    <li><a href="../../doc/NEAT/Trait_html.html">Trait.html</a>
+  
+    <li><a href="../../doc/_index_html.html">_index.html</a>
+  
+    <li><a href="../../doc/class_list_html.html">class_list.html</a>
+  
+    <li><a href="../../doc/css/common_css.html">common.css</a>
+  
+    <li><a href="../../doc/css/full_list_css.html">full_list.css</a>
+  
+    <li><a href="../../doc/css/style_css.html">style.css</a>
+  
+    <li><a href="../../doc/file_list_html.html">file_list.html</a>
+  
+    <li><a href="../../doc/frames_html.html">frames.html</a>
+  
+    <li><a href="../../doc/index_html.html">index.html</a>
+  
+    <li><a href="../../doc/js/app_js.html">app.js</a>
+  
+    <li><a href="../../doc/js/full_list_js.html">full_list.js</a>
+  
+    <li><a href="../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../doc/method_list_html.html">method_list.html</a>
+  
+    <li><a href="../../doc/top-level-namespace_html.html">top-level-namespace.html</a>
+  
+    <li><a href="../../foo_dump_log.html">foo.dump.log</a>
+  
+    <li><a href="../../rubyneat_gemspec.html">rubyneat.gemspec</a>
+  
+    <li><a href="../../xordebug_log.html">xordebug.log</a>
+  
+    <li><a href="../../xorsin_log.html">xorsin.log</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/NEAT/Evaluator.html">
+
+<p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”</p>
+
+<pre>&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</pre>
+
+<p>&lt;html xmlns=“<a
+href="http://www.w3.org/1999/xhtml">www.w3.org/1999/xhtml</a>”
+xml:lang=“en” lang=“en”&gt;</p>
+
+<pre>&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</pre>
+
+<p>&lt;title&gt;</p>
+
+<pre>Class: NEAT::Evaluator
+
+  &amp;mdash; Documentation by YARD 0.8.7.3</pre>
+
+<p>&lt;/title&gt;</p>
+
+<pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;../css/style.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../css/common.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;</pre>
+
+<p>&lt;script type=“text/javascript” charset=“utf-8”&gt;</p>
+
+<pre>hasFrames = window.top.frames.main ? true : false;
+relpath = &#39;../&#39;;
+framesUrl = &quot;../frames.html#!&quot; + escape(window.location.href);</pre>
+
+<p>&lt;/script&gt;</p>
+
+<pre>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;../js/jquery.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;../js/app.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;header&quot;&gt;
+    &lt;div id=&quot;menu&quot;&gt;
+
+  &lt;a href=&quot;../_index.html&quot;&gt;Index (E)&lt;/a&gt; &amp;raquo;
+  &lt;span class=&#39;title&#39;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NEAT.html&quot; title=&quot;NEAT (module)&quot;&gt;NEAT&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+   &amp;raquo; 
+  &lt;span class=&quot;title&quot;&gt;Evaluator&lt;/span&gt;
+
+&lt;div class=&quot;noframes&quot;&gt;&lt;span class=&quot;title&quot;&gt;(&lt;/span&gt;&lt;a href=&quot;.&quot; target=&quot;_top&quot;&gt;no frames&lt;/a&gt;&lt;span class=&quot;title&quot;&gt;)&lt;/span&gt;&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div id=&quot;search&quot;&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;class_list_link&quot;
+    href=&quot;../class_list.html&quot;&gt;
+  Class List
+&lt;/a&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;method_list_link&quot;
+    href=&quot;../method_list.html&quot;&gt;
+  Method List
+&lt;/a&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;file_list_link&quot;
+    href=&quot;../file_list.html&quot;&gt;
+  File List
+&lt;/a&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;iframe id=&quot;search_frame&quot;&gt;&lt;/iframe&gt;
+
+&lt;div id=&quot;content&quot;&gt;&lt;h1&gt;Class: NEAT::Evaluator</pre>
+
+<p>&lt;/h1&gt;</p>
+
+<p>&lt;dl class=“box”&gt;</p>
+
+<pre>&lt;dt class=&quot;r1&quot;&gt;Inherits:&lt;/dt&gt;
+&lt;dd class=&quot;r1&quot;&gt;
+  &lt;span class=&quot;inheritName&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;Operator.html&quot; title=&quot;NEAT::Operator (class)&quot;&gt;Operator&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+
+    &lt;ul class=&quot;fullTree&quot;&gt;
+      &lt;li&gt;Object&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;Operator.html&quot; title=&quot;NEAT::Operator (class)&quot;&gt;Operator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;NEAT::Evaluator&lt;/li&gt;
+
+    &lt;/ul&gt;
+    &lt;a href=&quot;#&quot; class=&quot;inheritanceTree&quot;&gt;show all&lt;/a&gt;
+
+  &lt;/dd&gt;
+
+&lt;dt class=&quot;r2 last&quot;&gt;Defined in:&lt;/dt&gt;
+&lt;dd class=&quot;r2 last&quot;&gt;lib/rubyneat/evaluator.rb&lt;/dd&gt;</pre>
+
+<p>&lt;/dl&gt; &lt;div class=“clear”&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Overview&lt;/h2&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;h1
+id=“label-Evaluator+evaluates+phenotype+of+critter+for+fitness%2C+novelty%2C+etc.”&gt;Evaluator
+evaluates phenotype of critter for fitness, novelty, etc.&lt;/h1&gt;</p>
+
+<p>&lt;p&gt;We can have a chain of these evaluators whose outputs are summed,
+etc.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;h2&gt;Instance Attribute Summary&lt;/h2&gt;
+
+&lt;h3 class=&quot;inherited&quot;&gt;Attributes inherited from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p class=&quot;inherited&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html#controller-instance_method&quot; title=&quot;NEAT::NeatOb#controller (method)&quot;&gt;#controller&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html#name-instance_method&quot; title=&quot;NEAT::NeatOb#name (method)&quot;&gt;#name&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+  &lt;h2&gt;
+    Instance Method Summary
+    &lt;small&gt;(&lt;a href=&quot;#&quot; class=&quot;summary_toggle&quot;&gt;collapse&lt;/a&gt;)&lt;/small&gt;
+  &lt;/h2&gt;
+
+  &lt;ul class=&quot;summary&quot;&gt;
+
+      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#analyze_for_fitness%21-instance_method&quot; title=&quot;#analyze_for_fitness! (instance method)&quot;&gt;- (Object) &lt;strong&gt;analyze_for_fitness!&lt;/strong&gt;(critter) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Analyze the evaluation and compute a fitness for the given
+critter.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#evaluate%21-instance_method&quot; title=&quot;#evaluate! (instance method)&quot;&gt;- (Object) &lt;strong&gt;evaluate!&lt;/strong&gt;(critter) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Evaluate one step of a sequence of evaluations.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#ready_for_evaluation-instance_method&quot; title=&quot;#ready_for_evaluation (instance method)&quot;&gt;- (Object) &lt;strong&gt;ready_for_evaluation&lt;/strong&gt;(pop) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;This is call prior to any sequence evaluation.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre class="ruby">  <span class="ruby-operator">&lt;</span><span class="ruby-regexp">/ul&gt;
+
+&lt;h3 class=&quot;inherited&quot;&gt;Methods inherited from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/</span><span class="ruby-identifier">a</span><span class="ruby-operator">&gt;</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/span&gt;&lt;/</span><span class="ruby-identifier">h3</span><span class="ruby-operator">&gt;</span>
+<span class="ruby-operator">&lt;</span><span class="ruby-identifier">p</span> <span class="ruby-identifier">class</span>=<span class="ruby-string">&quot;inherited&quot;</span><span class="ruby-operator">&gt;</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">span</span> <span class="ruby-identifier">class</span>=<span class="ruby-string">&#39;object_link&#39;</span><span class="ruby-operator">&gt;</span><span class="ruby-operator">&lt;</span><span class="ruby-identifier">a</span> <span class="ruby-identifier">href</span>=<span class="ruby-node">&quot;NeatOb.html#initialize-instance_method&quot;</span> <span class="ruby-identifier">title</span>=<span class="ruby-node">&quot;NEAT::NeatOb#initialize (method)&quot;</span><span class="ruby-operator">&gt;</span><span class="ruby-comment">#initialize&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html#log-instance_method&quot; title=&quot;NEAT::NeatOb#log (method)&quot;&gt;#log&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html#log-class_method&quot; title=&quot;NEAT::NeatOb.log (method)&quot;&gt;log&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html#to_s-instance_method&quot; title=&quot;NEAT::NeatOb#to_s (method)&quot;&gt;#to_s&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;</span>
+
+<span class="ruby-operator">&lt;</span><span class="ruby-identifier">div</span> <span class="ruby-identifier">id</span>=<span class="ruby-string">&quot;constructor_details&quot;</span> <span class="ruby-identifier">class</span>=<span class="ruby-string">&quot;method_details_list&quot;</span><span class="ruby-operator">&gt;</span>
+<span class="ruby-operator">&lt;</span><span class="ruby-identifier">h2</span><span class="ruby-operator">&gt;</span><span class="ruby-constant">Constructor</span> <span class="ruby-constant">Details</span><span class="ruby-operator">&lt;</span><span class="ruby-node">/h2&gt;
+
+  &lt;p class=&quot;notice&quot;&gt;This class inherits a constructor from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;NeatOb.html#initialize-instance_method&quot; title=&quot;NEAT::NeatOb#initialize (method)&quot;&gt;NEAT::NeatOb&lt;/</span><span class="ruby-identifier">a</span><span class="ruby-operator">&gt;</span><span class="ruby-operator">&lt;</span><span class="ruby-regexp">/span&gt;&lt;/</span><span class="ruby-identifier">p</span><span class="ruby-operator">&gt;</span>
+</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;div id=&quot;instance_method_details&quot; class=&quot;method_details_list&quot;&gt;
+  &lt;h2&gt;Instance Method Details&lt;/h2&gt;
+
+    &lt;div class=&quot;method_details first&quot;&gt;
+&lt;h3 class=&quot;signature first&quot; id=&quot;analyze_for_fitness!-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;analyze_for_fitness!&lt;/strong&gt;(critter)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Analyze the evaluation and compute a fitness for the given
+critter. Note that if cost_func is set, we call that to integrate the cost
+to the fitness average fitness calculated for the fitness vector.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>40 41 42 43 44 45 46 47 48 49&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evaluator.rb&#39;, line 40&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_analyze_for_fitness!&#39;&gt;analyze_for_fitness!&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;id identifier rubyid_fitvec&#39;&gt;fitvec&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;ivar&#39;&gt;@crit_hist&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_map&#39;&gt;map&lt;/span&gt;&lt;span class=&#39;lbrace&#39;&gt;{&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_seq&#39;&gt;seq&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_vio&#39;&gt;vio&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt; &lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_fitness_func&#39;&gt;fitness_func&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_vio&#39;&gt;vio&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;int&#39;&gt;0&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_vio&#39;&gt;vio&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;int&#39;&gt;1&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_seq&#39;&gt;seq&lt;/span&gt;&lt;span class=&#39;rparen&#39;&gt;)&lt;/span&gt; &lt;span class=&#39;rbrace&#39;&gt;}&lt;/span&gt;
+&lt;span class=&#39;comment&#39;&gt;# Average the fitness vector to get a scalar fitness.</pre>
+
+<p>&lt;/span&gt;  &lt;span class=&#39;id identifier
+rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_fitness&#39;&gt;fitness&lt;/span&gt; &lt;span
+class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span
+class=&#39;kw&#39;&gt;unless&lt;/span&gt; &lt;span
+class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_cost_func&#39;&gt;cost_func&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_nil?&#39;&gt;nil?&lt;/span&gt;</p>
+
+<pre>                    &lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_cost_func&#39;&gt;cost_func&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_fitvec&#39;&gt;fitvec&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_fitness_cost&#39;&gt;fitness_cost&lt;/span&gt;&lt;span class=&#39;rparen&#39;&gt;)&lt;/span&gt;
+                  &lt;span class=&#39;kw&#39;&gt;else&lt;/span&gt;
+                    &lt;span class=&#39;id identifier rubyid_fitvec&#39;&gt;fitvec&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_reduce&#39;&gt;reduce&lt;/span&gt; &lt;span class=&#39;lbrace&#39;&gt;{&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_a&#39;&gt;a&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_r&#39;&gt;r&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_a&#39;&gt;a&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;+&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_r&#39;&gt;r&lt;/span&gt;&lt;span class=&#39;rbrace&#39;&gt;}&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;/&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_fitvec&#39;&gt;fitvec&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_size&#39;&gt;size&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_to_f&#39;&gt;to_f&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;+&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_fitness_cost&#39;&gt;fitness_cost&lt;/span&gt;
+                  &lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_log&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_debug&#39;&gt;debug&lt;/span&gt; &lt;span class=&#39;tstring&#39;&gt;&lt;span class=&#39;tstring_beg&#39;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;Fitness Vector: &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_fitvec&#39;&gt;fitvec&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;, fitness of &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_fitness&#39;&gt;fitness&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt; assigned to &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_end&#39;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;evaluate!-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;evaluate!&lt;/strong&gt;(critter)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Evaluate one step of a sequence of evaluations. For time series
+and realtime ongoing evaluations, everything is.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;Returns [vin, vout], where vin is the input vector, and vout in
+the output vector from the critter. FIXME: this should not really have to
+deal with an error. FIXME: the error should be handled upstream from
+here.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>24 25 26 27 28 29 30 31 32 33 34 35&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evaluator.rb&#39;, line 24&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_evaluate!&#39;&gt;evaluate!&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;id identifier rubyid_vin&#39;&gt;vin&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_query_func&#39;&gt;query_func&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_seq_num&#39;&gt;seq_num&lt;/span&gt;&lt;span class=&#39;rparen&#39;&gt;)&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@crit_hist&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;lbrace&#39;&gt;{&lt;/span&gt;&lt;span class=&#39;rbrace&#39;&gt;}&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;unless&lt;/span&gt; &lt;span class=&#39;ivar&#39;&gt;@crit_hist&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_member?&#39;&gt;member?&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;
+&lt;span class=&#39;kw&#39;&gt;begin&lt;/span&gt;
+  &lt;span class=&#39;id identifier rubyid_vout&#39;&gt;vout&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_phenotype&#39;&gt;phenotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_stimulate&#39;&gt;stimulate&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;*&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_vin&#39;&gt;vin&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_recurrence_func&#39;&gt;recurrence_func&lt;/span&gt;
+  &lt;span class=&#39;id identifier rubyid_log&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_debug&#39;&gt;debug&lt;/span&gt; &lt;span class=&#39;tstring&#39;&gt;&lt;span class=&#39;tstring_beg&#39;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;Critter &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;: vin=&lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_vin&#39;&gt;vin&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;. vout=&lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_vout&#39;&gt;vout&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_end&#39;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#39;ivar&#39;&gt;@crit_hist&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_seq_num&#39;&gt;seq_num&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_vin&#39;&gt;vin&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_vout&#39;&gt;vout&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;
+&lt;span class=&#39;kw&#39;&gt;rescue&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;Exception&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_e&#39;&gt;e&lt;/span&gt;
+  &lt;span class=&#39;id identifier rubyid_log&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_error&#39;&gt;error&lt;/span&gt; &lt;span class=&#39;tstring&#39;&gt;&lt;span class=&#39;tstring_beg&#39;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;Exception &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_e&#39;&gt;e&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt; on code:\n&lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_phenotype&#39;&gt;phenotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_code&#39;&gt;code&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_end&#39;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&#39;ivar&#39;&gt;@crit_hist&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_critter&#39;&gt;critter&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;ivar&#39;&gt;@controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_seq_num&#39;&gt;seq_num&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_vin&#39;&gt;vin&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;symbol&#39;&gt;:error&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;
+&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;ready_for_evaluation-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;ready_for_evaluation&lt;/strong&gt;(pop)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;This is call prior to any sequence evaluation. Here, we clean up
+persistent tracking information, etc.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>10 11 12 13&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evaluator.rb&#39;, line 10&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_ready_for_evaluation&#39;&gt;ready_for_evaluation&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_pop&#39;&gt;pop&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@crit_hist&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;lbrace&#39;&gt;{&lt;/span&gt;&lt;span class=&#39;rbrace&#39;&gt;}&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_pop&#39;&gt;pop&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_initialize_for_recurrence!&#39;&gt;initialize_for_recurrence!&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div id=&quot;footer&quot;&gt;
+Generated on Sun Mar 16 16:36:52 2014 by
+&lt;a href=&quot;http://yardoc.org&quot; title=&quot;Yay! A Ruby Documentation Tool&quot; target=&quot;_parent&quot;&gt;yard&lt;/a&gt;
+0.8.7.3 (ruby-2.1.1).</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;/body&gt;</pre>
+
+<p>&lt;/html&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

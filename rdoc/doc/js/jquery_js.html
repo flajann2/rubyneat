@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>jquery.js - rubyneat 0.3.4</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../doc/ControllerPoint_html.html">ControllerPoint.html</a>
+  
+    <li><a href="../../doc/CuteA_html.html">CuteA.html</a>
+  
+    <li><a href="../../doc/CuteB_html.html">CuteB.html</a>
+  
+    <li><a href="../../doc/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../doc/NEAT_html.html">NEAT.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes_html.html">BasicNeuronTypes.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/BiasNeuron_html.html">BiasNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/CosineNeuron_html.html">CosineNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/InputNeuron_html.html">InputNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/SigmoidNeuron_html.html">SigmoidNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/SineNeuron_html.html">SineNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/BasicNeuronTypes/TanhNeuron_html.html">TanhNeuron.html</a>
+  
+    <li><a href="../../doc/NEAT/Controller_html.html">Controller.html</a>
+  
+    <li><a href="../../doc/NEAT/Controller/NeatSettings_html.html">NeatSettings.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter_html.html">Critter.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter/Genotype_html.html">Genotype.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter/Genotype/Gene_html.html">Gene.html</a>
+  
+    <li><a href="../../doc/NEAT/Critter/Phenotype_html.html">Phenotype.html</a>
+  
+    <li><a href="../../doc/NEAT/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../doc/NEAT/Evaluator_html.html">Evaluator.html</a>
+  
+    <li><a href="../../doc/NEAT/Evolver_html.html">Evolver.html</a>
+  
+    <li><a href="../../doc/NEAT/Evolver/CritterOp_html.html">CritterOp.html</a>
+  
+    <li><a href="../../doc/NEAT/Expressor_html.html">Expressor.html</a>
+  
+    <li><a href="../../doc/NEAT/Graph_html.html">Graph.html</a>
+  
+    <li><a href="../../doc/NEAT/Graph/DependencyResolver_html.html">DependencyResolver.html</a>
+  
+    <li><a href="../../doc/NEAT/Graph/GraphException_html.html">GraphException.html</a>
+  
+    <li><a href="../../doc/NEAT/NeatException_html.html">NeatException.html</a>
+  
+    <li><a href="../../doc/NEAT/NeatOb_html.html">NeatOb.html</a>
+  
+    <li><a href="../../doc/NEAT/Neuron_html.html">Neuron.html</a>
+  
+    <li><a href="../../doc/NEAT/Operator_html.html">Operator.html</a>
+  
+    <li><a href="../../doc/NEAT/Population_html.html">Population.html</a>
+  
+    <li><a href="../../doc/NEAT/Trait_html.html">Trait.html</a>
+  
+    <li><a href="../../doc/_index_html.html">_index.html</a>
+  
+    <li><a href="../../doc/class_list_html.html">class_list.html</a>
+  
+    <li><a href="../../doc/css/common_css.html">common.css</a>
+  
+    <li><a href="../../doc/css/full_list_css.html">full_list.css</a>
+  
+    <li><a href="../../doc/css/style_css.html">style.css</a>
+  
+    <li><a href="../../doc/file_list_html.html">file_list.html</a>
+  
+    <li><a href="../../doc/frames_html.html">frames.html</a>
+  
+    <li><a href="../../doc/index_html.html">index.html</a>
+  
+    <li><a href="../../doc/js/app_js.html">app.js</a>
+  
+    <li><a href="../../doc/js/full_list_js.html">full_list.js</a>
+  
+    <li><a href="../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../doc/method_list_html.html">method_list.html</a>
+  
+    <li><a href="../../doc/top-level-namespace_html.html">top-level-namespace.html</a>
+  
+    <li><a href="../../foo_dump_log.html">foo.dump.log</a>
+  
+    <li><a href="../../rubyneat_gemspec.html">rubyneat.gemspec</a>
+  
+    <li><a href="../../xordebug_log.html">xordebug.log</a>
+  
+    <li><a href="../../xorsin_log.html">xorsin.log</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/js/jquery.js">
+
+<pre>! jQuery v1.7.1 jquery.com | jquery.org/license</pre>
+
+<p>(function(a,b){function cy(a){return
+f.isWindow(a)?a:a.nodeType===9?a.defaultView||a.parentWindow:!1}function
+cv(a){<a href="a">if(!ck</a>){var
+b=c.body,d=f(“&lt;”<code>a</code>“&gt;”).appendTo(b),e=d.css(“display”);d.remove();if(e===“none”||e===“”){cl||(cl=c.createElement(“iframe”),cl.frameBorder=cl.width=cl.height=0),b.appendChild(cl);if(!cm||!cl.createElement)cm=(cl.contentWindow||cl.contentDocument).document,cm.write((c.compatMode===“CSS1Compat”?“&lt;!doctype
+html&gt;”:“”)+“&lt;html&gt;&lt;body&gt;”),cm.close();d=cm.createElement(a),cm.body.appendChild(d),e=f.css(d,“display”),b.removeChild(cl)}<a
+href="a">ck</a>=e}return <a href="a">ck</a>}function cu(a,b){var c={};<a
+href="this">f.each(cq.concat.apply([],cq.slice(0,b)),function(){c</a>=a});return
+c}function ct(){cr=b}function cs(){setTimeout(ct,0);return
+cr=f.now()}function cj(){try{return new
+a.ActiveXObject(“Microsoft.XMLHTTP”)}catch(b){}}function ci(){try{return
+new a.XMLHttpRequest}catch(b){}}function
+cc(a,c){a.dataFilter&amp;&amp;(c=a.dataFilter(c,a.dataType));var
+d=a.dataTypes,e={},<a
+href="0">g,h,i=d.length,j,k=d</a>,l,m,n,o,p;for(g=1;g&lt;i;g++){if(g===1)for(h
+in a.converters)typeof <a href="h.toLowerCase()">h==“string”&&(e</a>=<a
+href="h">a.converters</a>);<a href="g">l=k,k=d</a>;if(k===“*”)k=l;else
+if(l!==“*”&amp;&amp;l!==k){m=l+“ ”+<a href="m">k,n=e</a>||e[“*
+”+k];if(!n){p=b;for(o in e){j=o.split(“ ”);<a href="0">if(j</a>===<a
+href="0">l||j</a>===“*”){<a href="1">p=e[j</a>+“ ”+k];if(p){<a
+href="o">o=e</a>,o===!0?n=p:p===!0&amp;&amp;(n=o);break}}}}!n&amp;&amp;!p&amp;&amp;f.error(“No
+conversion from ”+m.replace(“ ”,“ to
+”)),n!==!0&amp;&amp;(c=n?n©:p(o©))}}return c}function cb(a,c,d){var
+e=a.contents,f=a.dataTypes,g=a.responseFields,h,i,j,k;for(i in g)i in <a
+href="i">d&&(c[g</a>]=<a href="i">d</a>);<a
+href="0">while(f</a>===“*”)f.shift(),h===b&amp;&amp;(h=a.mimeType||c.getResponseHeader(“content-type”));if(h)for(i
+in <a href="i">e)if(e</a>&amp;&amp;<a
+href="i">e</a>.test(h)){f.unshift(i);break}<a href="0">if(f</a>in <a
+href="0">d)j=f</a>;else{for(i in d){<a href="0">if(!f</a>||a.converters[i+“
+”+<a href="0">f</a>]){j=i;break}k||(k=i)}j=j||k}if(j){<a
+href="0">j!==f</a>&amp;&amp;f.unshift(j);return <a href="j">d</a>}}function
+ca(a,b,c,d){if(f.isArray(b))f.each(b,function(b,e){c||bE.test(a)?d(a,e):ca(a+“[”+(typeof
+e==“object”||f.isArray(e)?b:“”)+“]”,e,c,d)});else
+if(!c&amp;&amp;b!=null&amp;&amp;typeof b==“object”)for(var e in <a
+href=""e"">b)ca(a+“</a>”,<a href="e">b</a>,c,d);else d(a,b)}function
+b_(a,c){var d,e,g=f.ajaxSettings.flatOptions||{};for(d in <a
+href="d">c)c</a>!==<a href="d">b&&((g</a>?a:e||(e={}))[<a
+href="d">d]=c</a>);e&amp;&amp;f.extend(!0,a,e)}function b$(a,c,d,e,f,g){<a
+href="0">f=f||c.dataTypes</a>,g=g||{},<a href="f">g</a>=!0;var <a
+href="f">h=a</a>,<a
+href="i">i=0,j=h?h.length:0,k=a===bT,l;for(;i<j&&(k||!l);i++)l=h</a>(c,d,e),typeof
+<a href="l">l==“string”&&(!k||g</a>?<a
+href=""*"">l=b:(c.dataTypes.unshift(l),l=b$(a,c,d,e,l,g)));(k||!l)&&!g</a>&amp;&amp;(l=b$(a,c,d,e,“*”,g));return
+l}function bZ(a){return function(b,c){typeof
+b!=“string”&amp;&amp;(c=b,b=“*”);if(f.isFunction©){var <a
+href="e">d=b.toLowerCase().split(bP),e=0,g=d.length,h,i,j;for(;e<g;e++)h=d</a>,<a
+href="h">j=/^+/.test(h),j&&(h=h.substr(1)||“*”),i=a</a>=<a
+href="h">a</a>||[],<a href="j?"unshift":"push"">i</a>©}}}function
+bC(a,b,c){var
+d=b===“width”?a.offsetWidth:a.offsetHeight,e=b===“width”?bx:by,g=0,h=e.length;if(d&gt;0){<a
+href="g">if(c!==“border”)for(;g<h;g++)c||(d-=parseFloat(f.css(a,"padding"+e</a>))||<a
+href="g">0),c===“margin”?d+=parseFloat(f.css(a,c+e</a>))||<a
+href="g">0:d-=parseFloat(f.css(a,“border”+e</a>+“Width”))||0;return
+d+“px”}<a href="b">d=bz(a,b,b);if(d<0||d==null)d=a.style</a>||<a
+href="g">0;d=parseFloat(d)||0;if©for(;g<h;g++)d+=parseFloat(f.css(a,"padding"+e</a>))||<a
+href="g">0,c!==“padding”&&(d+=parseFloat(f.css(a,“border”+e</a>+“<a
+href="g">Width”))||0),c===“margin”&&(d+=parseFloat(f.css(a,c+e</a>))||0);return
+d+“px”}function
+bp(a,b){b.src?f.ajax({url:b.src,async:!1,dataType:“script”}):f.globalEval((b.text||b.textContent||b.innerHTML||“”).replace(bf,“
+$0  ”)),b.parentNode&amp;&amp;b.parentNode.removeChild(b)}function
+bo(a){var
+b=c.createElement(“div”);bh.appendChild(b),b.innerHTML=a.outerHTML;return
+b.firstChild}function bn(a){var
+b=(a.nodeName||“”).toLowerCase();b===“input”?bm(a):b!==“script”&amp;&amp;typeof
+a.getElementsByTagName!=“undefined”&amp;&amp;f.grep(a.getElementsByTagName(“input”),bm)}function
+bm(a){if(a.type===“checkbox”||a.type===“radio”)a.defaultChecked=a.checked}function
+bl(a){return typeof
+a.getElementsByTagName!=“undefined”?a.getElementsByTagName(“*”):typeof
+a.querySelectorAll!=“undefined”?a.querySelectorAll(“*”):[]}function
+bk(a,b){var
+c;if(b.nodeType===1){b.clearAttributes&amp;&amp;b.clearAttributes(),b.mergeAttributes&amp;&amp;b.mergeAttributes(a),c=b.nodeName.toLowerCase();if(c===“object”)b.outerHTML=a.outerHTML;else
+if(c!==“input”||a.type!==“checkbox”&amp;&amp;a.type!==“radio”){if(c===“option”)b.selected=a.defaultSelected;else
+if(c===“input”||c===“textarea”)b.defaultValue=a.defaultValue}else
+a.checked&amp;&amp;(b.defaultChecked=b.checked=a.checked),b.value!==a.value&amp;&amp;(b.value=a.value);b.removeAttribute(f.expando)}}function
+bj(a,b){if(b.nodeType===1&amp;&amp;!!f.hasData(a)){var
+c,d,e,g=f._data(a),h=f._data(b,g),i=g.events;if(i){delete
+h.handle,h.events={};for(c in <a href="c">i)for(d=0,e=i</a>.<a
+href="c">length;d<e;d++)f.event.add(b,c+(i</a>[<a
+href="c">d].namespace?“.”:“”)+i</a>[<a href="c">d].namespace,i</a>[<a
+href="c">d],i</a>[d].data)}h.data&amp;&amp;(h.data=f.extend({},h.data))}}function
+bi(a,b){return <a
+href="0">f.nodeName(a,“table”)?a.getElementsByTagName(“tbody”)</a>||a.appendChild(a.ownerDocument.createElement(“tbody”)):a}function
+U(a){var
+b=V.split(“|”),c=a.createDocumentFragment();if(c.createElement)while(b.length)c.createElement(b.pop());return
+c}function T(a,b,c){b=b||0;if(f.isFunction(b))return
+f.grep(a,function(a,d){var e=!!b.call(a,d,a);return
+e===c});if(b.nodeType)return f.grep(a,function(a,d){return
+a===b===c});if(typeof b==“string”){var d=f.grep(a,function(a){return
+a.nodeType===1});if(O.test(b))return
+f.filter(b,d,!c);b=f.filter(b,d)}return f.grep(a,function(a,d){return
+f.inArray(a,b)&gt;=0===c})}function
+S(a){return!a||!a.parentNode||a.parentNode.nodeType===11}function
+K(){return!0}function J(){return!1}function n(a,b,c){var
+d=b+“defer”,e=b+“queue”,g=b+“mark”,h=f._data(a,d);h&amp;&amp;(c===“queue”||!f._data(a,e))&amp;&amp;(c===“mark”||!f._data(a,g))&amp;&amp;setTimeout(function(){!f._data(a,e)&amp;&amp;!f._data(a,g)&amp;&amp;(f.removeData(a,d,!0),h.fire())},0)}function
+m(a){for(var b in a){<a
+href="b">if(b===“data”&&f.isEmptyObject(a</a>))continue;if(b!==“toJSON”)return!1}return!0}function
+l(a,c,d){if(d===b&amp;&amp;a.nodeType===1){var
+e=“data-”+c.replace(k,“-$1”).toLowerCase();d=a.getAttribute(e);if(typeof
+d==“string”){try{d=d===“true”?!0:d===“false”?!1:d===“null”?null:f.isNumeric(d)?parseFloat(d):j.test(d)?f.parseJSON(d):d}catch(g){}f.data(a,c,d)}else
+d=b}return d}function h(a){var <a href="a">b=g</a>={},<a
+href="c">c,d;a=a.split(/s+/);for(c=0,d=a.length;c<d;c++)b[a</a>]=!0;return
+b}var c=a.document,d=a.navigator,e=a.location,f=function(){function
+J(){if(!e.isReady){try{c.documentElement.doScroll(“left”)}catch(a){setTimeout(J,1);return}e.ready()}}var
+e=function(a,b){return new e.fn.init(a,b,h)},<a
+href="^#<">f=a.jQuery,g=a.$,h,i=/^(?:</a>*(&lt;[<a
+href=“^>”>wW]+>)</a>*$|#([<a
+href=“">w-]*)$)/,j=/S/,k=/^s+/,l=/s+$/,m=/^<(\w+)\s*\/?>(?:<\/\1>)?$/,n=/^</a>,:{}<a
+href=”“\/bfnrt”>s]*$/,o=/\(?:</a>|<a href="0-9a-fA-F">u</a>{4})/<a
+href="^"\\\n\r">g,p=/“</a>*”|<a
+href="eE">true|false|null|-?d+(?:.d*)?(?:</a>[+-]?d+)?/g,q=/(?:^|:|,)(?:s*[)+/g,r=/(webkit)[
+/]([w.]+)/,s=/(opera)(?:.*version)?[ /]([w.]+)/,t=/(msie)
+([w.]+)/,u=/(mozilla)(?:.*? <a href="\w.">rv:(</a>+))?/,<a
+href="a-z">v=/-(</a>|[0-9])/ig,w=/^-ms-/,x=function(a,b){return(b+“”).toUpperCase()},y=d.userAgent,z,A,B,C=Object.prototype.toString,D=Object.prototype.hasOwnProperty,E=Array.prototype.push,F=Array.prototype.slice,G=String.prototype.trim,H=Array.prototype.indexOf,I={};e.fn=e.prototype={constructor:e,init:function(a,d,f){var
+g,h,j,k;if(!a)return this;if(a.nodeType){<a
+href="0">this.context=this</a>=a,this.length=1;return
+this}if(a===“body”&amp;&amp;!d&amp;&amp;c.body){<a
+href="0">this.context=c,this</a>=c.body,this.selector=a,this.length=1;return
+this}if(typeof a==“string”){<a
+href="null,a,null">a.charAt(0)!==“<"||a.charAt(a.length-1)!==">”||a.length<3?g=i.exec(a):g=</a>;<a
+href="1">if(g&&(g</a>||!d)){<a href="1">if(g</a>){d=d instanceof <a
+href="0">e?d</a>:<a
+href="1">d,k=d?d.ownerDocument||d:c,j=m.exec(a),j?e.isPlainObject(d)?(a=[c.createElement(j</a>)],<a
+href="1">e.fn.attr.call(a,d,!0)):a=[k.createElement(j</a>)]:(<a
+href="1">j=e.buildFragment([g</a>],[k]),a=(j.cacheable?e.clone(j.fragment):j.fragment).childNodes);return
+e.merge(this,a)}<a
+href="2">h=c.getElementById(g</a>);if(h&amp;&amp;h.parentNode){<a
+href="2">if(h.id!==g</a>)return <a
+href="0">f.find(a);this.length=1,this</a>=h}this.context=c,this.selector=a;return
+this}return!d||d.jquery?(d||f).find(a):this.constructor(d).find(a)}if(e.isFunction(a))return
+f.ready(a);a.selector!==b&amp;&amp;(this.selector=a.selector,this.context=a.context);return
+e.makeArray(a,this)},selector:“”,jquery:“1.7.1”,length:0,size:function(){return
+this.length},toArray:function(){return
+F.call(this,0)},get:function(a){return <a
+href="this.length+a">a==null?this.toArray():a<0?this</a>:<a
+href="a">this</a>},pushStack:function(a,b,c){var
+d=this.constructor();e.isArray(a)?E.apply(d,a):e.merge(d,a),d.prevObject=this,d.context=this.context,b===“find”?d.selector=this.selector+(this.selector?“
+”:“”)+c:b&amp;&amp;(d.selector=this.selector+“.”<code>b</code>“(”<code>c</code>“)”);return
+d},each:function(a,b){return
+e.each(this,a,b)},ready:function(a){e.bindReady(),A.add(a);return
+this},eq:function(a){a=+a;return
+a===-1?this.slice(a):this.slice(a,a+1)},first:function(){return
+this.eq(0)},last:function(){return this.eq(-1)},slice:function(){return
+this.pushStack(F.apply(this,arguments),“slice”,F.call(arguments).join(“,”))},map:function(a){return
+this.pushStack(e.map(this,function(b,c){return
+a.call(b,c,b)}))},end:function(){return
+this.prevObject||this.constructor(null)},<a
+href="">push:E,sort:[].sort,splice:</a>.splice},e.fn.init.prototype=e.fn,e.extend=e.fn.extend=function(){var
+<a
+href="0">a,c,d,f,g,h,i=arguments</a>||{},j=1,k=arguments.length,l=!1;typeof
+<a href="1">i==“boolean”&&(l=i,i=arguments</a>||{},j=2),typeof
+i!=“object”&amp;&amp;!e.isFunction(i)&amp;&amp;(i={}),<a
+href="j">k===j&&(i=this,–j);for(;j<k;j++)if((a=arguments</a>)!=null)for(c
+in a){<a href="c">d=i</a>,<a href="c">f=a</a>;<a
+href="c">if(i===f)continue;l&&f&&(e.isPlainObject(f)||(g=e.isArray(f)))?(g?(g=!1,h=d&&e.isArray(d)?d:[]):h=d&&e.isPlainObject(d)?d:{},i</a>=<a
+href="c">e.extend(l,h,f)):f!==b&&(i</a>=f)}return
+i},e.extend({noConflict:function(b){a.$===e&amp;&amp;(a.$=g),b&amp;&amp;a.jQuery===e&amp;&amp;(a.jQuery=f);return
+e},isReady:!1,readyWait:1,holdReady:function(a){a?e.readyWait++:e.ready(!0)},ready:function(a){if(a===!0&amp;&amp;!–e.readyWait||a!==!0&amp;&amp;!e.isReady){if(!c.body)return
+<a
+href="e">setTimeout(e.ready,1);e.isReady=!0;if(a!==!0&&–e.readyWait>0)return;A.fireWith(c,</a>),e.fn.trigger&amp;&amp;e©.trigger(“ready”).off(“ready”)}},bindReady:function(){if(!A){A=e.Callbacks(“once
+memory”);if(c.readyState===“complete”)return
+setTimeout(e.ready,1);if(c.addEventListener)c.addEventListener(“DOMContentLoaded”,B,!1),a.addEventListener(“load”,e.ready,!1);else
+if(c.attachEvent){c.attachEvent(“onreadystatechange”,B),a.attachEvent(“onload”,e.ready);var
+b=!1;try{b=a.frameElement==null}catch(d){}c.documentElement.doScroll&amp;&amp;b&amp;&amp;J()}}},isFunction:function(a){return
+e.type(a)===“function”},isArray:Array.isArray||function(a){return
+e.type(a)===“array”},isWindow:function(a){return a&amp;&amp;typeof
+a==“object”&amp;&amp;“setInterval”in
+a},isNumeric:function(a){return!isNaN(parseFloat(a))&amp;&amp;isFinite(a)},type:function(a){return
+<a
+href="C.call(a)">a==null?String(a):I</a>||“object”},isPlainObject:function(a){if(!a||e.type(a)!==“object”||a.nodeType||e.isWindow(a))return!1;try{if(a.constructor&amp;&amp;!D.call(a,“constructor”)&amp;&amp;!D.call(a.constructor.prototype,“isPrototypeOf”))return!1}catch©{return!1}var
+d;for(d in a);return d===b||D.call(a,d)},isEmptyObject:function(a){for(var
+b in a)return!1;return!0},error:function(a){throw new
+Error(a)},parseJSON:function(b){if(typeof b!=“string”||!b)return
+null;b=e.trim(b);if(a.JSON&amp;&amp;a.JSON.parse)return
+a.JSON.parse(b);if(n.test(b.replace(o,“@”).replace(p,“]”).replace(q,“”)))return(new
+Function(“return ”+b))();e.error(“Invalid JSON:
+”+b)},parseXML:function©{var d,f;try{a.DOMParser?(f=new
+DOMParser,d=f.parseFromString(c,“text/xml”)):(d=new
+ActiveXObject(“Microsoft.XMLDOM”),d.async=“false”,d.loadXML©)}catch(g){d=b}(!d||!d.documentElement||d.getElementsByTagName(“parsererror”).length)&amp;&amp;e.error(“Invalid
+XML: ”+c);return
+d},noop:function(){},globalEval:function(b){b&amp;&amp;j.test(b)&amp;&amp;(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return
+a.replace(w,“ms-”).replace(v,x)},nodeName:function(a,b){return
+a.nodeName&amp;&amp;a.nodeName.toUpperCase()===b.toUpperCase()},each:function(a,c,d){var
+f,g=0,h=a.length,i=h===b||e.isFunction(a);if(d){if(i){for(f in <a
+href="f">a)if(c.apply(a</a>,d)===!1)break}else <a
+href="g++">for(;g<h;)if(c.apply(a</a>,d)===!1)break}else if(i){for(f in <a
+href="f">a)if(c.call(a</a>,<a href="f">f,a</a>)===!1)break}else <a
+href="g">for(;g<h;)if(c.call(a</a>,<a href="g++">g,a</a>)===!1)break;return
+a},trim:G?function(a){return a==null?“”:G.call(a)}:function(a){return
+a==null?“”:(a+“”).replace(k,“”).replace(l,“”)},makeArray:function(a,b){var
+c=b||[];if(a!=null){var
+d=e.type(a);a.length==null||d===“string”||d===“function”||d===“regexp”||e.isWindow(a)?E.call(c,a):e.merge(c,a)}return
+c},inArray:function(a,b,c){var d;if(b){if(H)return
+H.call(b,a,c);d=b.length,c=c?c&lt;0?Math.max(0,d+c):c:0;for(;c&lt;d;c++)if(c
+in <a href="c">b&&b</a>===a)return c}return-1},merge:function(a,c){var
+d=a.length,e=0;if(typeof c.length==“number”)for(var <a
+href="d++">f=c.length;e<f;e++)a</a>=<a href="e">c</a>;else <a
+href="e">while(c</a>!==<a href="d++">b)a</a>=<a
+href="e++">c</a>;a.length=d;return a},grep:function(a,b,c){var
+d=[],e;c=!!c;for(var <a href="f">f=0,g=a.length;f<g;f++)e=!!b(a</a>,<a
+href="f">f),c!==e&&d.push(a</a>);return d},map:function(a,c,d){var
+f,g,h=[],i=0,j=a.length,k=a instanceof e||j!==b&amp;&amp;typeof <a
+href="0">j==“number”&&(j>0&&a</a>&amp;&amp;<a href="j-1">a</a>||<a
+href="i">j===0||e.isArray(a));if(k)for(;i<j;i++)f=c(a</a>,<a
+href="h.length">i,d),f!=null&&(h</a>=f);else for(g in <a
+href="g">a)f=c(a</a>,<a href="h.length">g,d),f!=null&&(h</a>=f);return
+h.concat.apply([],h)},guid:1,proxy:function(a,c){if(typeof c==“string”){var
+<a href="c">d=a</a>;c=a,a=d}if(!e.isFunction(a))return b;var
+f=F.call(arguments,2),g=function(){return
+a.apply(c,f.concat(F.call(arguments)))};g.guid=a.guid=a.guid||g.guid||e.guid++;return
+g},access:function(a,c,d,f,g,h){var i=a.length;if(typeof
+c==“object”){for(var j in <a href="j">c)e.access(a,j,c</a>,f,g,d);return
+a}if(d!==b){f=!h&amp;&amp;f&amp;&amp;e.isFunction(d);for(var <a
+href="k">k=0;k<i;k++)g(a</a>,<a href="k">c,f?d.call(a</a>,<a
+href="k">k,g(a</a>,c)):d,h);return a}return <a
+href="0">i?g(a</a>,c):b},now:function(){return(new
+Date).getTime()},uaMatch:function(a){a=a.toLowerCase();var <a
+href="1">b=r.exec(a)||s.exec(a)||t.exec(a)||a.indexOf(“compatible”)<0&&u.exec(a)||[];return{browser:b</a>||“”,<a
+href="2">version:b</a>||“0”}},sub:function(){function a(b,c){return new
+a.fn.init(b,c)}e.extend(!0,a,this),a.superclass=this,a.fn=a.prototype=this(),a.fn.constructor=a,a.sub=this.sub,a.fn.init=function(d,f){f&amp;&amp;f
+instanceof e&amp;&amp;!(f instanceof a)&amp;&amp;(f=a(f));return
+e.fn.init.call(this,d,f,b)},a.fn.init.prototype=a.fn;var b=a©;return
+a},browser:{}}),e.each(“Boolean Number String Function Array Date RegExp
+Object”.split(“ ”),function(a,b){I[“[object
+”<code>b</code>“]”]=b.toLowerCase()}),<a
+href="z.browser">z=e.uaMatch(y),z.browser&&(e.browser</a>=!<a
+href="\s\xA0">0,e.browser.version=z.version),e.browser.webkit&&(e.browser.safari=!0),j.test(“ ”)&&(k=/^</a>+/,<a
+href="\s\xA0">l=/</a>+$/),h=e©,c.addEventListener?B=function(){c.removeEventListener(“DOMContentLoaded”,B,!1),e.ready()}:c.attachEvent&amp;&amp;(B=function(){c.readyState===“complete”&amp;&amp;(c.detachEvent(“onreadystatechange”,B),e.ready())});return
+e}(),g={};f.Callbacks=function(a){<a href="a">a=a?g</a>||h(a):{};var <a
+href="">c=[],d=</a>,e,i,j,k,l,m=function(b){var <a
+href="d">d,e,g,h,i;for(d=0,e=b.length;d<e;d++)g=b</a>,h=f.type(g),h===“array”?m(g):h===“function”&amp;&amp;(!a.unique||!o.has(g))&amp;&amp;c.push(g)},n=function(b,f){<a
+href="b,f">f=f||[],e=!a.memory||</a>,<a
+href="l">i=!0,l=j||0,j=0,k=c.length;for(;c&&l<k;l++)if(c</a>.apply(b,f)===!1&amp;&amp;a.stopOnFalse){e=!0;break}<a
+href="0">i=!1,c&&(a.once?e===!0?o.disable():c=[]:d&&d.length&&(e=d.shift(),o.fireWith(e</a>,<a
+href="1">e</a>)))},o={add:function(){if©{var <a
+href="0">a=c.length;m(arguments),i?k=c.length:e&&e!==!0&&(j=a,n(e</a>,<a
+href="1">e</a>))}return this},remove:function(){if©{var
+b=arguments,d=0,e=b.length;for(;d&lt;e;d++)for(var <a
+href="d">f=0;f<c.length;f++)if(b</a>===<a
+href="f">c</a>){i&amp;&amp;f&lt;=k&amp;&amp;(k–,f&lt;=l&amp;&amp;l–),c.splice(f–,1);if(a.unique)break}}return
+this},has:function(a){if©{var <a
+href="b">b=0,d=c.length;for(;b<d;b++)if(a===c</a>)return!0}return!1},empty:function(){c=[];return
+this},disable:function(){c=d=e=b;return
+this},disabled:function(){return!c},lock:function(){d=b,(!e||e===!0)&amp;&amp;o.disable();return
+this},locked:function(){return!d},fireWith:function(b,c){<a
+href="b,c">d&&(i?a.once||d.push(</a>):(!a.once||!e)&amp;&amp;n(b,c));return
+this},fire:function(){o.fireWith(this,arguments);return
+this},fired:function(){return!!e}};return o};var
+i=[].slice;f.extend({Deferred:function(a){var b=f.Callbacks(“once
+memory”),c=f.Callbacks(“once
+memory”),d=f.Callbacks(“memory”),e=“pending”,g={resolve:b,reject:c,notify:d},h={done:b.add,fail:c.add,progress:d.add,state:function(){return
+e},isResolved:b.fired,isRejected:c.fired,then:function(a,b,c){i.done(a).fail(b).progress©;return
+this},always:function(){i.done.apply(i,arguments).fail.apply(i,arguments);return
+this},pipe:function(a,b,c){return f.Deferred(function(d){f.each({<a
+href="a,"resolve"">done:</a>,<a href="b,"reject"">fail:</a>,<a
+href="c,"notify"">progress:</a>},function(a,b){var <a href="0">c=b</a>,<a
+href="1">e=b</a>,<a href="a">g;f.isFunction©?i</a>(function(){<a
+href="e+"With"">g=c.apply(this,arguments),g&&f.isFunction(g.promise)?g.promise().then(d.resolve,d.reject,d.notify):d</a>(<a
+href="g">this===i?d:this,</a>)}):<a href="a">i</a>(<a
+href="e">d</a>)})}).promise()},promise:function(a){if(a==null)a=h;else
+for(var b in <a href="b">h)a</a>=<a href="b">h</a>;return
+a}},i=h.promise({}),j;for(j in <a href="j">g)i</a>=<a href="j">g</a>.<a
+href="j+"With"">fire,i</a>=<a
+href="j">g</a>.fireWith;i.done(function(){e=“resolved”},c.disable,d.lock).fail(function(){e=“rejected”},b.disable,d.lock),a&amp;&amp;a.call(i,i);return
+i},when:function(a){function m(a){return function(b){<a
+href="a">e</a>=arguments.length&gt;1?i.call(arguments,0):b,j.notifyWith(k,e)}}function
+l(a){return function©{<a
+href="a">b</a>=arguments.length&gt;1?i.call(arguments,0):c,–g||j.resolveWith(j,b)}}var
+b=i.call(arguments,0),c=0,d=b.length,e=Array(d),g=d,h=d,j=d&lt;=1&amp;&amp;a&amp;&amp;f.isFunction(a.promise)?a:f.Deferred(),k=j.promise();if(d&gt;1){<a
+href="c">for(;c<d;c++)b</a>&amp;&amp;<a href="c">b</a>.<a
+href="c">promise&&f.isFunction(b</a>.<a
+href="c">promise)?b</a>.promise().then(l©,j.reject,m©):–g;g||j.resolveWith(j,b)}else
+<a href="a">j!==a&&j.resolveWith(j,d?</a>:[]);return
+k}}),f.support=function(){var
+b,d,e,g,h,i,j,k,l,m,n,o,p,q=c.createElement(“div”),r=c.documentElement;q.setAttribute(“className”,“t”),q.innerHTML=“
+&lt;link/&gt;&lt;table&gt;&lt;/table&gt;&lt;a href=&#39;/a&#39;
+style=&#39;top:1px;float:left;opacity:.55;&#39;&gt;a&lt;/a&gt;&lt;input <a
+href="0">type=‘checkbox’/>”,d=q.getElementsByTagName(“*”),e=q.getElementsByTagName(“a”)</a>;if(!d||!d.length||!e)return{};<a
+href="0">g=c.createElement(“select”),h=g.appendChild(c.createElement(“option”)),i=q.getElementsByTagName(“input”)</a>,b={leadingWhitespace:q.firstChild.nodeType===3,tbody:!q.getElementsByTagName(“tbody”).length,htmlSerialize:!!q.getElementsByTagName(“link”).length,style:/top/.test(e.getAttribute(“style”)),hrefNormalized:e.getAttribute(“href”)===“/a”,opacity:/^0.55/.test(e.style.opacity),cssFloat:!!e.style.cssFloat,checkOn:i.value===“on”,optSelected:h.selected,getSetAttribute:q.className!==“t”,enctype:!!c.createElement(“form”).enctype,html5Clone:c.createElement(“nav”).cloneNode(!0).outerHTML!==“&lt;:nav&gt;&lt;/:nav&gt;”,submitBubbles:!0,changeBubbles:!0,focusinBubbles:!1,deleteExpando:!0,noCloneEvent:!0,inlineBlockNeedsLayout:!1,shrinkWrapBlocks:!1,reliableMarginRight:!0},i.checked=!0,b.noCloneChecked=i.cloneNode(!0).checked,g.disabled=!0,b.optDisabled=!h.disabled;try{delete
+q.test}catch(s){b.deleteExpando=!1}!q.addEventListener&amp;&amp;q.attachEvent&amp;&amp;q.fireEvent&amp;&amp;(q.attachEvent(“onclick”,function(){b.noCloneEvent=!1}),q.cloneNode(!0).fireEvent(“onclick”)),i=c.createElement(“input”),i.value=“t”,i.setAttribute(“type”,“radio”),b.radioValue=i.value===“t”,i.setAttribute(“checked”,“checked”),q.appendChild(i),k=c.createDocumentFragment(),k.appendChild(q.lastChild),b.checkClone=k.cloneNode(!0).cloneNode(!0).lastChild.checked,b.appendChecked=i.checked,k.removeChild(i),k.appendChild(q),q.innerHTML=“”,a.getComputedStyle&amp;&amp;(j=c.createElement(“div”),j.style.width=“0”,j.style.marginRight=“0”,q.style.width=“2px”,q.appendChild(j),b.reliableMarginRight=(parseInt((a.getComputedStyle(j,null)||{marginRight:0}).marginRight,10)||0)===0);if(q.attachEvent)for(o
+in{submit:1,change:1,focusin:1})n=“on”+o,p=n in
+q,p||(q.setAttribute(n,“return;”),p=typeof <a href="n">q</a>==“<a
+href="o+"Bubbles"">function”),b</a>=p;k.removeChild(q),k=g=h=j=q=i=null,f(function(){var
+<a
+href="0">a,d,e,g,h,i,j,k,m,n,o,r=c.getElementsByTagName(“body”)</a>;!r||(j=1,k=“position:absolute;top:0;left:0;width:1px;height:1px;margin:0;”,m=“visibility:hidden;border:0;”,n=“style=&#39;”<code>k</code>“border:5px
+solid #000;padding:0;&#39;”,o=“&lt;div
+”<code>n</code>“&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;”+“&lt;table
+”<code>n</code>“ cellpadding=&#39;0&#39;
+cellspacing=&#39;0&#39;&gt;”+“&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;”,a=c.createElement(“div”),a.style.cssText=m+“width:0;height:0;position:static;top:0;margin-top:”<code>j</code>“px”,r.insertBefore(a,r.firstChild),q=c.createElement(“div”),a.appendChild(q),q.innerHTML=“&lt;table&gt;&lt;tr&gt;&lt;td
+<a
+href="0">style=‘padding:0;border:0;display:none’></td><td>t</td></tr></table>”,l=q.getElementsByTagName(“td”),p=l</a>.<a
+href="0">offsetHeight===0,l</a>.<a href="1">style.display=“”,l</a>.<a
+href="0">style.display=“none”,b.reliableHiddenOffsets=p&&l</a>.offsetHeight===0,q.innerHTML=“”,q.style.width=q.style.paddingLeft=“1px”,f.boxModel=b.boxModel=q.offsetWidth===2,typeof
+q.style.zoom!=“undefined”&amp;&amp;(q.style.display=“inline”,q.style.zoom=1,b.inlineBlockNeedsLayout=q.offsetWidth===2,q.style.display=“”,q.innerHTML=“&lt;div
+style=&#39;width:4px;&#39;&gt;&lt;/div&gt;”,b.shrinkWrapBlocks=q.offsetWidth!==2),q.style.cssText=k+m,q.innerHTML=o,d=q.firstChild,e=d.firstChild,h=d.nextSibling.firstChild.firstChild,i={doesNotAddBorder:e.offsetTop!==5,doesAddBorderForTableAndCells:h.offsetTop===5},e.style.position=“fixed”,e.style.top=“20px”,i.fixedPosition=e.offsetTop===20||e.offsetTop===15,e.style.position=e.style.top=“”,d.style.overflow=“hidden”,d.style.position=“relative”,i.subtractsBorderForOverflowNotVisible=e.offsetTop===-5,i.doesNotIncludeMarginInBodyOffset=r.offsetTop!==j,r.removeChild(a),q=a=null,f.extend(b,i))});return
+b}();var j=/^(?:{.*}|[.*])$/,<a
+href="A-Z">k=/(</a>)/g;f.extend({cache:{},uuid:0,expando:“jQuery”+(f.fn.jquery+Math.random()).replace(/D/g,“”),noData:{embed:!0,object:“clsid:D27CDB6E-AE6D-11cf-96B8-444553540000”,applet:!0},hasData:function(a){<a
+href="f.expando">a=a.nodeType?f.cache[a</a>]:<a
+href="f.expando">a</a>;return!!a&amp;&amp;!m(a)},data:function(a,c,d,e){if(!!f.acceptData(a)){var
+g,h,i,j=f.expando,k=typeof <a
+href="j">c==“string”,l=a.nodeType,m=l?f.cache:a,n=l?a</a>:<a
+href="j">a</a>&amp;&amp;<a href="n">j,o=c===“events”;if((!n||!m</a>||!<a
+href="n">o&&!e&&!m</a>.<a href="j">data)&&k&&d===b)return;n||(l?a</a>=<a
+href="n">n=++f.uuid:n=j),m</a>||(<a href="n">m</a>={},<a
+href="n">l||(m</a>.toJSON=f.noop));if(typeof c==“object”||typeof <a
+href="n">c==“function”)e?m</a>=<a href="n">f.extend(m</a>,<a
+href="n">c):m</a>.<a href="n">data=f.extend(m</a>.<a
+href="n">data,c);g=h=m</a>,e||(h.data||(h.data={}),<a
+href="f.camelCase(c)">h=h.data),d!==b&&(h</a>=<a
+href="c">d);if(o&&!h</a>)return <a href="c">g.events;k?(i=h</a>,<a
+href="f.camelCase(c)">i==null&&(i=h</a>)):i=h;return
+i}},removeData:function(a,b,c){if(!!f.acceptData(a)){var <a
+href="h">d,e,g,h=f.expando,i=a.nodeType,j=i?f.cache:a,k=i?a</a>:<a
+href="k">h;if(!j</a>)return;if(b){<a href="k">d=c?j</a>:<a
+href="k">j</a>.data;if(d){f.isArray(b)||(b in <a
+href="b">d?b=</a>:(b=f.camelCase(b),b in <a href="b">d?b=</a>:b=b.split(“
+”)));for(e=0,g=b.length;e&lt;g;e++)delete <a
+href="e">d[b</a>];if(!(c?m:f.isEmptyObject)(d))return}}if(!c){delete <a
+href="k">j</a>.<a
+href="k">data;if(!m(j</a>))return}f.support.deleteExpando||!j.setInterval?delete
+<a href="k">j</a>:<a
+href="k">j</a>=null,i&amp;&amp;(f.support.deleteExpando?delete <a
+href="h">a</a>:<a
+href="h">a.removeAttribute?a.removeAttribute(h):a</a>=null)}},_data:function(a,b,c){return
+f.data(a,b,c,!0)},acceptData:function(a){if(a.nodeName){var <a
+href="a.nodeName.toLowerCase()">b=f.noData</a>;if(b)return
+b!==!0&amp;&amp;a.getAttribute(“classid”)===b}return!0}}),f.fn.extend({data:function(a,c){var
+d,e,g,h=null;if(typeof a==“undefined”){if(this.length){<a
+href="0">h=f.data(this</a>);<a href="0">if(this</a>.<a
+href="0">nodeType===1&&!f._data(this</a>,“parsedAttrs”)){<a
+href="0">e=this</a>.attributes;for(var <a
+href="i">i=0,j=e.length;i<j;i++)g=e</a>.<a
+href="0">name,g.indexOf(“data-”)===0&&(g=f.camelCase(g.substring(5)),l(this</a>,<a
+href="g">g,h</a>));<a href="0">f._data(this</a>,“parsedAttrs”,!0)}}return
+h}if(typeof a==“object”)return this.each(function(){f.data(this,a)});<a
+href="1">d=a.split(“.”),d</a>=<a href="1">d</a>?“.”+<a
+href="1">d</a>:“”;if(c===b){<a
+href="1">h=this.triggerHandler(“getData”+d</a>+“!”,[<a href="0">d</a>]),<a
+href="0">h===b&&this.length&&(h=f.data(this</a>,<a
+href="0">a),h=l(this</a>,a,h));return <a href="1">h===b&&d</a>?<a
+href="0">this.data(d</a>):h}return this.each(function(){var <a
+href="0">b=f(this),e=[d</a>,<a
+href="1">c];b.triggerHandler(“setData”+d</a>+“!”,<a
+href="1">e),f.data(this,a,c),b.triggerHandler(“changeData”+d</a>+“!”,e)})},removeData:function(a){return
+this.each(function(){f.removeData(this,a)})}}),f.extend({_mark:function(a,b){a&amp;&amp;(b=(b||“fx”)+“mark”,f._data(a,b,(f._data(a,b)||0)+1))},_unmark:function(a,b,c){a!==!0&amp;&amp;(c=b,b=a,a=!1);if(b){c=c||“fx”;var
+d=c+“mark”,e=a?0:(f._data(b,d)||1)-1;e?f._data(b,d,e):(f.removeData(b,d,!0),n(b,c,“mark”))}},queue:function(a,b,c){var
+d;if(a){b=(b||“fx”)+“queue”,d=f._data(a,b),c&amp;&amp;(!d||f.isArray©?d=f._data(a,b,f.makeArray©):d.push©);return
+d||[]}},dequeue:function(a,b){b=b||“fx”;var
+c=f.queue(a,b),d=c.shift(),e={};d===“inprogress”&amp;&amp;(d=c.shift()),d&amp;&amp;(b===“fx”&amp;&amp;c.unshift(“inprogress”),f._data(a,b+“.run”,e),d.call(a,function(){f.dequeue(a,b)},e)),c.length||(f.removeData(a,b+“queue
+”<code>b</code>“.run”,!0),n(a,b,“queue”))}}),f.fn.extend({queue:function(a,c){typeof
+a!=“string”&amp;&amp;(c=a,a=“fx”);if(c===b)return <a
+href="0">f.queue(this</a>,a);return this.each(function(){var <a
+href="0">b=f.queue(this,a,c);a===“fx”&&b</a>!==“inprogress”&amp;&amp;f.dequeue(this,a)})},dequeue:function(a){return
+this.each(function(){f.dequeue(this,a)})},delay:function(a,b){<a
+href="a">a=f.fx?f.fx.speeds</a>||a:a,b=b||“fx”;return
+this.queue(b,function(b,c){var
+d=setTimeout(b,a);c.stop=function(){clearTimeout(d)}})},clearQueue:function(a){return
+this.queue(a||“fx”,[])},promise:function(a,c){function m(){–<a
+href="e">h||d.resolveWith(e,</a>)}typeof
+a!=“string”&amp;&amp;(c=a,a=b),a=a||“fx”;var <a
+href="g">d=f.Deferred(),e=this,g=e.length,h=1,i=a+“defer”,j=a+“queue”,k=a+“mark”,l;while(g–)if(l=f.data(e</a>,<a
+href="g">i,b,!0)||(f.data(e</a>,<a href="g">j,b,!0)||f.data(e</a>,<a
+href="g">k,b,!0))&&f.data(e</a>,i,f.Callbacks(“once
+memory”),!0))h++,l.add(m);m();return d.promise()}});var <a
+href="\n\t\r">o=/</a>/g,p=/s+/,q=/r/g,r=/^(?:button|input)$/i,s=/^(?:button|input|object|select|textarea)$/i,t=/^a(?:rea)?$/i,u=/^(?:autofocus|autoplay|async|checked|controls|defer|disabled|hidden|loop|multiple|open|readonly|required|scoped|selected)$/i,v=f.support.getSetAttribute,w,x,y;f.fn.extend({attr:function(a,b){return
+f.access(this,a,b,!0,f.attr)},removeAttr:function(a){return
+this.each(function(){f.removeAttr(this,a)})},prop:function(a,b){return
+f.access(this,a,b,!0,f.prop)},removeProp:function(a){<a
+href="a">a=f.propFix</a>||a;return this.each(function(){try{<a
+href="a">this</a>=b,delete <a
+href="a">this</a>}catch©{}})},addClass:function(a){var
+b,c,d,e,g,h,i;if(f.isFunction(a))return
+this.each(function(b){f(this).addClass(a.call(this,b,this.className))});if(a&amp;&amp;typeof
+a==“string”){b=a.split(p);for(c=0,d=this.length;c&lt;d;c++){<a
+href="c">e=this</a>;if(e.nodeType===1)if(!e.className&amp;&amp;b.length===1)e.className=a;else{g=“
+”<code>e.className</code>“ ”;for(h=0,i=b.length;h&lt;i;h++)~g.indexOf(“
+”+<a href="h">b</a>+“ ”)||(<a href="h">g+=b</a>+“
+”);e.className=f.trim(g)}}}return this},removeClass:function(a){var
+c,d,e,g,h,i,j;if(f.isFunction(a))return
+this.each(function(b){f(this).removeClass(a.call(this,b,this.className))});if(a&amp;&amp;typeof
+a==“string”||a===b){c=(a||“”).split(p);for(d=0,e=this.length;d&lt;e;d++){<a
+href="d">g=this</a>;if(g.nodeType===1&amp;&amp;g.className)if(a){h=(“
+”<code>g.className</code>“ ”).replace(o,“
+”);for(i=0,j=c.length;i&lt;j;i++)h=h.replace(“ ”+<a href="i">c</a>+“ ”,“
+”);g.className=f.trim(h)}else g.className=“”}}return
+this},toggleClass:function(a,b){var c=typeof a,d=typeof
+b==“boolean”;if(f.isFunction(a))return
+this.each(function©{f(this).toggleClass(a.call(this,c,this.className,b),b)});return
+this.each(function(){if(c===“string”){var <a
+href="g++">e,g=0,h=f(this),i=b,j=a.split(p);while(e=j</a>)<a
+href="i?"addClass":"removeClass"">i=d?i:!h.hasClass(e),h</a>(e)}else
+if(c===“undefined”||c===“boolean”)this.className&amp;&amp;f._data(this,“__className__”,this.className),this.className=this.className||a===!1?“”:f._data(this,“__className__”)||“”})},hasClass:function(a){var
+b=“ ”<code>a</code>“ ”,<a
+href="c">c=0,d=this.length;for(;c<d;c++)if(this</a>.nodeType===1&amp;&amp;(“
+”+<a href="c">this</a>.className+“ ”).replace(o,“
+”).indexOf(b)&gt;-1)return!0;return!1},val:function(a){var <a
+href="0">c,d,e,g=this</a>;{if(!!arguments.length){e=f.isFunction(a);return
+this.each(function(d){var
+g=f(this),h;if(this.nodeType===1){e?h=a.call(this,d,g.val()):h=a,h==null?h=“”:typeof
+h==“number”?h+=“”:f.isArray(h)&amp;&amp;(h=f.map(h,function(a){return
+a==null?“”:a+“”})),<a
+href="this.nodeName.toLowerCase()">c=f.valHooks</a>||<a
+href="this.type">f.valHooks</a>;if(!c||!(“set”in
+c)||c.set(this,h,“value”)===b)this.value=h}})}if(g){<a
+href="g.nodeName.toLowerCase()">c=f.valHooks</a>||<a
+href="g.type">f.valHooks</a>;if(c&amp;&amp;“get”in
+c&amp;&amp;(d=c.get(g,“value”))!==b)return d;d=g.value;return typeof
+d==“string”?d.replace(q,“”):d==null?“”:d}}}}),f.extend({valHooks:{option:{get:function(a){var
+b=a.attributes.value;return!b||b.specified?a.value:a.text}},select:{get:function(a){var
+b,c,d,e,g=a.selectedIndex,h=[],i=a.options,j=a.type===“select-one”;if(g&lt;0)return
+null;c=j?g:0,d=j?g+1:i.length;for(;c&lt;d;c++){<a
+href="c">e=i</a>;if(e.selected&amp;&amp;(f.support.optDisabled?!e.disabled:e.getAttribute(“disabled”)===null)&amp;&amp;(!e.parentNode.disabled||!f.nodeName(e.parentNode,“optgroup”))){b=f(e).val();if(j)return
+b;h.push(b)}}if(j&amp;&amp;!h.length&amp;&amp;i.length)return <a
+href="g">f(i</a>).val();return h},set:function(a,b){var
+c=f.makeArray(b);f(a).find(“option”).each(function(){this.selected=f.inArray(f(this).val(),c)&gt;=0}),c.length||(a.selectedIndex=-1);return
+c}}},attrFn:{val:!0,css:!0,html:!0,text:!0,data:!0,width:!0,height:!0,offset:!0},attr:function(a,c,d,e){var
+g,h,i,j=a.nodeType;if(!!a&amp;&amp;j!==3&amp;&amp;j!==8&amp;&amp;j!==2){if(e&amp;&amp;c
+in f.attrFn)return <a href="c">f(a)</a>(d);if(typeof
+a.getAttribute==“undefined”)return <a
+href="c">f.prop(a,c,d);i=j!==1||!f.isXMLDoc(a),i&&(c=c.toLowerCase(),h=f.attrHooks</a>||(u.test©?x:w));if(d!==b){if(d===null){f.removeAttr(a,c);return}if(h&amp;&amp;“set”in
+h&amp;&amp;i&amp;&amp;(g=h.set(a,d,c))!==b)return
+g;a.setAttribute(c,“”+d);return d}if(h&amp;&amp;“get”in
+h&amp;&amp;i&amp;&amp;(g=h.get(a,c))!==null)return
+g;g=a.getAttribute©;return g===null?b:g}},removeAttr:function(a,b){var
+c,d,e,g,h=0;if(b&amp;&amp;a.nodeType===1){<a
+href="h">d=b.toLowerCase().split(p),g=d.length;for(;h<g;h++)e=d</a>,<a
+href="e">e&&(c=f.propFix</a>||e,f.attr(a,e,“”),a.removeAttribute(v?e:c),u.test(e)&amp;&amp;c
+in <a
+href="c">a&&(a</a>=!1))}},attrHooks:{type:{set:function(a,b){if(r.test(a.nodeName)&amp;&amp;a.parentNode)f.error(“type
+property can&#39;t be changed”);else
+if(!f.support.radioValue&amp;&amp;b===“radio”&amp;&amp;f.nodeName(a,“input”)){var
+c=a.value;a.setAttribute(“type”,b),c&amp;&amp;(a.value=c);return
+b}}},value:{get:function(a,b){if(w&amp;&amp;f.nodeName(a,“button”))return
+w.get(a,b);return b in
+a?a.value:null},set:function(a,b,c){if(w&amp;&amp;f.nodeName(a,“button”))return
+w.set(a,b,c);a.value=b}}},propFix:{tabindex:“tabIndex”,readonly:“readOnly”,“for”:“htmlFor”,“class”:“className”,maxlength:“maxLength”,cellspacing:“cellSpacing”,cellpadding:“cellPadding”,rowspan:“rowSpan”,colspan:“colSpan”,usemap:“useMap”,frameborder:“frameBorder”,contenteditable:“contentEditable”},prop:function(a,c,d){var
+e,g,h,i=a.nodeType;if(!!a&amp;&amp;i!==3&amp;&amp;i!==8&amp;&amp;i!==2){<a
+href="c">h=i!==1||!f.isXMLDoc(a),h&&(c=f.propFix</a>||<a
+href="c">c,g=f.propHooks</a>);return d!==b?g&amp;&amp;“set”in <a
+href="c">g&&(e=g.set(a,d,c))!==b?e:a</a>=d:g&amp;&amp;“get”in <a
+href="c">g&&(e=g.get(a,c))!==null?e:a</a>}},propHooks:{tabIndex:{get:function(a){var
+c=a.getAttributeNode(“tabindex”);return
+c&amp;&amp;c.specified?parseInt(c.value,10):s.test(a.nodeName)||t.test(a.nodeName)&amp;&amp;a.href?0:b}}}}),f.attrHooks.tabindex=f.propHooks.tabIndex,x={get:function(a,c){var
+d,e=f.prop(a,c);return e===!0||typeof
+e!=“boolean”&amp;&amp;(d=a.getAttributeNode©)&amp;&amp;d.nodeValue!==!1?c.toLowerCase():b},set:function(a,b,c){var
+<a href="c">d;b===!1?f.removeAttr(a,c):(d=f.propFix</a>||c,d in <a
+href="d">a&&(a</a>=!0),a.setAttribute(c,c.toLowerCase()));return
+c}},v||(y={name:!0,id:!0},w=f.valHooks.button={get:function(a,c){var
+d;d=a.getAttributeNode©;return <a
+href="c">d&&(y</a>?d.nodeValue!==“”:d.specified)?d.nodeValue:b},set:function(a,b,d){var
+e=a.getAttributeNode(d);e||(e=c.createAttribute(d),a.setAttributeNode(e));return
+e.nodeValue=b+“”}},<a
+href=""width","height"">f.attrHooks.tabindex.set=w.set,f.each(</a>,function(a,b){<a
+href="b">f.attrHooks</a>=<a
+href="b">f.extend(f.attrHooks</a>,{set:function(a,c){if(c===“”){a.setAttribute(b,“auto”);return
+c}}})}),f.attrHooks.contenteditable={get:w.get,set:function(a,b,c){b===“”&amp;&amp;(b=“false”),w.set(a,b,c)}}),<a
+href=""href","src","width","height"">f.support.hrefNormalized||f.each(</a>,function(a,c){<a
+href="c">f.attrHooks</a>=<a
+href="c">f.extend(f.attrHooks</a>,{get:function(a){var
+d=a.getAttribute(c,2);return
+d===null?b:d}})}),f.support.style||(f.attrHooks.style={get:function(a){return
+a.style.cssText.toLowerCase()||b},set:function(a,b){return
+a.style.cssText=“”+b}}),f.support.optSelected||(f.propHooks.selected=f.extend(f.propHooks.selected,{get:function(a){var
+b=a.parentNode;b&amp;&amp;(b.selectedIndex,b.parentNode&amp;&amp;b.parentNode.selectedIndex);return
+null}})),<a
+href=""radio","checkbox"">f.support.enctype||(f.propFix.enctype=“encoding”),f.support.checkOn||f.each(</a>,function(){<a
+href="this">f.valHooks</a>={get:function(a){return
+a.getAttribute(“value”)===null?“on”:a.value}}}),<a
+href=""radio","checkbox"">f.each(</a>,function(){<a
+href="this">f.valHooks</a>=<a
+href="this">f.extend(f.valHooks</a>,{set:function(a,b){if(f.isArray(b))return
+a.checked=f.inArray(f(a).val(),b)&gt;=0}})});var <a
+href="^\.">z=/^(?:textarea|input|select)$/i,A=/^(</a>*)?(?:.(.+))?$/,<a
+href="\w\-">B=/bhover(.S+)?b/,C=/^key/,D=/^(?:mouse|contextmenu)|click/,E=/^(?:focusinfocus|focusoutblur)$/,F=/^(w*)(?:#(</a>+))?(?:.([w-]+))?$/,G=function(a){var
+<a href="1">b=F.exec(a);b&&(b</a>=(<a href="1">b</a>||“”).<a
+href="3">toLowerCase(),b</a>=<a href="3">b</a>&amp;&amp;new <a
+href="3">RegExp(“(?:^|\s)”+b</a>+“(?:\s|$)”));return b},H=function(a,b){var
+c=a.attributes||{};<a href="1">return(!b</a>||<a
+href="1">a.nodeName.toLowerCase()===b</a>)&amp;&amp;(!<a
+href="2">b</a>||(c.id||{}).<a href="2">value===b</a>)&amp;&amp;(!<a
+href="3">b</a>||<a href="3">b</a>.<a
+href=""class"">test((c</a>||{}).value))},I=function(a){return
+f.event.special.hover?a:a.replace(B,“mouseenter$1 mouseleave$1”)};
+f.event={add:function(a,c,d,e,g){var
+h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3||a.nodeType===8||!c||!d||!(h=f._data(a)))){d.handler&amp;&amp;(p=d,d=p.handler),d.guid||(d.guid=f.guid++),j=h.events,j||(h.events=j={}),i=h.handle,i||(h.handle=i=function(a){return
+typeof
+f!=“undefined”&amp;&amp;(!a||f.event.triggered!==a.type)?f.event.dispatch.apply(i.elem,arguments):b},i.elem=a),c=f.trim(I©).split(“
+”);for(k=0;k&lt;c.length;k++){<a href="k">l=A.exec(c</a>)||[],<a
+href="1">m=l</a>,<a href="2">n=(l</a>||“”).<a
+href="m">split(“.”).sort(),s=f.event.special</a>||{},<a
+href="m">m=(g?s.delegateType:s.bindType)||m,s=f.event.special</a>||{},o=f.extend({<a
+href="1">type:m,origType:l</a>,data:e,handler:d,guid:d.guid,selector:g,quick:G(g),namespace:n.join(“.”)},<a
+href="m">p),r=j</a>;if(!r){<a
+href="m">r=j</a>=[],r.delegateCount=0;if(!s.setup||s.setup.call(a,e,n,i)===!1)a.addEventListener?a.addEventListener(m,i,!1):a.attachEvent&amp;&amp;a.attachEvent(“on”+m,i)}<a
+href="m">s.add&&(s.add.call(a,o),o.handler.guid||(o.handler.guid=d.guid)),g?r.splice(r.delegateCount++,0,o):r.push(o),f.event.global</a>=!0}a=null}},global:{},remove:function(a,b,c,d,e){var
+g=f.hasData(a)&amp;&amp;f._data(a),h,i,j,k,l,m,n,o,p,q,r,s;if(!!g&amp;&amp;!!(o=g.events)){b=f.trim(I(b||“”)).split(“
+”);for(h=0;h&lt;b.length;h++){<a href="h">i=A.exec(b</a>)||[],<a
+href="1">j=k=i</a>,<a href="2">l=i</a>;if(!j){for(j in <a
+href="h">o)f.event.remove(a,j+b</a>,c,d,!0);continue}<a
+href="j">p=f.event.special</a>||{},<a
+href="j">j=(d?p.delegateType:p.bindType)||j,r=o</a>||[],m=r.length,l=l?new
+<a
+href="n">RegExp(“(^|\.)”+l.split(“.”).sort().join(“\.(?:.*\.)?”)+“(\.|$)”):null;for(n=0;n<r.length;n++)s=r</a>,(e||k===s.origType)&amp;&amp;(!c||c.guid===s.guid)&amp;&amp;(!l||l.test(s.namespace))&amp;&amp;(!d||d===s.selector||d===“**”&amp;&amp;s.selector)&amp;&amp;(r.splice(n–,1),s.selector&amp;&amp;r.delegateCount–,p.remove&amp;&amp;p.remove.call(a,s));r.length===0&amp;&amp;m!==r.length&amp;&amp;((!p.teardown||p.teardown.call(a,l)===!1)&amp;&amp;f.removeEvent(a,j,g.handle),delete
+<a href="j">o</a>)}<a
+href=""events","handle"">f.isEmptyObject(o)&&(q=g.handle,q&&(q.elem=null),f.removeData(a,</a>,!0))}},customEvent:{getData:!0,setData:!0,changeData:!0},trigger:function(c,d,e,g){if(!e||e.nodeType!==3&amp;&amp;e.nodeType!==8){var
+<a
+href="h">h=c.type||c,i=[],j,k,l,m,n,o,p,q,r,s;if(E.test(h+f.event.triggered))return;h.indexOf(“!”)>=0&&(h=h.slice(0,-1),k=!0),h.indexOf(“.”)>=0&&(i=h.split(“.”),h=i.shift(),i.sort());if((!e||f.event.customEvent</a>)&amp;&amp;!<a
+href="h">f.event.global</a>)return;c=typeof <a
+href="f.expando">c==“object”?c</a>?c:new f.Event(h,c):new
+f.Event(h),c.type=h,c.isTrigger=!0,c.exclusive=k,c.namespace=i.join(“.”),c.namespace_re=c.namespace?new
+RegExp(“(^|\.)”+i.join(“\.(?:.*\.)?”)+“(\.|$)”):null,o=h.indexOf(“:”)&lt;0?“on”+h:“”;if(!e){j=f.cache;for(l
+in <a href="l">j)j</a>.<a href="l">events&&j</a>.<a
+href="h">events</a>&amp;&amp;<a
+href="l">f.event.trigger(c,d,j</a>.handle.elem,!0);return}<a
+href="h">c.result=b,c.target||(c.target=e),d=d!=null?f.makeArray(d):[],d.unshift©,p=f.event.special</a>||{};<a
+href="e,p.bindType||h">if(p.trigger&&p.trigger.apply(e,d)===!1)return;r=[</a>];if(!g&amp;&amp;!p.noBubble&amp;&amp;!f.isWindow(e)){<a
+href="m,s">s=p.delegateType||h,m=E.test(s+h)?e:e.parentNode,n=null;for(;m;m=m.parentNode)r.push(</a>),<a
+href="n.defaultView||n.parentWindow||a,s">n=m;n&&n===e.ownerDocument&&r.push(</a>)}<a
+href="l">for(l=0;l<r.length&&!c.isPropagationStopped();l++)m=r</a>[<a
+href="l">0],c.type=r</a>[1],q=(f._data(m,“events”)||{})[<a
+href="o">c.type]&&f._data(m,“handle”),q&&q.apply(m,d),q=o&&m</a>,<a
+href="h">q&&f.acceptData(m)&&q.apply(m,d)===!1&&c.preventDefault();c.type=h,!g&&!c.isDefaultPrevented()&&(!p._default||p._default.apply(e.ownerDocument,d)===!1)&&(h!==“click”||!f.nodeName(e,“a”))&&f.acceptData(e)&&o&&e</a>&amp;&amp;(<a
+href="o">h!==“focus”&&h!==“blur”||c.target.offsetWidth!==0)&&!f.isWindow(e)&&(n=e</a>,<a
+href="o">n&&(e</a>=<a href="h">null),f.event.triggered=h,e</a>(),<a
+href="o">f.event.triggered=b,n&&(e</a>=n));return
+c.result}},dispatch:function©{c=f.event.fix(c||a.event);var
+d=(f._data(this,“events”)||{})[<a
+href="">c.type]||[],e=d.delegateCount,g=</a>.<a
+href="0">slice.call(arguments,0),h=!c.exclusive&&!c.namespace,i=[],j,k,l,m,n,o,p,q,r,s,t;g</a>=c,c.delegateTarget=this;if(e&amp;&amp;!c.target.disabled&amp;&amp;(!c.button||c.type!==“click”)){m=f(this),m.context=this.ownerDocument||this;for(l=c.target;l!=this;l=l.parentNode||this){o={},<a
+href="0">q=[],m</a>=<a href="j">l;for(j=0;j<e;j++)r=d</a>,<a
+href="s">s=r.selector,o</a>===<a href="s">b&&(o</a>=<a
+href="s">r.quick?H(l,r.quick):m.is(s)),o</a>&amp;&amp;q.push®;q.length&amp;&amp;i.push({elem:l,matches:q})}}d.length&gt;e&amp;&amp;i.push({elem:this,matches:d.slice(e)});for(j=0;j&lt;i.length&amp;&amp;!c.isPropagationStopped();j++){<a
+href="j">p=i</a>,c.currentTarget=p.elem;for(k=0;k&lt;p.matches.length&amp;&amp;!c.isImmediatePropagationStopped();k++){<a
+href="k">r=p.matches</a>;<a
+href="r.origType">if(h||!c.namespace&&!r.namespace||c.namespace_re&&c.namespace_re.test(r.namespace))c.data=r.data,c.handleObj=r,n=((f.event.special</a>||{}).handle||r.handler).apply(p.elem,g),n!==b&amp;&amp;(c.result=n,n===!1&amp;&amp;(c.preventDefault(),c.stopPropagation()))}}return
+c.result},props:“attrChange attrName relatedNode srcElement altKey bubbles
+cancelable ctrlKey currentTarget eventPhase metaKey relatedTarget shiftKey
+target timeStamp view which”.split(“ ”),fixHooks:{},keyHooks:{props:“char
+charCode key keyCode”.split(“
+”),filter:function(a,b){a.which==null&amp;&amp;(a.which=b.charCode!=null?b.charCode:b.keyCode);return
+a}},mouseHooks:{props:“button buttons clientX clientY fromElement offsetX
+offsetY pageX pageY screenX screenY toElement”.split(“
+”),filter:function(a,d){var
+e,f,g,h=d.button,i=d.fromElement;a.pageX==null&amp;&amp;d.clientX!=null&amp;&amp;(e=a.target.ownerDocument||c,f=e.documentElement,g=e.body,a.pageX=d.clientX+(f&amp;&amp;f.scrollLeft||g&amp;&amp;g.scrollLeft||0)-(f&amp;&amp;f.clientLeft||g&amp;&amp;g.clientLeft||0),a.pageY=d.clientY+(f&amp;&amp;f.scrollTop||g&amp;&amp;g.scrollTop||0)-(f&amp;&amp;f.clientTop||g&amp;&amp;g.clientTop||0)),!a.relatedTarget&amp;&amp;i&amp;&amp;(a.relatedTarget=i===a.target?d.toElement:i),!a.which&amp;&amp;h!==b&amp;&amp;(a.which=h&amp;1?1:h&amp;2?3:h&amp;4?2:0);return
+a}},fix:function(a){<a href="f.expando">if(a</a>)return a;var <a
+href="a.type">d,e,g=a,h=f.event.fixHooks</a>||{},<a
+href="--d">i=h.props?this.props.concat(h.props):this.props;a=f.Event(g);for(d=i.length;d;)e=i</a>,<a
+href="e">a</a>=<a
+href="e">g</a>;a.target||(a.target=g.srcElement||c),a.target.nodeType===3&amp;&amp;(a.target=a.target.parentNode),a.metaKey===b&amp;&amp;(a.metaKey=a.ctrlKey);return
+h.filter?h.filter(a,g):a},special:{ready:{setup:f.bindReady},load:{noBubble:!0},focus:{delegateType:“focusin”},blur:{delegateType:“focusout”},beforeunload:{setup:function(a,b,c){f.isWindow(this)&amp;&amp;(this.onbeforeunload=c)},teardown:function(a,b){this.onbeforeunload===b&amp;&amp;(this.onbeforeunload=null)}}},simulate:function(a,b,c,d){var
+e=f.extend(new
+f.Event,c,{type:a,isSimulated:!0,originalEvent:{}});d?f.event.trigger(e,null,b):f.event.dispatch.call(b,e),e.isDefaultPrevented()&amp;&amp;c.preventDefault()}},f.event.handle=f.event.dispatch,f.removeEvent=c.removeEventListener?function(a,b,c){a.removeEventListener&amp;&amp;a.removeEventListener(b,c,!1)}:function(a,b,c){a.detachEvent&amp;&amp;a.detachEvent(“on”+b,c)},f.Event=function(a,b){if(!(this
+instanceof f.Event))return new <a
+href="f.expando">f.Event(a,b);a&&a.type?(this.originalEvent=a,this.type=a.type,this.isDefaultPrevented=a.defaultPrevented||a.returnValue===!1||a.getPreventDefault&&a.getPreventDefault()?K:J):this.type=a,b&&f.extend(this,b),this.timeStamp=a&&a.timeStamp||f.now(),this</a>=!0},f.Event.prototype={preventDefault:function(){this.isDefaultPrevented=K;var
+a=this.originalEvent;!a||(a.preventDefault?a.preventDefault():a.returnValue=!1)},stopPropagation:function(){this.isPropagationStopped=K;var
+a=this.originalEvent;!a||(a.stopPropagation&amp;&amp;a.stopPropagation(),a.cancelBubble=!0)},stopImmediatePropagation:function(){this.isImmediatePropagationStopped=K,this.stopPropagation()},isDefaultPrevented:J,isPropagationStopped:J,isImmediatePropagationStopped:J},f.each({mouseenter:“mouseover”,mouseleave:“mouseout”},function(a,b){<a
+href="a">f.event.special</a>={delegateType:b,bindType:b,handle:function(a){var
+c=this,d=a.relatedTarget,e=a.handleObj,g=e.selector,h;if(!d||d!==c&amp;&amp;!f.contains(c,d))a.type=e.origType,h=e.handler.apply(this,arguments),a.type=b;return
+h}}}),f.support.submitBubbles||(f.event.special.submit={setup:function(){if(f.nodeName(this,“form”))return!1;f.event.add(this,“click._submit
+keypress._submit”,function(a){var
+c=a.target,d=f.nodeName(c,“input”)||f.nodeName(c,“button”)?c.form:b;d&amp;&amp;!d._submit_attached&amp;&amp;(f.event.add(d,“submit._submit”,function(a){this.parentNode&amp;&amp;!a.isTrigger&amp;&amp;f.event.simulate(“submit”,this.parentNode,a,!0)}),d._submit_attached=!0)})},teardown:function(){if(f.nodeName(this,“form”))return!1;f.event.remove(this,“._submit”)}}),f.support.changeBubbles||(f.event.special.change={setup:function(){if(z.test(this.nodeName)){if(this.type===“checkbox”||this.type===“radio”)f.event.add(this,“propertychange._change”,function(a){a.originalEvent.propertyName===“checked”&amp;&amp;(this._just_changed=!0)}),f.event.add(this,“click._change”,function(a){this._just_changed&amp;&amp;!a.isTrigger&amp;&amp;(this._just_changed=!1,f.event.simulate(“change”,this,a,!0))});return!1}f.event.add(this,“beforeactivate._change”,function(a){var
+b=a.target;z.test(b.nodeName)&amp;&amp;!b._change_attached&amp;&amp;(f.event.add(b,“change._change”,function(a){this.parentNode&amp;&amp;!a.isSimulated&amp;&amp;!a.isTrigger&amp;&amp;f.event.simulate(“change”,this.parentNode,a,!0)}),b._change_attached=!0)})},handle:function(a){var
+b=a.target;if(this!==b||a.isSimulated||a.isTrigger||b.type!==“radio”&amp;&amp;b.type!==“checkbox”)return
+a.handleObj.handler.apply(this,arguments)},teardown:function(){f.event.remove(this,“._change”);return
+z.test(this.nodeName)}}),f.support.focusinBubbles||f.each({focus:“focusin”,blur:“focusout”},function(a,b){var
+d=0,e=function(a){f.event.simulate(b,a.target,f.event.fix(a),!0)};<a
+href="b">f.event.special</a>={setup:function(){d++===0&amp;&amp;c.addEventListener(a,e,!0)},teardown:function(){–d===0&amp;&amp;c.removeEventListener(a,e,!0)}}}),f.fn.extend({on:function(a,c,d,e,g){var
+h,i;if(typeof a==“object”){typeof c!=“string”&amp;&amp;(d=c,c=b);for(i in
+<a href="i">a)this.on(i,c,d,a</a>,g);return
+this}d==null&amp;&amp;e==null?(e=c,d=c=b):e==null&amp;&amp;(typeof
+c==“string”?(e=d,d=b):(e=d,d=c,c=b));if(e===!1)e=J;else if(!e)return
+this;g===1&amp;&amp;(h=e,e=function(a){f().off(a);return
+h.apply(this,arguments)},e.guid=h.guid||(h.guid=f.guid++));return
+this.each(function(){f.event.add(this,a,e,d,c)})},one:function(a,b,c,d){return
+this.on.call(this,a,b,c,d,1)},off:function(a,c,d){if(a&amp;&amp;a.preventDefault&amp;&amp;a.handleObj){var
+e=a.handleObj;f(a.delegateTarget).off(e.namespace?e.type+“.”+e.namespace:e.type,e.selector,e.handler);return
+this}if(typeof a==“object”){for(var g in <a
+href="g">a)this.off(g,c,a</a>);return this}if(c===!1||typeof
+c==“function”)d=c,c=b;d===!1&amp;&amp;(d=J);return
+this.each(function(){f.event.remove(this,a,d,c)})},bind:function(a,b,c){return
+this.on(a,null,b,c)},unbind:function(a,b){return
+this.off(a,null,b)},live:function(a,b,c){f(this.context).on(a,this.selector,b,c);return
+this},die:function(a,b){f(this.context).off(a,this.selector||“**”,b);return
+this},delegate:function(a,b,c,d){return
+this.on(b,a,c,d)},undelegate:function(a,b,c){return
+arguments.length==1?this.off(a,“**”):this.off(b,a,c)},trigger:function(a,b){return
+this.each(function(){f.event.trigger(a,b,this)})},triggerHandler:function(a,b){<a
+href="0">if(this</a>)return <a
+href="0">f.event.trigger(a,b,this</a>,!0)},toggle:function(a){var
+b=arguments,c=a.guid||f.guid++,d=0,e=function©{var
+e=(f._data(this,“lastToggle”+a.guid)||0)%d;f._data(this,“lastToggle”+a.guid,e+1),c.preventDefault();return
+<a href="e">b</a>.apply(this,arguments)||!1};<a
+href="d++">e.guid=c;while(d<b.length)b</a>.guid=c;return
+this.click(e)},hover:function(a,b){return
+this.mouseenter(a).mouseleave(b||a)}}),f.each(“blur focus focusin focusout
+load resize scroll unload click dblclick mousedown mouseup mousemove
+mouseover mouseout mouseenter mouseleave change select submit keydown
+keypress keyup error contextmenu”.split(“ ”),function(a,b){<a
+href="b">f.fn</a>=function(a,c){c==null&amp;&amp;(c=a,a=null);return
+arguments.length&gt;0?this.on(b,null,a,c):this.trigger(b)},<a
+href="b">f.attrFn&&(f.attrFn</a>=!<a
+href="b">0),C.test(b)&&(f.event.fixHooks</a>=<a
+href="b">f.event.keyHooks),D.test(b)&&(f.event.fixHooks</a>=f.event.mouseHooks)}),function(){function
+x(a,b,c,e,f,g){for(var h=0,i=e.length;h&lt;i;h++){var <a
+href="h">j=e</a>;if(j){var <a href="a">k=!1;j=j</a>;while(j){<a
+href="d">if(j</a>===c){<a
+href="j.sizset">k=e</a>;break}if(j.nodeType===1){<a
+href="d">g||(j</a>=c,j.sizset=h);if(typeof
+b!=“string”){if(j===b){k=!0;break}}else <a
+href="j">if(m.filter(b,</a>).length&gt;0){k=j;break}}<a href="a">j=j</a>}<a
+href="h">e</a>=k}}}function w(a,b,c,e,f,g){for(var
+h=0,i=e.length;h&lt;i;h++){var <a href="h">j=e</a>;if(j){var <a
+href="a">k=!1;j=j</a>;while(j){<a href="d">if(j</a>===c){<a
+href="j.sizset">k=e</a>;break}<a
+href="d">j.nodeType===1&&!g&&(j</a>=c,j.sizset=h);if(j.nodeName.toLowerCase()===b){k=j;break}<a
+href="a">j=j</a>}<a href="h">e</a>=k}}}var <a
+href="^()">a=/((?:((?:(</a>+)|[^()]+)+)|[(?:[[^[]]*]|[&#39;“][^&#39;”]*[&#39;“]|[^[]&#39;”]+)+]|\.|[^
+&gt;+~,([\]+)+|[&gt;+~])(<a
+href=“0,0”>s*,s*)?((?:.|r|n)*)/g,d=“sizcache”+(Math.random()+“”).replace(“.”,“”),e=0,g=Object.prototype.toString,h=!1,i=!0,j=/\/g,k=/rn/g,l=/W/;</a>.sort(function(){i=!1;return
+0});var m=function(b,d,e,f){e=e||[],d=d||c;var
+h=d;if(d.nodeType!==1&amp;&amp;d.nodeType!==9)return[];if(!b||typeof
+b!=“string”)return e;var <a
+href="3">i,j,k,l,n,q,r,t,u=!0,v=m.isXML(d),w=[],x=b;do{a.exec(“”),i=a.exec(x);if(i){x=i</a>,<a
+href="1">w.push(i</a>);<a href="2">if(i</a>){<a href="3">l=i</a>;break}}}<a
+href="0">while(i);if(w.length>1&&p.exec(b))if(w.length===2&&o.relative[w</a>])<a
+href="0">j=y(w</a>+<a href="1">w</a>,d,f);else{<a
+href="0">j=o.relative[w</a>]?[<a
+href="b">d]:m(w.shift(),d);while(w.length)b=w.shift(),o.relative</a>&amp;&amp;(b+=w.shift()),j=y(b,j,f)}else{!<a
+href="0">f&&w.length>1&&d.nodeType===9&&!v&&o.match.ID.test(w</a>)&amp;&amp;!<a
+href="w.length-1">o.match.ID.test(w</a>)&amp;&amp;(<a
+href="0">n=m.find(w.shift(),d,v),d=n.expr?m.filter(n.expr,n.set)</a>:<a
+href="0">n.set</a>);if(d){n=f?{expr:w.pop(),set:s(f)}:<a
+href="0">m.find(w.pop(),w.length===1&&(w</a>===“~”||<a
+href="0">w</a>===“+”)&amp;&amp;<a
+href="q">d.parentNode?d.parentNode:d,v),j=n.expr?m.filter(n.expr,n.set):n.set,w.length>0?k=s(j):u=!1;while(w.length)q=w.pop(),r=q,o.relative</a>?<a
+href="q">r=w.pop():q=“”,r==null&&(r=d),o.relative</a>(k,r,v)}else
+k=w=[]}k||(k=j),k||m.error(q||b);if(g.call(k)===“[object
+Array]”)if(!u)e.push.apply(e,k);else <a
+href="t">if(d&&d.nodeType===1)for(t=0;k</a>!=<a
+href="t">null;t++)k</a>&amp;&amp;(<a href="t">k</a>===!<a
+href="t">0||k</a>.<a
+href="t">nodeType===1&&m.contains(d,k</a>))&amp;&amp;<a
+href="t">e.push(j</a>);else <a href="t">for(t=0;k</a>!=<a
+href="t">null;t++)k</a>&amp;&amp;<a href="t">k</a>.<a
+href="t">nodeType===1&&e.push(j</a>);else
+s(k,e);l&amp;&amp;(m(l,h,e,f),m.uniqueSort(e));return
+e};m.uniqueSort=function(a){if(u){h=i,a.sort(u);if(h)for(var <a
+href="b">b=1;b<a.length;b++)a</a>===<a
+href="b-1">a</a>&amp;&amp;a.splice(b–,1)}return
+a},m.matches=function(a,b){return
+m(a,null,null,b)},m.matchesSelector=function(a,b){return <a
+href="a">m(b,null,null,</a>).length&gt;0},m.find=function(a,b,c){var <a
+href="e">d,e,f,g,h,i;if(!a)return[];for(e=0,f=o.order.length;e<f;e++){h=o.order</a>;<a
+href="h">if(g=o.leftMatch</a>.exec(a)){<a
+href="1">i=g</a>,g.splice(1,1);if(i.substr(i.length-1)!==“\”){<a
+href="1">g</a>=(<a href="1">g</a>||“”).<a
+href="h">replace(j,“”),d=o.find</a>(g,b,c);if(d!=null){<a
+href="h">a=a.replace(o.match</a>,“”);break}}}}d||(d=typeof
+b.getElementsByTagName!=“undefined”?b.getElementsByTagName(“*”):[]);return{set:d,expr:a}},m.filter=function(a,c,d,e){var
+<a href="0">f,g,h,i,j,k,l,n,p,q=a,r=[],s=c,t=c&&c</a>&amp;&amp;<a
+href="0">m.isXML(c</a>);while(a&amp;&amp;c.length){for(h in <a
+href="h">o.filter)if((f=o.leftMatch</a>.<a
+href="2">exec(a))!=null&&f</a>){<a href="h">k=o.filter</a>,<a
+href="1">l=f</a>,<a
+href="h">g=!1,f.splice(1,1);if(l.substr(l.length-1)===“\”)continue;s===r&&(r=[]);if(o.preFilter</a>){<a
+href="h">f=o.preFilter</a>(f,s,d,r,e,t);if(!f)g=i=!0;else
+if(f===!0)continue}<a href="n">if(f)for(n=0;(j=s</a>)!=<a
+href="n">null;n++)j&&(i=k(j,f,n,s),p=e^i,d&&i!=null?p?g=!0:s</a>=!1:p&amp;&amp;(r.push(j),g=!0));if(i!==b){<a
+href="h">d||(s=r),a=a.replace(o.match</a>,“”);if(!g)return[];break}}if(a===q)if(g==null)m.error(a);else
+break;q=a}return s},m.error=function(a){throw new Error(“Syntax error,
+unrecognized expression: ”+a)};var n=m.getText=function(a){var
+b,c,d=a.nodeType,e=“”;if(d){if(d===1||d===9){if(typeof
+a.textContent==“string”)return a.textContent;if(typeof
+a.innerText==“string”)return
+a.innerText.replace(k,“”);for(a=a.firstChild;a;a=a.nextSibling)e+=n(a)}else
+if(d===3||d===4)return a.nodeValue}else <a
+href="b">for(b=0;c=a</a>;b++)c.nodeType!==8&amp;&amp;(e+=n©);return
+e},o=m.selectors={<a href=""ID","NAME","TAG"">order:</a>,match:{<a
+href="\w\u00c0-\uFFFF\-">ID:/#((?:</a>|\.)+)/,<a
+href="\w\u00c0-\uFFFF\-">CLASS:/.((?:</a>|\.)+)/,<a
+href="'"">NAME:/[name=</a>*((?:[<a href=“‘”“>wu00c0-uFFFF-]|\.)+)</a>*]/,<a
+href="\w\u00c0-\uFFFF\-">ATTR:/[s*((?:</a>|\.)+)<a
+href=”’“”>s*(?:(S?=)s*(?:(</a>)(.*?)<a
+href=“wu00c0-uFFFF-”>3|(#?(?:</a>|\.)*)|)|)<a
+href=“wu00c0-uFFFF*-”>s*]/,TAG:/^((?:</a>|\.)+)/,<a
+href="+\-">CHILD:/:(only|nth|last|first)-child(?:(s*(even|odd|(?:</a>?<a
+href=“+-”>d+|(?:</a>?<a href=“+-”>d*)?ns*(?:</a><a
+href=“^-”>s*d+)?))s*))?/,POS:/:(nth|eq|gt|lt|first|last|even|odd)(?:((d*)))?(?=</a>|$)/,<a
+href="\w\u00c0-\uFFFF\-">PSEUDO:/:((?:</a>|\.)+)(?:(([&#39;“]?)((?:([^)]+)|[^()]*)+)2))?/},leftMatch:{},attrMap:{”class“:”className“,”for“:”htmlFor“},attrHandle:{href:function(a){return
+a.getAttribute(”href“)},type:function(a){return
+a.getAttribute(”type“)}},relative:{”+“:function(a,b){var c=typeof
+b==”string“,d=c&amp;&amp;!l.test(b),e=c&amp;&amp;!d;d&amp;&amp;(b=b.toLowerCase());for(var
+<a href="f">f=0,g=a.length,h;f<g;f++)if(h=a</a>){<a
+href="f">while((h=h.previousSibling)&&h.nodeType!==1);a</a>=e||h&amp;&amp;h.nodeName.toLowerCase()===b?h||!1:h===b}e&amp;&amp;m.filter(b,a,!0)},”&gt;“:function(a,b){var
+c,d=typeof
+b==”string“,e=0,f=a.length;if(d&amp;&amp;!l.test(b)){b=b.toLowerCase();for(;e&lt;f;e++){<a
+href="e">c=a</a>;if©{var <a
+href="e">g=c.parentNode;a</a>=g.nodeName.toLowerCase()===b?g:!1}}}else{<a
+href="e">for(;e<f;e++)c=a</a>,<a
+href="e">c&&(a</a>=d?c.parentNode:c.parentNode===b);d&amp;&amp;m.filter(b,a,!0)}},”“:function(a,b,c){var
+d,f=e++,g=x;typeof
+b==”string“&amp;&amp;!l.test(b)&amp;&amp;(b=b.toLowerCase(),d=b,g=w),g(”parentNode“,b,f,a,d,c)},”~“:function(a,b,c){var
+d,f=e++,g=x;typeof
+b==”string“&amp;&amp;!l.test(b)&amp;&amp;(b=b.toLowerCase(),d=b,g=w),g(”previousSibling“,b,f,a,d,c)}},find:{ID:function(a,b,c){if(typeof
+b.getElementById!=”undefined“&amp;&amp;!c){var <a
+href="1">d=b.getElementById(a</a>);return <a
+href="d">d&&d.parentNode?</a>:[]}},NAME:function(a,b){if(typeof
+b.getElementsByName!=”undefined“){var <a
+href="1">c=[],d=b.getElementsByName(a</a>);for(var <a
+href="e">e=0,f=d.length;e<f;e++)d</a>.<a
+href="1">getAttribute(”name“)===a</a>&amp;&amp;<a
+href="e">c.push(d</a>);return
+c.length===0?null:c}},TAG:function(a,b){if(typeof
+b.getElementsByTagName!=”undefined“)return <a
+href="1">b.getElementsByTagName(a</a>)}},preFilter:{CLASS:function(a,b,c,d,e,f){a=”
+“+<a href="1">a</a>.replace(j,”“)+” “;if(f)return a;for(var <a
+href="g">g=0,h;(h=b</a>)!=null;g++)h&amp;&amp;(e^(h.className&amp;&amp;(”
+“<code>h.className</code>” “).<a href="\t\n\r">replace(/</a>/g,” “).<a
+href="g">indexOf(a)>=0)?c||d.push(h):c&&(b</a>=!1));return!1},ID:function(a){return
+<a href="1">a</a>.replace(j,”“)},TAG:function(a,b){return <a
+href="1">a</a>.replace(j,”“).toLowerCase()},CHILD:function(a){<a
+href="1">if(a</a>===”nth“){<a href="2">a</a>||<a href="0">m.error(a</a>),<a
+href="2">a</a>=<a href="2">a</a>.replace(/^+|s*/g,”“);var <a
+href="+\-">b=/(-?)(d*)(?:n(</a>?<a href=”2“>d*))?/.exec(a</a>===”<a
+href="2">even“&&”2n“||a</a>===”<a
+href="2">odd“&&”2n+1“||!/D/.test(a</a>)&amp;&amp;”<a
+href="2">0n+“+a</a>||<a href="2">a</a>);<a href="2">a</a>=<a
+href="1">b</a>+(<a href="2">b</a>||<a href="3">1)-0,a</a>=<a
+href="3">b</a>-0}else <a href="2">a</a>&amp;&amp;<a
+href="0">m.error(a</a>);<a href="0">a</a>=e++;return
+a},ATTR:function(a,b,c,d,e,f){var <a href="1">g=a</a>=<a href="1">a</a>.<a
+href="g">replace(j,”“);!f&&o.attrMap</a>&amp;&amp;(<a href="1">a</a>=<a
+href="g">o.attrMap</a>),<a href="4">a</a>=(<a href="4">a</a>||<a
+href="5">a</a>||”“).<a href="2">replace(j,”“),a</a>===”~=“&amp;&amp;(<a
+href="4">a</a>=” “+<a href="4">a</a>+” “);return
+a},PSEUDO:function(b,c,d,e,f){<a href="1">if(b</a>===”<a
+href="3">not“)if((a.exec(b</a>)||”“).<a
+href="3">length>1||/^w/.test(b</a>))<a href="3">b</a>=<a
+href="3">m(b</a>,null,null,c);else{var <a
+href="3">g=m.filter(b</a>,c,d,!0^f);d||e.push.apply(e,g);return!1}else <a
+href="0">if(o.match.POS.test(b</a>)||<a
+href="0">o.match.CHILD.test(b</a>))return!0;return
+b},POS:function(a){a.unshift(!0);return
+a}},filters:{enabled:function(a){return
+a.disabled===!1&amp;&amp;a.type!==”hidden“},disabled:function(a){return
+a.disabled===!0},checked:function(a){return
+a.checked===!0},selected:function(a){a.parentNode&amp;&amp;a.parentNode.selectedIndex;return
+a.selected===!0},parent:function(a){return!!a.firstChild},empty:function(a){return!a.firstChild},has:function(a,b,c){<a
+href="3">return!!m(c</a>,a).length},header:function(a){return/hd/i.test(a.nodeName)},text:function(a){var
+b=a.getAttribute(”type“),c=a.type;return
+a.nodeName.toLowerCase()===”input“&amp;&amp;”text“===c&amp;&amp;(b===c||b===null)},radio:function(a){return
+a.nodeName.toLowerCase()===”input“&amp;&amp;”radio“===a.type},checkbox:function(a){return
+a.nodeName.toLowerCase()===”input“&amp;&amp;”checkbox“===a.type},file:function(a){return
+a.nodeName.toLowerCase()===”input“&amp;&amp;”file“===a.type},password:function(a){return
+a.nodeName.toLowerCase()===”input“&amp;&amp;”password“===a.type},submit:function(a){var
+b=a.nodeName.toLowerCase();return(b===”input“||b===”button“)&amp;&amp;”submit“===a.type},image:function(a){return
+a.nodeName.toLowerCase()===”input“&amp;&amp;”image“===a.type},reset:function(a){var
+b=a.nodeName.toLowerCase();return(b===”input“||b===”button“)&amp;&amp;”reset“===a.type},button:function(a){var
+b=a.nodeName.toLowerCase();return
+b===”input“&amp;&amp;”button“===a.type||b===”button“},input:function(a){return/input|select|textarea|button/i.test(a.nodeName)},focus:function(a){return
+a===a.ownerDocument.activeElement}},setFilters:{first:function(a,b){return
+b===0},last:function(a,b,c,d){return
+b===d.length-1},even:function(a,b){return b%2===0},odd:function(a,b){return
+b%2===1},lt:function(a,b,c){return <a
+href="3">b<c</a>-0},gt:function(a,b,c){return <a
+href="3">b>c</a>-0},nth:function(a,b,c){return <a
+href="3">c</a>-0===b},eq:function(a,b,c){return <a
+href="3">c</a>-0===b}},filter:{PSEUDO:function(a,b,c,d){var <a
+href="1">e=b</a>,<a href="e">f=o.filters</a>;if(f)return <a
+href="a">f(a,c,b,d);if(e===”contains“)return(a.textContent||a.innerText||n(</a>)||”“).<a
+href="3">indexOf(b</a>)&gt;=0;if(e===”not“){var <a href="3">g=b</a>;for(var
+<a
+href="h">h=0,i=g.length;h<i;h++)if(g</a>===a)return!1;return!0}m.error(e)},CHILD:function(a,b){var
+<a href="1">c,e,f,g,h,i,j,k=b</a>,l=a;switch(k){<a
+href="2">case”only“:case”first“:while(l=l.previousSibling)if(l.nodeType===1)return!1;if(k===”first“)return!0;l=a;case”last“:while(l=l.nextSibling)if(l.nodeType===1)return!1;return!0;case”nth“:c=b</a>,<a
+href="3">e=b</a>;<a href="0">if(c===1&&e===0)return!0;f=b</a>,<a
+href="d">g=a.parentNode;if(g&&(g</a>!==f||!a.nodeIndex)){<a
+href="d">i=0;for(l=g.firstChild;l;l=l.nextSibling)l.nodeType===1&&(l.nodeIndex=++i);g</a>=f}j=a.nodeIndex-e;return
+c===0?j===0:j%c===0&amp;&amp;j/c&gt;=0}},ID:function(a,b){return
+a.nodeType===1&amp;&amp;a.getAttribute(”id“)===b},TAG:function(a,b){return
+b===”*“&amp;&amp;a.nodeType===1||!!a.nodeName&amp;&amp;a.nodeName.toLowerCase()===b},CLASS:function(a,b){return(”
+“+(a.className||a.getAttribute(”class“))+”
+“).indexOf(b)&gt;-1},ATTR:function(a,b){var <a href="1">c=b</a>,<a
+href="c">d=m.attr?m.attr(a,c):o.attrHandle</a>?<a
+href="c">o.attrHandle</a>(<a href="c">a):a</a>!=<a href="c">null?a</a>:<a
+href="2">a.getAttribute©,e=d+”“,f=b</a>,<a href="4">g=b</a>;return
+d==null?f===”!=“:!f&amp;&amp;m.attr?d!=null:f===”=“?e===g:f===”*=“?e.indexOf(g)&gt;=0:f===”~=“?(”
+“<code>e</code>”
+“).indexOf(g)&gt;=0:g?f===”!=“?e!==g:f===”^=“?e.indexOf(g)===0:f===”$=“?e.substr(e.length-g.length)===g:f===”|=“?e===g||e.substr(0,g.length+1)===g+”-“:!1:e&amp;&amp;d!==!1},POS:function(a,b,c,d){var
+<a href="2">e=b</a>,<a href="e">f=o.setFilters</a>;if(f)return
+f(a,c,b,d)}}},p=o.match.POS,q=function(a,b){return”\“+(b-0+1)};for(var r in
+<a href="r">o.match)o.match</a>=new <a href="r">RegExp(o.match</a>.<a
+href="">source+/(?![^</a>*])(?![^(]*))/.<a
+href="r">source),o.leftMatch</a>=new <a
+href="r">RegExp(/(^(?:.|r|n)*?)/.source+o.match</a>.source.replace(/\(d+)/g,q));var
+s=function(a,b){a=Array.prototype.slice.call(a,0);if(b){b.push.apply(b,a);return
+b}return a};try{<a
+href="0">Array.prototype.slice.call(c.documentElement.childNodes,0)</a>.nodeType}catch(t){s=function(a,b){var
+c=0,d=b||[];if(g.call(a)===”[object
+Array]“)Array.prototype.push.apply(d,a);else if(typeof
+a.length==”number“)for(var <a
+href="c">e=a.length;c<e;c++)d.push(a</a>);else <a href="c">for(;a</a>;<a
+href="c">c++)d.push(a</a>);return d}}var
+u,v;c.documentElement.compareDocumentPosition?u=function(a,b){if(a===b){h=!0;return
+0}if(!a.compareDocumentPosition||!b.compareDocumentPosition)return
+a.compareDocumentPosition?-1:1;return
+a.compareDocumentPosition(b)&amp;4?-1:1}:(u=function(a,b){if(a===b){h=!0;return
+0}if(a.sourceIndex&amp;&amp;b.sourceIndex)return
+a.sourceIndex-b.sourceIndex;var <a
+href="">c,d,e=[],f=</a>,g=a.parentNode,i=b.parentNode,j=g;if(g===i)return
+v(a,b);if(!g)return-1;if(!i)return
+1;while(j)e.unshift(j),j=j.parentNode;j=i;while(j)f.unshift(j),j=j.parentNode;c=e.length,d=f.length;for(var
+<a href="k">k=0;k<c&&k<d;k++)if(e</a>!==<a href="k">f</a>)return <a
+href="k">v(e</a>,<a href="k">f</a>);return <a href="k">k===c?v(a,f</a>,-<a
+href="k">1):v(e</a>,b,1)},v=function(a,b,c){if(a===b)return c;var
+d=a.nextSibling;while(d){if(d===b)return-1;d=d.nextSibling}return
+1}),function(){var a=c.createElement(”div“),d=”script“+(new
+Date).getTime(),e=c.documentElement;a.innerHTML=”&lt;a
+name=&#39;“<code>d</code>”&#39;/&gt;“,e.insertBefore(a,e.firstChild),c.getElementById(d)&amp;&amp;(o.find.ID=function(a,c,d){if(typeof
+c.getElementById!=”undefined“&amp;&amp;!d){var <a
+href="1">e=c.getElementById(a</a>);return <a
+href="1">e?e.id===a</a>||typeof <a
+href="1">e.getAttributeNode!=”undefined“&&e.getAttributeNode(”id“).nodeValue===a</a>?[e]:b:[]}},o.filter.ID=function(a,b){var
+c=typeof
+a.getAttributeNode!=”undefined“&amp;&amp;a.getAttributeNode(”id“);return
+a.nodeType===1&amp;&amp;c&amp;&amp;c.nodeValue===b}),e.removeChild(a),e=a=null}(),function(){var
+a=c.createElement(”div“);a.appendChild(c.createComment(”“)),a.getElementsByTagName(”*“).length&gt;0&amp;&amp;(o.find.TAG=function(a,b){var
+<a href="1">c=b.getElementsByTagName(a</a>);<a href="1">if(a</a>===”*“){var
+d=[];for(var <a href="e">e=0;c</a>;<a href="e">e++)c</a>.<a
+href="e">nodeType===1&&d.push(c</a>);c=d}return c}),a.innerHTML=”&lt;a
+href=&#39;#&#39;&gt;&lt;/a&gt;“,a.firstChild&amp;&amp;typeof
+a.firstChild.getAttribute!=”undefined“&amp;&amp;a.firstChild.getAttribute(”href“)!==”#“&amp;&amp;(o.attrHandle.href=function(a){return
+a.getAttribute(”href“,2)}),a=null}(),c.querySelectorAll&amp;&amp;function(){var
+a=m,b=c.createElement(”div“),d=”__sizzle__“;b.innerHTML=”&lt;p
+class=&#39;TEST&#39;&gt;&lt;/p&gt;“;if(!b.querySelectorAll||b.querySelectorAll(”.TEST“).length!==0){m=function(b,e,f,g){e=e||c;if(!g&amp;&amp;!m.isXML(e)){var
+<a
+href="\w\-">h=/^(w+$)|^.(</a>+$)|^#([w-]+$)/.exec(b);if(h&amp;&amp;(e.nodeType===1||e.nodeType===9)){<a
+href="1">if(h</a>)return <a
+href="2">s(e.getElementsByTagName(b),f);if(h</a>&amp;&amp;o.find.CLASS&amp;&amp;e.getElementsByClassName)return
+<a
+href="2">s(e.getElementsByClassName(h</a>),f)}if(e.nodeType===9){if(b===”body“&amp;&amp;e.body)return
+<a href="e.body">s(</a>,<a href="3">f);if(h&&h</a>){var <a
+href="3">i=e.getElementById(h</a>);if(!i||!i.parentNode)return <a
+href="3">s([],f);if(i.id===h</a>)return <a href="i">s(</a>,f)}try{return
+s(e.querySelectorAll(b),f)}catch(j){}}else
+if(e.nodeType===1&amp;&amp;e.nodeName.toLowerCase()!==”object“){var <a
+href="+~">k=e,l=e.getAttribute(”id“),n=l||d,p=e.parentNode,q=/^s*</a>/.test(b);l?n=n.replace(/&#39;/g,”\$&amp;“):e.setAttribute(”id“,n),q&amp;&amp;p&amp;&amp;(e=e.parentNode);try{if(!q||p)return
+<a href="id='"n"'">s(e.querySelectorAll(”</a>
+“+b),f)}catch®{}finally{l||k.removeAttribute(”id“)}}}return
+a(b,e,f,g)};for(var e in <a href="e">a)m</a>=<a
+href="e">a</a>;b=null}}(),function(){var
+a=c.documentElement,b=a.matchesSelector||a.mozMatchesSelector||a.webkitMatchesSelector||a.msMatchesSelector;if(b){var
+d=!b.call(c.createElement(”div“),”div“),e=!1;try{<a
+href="test!=''">b.call(c.documentElement,”</a>:sizzle“)}catch(f){e=!0}m.matchesSelector=function(a,c){<a
+href="^'"\">c=c.replace(/=s*(</a>]*)s*]/g,”=&#39;$1&#39;]“);if(!m.isXML(a))try{if(e||!o.match.PSEUDO.test©&amp;&amp;!/!=/.test©){var
+f=b.call(a,c);if(f||!d||a.document&amp;&amp;a.document.nodeType!==11)return
+f}}catch(g){}return <a
+href="a">m(c,null,null,</a>).length&gt;0}}}(),function(){var
+a=c.createElement(”div“);a.innerHTML=”&lt;div class=&#39;test
+e&#39;&gt;&lt;/div&gt;&lt;div
+class=&#39;test&#39;&gt;&lt;/div&gt;“;if(!!a.getElementsByClassName&amp;&amp;a.getElementsByClassName(”e“).length!==0){a.lastChild.className=”e“;if(a.getElementsByClassName(”e“).length===1)return;o.order.splice(1,0,”CLASS“),o.find.CLASS=function(a,b,c){if(typeof
+b.getElementsByClassName!=”undefined“&amp;&amp;!c)return <a
+href="1">b.getElementsByClassName(a</a>)},a=null}}(),c.documentElement.contains?m.contains=function(a,b){return
+a!==b&amp;&amp;(a.contains?a.contains(b):!0)}:c.documentElement.compareDocumentPosition?m.contains=function(a,b){return!!(a.compareDocumentPosition(b)&amp;16)}:m.contains=function(){return!1},m.isXML=function(a){var
+b=(a?a.ownerDocument||a:0).documentElement;return
+b?b.nodeName!==”HTML“:!1};var y=function(a,b,c){var <a
+href="b">d,e=[],f=”“,g=b.nodeType?</a>:<a
+href="0">b;while(d=o.match.PSEUDO.exec(a))f+=d</a>,<a
+href="a">a=a.replace(o.match.PSEUDO,”“);a=o.relative</a>?a+”*“:a;for(var <a
+href="h">h=0,i=g.length;h<i;h++)m(a,g</a>,e,c);return
+m.filter(f,e)};m.attr=f.attr,m.selectors.attrMap={},<a
+href="":"">f.find=m,f.expr=m.selectors,f.expr</a>=f.expr.filters,f.unique=m.uniqueSort,f.text=m.getText,f.isXMLDoc=m.isXML,f.contains=m.contains}();var
+<a
+href="\.,">L=/Until$/,M=/^(?:parents|prevUntil|prevAll)/,N=/,/,O=/^.[^:#</a>*$/,P=Array.prototype.slice,Q=f.expr.match.POS,R={children:!0,contents:!0,next:!0,prev:!0};f.fn.extend({find:function(a){var
+b=this,c,d;if(typeof a!=”string“)return f(a).filter(function(){<a
+href="c">for(c=0,d=b.length;c<d;c++)if(f.contains(b</a>,this))return!0});var
+e=this.pushStack(”“,”find“,a),g,h,i;for(c=0,d=this.length;c&lt;d;c++){<a
+href="c">g=e.length,f.find(a,this</a>,<a
+href="i">e);if(c>0)for(h=g;h<e.length;h++)for(i=0;i<g;i++)if(e</a>===<a
+href="h">e</a>){e.splice(h–,1);break}}return e},has:function(a){var
+b=f(a);return this.filter(function(){for(var <a
+href="a">a=0,c=b.length;a<c;a++)if(f.contains(this,b</a>))return!0})},not:function(a){return
+this.pushStack(T(this,a,!1),”not“,a)},filter:function(a){return
+this.pushStack(T(this,a,!0),”filter“,a)},is:function(a){return!!a&amp;&amp;(typeof
+<a
+href="0">a==”string“?Q.test(a)?f(a,this.context).index(this</a>)&gt;=0:f.filter(a,this).length&gt;0:this.filter(a).length&gt;0)},closest:function(a,b){var
+<a href="0">c=[],d,e,g=this</a>;if(f.isArray(a)){var
+h=1;while(g&amp;&amp;g.ownerDocument&amp;&amp;g!==b){<a
+href="d">for(d=0;d<a.length;d++)f(g).is(a</a>)&amp;&amp;c.push({<a
+href="d">selector:a</a>,elem:g,level:h});g=g.parentNode,h++}return c}var
+i=Q.test(a)||typeof
+a!=”string“?f(a,b||this.context):0;for(d=0,e=this.length;d&lt;e;d++){<a
+href="d">g=this</a>;while(g){if(i?i.index(g)&gt;-1:f.find.matchesSelector(g,a)){c.push(g);break}g=g.parentNode;if(!g||!g.ownerDocument||g===b||g.nodeType===11)break}}c=c.length&gt;1?f.unique©:c;return
+this.pushStack(c,”closest“,a)},index:function(a){if(!a)return <a
+href="0">this</a>&amp;&amp;<a
+href="0">this</a>.parentNode?this.prevAll().length:-1;if(typeof
+a==”string“)return <a href="0">f.inArray(this</a>,f(a));return <a
+href="0">f.inArray(a.jquery?a</a>:a,this)},add:function(a,b){var c=typeof
+<a
+href="a">a==”string“?f(a,b):f.makeArray(a&&a.nodeType?</a>:a),d=f.merge(this.get(),c);return
+<a href="0">this.pushStack(S(c</a>)||<a
+href="0">S(d</a>)?d:f.unique(d))},andSelf:function(){return
+this.add(this.prevObject)}}),f.each({parent:function(a){var
+b=a.parentNode;return
+b&amp;&amp;b.nodeType!==11?b:null},parents:function(a){return
+f.dir(a,”parentNode“)},parentsUntil:function(a,b,c){return
+f.dir(a,”parentNode“,c)},next:function(a){return
+f.nth(a,2,”nextSibling“)},prev:function(a){return
+f.nth(a,2,”previousSibling“)},nextAll:function(a){return
+f.dir(a,”nextSibling“)},prevAll:function(a){return
+f.dir(a,”previousSibling“)},nextUntil:function(a,b,c){return
+f.dir(a,”nextSibling“,c)},prevUntil:function(a,b,c){return
+f.dir(a,”previousSibling“,c)},siblings:function(a){return
+f.sibling(a.parentNode.firstChild,a)},children:function(a){return
+f.sibling(a.firstChild)},contents:function(a){return
+f.nodeName(a,”iframe“)?a.contentDocument||a.contentWindow.document:f.makeArray(a.childNodes)}},function(a,b){<a
+href="a">f.fn</a>=function(c,d){var
+e=f.map(this,b,c);L.test(a)||(d=c),d&amp;&amp;typeof <a
+href="a">d==”string“&&(e=f.filter(d,e)),e=this.length>1&&!R</a>?f.unique(e):e,(this.length&gt;1||N.test(d))&amp;&amp;M.test(a)&amp;&amp;(e=e.reverse());return
+this.pushStack(e,a,P.call(arguments).join(”,“))}}),f.extend({filter:function(a,b,c){c&amp;&amp;(a=”:not(“<code>a</code>”)“);return
+<a href="0">b.length===1?f.find.matchesSelector(b</a>,<a
+href="0">a)?[b</a>]:[]:f.find.matches(a,b)},dir:function(a,c,d){var <a
+href="c">e=[],g=a</a>;<a
+href="c">while(g&&g.nodeType!==9&&(d===b||g.nodeType!==1||!f(g).is(d)))g.nodeType===1&&e.push(g),g=g</a>;return
+e},nth:function(a,b,c,d){b=b||1;var <a
+href="c">e=0;for(;a;a=a</a>)if(a.nodeType===1&amp;&amp;++e===b)break;return
+a},sibling:function(a,b){var
+c=[];for(;a;a=a.nextSibling)a.nodeType===1&amp;&amp;a!==b&amp;&amp;c.push(a);return
+c}});var
+V=”abbr|article|aside|audio|canvas|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video“,W=/
+<a
+href="\w:">jQueryd+=”(?:d+|null)“/g,X=/^s+/,Y=/<(?!area|br|col|embed|hr|img|input|link|meta|param)((</a>+)[^&gt;]*)/&gt;/<a
+href="\w:">ig,Z=/<(</a>+)/,$=/&lt;tbody/i,_=/&lt;|&amp;#?w+;/,ba=/&lt;(?:script|style)/i,bb=/&lt;(?:script|object|embed|option|style)/i,bc=new
+<a
+href="^=">RegExp(”<(?:"V")","i"),bd=/checked\s*(?:</a>|=s*.checked.)/i,be=//(java|ecma)script/i,bf=/^s*&lt;!(?:[CDATA[|--)/,bg={option:[1,“&lt;select
+<a
+href="1,"<fieldset>”,“</fieldset>”“>multiple=‘multiple’>”,“</select>”],legend:</a>,<a
+href="1,"<table>“,”</table>“”>thead:</a>,<a
+href="2,"<table><tbody>“,”</tbody></table>“”>tr:</a>,<a
+href="3,"<table><tbody><tr>“,”</tr></tbody></table>“”>td:</a>,<a
+href="2,"<table><tbody></tbody><colgroup>“,”</colgroup></table>“”>col:</a>,<a
+href="1,"<map>“,”</map>“”>area:</a>,<a href="0,"",""">_default:</a>},<a
+href="1,"div<div>“,”</div>“”>bh=U©;bg.optgroup=bg.option,bg.tbody=bg.tfoot=bg.colgroup=bg.caption=bg.thead,bg.th=bg.td,f.support.htmlSerialize||(bg._default=</a>),f.fn.extend({text:function(a){if(f.isFunction(a))return
+this.each(function(b){var
+c=f(this);c.text(a.call(this,b,c.text()))});if(typeof
+a!=“object”&amp;&amp;a!==b)return <a
+href="0">this.empty().append((this</a>&amp;&amp;<a
+href="0">this</a>.ownerDocument||c).createTextNode(a));return
+f.text(this)},wrapAll:function(a){if(f.isFunction(a))return
+this.each(function(b){f(this).wrapAll(a.call(this,b))});<a
+href="0">if(this</a>){var <a href="0">b=f(a,this</a>.<a
+href="0">ownerDocument).eq(0).clone(!0);this</a>.<a
+href="0">parentNode&&b.insertBefore(this</a>),b.map(function(){var
+a=this;while(a.firstChild&amp;&amp;a.firstChild.nodeType===1)a=a.firstChild;return
+a}).append(this)}return
+this},wrapInner:function(a){if(f.isFunction(a))return
+this.each(function(b){f(this).wrapInner(a.call(this,b))});return
+this.each(function(){var
+b=f(this),c=b.contents();c.length?c.wrapAll(a):b.append(a)})},wrap:function(a){var
+b=f.isFunction(a);return
+this.each(function©{f(this).wrapAll(b?a.call(this,c):a)})},unwrap:function(){return
+this.parent().each(function(){f.nodeName(this,“body”)||f(this).replaceWith(this.childNodes)}).end()},append:function(){return
+this.domManip(arguments,!0,function(a){this.nodeType===1&amp;&amp;this.appendChild(a)})},prepend:function(){return
+this.domManip(arguments,!0,function(a){this.nodeType===1&amp;&amp;this.insertBefore(a,this.firstChild)})},before:function(){<a
+href="0">if(this</a>&amp;&amp;<a href="0">this</a>.parentNode)return
+this.domManip(arguments,!1,function(a){this.parentNode.insertBefore(a,this)});if(arguments.length){var
+a=f.clean(arguments);a.push.apply(a,this.toArray());return
+this.pushStack(a,“before”,arguments)}},after:function(){<a
+href="0">if(this</a>&amp;&amp;<a href="0">this</a>.parentNode)return
+this.domManip(arguments,!1,function(a){this.parentNode.insertBefore(a,this.nextSibling)});if(arguments.length){var
+a=this.pushStack(this,“after”,arguments);a.push.apply(a,f.clean(arguments));return
+a}},remove:function(a,b){for(var <a href="c">c=0,d;(d=this</a>)!=<a
+href="d">null;c++)if(!a||f.filter(a,</a>).<a
+href="d">length)!b&&d.nodeType===1&&(f.cleanData(d.getElementsByTagName(“*”)),f.cleanData(</a>)),d.parentNode&amp;&amp;d.parentNode.removeChild(d);return
+this},empty:function() {for(var <a
+href="a">a=0,b;(b=this</a>)!=null;a++){b.nodeType===1&amp;&amp;f.cleanData(b.getElementsByTagName(“*”));while(b.firstChild)b.removeChild(b.firstChild)}return
+this},clone:function(a,b){a=a==null?!1:a,b=b==null?a:b;return
+this.map(function(){return
+f.clone(this,a,b)})},html:function(a){if(a===b)return <a
+href="0">this</a>&amp;&amp;<a href="0">this</a>.<a
+href="0">nodeType===1?this</a>.innerHTML.replace(W,“”):null;if(typeof <a
+href=""",""">a==“string”&&!ba.test(a)&&(f.support.leadingWhitespace||!X.test(a))&&!bg[(Z.exec(a)||</a>)[1].toLowerCase()]){a=a.replace(Y,“&lt;$1&gt;&lt;/$2&gt;”);try{for(var
+<a href="c">c=0,d=this.length;c<d;c++)this</a>.<a
+href="c">nodeType===1&&(f.cleanData(this</a>.<a
+href="c">getElementsByTagName(“*”)),this</a>.innerHTML=a)}catch(e){this.empty().append(a)}}else
+f.isFunction(a)?this.each(function(b){var
+c=f(this);c.html(a.call(this,b,c.html()))}):this.empty().append(a);return
+this},replaceWith:function(a){<a href="0">if(this</a>&amp;&amp;<a
+href="0">this</a>.parentNode){if(f.isFunction(a))return
+this.each(function(b){var
+c=f(this),d=c.html();c.replaceWith(a.call(this,b,d))});typeof
+a!=“string”&amp;&amp;(a=f(a).detach());return this.each(function(){var
+b=this.nextSibling,c=this.parentNode;f(this).remove(),b?f(b).before(a):f©.append(a)})}return
+this.length?this.pushStack(f(f.isFunction(a)?a():a),“replaceWith”,a):this},detach:function(a){return
+this.remove(a,!0)},domManip:function(a,c,d){var <a
+href="0">e,g,h,i,j=a</a>,k=[];if(!f.support.checkClone&amp;&amp;arguments.length===3&amp;&amp;typeof
+j==“string”&amp;&amp;bd.test(j))return
+this.each(function(){f(this).domManip(a,c,d,!0)});if(f.isFunction(j))return
+this.each(function(e){var <a
+href="0">g=f(this);a</a>=j.call(this,e,c?g.html():b),g.domManip(a,c,d)});<a
+href="0">if(this</a>){i=j&amp;&amp;j.parentNode,f.support.parentNode&amp;&amp;i&amp;&amp;i.nodeType===11&amp;&amp;i.childNodes.length===this.length?e={fragment:i}:e=f.buildFragment(a,this,k),h=e.fragment,h.childNodes.length===1?g=h=h.firstChild:g=h.firstChild;if(g){c=c&amp;&amp;f.nodeName(g,“tr”);for(var
+<a href="l">l=0,m=this.length,n=m-1;l<m;l++)d.call(c?bi(this</a>,<a
+href="l">g):this</a>,e.cacheable||m&gt;1&amp;&amp;l&lt;n?f.clone(h,!0,!0):h)}k.length&amp;&amp;f.each(k,bp)}return
+this}}),f.buildFragment=function(a,b,d){var <a href="0">e,g,h,i,j=a</a>;<a
+href="0">b&&b</a>&amp;&amp;(<a href="0">i=b</a>.<a
+href="0">ownerDocument||b</a>),i.createDocumentFragment||(i=c),a.length===1&amp;&amp;typeof
+<a
+href="j">j==“string”&&j.length<512&&i===c&&j.charAt(0)==="<"&&!bb.test(j)&&(f.support.checkClone||!bd.test(j))&&(f.support.html5Clone||!bc.test(j))&&(g=!0,h=f.fragments</a>,<a
+href="j">h&&h!==1&&(e=h)),e||(e=i.createDocumentFragment(),f.clean(a,i,e,d)),g&&(f.fragments</a>=h?e:1);return{fragment:e,cacheable:g}},f.fragments={},f.each({appendTo:“append”,prependTo:“prepend”,insertBefore:“before”,insertAfter:“after”,replaceAll:“replaceWith”},function(a,b){<a
+href="a">f.fn</a>=function©{var <a
+href="0">d=[],e=f©,g=this.length===1&&this</a>.parentNode;if(g&amp;&amp;g.nodeType===11&amp;&amp;g.childNodes.length===1&amp;&amp;e.length===1){<a
+href="b">e</a>(<a href="0">this</a>);return this}for(var
+h=0,i=e.length;h&lt;i;h++){var <a
+href="h">j=(h>0?this.clone(!0):this).get();f(e</a>)[b](j),d=d.concat(j)}return
+this.pushStack(d,a,e.selector)}}),f.extend({clone:function(a,b,c){var
+d,e,g,h=f.support.html5Clone||!bc.test(“&lt;”+a.nodeName)?a.cloneNode(!0):bo(a);if((!f.support.noCloneEvent||!f.support.noCloneChecked)&amp;&amp;(a.nodeType===1||a.nodeType===11)&amp;&amp;!f.isXMLDoc(a)){<a
+href="g">bk(a,h),d=bl(a),e=bl(h);for(g=0;d</a>;++<a
+href="g">g)e</a>&amp;&amp;<a href="g">bk(d</a>,<a
+href="g">e</a>)}if(b){bj(a,h);if©{<a
+href="g">d=bl(a),e=bl(h);for(g=0;d</a>;++<a href="g">g)bj(d</a>,<a
+href="g">e</a>)}}d=e=null;return h},clean:function(a,b,d,e){var
+g;b=b||c,typeof <a
+href="0">b.createElement==“undefined”&&(b=b.ownerDocument||b</a>&amp;&amp;<a
+href="0">b</a>.ownerDocument||c);var h=[],i;for(var <a
+href="j">j=0,k;(k=a</a>)!=null;j++){typeof
+k==“number”&amp;&amp;(k+=“”);if(!k)continue;if(typeof
+k==“string”)if(!_.test(k))k=b.createTextNode(k);else{k=k.replace(Y,“&lt;$1&gt;&lt;/$2&gt;”);var
+<a href=""",""">l=(Z.exec(k)||</a>)[<a
+href="l">1].toLowerCase(),m=bg</a>||<a href="0">bg._default,n=m</a>,<a
+href="1">o=b.createElement(“div”);b===c?bh.appendChild(o):U(b).appendChild(o),o.innerHTML=m</a>+<a
+href="2">k+m</a>;while(n–)o=o.lastChild;if(!f.support.tbody){var <a
+href="1">p=$.test(k),q=l===“table”&&!p?o.firstChild&&o.firstChild.childNodes:m</a>===“&lt;<a
+href="i">table>”&&!p?o.childNodes:[];for(i=q.length-1;i>=0;–i)f.nodeName(q</a>,“<a
+href="i">tbody”)&&!q</a>.<a href="i">childNodes.length&&q</a>.<a
+href="i">parentNode.removeChild(q</a>)}!<a
+href="0">f.support.leadingWhitespace&&X.test(k)&&o.insertBefore(b.createTextNode(X.exec(k)</a>),o.firstChild),k=o.childNodes}var
+<a href="0">r;if(!f.support.appendChecked)if(k</a>&amp;&amp;typeof (<a
+href="i">r=k.length)==“number”)for(i=0;i<r;i++)bn(k</a>);else
+bn(k);k.nodeType?h.push(k):h=f.merge(h,k)}if(d){g=function(a){return!a.type||be.test(a.type)};<a
+href="j">for(j=0;h</a>;<a href="j">j++)if(e&&f.nodeName(h</a>,“<a
+href="j">script”)&&(!h</a>.<a href="j">type||h</a>.<a
+href="j">type.toLowerCase()===“text/javascript”))e.push(h</a>.<a
+href="j">parentNode?h</a>.<a href="j">parentNode.removeChild(h</a>):<a
+href="j">h</a>);else{<a href="j">if(h</a>.nodeType===1){var <a
+href="j">s=f.grep(h</a>.<a
+href="j+1,0">getElementsByTagName(“script”),g);h.splice.apply(h,</a>.concat(s))}<a
+href="j">d.appendChild(h</a>)}}return h},cleanData:function(a){var
+b,c,d=f.cache,e=f.event.special,g=f.support.deleteExpando;for(var <a
+href="h">h=0,i;(i=a</a>)!=null;h++){<a
+href="i.nodeName.toLowerCase()">if(i.nodeName&&f.noData</a>)<a
+href="f.expando">continue;c=i</a>;if©{<a
+href="c">b=d</a>;if(b&amp;&amp;b.events){for(var j in <a
+href="j">b.events)e</a>?f.event.remove(i,j):f.removeEvent(i,j,b.handle);b.handle&amp;&amp;(b.handle.elem=null)}g?delete
+<a
+href="f.expando">i</a>:i.removeAttribute&amp;&amp;i.removeAttribute(f.expando),delete
+<a href="c">d</a>}}}});var <a href="^)">bq=/alpha(</a>*)/<a
+href="^)">i,br=/opacity=(</a>*)/,<a href="A-Z">bs=/(</a>|^<a
+href="\-+">ms)/g,bt=/^-?d+(?:px)?$/i,bu=/^-?d/,bv=/^(</a>)=([-+.de]+)/,bw={position:“absolute”,visibility:“hidden”,display:“block”},<a
+href=""Left","Right"">bx=</a>,<a
+href=""Top","Bottom"">by=</a>,bz,bA,bB;f.fn.css=function(a,c){if(arguments.length===2&amp;&amp;c===b)return
+this;return f.access(this,a,c,!0,function(a,c,d){return
+d!==b?f.style(a,c,d):f.css(a,c)})},f.extend({cssHooks:{opacity:{get:function(a,b){if(b){var
+c=bz(a,“opacity”,“opacity”);return c===“”?“1”:c}return
+a.style.opacity}}},cssNumber:{fillOpacity:!0,fontWeight:!0,lineHeight:!0,opacity:!0,orphans:!0,widows:!0,zIndex:!0,zoom:!0},cssProps:{“float”:f.support.cssFloat?“cssFloat”:“styleFloat”},style:function(a,c,d,e){if(!!a&amp;&amp;a.nodeType!==3&amp;&amp;a.nodeType!==8&amp;&amp;!!a.style){var
+<a href="i">g,h,i=f.camelCase©,j=a.style,k=f.cssHooks</a>;<a
+href="i">c=f.cssProps</a>||i;if(d===b){if(k&amp;&amp;“get”in
+k&amp;&amp;(g=k.get(a,!1,e))!==b)return g;return <a href="c">j</a>}h=typeof
+<a href="1">d,h===“string”&&(g=bv.exec(d))&&(d=+(g</a>+<a
+href="2">1)*+g</a>+<a
+href="i">parseFloat(f.css(a,c)),h=“number”);if(d==null||h===“number”&&isNaN(d))return;h===“number”&&!f.cssNumber</a>&amp;&amp;(d+=“px”);if(!k||!(“set”in
+k)||(d=k.set(a,d))!==b)try{<a
+href="c">j</a>=d}catch(l){}}},css:function(a,c,d){var <a
+href="c">e,g;c=f.camelCase©,g=f.cssHooks</a>,<a
+href="c">c=f.cssProps</a>||c,c===“cssFloat”&amp;&amp;(c=“float”);if(g&amp;&amp;“get”in
+g&amp;&amp;(e=g.get(a,!0,d))!==b)return e;if(bz)return
+bz(a,c)},swap:function(a,b,c){var d={};for(var e in <a href="e">b)d</a>=<a
+href="e">a.style</a>,<a href="e">a.style</a>=<a
+href="e">b</a>;c.call(a);for(e in <a href="e">b)a.style</a>=<a
+href="e">d</a>}}),<a
+href=""height","width"">f.curCSS=f.css,f.each(</a>,function(a,b){<a
+href="b">f.cssHooks</a>={get:function(a,c,d){var
+e;if©{if(a.offsetWidth!==0)return
+bC(a,b,d);f.swap(a,bw,function(){e=bC(a,b,d)});return
+e}},set:function(a,b){if(!bt.test(b))return
+b;b=parseFloat(b);if(b&gt;=0)return
+b+“px”}}}),f.support.opacity||(f.cssHooks.opacity={get:function(a,b){return
+br.test((b&amp;&amp;a.currentStyle?a.currentStyle.filter:a.style.filter)||“”)?parseFloat(RegExp.$1)/100+“”:b?“1”:“”},set:function(a,b){var
+c=a.style,d=a.currentStyle,e=f.isNumeric(b)?“alpha(opacity=”+b*100+“)”:“”,g=d&amp;&amp;d.filter||c.filter||“”;c.zoom=1;if(b&gt;=1&amp;&amp;f.trim(g.replace(bq,“”))===“”){c.removeAttribute(“filter”);if(d&amp;&amp;!d.filter)return}c.filter=bq.test(g)?g.replace(bq,e):g+“
+”+e}}),f(function(){f.support.reliableMarginRight||(f.cssHooks.marginRight={get:function(a,b){var
+c;f.swap(a,{display:“inline-block”},function(){b?c=bz(a,“margin-right”,“marginRight”):c=a.style.marginRight});return
+c}})}),c.defaultView&amp;&amp;c.defaultView.getComputedStyle&amp;&amp;(bA=function(a,b){var
+c,d,e;b=b.replace(bs,“-$1”).toLowerCase(),(d=a.ownerDocument.defaultView)&amp;&amp;(e=d.getComputedStyle(a,null))&amp;&amp;(c=e.getPropertyValue(b),c===“”&amp;&amp;!f.contains(a.ownerDocument.documentElement,a)&amp;&amp;(c=f.style(a,b)));return
+c}),c.documentElement.currentStyle&amp;&amp;(bB=function(a,b){var <a
+href="b">c,d,e,f=a.currentStyle&&a.currentStyle</a>,<a
+href="b">g=a.style;f===null&&g&&(e=g</a>)&amp;&amp;(f=e),!bt.test(f)&amp;&amp;bu.test(f)&amp;&amp;(c=g.left,d=a.runtimeStyle&amp;&amp;a.runtimeStyle.left,d&amp;&amp;(a.runtimeStyle.left=a.currentStyle.left),g.left=b===“fontSize”?“1em”:f||0,f=g.pixelLeft+“px”,g.left=c,d&amp;&amp;(a.runtimeStyle.left=d));return
+f===“”?“auto”:f}),bz=bA||bB,f.expr&amp;&amp;f.expr.filters&amp;&amp;(f.expr.filters.hidden=function(a){var
+b=a.offsetWidth,c=a.offsetHeight;return
+b===0&amp;&amp;c===0||!f.support.reliableHiddenOffsets&amp;&amp;(a.style&amp;&amp;a.style.display||f.css(a,“display”))===“none”},f.expr.filters.visible=function(a){return!f.expr.filters.hidden(a)});var
+<a href="\">bD=/%20/g,bE=/</a>$/,bF=/r?n/g,bG=/#.*$/,bH=/^(.*?):[
+t]*([^rn]*)<a
+href=“^<">r?$/mg,bI=/^(?:color|date|datetime|datetime-local|email|hidden|month|number|password|range|search|tel|text|time|url|week)$/i,bJ=/^(?:about|app|app-storage|.+-extension|file|res|widget):$/,bK=/^(?:GET|HEAD)$/,bL=/^///,bM=/?/,bN=/<script\b</a>*(?:(?!&lt;/<a
+href="^<">script>)<</a>*)*&lt;/<a
+href="?&">script>/gi,bO=/^(?:select|textarea)/i,bP=/s+/,bQ=/(</a>)<a
+href="^&">_=</a>*/,<a
+href="\w+\.\-">bR=/^(</a>+:)(?://([^/?#:]*)(?::(d+))?)?/,bS=f.fn.load,bT={},bU={},<a
+href=""*/"">bV,bW,bX=</a>+[”*“];try{bV=e.href}catch(bY){bV=c.createElement(”a“),bV.href=”“,bV=bV.href}bW=bR.exec(bV.toLowerCase())||[],f.fn.extend({load:function(a,c,d){if(typeof
+a!=”string“&amp;&amp;bS)return
+bS.apply(this,arguments);if(!this.length)return this;var e=a.indexOf(”
+“);if(e&gt;=0){var g=a.slice(e,a.length);a=a.slice(0,e)}var
+h=”GET“;c&amp;&amp;(f.isFunction©?(d=c,c=b):typeof
+c==”object“&amp;&amp;(c=f.param(c,f.ajaxSettings.traditional),h=”POST“));var
+i=this;f.ajax({url:a,type:h,dataType:”html“,data:c,complete:function(a,b,c){c=a.responseText,a.isResolved()&amp;&amp;(a.done(function(a){c=a}),<a
+href="c,b,a">i.html(g?f(”<div>“).append(c.replace(bN,”“)).find(g):c)),d&&i.each(d,</a>)}});return
+this},serialize:function(){return
+f.param(this.serializeArray())},serializeArray:function(){return
+this.map(function(){return
+this.elements?f.makeArray(this.elements):this}).filter(function(){return
+this.name&amp;&amp;!this.disabled&amp;&amp;(this.checked||bO.test(this.nodeName)||bI.test(this.type))}).map(function(a,b){var
+c=f(this).val();return
+c==null?null:f.isArray©?f.map(c,function(a,c){return{name:b.name,value:a.replace(bF,”rn“)}}):{name:b.name,value:c.replace(bF,”rn“)}}).get()}}),f.each(”ajaxStart
+ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend“.split(”
+“),function(a,b){<a href="b">f.fn</a>=function(a){return this.on(b,a)}}),<a
+href=""get","post"">f.each(</a>,function(a,c){<a
+href="c">f</a>=function(a,d,e,g){f.isFunction(d)&amp;&amp;(g=g||e,e=d,d=b);return
+f.ajax({type:c,url:a,data:d,success:e,dataType:g})}}),f.extend({getScript:function(a,c){return
+f.get(a,b,c,”script“)},getJSON:function(a,b,c){return
+f.get(a,b,c,”json“)},ajaxSetup:function(a,b){b?b_(a,f.ajaxSettings):(b=a,a=f.ajaxSettings),b_(a,b);return
+a},ajaxSettings:{<a
+href="1">url:bV,isLocal:bJ.test(bW</a>),global:!0,type:”GET“,contentType:”application/x-www-form-urlencoded“,processData:!0,async:!0,accepts:{xml:”application/xml,
+text/xml“,html:”text/html“,text:”text/plain“,json:”application/json,
+text/javascript“,”*“:bX},contents:{xml:/xml/,html:/html/,json:/json/},responseFields:{xml:”responseXML“,text:”responseText“},converters:{”*
+text“:a.String,”text html“:!0,”text json“:f.parseJSON,”text
+xml“:f.parseXML},flatOptions:{context:!0,url:!0}},ajaxPrefilter:bZ(bT),ajaxTransport:bZ(bU),ajax:function(a,c){function
+w(a,c,l,m){if(s!==2){s=2,q&amp;&amp;clearTimeout(q),p=b,n=m||”“,v.readyState=a&gt;0?4:0;var
+o,r,u,w=c,x=l?cb(d,v,l):b,y,z;if(a&gt;=200&amp;&amp;a&lt;300||a===304){if(d.ifModified){<a
+href="k">if(y=v.getResponseHeader(”Last-Modified“))f.lastModified</a>=<a
+href="k">y;if(z=v.getResponseHeader(”Etag“))f.etag</a>=z}if(a===304)w=”notmodified“,o=!0;else
+try{r=cc(d,x),w=”success“,o=!0}catch(A){w=”parsererror“,u=A}}else{u=w;if(!w||a)w=”error“,a&lt;0&amp;&amp;(a=0)}<a
+href="r,w,v">v.status=a,v.statusText=”“+(c||w),o?h.resolveWith(e,</a>):<a
+href="v,w,u">h.rejectWith(e,</a>),<a
+href="v,d,o?r:u">v.statusCode(j),j=b,t&&g.trigger(”ajax“+(o?”Success“:”Error“),</a>),<a
+href="v,w">i.fireWith(e,</a>),<a
+href="v,d">t&&(g.trigger(”ajaxComplete“,</a>),–f.active||f.event.trigger(”ajaxStop“))}}typeof
+a==”object“&amp;&amp;(c=a,a=b),c=c||{};var
+d=f.ajaxSetup({},c),e=d.context||d,g=e!==d&amp;&amp;(e.nodeType||e
+instanceof f)?f(e):f.event,h=f.Deferred(),i=f.Callbacks(”once
+memory“),j=d.statusCode||{},k,l={},m={},n,o,p,q,r,s=0,t,u,v={readyState:0,setRequestHeader:function(a,b){if(!s){var
+<a href="c">c=a.toLowerCase();a=m</a>=<a href="c">m</a>||<a
+href="a">a,l</a>=b}return this},getAllResponseHeaders:function(){return
+s===2?n:null},getResponseHeader:function(a){var c;if(s===2){if(!o){o={};<a
+href="1">while(c=bH.exec(n))o[c</a>.<a href="2">toLowerCase()]=c</a>}<a
+href="a.toLowerCase()">c=o</a>}return
+c===b?null:c},overrideMimeType:function(a){s||(d.mimeType=a);return
+this},abort:function(a){a=a||”abort“,p&amp;&amp;p.abort(a),w(0,a);return
+this}};h.promise(v),v.success=v.done,v.error=v.fail,v.complete=i.add,v.statusCode=function(a){if(a){var
+b;if(s&lt;2)for(b in <a href="b">a)j</a>=[<a href="b">j</a>,<a
+href="b">a</a>];else <a href="v.status">b=a</a>,v.then(b,b)}return this},<a
+href="1">d.url=((a||d.url)+”“).replace(bG,”“).replace(bL,bW</a>+”//“),<a
+href="1">d.dataTypes=f.trim(d.dataType||”*“).toLowerCase().split(bP),d.crossDomain==null&&(r=bR.exec(d.url.toLowerCase()),d.crossDomain=!(!r||r</a>==<a
+href="1">bW</a>&amp;&amp;<a href="2">r</a>==<a href="2">bW</a>&amp;&amp;(<a
+href="3">r</a>||(<a href="1">r</a>===”<a
+href="http:"?80:443))==(bW[3]||(bW[1]==="http:"?80:443)))),d.data&&d.processData&&typeof">“?80:443))==(bW[3]||(bW[1]===”http:“?80:443)))),d.data&&d.processData&&typeof</a>
+d.data!=”string“&amp;&amp;(d.data=f.param(d.data,d.traditional)),b$(bT,d,c,v);if(s===2)return!1;t=d.global,d.type=d.type.toUpperCase(),d.hasContent=!bK.test(d.type),t&amp;&amp;f.active++===0&amp;&amp;f.event.trigger(”ajaxStart“);if(!d.hasContent){d.data&amp;&amp;(d.url+=(bM.test(d.url)?”&amp;“:”?“)+d.data,delete
+d.data),k=d.url;if(d.cache===!1){var
+x=f.now(),y=d.url.replace(bQ,”$1_=“+x);d.url=y+(y===d.url?(bM.test(d.url)?”&amp;“:”?“)+”_=“+x:”“)}}(<a
+href="k">d.data&&d.hasContent&&d.contentType!==!1||c.contentType)&&v.setRequestHeader(”Content-Type“,d.contentType),d.ifModified&&(k=k||d.url,f.lastModified</a>&amp;&amp;<a
+href="k">v.setRequestHeader(”If-Modified-Since“,f.lastModified</a>),<a
+href="k">f.etag</a>&amp;&amp;<a
+href="k">v.setRequestHeader(”If-None-Match“,f.etag</a>)),<a
+href="0">v.setRequestHeader(”Accept“,d.dataTypes</a>&amp;&amp;<a
+href="0">d.accepts[d.dataTypes</a>]?<a
+href="0">d.accepts[d.dataTypes</a>]+(<a href="0">d.dataTypes</a>!==”*“?”,
+“<code>bX</code>”; <a href=""*"">q=0.01“:”“):d.accepts</a>);for(u in <a
+href="u">d.headers)v.setRequestHeader(u,d.headers</a>);if(d.beforeSend&amp;&amp;(d.beforeSend.call(e,v,d)===!1||s===2)){v.abort();return!1}for(u
+in{success:1,error:1,complete:1})<a href="u">v</a>(<a
+href="u">d</a>);p=b$(bU,d,c,v);if(!p)w(-1,”No Transport“);else{<a
+href="v,d">v.readyState=1,t&&g.trigger(”ajaxSend“,</a>),d.async&amp;&amp;d.timeout&gt;0&amp;&amp;(q=setTimeout(function(){v.abort(”timeout“)},d.timeout));try{s=1,p.send(l,w)}catch(z){if(s&lt;2)w(-1,z);else
+throw z}}return v},param:function(a,c){var <a
+href="d.length">d=[],e=function(a,b){b=f.isFunction(b)?b():b,d</a>=encodeURIComponent(a)+”=“+encodeURIComponent(b)};c===b&amp;&amp;(c=f.ajaxSettings.traditional);if(f.isArray(a)||a.jquery&amp;&amp;!f.isPlainObject(a))f.each(a,function(){e(this.name,this.value)});else
+for(var g in <a href="g">a)ca(g,a</a>,c,e);return
+d.join(”&amp;“).replace(bD,”+“)}}),f.extend({active:0,lastModified:{},etag:{}});var
+cd=f.now(),ce=/(=)?(&amp;|$)|??/i;f.ajaxSetup({jsonp:”callback“,jsonpCallback:function(){return
+f.expando+”_“<code>cd</code>+}}),f.ajaxPrefilter(”json
+jsonp“,function(b,c,d){var
+e=b.contentType===”application/x-www-form-urlencoded“&amp;&amp;typeof <a
+href="0">b.data==”string“;if(b.dataTypes</a>===”jsonp“||b.jsonp!==!1&amp;&amp;(ce.test(b.url)||e&amp;&amp;ce.test(b.data))){var
+<a
+href="h">g,h=b.jsonpCallback=f.isFunction(b.jsonpCallback)?b.jsonpCallback():b.jsonpCallback,i=a</a>,<a
+href="h">j=b.url,k=b.data,l=”$1“h”$2“;b.jsonp!==!1&&(j=j.replace(ce,l),b.url===j&&(e&&(k=k.replace(ce,l)),b.data===k&&(j+=(/?/.test(j)?”&“:”?“)b.jsonp”=“+h))),b.url=j,b.data=k,a</a>=function(a){<a
+href="a">g=</a>},d.always(function(){<a href="h">a</a>=<a
+href="h">i,g&&f.isFunction(i)&&a</a>(<a
+href="0">g</a>)}),b.converters[”script json“]=function(){g||f.error(h+” was
+not called“);return <a href="0">g</a>},<a
+href="0">b.dataTypes</a>=”json“;return”script“}}),f.ajaxSetup({accepts:{script:”text/javascript,
+application/javascript, application/ecmascript,
+application/x-ecmascript“},contents:{script:/javascript|ecmascript/},converters:{”text
+script“:function(a){f.globalEval(a);return
+a}}}),f.ajaxPrefilter(”script“,function(a){a.cache===b&amp;&amp;(a.cache=!1),a.crossDomain&amp;&amp;(a.type=”GET“,a.global=!1)}),f.ajaxTransport(”script“,function(a){if(a.crossDomain){var
+<a
+href="0">d,e=c.head||c.getElementsByTagName(”head“)</a>||c.documentElement;return{send:function(f,g){d=c.createElement(”script“),d.async=”async“,a.scriptCharset&amp;&amp;(d.charset=a.scriptCharset),d.src=a.url,d.onload=d.onreadystatechange=function(a,c){if(c||!d.readyState||/loaded|complete/.test(d.readyState))d.onload=d.onreadystatechange=null,e&amp;&amp;d.parentNode&amp;&amp;e.removeChild(d),d=b,c||g(200,”success“)},e.insertBefore(d,e.firstChild)},abort:function(){d&amp;&amp;d.onload(0,1)}}}});var
+cf=a.ActiveXObject?function(){for(var a in <a
+href="a">ch)ch</a>(0,1)}:!1,cg=0,ch;f.ajaxSettings.xhr=a.ActiveXObject?function(){return!this.isLocal&amp;&amp;ci()||cj()}:ci,function(a){f.extend(f.support,{ajax:!!a,cors:!!a&amp;&amp;”withCredentials“in
+a})}(f.ajaxSettings.xhr()),f.support.ajax&amp;&amp;f.ajaxTransport(function©{if(!c.crossDomain||f.support.cors){var
+d;return{send:function(e,g){var
+h=c.xhr(),i,j;c.username?h.open(c.type,c.url,c.async,c.username,c.password):h.open(c.type,c.url,c.async);if(c.xhrFields)for(j
+in <a href="j">c.xhrFields)h</a>=<a href="j">c.xhrFields</a>;<a
+href=""X-Requested-With"">c.mimeType&&h.overrideMimeType&&h.overrideMimeType(c.mimeType),!c.crossDomain&&!e</a>&amp;&amp;(<a
+href=""X-Requested-With"">e</a>=”XMLHttpRequest“);try{for(j in <a
+href="j">e)h.setRequestHeader(j,e</a>)}catch(k){}h.send(c.hasContent&amp;&amp;c.data||null),d=function(a,e){var
+j,k,l,m,n;try{if(d&amp;&amp;(e||h.readyState===4)){d=b,i&amp;&amp;(h.onreadystatechange=f.noop,cf&amp;&amp;delete
+<a
+href="i">ch</a>);if(e)h.readyState!==4&amp;&amp;h.abort();else{j=h.status,l=h.getAllResponseHeaders(),m={},n=h.responseXML,n&amp;&amp;n.documentElement&amp;&amp;(m.xml=n),m.text=h.responseText;try{k=h.statusText}catch(o){k=”“}!j&amp;&amp;c.isLocal&amp;&amp;!c.crossDomain?j=m.text?200:404:j===1223&amp;&amp;(j=204)}}}catch(p){e||g(-1,p)}m&amp;&amp;g(j,k,m,l)},!c.async||h.readyState===4?d():(i=++cg,cf&amp;&amp;(ch||(ch={},<a
+href="i">f(a).unload(cf)),ch</a>=d),h.onreadystatechange=d)},abort:function(){d&amp;&amp;d(0,1)}}}});var
+ck={},<a href="+\-">cl,cm,cn=/^(?:toggle|show|hide)$/,co=/^(</a>=)?([<a
+href=”a-z%“>d+.-]+)(</a>*)$/<a
+href=""height","marginTop","marginBottom","paddingTop","paddingBottom"">i,cp,cq=[</a>,[”<a
+href=""opacity"">width“,”marginLeft“,”marginRight“,”paddingLeft“,”paddingRight“],</a>],cr;f.fn.extend({show:function(a,b,c){var
+d,e;if(a||a===0)return this.animate(cu(”show“,3),a,b,c);for(var <a
+href="g">g=0,h=this.length;g<h;g++)d=this</a>,d.style&amp;&amp;(e=d.style.display,!f._data(d,”olddisplay“)&amp;&amp;e===”none“&amp;&amp;(e=d.style.display=”“),e===”“&amp;&amp;f.css(d,”display“)===”none“&amp;&amp;f._data(d,”olddisplay“,cv(d.nodeName)));for(g=0;g&lt;h;g++){<a
+href="g">d=this</a>;if(d.style){e=d.style.display;if(e===”“||e===”none“)d.style.display=f._data(d,”olddisplay“)||”“}}return
+this},hide:function(a,b,c){if(a||a===0)return
+this.animate(cu(”hide“,3),a,b,c);var <a
+href="g">d,e,g=0,h=this.length;for(;g<h;g++)d=this</a>,<a
+href="g">d.style&&(e=f.css(d,”display“),e!==”none“&&!f._data(d,”olddisplay“)&&f._data(d,”olddisplay“,e));for(g=0;g<h;g++)this</a>.<a
+href="g">style&&(this</a>.style.display=”none“);return
+this},_toggle:f.fn.toggle,toggle:function(a,b,c){var d=typeof
+a==”boolean“;f.isFunction(a)&amp;&amp;f.isFunction(b)?this._toggle.apply(this,arguments):a==null||d?this.each(function(){var
+<a
+href="b?"show":"hide"">b=d?a:f(this).is(”:hidden“);f(this)</a>()}):this.animate(cu(”toggle“,3),a,b,c);return
+this},fadeTo:function(a,b,c,d){return
+this.filter(”:hidden“).css(”opacity“,0).show().end().animate({opacity:b},a,c,d)},animate:function(a,b,c,d){function
+g(){e.queue===!1&amp;&amp;f._mark(this);var
+b=f.extend({},e),c=this.nodeType===1,d=c&amp;&amp;f(this).is(”:hidden“),g,h,i,j,k,l,m,n,o;b.animatedProperties={};for(i
+in a){<a href="g">g=f.camelCase(i),i!==g&&(a</a>=<a href="i">a</a>,delete
+<a href="i">a</a>),<a href="g">h=a</a>,<a
+href="g">f.isArray(h)?(b.animatedProperties</a>=<a href="1">h</a>,<a
+href="g">h=a</a>=<a href="0">h</a>):<a href="g">b.animatedProperties</a>=<a
+href="g">b.specialEasing&&b.specialEasing</a>||b.easing||”swing“;if(h===”hide“&amp;&amp;d||h===”show“&amp;&amp;!d)return
+<a
+href="this.style.overflow,this.style.overflowX,this.style.overflowY">b.complete.call(this);c&&(g===”height“||g===”width“)&&(b.overflow=</a>,f.css(this,”display“)===”inline“&amp;&amp;f.css(this,”float“)===”none“&amp;&amp;(!f.support.inlineBlockNeedsLayout||cv(this.nodeName)===”inline“?this.style.display=”inline-block“:this.style.zoom=1))}b.overflow!=null&amp;&amp;(this.style.overflow=”hidden“);for(i
+in a)j=new <a href="i">f.fx(this,b,i),h=a</a>,<a
+href="o">cn.test(h)?(o=f._data(this,”toggle“+i)||(h===”toggle“?d?”show“:”hide“:0),o?(f._data(this,”toggle“+i,o===”show“?”hide“:”show“),j</a>()):<a
+href="h">j</a>()):(<a
+href="2">k=co.exec(h),l=j.cur(),k?(m=parseFloat(k</a>),<a
+href="3">n=k</a>||(<a href="i">f.cssNumber</a>?”“:”<a
+href="1">px“),n!==”px“&&(f.style(this,i,(m||1)+n),l=(m||1)/j.cur()*l,f.style(this,i,l+n)),k</a>&amp;&amp;(<a
+href="1">m=(k</a>===”-=“?-1:1)*m+l),j.custom(l,m,n)):j.custom(l,h,”“));return!0}var
+e=f.speed(b,c,d);if(f.isEmptyObject(a))return <a
+href="!1">this.each(e.complete,</a>);a=f.extend({},a);return
+e.queue===!1?this.each(g):this.queue(e.queue,g)},stop:function(a,c,d){typeof
+a!=”string“&amp;&amp;(d=c,c=a,a=b),c&amp;&amp;a!==!1&amp;&amp;this.queue(a||”fx“,[]);return
+this.each(function(){function h(a,b,c){var <a
+href="c">e=b</a>;f.removeData(a,c,!0),e.stop(d)}var
+b,c=!1,e=f.timers,g=f._data(this);d||f._unmark(!0,this);if(a==null)for(b in
+<a href="b">g)g</a>&amp;&amp;<a
+href="b">g</a>.stop&amp;&amp;b.indexOf(”.run“)===b.length-4&amp;&amp;h(this,g,b);else
+<a href="b=a+".run"">g</a>&amp;&amp;<a href="b">g</a>.<a
+href="b">stop&&h(this,g,b);for(b=e.length;b–;)e</a>.<a
+href="b">elem===this&&(a==null||e</a>.<a href="b">queue===a)&&(d?e</a>(!<a
+href="b">0):e</a>.saveState(),c=!0,e.splice(b,1));(!d||!c)&amp;&amp;f.dequeue(this,a)})}}),f.each({slideDown:cu(”show“,1),slideUp:cu(”hide“,1),slideToggle:cu(”toggle“,1),fadeIn:{opacity:”show“},fadeOut:{opacity:”hide“},fadeToggle:{opacity:”toggle“}},function(a,b){<a
+href="a">f.fn</a>=function(a,c,d){return
+this.animate(b,a,c,d)}}),f.extend({speed:function(a,b,c){var
+d=a&amp;&amp;typeof
+a==”object“?f.extend({},a):{complete:c||!c&amp;&amp;b||f.isFunction(a)&amp;&amp;a,duration:a,easing:c&amp;&amp;b||b&amp;&amp;!f.isFunction(b)&amp;&amp;b};d.duration=f.fx.off?0:typeof
+d.duration==”number“?d.duration:d.duration in <a
+href="d.duration">f.fx.speeds?f.fx.speeds</a>:f.fx.speeds._default;if(d.queue==null||d.queue===!0)d.queue=”fx“;d.old=d.complete,d.complete=function(a){f.isFunction(d.old)&amp;&amp;d.old.call(this),d.queue?f.dequeue(this,d.queue):a!==!1&amp;&amp;f._unmark(this)};return
+d},easing:{linear:function(a,b,c,d){return
+c+d*a},swing:function(a,b,c,d){return(-Math.cos(a*Math.PI)/2+.5)*d+c}},<a
+href="this.prop">timers:[],fx:function(a,b,c){this.options=b,this.elem=a,this.prop=c,b.orig=b.orig||{}}}),f.fx.prototype={update:function(){this.options.step&&this.options.step.call(this.elem,this.now,this),(f.fx.step</a>||f.fx.step._default)(this)},cur:function(){<a
+href="this.prop">if(this.elem</a>!=<a
+href="this.prop">null&&(!this.elem.style||this.elem.style</a>==null))return
+<a href="this.prop">this.elem</a>;var a,b=f.css(this.elem,this.prop);return
+isNaN(a=parseFloat(b))?!b||b===”auto“?0:b:a},custom:function(a,c,d){function
+h(a){return e.step(a)}var <a
+href="this.prop">e=this,g=f.fx;this.startTime=cr||cs(),this.end=c,this.now=this.start=a,this.pos=this.state=0,this.unit=d||this.unit||(f.cssNumber</a>?”“:”px“),h.queue=this.options.queue,h.elem=this.elem,h.saveState=function(){e.options.hide&amp;&amp;f._data(e.elem,”fxshow“+e.prop)===b&amp;&amp;f._data(e.elem,”fxshow“+e.prop,e.start)},h()&amp;&amp;f.timers.push(h)&amp;&amp;!cp&amp;&amp;(cp=setInterval(g.tick,g.interval))},show:function(){var
+<a
+href="this.prop">a=f._data(this.elem,”fxshow“+this.prop);this.options.orig</a>=a||f.style(this.elem,this.prop),this.options.show=!0,a!==b?this.custom(this.cur(),a):this.custom(this.prop===”width“||this.prop===”height“?1:0,this.cur()),f(this.elem).show()},hide:function(){<a
+href="this.prop">this.options.orig</a>=f._data(this.elem,”fxshow“+this.prop)||f.style(this.elem,this.prop),this.options.hide=!0,this.custom(this.cur(),0)},step:function(a){var
+b,c,d,e=cr||cs(),g=!0,h=this.elem,i=this.options;if(a||e&gt;=i.duration+this.startTime){<a
+href="this.prop">this.now=this.end,this.pos=this.state=1,this.update(),i.animatedProperties</a>=!0;for(b
+in <a
+href="b">i.animatedProperties)i.animatedProperties</a>!==!0&amp;&amp;(g=!1);if(g){<a
+href=""","X","Y"">i.overflow!=null&&!f.support.shrinkWrapBlocks&&f.each(</a>,function(a,b){<a
+href=""overflow"+b">h.style</a>=<a
+href="a">i.overflow</a>}),i.hide&amp;&amp;f(h).hide();if(i.hide||i.show)for(b
+in <a
+href="b">i.animatedProperties)f.style(h,b,i.orig</a>),f.removeData(h,”fxshow“+b,!0),f.removeData(h,”toggle“+b,!0);d=i.complete,d&amp;&amp;(i.complete=!1,d.call(h))}return!1}<a
+href="this.prop">i.duration==Infinity?this.now=e:(c=e-this.startTime,this.state=c/i.duration,this.pos=f.easing[i.animatedProperties</a>](this.state,c,0,1,i.duration),this.now=this.start+(this.end-this.start)*this.pos),this.update();return!0}},f.extend(f.fx,{tick:function(){var
+<a href="c">a,b=f.timers,c=0;for(;c<b.length;c++)a=b</a>,!<a
+href="c">a()&&b</a>===a&amp;&amp;b.splice(c–,1);b.length||f.fx.stop()},interval:13,stop:function(){clearInterval(cp),cp=null},speeds:{slow:600,fast:200,_default:400},step:{opacity:function(a){f.style(a.elem,”opacity“,a.now)},_default:function(a){<a
+href="a.prop">a.elem.style&&a.elem.style</a>!=<a
+href="a.prop">null?a.elem.style</a>=<a
+href="a.prop">a.now+a.unit:a.elem</a>=a.now}}}),<a
+href=""width","height"">f.each(</a>,function(a,b){<a
+href="b">f.fx.step</a>=function(a){f.style(a.elem,b,Math.max(0,a.now)+a.unit)}}),f.expr&amp;&amp;f.expr.filters&amp;&amp;(f.expr.filters.animated=function(a){return
+f.grep(f.timers,function(b){return a===b.elem}).length});var
+cw=/^t(?:able|d|h)$/i,cx=/^(?:body|html)$/i;”getBoundingClientRect“in
+c.documentElement?f.fn.offset=function(a){var <a
+href="0">b=this</a>,c;if(a)return
+this.each(function(b){f.offset.setOffset(this,a,b)});if(!b||!b.ownerDocument)return
+null;if(b===b.ownerDocument.body)return
+f.offset.bodyOffset(b);try{c=b.getBoundingClientRect()}catch(d){}var
+e=b.ownerDocument,g=e.documentElement;if(!c||!f.contains(g,b))return
+c?{top:c.top,left:c.left}:{top:0,left:0};var
+h=e.body,i=cy(e),j=g.clientTop||h.clientTop||0,k=g.clientLeft||h.clientLeft||0,l=i.pageYOffset||f.support.boxModel&amp;&amp;g.scrollTop||h.scrollTop,m=i.pageXOffset||f.support.boxModel&amp;&amp;g.scrollLeft||h.scrollLeft,n=c.top+l-j,o=c.left+m-k;return{top:n,left:o}}:f.fn.offset=function(a){var
+<a href="0">b=this</a>;if(a)return
+this.each(function(b){f.offset.setOffset(this,a,b)});if(!b||!b.ownerDocument)return
+null;if(b===b.ownerDocument.body)return f.offset.bodyOffset(b);var
+c,d=b.offsetParent,e=b,g=b.ownerDocument,h=g.documentElement,i=g.body,j=g.defaultView,k=j?j.getComputedStyle(b,null):b.currentStyle,l=b.offsetTop,m=b.offsetLeft;while((b=b.parentNode)&amp;&amp;b!==i&amp;&amp;b!==h){if(f.support.fixedPosition&amp;&amp;k.position===”fixed“)break;c=j?j.getComputedStyle(b,null):b.currentStyle,l-=b.scrollTop,m-=b.scrollLeft,b===d&amp;&amp;(l+=b.offsetTop,m+=b.offsetLeft,f.support.doesNotAddBorder&amp;&amp;(!f.support.doesAddBorderForTableAndCells||!cw.test(b.nodeName))&amp;&amp;(l+=parseFloat(c.borderTopWidth)||0,m+=parseFloat(c.borderLeftWidth)||0),e=d,d=b.offsetParent),f.support.subtractsBorderForOverflowNotVisible&amp;&amp;c.overflow!==”visible“&amp;&amp;(l+=parseFloat(c.borderTopWidth)||0,m+=parseFloat(c.borderLeftWidth)||0),k=c}if(k.position===”relative“||k.position===”static“)l+=i.offsetTop,m+=i.offsetLeft;f.support.fixedPosition&amp;&amp;k.position===”fixed“&amp;&amp;(l+=Math.max(h.scrollTop,i.scrollTop),m+=Math.max(h.scrollLeft,i.scrollLeft));return{top:l,left:m}},f.offset={bodyOffset:function(a){var
+b=a.offsetTop,c=a.offsetLeft;f.support.doesNotIncludeMarginInBodyOffset&amp;&amp;(b+=parseFloat(f.css(a,”marginTop“))||0,c+=parseFloat(f.css(a,”marginLeft“))||0);return{top:b,left:c}},setOffset:function(a,b,c){var
+d=f.css(a,”position“);d===”static“&amp;&amp;(a.style.position=”relative“);var
+<a
+href="h,i">e=f(a),g=e.offset(),h=f.css(a,”top“),i=f.css(a,”left“),j=(d===”absolute“||d===”fixed“)&&f.inArray(”auto“,</a>)&gt;-1,k={},l={},m,n;j?(l=e.position(),m=l.top,n=l.left):(m=parseFloat(h)||0,n=parseFloat(i)||0),f.isFunction(b)&amp;&amp;(b=b.call(a,c,g)),b.top!=null&amp;&amp;(k.top=b.top-g.top+m),b.left!=null&amp;&amp;(k.left=b.left-g.left+n),”using“in
+b?b.using.call(a,k):e.css(k)}},f.fn.extend({position:function(){<a
+href="0">if(!this</a>)return null;var <a href="0">a=this</a>,<a
+href="0">b=this.offsetParent(),c=this.offset(),d=cx.test(b</a>.nodeName)?{top:0,left:0}:<a
+href="0">b.offset();c.top-=parseFloat(f.css(a,”marginTop“))||0,c.left-=parseFloat(f.css(a,”marginLeft“))||0,d.top+=parseFloat(f.css(b</a>,”<a
+href="0">borderTopWidth“))||0,d.left+=parseFloat(f.css(b</a>,”borderLeftWidth“))||0;return{top:c.top-d.top,left:c.left-d.left}},offsetParent:function(){return
+this.map(function(){var
+a=this.offsetParent||c.body;while(a&amp;&amp;!cx.test(a.nodeName)&amp;&amp;f.css(a,”position“)===”static“)a=a.offsetParent;return
+a})}}),<a href=""Left","Top"">f.each(</a>,function(a,c){var <a
+href="d">d=”scroll“+c;f.fn</a>=function©{var e,g;if(c===b){<a
+href="0">e=this</a>;if(!e)return null;g=cy(e);return g?”pageXOffset“in <a
+href="a?"pageYOffset":"pageXOffset"">g?g</a>:<a
+href="d">f.support.boxModel&&g.document.documentElement</a>||<a
+href="d">g.document.body</a>:<a href="d">e</a>}return
+this.each(function(){<a
+href="d">g=cy(this),g?g.scrollTo(a?f(g).scrollLeft():c,a?c:f(g).scrollTop()):this</a>=c})}}),<a
+href=""Height","Width"">f.each(</a>,function(a,c){var <a
+href=""inner"+c">d=c.toLowerCase();f.fn</a>=function(){var <a
+href="0">a=this</a>;return <a
+href="d">a?a.style?parseFloat(f.css(a,d,”padding“)):this</a>():null},<a
+href=""outer"+c">f.fn</a>=function(a){var <a href="0">b=this</a>;return <a
+href="d">b?b.style?parseFloat(f.css(b,d,a?”margin“:”border“)):this</a>():null},<a
+href="d">f.fn</a>=function(a){var <a href="0">e=this</a>;if(!e)return
+a==null?null:this;if(f.isFunction(a))return this.each(function(b){var <a
+href="d">c=f(this);c</a>(<a
+href="d">a.call(this,b,c</a>()))});if(f.isWindow(e)){var <a
+href=""client"+c">g=e.document.documentElement</a>,h=e.document.body;return
+<a
+href=""client"+c">e.document.compatMode===”CSS1Compat“&&g||h&&h</a>||g}if(e.nodeType===9)return
+<a href=""client"+c">Math.max(e.documentElement</a>,<a
+href=""scroll"+c">e.body</a>,<a href=""scroll"+c">e.documentElement</a>,<a
+href=""offset"+c">e.body</a>,<a
+href=""offset"+c">e.documentElement</a>);if(a===b){var
+i=f.css(e,d),j=parseFloat(i);return f.isNumeric(j)?j:i}return
+this.css(d,typeof a==”string“?a:a+”px“)}}),a.jQuery=a.$=f,typeof
+define==”function“&amp;&amp;define.amd&amp;&amp;define.amd.jQuery&amp;&amp;define(”jquery“,[],function(){return
+f})})(window);</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

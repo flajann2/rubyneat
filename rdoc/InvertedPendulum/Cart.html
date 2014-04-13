@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class InvertedPendulum::Cart - rubyneat 0.3.4</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-big_bang">#big_bang</a>
+    
+    <li ><a href="#method-i-button_down">#button_down</a>
+    
+    <li ><a href="#method-i-button_up">#button_up</a>
+    
+    <li ><a href="#method-i-draw">#draw</a>
+    
+    <li ><a href="#method-i-ipwin-3D">#ipwin=</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+    <li ><a href="#method-i-update_cart">#update_cart</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-InvertedPendulum::Cart">
+  <h1 id="class-InvertedPendulum::Cart" class="class">
+    class InvertedPendulum::Cart
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-ipwin" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ipwin</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-pix_meters" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">pix_meters</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(ipwin: nil, scale: 0.50, ang: 90.1, xpos: 500.0, ypos: 845.0, cartmass: 200.0, polemass: 100.10, bang: 10.0, thrust_decay: 2.0, window_pix_width: 1280, update_interval: 16.666666, naked: false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param ipwin – the windowed canvalss this will be shown. @param scale –
+visual scale on the canvas. @param ang   – initial angle in degrees, 0
+being the</p>
+
+<pre>positive side of the x axis.</pre>
+
+<p>@param xpos  – initial x position of the center of cart, in pixels. @param
+cartmass – in kg. included are the mass of the wheels.</p>
+
+<pre>We will not deal with the angular momentum
+of the wheels, because that&#39;s beyond the scope
+of what this is supposed to accomplish.</pre>
+
+<p>@param polemass – in kg. The mass of the pole is assumed to all</p>
+
+<pre>reside at a point at
+the knobby end.</pre>
+
+<p>@param bang     – per mouse event, how much bang (acceleration in m/s) to</p>
+
+<pre>deliver to the cart</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ipwin</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+      <span class="ruby-identifier">scale</span><span class="ruby-operator">:</span> <span class="ruby-value">0.50</span>,
+      <span class="ruby-identifier">ang</span><span class="ruby-operator">:</span> <span class="ruby-value">90.1</span>,
+      <span class="ruby-identifier">xpos</span><span class="ruby-operator">:</span> <span class="ruby-value">500.0</span>,
+      <span class="ruby-identifier">ypos</span><span class="ruby-operator">:</span> <span class="ruby-value">845.0</span>,
+      <span class="ruby-identifier">cartmass</span><span class="ruby-operator">:</span> <span class="ruby-value">200.0</span>,
+      <span class="ruby-identifier">polemass</span><span class="ruby-operator">:</span> <span class="ruby-value">100.10</span>,
+      <span class="ruby-identifier">bang</span><span class="ruby-operator">:</span> <span class="ruby-value">10.0</span>,       <span class="ruby-comment"># acceleration on a bang event</span>
+      <span class="ruby-identifier">thrust_decay</span><span class="ruby-operator">:</span> <span class="ruby-value">2.0</span>, <span class="ruby-comment"># thrust decay percentage per second</span>
+      <span class="ruby-identifier">window_pix_width</span><span class="ruby-operator">:</span> <span class="ruby-value">1280</span>,
+      <span class="ruby-identifier">update_interval</span><span class="ruby-operator">:</span> <span class="ruby-value">16.666666</span>,
+      <span class="ruby-identifier">naked</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-ivar">@t</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@bang</span> = <span class="ruby-identifier">bang</span>
+  <span class="ruby-ivar">@thrust</span> = <span class="ruby-value">0</span> <span class="ruby-comment"># accumulated bang</span>
+  <span class="ruby-ivar">@thrust_decay</span> = <span class="ruby-identifier">thrust_decay</span>
+  <span class="ruby-ivar">@scale</span> = <span class="ruby-identifier">scale</span>
+  <span class="ruby-ivar">@cart_length</span> = <span class="ruby-value">5.0</span> <span class="ruby-comment"># meters</span>
+  <span class="ruby-ivar">@pix_meters</span> = <span class="ruby-value">640.0</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scale</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@cart_length</span>
+  <span class="ruby-ivar">@ipwin</span> = <span class="ruby-identifier">ipwin</span>
+  <span class="ruby-ivar">@pix_width</span> = <span class="ruby-ivar">@ipwin</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">window_pix_width</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@ipwin</span>.<span class="ruby-identifier">pix_width</span>
+  <span class="ruby-ivar">@update_interval</span> = <span class="ruby-identifier">ipwin</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">update_interval</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@ipwin</span>.<span class="ruby-identifier">update_interval</span>
+  <span class="ruby-ivar">@cart</span> = {
+      <span class="ruby-identifier">pos</span><span class="ruby-operator">:</span> <span class="ruby-constant">Vector</span>[<span class="ruby-identifier">xpos</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@pix_meters</span>, <span class="ruby-identifier">ypos</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@pix_meters</span>, <span class="ruby-value">0</span>],
+      <span class="ruby-identifier">vel</span><span class="ruby-operator">:</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">0.0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>], <span class="ruby-comment">#speed in meters per second</span>
+      <span class="ruby-identifier">acc</span><span class="ruby-operator">:</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">0.0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>], <span class="ruby-comment">#acceleration in meters per second squared</span>
+      <span class="ruby-identifier">scale</span><span class="ruby-operator">:</span> <span class="ruby-value">0.2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scale</span>,
+      <span class="ruby-identifier">length</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-comment"># in meters, calculated from the scaled pixel length.</span>
+      <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-comment"># in meters, calculated from the scaled pixel height</span>
+      <span class="ruby-identifier">basis</span><span class="ruby-operator">:</span> {
+          <span class="ruby-identifier">horiz</span><span class="ruby-operator">:</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>], <span class="ruby-comment"># The cart is resticted to movement on the x axis</span>
+          <span class="ruby-identifier">vert</span><span class="ruby-operator">:</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>]}, <span class="ruby-comment"># so these basis vectors will never change.</span>
+      <span class="ruby-identifier">force</span><span class="ruby-operator">:</span> {},
+      <span class="ruby-identifier">mass</span><span class="ruby-operator">:</span> <span class="ruby-identifier">cartmass</span>
+  }
+
+  <span class="ruby-comment"># Pole is relative to cart, and in the image is laying horizontal.</span>
+  <span class="ruby-ivar">@pole</span> = {
+      <span class="ruby-identifier">z</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>,
+      <span class="ruby-identifier">xoff</span><span class="ruby-operator">:</span> <span class="ruby-value">0.0</span>,
+      <span class="ruby-identifier">yoff</span><span class="ruby-operator">:</span> <span class="ruby-value">0.5</span>,
+      <span class="ruby-identifier">ang</span><span class="ruby-operator">:</span> <span class="ruby-identifier">ang</span>, <span class="ruby-comment"># angle is in degrees</span>
+      <span class="ruby-identifier">dang</span><span class="ruby-operator">:</span> <span class="ruby-value">0.0</span>, <span class="ruby-comment"># degrees per second</span>
+      <span class="ruby-identifier">ddang</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-comment"># angular acceleration, degree / second ** 2</span>
+      <span class="ruby-identifier">cdang</span><span class="ruby-operator">:</span> <span class="ruby-value">0.0</span>, <span class="ruby-comment"># degrees per second, contribution from cart</span>
+      <span class="ruby-identifier">cddang</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-comment"># angular acceleration, degree / second ** 2, contribution from cart</span>
+      <span class="ruby-identifier">scale</span><span class="ruby-operator">:</span> <span class="ruby-value">0.2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scale</span>,
+      <span class="ruby-identifier">force</span><span class="ruby-operator">:</span> {}, <span class="ruby-comment"># shall hold the 2 force vectors :shaft and :radial</span>
+      <span class="ruby-identifier">basis</span><span class="ruby-operator">:</span> {}, <span class="ruby-comment"># basis (unit) vectors</span>
+      <span class="ruby-identifier">cacc</span><span class="ruby-operator">:</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>], <span class="ruby-comment"># acceleration from cart</span>
+      <span class="ruby-identifier">length</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-comment"># in meters, calculated from the scaled pixel length.</span>
+      <span class="ruby-identifier">mass</span><span class="ruby-operator">:</span> <span class="ruby-identifier">polemass</span>
+  }
+
+  <span class="ruby-comment"># Wheels is relative to cart</span>
+  <span class="ruby-ivar">@wheels</span> = [
+      {
+        <span class="ruby-identifier">ang</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>,
+        <span class="ruby-identifier">dang</span><span class="ruby-operator">:</span> <span class="ruby-value">100</span>, <span class="ruby-comment">#FIXME: delete this for this will be overwritten anyway</span>
+        <span class="ruby-identifier">xoff</span><span class="ruby-operator">:</span> <span class="ruby-value">-0.7</span>, <span class="ruby-comment"># percentage from center</span>
+        <span class="ruby-identifier">yoff</span><span class="ruby-operator">:</span> <span class="ruby-value">0.4</span>, <span class="ruby-comment"># percentage from center</span>
+        <span class="ruby-identifier">scale</span><span class="ruby-operator">:</span> <span class="ruby-value">0.2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scale</span>
+      },
+      {
+        <span class="ruby-identifier">ang</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>,
+        <span class="ruby-identifier">dang</span><span class="ruby-operator">:</span> <span class="ruby-value">12.33</span>, <span class="ruby-comment">#FIXME: delete this for this will be overwritten anyway</span>
+        <span class="ruby-identifier">xoff</span><span class="ruby-operator">:</span> <span class="ruby-value">0.7</span>,
+        <span class="ruby-identifier">yoff</span><span class="ruby-operator">:</span> <span class="ruby-value">0.4</span>,
+        <span class="ruby-identifier">scale</span><span class="ruby-operator">:</span> <span class="ruby-value">0.2</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">scale</span>
+      }
+  ]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-big_bang" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">big_bang</span><span
+            class="method-args">(bb = 0)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <pre>Provide a bang for the cart.
+Return a thrust (acc) vector (really just x)
+based on thrust</pre>
+
+<p>@param bb – bang factor, normally -1, 0, or 1, but could be</p>
+
+<pre>other values based on being a multiplier of the actual bang to be
+applied.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="big_bang-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">big_bang</span>(<span class="ruby-identifier">bb</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-comment"># FIXME: this is temporary. Eventually this will call a callback in the Neater script.</span>
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-ivar">@thrust</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>]
+  <span class="ruby-ivar">@thrust</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@bang</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">bb</span>
+  <span class="ruby-ivar">@thrust</span> <span class="ruby-operator">-=</span> <span class="ruby-ivar">@thrust</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@thrust_decay</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-button_down" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_down</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button_down-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_down</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">big_bang</span>  <span class="ruby-keyword">case</span> <span class="ruby-identifier">id</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-constant">MOUSE_ROLL_FOREWARD</span>
+                <span class="ruby-value">1.0</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-constant">MOUSE_ROLL_BACK</span>
+                <span class="ruby-value">-1.0</span>
+              <span class="ruby-keyword">else</span>
+                <span class="ruby-value">0</span>
+            <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-button_up" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button_up</span><span
+            class="method-args">(id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button_up-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button_up</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-comment"># no op for now.</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-draw" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="draw-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">draw_rot</span>( <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:_x</span>] <span class="ruby-operator">%</span> <span class="ruby-ivar">@pix_width</span>,
+                          <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:_y</span>],
+                          <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:z</span>],
+                          <span class="ruby-operator">-</span><span class="ruby-ivar">@pole</span>[<span class="ruby-value">:ang</span>], <span class="ruby-comment"># negative because y is inverted on the canvas</span>
+                          <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:xoff</span>], <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:yoff</span>],
+                          <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:scale</span>],
+                          <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:scale</span>])
+
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">draw</span>(<span class="ruby-ivar">@cart</span>[<span class="ruby-value">:_x</span>] <span class="ruby-operator">%</span> <span class="ruby-ivar">@pix_width</span>,
+                         <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:_y</span>],
+                         <span class="ruby-value">0</span>,
+                         <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:scale</span>],
+                         <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:scale</span>])
+
+  <span class="ruby-ivar">@wheels</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">wh</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">wh</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">draw_rot</span>(<span class="ruby-identifier">wh</span>[<span class="ruby-value">:_x</span>] <span class="ruby-operator">%</span> <span class="ruby-ivar">@pix_width</span>,
+                        <span class="ruby-identifier">wh</span>[<span class="ruby-value">:_y</span>],
+                        <span class="ruby-value">0</span>,
+                        <span class="ruby-identifier">wh</span>[<span class="ruby-value">:ang</span>],
+                        <span class="ruby-value">0.5</span>, <span class="ruby-value">0.5</span>,
+                        <span class="ruby-identifier">wh</span>[<span class="ruby-value">:scale</span>],
+                        <span class="ruby-identifier">wh</span>[<span class="ruby-value">:scale</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ipwin-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ipwin=</span><span
+            class="method-args">(ipwin)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ipwin-3D-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ipwin=</span>(<span class="ruby-identifier">ipwin</span>)
+  <span class="ruby-ivar">@ipwin</span> = <span class="ruby-identifier">ipwin</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:image</span>] = <span class="ruby-constant">Gosu</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ipwin</span>, <span class="ruby-string">&#39;public/cart.png&#39;</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:image</span>] = <span class="ruby-constant">Gosu</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ipwin</span>, <span class="ruby-string">&#39;public/pole.png&#39;</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@wheels</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">w</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">w</span>[<span class="ruby-value">:image</span>] = <span class="ruby-constant">Gosu</span><span class="ruby-operator">::</span><span class="ruby-constant">Image</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ipwin</span>, <span class="ruby-string">&#39;public/wheel.png&#39;</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-comment"># radius of wheel in meters, need this for rotational velocity calculation</span>
+    <span class="ruby-identifier">w</span>[<span class="ruby-value">:radius</span>] = <span class="ruby-identifier">w</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">w</span>[<span class="ruby-value">:scale</span>] <span class="ruby-operator">/</span> <span class="ruby-ivar">@pix_meters</span> <span class="ruby-operator">/</span> <span class="ruby-value">2.0</span>
+    <span class="ruby-identifier">w</span>[<span class="ruby-value">:circumference</span>] = <span class="ruby-identifier">w</span>[<span class="ruby-value">:radius</span>] <span class="ruby-operator">*</span> <span class="ruby-value">2.0</span> <span class="ruby-operator">*</span> <span class="ruby-constant">PI</span>
+  }
+
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:length</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:scale</span>] <span class="ruby-operator">/</span> <span class="ruby-ivar">@pix_meters</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:height</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:scale</span>] <span class="ruby-operator">/</span> <span class="ruby-ivar">@pix_meters</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:length</span>] = <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:scale</span>] <span class="ruby-operator">/</span> <span class="ruby-ivar">@pix_meters</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-comment">## Physics updates</span>
+  <span class="ruby-ivar">@dt</span> = <span class="ruby-ivar">@update_interval</span> <span class="ruby-operator">/</span> <span class="ruby-value">1000.0</span>
+  <span class="ruby-ivar">@t</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@dt</span>
+
+  <span class="ruby-comment">## Pole (Pendulum) forces, accelerations, etc.</span>
+  <span class="ruby-comment"># basis vectors</span>
+  <span class="ruby-identifier">ang</span> = <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:ang</span>] <span class="ruby-operator">*</span> <span class="ruby-constant">TORAD</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:time</span>] = <span class="ruby-ivar">@t</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:basis</span>][<span class="ruby-value">:shaft</span>] = <span class="ruby-identifier">iShaft</span>   = <span class="ruby-constant">Vector</span>[<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">ang</span>), <span class="ruby-identifier">sin</span>(<span class="ruby-identifier">ang</span>),  <span class="ruby-value">0</span>]
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:basis</span>][<span class="ruby-value">:radial</span>] = <span class="ruby-identifier">iRadial</span> = <span class="ruby-constant">Vector</span>[<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">ang</span>), <span class="ruby-operator">-</span><span class="ruby-identifier">cos</span>(<span class="ruby-identifier">ang</span>), <span class="ruby-value">0</span>]
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:r</span>] = <span class="ruby-identifier">r</span> = <span class="ruby-identifier">iShaft</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:length</span>]
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:shaft</span>] = <span class="ruby-identifier">iShaft</span>.<span class="ruby-identifier">basis</span>(<span class="ruby-constant">GV</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>])
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:radial</span>] = <span class="ruby-identifier">radial</span> = <span class="ruby-identifier">iRadial</span>.<span class="ruby-identifier">basis</span>(<span class="ruby-constant">GV</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>])
+  <span class="ruby-comment"># the magnitude of the radial vector goes to the torque on</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:torque</span>] = <span class="ruby-identifier">torque</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cross_product</span>(<span class="ruby-identifier">radial</span>)
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:alpha</span>] = <span class="ruby-identifier">alpha</span> = <span class="ruby-identifier">torque</span> <span class="ruby-operator">/</span> (<span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>] <span class="ruby-operator">*</span> (<span class="ruby-ivar">@pole</span>[<span class="ruby-value">:length</span>] <span class="ruby-operator">**</span> <span class="ruby-value">2.0</span>))
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:ddang</span>] = <span class="ruby-operator">-</span><span class="ruby-identifier">alpha</span>[<span class="ruby-constant">Z</span>] <span class="ruby-operator">/</span> <span class="ruby-constant">TORAD</span> <span class="ruby-comment"># the pseudo vector component Z is the signed magnitude</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:dang</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:ddang</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span> <span class="ruby-comment"># angular velocity</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:vel</span>] = <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:basis</span>][<span class="ruby-value">:radial</span>] <span class="ruby-operator">*</span> (<span class="ruby-ivar">@pole</span>[<span class="ruby-value">:dang</span>] <span class="ruby-operator">*</span> <span class="ruby-constant">TORAD</span> <span class="ruby-operator">*</span> <span class="ruby-constant">PI2</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:length</span>]) <span class="ruby-comment">#linear velocity at the pole mass</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:ang</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:dang</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+
+  <span class="ruby-comment">## Cart forces from pole [:force][:shaft] and centifugal</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:time</span>] = <span class="ruby-ivar">@t</span>
+
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:centrifugal</span>] = <span class="ruby-identifier">centrifugal</span> = (<span class="ruby-ivar">@pole</span>[<span class="ruby-value">:basis</span>][<span class="ruby-value">:shaft</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:vel</span>].<span class="ruby-identifier">magnitude</span> <span class="ruby-operator">**</span> <span class="ruby-value">2</span>) <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>]
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:shaft</span>] = <span class="ruby-identifier">shaft</span> = <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:shaft</span>] <span class="ruby-comment"># + centrifugal #FIXME cemtrifugal calculations wonky!</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:horiz</span>] = <span class="ruby-identifier">horiz</span> = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:basis</span>][<span class="ruby-value">:horiz</span>].<span class="ruby-identifier">basis</span> <span class="ruby-identifier">shaft</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:vert</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:basis</span>][<span class="ruby-value">:vert</span>].<span class="ruby-identifier">basis</span> <span class="ruby-identifier">shaft</span> <span class="ruby-comment"># not that we use the vert</span>
+
+  <span class="ruby-comment"># Now the horz force induces an acceleration on the cart.</span>
+  <span class="ruby-comment"># Any additions to the acceleration vector must be done after</span>
+  <span class="ruby-comment"># this point.</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:acc</span>] = <span class="ruby-identifier">horiz</span> <span class="ruby-operator">/</span> (<span class="ruby-ivar">@cart</span>[<span class="ruby-value">:mass</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">cos</span>(<span class="ruby-identifier">ang</span>).<span class="ruby-identifier">abs</span>)
+
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:acc</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">big_bang</span>
+
+  <span class="ruby-comment">## Cart acceleration also affects angular torque</span>
+  <span class="ruby-comment"># FIXME: Note that recalculations are being done here, which</span>
+  <span class="ruby-comment"># FIXME: are not DRY. Redo this properly later.</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:cacc</span>] = <span class="ruby-identifier">cacc</span> = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:acc</span>] <span class="ruby-operator">*</span> <span class="ruby-value">-1.0</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:cradial</span>] = <span class="ruby-identifier">radial</span> = <span class="ruby-identifier">iRadial</span>.<span class="ruby-identifier">basis</span>(<span class="ruby-identifier">cacc</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>])
+  <span class="ruby-comment"># the magnitude of the radial vector goes to the torque on</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:force</span>][<span class="ruby-value">:ctorque</span>] = <span class="ruby-identifier">torque</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cross_product</span>(<span class="ruby-identifier">radial</span>)
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:calpha</span>] = <span class="ruby-identifier">alpha</span> = <span class="ruby-identifier">torque</span> <span class="ruby-operator">/</span> (<span class="ruby-ivar">@pole</span>[<span class="ruby-value">:mass</span>] <span class="ruby-operator">*</span> (<span class="ruby-ivar">@pole</span>[<span class="ruby-value">:length</span>] <span class="ruby-operator">**</span> <span class="ruby-value">2.0</span>))
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:cddang</span>] = <span class="ruby-operator">-</span><span class="ruby-identifier">alpha</span>[<span class="ruby-constant">Z</span>] <span class="ruby-operator">/</span> <span class="ruby-constant">TORAD</span> <span class="ruby-comment"># the pseudo vector component Z is the signed magnitude</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:cdang</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:cddang</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:ang</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:cdang</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+
+  <span class="ruby-comment">## Actual cart physics</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:vel</span>][<span class="ruby-constant">X</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:acc</span>][<span class="ruby-constant">X</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:pos</span>][<span class="ruby-constant">X</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:vel</span>][<span class="ruby-constant">X</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:x</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:pos</span>][<span class="ruby-constant">X</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@pix_meters</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:y</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:pos</span>][<span class="ruby-constant">Y</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@pix_meters</span>
+
+  <span class="ruby-comment">#puts &#39;=&#39; * 80</span>
+  <span class="ruby-comment">#pp({pole: @pole, cart: @cart})</span>
+
+  <span class="ruby-comment"># wheels physics -- angular velocity of each wheel based</span>
+  <span class="ruby-comment"># on the linear velocity of the cart.</span>
+  <span class="ruby-ivar">@wheels</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">w</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">w</span>[<span class="ruby-value">:dang</span>] = <span class="ruby-value">360.0</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:vel</span>][<span class="ruby-constant">X</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">w</span>[<span class="ruby-value">:circumference</span>]
+    <span class="ruby-identifier">w</span>[<span class="ruby-value">:ang</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">w</span>[<span class="ruby-value">:dang</span>] <span class="ruby-operator">*</span> <span class="ruby-ivar">@dt</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># model update</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">update_cart</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_cart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_cart</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>update the positions of all the compnents of the cart in terms of the
+relative positional relationships</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update_cart-source">
+            <pre><span class="ruby-comment"># File neater/rnlib/inverted_pendulum.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_cart</span>
+  <span class="ruby-comment"># center of cart is taken as (x, y), actual is (_x, _y)</span>
+  <span class="ruby-identifier">pw</span> = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:scale</span>]
+  <span class="ruby-identifier">ph</span> = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:scale</span>]
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:_x</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:x</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">pw</span> <span class="ruby-operator">/</span> <span class="ruby-value">2.0</span>
+  <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:_y</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:y</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">ph</span> <span class="ruby-operator">/</span> <span class="ruby-value">2.0</span>
+
+  <span class="ruby-comment"># Wheels in their respective places</span>
+  <span class="ruby-ivar">@wheels</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">wl</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment">#ww = wl[:image].width * wl[:scale]</span>
+    <span class="ruby-comment">#wh = wl[:image].height * wl[:scale]</span>
+    <span class="ruby-identifier">wl</span>[<span class="ruby-value">:_x</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:x</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">wl</span>[<span class="ruby-value">:xoff</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">pw</span> <span class="ruby-operator">/</span> <span class="ruby-value">2.0</span>
+    <span class="ruby-identifier">wl</span>[<span class="ruby-value">:_y</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:y</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">wl</span>[<span class="ruby-value">:yoff</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">ph</span> <span class="ruby-operator">/</span> <span class="ruby-value">2.0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Pendulum</span>
+  <span class="ruby-identifier">polew</span> = <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">width</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:scale</span>]
+  <span class="ruby-identifier">poleh</span> = <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:image</span>].<span class="ruby-identifier">height</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:scale</span>]
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:_x</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:x</span>]
+  <span class="ruby-ivar">@pole</span>[<span class="ruby-value">:_y</span>] = <span class="ruby-ivar">@cart</span>[<span class="ruby-value">:y</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

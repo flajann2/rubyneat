@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class NEAT::Population - rubyneat 0.3.4</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">NeatOb
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-analyze-21">#analyze!</a>
+    
+    <li ><a href="#method-i-best_critter">#best_critter</a>
+    
+    <li ><a href="#method-i-dump_s">#dump_s</a>
+    
+    <li ><a href="#method-i-evaluate-21">#evaluate!</a>
+    
+    <li ><a href="#method-i-evolve">#evolve</a>
+    
+    <li ><a href="#method-i-express-21">#express!</a>
+    
+    <li ><a href="#method-i-initialize_for_recurrence-21">#initialize_for_recurrence!</a>
+    
+    <li ><a href="#method-i-mutate-21">#mutate!</a>
+    
+    <li ><a href="#method-i-report">#report</a>
+    
+    <li ><a href="#method-i-report_best_fit">#report_best_fit</a>
+    
+    <li ><a href="#method-i-report_fitness">#report_fitness</a>
+    
+    <li ><a href="#method-i-report_fitness_species">#report_fitness_species</a>
+    
+    <li ><a href="#method-i-report_worst_fit">#report_worst_fit</a>
+    
+    <li ><a href="#method-i-speciate-21">#speciate!</a>
+    
+    <li ><a href="#method-i-worst_critter">#worst_critter</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-NEAT::Population">
+  <h1 id="class-NEAT::Population" class="class">
+    class NEAT::Population
+  </h1>
+
+  <section class="description">
+    
+<h1 id="class-NEAT::Population-label-Population+of+NEAT+Critters."><a href="Population.html">Population</a> of <a href="../NEAT.html">NEAT</a> Critters.<span><a href="#class-NEAT::Population-label-Population+of+NEAT+Critters.">&para;</a> <a href="#documentation">&uarr;</a></span></h1>
+
+<pre>The Population 
+In ourselves we have the pool of neurons the critters all use.
+the pool of neurons are indirects, of course, as during phenotype
+expression, all the phenotypes shall be created individually.</pre>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-critters" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">critters</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>list of critter in this population</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-fitness" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fitness</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Overall population fitness and novelty</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-hidden_neurons" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">hidden_neurons</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>List of possible neuron classes for hidden neurons.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-input_neurons" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">input_neurons</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Ordered list or hash of input neuron classes  (all critters generated here
+shall have this)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-novelty" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">novelty</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Overall population fitness and novelty</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-output_neurons" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">output_neurons</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Ordered list or hash of output neuron classes (all critters generated here
+shall have this)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-species" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">species</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Hash list of species lists</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-traits" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">traits</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(c, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create initial (ramdom) population of critters</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">c</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@input_neurons</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">neural_inputs</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@output_neurons</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">neural_outputs</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@hidden_neurons</span> = <span class="ruby-keyword">unless</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">neural_hidden</span>.<span class="ruby-identifier">nil?</span>
+                      <span class="ruby-identifier">c</span>.<span class="ruby-identifier">neural_hidden</span>
+                    <span class="ruby-keyword">else</span>
+                      <span class="ruby-identifier">c</span>.<span class="ruby-identifier">neuron_catalog</span>.<span class="ruby-identifier">keep_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">input?</span>}
+                    <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@critters</span> = (<span class="ruby-value">0</span> <span class="ruby-operator">...</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">start_population_size</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">parms</span>.<span class="ruby-identifier">population_size</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Critter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">block</span>.(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-analyze-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">analyze!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Alalyze evaluation results.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="analyze-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">analyze!</span>
+   <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">critter</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">evaluator</span>.<span class="ruby-identifier">analyze_for_fitness!</span> <span class="ruby-identifier">critter</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-best_critter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">best_critter</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The “best critter” is the critter with the lowest (closet to zero) fitness
+rating.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="best_critter-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">best_critter</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">compare_func</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">min</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">compare_func</span>.(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">fitness</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">fitness</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">min</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">fitness</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">fitness</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-dump_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dump_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dump_s-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dump_s</span>
+  <span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\npopulation:\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">crit</span><span class="ruby-operator">|</span> <span class="ruby-identifier">crit</span>.<span class="ruby-identifier">dump_s</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-evaluate-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Called for each sequence.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate!</span>
+   <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">critter</span><span class="ruby-operator">|</span> <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">evaluate!</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-evolve" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evolve</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Call this after evaluation. Returns a newly-evolved population.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="evolve-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evolve</span>
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">evolver</span>.<span class="ruby-identifier">evolve</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-express-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">express!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Express the entire population.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="express-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">express!</span>
+   <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">critter</span><span class="ruby-operator">|</span> <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">express!</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-initialize_for_recurrence-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize_for_recurrence!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Make sure all critters are reset and prepared for recurrent network
+evaluation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="initialize_for_recurrence-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize_for_recurrence!</span>
+  <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">crit</span><span class="ruby-operator">|</span> <span class="ruby-identifier">crit</span>.<span class="ruby-identifier">initialize_neurons!</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-mutate-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mutate!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mutate the genes and neurons.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mutate-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mutate!</span>
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">evolver</span>.<span class="ruby-identifier">mutate!</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-report" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <h2 id="method-i-report-label-Generate+a+report+on+the+state+of+this+population.">Generate a report on the state of this population.<span><a href="#method-i-report-label-Generate+a+report+on+the+state+of+this+population.">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+          
+          
+
+          
+          <div class="method-source-code" id="report-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report</span>
+  {
+      <span class="ruby-identifier">fitness</span><span class="ruby-operator">:</span>         <span class="ruby-identifier">report_fitness</span>,
+      <span class="ruby-identifier">fitness_species</span><span class="ruby-operator">:</span> <span class="ruby-identifier">report_fitness_species</span>,
+      <span class="ruby-identifier">best_critter</span><span class="ruby-operator">:</span>    <span class="ruby-identifier">report_best_fit</span>,
+      <span class="ruby-identifier">worst_critter</span><span class="ruby-operator">:</span>   <span class="ruby-identifier">report_worst_fit</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-speciate-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">speciate!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <pre>Group critters into species
+Note that the @species objects
+have useful singleton methods:</pre>
+<ul><li>
+<p>@species.member? – checks all of the lists for membership, not just the
+hash</p>
+</li><li>
+<p>@<a href="crit">species</a>.fitness – fitness of the entire species</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="speciate-21-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">speciate!</span>
+  <span class="ruby-comment"># We blow away existing species and create our own member? function</span>
+  <span class="ruby-ivar">@species</span> = {} <span class="ruby-comment"># lists keyed by representative critter</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">crit</span>)
+    <span class="ruby-keyword">super</span>.<span class="ruby-identifier">member?</span>(<span class="ruby-identifier">crit</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">li</span><span class="ruby-operator">|</span> <span class="ruby-identifier">li</span>.<span class="ruby-identifier">member?</span> <span class="ruby-identifier">crit</span>}.<span class="ruby-identifier">reduce</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">t1</span>, <span class="ruby-identifier">t2</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t1</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">t2</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">evaluate!</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">sp</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">sp</span>.<span class="ruby-identifier">fitness</span> = <span class="ruby-identifier">sp</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">crit</span><span class="ruby-operator">|</span> <span class="ruby-identifier">crit</span>.<span class="ruby-identifier">fitness</span>}.<span class="ruby-identifier">reduce</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span><span class="ruby-operator">+</span><span class="ruby-identifier">b</span>} <span class="ruby-operator">/</span> <span class="ruby-identifier">sp</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">compactify!</span>(<span class="ruby-identifier">parm</span>)
+    <span class="ruby-identifier">mutt</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">:mutt</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">splist</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">splist</span>]}.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">splist</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">splist</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">parm</span>.<span class="ruby-identifier">smallest_species</span>
+    }.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">splist</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">k</span>
+      <span class="ruby-identifier">splist</span>
+    }.<span class="ruby-identifier">flatten</span>
+
+    <span class="ruby-comment"># FIXME this code is not dry!!!!</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">mutt</span>.<span class="ruby-identifier">fitness=</span>(<span class="ruby-identifier">fit</span>)
+      <span class="ruby-ivar">@fitness</span> = <span class="ruby-identifier">fit</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">mutt</span>.<span class="ruby-identifier">fitness</span>
+      <span class="ruby-ivar">@fitness</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:mutt</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:mutt</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Some convience parms</span>
+  <span class="ruby-identifier">parm</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">parms</span>
+
+  <span class="ruby-comment"># And so now we iterate...</span>
+  <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">crit</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">wearein</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ck</span>, <span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">delta</span> = <span class="ruby-identifier">crit</span>.<span class="ruby-identifier">compare</span>(<span class="ruby-identifier">ck</span>)
+      <span class="ruby-comment">#log.debug { &quot;delta for #{crit} and #{ck} is #{delta}&quot; }</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">delta</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">parm</span>.<span class="ruby-identifier">compatibility_threshold</span>
+        <span class="ruby-identifier">list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">crit</span>
+        <span class="ruby-identifier">wearein</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># New species?</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">wearein</span>
+      <span class="ruby-ivar">@species</span>[<span class="ruby-identifier">crit</span>] = <span class="ruby-identifier">species</span> = [<span class="ruby-identifier">crit</span>]
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">species</span>.<span class="ruby-identifier">fitness=</span>(<span class="ruby-identifier">fit</span>)
+        <span class="ruby-ivar">@fitness</span> = <span class="ruby-identifier">fit</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">species</span>.<span class="ruby-identifier">fitness</span>
+        <span class="ruby-ivar">@fitness</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Compactify the species if less than smallest_species</span>
+  <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">compactify!</span> <span class="ruby-identifier">parm</span>
+
+  <span class="ruby-comment"># And now we evaluate all species for fitness...</span>
+  <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">evaluate!</span>
+
+  <span class="ruby-comment"># Dump for debugging reasons</span>
+  <span class="ruby-ivar">@species</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">sp</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;&gt;&gt; Species #{k} has #{sp.size} members with a #{sp.fitness} fitness&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-worst_critter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">worst_critter</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The “worst critter” is the critter with the highest (away from zero)
+fitness rating.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="worst_critter-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">worst_critter</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">compare_func</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">max</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">compare_func</span>.(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">fitness</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">fitness</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">max</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">fitness</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">fitness</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-report_best_fit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_best_fit</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find the best fit critter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="report_best_fit-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_best_fit</span>
+  <span class="ruby-identifier">best_critter</span>.<span class="ruby-identifier">phenotype</span>.<span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-report_fitness" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_fitness</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>report on many fitness metrics</p>
+          
+          
+
+          
+          <div class="method-source-code" id="report_fitness-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_fitness</span>
+  {
+      <span class="ruby-identifier">overall</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">critter</span><span class="ruby-operator">|</span> <span class="ruby-identifier">critter</span>.<span class="ruby-identifier">fitness</span>}.<span class="ruby-identifier">reduce</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">m</span>, <span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">f</span>} <span class="ruby-operator">/</span> <span class="ruby-ivar">@critters</span>.<span class="ruby-identifier">size</span>,
+      <span class="ruby-identifier">best</span><span class="ruby-operator">:</span> <span class="ruby-identifier">best_critter</span>.<span class="ruby-identifier">fitness</span>,
+      <span class="ruby-identifier">worst</span><span class="ruby-operator">:</span> <span class="ruby-identifier">worst_critter</span>.<span class="ruby-identifier">fitness</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-report_fitness_species" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_fitness_species</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>report on the best and worst species</p>
+          
+          
+
+          
+          <div class="method-source-code" id="report_fitness_species-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_fitness_species</span>
+  {
+    <span class="ruby-identifier">best</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+    <span class="ruby-identifier">worst</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-report_worst_fit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_worst_fit</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find the worst fit critter</p>
+          
+          
+
+          
+          <div class="method-source-code" id="report_worst_fit-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/population.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_worst_fit</span>
+  <span class="ruby-identifier">worst_critter</span>.<span class="ruby-identifier">phenotype</span>.<span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

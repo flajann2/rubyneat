@@ -1,0 +1,3324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>NeatSettings.html - rubyneat 0.3.4</title>
+
+<link href="../../../fonts.css" rel="stylesheet">
+<link href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/search_index.js"></script>
+<script src="../../../js/search.js"></script>
+<script src="../../../js/searcher.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../doc/ControllerPoint_html.html">ControllerPoint.html</a>
+  
+    <li><a href="../../../doc/CuteA_html.html">CuteA.html</a>
+  
+    <li><a href="../../../doc/CuteB_html.html">CuteB.html</a>
+  
+    <li><a href="../../../doc/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../../doc/NEAT_html.html">NEAT.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes_html.html">BasicNeuronTypes.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/BiasNeuron_html.html">BiasNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/CosineNeuron_html.html">CosineNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/InputNeuron_html.html">InputNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/SigmoidNeuron_html.html">SigmoidNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/SineNeuron_html.html">SineNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/TanhNeuron_html.html">TanhNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/Controller_html.html">Controller.html</a>
+  
+    <li><a href="../../../doc/NEAT/Controller/NeatSettings_html.html">NeatSettings.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter_html.html">Critter.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter/Genotype_html.html">Genotype.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter/Genotype/Gene_html.html">Gene.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter/Phenotype_html.html">Phenotype.html</a>
+  
+    <li><a href="../../../doc/NEAT/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../../doc/NEAT/Evaluator_html.html">Evaluator.html</a>
+  
+    <li><a href="../../../doc/NEAT/Evolver_html.html">Evolver.html</a>
+  
+    <li><a href="../../../doc/NEAT/Evolver/CritterOp_html.html">CritterOp.html</a>
+  
+    <li><a href="../../../doc/NEAT/Expressor_html.html">Expressor.html</a>
+  
+    <li><a href="../../../doc/NEAT/Graph_html.html">Graph.html</a>
+  
+    <li><a href="../../../doc/NEAT/Graph/DependencyResolver_html.html">DependencyResolver.html</a>
+  
+    <li><a href="../../../doc/NEAT/Graph/GraphException_html.html">GraphException.html</a>
+  
+    <li><a href="../../../doc/NEAT/NeatException_html.html">NeatException.html</a>
+  
+    <li><a href="../../../doc/NEAT/NeatOb_html.html">NeatOb.html</a>
+  
+    <li><a href="../../../doc/NEAT/Neuron_html.html">Neuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/Operator_html.html">Operator.html</a>
+  
+    <li><a href="../../../doc/NEAT/Population_html.html">Population.html</a>
+  
+    <li><a href="../../../doc/NEAT/Trait_html.html">Trait.html</a>
+  
+    <li><a href="../../../doc/_index_html.html">_index.html</a>
+  
+    <li><a href="../../../doc/class_list_html.html">class_list.html</a>
+  
+    <li><a href="../../../doc/css/common_css.html">common.css</a>
+  
+    <li><a href="../../../doc/css/full_list_css.html">full_list.css</a>
+  
+    <li><a href="../../../doc/css/style_css.html">style.css</a>
+  
+    <li><a href="../../../doc/file_list_html.html">file_list.html</a>
+  
+    <li><a href="../../../doc/frames_html.html">frames.html</a>
+  
+    <li><a href="../../../doc/index_html.html">index.html</a>
+  
+    <li><a href="../../../doc/js/app_js.html">app.js</a>
+  
+    <li><a href="../../../doc/js/full_list_js.html">full_list.js</a>
+  
+    <li><a href="../../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../../doc/method_list_html.html">method_list.html</a>
+  
+    <li><a href="../../../doc/top-level-namespace_html.html">top-level-namespace.html</a>
+  
+    <li><a href="../../../foo_dump_log.html">foo.dump.log</a>
+  
+    <li><a href="../../../rubyneat_gemspec.html">rubyneat.gemspec</a>
+  
+    <li><a href="../../../xordebug_log.html">xordebug.log</a>
+  
+    <li><a href="../../../xorsin_log.html">xorsin.log</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/NEAT/Controller/NeatSettings.html">
+
+<p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”</p>
+
+<pre>&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</pre>
+
+<p>&lt;html xmlns=“<a
+href="http://www.w3.org/1999/xhtml">www.w3.org/1999/xhtml</a>”
+xml:lang=“en” lang=“en”&gt;</p>
+
+<pre>&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</pre>
+
+<p>&lt;title&gt;</p>
+
+<pre>Class: NEAT::Controller::NeatSettings
+
+  &amp;mdash; Documentation by YARD 0.8.7.3</pre>
+
+<p>&lt;/title&gt;</p>
+
+<pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/style.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/common.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;</pre>
+
+<p>&lt;script type=“text/javascript” charset=“utf-8”&gt;</p>
+
+<pre>hasFrames = window.top.frames.main ? true : false;
+relpath = &#39;../../&#39;;
+framesUrl = &quot;../../frames.html#!&quot; + escape(window.location.href);</pre>
+
+<p>&lt;/script&gt;</p>
+
+<pre>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;../../js/jquery.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;../../js/app.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;header&quot;&gt;
+    &lt;div id=&quot;menu&quot;&gt;
+
+  &lt;a href=&quot;../../_index.html&quot;&gt;Index (N)&lt;/a&gt; &amp;raquo;
+  &lt;span class=&#39;title&#39;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../../NEAT.html&quot; title=&quot;NEAT (module)&quot;&gt;NEAT&lt;/a&gt;&lt;/span&gt;&lt;/span&gt; &amp;raquo; &lt;span class=&#39;title&#39;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../Controller.html&quot; title=&quot;NEAT::Controller (class)&quot;&gt;Controller&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+   &amp;raquo; 
+  &lt;span class=&quot;title&quot;&gt;NeatSettings&lt;/span&gt;
+
+&lt;div class=&quot;noframes&quot;&gt;&lt;span class=&quot;title&quot;&gt;(&lt;/span&gt;&lt;a href=&quot;.&quot; target=&quot;_top&quot;&gt;no frames&lt;/a&gt;&lt;span class=&quot;title&quot;&gt;)&lt;/span&gt;&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div id=&quot;search&quot;&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;class_list_link&quot;
+    href=&quot;../../class_list.html&quot;&gt;
+  Class List
+&lt;/a&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;method_list_link&quot;
+    href=&quot;../../method_list.html&quot;&gt;
+  Method List
+&lt;/a&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;file_list_link&quot;
+    href=&quot;../../file_list.html&quot;&gt;
+  File List
+&lt;/a&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;iframe id=&quot;search_frame&quot;&gt;&lt;/iframe&gt;
+
+&lt;div id=&quot;content&quot;&gt;&lt;h1&gt;Class: NEAT::Controller::NeatSettings</pre>
+
+<p>&lt;/h1&gt;</p>
+
+<p>&lt;dl class=“box”&gt;</p>
+
+<pre>&lt;dt class=&quot;r1&quot;&gt;Inherits:&lt;/dt&gt;
+&lt;dd class=&quot;r1&quot;&gt;
+  &lt;span class=&quot;inheritName&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+
+    &lt;ul class=&quot;fullTree&quot;&gt;
+      &lt;li&gt;Object&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;NEAT::Controller::NeatSettings&lt;/li&gt;
+
+    &lt;/ul&gt;
+    &lt;a href=&quot;#&quot; class=&quot;inheritanceTree&quot;&gt;show all&lt;/a&gt;
+
+  &lt;/dd&gt;
+
+&lt;dt class=&quot;r2 last&quot;&gt;Defined in:&lt;/dt&gt;
+&lt;dd class=&quot;r2 last&quot;&gt;lib/rubyneat/rubyneat.rb&lt;/dd&gt;</pre>
+
+<p>&lt;/dl&gt; &lt;div class=“clear”&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Overview&lt;/h2&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Various parameters affecting evolution. Based somewhat on the C
+version of <a href="../../../NEAT.html">NEAT</a>. TODO not all of these
+parameters are implemented yet!!!&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;h2&gt;Instance Attribute Summary &lt;small&gt;(&lt;a href=&quot;#&quot; class=&quot;summary_toggle&quot;&gt;collapse&lt;/a&gt;)&lt;/small&gt;&lt;/h2&gt;
+&lt;ul class=&quot;summary&quot;&gt;
+
+    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#age_significance-instance_method&quot; title=&quot;#age_significance (instance method)&quot;&gt;- (Object) &lt;strong&gt;age_significance&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;based on the C version of <a
+href="../../../NEAT.html">NEAT</a>.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#babies_stolen-instance_method&quot; title=&quot;#babies_stolen (instance method)&quot;&gt;- (Object) &lt;strong&gt;babies_stolen&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute babies_stolen.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#compatibility_threshold-instance_method&quot; title=&quot;#compatibility_threshold (instance method)&quot;&gt;- (Object) &lt;strong&gt;compatibility_threshold&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Species compatability threshold.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#disjoint_coefficient-instance_method&quot; title=&quot;#disjoint_coefficient (instance method)&quot;&gt;- (Object) &lt;strong&gt;disjoint_coefficient&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Speciation coffficient.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#dropoff_age-instance_method&quot; title=&quot;#dropoff_age (instance method)&quot;&gt;- (Object) &lt;strong&gt;dropoff_age&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Species Peality age for not making progress.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#end_sequence_at-instance_method&quot; title=&quot;#end_sequence_at (instance method)&quot;&gt;- (Object) &lt;strong&gt;end_sequence_at&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute end_sequence_at.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#evolved_substrate_switch-instance_method&quot; title=&quot;#evolved_substrate_switch (instance method)&quot;&gt;- (Object) &lt;strong&gt;evolved_substrate_switch&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Enable Evolved Substrate HyperNEAT.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#excess_coefficient-instance_method&quot; title=&quot;#excess_coefficient (instance method)&quot;&gt;- (Object) &lt;strong&gt;excess_coefficient&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Speciation coffficient.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#feature_selection_switch-instance_method&quot; title=&quot;#feature_selection_switch (instance method)&quot;&gt;- (Object) &lt;strong&gt;feature_selection_switch&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Enable FS-NEAT.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#fitness_cost_per_gene-instance_method&quot; title=&quot;#fitness_cost_per_gene (instance method)&quot;&gt;- (Object) &lt;strong&gt;fitness_cost_per_gene&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute fitness_cost_per_gene.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#fitness_cost_per_neuron-instance_method&quot; title=&quot;#fitness_cost_per_neuron (instance method)&quot;&gt;- (Object) &lt;strong&gt;fitness_cost_per_neuron&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;fitness costs, if given, use in the computation of fitness AFTER
+the overall fitness for the applied stimuli have been caclulated.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#hash_on_fitness-instance_method&quot; title=&quot;#hash_on_fitness (instance method)&quot;&gt;- (Object) &lt;strong&gt;hash_on_fitness&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Set to true to returned named parameters as hashes to the fitness
+function (the default is to do ordered arrays).&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#hyper_switch-instance_method&quot; title=&quot;#hyper_switch (instance method)&quot;&gt;- (Object) &lt;strong&gt;hyper_switch&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Enable HyperNEAT.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#interspecies_mate_rate-instance_method&quot; title=&quot;#interspecies_mate_rate (instance method)&quot;&gt;- (Object) &lt;strong&gt;interspecies_mate_rate&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Ratio of mating are actually interspecies.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#linktrait_mutation_sig-instance_method&quot; title=&quot;#linktrait_mutation_sig (instance method)&quot;&gt;- (Object) &lt;strong&gt;linktrait_mutation_sig&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute linktrait_mutation_sig.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mate_multipoint_avg_prob-instance_method&quot; title=&quot;#mate_multipoint_avg_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mate_multipoint_avg_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_multipoint_avg_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mate_multipoint_prob-instance_method&quot; title=&quot;#mate_multipoint_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mate_multipoint_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_multipoint_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mate_only_prob-instance_method&quot; title=&quot;#mate_only_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mate_only_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_only_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mate_singlepoint_prob-instance_method&quot; title=&quot;#mate_singlepoint_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mate_singlepoint_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_singlepoint_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#max_generations-instance_method&quot; title=&quot;#max_generations (instance method)&quot;&gt;- (Object) &lt;strong&gt;max_generations&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Maximum number of generations to run, if given.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#max_population_history-instance_method&quot; title=&quot;#max_population_history (instance method)&quot;&gt;- (Object) &lt;strong&gt;max_population_history&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Maximun number of populations to maintain in the history
+buffer.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#max_species-instance_method&quot; title=&quot;#max_species (instance method)&quot;&gt;- (Object) &lt;strong&gt;max_species&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Max target number of species (will result in the
+compatability_coeifficient being adjusted automatically.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_add_gene_prob-instance_method&quot; title=&quot;#mutate_add_gene_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_add_gene_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_add_gene_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_add_neuron_prob-instance_method&quot; title=&quot;#mutate_add_neuron_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_add_neuron_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_add_neuron_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_change_gene_weights_prob-instance_method&quot; title=&quot;#mutate_change_gene_weights_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_change_gene_weights_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites).&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_change_gene_weights_sd-instance_method&quot; title=&quot;#mutate_change_gene_weights_sd (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_change_gene_weights_sd&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites).&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_gene_disable_prob-instance_method&quot; title=&quot;#mutate_gene_disable_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_gene_disable_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_gene_disable_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_gene_reenable_prob-instance_method&quot; title=&quot;#mutate_gene_reenable_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_gene_reenable_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute
+mutate_gene_reenable_prob.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_gene_trait_prob-instance_method&quot; title=&quot;#mutate_gene_trait_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_gene_trait_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_gene_trait_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_neuron_trait_prob-instance_method&quot; title=&quot;#mutate_neuron_trait_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_neuron_trait_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_neuron_trait_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_only_prob-instance_method&quot; title=&quot;#mutate_only_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_only_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_only_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_perturb_gene_weights_prob-instance_method&quot; title=&quot;#mutate_perturb_gene_weights_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_perturb_gene_weights_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites).&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_perturb_gene_weights_sd-instance_method&quot; title=&quot;#mutate_perturb_gene_weights_sd (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_perturb_gene_weights_sd&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites).&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_random_trait_prob-instance_method&quot; title=&quot;#mutate_random_trait_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_random_trait_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_random_trait_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutate_toggle_enable_prob-instance_method&quot; title=&quot;#mutate_toggle_enable_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutate_toggle_enable_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute
+mutate_toggle_enable_prob.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#mutdiff_coefficient-instance_method&quot; title=&quot;#mutdiff_coefficient (instance method)&quot;&gt;- (Object) &lt;strong&gt;mutdiff_coefficient&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutdiff_coefficient.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#neuron_trait_mut_sig-instance_method&quot; title=&quot;#neuron_trait_mut_sig (instance method)&quot;&gt;- (Object) &lt;strong&gt;neuron_trait_mut_sig&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute neuron_trait_mut_sig.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#newlink_tries-instance_method&quot; title=&quot;#newlink_tries (instance method)&quot;&gt;- (Object) &lt;strong&gt;newlink_tries&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute newlink_tries.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#population_size-instance_method&quot; title=&quot;#population_size (instance method)&quot;&gt;- (Object) &lt;strong&gt;population_size&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;If set, will start off at the specified size and  grow to the
+bigger population size.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#print_every-instance_method&quot; title=&quot;#print_every (instance method)&quot;&gt;- (Object) &lt;strong&gt;print_every&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute print_every.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#real_time_switch-instance_method&quot; title=&quot;#real_time_switch (instance method)&quot;&gt;- (Object) &lt;strong&gt;real_time_switch&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Enable RT-NEAT, for gradual evolution suitable for games and other
+human-interactive systems.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#recur_only_prob-instance_method&quot; title=&quot;#recur_only_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;recur_only_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute recur_only_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#recur_prob-instance_method&quot; title=&quot;#recur_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;recur_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute recur_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#recurrency_switch-instance_method&quot; title=&quot;#recurrency_switch (instance method)&quot;&gt;- (Object) &lt;strong&gt;recurrency_switch&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;If true, allow for recurrent networks.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#smallest_species-instance_method&quot; title=&quot;#smallest_species (instance method)&quot;&gt;- (Object) &lt;strong&gt;smallest_species&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Species smallest population allowed (coalse smaller species into
+one).&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#start_population_size-instance_method&quot; title=&quot;#start_population_size (instance method)&quot;&gt;- (Object) &lt;strong&gt;start_population_size&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;If set, will start off at the specified size and  grow to the
+bigger population size.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#start_sequence_at-instance_method&quot; title=&quot;#start_sequence_at (instance method)&quot;&gt;- (Object) &lt;strong&gt;start_sequence_at&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute start_sequence_at.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#survival_mininum_per_species-instance_method&quot; title=&quot;#survival_mininum_per_species (instance method)&quot;&gt;- (Object) &lt;strong&gt;survival_mininum_per_species&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute
+survival_mininum_per_species.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#survival_threshold-instance_method&quot; title=&quot;#survival_threshold (instance method)&quot;&gt;- (Object) &lt;strong&gt;survival_threshold&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;factor (0 to 1) of the top percentage of the species
+that&amp;#39;s allowed to mate.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#trait_mutation_power-instance_method&quot; title=&quot;#trait_mutation_power (instance method)&quot;&gt;- (Object) &lt;strong&gt;trait_mutation_power&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute trait_mutation_power.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#trait_param_mut_prob-instance_method&quot; title=&quot;#trait_param_mut_prob (instance method)&quot;&gt;- (Object) &lt;strong&gt;trait_param_mut_prob&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute trait_param_mut_prob.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#weigh_mut_power-instance_method&quot; title=&quot;#weigh_mut_power (instance method)&quot;&gt;- (Object) &lt;strong&gt;weigh_mut_power&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute weigh_mut_power.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>    &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#weight_coefficient-instance_method&quot; title=&quot;#weight_coefficient (instance method)&quot;&gt;- (Object) &lt;strong&gt;weight_coefficient&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Speciation coffficient.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>&lt;/ul&gt;
+
+&lt;h3 class=&quot;inherited&quot;&gt;Attributes inherited from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p class=&quot;inherited&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#controller-instance_method&quot; title=&quot;NEAT::NeatOb#controller (method)&quot;&gt;#controller&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#name-instance_method&quot; title=&quot;NEAT::NeatOb#name (method)&quot;&gt;#name&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+  &lt;h2&gt;
+    Instance Method Summary
+    &lt;small&gt;(&lt;a href=&quot;#&quot; class=&quot;summary_toggle&quot;&gt;collapse&lt;/a&gt;)&lt;/small&gt;
+  &lt;/h2&gt;
+
+  &lt;ul class=&quot;summary&quot;&gt;
+
+      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#initialize-instance_method&quot; title=&quot;#initialize (instance method)&quot;&gt;- (NeatSettings) &lt;strong&gt;initialize&lt;/strong&gt; &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;note title constructor&quot;&gt;constructor&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Set up defaults for mandatory entries.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>  &lt;/ul&gt;
+
+&lt;h3 class=&quot;inherited&quot;&gt;Methods inherited from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p class=&quot;inherited&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#log-instance_method&quot; title=&quot;NEAT::NeatOb#log (method)&quot;&gt;#log&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#log-class_method&quot; title=&quot;NEAT::NeatOb.log (method)&quot;&gt;log&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#to_s-instance_method&quot; title=&quot;NEAT::NeatOb#to_s (method)&quot;&gt;#to_s&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;div id=&quot;constructor_details&quot; class=&quot;method_details_list&quot;&gt;
+&lt;h2&gt;Constructor Details&lt;/h2&gt;
+
+  &lt;div class=&quot;method_details first&quot;&gt;
+&lt;h3 class=&quot;signature first&quot; id=&quot;initialize-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;&quot; title=&quot;NEAT::Controller::NeatSettings (class)&quot;&gt;NeatSettings&lt;/a&gt;&lt;/span&gt;&lt;/tt&gt;) &lt;strong&gt;initialize&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Set up defaults for mandatory entries.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>318 319 320 321 322 323 324 325 326 327 328&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 318&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_initialize&#39;&gt;initialize&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;kw&#39;&gt;super&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@start_sequence_at&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;int&#39;&gt;0&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@end_sequence_at&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;int&#39;&gt;100&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@max_generations&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;int&#39;&gt;1000&lt;/span&gt;
+
+&lt;span class=&#39;comment&#39;&gt;# Default operators</pre>
+
+<p>&lt;/span&gt;  &lt;span class=&#39;ivar&#39;&gt;@evaluator&lt;/span&gt;
+&lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span
+class=&#39;const&#39;&gt;Evaluator&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_new&#39;&gt;new&lt;/span&gt; &lt;span
+class=&#39;kw&#39;&gt;self&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@expressor&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;Expressor&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_new&#39;&gt;new&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;self&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@evolver&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;Evolver&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_new&#39;&gt;new&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;self&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;div id=&quot;instance_attr_details&quot; class=&quot;attr_details&quot;&gt;
+  &lt;h2&gt;Instance Attribute Details&lt;/h2&gt;
+
+    &lt;span id=&quot;age_significance=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details first&quot;&gt;
+&lt;h3 class=&quot;signature first&quot; id=&quot;age_significance-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;age_significance&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;based on the C version of <a
+href="../../../NEAT.html">NEAT</a>&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>217 218 219&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 217&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_age_significance&#39;&gt;age_significance&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@age_significance&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;babies_stolen=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;babies_stolen-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;babies_stolen&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute babies_stolen&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>218 219 220&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 218&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_babies_stolen&#39;&gt;babies_stolen&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@babies_stolen&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;compatibility_threshold=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;compatibility_threshold-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;compatibility_threshold&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Species compatability threshold&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>221 222 223&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 221&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_compatibility_threshold&#39;&gt;compatibility_threshold&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@compatibility_threshold&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;disjoint_coefficient=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;disjoint_coefficient-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;disjoint_coefficient&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Speciation coffficient&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>224 225 226&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 224&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_disjoint_coefficient&#39;&gt;disjoint_coefficient&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@disjoint_coefficient&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;dropoff_age=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;dropoff_age-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;dropoff_age&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Species Peality age for not making progress&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>231 232 233&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 231&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_dropoff_age&#39;&gt;dropoff_age&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@dropoff_age&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;end_sequence_at=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;end_sequence_at-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;end_sequence_at&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute end_sequence_at&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>283 284 285&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 283&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_end_sequence_at&#39;&gt;end_sequence_at&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@end_sequence_at&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;evolved_substrate_switch=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;evolved_substrate_switch-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;evolved_substrate_switch&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Enable Evolved Substrate HyperNEAT. Meaningless unless
+hyper_switch is also enabled.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>308 309 310&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 308&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_evolved_substrate_switch&#39;&gt;evolved_substrate_switch&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@evolved_substrate_switch&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;excess_coefficient=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;excess_coefficient-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;excess_coefficient&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Speciation coffficient&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>224 225 226&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 224&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_excess_coefficient&#39;&gt;excess_coefficient&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@excess_coefficient&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;feature_selection_switch=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;feature_selection_switch-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;feature_selection_switch&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Enable FS-NEAT&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>299 300 301&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 299&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_feature_selection_switch&#39;&gt;feature_selection_switch&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@feature_selection_switch&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;fitness_cost_per_gene=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;fitness_cost_per_gene-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;fitness_cost_per_gene&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute fitness_cost_per_gene&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>277 278 279&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 277&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_fitness_cost_per_gene&#39;&gt;fitness_cost_per_gene&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@fitness_cost_per_gene&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;fitness_cost_per_neuron=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;fitness_cost_per_neuron-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;fitness_cost_per_neuron&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;fitness costs, if given, use in the computation of fitness AFTER
+the overall fitness for the applied stimuli have been caclulated.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>276 277 278&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 276&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_fitness_cost_per_neuron&#39;&gt;fitness_cost_per_neuron&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@fitness_cost_per_neuron&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;hash_on_fitness=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;hash_on_fitness-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;hash_on_fitness&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Set to true to returned named parameters as hashes to the fitness
+function (the default is to do ordered arrays)&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>214 215 216&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 214&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_hash_on_fitness&#39;&gt;hash_on_fitness&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@hash_on_fitness&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;hyper_switch=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;hyper_switch-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;hyper_switch&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Enable HyperNEAT. This will result in the critters being
+interpreted as CPPNs for substrate weights. Additional setup will be
+necessary.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>304 305 306&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 304&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_hyper_switch&#39;&gt;hyper_switch&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@hyper_switch&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;interspecies_mate_rate=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;interspecies_mate_rate-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;interspecies_mate_rate&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Ratio of mating are actually interspecies&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>237 238 239&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 237&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_interspecies_mate_rate&#39;&gt;interspecies_mate_rate&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@interspecies_mate_rate&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;linktrait_mutation_sig=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;linktrait_mutation_sig-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;linktrait_mutation_sig&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute linktrait_mutation_sig&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>239 240 241&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 239&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_linktrait_mutation_sig&#39;&gt;linktrait_mutation_sig&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@linktrait_mutation_sig&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mate_multipoint_avg_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mate_multipoint_avg_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mate_multipoint_avg_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_multipoint_avg_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>240 241 242&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 240&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mate_multipoint_avg_prob&#39;&gt;mate_multipoint_avg_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mate_multipoint_avg_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mate_multipoint_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mate_multipoint_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mate_multipoint_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_multipoint_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>241 242 243&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 241&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mate_multipoint_prob&#39;&gt;mate_multipoint_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mate_multipoint_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mate_only_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mate_only_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mate_only_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_only_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>242 243 244&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 242&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_mate_only_prob&#39;&gt;mate_only_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mate_only_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mate_singlepoint_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mate_singlepoint_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mate_singlepoint_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mate_singlepoint_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>243 244 245&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 243&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mate_singlepoint_prob&#39;&gt;mate_singlepoint_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mate_singlepoint_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;max_generations=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;max_generations-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;max_generations&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Maximum number of generations to run, if given.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>246 247 248&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 246&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_max_generations&#39;&gt;max_generations&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@max_generations&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;max_population_history=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;max_population_history-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;max_population_history&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Maximun number of populations to maintain in the history
+buffer.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>249 250 251&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 249&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_max_population_history&#39;&gt;max_population_history&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@max_population_history&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;max_species=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;max_species-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;max_species&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Max target number of species (will result in the
+compatability_coeifficient being adjusted automatically&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>228 229 230&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 228&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_max_species&#39;&gt;max_species&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@max_species&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_add_gene_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_add_gene_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_add_gene_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_add_gene_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>251 252 253&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 251&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_add_gene_prob&#39;&gt;mutate_add_gene_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_add_gene_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_add_neuron_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_add_neuron_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_add_neuron_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_add_neuron_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>252 253 254&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 252&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_add_neuron_prob&#39;&gt;mutate_add_neuron_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_add_neuron_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_change_gene_weights_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_change_gene_weights_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_change_gene_weights_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites)&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>260 261 262&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 260&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_change_gene_weights_prob&#39;&gt;mutate_change_gene_weights_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_change_gene_weights_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_change_gene_weights_sd=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_change_gene_weights_sd-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_change_gene_weights_sd&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites)&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>260 261 262&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 260&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_change_gene_weights_sd&#39;&gt;mutate_change_gene_weights_sd&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_change_gene_weights_sd&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_gene_disable_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_gene_disable_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_gene_disable_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_gene_disable_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>254 255 256&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 254&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_gene_disable_prob&#39;&gt;mutate_gene_disable_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_gene_disable_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_gene_reenable_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_gene_reenable_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_gene_reenable_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_gene_reenable_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>255 256 257&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 255&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_gene_reenable_prob&#39;&gt;mutate_gene_reenable_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_gene_reenable_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_gene_trait_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_gene_trait_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_gene_trait_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_gene_trait_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>257 258 259&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 257&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_gene_trait_prob&#39;&gt;mutate_gene_trait_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_gene_trait_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_neuron_trait_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_neuron_trait_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_neuron_trait_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_neuron_trait_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>265 266 267&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 265&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_neuron_trait_prob&#39;&gt;mutate_neuron_trait_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_neuron_trait_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_only_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_only_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_only_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_only_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>266 267 268&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 266&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_mutate_only_prob&#39;&gt;mutate_only_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_only_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_perturb_gene_weights_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_perturb_gene_weights_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_perturb_gene_weights_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites)&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>260 261 262&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 260&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_perturb_gene_weights_prob&#39;&gt;mutate_perturb_gene_weights_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_perturb_gene_weights_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_perturb_gene_weights_sd=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_perturb_gene_weights_sd-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_perturb_gene_weights_sd&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;For gene weights perturbations and changes (complete
+overwrites)&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>260 261 262&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 260&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_perturb_gene_weights_sd&#39;&gt;mutate_perturb_gene_weights_sd&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_perturb_gene_weights_sd&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_random_trait_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_random_trait_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_random_trait_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_random_trait_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>267 268 269&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 267&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_random_trait_prob&#39;&gt;mutate_random_trait_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_random_trait_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutate_toggle_enable_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutate_toggle_enable_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutate_toggle_enable_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutate_toggle_enable_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>268 269 270&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 268&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutate_toggle_enable_prob&#39;&gt;mutate_toggle_enable_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutate_toggle_enable_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;mutdiff_coefficient=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;mutdiff_coefficient-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;mutdiff_coefficient&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute mutdiff_coefficient&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>269 270 271&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 269&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_mutdiff_coefficient&#39;&gt;mutdiff_coefficient&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@mutdiff_coefficient&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;neuron_trait_mut_sig=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;neuron_trait_mut_sig-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;neuron_trait_mut_sig&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute neuron_trait_mut_sig&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>271 272 273&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 271&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_neuron_trait_mut_sig&#39;&gt;neuron_trait_mut_sig&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@neuron_trait_mut_sig&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;newlink_tries=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;newlink_tries-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;newlink_tries&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute newlink_tries&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>270 271 272&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 270&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_newlink_tries&#39;&gt;newlink_tries&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@newlink_tries&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;population_size=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;population_size-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;population_size&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;If set, will start off at the specified size and  grow to the
+bigger population size&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>281 282 283&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 281&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_population_size&#39;&gt;population_size&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@population_size&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;print_every=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;print_every-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;print_every&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute print_every&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>285 286 287&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 285&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_print_every&#39;&gt;print_every&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@print_every&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;real_time_switch=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;real_time_switch-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;real_time_switch&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Enable RT-NEAT, for gradual evolution suitable for games and other
+human-interactive systems.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>312 313 314&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 312&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_real_time_switch&#39;&gt;real_time_switch&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@real_time_switch&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;recur_only_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;recur_only_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;recur_only_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute recur_only_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>286 287 288&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 286&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_recur_only_prob&#39;&gt;recur_only_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@recur_only_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;recur_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;recur_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;recur_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute recur_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>287 288 289&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 287&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_recur_prob&#39;&gt;recur_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@recur_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;recurrency_switch=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;recurrency_switch-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;recurrency_switch&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;If true, allow for recurrent networks.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>315 316 317&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 315&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_recurrency_switch&#39;&gt;recurrency_switch&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@recurrency_switch&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;smallest_species=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;smallest_species-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;smallest_species&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Species smallest population allowed (coalse smaller species into
+one)&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>234 235 236&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 234&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_smallest_species&#39;&gt;smallest_species&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@smallest_species&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;start_population_size=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;start_population_size-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;start_population_size&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;If set, will start off at the specified size and  grow to the
+bigger population size&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>281 282 283&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 281&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_start_population_size&#39;&gt;start_population_size&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@start_population_size&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;start_sequence_at=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;start_sequence_at-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;start_sequence_at&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute start_sequence_at&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>283 284 285&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 283&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_start_sequence_at&#39;&gt;start_sequence_at&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@start_sequence_at&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;survival_mininum_per_species=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;survival_mininum_per_species-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;survival_mininum_per_species&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute
+survival_mininum_per_species&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>292 293 294&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 292&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_survival_mininum_per_species&#39;&gt;survival_mininum_per_species&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@survival_mininum_per_species&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;survival_threshold=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;survival_threshold-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;survival_threshold&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;factor (0 to 1) of the top percentage of the species
+that&amp;#39;s allowed to mate.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>291 292 293&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 291&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_survival_threshold&#39;&gt;survival_threshold&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@survival_threshold&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;trait_mutation_power=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;trait_mutation_power-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;trait_mutation_power&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute trait_mutation_power&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>294 295 296&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 294&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_trait_mutation_power&#39;&gt;trait_mutation_power&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@trait_mutation_power&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;trait_param_mut_prob=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;trait_param_mut_prob-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;trait_param_mut_prob&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute trait_param_mut_prob&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>295 296 297&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 295&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_trait_param_mut_prob&#39;&gt;trait_param_mut_prob&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@trait_param_mut_prob&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;weigh_mut_power=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;weigh_mut_power-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;weigh_mut_power&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns the value of attribute weigh_mut_power&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>296 297 298&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 296&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_weigh_mut_power&#39;&gt;weigh_mut_power&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@weigh_mut_power&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;span id=&quot;weight_coefficient=-instance_method&quot;&gt;&lt;/span&gt;
+    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;weight_coefficient-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;weight_coefficient&lt;/strong&gt;</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Speciation coffficient&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>224 225 226&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/rubyneat.rb&#39;, line 224&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_weight_coefficient&#39;&gt;weight_coefficient&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;ivar&#39;&gt;@weight_coefficient&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div id=&quot;footer&quot;&gt;
+Generated on Sun Mar 16 16:36:52 2014 by
+&lt;a href=&quot;http://yardoc.org&quot; title=&quot;Yay! A Ruby Documentation Tool&quot; target=&quot;_parent&quot;&gt;yard&lt;/a&gt;
+0.8.7.3 (ruby-2.1.1).</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;/body&gt;</pre>
+
+<p>&lt;/html&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

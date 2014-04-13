@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gemspec
+#gemspec
 
-ruby '2.1.0'
+ruby '2.1.1'
 
 gem 'mongo'
 gem 'bson_ext'

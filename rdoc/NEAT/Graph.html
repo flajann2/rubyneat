@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module NEAT::Graph - rubyneat 0.3.4</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-3C-3C">#&lt;&lt;</a>
+    
+    <li ><a href="#method-i-add">#add</a>
+    
+    <li ><a href="#method-i-clear_graph">#clear_graph</a>
+    
+    <li ><a href="#method-i-inputs">#inputs</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-NEAT::Graph">
+  <h1 id="module-NEAT::Graph" class="module">
+    module NEAT::Graph
+  </h1>
+
+  <section class="description">
+    
+<p>General graph representation (mainly used for Neurons, but could be used
+for other structures.)</p>
+
+<p>This is a mixin for <a href="Neuron.html">Neuron</a> and whatever else
+you&#39;d like. the contained class is for evaluation, and may be
+instantiated separately.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3C-3C" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">(input)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3C-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/graph.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">input</span>)
+  <span class="ruby-ivar">@g_inputs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">input</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(input)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a single input</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/graph.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span> (<span class="ruby-identifier">input</span>)
+  <span class="ruby-ivar">@g_inputs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">input</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-clear_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear_graph</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>clear and initialize the graph.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="clear_graph-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/graph.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear_graph</span>
+  <span class="ruby-ivar">@g_inputs</span> = []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inputs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inputs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get list of inputs</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inputs-source">
+            <pre><span class="ruby-comment"># File lib/rubyneat/graph.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inputs</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GraphException</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&quot;Graph Failure -- input is nil&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@g_inputs</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@g_inputs</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

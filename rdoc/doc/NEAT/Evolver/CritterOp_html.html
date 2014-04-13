@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>CritterOp.html - rubyneat 0.3.4</title>
+
+<link href="../../../fonts.css" rel="stylesheet">
+<link href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script src="../../../js/jquery.js"></script>
+<script src="../../../js/navigation.js"></script>
+<script src="../../../js/search_index.js"></script>
+<script src="../../../js/search.js"></script>
+<script src="../../../js/searcher.js"></script>
+<script src="../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../doc/ControllerPoint_html.html">ControllerPoint.html</a>
+  
+    <li><a href="../../../doc/CuteA_html.html">CuteA.html</a>
+  
+    <li><a href="../../../doc/CuteB_html.html">CuteB.html</a>
+  
+    <li><a href="../../../doc/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../../doc/NEAT_html.html">NEAT.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes_html.html">BasicNeuronTypes.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/BiasNeuron_html.html">BiasNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/CosineNeuron_html.html">CosineNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/InputNeuron_html.html">InputNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/SigmoidNeuron_html.html">SigmoidNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/SineNeuron_html.html">SineNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/BasicNeuronTypes/TanhNeuron_html.html">TanhNeuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/Controller_html.html">Controller.html</a>
+  
+    <li><a href="../../../doc/NEAT/Controller/NeatSettings_html.html">NeatSettings.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter_html.html">Critter.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter/Genotype_html.html">Genotype.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter/Genotype/Gene_html.html">Gene.html</a>
+  
+    <li><a href="../../../doc/NEAT/Critter/Phenotype_html.html">Phenotype.html</a>
+  
+    <li><a href="../../../doc/NEAT/DSL_html.html">DSL.html</a>
+  
+    <li><a href="../../../doc/NEAT/Evaluator_html.html">Evaluator.html</a>
+  
+    <li><a href="../../../doc/NEAT/Evolver_html.html">Evolver.html</a>
+  
+    <li><a href="../../../doc/NEAT/Evolver/CritterOp_html.html">CritterOp.html</a>
+  
+    <li><a href="../../../doc/NEAT/Expressor_html.html">Expressor.html</a>
+  
+    <li><a href="../../../doc/NEAT/Graph_html.html">Graph.html</a>
+  
+    <li><a href="../../../doc/NEAT/Graph/DependencyResolver_html.html">DependencyResolver.html</a>
+  
+    <li><a href="../../../doc/NEAT/Graph/GraphException_html.html">GraphException.html</a>
+  
+    <li><a href="../../../doc/NEAT/NeatException_html.html">NeatException.html</a>
+  
+    <li><a href="../../../doc/NEAT/NeatOb_html.html">NeatOb.html</a>
+  
+    <li><a href="../../../doc/NEAT/Neuron_html.html">Neuron.html</a>
+  
+    <li><a href="../../../doc/NEAT/Operator_html.html">Operator.html</a>
+  
+    <li><a href="../../../doc/NEAT/Population_html.html">Population.html</a>
+  
+    <li><a href="../../../doc/NEAT/Trait_html.html">Trait.html</a>
+  
+    <li><a href="../../../doc/_index_html.html">_index.html</a>
+  
+    <li><a href="../../../doc/class_list_html.html">class_list.html</a>
+  
+    <li><a href="../../../doc/css/common_css.html">common.css</a>
+  
+    <li><a href="../../../doc/css/full_list_css.html">full_list.css</a>
+  
+    <li><a href="../../../doc/css/style_css.html">style.css</a>
+  
+    <li><a href="../../../doc/file_list_html.html">file_list.html</a>
+  
+    <li><a href="../../../doc/frames_html.html">frames.html</a>
+  
+    <li><a href="../../../doc/index_html.html">index.html</a>
+  
+    <li><a href="../../../doc/js/app_js.html">app.js</a>
+  
+    <li><a href="../../../doc/js/full_list_js.html">full_list.js</a>
+  
+    <li><a href="../../../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../../doc/method_list_html.html">method_list.html</a>
+  
+    <li><a href="../../../doc/top-level-namespace_html.html">top-level-namespace.html</a>
+  
+    <li><a href="../../../foo_dump_log.html">foo.dump.log</a>
+  
+    <li><a href="../../../rubyneat_gemspec.html">rubyneat.gemspec</a>
+  
+    <li><a href="../../../xordebug_log.html">xordebug.log</a>
+  
+    <li><a href="../../../xorsin_log.html">xorsin.log</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page doc/NEAT/Evolver/CritterOp.html">
+
+<p>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN”</p>
+
+<pre>&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</pre>
+
+<p>&lt;html xmlns=“<a
+href="http://www.w3.org/1999/xhtml">www.w3.org/1999/xhtml</a>”
+xml:lang=“en” lang=“en”&gt;</p>
+
+<pre>&lt;head&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</pre>
+
+<p>&lt;title&gt;</p>
+
+<pre>Class: NEAT::Evolver::CritterOp
+
+  &amp;mdash; Documentation by YARD 0.8.7.3</pre>
+
+<p>&lt;/title&gt;</p>
+
+<pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/style.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../../css/common.css&quot; type=&quot;text/css&quot; charset=&quot;utf-8&quot; /&gt;</pre>
+
+<p>&lt;script type=“text/javascript” charset=“utf-8”&gt;</p>
+
+<pre>hasFrames = window.top.frames.main ? true : false;
+relpath = &#39;../../&#39;;
+framesUrl = &quot;../../frames.html#!&quot; + escape(window.location.href);</pre>
+
+<p>&lt;/script&gt;</p>
+
+<pre>&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;../../js/jquery.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;../../js/app.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;header&quot;&gt;
+    &lt;div id=&quot;menu&quot;&gt;
+
+  &lt;a href=&quot;../../_index.html&quot;&gt;Index (C)&lt;/a&gt; &amp;raquo;
+  &lt;span class=&#39;title&#39;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../../NEAT.html&quot; title=&quot;NEAT (module)&quot;&gt;NEAT&lt;/a&gt;&lt;/span&gt;&lt;/span&gt; &amp;raquo; &lt;span class=&#39;title&#39;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../Evolver.html&quot; title=&quot;NEAT::Evolver (class)&quot;&gt;Evolver&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+   &amp;raquo; 
+  &lt;span class=&quot;title&quot;&gt;CritterOp&lt;/span&gt;
+
+&lt;div class=&quot;noframes&quot;&gt;&lt;span class=&quot;title&quot;&gt;(&lt;/span&gt;&lt;a href=&quot;.&quot; target=&quot;_top&quot;&gt;no frames&lt;/a&gt;&lt;span class=&quot;title&quot;&gt;)&lt;/span&gt;&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div id=&quot;search&quot;&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;class_list_link&quot;
+    href=&quot;../../class_list.html&quot;&gt;
+  Class List
+&lt;/a&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;method_list_link&quot;
+    href=&quot;../../method_list.html&quot;&gt;
+  Method List
+&lt;/a&gt;
+
+&lt;a class=&quot;full_list_link&quot; id=&quot;file_list_link&quot;
+    href=&quot;../../file_list.html&quot;&gt;
+  File List
+&lt;/a&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;iframe id=&quot;search_frame&quot;&gt;&lt;/iframe&gt;
+
+&lt;div id=&quot;content&quot;&gt;&lt;h1&gt;Class: NEAT::Evolver::CritterOp</pre>
+
+<p>&lt;/h1&gt;</p>
+
+<p>&lt;dl class=“box”&gt;</p>
+
+<pre>&lt;dt class=&quot;r1&quot;&gt;Inherits:&lt;/dt&gt;
+&lt;dd class=&quot;r1&quot;&gt;
+  &lt;span class=&quot;inheritName&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/span&gt;
+
+    &lt;ul class=&quot;fullTree&quot;&gt;
+      &lt;li&gt;Object&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+
+        &lt;li class=&quot;next&quot;&gt;NEAT::Evolver::CritterOp&lt;/li&gt;
+
+    &lt;/ul&gt;
+    &lt;a href=&quot;#&quot; class=&quot;inheritanceTree&quot;&gt;show all&lt;/a&gt;
+
+  &lt;/dd&gt;
+
+&lt;dt class=&quot;r2 last&quot;&gt;Defined in:&lt;/dt&gt;
+&lt;dd class=&quot;r2 last&quot;&gt;lib/rubyneat/evolver.rb&lt;/dd&gt;</pre>
+
+<p>&lt;/dl&gt; &lt;div class=“clear”&gt;&lt;/div&gt;</p>
+
+<p>&lt;h2&gt;Overview&lt;/h2&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;A set of Critter Genotype operators.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;h2&gt;Instance Attribute Summary&lt;/h2&gt;
+
+&lt;h3 class=&quot;inherited&quot;&gt;Attributes inherited from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p class=&quot;inherited&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#controller-instance_method&quot; title=&quot;NEAT::NeatOb#controller (method)&quot;&gt;#controller&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#name-instance_method&quot; title=&quot;NEAT::NeatOb#name (method)&quot;&gt;#name&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+  &lt;h2&gt;
+    Instance Method Summary
+    &lt;small&gt;(&lt;a href=&quot;#&quot; class=&quot;summary_toggle&quot;&gt;collapse&lt;/a&gt;)&lt;/small&gt;
+  &lt;/h2&gt;
+
+  &lt;ul class=&quot;summary&quot;&gt;
+
+      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#add_gene%21-instance_method&quot; title=&quot;#add_gene! (instance method)&quot;&gt;- (Object) &lt;strong&gt;add_gene!&lt;/strong&gt;(crit) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;h1
+id=“label-Add+a+gene+to+the+genome+Unlike+adding+a+new+neuron%2C+adding+a+new+gene+could+result+in+a+circular+dependency.”&gt;Add
+a gene to the genome Unlike adding a new neuron, adding a new gene could
+result in a circular dependency.&lt;/h1&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#add_neuron%21-instance_method&quot; title=&quot;#add_neuron! (instance method)&quot;&gt;- (Object) &lt;strong&gt;add_neuron!&lt;/strong&gt;(crit) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;h1
+id=“label-Add+a+neuron+to+given+critter+Here%2C+we+add+a+neuron+by+randomly+picking+a+gene%2C+and+split+it+into+two+genes+with+an+intervening+neuron.”&gt;Add
+a neuron to given critter Here, we add a neuron by randomly picking a gene,
+and split it into two genes with an intervening neuron.&lt;/h1&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#disable_gene%21-instance_method&quot; title=&quot;#disable_gene! (instance method)&quot;&gt;- (Object) &lt;strong&gt;disable_gene!&lt;/strong&gt;(crit) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Pick an enabled gene at random and disable it.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#initialize-instance_method&quot; title=&quot;#initialize (instance method)&quot;&gt;- (CritterOp) &lt;strong&gt;initialize&lt;/strong&gt;(evol) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;note title constructor&quot;&gt;constructor&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;A new instance of CritterOp.&lt;/p&gt; &lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>      &lt;li class=&quot;public &quot;&gt;
+&lt;span class=&quot;summary_signature&quot;&gt;
+
+    &lt;a href=&quot;#reenable_gene%21-instance_method&quot; title=&quot;#reenable_gene! (instance method)&quot;&gt;- (Object) &lt;strong&gt;reenable_gene!&lt;/strong&gt;(crit) &lt;/a&gt;
+
+&lt;/span&gt;
+
+  &lt;span class=&quot;summary_desc&quot;&gt;&lt;div class=&#39;inline&#39;&gt;</pre>
+
+<p>&lt;p&gt;Pick a disabled gene at random and reenable it.&lt;/p&gt;
+&lt;/div&gt;&lt;/span&gt;</p>
+
+<p>&lt;/li&gt;</p>
+
+<pre>  &lt;/ul&gt;
+
+&lt;h3 class=&quot;inherited&quot;&gt;Methods inherited from &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html&quot; title=&quot;NEAT::NeatOb (class)&quot;&gt;NeatOb&lt;/a&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;p class=&quot;inherited&quot;&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#log-instance_method&quot; title=&quot;NEAT::NeatOb#log (method)&quot;&gt;#log&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#log-class_method&quot; title=&quot;NEAT::NeatOb.log (method)&quot;&gt;log&lt;/a&gt;&lt;/span&gt;, &lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;../NeatOb.html#to_s-instance_method&quot; title=&quot;NEAT::NeatOb#to_s (method)&quot;&gt;#to_s&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;div id=&quot;constructor_details&quot; class=&quot;method_details_list&quot;&gt;
+&lt;h2&gt;Constructor Details&lt;/h2&gt;
+
+  &lt;div class=&quot;method_details first&quot;&gt;
+&lt;h3 class=&quot;signature first&quot; id=&quot;initialize-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;&lt;span class=&#39;object_link&#39;&gt;&lt;a href=&quot;&quot; title=&quot;NEAT::Evolver::CritterOp (class)&quot;&gt;CritterOp&lt;/a&gt;&lt;/span&gt;&lt;/tt&gt;) &lt;strong&gt;initialize&lt;/strong&gt;(evol)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Returns a new instance of CritterOp&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>254 255 256 257 258&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evolver.rb&#39;, line 254&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_initialize&#39;&gt;initialize&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_evol&#39;&gt;evol&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;kw&#39;&gt;super&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_evol&#39;&gt;evol&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_controller&#39;&gt;controller&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@evolver&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_evol&#39;&gt;evol&lt;/span&gt;
+&lt;span class=&#39;ivar&#39;&gt;@npop&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_evol&#39;&gt;evol&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_npop&#39;&gt;npop&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;div id=&quot;instance_method_details&quot; class=&quot;method_details_list&quot;&gt;
+  &lt;h2&gt;Instance Method Details&lt;/h2&gt;
+
+    &lt;div class=&quot;method_details first&quot;&gt;
+&lt;h3 class=&quot;signature first&quot; id=&quot;add_gene!-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;add_gene!&lt;/strong&gt;(crit)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;h1 id=“label-Add+a+gene+to+the+genome”&gt;Add a gene to the
+genome&lt;/h1&gt;</p>
+
+<p>&lt;p&gt;Unlike adding a new neuron, adding a new gene could result in a
+circular dependency. If so, and if recurrency is switched off, we must
+detect this condition and switch off the offending neurons.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;Obviously, this might result in a loss of functionality, but oh
+well.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;An easy and obvious check is to make sure we don&amp;#39;t accept
+any inputs from output neurons, and we don&amp;#39;t do any outputs to
+input neurons.&lt;/p&gt;</p>
+
+<p>&lt;p&gt;Constructs for handling recurrency are present in
+Expressor.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>290 291 292 293 294 295 296 297 298 299 300&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evolver.rb&#39;, line 290&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_add_gene!&#39;&gt;add_gene!&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;id identifier rubyid_n1&#39;&gt;n1&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_neurons&#39;&gt;neurons&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_values&#39;&gt;values&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_sample&#39;&gt;sample&lt;/span&gt; &lt;span class=&#39;comment&#39;&gt;# input</pre>
+
+<p>&lt;/span&gt;  &lt;span class=&#39;id identifier
+rubyid_n2&#39;&gt;n2&lt;/span&gt; &lt;span
+class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier
+rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_neurons&#39;&gt;neurons&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_values&#39;&gt;values&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_sample&#39;&gt;sample&lt;/span&gt; &lt;span
+class=&#39;comment&#39;&gt;# output &lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;comment&#39;&gt;# Sanity checks!</pre>
+
+<p>&lt;/span&gt;  &lt;span class=&#39;kw&#39;&gt;unless&lt;/span&gt; &lt;span
+class=&#39;id identifier rubyid_n1&#39;&gt;n1&lt;/span&gt; &lt;span
+class=&#39;op&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;id identifier
+rubyid_n2&#39;&gt;n2&lt;/span&gt; &lt;span
+class=&#39;kw&#39;&gt;or&lt;/span&gt; &lt;span class=&#39;id identifier
+rubyid_n1&#39;&gt;n1&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_output?&#39;&gt;output?&lt;/span&gt; &lt;span
+class=&#39;kw&#39;&gt;or&lt;/span&gt; &lt;span class=&#39;id identifier
+rubyid_n2&#39;&gt;n2&lt;/span&gt;&lt;span
+class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_input?&#39;&gt;input?&lt;/span&gt;</p>
+
+<pre>  &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;Critter&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;const&#39;&gt;Genotype&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;const&#39;&gt;Gene&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_n1&#39;&gt;n1&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_n2&#39;&gt;n2&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;NEAT&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_controller&#39;&gt;controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_gaussian&#39;&gt;gaussian&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;
+  &lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_add_genes&#39;&gt;add_genes&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;
+  &lt;span class=&#39;id identifier rubyid_log&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_debug&#39;&gt;debug&lt;/span&gt; &lt;span class=&#39;tstring&#39;&gt;&lt;span class=&#39;tstring_beg&#39;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;add_gene! Added gene &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_n1&#39;&gt;n1&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt; -&amp;gt; &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_n2&#39;&gt;n2&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;) to &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_end&#39;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;add_neuron!-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;add_neuron!&lt;/strong&gt;(crit)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;h1 id=“label-Add+a+neuron+to+given+critter”&gt;Add a neuron to given
+critter&lt;/h1&gt;</p>
+
+<p>&lt;p&gt;Here, we add a neuron by randomly picking a gene, and split it
+into two genes with an intervening neuron. The old gene is not replaced,
+but disabled. 2 new genes are created along with the new neuron.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>265 266 267 268 269 270 271 272 273 274&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evolver.rb&#39;, line 265&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_add_neuron!&#39;&gt;add_neuron!&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genes&#39;&gt;genes&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_values&#39;&gt;values&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_sample&#39;&gt;sample&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_neu&#39;&gt;neu&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_controller&#39;&gt;controller&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_neural_hidden&#39;&gt;neural_hidden&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_values&#39;&gt;values&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_sample&#39;&gt;sample&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_new&#39;&gt;new&lt;/span&gt;&lt;span class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_controller&#39;&gt;controller&lt;/span&gt;&lt;span class=&#39;rparen&#39;&gt;)&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_g1&#39;&gt;g1&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;Critter&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;const&#39;&gt;Genotype&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;const&#39;&gt;Gene&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_in_neuron&#39;&gt;in_neuron&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_neu&#39;&gt;neu&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_weight&#39;&gt;weight&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_g2&#39;&gt;g2&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;const&#39;&gt;Critter&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;const&#39;&gt;Genotype&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;::&lt;/span&gt;&lt;span class=&#39;const&#39;&gt;Gene&lt;/span&gt;&lt;span class=&#39;lbracket&#39;&gt;[&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_neu&#39;&gt;neu&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_name&#39;&gt;name&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_out_neuron&#39;&gt;out_neuron&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_weight&#39;&gt;weight&lt;/span&gt;&lt;span class=&#39;rbracket&#39;&gt;]&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_enabled&#39;&gt;enabled&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;false&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_add_neurons&#39;&gt;add_neurons&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_neu&#39;&gt;neu&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_add_genes&#39;&gt;add_genes&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_g1&#39;&gt;g1&lt;/span&gt;&lt;span class=&#39;comma&#39;&gt;,&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_g2&#39;&gt;g2&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_log&#39;&gt;log&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_debug&#39;&gt;debug&lt;/span&gt; &lt;span class=&#39;tstring&#39;&gt;&lt;span class=&#39;tstring_beg&#39;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;add_neuron!: neu &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_neu&#39;&gt;neu&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;, g1 &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_g1&#39;&gt;g1&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_content&#39;&gt;, g2 &lt;/span&gt;&lt;span class=&#39;embexpr_beg&#39;&gt;#{&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_g2&#39;&gt;g2&lt;/span&gt;&lt;span class=&#39;embexpr_end&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;tstring_end&#39;&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;disable_gene!-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;disable_gene!&lt;/strong&gt;(crit)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Pick an enabled gene at random and disable it.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>303 304 305 306&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evolver.rb&#39;, line 303&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier rubyid_disable_gene!&#39;&gt;disable_gene!&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genes&#39;&gt;genes&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_values&#39;&gt;values&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_reject&#39;&gt;reject&lt;/span&gt;&lt;span class=&#39;lbrace&#39;&gt;{&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_disabled?&#39;&gt;disabled?&lt;/span&gt; &lt;span class=&#39;rbrace&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_sample&#39;&gt;sample&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_enabled&#39;&gt;enabled&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;false&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;unless&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_nil?&#39;&gt;nil?&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>    &lt;div class=&quot;method_details &quot;&gt;
+&lt;h3 class=&quot;signature &quot; id=&quot;reenable_gene!-instance_method&quot;&gt;
+
+  - (&lt;tt&gt;Object&lt;/tt&gt;) &lt;strong&gt;reenable_gene!&lt;/strong&gt;(crit)</pre>
+
+<p>&lt;/h3&gt;&lt;div class=“docstring”&gt;</p>
+
+<pre>&lt;div class=&quot;discussion&quot;&gt;</pre>
+
+<p>&lt;p&gt;Pick a disabled gene at random and reenable it.&lt;/p&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt; &lt;div class=“tags”&gt;</p>
+
+<p>&lt;/div&gt;&lt;table class=“source_code”&gt;</p>
+
+<pre>&lt;tr&gt;
+  &lt;td&gt;
+    &lt;pre class=&quot;lines&quot;&gt;</pre>
+
+<p>309 310 311 312&lt;/pre&gt;</p>
+
+<pre>&lt;/td&gt;
+&lt;td&gt;
+  &lt;pre class=&quot;code&quot;&gt;&lt;span class=&quot;info file&quot;&gt;# File &#39;lib/rubyneat/evolver.rb&#39;, line 309&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;id
+identifier
+rubyid_reenable_gene!&#39;&gt;reenable_gene!&lt;/span&gt;&lt;span
+class=&#39;lparen&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;id identifier
+rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span
+class=&#39;rparen&#39;&gt;)&lt;/span&gt;</p>
+
+<pre>&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_crit&#39;&gt;crit&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genotype&#39;&gt;genotype&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_genes&#39;&gt;genes&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_values&#39;&gt;values&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_reject&#39;&gt;reject&lt;/span&gt;&lt;span class=&#39;lbrace&#39;&gt;{&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;op&#39;&gt;|&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_enabled?&#39;&gt;enabled?&lt;/span&gt; &lt;span class=&#39;rbrace&#39;&gt;}&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_sample&#39;&gt;sample&lt;/span&gt;
+&lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_enabled&#39;&gt;enabled&lt;/span&gt; &lt;span class=&#39;op&#39;&gt;=&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;true&lt;/span&gt; &lt;span class=&#39;kw&#39;&gt;unless&lt;/span&gt; &lt;span class=&#39;id identifier rubyid_gene&#39;&gt;gene&lt;/span&gt;&lt;span class=&#39;period&#39;&gt;.&lt;/span&gt;&lt;span class=&#39;id identifier rubyid_nil?&#39;&gt;nil?&lt;/span&gt;</pre>
+
+<p>&lt;span class=&#39;kw&#39;&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>  &lt;/td&gt;
+&lt;/tr&gt;</pre>
+
+<p>&lt;/table&gt; &lt;/div&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>  &lt;div id=&quot;footer&quot;&gt;
+Generated on Sun Mar 16 16:36:51 2014 by
+&lt;a href=&quot;http://yardoc.org&quot; title=&quot;Yay! A Ruby Documentation Tool&quot; target=&quot;_parent&quot;&gt;yard&lt;/a&gt;
+0.8.7.3 (ruby-2.1.1).</pre>
+
+<p>&lt;/div&gt;</p>
+
+<pre>&lt;/body&gt;</pre>
+
+<p>&lt;/html&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
