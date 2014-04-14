@@ -13,5 +13,6 @@ Foo*
 FOO*
 foo/*
 
-# ignore idea
-**.idea
+**/.idea
+.yardoc
+Neural_Docs
