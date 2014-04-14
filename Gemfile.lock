@@ -99,6 +99,7 @@ GEM
     rspec-mocks (2.14.6)
     ruby-debug-ide (0.4.22)
       rake (>= 0.8.1)
+    rubyvis (0.6.0)
     semver (1.0.1)
     simplecov (0.8.2)
       docile (~> 1.1.0)
@@ -128,8 +129,9 @@ DEPENDENCIES
   mongo
   rspec
   ruby-debug-ide
+  rubyvis
   semver
   simplecov
-  slop
   statistics2
+  thor
   yard
