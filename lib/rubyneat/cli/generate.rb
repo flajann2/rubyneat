@@ -4,6 +4,12 @@ module RubyNEAT
       class Neater < Thor::Group
         include Thor::Actions
         argument :name, type: :string, desc: 'Name of the Neater'
+        argument :inputs, type: :numeric, desc: 'Number of Input neurons'
+        argument :outputs, type: :numeric, desc: 'Number of Output neurons'
+        argument :itype, type: :string, desc: 'Input neuron type', default: 'input'
+        argument :btype, type: :string, desc: 'Bias neuron type', default: 'bias'
+        argument :htypes, type: :array, desc: 'Hidden neuron types', default: ['tanh']
+        argument :otype, type: :string, desc: 'Output neuron type', default: 'tanh'
         argument :description, type: :string, desc: 'Description', default: false
 
         desc "Generate a Neater"
