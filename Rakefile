@@ -33,7 +33,10 @@ Jeweler::Tasks.new do |gem|
   # dependencies defined in Gemfile
 
   # Exclude the Neural Docs directory
-  gem.files.exclude 'Neural_Docs/*'
+  gem.files.exclude 'Neural_Docs/*', 'foo/**/*', 'rdoc/*',
+                    '.idea/**/*', '.idea/**/.*', '.yardoc/**/*',
+                    'public/**/*', 'neater/**/*', 'doc/**/*',
+                    'public/**/.*', 'Guardfile'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

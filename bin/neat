@@ -4,8 +4,9 @@ require 'thor'
 require 'semver'
 
 # Be sure rnlib is added to the library path
+neatpath = File.expand_path '..', File.dirname(__FILE__)
 %w{ lib neater neater/rnlib }.each do |dir|
-  $:.unshift File.join([Dir.pwd, dir])
+  $:.unshift File.join([neatpath, dir])
 end
 
 require 'rubyneat/cli'
