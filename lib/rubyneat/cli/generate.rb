@@ -1,8 +1,41 @@
 module RubyNEAT
   module Cli
     module Generator
+      module GenHelpers
+        def source_root
+          File.dirname(__FILE__) + "/templates/generate"
+        end
+      end
+
+      class NewProject < Thor::Group
+        include Thor::Actions
+        extend GenHelpers
+        desc "Generate a new NEAT Project."
+
+        argument :name, type: :string, desc: 'Name of the NEAT project'
+
+
+        def create_project_directory
+          empty_directory name.snake
+        end
+
+        def create_project_directories
+          inside name.snake do
+            %w{neater lib config tmp}.
+            each {|dir| empty_directory dir}
+          end
+        end
+
+        def create_project_root_files
+
+        end
+      end
+
       class Neater < Thor::Group
         include Thor::Actions
+        extend GenHelpers
+        desc "Generate a Neater"
+
         argument :name, type: :string, desc: 'Name of the Neater'
         argument :inputs, type: :numeric, desc: 'Number of Input neurons'
         argument :outputs, type: :numeric, desc: 'Number of Output neurons'
@@ -11,12 +44,6 @@ module RubyNEAT
         argument :htypes, type: :array, desc: 'Hidden neuron types', default: ['tanh']
         argument :otype, type: :string, desc: 'Output neuron type', default: 'tanh'
         argument :description, type: :string, desc: 'Description', default: false
-
-        desc "Generate a Neater"
-
-        def self.source_root
-          File.dirname(__FILE__) + "/templates/generate"
-        end
 
         def create_neater_file
           @description ||= "#{name.camel_case} Neater"
@@ -27,6 +54,7 @@ module RubyNEAT
 
     class Generate < Thor
       register Generator::Neater, 'neater', 'neater', 'Generates a neater'
+      register Generator::NewProject, 'new', 'new', 'Generates a new NEAT project'
     end
   end
 end

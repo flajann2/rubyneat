@@ -42,8 +42,8 @@
           <file leaf-file-name="generate.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/cli/generate.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.21233569" vertical-offset="0" max-vertical-offset="989">
-                  <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.48533872" vertical-offset="225" max-vertical-offset="1290">
+                  <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -1226,8 +1226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/cli/generate.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21233569" vertical-offset="0" max-vertical-offset="989">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.48533872" vertical-offset="225" max-vertical-offset="1290">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
           <folding />
         </state>
       </provider>
