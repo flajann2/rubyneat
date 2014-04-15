@@ -10,4 +10,4 @@ end
 
 require 'rubyneat/cli'
 
-RubyNEAT::Cli::Main.start(ARGV)
+RubyNEAT::Cli::Main.start

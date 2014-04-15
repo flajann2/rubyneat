@@ -18,7 +18,7 @@ module RubyNEAT
     end
 
     class Main < Thor
-      class_option :verbose, type: :string, banner: '[1|2|3]', aliases: '-v'
+      class_option :verbose, type: :numeric, banner: '[1|2|3]', aliases: '-v'
 
       desc 'list <type>', 'List the requested type.'
       subcommand 'list', List
