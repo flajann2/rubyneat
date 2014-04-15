@@ -1,3 +1,4 @@
+require 'rubyneat/cli/generate'
 
 module RubyNEAT
   module Cli
@@ -16,18 +17,14 @@ module RubyNEAT
       end
     end
 
-    class Generator < Thor
-
-    end
-
     class Main < Thor
       class_option :verbose, type: :string, banner: '[1|2|3]', aliases: '-v'
 
       desc 'list <type>', 'List the requested type.'
       subcommand 'list', List
 
-      desc 'list <type>', 'List the requested type.'
-      subcommand 'list', List
+      desc 'generate <generator>', 'Generators'
+      subcommand 'generate', Generate
 
       desc 'version', 'Display RubyNEAT version'
       def version
