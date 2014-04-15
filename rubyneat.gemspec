@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.authors = ["Fred Mitchell"]
   s.date = "2014-04-15"
-  s.description = "\n  NEAT Algorithm for Ruby.\n  "
+  s.description = "\n  RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.\n  By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,\n  populations of neural nets are evolved to handle pre-defined goals.\n\n  RubyNEAT is the first implementation of the NEAT algorithm for Ruby, and\n  it leverages Ruby's power to implement the NEAT algorithm in a way that would\n  be difficult to do in other languages. The 'activation function' is largely\n  standalone. Basically, activation is achieved by functional programming.\n\n  Meaning, once your network is evolved, you can extract it as source code you\n  can then utilize without the RubyNEAT engine.\n\n  RubyNEAT can be used for nearly any Machine Learning task you can dream of,\n  because it's also extensible and modular. See http://rubyneat.com for the\n  details.\n  "
   s.email = "fred@lrcsoft.com"
   s.executables = ["neat"]
   s.extra_rdoc_files = [
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
     "lib/rubyneat/neuron.rb",
     "lib/rubyneat/population.rb",
     "lib/rubyneat/rubyneat.rb",
+    "pkg/rubyneat-0.3.5.alpha.4.gem",
     "projectFilesBackup/.idea/rubyneat.iml",
     "rubyneat.gemspec",
     "spec/lib/rubyneat/rubyneat_spec.rb"
