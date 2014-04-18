@@ -1,1 +1,1 @@
-# <%= name %> NEAT project
+<%= name.camel_case %> NEAT project

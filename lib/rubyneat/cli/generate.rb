@@ -1,3 +1,5 @@
+require 'ostruct'
+
 module RubyNEAT
   module Cli
     module Generator
@@ -13,7 +15,7 @@ module RubyNEAT
         desc "Generate a new NEAT Project."
 
         argument :name, type: :string, desc: 'Name of the NEAT project'
-
+        attr_accessor :ruby
 
         def create_project_directory
           empty_directory name.snake
@@ -21,15 +23,20 @@ module RubyNEAT
 
         def create_project_directories
           inside name.snake do
-            %w{neater lib config tmp log}.
+            %w{neater lib config tmp log bin}.
             each {|dir| empty_directory dir}
           end
         end
 
         def create_project_root_files
-          %w{Gemfile README.md}.
-            map{ |pfile| ["#{pfile}.tt", "#{pfile}"] }.
-            each{ |source, destination| template source, destination }
+          @ruby = OpenStruct.new version: RUBY_VERSION,
+                                 engine: RUBY_ENGINE,
+                                 platform: RUBY_PLATFORM
+          inside name.snake do
+            %w{Gemfile README.md}.
+              map{ |pfile| ["#{pfile}.tt", pfile] }.
+              each{ |source, destination| template source, destination }
+          end
         end
       end
 

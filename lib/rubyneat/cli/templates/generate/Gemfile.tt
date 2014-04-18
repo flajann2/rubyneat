@@ -1,4 +1,4 @@
-# Gemfile for your RubyNEAT <%= name %> project.
+# Gemfile for your RubyNEAT <%= name.camel_case %> project.
 source 'https://rubygems.org'
 
 ruby '<%= ruby.version %>'
