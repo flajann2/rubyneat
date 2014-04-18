@@ -21,7 +21,7 @@ module RubyNEAT
 
         def create_project_directories
           inside name.snake do
-            %w{neater lib config tmp}.
+            %w{neater lib config tmp log}.
             each {|dir| empty_directory dir}
           end
         end
