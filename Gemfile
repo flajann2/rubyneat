@@ -4,30 +4,30 @@ source 'https://rubygems.org'
 
 ruby '2.1.1'
 
-gem 'mongo'
-gem 'bson_ext'
-gem 'distribution'
+gem 'mongo', '~> 1', require: false
+gem 'bson_ext', '~> 1', require: false
+gem 'distribution', '~> 0'
 
 #TODO: Check out this for a repacement of of statistics2
 #TODO: https://github.com/thirtysixthspan/descriptive_statistics
-gem 'statistics2'
+gem 'statistics2', '~> 0'
 
-gem 'debase'
-gem 'aquarium'
-gem 'thor'
-gem 'awesome_print'
-gem 'deep_dive'
+gem 'debase', '~> 0'
+gem 'aquarium', '~> 0'
+gem 'thor', '~> 0'
+gem 'awesome_print', '~> 1'
+gem 'deep_dive', '~> 0'
 
 group :development do
-  gem 'rspec'
-  gem 'yard'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'semver'
-  gem "jeweler", "~> 1.8.7"
-  gem "simplecov"
+  gem 'rspec', '~> 2'
+  gem 'yard', '~> 0'
+  gem 'guard', '~> 2'
+  gem 'guard-rspec', '~> 4'
+  gem 'semver', '~> 1'
+  gem "jeweler", "~> 2"
+  gem "simplecov", '~> 0'
   #gem 'debugger'
-  gem 'ruby-debug-ide'
+  gem 'ruby-debug-ide', '~> 0'
 end
 
 #======================================================
@@ -35,7 +35,7 @@ end
 
 # For demo purposes, we include the gosu library, but
 # don't want this to be part of the mainstream.
-gem 'gosu', require: false
+gem 'gosu', '~> 0', require: false
 
 # So we can generate some nice graphics.
-gem 'rubyvis', require: false
+gem 'rubyvis', '~> 0', require: false

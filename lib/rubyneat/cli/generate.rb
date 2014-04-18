@@ -27,7 +27,9 @@ module RubyNEAT
         end
 
         def create_project_root_files
-
+          %w{Gemfile README.md}.
+            map{ |pfile| ["#{pfile}.tt", "#{pfile}"] }.
+            each{ |source, destination| template source, destination }
         end
       end
 
@@ -48,6 +50,10 @@ module RubyNEAT
         def create_neater_file
           @description ||= "#{name.camel_case} Neater"
           template 'neater.tt', "neater/#{name.snake}_neat.rb"
+        end
+
+        def create_gem_file
+
         end
       end
     end

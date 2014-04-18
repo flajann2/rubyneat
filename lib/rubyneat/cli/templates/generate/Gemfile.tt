@@ -1,7 +1,7 @@
 # Gemfile for your RubyNEAT <%= name %> project.
 source 'https://rubygems.org'
 
-ruby '<% = ruby.version %>'
+ruby '<%= ruby.version %>'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.
