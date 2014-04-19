@@ -15,4 +15,6 @@ foo/*
 
 **/.idea
 .yardoc
+rdoc
+doc
 Neural_Docs

@@ -26,14 +26,31 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{RubyNEAT NeuralEvolution of Augmenting Topologies}
   gem.version = s_version
   gem.description = %Q{
-  NEAT Algorithm for Ruby.
+  RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.
+  By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,
+  populations of neural nets are evolved to handle pre-defined goals.
+
+  RubyNEAT is the first implementation of the NEAT algorithm for Ruby, and
+  it leverages Ruby's power to implement the NEAT algorithm in a way that would
+  be difficult to do in other languages. The 'activation function' is largely
+  standalone. Basically, activation is achieved by functional programming.
+
+  Meaning, once your network is evolved, you can extract it as source code you
+  can then utilize without the RubyNEAT engine.
+
+  RubyNEAT can be used for nearly any Machine Learning task you can dream of,
+  because it's also extensible and modular. See http://rubyneat.com for the
+  details.
   }
   gem.email = "fred@lrcsoft.com"
   gem.authors = ["Fred Mitchell"]
   # dependencies defined in Gemfile
 
   # Exclude the Neural Docs directory
-  gem.files.exclude 'Neural_Docs/*'
+  gem.files.exclude 'Neural_Docs/*', 'foo/**/*', 'rdoc/*',
+                    '.idea/**/*', '.idea/**/.*', '.yardoc/**/*',
+                    'public/**/*', 'neater/**/*', 'doc/**/*',
+                    'public/**/.*', 'Guardfile'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
