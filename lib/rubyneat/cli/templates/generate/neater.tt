@@ -1,7 +1,6 @@
 require 'rubyneat/dsl'
 include NEAT::DSL
 
-
 # This defines the controller
 define "<%= description %>" do
   # Define the IO neurons
