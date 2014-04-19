@@ -2,6 +2,47 @@
 
 For the latest docs, please see http://rubyneat.com
 
+RubyNEAT is under intense development, and then will be under intense documentation, as this is
+expected to be a full blown pure Ruby implementation of the NEAT algorithm by Kenneth Stanley:
+
+http://www.cs.ucf.edu/~kstanley/
+
+## Quick and Dirty Docs
+
+There is an (extreme) alpha RubyGEM. Just do:
+
+ gem install rubyneat --pre
+
+Then type:
+
+  neat
+
+to see the list of commands. The workflow aspect of Rails is loosely mirrored here.
+
+To generate a new NEAT project, type:
+
+  neat new PROJECTNAME
+
+and a project directory will be created. Cd into that directory, and type:
+
+  neat generate neater NEATERNAME
+
+and a scaffold Neater will be generated. Note that this generator is still
+in alpha, but improvements are coming shortly.
+
+## Also Note
+
+For now, see
+
+https://github.com/flajann2/rubyneat
+
+for the Github version, and this will probably be the better option until this
+gets out of alpha. There are a couple of example Neaters there (one of which is
+still in development). Basic, but will be a good example of how to implement your own
+Neater. Eventually all will be fully documented.
+
+## Copyright Notice
+
 This code is released under the MIT license:
 
 Copyright (c) 2014 LRCSoft.com
