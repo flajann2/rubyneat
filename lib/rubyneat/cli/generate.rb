@@ -32,11 +32,9 @@ module RubyNEAT
           @ruby = OpenStruct.new version: RUBY_VERSION,
                                  engine: RUBY_ENGINE,
                                  platform: RUBY_PLATFORM
-          inside name.snake do
-            %w{Gemfile README.md}.
-              map{ |pfile| ["#{pfile}.tt", pfile] }.
-              each{ |source, destination| template source, destination }
-          end
+          %w{Gemfile README.md}.
+            map{ |pfile| [pfile, "#{name.snake}/#{pfile}"] }.
+            each{ |source, destination| template source, destination }
         end
       end
 
@@ -46,21 +44,61 @@ module RubyNEAT
         desc "Generate a Neater"
 
         argument :name, type: :string, desc: 'Name of the Neater'
-        argument :inputs, type: :numeric, desc: 'Number of Input neurons'
-        argument :outputs, type: :numeric, desc: 'Number of Output neurons'
-        argument :itype, type: :string, desc: 'Input neuron type', default: 'input'
-        argument :btype, type: :string, desc: 'Bias neuron type', default: 'bias'
-        argument :htypes, type: :array, desc: 'Hidden neuron types', default: ['tanh']
-        argument :otype, type: :string, desc: 'Output neuron type', default: 'tanh'
-        argument :description, type: :string, desc: 'Description', default: false
+        argument :nparams, type: :hash, desc: 'Neuron Parameters', default: {}
+
+        attr_accessor :description, :inputs, :outputs, :hidden, :bias
 
         def create_neater_file
+          setup_neuron_parameters
           @description ||= "#{name.camel_case} Neater"
-          template 'neater.tt', "neater/#{name.snake}_neat.rb"
+          template 'neater', "neater/#{name.snake}_neat.rb"
         end
 
-        def create_gem_file
-
+        private
+        # We need to create the Input Neurons (including the bias neuron),
+        # the Output Neurons, and the Hidden neurons.
+        # attr:name
+        # attr:n1:t1,n2:t2,...
+        def setup_neuron_parameters
+          params = {
+                      inputs:      {in1: 'input', in2: 'input'},
+                      outputs:     {out: 'tanh'},
+                      hidden:      {tanh: nil},
+                      bias:        'bias',
+                      description: 'Neater scaffold'
+                  }.merge(nparams.inject({}) { |memo, (k,v)|
+                      memo[k.to_sym] = Hash[v.split(',').map{|q| q.split(':') }].
+                        inject({}) {|mmemo, (kk, vv)| mmemo[kk.to_sym] = vv; mmemo}
+                      memo
+                    })
+          puts params
+          params.each do |attr, o|
+            instance_variable_set("@#{attr}", case attr
+                                                when :inputs, :outputs
+                                                  o.inject({}){|memo, (ky, vl)|
+                                                    memo[ky] = unless vl.nil?
+                                                                vl.camel_case
+                                                              else
+                                                                case attr
+                                                                  when :inputs; 'Input'
+                                                                  when :outputs; 'Output'
+                                                                end
+                                                              end + 'Neuron'
+                                                    memo
+                                                  }
+                                                when :bias
+                                                  unless o.nil?
+                                                    o.camel_case
+                                                  else
+                                                    'Bias'
+                                                  end + 'Neuron'
+                                                when :hidden
+                                                  o.map{|hk, ignore| hk.to_s.camel_case + 'Neuron' }
+                                                when :description; o.keys.first
+                                                else o
+                                              end)
+            puts attr
+          end
         end
       end
     end

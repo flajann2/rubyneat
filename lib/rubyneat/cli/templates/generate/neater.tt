@@ -5,17 +5,13 @@ include NEAT::DSL
 # This defines the controller
 define "<%= description %>" do
   # Define the IO neurons
-  inputs {
-    cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
-    cinv[:bias] = BiasNeuron
-    cinv
-  }
-  outputs out: TanhNeuron
+  inputs <%= inputs.map {|name, klass| "#{name}: #{klass}"}.join(', ') %>
+  outputs <%= outputs.map {|name, klass| "#{name}: #{klass}"}.join(', ') %>
 
   # Hidden neuron specification is optional.
   # The name given here is largely meaningless, but may be useful as some sort
   # of unique flag.
-  hidden tan: TanhNeuron
+  hidden <%= name='hid0'; hidden.map {|klass| name.next!; "#{name}: #{klass}"}.join(', ') %>
 
   ### Settings
   ## General
