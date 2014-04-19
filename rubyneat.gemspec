@@ -45,7 +45,6 @@ Gem::Specification.new do |s|
     "lib/rubyneat/neuron.rb",
     "lib/rubyneat/population.rb",
     "lib/rubyneat/rubyneat.rb",
-    "pkg/rubyneat-0.3.5.alpha.5.gem",
     "rubyneat.gemspec",
     "rubyneat.gemspec.orig",
     "spec/lib/rubyneat/rubyneat_spec.rb"
