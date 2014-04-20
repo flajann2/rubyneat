@@ -11,10 +11,17 @@ module RubyNEAT
         end
       end
 
-      desc 'neurons', 'List all Neurons.'
+      desc 'neurons', 'List all Neurons by their full class names.'
       def neurons
         puts NEAT::Neuron.neuron_types.map{|n| n.name }.sort.join "\n"
       end
+
+      desc 'types', 'List all Neurons by their type names.'
+      def types
+        puts NEAT::Neuron.neuron_types.map{|n| n.type_name }.sort.join "\n"
+        #puts NEAT::Neuron.neuron_type_names.sort.join "\n"
+      end
+
     end
 
     class Main < Thor
