@@ -32,9 +32,18 @@ module RubyNEAT
           @ruby = OpenStruct.new version: RUBY_VERSION,
                                  engine: RUBY_ENGINE,
                                  platform: RUBY_PLATFORM
-          %w{Gemfile README.md}.
-            map{ |pfile| [pfile, "#{name.snake}/#{pfile}"] }.
-            each{ |source, destination| template source, destination }
+          tcopy %w{Gemfile README.md}.
+                  map{ |pfile| [pfile, "#{name.snake}/#{pfile}"] }
+        end
+
+        def create_project_bin_files
+          tcopy %w{ neat }.
+                  map{ |pfile| ["bin/#{pfile}", "#{name.snake}/bin/#{pfile}"] }
+        end
+
+        private
+        def tcopy(from_to_list)
+          from_to_list.each{ |from, to| template from, to }
         end
       end
 

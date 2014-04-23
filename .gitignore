@@ -1,20 +1,14 @@
-# Ignore any log files
 *.log
-
-# No archives
+*.gem
 *.bz2
 
-# Ignore tmp directories
-tmp
+tmp/
 
 # ignore anything that begins with foo
-foo*
-Foo*
-FOO*
-foo/*
+[Ff]oo*
 
-**.idea
-.yardoc
+.idea/
+.yardoc/
 rdoc
 doc
-Neural_Docs
+# Neural_Docs

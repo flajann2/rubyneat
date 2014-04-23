@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'thor'
-require 'semver'
-
 # Be sure rnlib is added to the library path
 neatpath = File.expand_path '..', File.dirname(__FILE__)
 %w{ lib neater neater/rnlib }.each do |dir|
@@ -10,5 +7,3 @@ neatpath = File.expand_path '..', File.dirname(__FILE__)
 end
 
 require 'rubyneat/cli'
-
-RubyNEAT::Cli::Main.start
