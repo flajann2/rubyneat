@@ -5,15 +5,14 @@ require 'awesome_print'
 require 'deep_dive'
 
 =begin rdoc
-= RubyNEAT -- a Ruby Implementation of the NeuroEvolution by Augmented Topologies.
+= RubyNEAT -- a Ruby Implementation of the Neural Evolution of Augmenting Topologies.
 
-The RubyNEAT system incorporates the basis of the NEAT alorithm. Flexibility
-is the key here, allowing RubyNEAT to be leverage in a varitety of applications.
+The RubyNEAT system incorporates the basis of the NEAT algorithm. Flexibility
+is the key here, allowing RubyNEAT to be leverage in a variety of applications.
 
 === Requirements
-We make no effort to support Ruby versions less than 1.9.2. I know this will
-be a problem to some, but you are strongly urgerd to upgrade.
-
+We make no effort to support Ruby versions less than 2.0.0. I know this will
+be a problem to some, but you are strongly urged to upgrade.
 =end
 
 $log = Logger.new(STDOUT)
@@ -28,35 +27,48 @@ We have a Population of Critters, and each Critter
 represents a network of Neurons and a connection list specifying
 how those Neurons are connected.
 
-Each Neuron has an inplicit genotype and phenotype component. Neurons,
-from the Ruby persoective, contain their own code to produce their own
+Each Neuron has an implicit genotype and phenotype component. Neurons,
+from the Ruby perspective, contain their own code to produce their own
 phenotypes. 
 
 There are input Neurons and output Neurons. The input Neurons are special, as
 they do not contain any input from other nodes, but serve as interfaces
-from the "real world". Thier range of inputs are open, and it shall be up to
+from the "real world". Their range of inputs are open, and it shall be up to
 the input Neuron's phenotype generators to condition those inputs, if need be,
-to someething more suiable for the neural network.
+to something more suitable for the neural network.
 
 == Issues
 === Multicore / Cloud Computing
-Some thought needs to be given to how to make this anenable to multiple
+Some thought needs to be given to how to make this amenable to multiple
 processes so that we can leverage the power of multicore systems as well
 as multiple computers in the Cloud, etc.
 
-Our initial inclination  is to put all of that functionality in the Conroller.
+Our initial inclination  is to put all of that functionality in the Controller.
+
+== Uniquely Generated Named Objects (UGNOs)
+Every RubyNEAT Object instance is assigned a unique name generated randomly.
+The name has no other significance other than to uniquely identify the object.
+
+We have chosen the names of the letters of various alphabets to be the core
+of those names. The list may be subject to change until we are out of alpha,
+then will be set in quick drying concrete.
 =end
 module NEAT
   @rng_count = 0
-  @rng_names = %w{aaa bee cex dee flo kis lee mor cie lou gir sex quo sam lac hin pee  
-                  cur set sew flat nac zac pae por lie lox pox nez fez wib poo sho
-                  nuz tux que bsh shi her him can muk fuk kit kat uno dos ant mic
-                  aa be nz oo py tt my of ze mu pi zz qu fl tr as sd fg gh hj bc
-                  lion tame monk busy honk tape slap zonk funk tear flip shop soap
-                  quay mony stir moot shoo slim fate trat beep kook love hate 
-                  mire hair lips funk open shut case lace joop lute doze fuzz
-                  mean nice soil vote kick apes snak huge sine pine gray nook fool
-                  woot hail smel tell jell suut gage phat pinoy spain rey bloke zit}
+  @rng_names = %w{alpha beta gamma delta epsilon zeta  eta theta kappa lambda
+                  mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega
+
+                  alef bet gimel dalet he vav zayin het tet yod kaf lamed
+                  mem nun samekh ayin pe tsadi qof resh shin tav
+
+                  pop wo sip zotz sek xul yaxkin mol chen yax sak kej mak kankin
+                  muwan pax kayab kumku wayeb
+
+                  ki gi ngi ti di ni bi mi yi li wi si hi ku gu ngu tu du pu
+                  bu yu lu wu su hu
+
+                  ha jim theh teh beh alif sin zin ra dhal dal kha ain dha ta
+                  dad sad shin mim lam kaf qaf feh ghain yeh waw heh nun}
   def self.random_name_generator
     (1..3).map {
       @rng_names[rand @rng_names.size]
