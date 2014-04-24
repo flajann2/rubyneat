@@ -1,9 +1,5 @@
 #!/usr/bin/env ruby
 
-# Be sure rnlib is added to the library path
-neatpath = File.expand_path '..', File.dirname(__FILE__)
-%w{ lib neater neater/rnlib }.each do |dir|
-  $:.unshift File.join([neatpath, dir])
-end
-
+NEAT_PATH = File.expand_path '../..', File.dirname(__FILE__)
+require_relative '../config/boot'
 require 'rubyneat/cli'

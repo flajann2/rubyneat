@@ -7,7 +7,7 @@ module RubyNEAT
       desc 'neaters', 'List all Neaters.'
       def neaters
         Dir.glob(NEATGLOB).sort.each do |ne|
-          puts 'neat runeater ' + File.basename(ne).gsub(%r{_neat\.rb}, '')
+          puts 'neat run ' + File.basename(ne).gsub(%r{_neat\.rb}, '')
         end
       end
 
@@ -44,7 +44,7 @@ module RubyNEAT
         puts "Not Implemented Yet."
       end
 
-      desc 'runeater <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
+      desc 'run <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
       option :log, type: :string, banner: 'info|warn|debug|error'
       def runeater(*neaters)
         NEAT::controller.verbosity = options[:verbose].to_i if options[:verbose]
@@ -56,6 +56,7 @@ module RubyNEAT
           load file
         end
       end
+      map run: :runeater
     end
   end
 end
