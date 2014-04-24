@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 
 ruby '2.1.1'
 
-gem 'mongo', '~> 1', require: false
-gem 'bson_ext', '~> 1', require: false
+#gem 'mongo', '~> 1', require: false
+#gem 'bson_ext', '~> 1', require: false
 gem 'distribution', '~> 0'
 
 #TODO: Check out this for a repacement of of statistics2
@@ -27,7 +27,7 @@ group :development do
   gem "jeweler", "~> 2"
   gem "simplecov", '~> 0'
   #gem 'debugger'
-  gem 'ruby-debug-ide', '~> 0'
+  #gem 'ruby-debug-ide', '~> 0'
 end
 
 #======================================================

@@ -2,5 +2,4 @@
 
 NEAT_PATH = File.expand_path '../..', File.dirname(__FILE__)
 require_relative '../config/boot'
-require 'rubyneat/cli'
 RubyNEAT::Cli::Main.start

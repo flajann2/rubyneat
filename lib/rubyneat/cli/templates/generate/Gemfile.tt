@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 ruby '<%= ruby.version %>'
+gem 'rubyneat'
 
 # For demo purposes, we include the gosu library, but if you don't
 # need this, then comment it out  or remove it.

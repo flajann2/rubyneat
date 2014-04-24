@@ -48,7 +48,6 @@ Gem::Specification.new do |s|
     "lib/rubyneat/rubyneat.rb",
     "pkg/rubyneat-0.3.5.alpha.5.gem",
     "rubyneat.gemspec",
-    "rubyneat.gemspec.orig",
     "spec/lib/rubyneat/rubyneat_spec.rb"
   ]
   s.homepage = "http://rubyneat.com"
@@ -60,8 +59,6 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<mongo>, ["~> 1"])
-      s.add_runtime_dependency(%q<bson_ext>, ["~> 1"])
       s.add_runtime_dependency(%q<distribution>, ["~> 0"])
       s.add_runtime_dependency(%q<statistics2>, ["~> 0"])
       s.add_runtime_dependency(%q<debase>, ["~> 0"])
@@ -78,10 +75,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<semver>, ["~> 1"])
       s.add_development_dependency(%q<jeweler>, ["~> 2"])
       s.add_development_dependency(%q<simplecov>, ["~> 0"])
-      s.add_development_dependency(%q<ruby-debug-ide>, ["~> 0"])
     else
-      s.add_dependency(%q<mongo>, ["~> 1"])
-      s.add_dependency(%q<bson_ext>, ["~> 1"])
       s.add_dependency(%q<distribution>, ["~> 0"])
       s.add_dependency(%q<statistics2>, ["~> 0"])
       s.add_dependency(%q<debase>, ["~> 0"])
@@ -98,11 +92,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<semver>, ["~> 1"])
       s.add_dependency(%q<jeweler>, ["~> 2"])
       s.add_dependency(%q<simplecov>, ["~> 0"])
-      s.add_dependency(%q<ruby-debug-ide>, ["~> 0"])
     end
   else
-    s.add_dependency(%q<mongo>, ["~> 1"])
-    s.add_dependency(%q<bson_ext>, ["~> 1"])
     s.add_dependency(%q<distribution>, ["~> 0"])
     s.add_dependency(%q<statistics2>, ["~> 0"])
     s.add_dependency(%q<debase>, ["~> 0"])
@@ -119,7 +110,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<semver>, ["~> 1"])
     s.add_dependency(%q<jeweler>, ["~> 2"])
     s.add_dependency(%q<simplecov>, ["~> 0"])
-    s.add_dependency(%q<ruby-debug-ide>, ["~> 0"])
   end
 end
 

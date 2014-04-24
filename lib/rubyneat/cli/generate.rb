@@ -38,7 +38,12 @@ module RubyNEAT
 
         def create_project_bin_files
           tcopy %w{ neat }.
-                  map{ |pfile| ["bin/#{pfile}", "#{name.snake}/bin/#{pfile}"] }, exec: true
+            map{ |pfile| ["bin/#{pfile}", "#{name.snake}/bin/#{pfile}"] }, exec: true
+        end
+
+        def create_project_config_files
+          tcopy %w{ boot.rb }.
+            map{|pfile| ["config/#{pfile}", "#{name.snake}/config/#{pfile}"]}
         end
 
         private
