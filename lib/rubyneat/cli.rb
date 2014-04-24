@@ -6,5 +6,3 @@ NEATGLOB = NEATER + '/*_neat.rb'
 
 require 'rubyneat/cli/main'
 require 'rubyneat'
-
-RubyNEAT::Cli::Main.start

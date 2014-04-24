@@ -24,6 +24,10 @@ module RubyNEAT
 
     end
 
+    class NewMain < Thor
+      register Generator::NewProject, 'new', 'new', 'Generates a new NEAT Project'
+    end
+
     class Main < Thor
       class_option :verbose, type: :numeric, banner: '[1|2|3]', aliases: '-v'
 
@@ -46,7 +50,7 @@ module RubyNEAT
 
       desc 'run <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
       option :log, type: :string, banner: 'info|warn|debug|error'
-      def runeater(*neaters)
+      def neater(*neaters)
         NEAT::controller.verbosity = options[:verbose].to_i if options[:verbose]
         eval %{$log.level = Logger::#{options[:log].upcase}} if options[:log]
 
@@ -56,7 +60,8 @@ module RubyNEAT
           load file
         end
       end
-      map run: :runeater
+      map run: :neater
+
     end
   end
 end

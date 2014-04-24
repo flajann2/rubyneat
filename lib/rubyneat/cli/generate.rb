@@ -38,12 +38,15 @@ module RubyNEAT
 
         def create_project_bin_files
           tcopy %w{ neat }.
-                  map{ |pfile| ["bin/#{pfile}", "#{name.snake}/bin/#{pfile}"] }
+                  map{ |pfile| ["bin/#{pfile}", "#{name.snake}/bin/#{pfile}"] }, exec: true
         end
 
         private
-        def tcopy(from_to_list)
-          from_to_list.each{ |from, to| template from, to }
+        def tcopy(from_to_list, exec: false)
+          from_to_list.each{ |from, to|
+            template from, to
+            File.chmod(0755, to) if exec
+          }
         end
       end
 
@@ -114,7 +117,6 @@ module RubyNEAT
 
     class Generate < Thor
       register Generator::Neater, 'neater', 'neater', 'Generates a neater'
-      register Generator::NewProject, 'new', 'new', 'Generates a new NEAT project'
     end
   end
 end

@@ -1,9 +1,17 @@
 #!/usr/bin/env ruby
 
 # Be sure rnlib is added to the library path
-neatpath = File.expand_path '..', File.dirname(__FILE__)
+NEAT_PATH = File.expand_path '..', File.dirname(__FILE__)
+NEAT_EXECUTABLE = File.expand_path 'bin/neat', Dir.pwd
+
 %w{ lib neater neater/rnlib }.each do |dir|
-  $:.unshift File.join([neatpath, dir])
+  $:.unshift File.join([NEAT_PATH, dir])
 end
 
 require 'rubyneat/cli'
+
+unless File.exists? NEAT_EXECUTABLE
+  RubyNEAT::Cli::NewMain.start
+else
+  exec NEAT_EXECUTABLE
+end
