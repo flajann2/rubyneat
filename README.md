@@ -1,4 +1,5 @@
-## RubyNEAT -- Neural Evolution of Augmenting Topologies
+RubyNEAT -- Neural Evolution of Augmenting Topologies
+=====================================================
 
 For the latest docs, please see http://rubyneat.com
 
@@ -7,7 +8,8 @@ expected to be a full blown pure Ruby implementation of the NEAT algorithm by Ke
 
 http://www.cs.ucf.edu/~kstanley/
 
-## Quick and Dirty Docs
+Quick and Dirty Docs
+--------------------
 
 There is an (extreme) alpha RubyGEM. Just do:
 
@@ -30,7 +32,18 @@ and a project directory will be created. Cd into that directory, and type:
 and a scaffold Neater will be generated. Note that this generator is still
 in alpha, but improvements are coming shortly.
 
-## Also Note
+Examples
+--------
+
+For some examples, clone or fork the following:
+
+https://github.com/flajann2/rubyneat_examples
+
+Feel free to add your own and do pull requests so that
+we can have more examples of using RubyNEAT.
+
+Also Note
+---------
 
 For now, see
 
@@ -41,7 +54,8 @@ gets out of alpha. There are a couple of example Neaters there (one of which is
 still in development). Basic, but will be a good example of how to implement your own
 Neater. Eventually all will be fully documented.
 
-## Copyright Notice
+Copyright Notice
+----------------
 
 This code is released under the MIT license:
 
