@@ -7,14 +7,25 @@ module RubyNEAT
       desc 'neaters', 'List all Neaters.'
       def neaters
         Dir.glob(NEATGLOB).sort.each do |ne|
-          puts 'neat runeater ' + File.basename(ne).gsub(%r{_neat\.rb}, '')
+          puts 'neat run ' + File.basename(ne).gsub(%r{_neat\.rb}, '')
         end
       end
 
-      desc 'neurons', 'List all Neurons.'
+      desc 'neurons', 'List all Neurons by their full class names.'
       def neurons
         puts NEAT::Neuron.neuron_types.map{|n| n.name }.sort.join "\n"
       end
+
+      desc 'types', 'List all Neurons by their type names.'
+      def types
+        puts NEAT::Neuron.neuron_types.map{|n| n.type_name }.sort.join "\n"
+        #puts NEAT::Neuron.neuron_type_names.sort.join "\n"
+      end
+
+    end
+
+    class NewMain < Thor
+      register Generator::NewProject, 'new', 'new', 'Generates a new NEAT Project'
     end
 
     class Main < Thor
@@ -37,9 +48,9 @@ module RubyNEAT
         puts "Not Implemented Yet."
       end
 
-      desc 'runeater <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
+      desc 'run <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
       option :log, type: :string, banner: 'info|warn|debug|error'
-      def runeater(*neaters)
+      def neater(*neaters)
         NEAT::controller.verbosity = options[:verbose].to_i if options[:verbose]
         eval %{$log.level = Logger::#{options[:log].upcase}} if options[:log]
 
@@ -49,6 +60,8 @@ module RubyNEAT
           load file
         end
       end
+      map run: :neater
+
     end
   end
 end

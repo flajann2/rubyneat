@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
     "lib/rubyneat/cli/templates/generate/Gemfile.tt",
     "lib/rubyneat/cli/templates/generate/README.md.tt",
     "lib/rubyneat/cli/templates/generate/bin/neat.tt",
+    "lib/rubyneat/cli/templates/generate/config/boot.rb.tt",
     "lib/rubyneat/cli/templates/generate/neater.tt",
     "lib/rubyneat/critter.rb",
     "lib/rubyneat/default_neat.rb",

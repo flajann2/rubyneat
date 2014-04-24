@@ -1,3 +1,6 @@
+require 'thor'
+require 'semver'
+
 NEATER = File.join [Dir.pwd, "neater"]
 NEATGLOB = NEATER + '/*_neat.rb'
 

@@ -32,9 +32,26 @@ module RubyNEAT
           @ruby = OpenStruct.new version: RUBY_VERSION,
                                  engine: RUBY_ENGINE,
                                  platform: RUBY_PLATFORM
-          %w{Gemfile README.md}.
-            map{ |pfile| [pfile, "#{name.snake}/#{pfile}"] }.
-            each{ |source, destination| template source, destination }
+          tcopy %w{Gemfile README.md}.
+                  map{ |pfile| [pfile, "#{name.snake}/#{pfile}"] }
+        end
+
+        def create_project_bin_files
+          tcopy %w{ neat }.
+            map{ |pfile| ["bin/#{pfile}", "#{name.snake}/bin/#{pfile}"] }, exec: true
+        end
+
+        def create_project_config_files
+          tcopy %w{ boot.rb }.
+            map{|pfile| ["config/#{pfile}", "#{name.snake}/config/#{pfile}"]}
+        end
+
+        private
+        def tcopy(from_to_list, exec: false)
+          from_to_list.each{ |from, to|
+            template from, to
+            File.chmod(0755, to) if exec
+          }
         end
       end
 
@@ -105,7 +122,6 @@ module RubyNEAT
 
     class Generate < Thor
       register Generator::Neater, 'neater', 'neater', 'Generates a neater'
-      register Generator::NewProject, 'new', 'new', 'Generates a new NEAT project'
     end
   end
 end

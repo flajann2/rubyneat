@@ -30,6 +30,12 @@ module NEAT
     # List of neuron types defined.
     @@neuron_types = []
 
+    # Type names must always be unique for Neurons.
+    # TODO: Enforce uniqueness in neural type names
+    def self.type_name
+      @type_name ||= self.to_s.split('::').last.split('Neuron').first.downcase
+    end
+
     # Class is is of Input type?
     def self.input? ; false ; end
     def input? ; self.class.input? ; end
@@ -55,7 +61,6 @@ module NEAT
       raise NeatException.new "express() must be implemented by subclass."
     end
   end
-
 
 
 =begin rdoc
@@ -144,6 +149,34 @@ The basic types to RubyNEAT are represented here.
       def express(instance)
         instance.define_singleton_method(@name) {|*inputs|
           cos(1.6 * inputs.reduce {|p, q| p + q})
+        }
+      end
+    end
+
+    # Linear function (CPPN) -- simply add up all the inputs.
+    class LinearNeuron < Neuron
+      # create a function on the instance with our name
+      # that sums all inputs only.
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
+          inputs.reduce {|p, q| p + q}
+        }
+      end
+    end
+
+    # Gaussian function (CPPN) -- SD 1 of inputs
+    class GaussianNeuron < Neuron
+      # create a function on the instance with our name
+      # that sums all inputs and produce a gaussian of
+      # standard deviation of 1.
+      def express(instance)
+        instance.define_singleton_method(@name) { |*inputs|
+          a = 1.0 #height
+          b = 0.0 #center
+          c = 1.0 #SD
+          d = 0.0 #lowest y point
+          x = inputs.reduce {|p, q| p + q}
+          a * exp(-(x - b)**2.0 / 2*c**2.0) + d
         }
       end
     end
