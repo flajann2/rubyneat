@@ -54,6 +54,13 @@ gets out of alpha. There are a couple of example Neaters there (one of which is
 still in development). Basic, but will be a good example of how to implement your own
 Neater. Eventually all will be fully documented.
 
+Release Notes
+-------------
+* `0.3.5.alpha.7`
+
+    Console made functional.
+
+
 Copyright Notice
 ----------------
 
