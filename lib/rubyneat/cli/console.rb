@@ -4,7 +4,6 @@ require 'irb/completion'
 module RubyNEAT
   module Cli
     class Console < Thor
-
       class << self
         def default_command
           # TODO: maybe dynamically set it in Rakefile and then retrieve from ENV?

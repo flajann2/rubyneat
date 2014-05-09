@@ -49,8 +49,8 @@ Jeweler::Tasks.new do |gem|
   # Exclude the Neural Docs directory
   gem.files.exclude 'Neural_Docs/*', 'foo/**/*', 'rdoc/*',
                     '.idea/**/*', '.idea/**/.*', '.yardoc/**/*',
-                    'public/**/*', 'neater/**/*', 'doc/**/*',
-                    'public/**/.*', 'Guardfile'
+                    'app/**/*', 'neater/**/*', 'doc/**/*',
+                    'app/**/.*', 'Guardfile'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
