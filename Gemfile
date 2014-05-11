@@ -19,8 +19,8 @@ gem 'awesome_print', '~> 1'
 gem 'deep_dive', '~> 0'
 
 # So our console can have name completion
-gem 'bond', '~> 0.5.1'
-gem 'rb-readline', '~> 0.5.1'
+gem 'bond', '~> 0.5'
+gem 'rb-readline', '~> 0.5'
 
 group :development do
   gem 'rspec', '~> 2'

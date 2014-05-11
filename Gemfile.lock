@@ -119,7 +119,7 @@ PLATFORMS
 DEPENDENCIES
   aquarium (~> 0)
   awesome_print (~> 1)
-  bond (~> 0.5.1)
+  bond (~> 0.5)
   debase (~> 0)
   deep_dive (~> 0)
   distribution (~> 0)
@@ -127,7 +127,7 @@ DEPENDENCIES
   guard (~> 2)
   guard-rspec (~> 4)
   jeweler (~> 2)
-  rb-readline (~> 0.5.1)
+  rb-readline (~> 0.5)
   rspec (~> 2)
   rubyvis (~> 0)
   semver (~> 1)
