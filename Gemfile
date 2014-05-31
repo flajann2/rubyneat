@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 #gemspec
 
-ruby '2.1.1'
+#ruby '2.1.2'
 
 #gem 'mongo', '~> 1', require: false
 #gem 'bson_ext', '~> 1', require: false
