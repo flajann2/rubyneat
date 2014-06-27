@@ -1,4 +1,4 @@
-require 'rubyneat/rubyneat'
+require_relative 'rubyneat'
 
 module NEAT
   #= Evaluator evaluates phenotype of critter for fitness, novelty, etc.

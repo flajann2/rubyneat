@@ -1,5 +1,5 @@
 require 'rubyneat'
-require 'rubyneat/graph'
+require_relative 'graph'
 
 =begin rdoc
 = Neuron Types

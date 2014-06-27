@@ -2,7 +2,7 @@
 =RubyNEAT -- Neural Evolution of Augmenting Topologies
 =end
 
-require 'rubyneat/rubyneat'
-require 'rubyneat/graph'
-require 'rubyneat/dsl'
+require_relative 'rubyneat/rubyneat'
+require_relative 'rubyneat/graph'
+require_relative 'rubyneat/dsl'
 require 'set'

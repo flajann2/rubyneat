@@ -437,5 +437,5 @@ module NEAT
 end
 
 # We put all the internal requires at the end to avoid conflicts.
-require 'rubyneat/neuron'
-require 'rubyneat/population'
+require_relative 'neuron'
+require_relative 'population'

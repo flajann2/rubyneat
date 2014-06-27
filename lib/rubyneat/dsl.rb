@@ -1,4 +1,4 @@
-require 'rubyneat/rubyneat'
+require_relative 'rubyneat'
 
 =begin rdoc
 = RubyNEAT DSL

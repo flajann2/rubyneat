@@ -1,5 +1,6 @@
 require 'rubyneat'
 require 'distribution'
+
 module NEAT
   #= Evolver -- Basis of all evolvers.
   # All evolvers shall derive from this basic evolver (or this one can be
