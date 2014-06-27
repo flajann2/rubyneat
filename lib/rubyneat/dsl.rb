@@ -125,6 +125,6 @@ module NEAT
   end
 end
 
-# FIXME: This needs to better specified for cases in which there may be multiple
-# Controllers.
+# FIXME: This needs to better specified for cases in which
+# FIXME: there may be multiple Controllers.
 require 'rubyneat/default_neat'
