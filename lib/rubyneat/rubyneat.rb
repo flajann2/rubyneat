@@ -161,6 +161,17 @@ module NEAT
   # a type of "World", if you will, for the entire enterprise.
   #
   # Your application shall only have one Controller.
+  #
+  # FIXME: The function hooks really should be able to take more
+  # FIXME: than one hook! we don't need that functionality right
+  # FIXME: now. Also, the Controller 'god' object itself will need
+  # FIXME: to undergo some refactorization so that we can have many
+  # FIXME: of them for HyperNEAT, co-evolution, etc.
+  #
+  # FIXME: An alternative approach would be to have demigod objects
+  # FIXME: where the controller would lord it over them all. Attention
+  # FIXME: must also be given to Rubinius and JRuby so that we can
+  # FIXME: run under multiple cores.
   class Controller < NeatOb
     # global innovation number
     attr_reader :glob_innov_num
@@ -211,6 +222,9 @@ module NEAT
     # End run function to call at the end of each generational run
     # Also report_hook to dump reports for the user, etc.
     attr_accessor :end_run_func, :report_hook
+
+    # Hook to handle pre_exit functionality
+    attr_accessor :pre_exit_func
 
     # Logger object for all of RubyNEAT
     attr_reader :log
@@ -379,6 +393,13 @@ module NEAT
     def new_innovation ; @glob_innov_num += 1; end
     def gaussian ; @gaussian.() ; end
 
+    # Allow us to hook in pre-exit functionality here
+    # This function shall never return.
+    def exit_neat
+      @pre_exit_func.(self) unless @pre_exit_func.nil?
+      exit
+    end
+
     # Run this evolution.
     def run
       pre_run_initialize
@@ -412,7 +433,7 @@ module NEAT
 
         ## Exit if fitness criteria is reached
         #FIXME handle this exit condition better!!!!!
-        exit if @stop_on_fit_func.(@population.report[:fitness], self) unless @stop_on_fit_func.nil?
+        exit_neat if @stop_on_fit_func.(@population.report[:fitness], self) unless @stop_on_fit_func.nil?
 
         ## Evolve population
         @population = new_pop
