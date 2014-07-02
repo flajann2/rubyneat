@@ -125,6 +125,48 @@ module NEAT
     def to_s
       "%s<%s>" % [self.class, self.name]
     end
+
+
+    class << self
+      # Defaultable attributes of neat attributes.
+      #
+      def attr_neat(sym, default: nil, cloneable: nil, hooks: false)
+        svar = "@#{sym}"
+
+        # Guess what clonable should be.
+        # This is meant to cover "90%" of the cases.
+        cloneable = case
+                      when default.nil?
+                        false
+                      when default.kind_of?(Numeric)
+                        false
+                      else
+                        true
+                    end if cloneable.nil?
+        if hooks
+          default = []
+          cloneable = true
+
+          define_method("#{sym}_hooks") do |**hparams|
+            send(svar)
+            .map{|funct| funct.(**hparams)}
+          end
+        end
+
+        define_method("#{sym}=") do |v|
+          instance_variable_set(svar, v)
+        end
+
+        # TODO: Enhance this getter method for performance.
+        define_method(sym) do
+          pp default
+          instance_variable_set(svar,
+                                instance_variable_get(svar) ||
+                                    ((cloneable) ? default.clone
+                                                 : default))
+        end
+      end
+    end
   end
 
   class NeatException < Exception
@@ -174,7 +216,7 @@ module NEAT
   # FIXME: run under multiple cores.
   class Controller < NeatOb
     # global innovation number
-    attr_reader :glob_innov_num
+    attr_neat :glob_innov_num, default: 0, cloneable: false
 
     # current sequence number being evaluated
     attr_reader :seq_num
@@ -204,7 +246,7 @@ module NEAT
     ## 2 - really verbose
     ## 3 - maximally verbose
     # Use in conjunction with log.debug
-    attr_accessor :verbosity
+    attr_neat :verbosity, default: 1
 
     # Query function that Critters shall call.
     attr_accessor :query_func
@@ -269,7 +311,7 @@ module NEAT
       attr_accessor :mate_singlepoint_prob
 
       # Maximum number of generations to run, if given.
-      attr_accessor :max_generations
+      attr_neat :max_generations, default: 1000
 
       # Maximun number of populations to maintain in the history buffer.
       attr_accessor :max_population_history
@@ -284,9 +326,9 @@ module NEAT
 
       # For gene weights perturbations and changes (complete overwrites)
       attr_accessor :mutate_perturb_gene_weights_prob, 
-      :mutate_perturb_gene_weights_sd, 
-      :mutate_change_gene_weights_prob, 
-      :mutate_change_gene_weights_sd
+                    :mutate_perturb_gene_weights_sd,
+                    :mutate_change_gene_weights_prob,
+                    :mutate_change_gene_weights_sd
 
       attr_accessor :mutate_neuron_trait_prob
       attr_accessor :mutate_only_prob
@@ -306,7 +348,8 @@ module NEAT
       # grow to the bigger population size
       attr_accessor :start_population_size, :population_size
 
-      attr_accessor :start_sequence_at, :end_sequence_at
+      attr_neat :start_sequence_at, default: 0
+      attr_neat :end_sequence_at, default: 100
 
       attr_accessor :print_every
       attr_accessor :recur_only_prob
@@ -343,10 +386,6 @@ module NEAT
       # Set up defaults for mandatory entries.
       def initialize
         super
-        @start_sequence_at = 0
-        @end_sequence_at = 100
-        @max_generations = 1000
-
         # Default operators
         @evaluator = Evaluator.new self
         @expressor = Expressor.new self
@@ -363,8 +402,6 @@ module NEAT
                    parameters: NeatSettings.new,
                       &block)
       super(self)
-      @verbosity = 1
-      @glob_innov_num = 0
       @gaussian = Distribution::Normal.rng
       @population_history = []
       @evolver = Evolver.new self
@@ -390,15 +427,8 @@ module NEAT
       block.(self) unless block.nil?
     end
 
-    def new_innovation ; @glob_innov_num += 1; end
+    def new_innovation ; self.glob_innov_num += 1 ; end
     def gaussian ; @gaussian.() ; end
-
-    # Allow us to hook in pre-exit functionality here
-    # This function shall never return.
-    def exit_neat
-      @pre_exit_func.(self) unless @pre_exit_func.nil?
-      exit
-    end
 
     # Run this evolution.
     def run
@@ -424,7 +454,7 @@ module NEAT
         @population.analyze!
         @population.speciate!
 
-        $log.debug @population.dump_s unless @verbosity < 3
+        $log.debug @population.dump_s unless self.verbosity < 3
 
         new_pop = @population.evolve
 
@@ -448,6 +478,13 @@ module NEAT
     def pre_run_initialize
       @evaluator = @evaluator_class.new(self) if @evaluator.nil?
       @evolver = @evolver_class.new(self) if @evolver.nil?
+    end
+
+    # Allow us to hook in pre-exit functionality here
+    # This function shall never return.
+    def exit_neat
+      @pre_exit_func.(self) unless @pre_exit_func.nil?
+      exit
     end
   end
 
