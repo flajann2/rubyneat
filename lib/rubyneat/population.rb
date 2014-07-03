@@ -173,9 +173,10 @@ module NEAT
 
     # The "best critter" is the critter with the lowest (closet to zero)
     # fitness rating.
+    # TODO: DRY up best_critter and worst_critter
     def best_critter
-      unless @controller.compare_func.nil?
-        @critters.min {|a, b| @controller.compare_func.(a.fitness, b.fitness) }
+      unless @controller.compare_func.empty?
+        @critters.min {|a, b| @controller.compare_func_hook(a.fitness, b.fitness) }
       else
         @critters.min {|a, b| a.fitness <=> b.fitness}
       end
@@ -184,8 +185,8 @@ module NEAT
     # The "worst critter" is the critter with the highest (away from zero)
     # fitness rating.
     def worst_critter
-      unless @controller.compare_func.nil?
-        @critters.max {|a, b| @controller.compare_func.(a.fitness, b.fitness) }
+      unless @controller.compare_func.empty?
+        @critters.max {|a, b| @controller.compare_func_hook(a.fitness, b.fitness) }
       else
         @critters.max {|a, b| a.fitness <=> b.fitness}
       end

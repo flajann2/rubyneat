@@ -130,6 +130,20 @@ module NEAT
     class << self
       # Defaultable attributes of neat attributes.
       #
+      # If hooks: true is given, two hook functions are
+      # created:
+      ## <sym>_add() -- add a hook
+      ## <sym>_clear -- clear all hooks
+      ## <sym>_none? -- return true if no hooks are defined.
+      ## <sym>_one? -- return true if exactly hook is defined.
+      ## <sym>_hook() -- for passing unnamed parameters to a singular hook.
+      ## <sym>_np_hook() -- for passing unnamed parameters to a singular hook.
+      ## <sym>_hooks() -- for passing unnamed parameters.
+      ## <sym>_np_hooks() -- for passing a named parameter list.
+      #
+      # For *_hook(), the function returns the single result.
+      # For *_hooks(), the hook function return an array of results
+      # from all the actual registered hooks called.
       def attr_neat(sym, default: nil, cloneable: nil, hooks: false)
         svar = "@#{sym}"
 
@@ -147,19 +161,51 @@ module NEAT
           default = []
           cloneable = true
 
-          define_method("#{sym}_hooks") do |**hparams|
-            send(svar)
-            .map{|funct| funct.(**hparams)}
+          define_method("#{sym}_add") do |hook|
+            send(sym) << hook
+          end
+
+          define_method("#{sym}_clear") do
+            send(sym).clear
+          end
+
+          define_method("#{sym}_none?") do
+            send(sym).empty?
+          end
+
+          define_method("#{sym}_one?") do
+            send(sym).size == 1
+          end
+
+          # hooks with named parameters
+          define_method("#{sym}_np_hooks") do |**hparams|
+            send(sym).map{|funct| funct.(**hparams)}
+          end
+
+          # hooks with traditional parameters
+          define_method("#{sym}_hooks") do |*params|
+            send(sym).map{|funct| funct.(*params)}
+          end
+
+          # Single hook with named parameters
+          define_method("#{sym}_np_hook") do |**hparams|
+            raise NeatException.new("Compare func can at most have one hook") unless send(sym).size == 1
+            send(sym).map{|funct| funct.(**hparams)}.first
+          end
+
+          # Single hook with traditional parameters
+          define_method("#{sym}_hook") do |*params|
+            raise NeatException.new("Compare func can at most have one hook") unless send(sym).size == 1
+            send(sym).map{|funct| funct.(*params)}.first
           end
         end
 
         define_method("#{sym}=") do |v|
           instance_variable_set(svar, v)
-        end
+        end unless hooks
 
         # TODO: Enhance this getter method for performance.
         define_method(sym) do
-          pp default
           instance_variable_set(svar,
                                 instance_variable_get(svar) ||
                                     ((cloneable) ? default.clone
@@ -259,7 +305,9 @@ module NEAT
 
     # Compare function for fitness
     # Cost function for integrating in the cost to the fitness scalar.
-    attr_accessor :compare_func, :cost_func, :stop_on_fit_func
+    attr_neat :compare_func, hooks: true
+    attr_neat :cost_func, hooks: true
+    attr_accessor :stop_on_fit_func
 
     # End run function to call at the end of each generational run
     # Also report_hook to dump reports for the user, etc.

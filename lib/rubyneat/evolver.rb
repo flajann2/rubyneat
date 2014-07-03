@@ -84,7 +84,7 @@ module NEAT
       @npop.species.each do |k, sp|
         sp.sort!{|c1, c2|
           unless @controller.compare_func.nil?
-            @controller.compare_func.(c1.fitness, c2.fitness)
+            @controller.compare_func_hook(c1.fitness, c2.fitness)
           else
             c1.fitness <=> c2.fitness
           end

@@ -61,13 +61,13 @@ module NEAT
       # use the <=> to compare them (or the equivalent, following
       # the +1, 0, -1 that is in the sense of <=>)
       def compare(&block)
-        NEAT::controller.compare_func = block
+        NEAT::controller.compare_func_add block
       end
 
       # Calculation to add the cost to the fitness, resulting in a fitness
       # that incorporates the cost for sorting purposes.
       def cost(&block)
-        NEAT::controller.cost_func = block
+        NEAT::controller.cost_func_add block
       end
 
       # Stop the progression once the fitness criteria is reached
