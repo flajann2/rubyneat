@@ -112,6 +112,17 @@ for the entire enterprise.</p>
 
 <p>Your application shall only have one Controller.</p>
 
+<p>FIXME: The function hooks really should be able to take more FIXME: than
+one hook! we don&#39;t need that functionality right FIXME: now. Also, the
+Controller &#39;god&#39; object itself will need FIXME: to undergo some
+refactorization so that we can have many FIXME: of them for HyperNEAT,
+co-evolution, etc.</p>
+
+<p>FIXME: An alternative approach would be to have demigod objects FIXME:
+where the controller would lord it over them all. Attention FIXME: must
+also be given to Rubinius and JRuby so that we can FIXME: run under
+multiple cores.</p>
+
 
   </div>
 </div>
@@ -134,90 +145,6 @@ for the entire enterprise.</p>
 
   <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
   <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#compare_func-instance_method" title="#compare_func (instance method)">- (Object) <strong>compare_func</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Compare function for fitness Cost function for integrating in the cost to
-the fitness scalar.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#cost_func-instance_method" title="#cost_func (instance method)">- (Object) <strong>cost_func</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Compare function for fitness Cost function for integrating in the cost to
-the fitness scalar.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#end_run_func-instance_method" title="#end_run_func (instance method)">- (Object) <strong>end_run_func</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>End run function to call at the end of each generational run Also
-report_hook to dump reports for the user, etc.</p>
-</div></span>
-  
-</li>
-
     
       <li class="public ">
   <span class="summary_signature">
@@ -432,35 +359,6 @@ report_hook to dump reports for the user, etc.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Current generation count.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#glob_innov_num-instance_method" title="#glob_innov_num (instance method)">- (Object) <strong>glob_innov_num</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>global innovation number.</p>
 </div></span>
   
 </li>
@@ -723,6 +621,33 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#pre_exit_func-instance_method" title="#pre_exit_func (instance method)">- (Object) <strong>pre_exit_func</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Hook to handle pre_exit functionality.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#query_func-instance_method" title="#query_func (instance method)">- (Object) <strong>query_func</strong> </a>
     
 
@@ -777,34 +702,6 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#report_hook-instance_method" title="#report_hook (instance method)">- (Object) <strong>report_hook</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>End run function to call at the end of each generational run Also
-report_hook to dump reports for the user, etc.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#seq_num-instance_method" title="#seq_num (instance method)">- (Object) <strong>seq_num</strong> </a>
     
 
@@ -826,62 +723,6 @@ report_hook to dump reports for the user, etc.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>current sequence number being evaluated.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#stop_on_fit_func-instance_method" title="#stop_on_fit_func (instance method)">- (Object) <strong>stop_on_fit_func</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Compare function for fitness Cost function for integrating in the cost to
-the fitness scalar.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#verbosity-instance_method" title="#verbosity (instance method)">- (Object) <strong>verbosity</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Global verbosity level: 1 - normal (the default) 2 - really verbose 3 -
-maximally verbose Use in conjunction with log.debug.</p>
 </div></span>
   
 </li>
@@ -1015,7 +856,7 @@ create this.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
@@ -1052,41 +893,39 @@ this.</p>
       <pre class="lines">
 
 
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365</pre>
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 334</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 448</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>neural_inputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>neural_outputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
@@ -1094,8 +933,6 @@ this.</p>
                <span class='label'>parameters:</span> <span class='const'>NeatSettings</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span>
                   <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
-  <span class='ivar'>@verbosity</span> <span class='op'>=</span> <span class='int'>1</span>
-  <span class='ivar'>@glob_innov_num</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='ivar'>@gaussian</span> <span class='op'>=</span> <span class='const'>Distribution</span><span class='op'>::</span><span class='const'>Normal</span><span class='period'>.</span><span class='id identifier rubyid_rng'>rng</span>
   <span class='ivar'>@population_history</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='ivar'>@evolver</span> <span class='op'>=</span> <span class='const'>Evolver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>self</span>
@@ -1131,141 +968,9 @@ this.</p>
     <h2>Instance Attribute Details</h2>
     
       
-      <span id="compare_func=-instance_method"></span>
-      <div class="method_details first">
-  <h3 class="signature first" id="compare_func-instance_method">
-  
-    - (<tt>Object</tt>) <strong>compare_func</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Compare function for fitness Cost function for integrating in the cost to
-the fitness scalar.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-197
-198
-199</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 197</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_compare_func'>compare_func</span>
-  <span class='ivar'>@compare_func</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="cost_func=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="cost_func-instance_method">
-  
-    - (<tt>Object</tt>) <strong>cost_func</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Compare function for fitness Cost function for integrating in the cost to
-the fitness scalar.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-197
-198
-199</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 197</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_cost_func'>cost_func</span>
-  <span class='ivar'>@cost_func</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="end_run_func=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="end_run_func-instance_method">
-  
-    - (<tt>Object</tt>) <strong>end_run_func</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>End run function to call at the end of each generational run Also
-report_hook to dump reports for the user, etc.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-201
-202
-203</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 201</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_end_run_func'>end_run_func</span>
-  <span class='ivar'>@end_run_func</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
       <span id="evaluator=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="evaluator-instance_method">
+      <div class="method_details first">
+  <h3 class="signature first" id="evaluator-instance_method">
   
     - (<tt>Object</tt>) <strong>evaluator</strong> 
   
@@ -1290,12 +995,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-176
-177
-178</pre>
+287
+288
+289</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 287</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluator'>evaluator</span>
   <span class='ivar'>@evaluator</span>
@@ -1333,12 +1038,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-176
-177
-178</pre>
+287
+288
+289</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 287</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluator_class'>evaluator_class</span>
   <span class='ivar'>@evaluator_class</span>
@@ -1376,12 +1081,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-177
-178
-179</pre>
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolver'>evolver</span>
   <span class='ivar'>@evolver</span>
@@ -1419,12 +1124,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-177
-178
-179</pre>
+288
+289
+290</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 288</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolver_class'>evolver_class</span>
   <span class='ivar'>@evolver_class</span>
@@ -1462,12 +1167,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-175
-176
-177</pre>
+286
+287
+288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 175</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 286</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expressor'>expressor</span>
   <span class='ivar'>@expressor</span>
@@ -1505,12 +1210,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-175
-176
-177</pre>
+286
+287
+288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 175</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 286</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expressor_class'>expressor_class</span>
   <span class='ivar'>@expressor_class</span>
@@ -1548,12 +1253,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-190
-191
-192</pre>
+301
+302
+303</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 301</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness_func'>fitness_func</span>
   <span class='ivar'>@fitness_func</span>
@@ -1591,58 +1296,15 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-160
-161
-162</pre>
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 160</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 271</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generation_num'>generation_num</span>
   <span class='ivar'>@generation_num</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="glob_innov_num-instance_method">
-  
-    - (<tt>Object</tt>) <strong>glob_innov_num</strong>  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>global innovation number</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-154
-155
-156</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 154</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_glob_innov_num'>glob_innov_num</span>
-  <span class='ivar'>@glob_innov_num</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1677,12 +1339,12 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-204
-205
-206</pre>
+321
+322
+323</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 321</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span>
   <span class='ivar'>@log</span>
@@ -1721,12 +1383,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-167
-168
-169</pre>
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_hidden'>neural_hidden</span>
   <span class='ivar'>@neural_hidden</span>
@@ -1765,12 +1427,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-167
-168
-169</pre>
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span>
   <span class='ivar'>@neural_inputs</span>
@@ -1809,12 +1471,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-167
-168
-169</pre>
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 278</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_outputs'>neural_outputs</span>
   <span class='ivar'>@neural_outputs</span>
@@ -1852,12 +1514,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-163
-164
-165</pre>
+274
+275
+276</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 274</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neuron_catalog'>neuron_catalog</span>
   <span class='ivar'>@neuron_catalog</span>
@@ -1895,12 +1557,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-170
-171
-172</pre>
+281
+282
+283</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 170</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 281</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parms'>parms</span>
   <span class='ivar'>@parms</span>
@@ -1938,12 +1600,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-173
-174
-175</pre>
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 284</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population'>population</span>
   <span class='ivar'>@population</span>
@@ -1981,12 +1643,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-173
-174
-175</pre>
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 284</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_class'>population_class</span>
   <span class='ivar'>@population_class</span>
@@ -2024,15 +1686,58 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-173
-174
-175</pre>
+284
+285
+286</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 284</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_history'>population_history</span>
   <span class='ivar'>@population_history</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="pre_exit_func=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="pre_exit_func-instance_method">
+  
+    - (<tt>Object</tt>) <strong>pre_exit_func</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Hook to handle pre_exit functionality</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+318
+319
+320</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 318</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_pre_exit_func'>pre_exit_func</span>
+  <span class='ivar'>@pre_exit_func</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2067,12 +1772,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-187
-188
-189</pre>
+298
+299
+300</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 298</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query_func'>query_func</span>
   <span class='ivar'>@query_func</span>
@@ -2110,59 +1815,15 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-193
-194
-195</pre>
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 193</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 304</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_recurrence_func'>recurrence_func</span>
   <span class='ivar'>@recurrence_func</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="report_hook=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="report_hook-instance_method">
-  
-    - (<tt>Object</tt>) <strong>report_hook</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>End run function to call at the end of each generational run Also
-report_hook to dump reports for the user, etc.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-201
-202
-203</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 201</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_report_hook'>report_hook</span>
-  <span class='ivar'>@report_hook</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2197,103 +1858,15 @@ report_hook to dump reports for the user, etc.</p>
       <pre class="lines">
 
 
-157
-158
-159</pre>
+268
+269
+270</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 268</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_seq_num'>seq_num</span>
   <span class='ivar'>@seq_num</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="stop_on_fit_func=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="stop_on_fit_func-instance_method">
-  
-    - (<tt>Object</tt>) <strong>stop_on_fit_func</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Compare function for fitness Cost function for integrating in the cost to
-the fitness scalar.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-197
-198
-199</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 197</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fit_func'>stop_on_fit_func</span>
-  <span class='ivar'>@stop_on_fit_func</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="verbosity=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="verbosity-instance_method">
-  
-    - (<tt>Object</tt>) <strong>verbosity</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Global verbosity level: 1 - normal (the default) 2 - really verbose 3 -
-maximally verbose Use in conjunction with log.debug</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-184
-185
-186</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 184</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_verbosity'>verbosity</span>
-  <span class='ivar'>@verbosity</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -2322,10 +1895,10 @@ maximally verbose Use in conjunction with log.debug</p>
       <pre class="lines">
 
 
-368</pre>
+480</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 368</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 480</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@gaussian</span><span class='period'>.</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -2348,12 +1921,12 @@ maximally verbose Use in conjunction with log.debug</p>
       <pre class="lines">
 
 
-367</pre>
+479</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 367</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 479</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='ivar'>@glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_glob_innov_num'>glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -2385,50 +1958,50 @@ maximally verbose Use in conjunction with log.debug</p>
       <pre class="lines">
 
 
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389
-390
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411</pre>
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 371</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 483</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
   <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
@@ -2453,22 +2026,22 @@ maximally verbose Use in conjunction with log.debug</p>
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_analyze!'>analyze!</span>
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_speciate!'>speciate!</span>
 
-    <span class='gvar'>$log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_dump_s'>dump_s</span> <span class='kw'>unless</span> <span class='ivar'>@verbosity</span> <span class='op'>&lt;</span> <span class='int'>3</span>
+    <span class='gvar'>$log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_dump_s'>dump_s</span> <span class='kw'>unless</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_verbosity'>verbosity</span> <span class='op'>&lt;</span> <span class='int'>3</span>
 
     <span class='id identifier rubyid_new_pop'>new_pop</span> <span class='op'>=</span> <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_evolve'>evolve</span>
 
     <span class='comment'>## Report hook for evaluation
-</span>    <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@report_hook</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+</span>    <span class='id identifier rubyid_report_hooks'>report_hooks</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='rparen'>)</span>
 
     <span class='comment'>## Exit if fitness criteria is reached
 </span>    <span class='comment'>#FIXME handle this exit condition better!!!!!
-</span>    <span class='id identifier rubyid_exit'>exit</span> <span class='kw'>if</span> <span class='ivar'>@stop_on_fit_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='lbracket'>[</span><span class='symbol'>:fitness</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@stop_on_fit_func</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+</span>    <span class='id identifier rubyid_exit_neat'>exit_neat</span> <span class='kw'>if</span> <span class='id identifier rubyid_stop_on_fit_func_hook'>stop_on_fit_func_hook</span><span class='lparen'>(</span><span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_report'>report</span><span class='lbracket'>[</span><span class='symbol'>:fitness</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_stop_on_fit_func_none?'>stop_on_fit_func_none?</span>
 
     <span class='comment'>## Evolve population
 </span>    <span class='ivar'>@population</span> <span class='op'>=</span> <span class='id identifier rubyid_new_pop'>new_pop</span>
 
     <span class='comment'>## Finish up this run
-</span>    <span class='ivar'>@end_run_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@end_run_func</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+</span>    <span class='id identifier rubyid_end_run_hooks'>end_run_hooks</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -2481,9 +2054,9 @@ maximally verbose Use in conjunction with log.debug</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Apr 13 15:54:03 2014 by
+  Generated on Thu Jul  3 14:00:53 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.1).
+  0.8.7.4 (ruby-2.1.2).
 </div>
 
   </body>

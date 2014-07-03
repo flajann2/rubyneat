@@ -84,7 +84,7 @@
   
     <dt class="r2 last">Defined in:</dt>
     <dd class="r2 last">lib/rubyneat/dsl.rb<span class="defines">,<br />
-  lib/rubyneat/graph.rb,<br /> lib/rubyneat/neuron.rb,<br /> lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/population.rb</span>
+  lib/rubyneat/graph.rb,<br /> lib/rubyneat/neuron.rb,<br /> lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/population.rb</span>
 </dd>
   
 </dl>
@@ -100,26 +100,36 @@
 <p>We have a Population of Critters, and each Critter represents a network of
 Neurons and a connection list specifying how those Neurons are connected.</p>
 
-<p>Each Neuron has an inplicit genotype and phenotype component. Neurons, from
-the Ruby persoective, contain their own code to produce their own
+<p>Each Neuron has an implicit genotype and phenotype component. Neurons, from
+the Ruby perspective, contain their own code to produce their own
 phenotypes.</p>
 
 <p>There are input Neurons and output Neurons. The input Neurons are special,
 as they do not contain any input from other nodes, but serve as interfaces
-from the “real world”. Thier range of inputs are open, and it shall be up
+from the “real world”. Their range of inputs are open, and it shall be up
 to the input Neuron&#39;s phenotype generators to condition those inputs,
-if need be, to someething more suiable for the neural network.</p>
+if need be, to something more suitable for the neural network.</p>
 
 <h2 id="label-Issues">Issues</h2>
 
 <h3 id="label-Multicore+%2F+Cloud+Computing">Multicore / Cloud Computing</h3>
 
-<p>Some thought needs to be given to how to make this anenable to multiple
+<p>Some thought needs to be given to how to make this amenable to multiple
 processes so that we can leverage the power of multicore systems as well as
 multiple computers in the Cloud, etc.</p>
 
 <p>Our initial inclination  is to put all of that functionality in the
-Conroller.</p>
+Controller.</p>
+
+<h2 id="label-Uniquely+Generated+Named+Objects+%28UGNOs%29">Uniquely Generated Named Objects (UGNOs)</h2>
+
+<p>Every RubyNEAT Object instance is assigned a unique name generated
+randomly. The name has no other significance other than to uniquely
+identify the object.</p>
+
+<p>We have chosen the names of the letters of various alphabets to be the core
+of those names. The list may be subject to change until we are out of
+alpha, then will be set in quick drying concrete.</p>
 
 
   </div>
@@ -362,10 +372,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-422</pre>
+541</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 422</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 541</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -388,10 +398,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-423</pre>
+542</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 423</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 542</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller='>controller=</span><span class='lparen'>(</span><span class='id identifier rubyid_controller'>controller</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -414,10 +424,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-424</pre>
+543</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 424</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 543</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_controller'>create_controller</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='const'>Controller</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -451,12 +461,12 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-77
-78
-79</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dpp'>dpp</span> <span class='id identifier rubyid_ob'>ob</span>
   <span class='comment'>#$log.ap ob
@@ -492,10 +502,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-74</pre>
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -529,10 +539,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-71</pre>
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 83</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -555,14 +565,14 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-60
-61
-62
-63
-64</pre>
+72
+73
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_random_name_generator'>random_name_generator</span>
   <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span>
@@ -579,9 +589,9 @@ singleton method expression of the critter.</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Apr 13 15:54:01 2014 by
+  Generated on Thu Jul  3 14:00:51 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.1).
+  0.8.7.4 (ruby-2.1.2).
 </div>
 
   </body>

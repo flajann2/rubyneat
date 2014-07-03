@@ -584,7 +584,7 @@ them (or the equivalent, following the +1, 0, -1 that is in the sense of
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func'>compare_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func_add'>compare_func_add</span> <span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -668,7 +668,7 @@ incorporates the cost for sorting purposes.</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cost'>cost</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func'>cost_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_add'>cost_func_add</span> <span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -871,19 +871,19 @@ incorporates the cost for sorting purposes.</p>
 </span>  <span class='comment'># use the &lt;=&gt; to compare them (or the equivalent, following
 </span>  <span class='comment'># the +1, 0, -1 that is in the sense of &lt;=&gt;)
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func'>compare_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func_add'>compare_func_add</span> <span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Calculation to add the cost to the fitness, resulting in a fitness
 </span>  <span class='comment'># that incorporates the cost for sorting purposes.
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_cost'>cost</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func'>cost_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_add'>cost_func_add</span> <span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Stop the progression once the fitness criteria is reached
 </span>  <span class='comment'># for the most fit critter
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fitness'>stop_on_fitness</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func'>stop_on_fit_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func_add'>stop_on_fit_func_add</span> <span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Helper function to
@@ -1065,7 +1065,7 @@ names given to the input neurons.</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_report_hook'>report_hook</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_report_add'>report_add</span> <span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1107,7 +1107,7 @@ names given to the input neurons.</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run_engine'>run_engine</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_end_run_func'>end_run_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_end_run_add'>end_run_add</span> <span class='id identifier rubyid_block'>block</span>
   <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1192,7 +1192,7 @@ critter</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fitness'>stop_on_fitness</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func'>stop_on_fit_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func_add'>stop_on_fit_func_add</span> <span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1246,9 +1246,9 @@ false FIXME we need a better discrimination function</p>
 </div>
 
     <div id="footer">
-  Generated on Sun Apr 13 15:54:01 2014 by
+  Generated on Thu Jul  3 14:00:51 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.1).
+  0.8.7.4 (ruby-2.1.2).
 </div>
 
   </body>
