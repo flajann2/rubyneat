@@ -73,7 +73,7 @@ module NEAT
       # Stop the progression once the fitness criteria is reached
       # for the most fit critter
       def stop_on_fitness(&block)
-        NEAT::controller.stop_on_fit_func = block
+        NEAT::controller.stop_on_fit_func_add block
       end
 
       # Helper function to
@@ -101,12 +101,12 @@ module NEAT
 
     # Report on evaluations
     def report(&block)
-      NEAT::controller.report_hook = block
+      NEAT::controller.report_add block
     end
 
     # Run the engine. The block is called on each generation.
     def run_engine(&block)
-      NEAT::controller.end_run_func = block
+      NEAT::controller.end_run_add block
       NEAT::controller.run
     end
 
