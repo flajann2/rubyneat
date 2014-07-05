@@ -163,12 +163,15 @@ module NEAT
     #== Generate a report on the state of this population.
     #
     def report
-      {
+      [
+        self,
+        {
           fitness:         report_fitness,
           fitness_species: report_fitness_species,
           best_critter:    report_best_fit,
           worst_critter:   report_worst_fit,
-      }
+        }
+      ]
     end
 
     # The "best critter" is the critter with the lowest (closet to zero)

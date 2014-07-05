@@ -60,6 +60,16 @@ Release Notes
 
     Console made functional.
 
+* `0.4.0.alpha.0`
+
+    Added a pop parameter to the report hook function. All example
+    code in rubyneat_examples updated. You will need to add the additional
+    parameter to your Neaters on your report hooks.
+    
+    Also, added stronger support for plugins. In particular, an attr_neat
+    attribute processor was added to NeatOb, to support default settings
+    as well as hooks. Now, all plugins need to do is to hook into these
+    hook functions to get notifications.
 
 Copyright Notice
 ----------------

@@ -379,7 +379,7 @@ module NEAT
       # Maximum number of generations to run, if given.
       attr_neat :max_generations, default: 1000
 
-      # Maximun number of populations to maintain in the history buffer.
+      # Maximum number of populations to maintain in the history buffer.
       attr_accessor :max_population_history
 
       attr_accessor :mutate_add_gene_prob
@@ -406,7 +406,7 @@ module NEAT
 
       # fitness costs, if given, use in the computation of fitness
       # AFTER the overall fitness for the applied stimuli have been
-      # caclulated.
+      # calculated.
       attr_accessor :fitness_cost_per_neuron
       attr_accessor :fitness_cost_per_gene
 
@@ -529,7 +529,7 @@ module NEAT
 
         ## Exit if fitness criteria is reached
         #FIXME handle this exit condition better!!!!!
-        exit_neat if stop_on_fit_func_hook(@population.report[:fitness], self) unless stop_on_fit_func_none?
+        exit_neat if stop_on_fit_func_hook(@population.report.last[:fitness], self) unless stop_on_fit_func_none?
 
         ## Evolve population
         @population = new_pop
