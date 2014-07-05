@@ -22,10 +22,14 @@ module NEAT
     # FIXME: this should not really have to deal with an error.
     # FIXME: the error should be handled upstream from here.
     def evaluate!(critter)
-      vin = @controller.query_func.(@controller.seq_num)
+      vin = @controller.query_func_hook(@controller.seq_num)
       @crit_hist[critter] = {} unless @crit_hist.member? critter
       begin
-        vout = critter.phenotype.stimulate *vin, &@controller.recurrence_func
+        vout = unless @controller.recurrence_func_none?
+                 critter.phenotype.stimulate *vin, &@controller.recurrence_func_hook_itself
+               else
+                 critter.phenotype.stimulate *vin
+               end
         log.debug "Critter #{critter.name}: vin=#{vin}. vout=#{vout}"
         @crit_hist[critter][@controller.seq_num] = [vin, vout]
       rescue Exception => e
@@ -38,7 +42,7 @@ module NEAT
     # Note that if cost_func is set, we call that to integrate the cost to
     # the fitness average fitness calculated for the fitness vector.
     def analyze_for_fitness!(critter)
-      fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func.(vio[0], vio[1], seq) }
+      fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func_hook(vio[0], vio[1], seq) }
       # Average the fitness vector to get a scalar fitness.
       critter.fitness = unless @controller.cost_func_none?
                           @controller.cost_func_hook(fitvec, critter.genotype.fitness_cost)

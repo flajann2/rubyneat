@@ -133,11 +133,13 @@ module NEAT
       # If hooks: true is given, two hook functions are
       # created:
       ## <sym>_add() -- add a hook
+      ## <sym>_set() -- set a hook, overwriting all other hooks set or added.
       ## <sym>_clear -- clear all hooks
       ## <sym>_none? -- return true if no hooks are defined.
       ## <sym>_one? -- return true if exactly hook is defined.
       ## <sym>_hook() -- for passing unnamed parameters to a singular hook.
       ## <sym>_np_hook() -- for passing unnamed parameters to a singular hook.
+      ## <sym>_hook_itself() -- for getting the proc reference to the hook.
       ## <sym>_hooks() -- for passing unnamed parameters.
       ## <sym>_np_hooks() -- for passing a named parameter list.
       #
@@ -161,7 +163,12 @@ module NEAT
           default = []
           cloneable = true
 
-          define_method("#{sym}_add") do |hook|
+          define_method("#{sym}_add") do |&hook|
+            send(sym) << hook
+          end
+
+          define_method("#{sym}_set") do |&hook|
+            send(sym).clear
             send(sym) << hook
           end
 
@@ -187,16 +194,26 @@ module NEAT
             send(sym).map{|funct| funct.(*params)}
           end
 
+          # TODO: DRY up the following functions, which does size checking in exacly the same way.
           # Single hook with named parameters
           define_method("#{sym}_np_hook") do |**hparams|
-            raise NeatException.new("Compare func can at most have one hook") unless send(sym).size == 1
+            sz = send(sym).size
+            raise NeatException.new("#{sym}_np_hook must have exactly one hook (#{sz})") unless sz == 1
             send(sym).map{|funct| funct.(**hparams)}.first
           end
 
           # Single hook with traditional parameters
           define_method("#{sym}_hook") do |*params|
-            raise NeatException.new("Compare func can at most have one hook") unless send(sym).size == 1
+            sz = send(sym).size
+            raise NeatException.new("#{sym}_hook must have exactly one hook (#{sz})") unless sz == 1
             send(sym).map{|funct| funct.(*params)}.first
+          end
+
+          # Get the singular hook function
+          define_method("#{sym}_hook_itself") do
+            sz = send(sym).size
+            raise NeatException.new("#{sym}_hook_itself must have exactly one hook (#{sz})") unless sz == 1
+            send(sym).first
           end
         end
 
@@ -292,16 +309,16 @@ module NEAT
     ## 2 - really verbose
     ## 3 - maximally verbose
     # Use in conjunction with log.debug
-    attr_neat :verbosity, default: 1
+    attr_neat :verbosity,        default: 1
 
     # Query function that Critters shall call.
-    attr_accessor :query_func
+    attr_neat :query_func,       hooks: true
 
     # Fitness function that Critters shall be rated on.
-    attr_accessor :fitness_func
+    attr_neat :fitness_func,     hooks: true
 
     # Recurrence function that Critters will yield to.
-    attr_accessor :recurrence_func
+    attr_neat :recurrence_func,  hooks: true
 
     # Compare function for fitness
     # Cost function for integrating in the cost to the fitness scalar.
@@ -315,7 +332,7 @@ module NEAT
     attr_neat :report,           hooks: true
 
     # Hook to handle pre_exit functionality
-    attr_accessor :pre_exit_func
+    attr_neat :pre_exit,         hooks: true
 
     # Logger object for all of RubyNEAT
     attr_reader :log
@@ -532,7 +549,7 @@ module NEAT
     # Allow us to hook in pre-exit functionality here
     # This function shall never return.
     def exit_neat
-      @pre_exit_func.(self) unless @pre_exit_func.nil?
+      pre_exit_hook(self) unless pre_exit_none?
       exit
     end
   end
