@@ -269,22 +269,22 @@ average fitness calculated for the fitness vector.</p>
       <pre class="lines">
 
 
-40
-41
-42
-43
 44
 45
 46
 47
 48
-49</pre>
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_analyze_for_fitness!'>analyze_for_fitness!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_fitvec'>fitvec</span> <span class='op'>=</span> <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_seq'>seq</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='op'>|</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func'>fitness_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seq'>seq</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_fitvec'>fitvec</span> <span class='op'>=</span> <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_seq'>seq</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='op'>|</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func_hook'>fitness_func_hook</span><span class='lparen'>(</span><span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_vio'>vio</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_seq'>seq</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
   <span class='comment'># Average the fitness vector to get a scalar fitness.
 </span>  <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_fitness'>fitness</span> <span class='op'>=</span> <span class='kw'>unless</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_none?'>cost_func_none?</span>
                       <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_hook'>cost_func_hook</span><span class='lparen'>(</span><span class='id identifier rubyid_fitvec'>fitvec</span><span class='comma'>,</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost'>fitness_cost</span><span class='rparen'>)</span>
@@ -340,16 +340,24 @@ error. FIXME: the error should be handled upstream from here.</p>
 32
 33
 34
-35</pre>
+35
+36
+37
+38
+39</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/evaluator.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluate!'>evaluate!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_vin'>vin</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func'>query_func</span><span class='period'>.</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_vin'>vin</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func_hook'>query_func_hook</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rparen'>)</span>
   <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='ivar'>@crit_hist</span><span class='period'>.</span><span class='id identifier rubyid_member?'>member?</span> <span class='id identifier rubyid_critter'>critter</span>
   <span class='kw'>begin</span>
-    <span class='id identifier rubyid_vout'>vout</span> <span class='op'>=</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_stimulate'>stimulate</span> <span class='op'>*</span><span class='id identifier rubyid_vin'>vin</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func'>recurrence_func</span>
+    <span class='id identifier rubyid_vout'>vout</span> <span class='op'>=</span> <span class='kw'>unless</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func_none?'>recurrence_func_none?</span>
+             <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_stimulate'>stimulate</span> <span class='op'>*</span><span class='id identifier rubyid_vin'>vin</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func_hook_itself'>recurrence_func_hook_itself</span>
+           <span class='kw'>else</span>
+             <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_stimulate'>stimulate</span> <span class='op'>*</span><span class='id identifier rubyid_vin'>vin</span>
+           <span class='kw'>end</span>
     <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Critter </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: vin=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vin'>vin</span><span class='embexpr_end'>}</span><span class='tstring_content'>. vout=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_vout'>vout</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
     <span class='ivar'>@crit_hist</span><span class='lbracket'>[</span><span class='id identifier rubyid_critter'>critter</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_seq_num'>seq_num</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_vin'>vin</span><span class='comma'>,</span> <span class='id identifier rubyid_vout'>vout</span><span class='rbracket'>]</span>
   <span class='kw'>rescue</span> <span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
@@ -411,7 +419,7 @@ tracking information, etc.</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jul  3 14:00:53 2014 by
+  Generated on Sat Jul  5 11:20:16 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>

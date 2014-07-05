@@ -510,7 +510,6 @@ false FIXME we need a better discrimination function.</p>
       <pre class="lines">
 
 
-114
 115
 116
 117
@@ -520,10 +519,11 @@ false FIXME we need a better discrimination function.</p>
 121
 122
 123
-124</pre>
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='comment'># we want to catch parameters settings here.
@@ -584,7 +584,7 @@ them (or the equivalent, following the +1, 0, -1 that is in the sense of
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func_add'>compare_func_add</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func_set'>compare_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -618,12 +618,12 @@ them (or the equivalent, following the +1, 0, -1 that is in the sense of
       <pre class="lines">
 
 
-81
 82
-83</pre>
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_condition_boolean_vector'>condition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='comma'>,</span> <span class='id identifier rubyid_sig'>sig</span> <span class='op'>=</span> <span class='symbol'>:tanh</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='id identifier rubyid_b'>b</span> <span class='op'>?</span> <span class='int'>1</span> <span class='op'>:</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_sig'>sig</span> <span class='op'>==</span> <span class='symbol'>:sigmoid</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span><span class='rbrace'>}</span>
@@ -668,7 +668,7 @@ incorporates the cost for sorting purposes.</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cost'>cost</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_add'>cost_func_add</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_set'>cost_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -841,7 +841,8 @@ incorporates the cost for sorting purposes.</p>
 97
 98
 99
-100</pre>
+100
+101</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 39</span>
@@ -852,11 +853,11 @@ incorporates the cost for sorting purposes.</p>
 </span>  <span class='comment'># to the input nodes. In the case of hash, the keys in the hash
 </span>  <span class='comment'># shall correspond to the names given to the input neurons.
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_query'>query</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func'>query_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func_add'>query_func_add</span>  <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='kw'>def</span> <span class='id identifier rubyid_recurrence'>recurrence</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func'>recurrence_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func_set'>recurrence_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># fitness function calls the block with 2 vectors or two hashes, input and output
@@ -864,26 +865,27 @@ incorporates the cost for sorting purposes.</p>
 </span>  <span class='comment'># number that can be used to index what the actual output should be.
 </span>  <span class='comment'># |vin, vout, seq|
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_fitness'>fitness</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func'>fitness_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func_set'>fitness_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Fitness ordering -- given 2 fitness numbers,
 </span>  <span class='comment'># use the &lt;=&gt; to compare them (or the equivalent, following
 </span>  <span class='comment'># the +1, 0, -1 that is in the sense of &lt;=&gt;)
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_compare'>compare</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func_add'>compare_func_add</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_compare_func_set'>compare_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Calculation to add the cost to the fitness, resulting in a fitness
 </span>  <span class='comment'># that incorporates the cost for sorting purposes.
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_cost'>cost</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_add'>cost_func_add</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_cost_func_set'>cost_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Stop the progression once the fitness criteria is reached
-</span>  <span class='comment'># for the most fit critter
+</span>  <span class='comment'># for the most fit critter. We allow more than one stop
+</span>  <span class='comment'># function here.
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fitness'>stop_on_fitness</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func_add'>stop_on_fit_func_add</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func_add'>stop_on_fit_func_add</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 
   <span class='comment'># Helper function to
@@ -950,7 +952,7 @@ sequence number that can be used to index what the actual output should be.
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness'>fitness</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func'>fitness_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_fitness_func_set'>fitness_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -994,7 +996,7 @@ names given to the input neurons.</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query'>query</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func'>query_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_query_func_add'>query_func_add</span>  <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1024,7 +1026,7 @@ names given to the input neurons.</p>
       <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_recurrence'>recurrence</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func'>recurrence_func</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_recurrence_func_set'>recurrence_func_set</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1057,15 +1059,15 @@ names given to the input neurons.</p>
       <pre class="lines">
 
 
-103
 104
-105</pre>
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_report_add'>report_add</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_report_add'>report_add</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1098,16 +1100,16 @@ names given to the input neurons.</p>
       <pre class="lines">
 
 
-108
 109
 110
-111</pre>
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run_engine'>run_engine</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_end_run_add'>end_run_add</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_end_run_add'>end_run_add</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1142,12 +1144,12 @@ of the square of the diffences of the element in the two vectors.</p>
       <pre class="lines">
 
 
-95
 96
-97</pre>
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_simple_fitness_error'>simple_fitness_error</span><span class='lparen'>(</span><span class='id identifier rubyid_v1'>v1</span><span class='comma'>,</span> <span class='id identifier rubyid_v2'>v2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sqrt'>sqrt</span> <span class='id identifier rubyid_v1'>v1</span><span class='period'>.</span><span class='id identifier rubyid_zip'>zip</span><span class='lparen'>(</span><span class='id identifier rubyid_v2'>v2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='id identifier rubyid_b'>b</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_a'>a</span> <span class='op'>-</span> <span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span> <span class='op'>**</span> <span class='float'>2.0</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_m'>m</span> <span class='op'>+</span> <span class='id identifier rubyid_c'>c</span><span class='rbrace'>}</span>
@@ -1170,7 +1172,7 @@ of the square of the diffences of the element in the two vectors.</p>
   <div class="discussion">
     
 <p>Stop the progression once the fitness criteria is reached for the most fit
-critter</p>
+critter. We allow more than one stop function here.</p>
 
 
   </div>
@@ -1184,15 +1186,15 @@ critter</p>
       <pre class="lines">
 
 
-75
 76
-77</pre>
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stop_on_fitness'>stop_on_fitness</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func_add'>stop_on_fit_func_add</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='const'>NEAT</span><span class='op'>::</span><span class='id identifier rubyid_controller'>controller</span><span class='period'>.</span><span class='id identifier rubyid_stop_on_fit_func_add'>stop_on_fit_func_add</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1226,12 +1228,12 @@ false FIXME we need a better discrimination function</p>
       <pre class="lines">
 
 
-88
 89
-90</pre>
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/dsl.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_uncondition_boolean_vector'>uncondition_boolean_vector</span><span class='lparen'>(</span><span class='id identifier rubyid_vec'>vec</span><span class='comma'>,</span> <span class='id identifier rubyid_sig'>sig</span> <span class='op'>=</span> <span class='symbol'>:tanh</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_vec'>vec</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_o'>o</span><span class='op'>|</span> <span class='id identifier rubyid_o'>o</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_sig'>sig</span> <span class='op'>==</span> <span class='symbol'>:sigmoid</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='float'>0.5</span> <span class='op'>:</span> <span class='int'>0</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='kw'>true</span> <span class='op'>:</span> <span class='kw'>false</span><span class='rbrace'>}</span>
@@ -1246,7 +1248,7 @@ false FIXME we need a better discrimination function</p>
 </div>
 
     <div id="footer">
-  Generated on Thu Jul  3 14:00:51 2014 by
+  Generated on Sat Jul  5 11:20:13 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.1.2).
 </div>
