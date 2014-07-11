@@ -91,7 +91,9 @@ module NEAT
     #$log.ap ob
   end
 
-  # Basis of all NEAT objects
+  # Basis of all NEAT objects.
+  # NeatOb has support for NEAT attributes with
+  # special support for hooks and queues.
   class NeatOb
     include DeepDive
     exclude :controller, :name
