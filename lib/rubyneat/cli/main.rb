@@ -54,6 +54,7 @@ module RubyNEAT
         neaters.map do |neater|
           "#{neater}_neat.rb"
         end.each do |file|
+          NEAT::controller.neater = file
           load file
         end
       end

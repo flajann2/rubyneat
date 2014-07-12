@@ -42,7 +42,7 @@ GEM
     guard-rspec (4.2.10)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    hashie (3.1.0)
+    hashie (3.2.0)
     highline (1.6.21)
     jeweler (2.0.1)
       builder
@@ -67,7 +67,7 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    oauth2 (0.9.4)
+    oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
       multi_json (~> 1.3)

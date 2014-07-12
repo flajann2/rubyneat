@@ -1,3 +1,4 @@
+require 'semver'
 require 'distribution'
 require 'yaml'
 require 'logger'
@@ -304,6 +305,10 @@ module NEAT
   # FIXME: must also be given to Rubinius and JRuby so that we can
   # FIXME: run under multiple cores.
   class Controller < NeatOb
+    # Version of RubyNEAT runing
+    attr_neat :version, default: SemVer.find.format("%M.%m.%p%s")
+    attr_neat :neater, default: '--unspecified--'
+
     # global innovation number
     attr_neat :glob_innov_num, default: 0, cloneable: false
 
