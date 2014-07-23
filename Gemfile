@@ -2,10 +2,6 @@ source 'https://rubygems.org'
 
 #gemspec
 
-#ruby '2.1.2'
-
-#gem 'mongo', '~> 1', require: false
-#gem 'bson_ext', '~> 1', require: false
 gem 'distribution', '~> 0'
 
 #TODO: Check out this for a repacement of of statistics2
@@ -21,6 +17,7 @@ gem 'deep_dive', '~> 0'
 # So our console can have name completion
 gem 'bond', '~> 0.5'
 gem 'rb-readline', '~> 0.5'
+gem 'queue_ding', '>= 0'
 
 group :development do
   gem 'rspec', '~> 2'
@@ -28,10 +25,8 @@ group :development do
   gem 'guard', '~> 2'
   gem 'guard-rspec', '~> 4'
   gem 'semver', '~> 1'
-  gem "jeweler", "~> 2"
-  gem "simplecov", '~> 0'
-  #gem 'debugger'
-  #gem 'ruby-debug-ide', '~> 0'
+  gem 'jeweler', '~> 2'
+  gem 'simplecov', '~> 0'
 end
 
 #======================================================

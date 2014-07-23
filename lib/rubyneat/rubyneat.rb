@@ -4,7 +4,7 @@ require 'yaml'
 require 'logger'
 require 'awesome_print'
 require 'deep_dive'
-require 'thread'
+require 'queue_ding'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the Neural Evolution of Augmenting Topologies.
@@ -97,6 +97,8 @@ module NEAT
   # special support for hooks and queues.
   class NeatOb
     include DeepDive
+    extend QueueDing
+
     exclude :controller, :name
 
     # Designation of this particular object instance
@@ -179,7 +181,7 @@ module NEAT
         end
 
         if queue
-          default = Queue.new
+          default = QDing.new
           cloneable = true
           queue_setup sym
         end
