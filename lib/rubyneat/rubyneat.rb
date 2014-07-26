@@ -371,7 +371,7 @@ module NEAT
     attr_reader :log
 
     # Various parameters affecting evolution.
-    # Based somewhat on the C version of NEAT.
+    # Based somewhat on the Ken Stanley C version of NEAT.
     # TODO not all of these parameters are implemented yet!!!
     class NeatSettings < NeatOb
       ## RubyNEAT specific

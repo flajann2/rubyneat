@@ -46,6 +46,7 @@ module NEAT
       @critters = (0 ... c.parms.start_population_size || c.parms.population_size).map do
         Critter.new(self)
       end
+
       block.(self) unless block.nil?
     end
 
@@ -160,20 +161,6 @@ module NEAT
 
     end
 
-    #== Generate a report on the state of this population.
-    #
-    def report
-      [
-        self,
-        {
-          fitness:         report_fitness,
-          fitness_species: report_fitness_species,
-          best_critter:    report_best_fit,
-          worst_critter:   report_worst_fit,
-        }
-      ]
-    end
-
     # The "best critter" is the critter with the lowest (closet to zero)
     # fitness rating.
     # TODO: DRY up best_critter and worst_critter
@@ -198,34 +185,5 @@ module NEAT
     def dump_s
       to_s + "\npopulation:\n" + @critters.map{|crit| crit.dump_s }.join("\n")
     end
-
-    protected
-    # report on many fitness metrics
-    def report_fitness
-      {
-          overall: @critters.map{|critter| critter.fitness}.reduce{|m, f| m + f} / @critters.size,
-          best: best_critter.fitness,
-          worst: worst_critter.fitness,
-      }
-    end
-
-    # report on the best and worst species
-    def report_fitness_species
-      {
-        best: nil,
-        worst: nil,
-      }
-    end
-
-    # Find the best fit critter
-    def report_best_fit
-      best_critter.phenotype.code
-    end
-
-    # Find the worst fit critter
-    def report_worst_fit
-      worst_critter.phenotype.code
-    end
-
   end
 end
