@@ -8,6 +8,11 @@ module NEAT
   # expression, all the phenotypes shall be created individually.
   #
   class Population < NeatOb
+    # Generation number of the Population.
+    # Any newly-derivied population is always one greater
+    # than the former. Needs to be set, invalid if nil.
+    attr_neat :generation, default: nil
+
     # Ordered list or hash of input neuron classes 
     # (all critters generated here shall have this)
     attr_accessor :input_neurons

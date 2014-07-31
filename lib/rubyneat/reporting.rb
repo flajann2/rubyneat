@@ -56,6 +56,7 @@ module NEAT
       [
           self,
           {
+              generation:      generation,
               fitness:         report_fitness,
               fitness_species: report_fitness_species,
               best_critter:    report_best_fit,

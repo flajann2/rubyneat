@@ -533,12 +533,13 @@ module NEAT
     def run
       pre_run_initialize
       (1..@parms.max_generations).each do |gen_number|
-        @generation_num = gen_number
+        @generation_num = gen_number # must be set first
         @population_history << unless @population.nil?
                                  @population
                                else
                                  @population = @population_class.new(self)
                                end
+        @population.generation = gen_number
         @population_history.shift unless @population_history.size <= @parms.max_population_history
         @population.mutate!
         @population.express!
