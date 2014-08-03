@@ -222,7 +222,7 @@ module NEAT
       end
 
       #= Gene Specification
-      # The Gene specifices a singlular input and
+      # The Gene specifies a singular input and
       # output neuron, which represents a connection
       # between them, along with the weight of that
       # connection, which may be positive, negative, or zero.
@@ -236,7 +236,7 @@ module NEAT
         attr_accessor :innovation
 
         # input neuron's name (where our output goes)
-        # ouptut neuron's name (neuron to be queried)
+        # output neuron's name (neuron to be queried)
         attr_accessor :in_neuron, :out_neuron
 
         # weight of the connection

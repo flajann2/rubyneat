@@ -1,4 +1,4 @@
-require 'rubyneat/dsl'
+require_relative 'dsl'
 =begin rdoc
 = Default Parameters for RubyNEAT
 Here all default parameters are defined.

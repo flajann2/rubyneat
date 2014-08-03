@@ -1,4 +1,4 @@
-require 'rubyneat/cli/generate'
+require 'rubyneat/cli'
 
 module RubyNEAT
   module Cli
@@ -43,10 +43,7 @@ module RubyNEAT
       end
 
       desc 'console', 'Run RubyNEAT interactively'
-      def console
-        #TODO: Finish the console
-        puts "Not Implemented Yet."
-      end
+      subcommand 'console', Console
 
       desc 'run <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
       option :log, type: :string, banner: 'info|warn|debug|error'
@@ -57,6 +54,7 @@ module RubyNEAT
         neaters.map do |neater|
           "#{neater}_neat.rb"
         end.each do |file|
+          NEAT::controller.neater = file
           load file
         end
       end

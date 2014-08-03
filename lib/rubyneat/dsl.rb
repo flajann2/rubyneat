@@ -1,4 +1,4 @@
-require 'rubyneat/rubyneat'
+require_relative 'rubyneat'
 
 =begin rdoc
 = RubyNEAT DSL
@@ -42,11 +42,11 @@ module NEAT
       # to the input nodes. In the case of hash, the keys in the hash
       # shall correspond to the names given to the input neurons.
       def query(&block)
-        NEAT::controller.query_func = block
+        NEAT::controller.query_func_add  &block
       end
 
       def recurrence(&block)
-        NEAT::controller.recurrence_func = block
+        NEAT::controller.recurrence_func_set &block
       end
 
       # fitness function calls the block with 2 vectors or two hashes, input and output
@@ -54,26 +54,27 @@ module NEAT
       # number that can be used to index what the actual output should be.
       # |vin, vout, seq|
       def fitness(&block)
-        NEAT::controller.fitness_func = block
+        NEAT::controller.fitness_func_set &block
       end
 
       # Fitness ordering -- given 2 fitness numbers,
       # use the <=> to compare them (or the equivalent, following
       # the +1, 0, -1 that is in the sense of <=>)
       def compare(&block)
-        NEAT::controller.compare_func = block
+        NEAT::controller.compare_func_set &block
       end
 
       # Calculation to add the cost to the fitness, resulting in a fitness
       # that incorporates the cost for sorting purposes.
       def cost(&block)
-        NEAT::controller.cost_func = block
+        NEAT::controller.cost_func_set &block
       end
 
       # Stop the progression once the fitness criteria is reached
-      # for the most fit critter
+      # for the most fit critter. We allow more than one stop
+      # function here.
       def stop_on_fitness(&block)
-        NEAT::controller.stop_on_fit_func = block
+        NEAT::controller.stop_on_fit_func_add &block
       end
 
       # Helper function to
@@ -101,12 +102,12 @@ module NEAT
 
     # Report on evaluations
     def report(&block)
-      NEAT::controller.report_hook = block
+      NEAT::controller.report_add &block
     end
 
     # Run the engine. The block is called on each generation.
     def run_engine(&block)
-      NEAT::controller.end_run_func = block
+      NEAT::controller.end_run_add &block
       NEAT::controller.run
     end
 
@@ -125,6 +126,6 @@ module NEAT
   end
 end
 
-# FIXME: This needs to better specified for cases in which there may be multiple
-# Controllers.
+# FIXME: This needs to better specified for cases in which
+# FIXME: there may be multiple Controllers.
 require 'rubyneat/default_neat'

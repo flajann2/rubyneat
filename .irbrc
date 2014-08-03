@@ -1,0 +1,2 @@
+require 'bond'
+Bond.start

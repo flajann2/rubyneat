@@ -1,8 +1,10 @@
+require 'semver'
 require 'distribution'
 require 'yaml'
 require 'logger'
 require 'awesome_print'
 require 'deep_dive'
+require 'queue_ding'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the Neural Evolution of Augmenting Topologies.
@@ -90,9 +92,13 @@ module NEAT
     #$log.ap ob
   end
 
-  # Basis of all NEAT objects
+  # Basis of all NEAT objects.
+  # NeatOb has support for NEAT attributes with
+  # special support for hooks and queues.
   class NeatOb
     include DeepDive
+    extend QueueDing
+
     exclude :controller, :name
 
     # Designation of this particular object instance
@@ -124,6 +130,134 @@ module NEAT
 
     def to_s
       "%s<%s>" % [self.class, self.name]
+    end
+
+
+    class << self
+      # Defaultable attributes of neat attributes.
+      #
+      # If hooks: true is given, two hook functions are
+      # created:
+      ## <sym>_add() -- add a hook
+      ## <sym>_set() -- set a hook, overwriting all other hooks set or added.
+      ## <sym>_clear -- clear all hooks
+      ## <sym>_none? -- return true if no hooks are defined.
+      ## <sym>_one? -- return true if exactly hook is defined.
+      ## <sym>_hook() -- for passing unnamed parameters to a singular hook.
+      ## <sym>_np_hook() -- for passing unnamed parameters to a singular hook.
+      ## <sym>_hook_itself() -- for getting the proc reference to the hook.
+      ## <sym>_hooks() -- for passing unnamed parameters.
+      ## <sym>_np_hooks() -- for passing a named parameter list.
+      #
+      # For *_hook(), the function returns the single result.
+      # For *_hooks(), the hook function return an array of results
+      # from all the actual registered hooks called.
+      def attr_neat(sym,
+                    default: nil,
+                    cloneable: nil,
+                    hooks: false,
+                    queue: false)
+        svar = "@#{sym}"
+
+        # Guess what clonable should be.
+        # This is meant to cover "90%" of the cases.
+        cloneable = case
+                      when default.nil?
+                        false
+                      when default.kind_of?(Numeric)
+                        false
+                      else
+                        true
+                    end if cloneable.nil?
+
+        # Sanity checks
+        raise NeatException("Both hooks and queue cannot both be set for #{sym}.") if hooks and queue
+        raise NeatException("Defaults cannot be defined for hooks and queues for #{sym}.") if (hooks or queue) and not default.nil?
+
+        if hooks
+          default = []
+          cloneable = true
+          hook_setup sym
+        end
+
+        if queue
+          default = QDing.new
+          cloneable = true
+          queue_setup sym
+        end
+
+        define_method("#{sym}=") do |v|
+          instance_variable_set(svar, v)
+        end unless hooks or queue
+
+        # TODO: Enhance this getter method for performance.
+        define_method(sym) do
+          instance_variable_set(svar,
+                                instance_variable_get(svar) ||
+                                    ((cloneable) ? default.clone
+                                                 : default))
+        end
+      end
+
+      private
+      def hook_setup(sym)
+        define_method("#{sym}_add") do |&hook|
+          send(sym) << hook
+        end
+
+        define_method("#{sym}_set") do |&hook|
+          send(sym).clear
+          send(sym) << hook
+        end
+
+        define_method("#{sym}_clear") do
+          send(sym).clear
+        end
+
+        define_method("#{sym}_none?") do
+          send(sym).empty?
+        end
+
+        define_method("#{sym}_one?") do
+          send(sym).size == 1
+        end
+
+        # hooks with named parameters
+        define_method("#{sym}_np_hooks") do |**hparams|
+          send(sym).map{|funct| funct.(**hparams)}
+        end
+
+        # hooks with traditional parameters
+        define_method("#{sym}_hooks") do |*params|
+          send(sym).map{|funct| funct.(*params)}
+        end
+
+        # TODO: DRY up the following functions, which does size checking in exacly the same way.
+        # Single hook with named parameters
+        define_method("#{sym}_np_hook") do |**hparams|
+          sz = send(sym).size
+          raise NeatException.new("#{sym}_np_hook must have exactly one hook (#{sz})") unless sz == 1
+          send(sym).map{|funct| funct.(**hparams)}.first
+        end
+
+        # Single hook with traditional parameters
+        define_method("#{sym}_hook") do |*params|
+          sz = send(sym).size
+          raise NeatException.new("#{sym}_hook must have exactly one hook (#{sz})") unless sz == 1
+          send(sym).map{|funct| funct.(*params)}.first
+        end
+
+        # Get the singular hook function
+        define_method("#{sym}_hook_itself") do
+          sz = send(sym).size
+          raise NeatException.new("#{sym}_hook_itself must have exactly one hook (#{sz})") unless sz == 1
+          send(sym).first
+        end
+      end
+
+      def queue_setup(sym)
+        # Add boilerplate code for queues here.
+      end
     end
   end
 
@@ -161,9 +295,24 @@ module NEAT
   # a type of "World", if you will, for the entire enterprise.
   #
   # Your application shall only have one Controller.
+  #
+  # FIXME: The function hooks really should be able to take more
+  # FIXME: than one hook! we don't need that functionality right
+  # FIXME: now. Also, the Controller 'god' object itself will need
+  # FIXME: to undergo some refactorization so that we can have many
+  # FIXME: of them for HyperNEAT, co-evolution, etc.
+  #
+  # FIXME: An alternative approach would be to have demigod objects
+  # FIXME: where the controller would lord it over them all. Attention
+  # FIXME: must also be given to Rubinius and JRuby so that we can
+  # FIXME: run under multiple cores.
   class Controller < NeatOb
+    # Version of RubyNEAT runing
+    attr_neat :version, default: SemVer.find.format("%M.%m.%p%s")
+    attr_neat :neater, default: '--unspecified--'
+
     # global innovation number
-    attr_reader :glob_innov_num
+    attr_neat :glob_innov_num, default: 0, cloneable: false
 
     # current sequence number being evaluated
     attr_reader :seq_num
@@ -193,30 +342,36 @@ module NEAT
     ## 2 - really verbose
     ## 3 - maximally verbose
     # Use in conjunction with log.debug
-    attr_accessor :verbosity
+    attr_neat :verbosity,        default: 1
 
     # Query function that Critters shall call.
-    attr_accessor :query_func
+    attr_neat :query_func,       hooks: true
 
     # Fitness function that Critters shall be rated on.
-    attr_accessor :fitness_func
+    attr_neat :fitness_func,     hooks: true
 
     # Recurrence function that Critters will yield to.
-    attr_accessor :recurrence_func
+    attr_neat :recurrence_func,  hooks: true
 
     # Compare function for fitness
     # Cost function for integrating in the cost to the fitness scalar.
-    attr_accessor :compare_func, :cost_func, :stop_on_fit_func
+    attr_neat :compare_func,     hooks: true
+    attr_neat :cost_func,        hooks: true
+    attr_neat :stop_on_fit_func, hooks: true
 
     # End run function to call at the end of each generational run
     # Also report_hook to dump reports for the user, etc.
-    attr_accessor :end_run_func, :report_hook
+    attr_neat :end_run,          hooks: true
+    attr_neat :report,           hooks: true
+
+    # Hook to handle pre_exit functionality
+    attr_neat :pre_exit,         hooks: true
 
     # Logger object for all of RubyNEAT
     attr_reader :log
 
     # Various parameters affecting evolution.
-    # Based somewhat on the C version of NEAT.
+    # Based somewhat on the Ken Stanley C version of NEAT.
     # TODO not all of these parameters are implemented yet!!!
     class NeatSettings < NeatOb
       ## RubyNEAT specific
@@ -255,10 +410,10 @@ module NEAT
       attr_accessor :mate_singlepoint_prob
 
       # Maximum number of generations to run, if given.
-      attr_accessor :max_generations
+      attr_neat :max_generations, default: 1000
 
-      # Maximun number of populations to maintain in the history buffer.
-      attr_accessor :max_population_history
+      # Maximum number of populations to maintain in the history buffer.
+      attr_neat :max_population_history, default: 10
 
       attr_accessor :mutate_add_gene_prob
       attr_accessor :mutate_add_neuron_prob
@@ -270,9 +425,9 @@ module NEAT
 
       # For gene weights perturbations and changes (complete overwrites)
       attr_accessor :mutate_perturb_gene_weights_prob, 
-      :mutate_perturb_gene_weights_sd, 
-      :mutate_change_gene_weights_prob, 
-      :mutate_change_gene_weights_sd
+                    :mutate_perturb_gene_weights_sd,
+                    :mutate_change_gene_weights_prob,
+                    :mutate_change_gene_weights_sd
 
       attr_accessor :mutate_neuron_trait_prob
       attr_accessor :mutate_only_prob
@@ -284,7 +439,7 @@ module NEAT
 
       # fitness costs, if given, use in the computation of fitness
       # AFTER the overall fitness for the applied stimuli have been
-      # caclulated.
+      # calculated.
       attr_accessor :fitness_cost_per_neuron
       attr_accessor :fitness_cost_per_gene
 
@@ -292,7 +447,8 @@ module NEAT
       # grow to the bigger population size
       attr_accessor :start_population_size, :population_size
 
-      attr_accessor :start_sequence_at, :end_sequence_at
+      attr_neat :start_sequence_at, default: 0
+      attr_neat :end_sequence_at,   default: 100
 
       attr_accessor :print_every
       attr_accessor :recur_only_prob
@@ -329,10 +485,6 @@ module NEAT
       # Set up defaults for mandatory entries.
       def initialize
         super
-        @start_sequence_at = 0
-        @end_sequence_at = 100
-        @max_generations = 1000
-
         # Default operators
         @evaluator = Evaluator.new self
         @expressor = Expressor.new self
@@ -349,8 +501,6 @@ module NEAT
                    parameters: NeatSettings.new,
                       &block)
       super(self)
-      @verbosity = 1
-      @glob_innov_num = 0
       @gaussian = Distribution::Normal.rng
       @population_history = []
       @evolver = Evolver.new self
@@ -376,19 +526,20 @@ module NEAT
       block.(self) unless block.nil?
     end
 
-    def new_innovation ; @glob_innov_num += 1; end
+    def new_innovation ; self.glob_innov_num += 1 ; end
     def gaussian ; @gaussian.() ; end
 
     # Run this evolution.
     def run
       pre_run_initialize
       (1..@parms.max_generations).each do |gen_number|
-        @generation_num = gen_number
+        @generation_num = gen_number # must be set first
         @population_history << unless @population.nil?
                                  @population
                                else
                                  @population = @population_class.new(self)
                                end
+        @population.generation = gen_number
         @population_history.shift unless @population_history.size <= @parms.max_population_history
         @population.mutate!
         @population.express!
@@ -403,22 +554,22 @@ module NEAT
         @population.analyze!
         @population.speciate!
 
-        $log.debug @population.dump_s unless @verbosity < 3
+        $log.debug @population.dump_s unless self.verbosity < 3
 
         new_pop = @population.evolve
 
         ## Report hook for evaluation
-        @report_hook.(@population.report) unless @report_hook.nil?
+        report_hooks(@population.report)
 
         ## Exit if fitness criteria is reached
         #FIXME handle this exit condition better!!!!!
-        exit if @stop_on_fit_func.(@population.report[:fitness], self) unless @stop_on_fit_func.nil?
+        exit_neat if stop_on_fit_func_hook(@population.report.last[:fitness], self) unless stop_on_fit_func_none?
 
         ## Evolve population
         @population = new_pop
 
         ## Finish up this run
-        @end_run_func.(self) unless @end_run_func.nil?
+        end_run_hooks(self)
       end
     end
 
@@ -427,6 +578,13 @@ module NEAT
     def pre_run_initialize
       @evaluator = @evaluator_class.new(self) if @evaluator.nil?
       @evolver = @evolver_class.new(self) if @evolver.nil?
+    end
+
+    # Allow us to hook in pre-exit functionality here
+    # This function shall never return.
+    def exit_neat
+      pre_exit_hook(self) unless pre_exit_none?
+      exit
     end
   end
 
@@ -437,5 +595,5 @@ module NEAT
 end
 
 # We put all the internal requires at the end to avoid conflicts.
-require 'rubyneat/neuron'
-require 'rubyneat/population'
+require_relative 'neuron'
+require_relative 'population'

@@ -1,5 +1,6 @@
 require 'rubyneat'
 require 'distribution'
+
 module NEAT
   #= Evolver -- Basis of all evolvers.
   # All evolvers shall derive from this basic evolver (or this one can be
@@ -83,7 +84,7 @@ module NEAT
       @npop.species.each do |k, sp|
         sp.sort!{|c1, c2|
           unless @controller.compare_func.nil?
-            @controller.compare_func.(c1.fitness, c2.fitness)
+            @controller.compare_func_hook(c1.fitness, c2.fitness)
           else
             c1.fitness <=> c2.fitness
           end

@@ -25,6 +25,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{RubyNEAT NeuralEvolution of Augmenting Topologies}
   gem.version = s_version
+  gem.required_ruby_version = '>= 2.0'
   gem.description = %Q{
   RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.
   By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,
@@ -42,15 +43,15 @@ Jeweler::Tasks.new do |gem|
   because it's also extensible and modular. See http://rubyneat.com for the
   details.
   }
-  gem.email = "fred@lrcsoft.com"
+  gem.email = "lordalveric@yahoo.com"
   gem.authors = ["Fred Mitchell"]
   # dependencies defined in Gemfile
 
   # Exclude the Neural Docs directory
   gem.files.exclude 'Neural_Docs/*', 'foo/**/*', 'rdoc/*',
                     '.idea/**/*', '.idea/**/.*', '.yardoc/**/*',
-                    'public/**/*', 'neater/**/*', 'doc/**/*',
-                    'public/**/.*', 'Guardfile'
+                    'app/**/*', 'neater/**/*', 'doc/**/*',
+                    'app/**/.*', 'Guardfile'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

@@ -1,4 +1,4 @@
-require 'rubyneat/rubyneat'
+require_relative 'rubyneat'
 
 module NEAT
   #= Population of NEAT Critters.
@@ -8,6 +8,11 @@ module NEAT
   # expression, all the phenotypes shall be created individually.
   #
   class Population < NeatOb
+    # Generation number of the Population.
+    # Any newly-derivied population is always one greater
+    # than the former. Needs to be set, invalid if nil.
+    attr_neat :generation, default: nil
+
     # Ordered list or hash of input neuron classes 
     # (all critters generated here shall have this)
     attr_accessor :input_neurons
@@ -46,6 +51,7 @@ module NEAT
       @critters = (0 ... c.parms.start_population_size || c.parms.population_size).map do
         Critter.new(self)
       end
+
       block.(self) unless block.nil?
     end
 
@@ -160,22 +166,12 @@ module NEAT
 
     end
 
-    #== Generate a report on the state of this population.
-    #
-    def report
-      {
-          fitness:         report_fitness,
-          fitness_species: report_fitness_species,
-          best_critter:    report_best_fit,
-          worst_critter:   report_worst_fit,
-      }
-    end
-
     # The "best critter" is the critter with the lowest (closet to zero)
     # fitness rating.
+    # TODO: DRY up best_critter and worst_critter
     def best_critter
-      unless @controller.compare_func.nil?
-        @critters.min {|a, b| @controller.compare_func.(a.fitness, b.fitness) }
+      unless @controller.compare_func.empty?
+        @critters.min {|a, b| @controller.compare_func_hook(a.fitness, b.fitness) }
       else
         @critters.min {|a, b| a.fitness <=> b.fitness}
       end
@@ -184,8 +180,8 @@ module NEAT
     # The "worst critter" is the critter with the highest (away from zero)
     # fitness rating.
     def worst_critter
-      unless @controller.compare_func.nil?
-        @critters.max {|a, b| @controller.compare_func.(a.fitness, b.fitness) }
+      unless @controller.compare_func.empty?
+        @critters.max {|a, b| @controller.compare_func_hook(a.fitness, b.fitness) }
       else
         @critters.max {|a, b| a.fitness <=> b.fitness}
       end
@@ -194,34 +190,5 @@ module NEAT
     def dump_s
       to_s + "\npopulation:\n" + @critters.map{|crit| crit.dump_s }.join("\n")
     end
-
-    protected
-    # report on many fitness metrics
-    def report_fitness
-      {
-          overall: @critters.map{|critter| critter.fitness}.reduce{|m, f| m + f} / @critters.size,
-          best: best_critter.fitness,
-          worst: worst_critter.fitness,
-      }
-    end
-
-    # report on the best and worst species
-    def report_fitness_species
-      {
-        best: nil,
-        worst: nil,
-      }
-    end
-
-    # Find the best fit critter
-    def report_best_fit
-      best_critter.phenotype.code
-    end
-
-    # Find the worst fit critter
-    def report_worst_fit
-      worst_critter.phenotype.code
-    end
-
   end
 end
