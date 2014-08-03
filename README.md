@@ -11,7 +11,7 @@ http://www.cs.ucf.edu/~kstanley/
 
 Gem Version
 -----------
-{<img src="https://badge.fury.io/rb/rubyneat.png" alt="Gem Version" />}[http://badge.fury.io/rb/rubyneat]
+<img src="https://badge.fury.io/rb/rubyneat.png" alt="Gem Version" />
 
 
 Quick and Dirty Docs
