@@ -24,6 +24,8 @@ module NEAT
           overall: critters.map{|critter| critter.fitness}.reduce{|m, f| m + f} / critters.size,
           best: best_critter.fitness,
           worst: worst_critter.fitness,
+          best_name: best_critter.name,
+          worst_name: worst_critter.name,
       }
     end
 
