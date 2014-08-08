@@ -59,6 +59,7 @@ module NEAT
           self,
           {
               generation:      generation,
+              pop_name:        name,
               fitness:         report_fitness,
               fitness_species: report_fitness_species,
               best_critter:    report_best_fit,
