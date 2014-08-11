@@ -164,6 +164,17 @@ The basic types to RubyNEAT are represented here.
       end
     end
 
+    # Multiplier function (CPPN) -- simply multiply all the inputs.
+    class MulNeuron < Neuron
+      # create a function on the instance with our name
+      # that multiplies all inputs only.
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
+          inputs.reduce {|p, q| p * q}
+        }
+      end
+    end
+
     # Heaviside (CPPN)
     class HeavisideNeuron < Neuron
       # Peform the Heaviside function on the summation
@@ -187,7 +198,6 @@ The basic types to RubyNEAT are represented here.
         }
       end
     end
-
 
     # Gaussian function (CPPN) -- SD 1 of inputs
     class GaussianNeuron < Neuron
