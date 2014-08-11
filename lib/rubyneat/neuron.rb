@@ -164,6 +164,31 @@ The basic types to RubyNEAT are represented here.
       end
     end
 
+    # Heaviside (CPPN)
+    class HeavisideNeuron < Neuron
+      # Peform the Heaviside function on the summation
+      # of the inputs.
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
+          (inputs.reduce {|p, q| p + q} >= 0.0) ? 1.0 : 0.0
+        }
+      end
+    end
+
+    # Sign (CPPN)
+    class SignNeuron < Neuron
+      # Perform the Sign function on the summation
+      # of the inputs. Note that rarely will the
+      # inputs be exactly zero except in some specific
+      # circumstances.
+      def express(instance)
+        instance.define_singleton_method(@name) {|*inputs|
+          (inputs.reduce {|p, q| p + q} >= 0) <=> 0.0
+        }
+      end
+    end
+
+
     # Gaussian function (CPPN) -- SD 1 of inputs
     class GaussianNeuron < Neuron
       # create a function on the instance with our name
