@@ -60,6 +60,9 @@ module RubyNEAT
       end
       map run: :neater
 
+      def self.exit_on_failure?
+        true
+      end
     end
   end
 end
