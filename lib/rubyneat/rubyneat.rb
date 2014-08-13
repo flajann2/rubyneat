@@ -114,7 +114,7 @@ module NEAT
     # the controller object is specified for all classes
     # with the exception of the Controller itself or the
     # Controller's NeatSettings.
-    def initialize(controller = nil, name = nil)
+    def initialize(controller = nil, name = nil, controllerfrei: false)
       @name = unless name.nil?
                 name.to_sym
               else
@@ -123,7 +123,7 @@ module NEAT
       unless controller.nil?
         @controller = controller
       else
-        raise NeatException.new "Controller Needed!" unless self.is_a?(Controller) or self.is_a?(Controller::NeatSettings)
+        raise NeatException.new "Controller Needed!" unless controllerfrei or self.is_a?(Controller) or self.is_a?(Controller::NeatSettings)
         @controller = self unless self.is_a? Controller::NeatSettings
       end
     end
@@ -232,7 +232,7 @@ module NEAT
           send(sym).map{|funct| funct.(*params)}
         end
 
-        # TODO: DRY up the following functions, which does size checking in exacly the same way.
+        # TODO: DRY up the following functions, which does size checking in exactly the same way.
         # Single hook with named parameters
         define_method("#{sym}_np_hook") do |**hparams|
           sz = send(sym).size
@@ -533,6 +533,7 @@ module NEAT
     def run
       pre_run_initialize
       (1..@parms.max_generations).each do |gen_number|
+        maybe_pause_evolution
         @generation_num = gen_number # must be set first
         @population_history << unless @population.nil?
                                  @population
@@ -585,6 +586,17 @@ module NEAT
     def exit_neat
       pre_exit_hook(self) unless pre_exit_none?
       exit
+    end
+
+    # This will either return immediately, or pause evolution. The run loop calls
+    # maybe_pause_evolution at the head of each pass. A seperate thread will wake this
+    # up if paused. This is mainly for the Dashboard control.
+    #
+    # Basically, this shall be overridden by a plugin needing this level of
+    # control.
+    #TODO: this will only allow one point to override. In the future, there maybe
+    #TODO: many plugins wishing to pause evolution for whatever the reason.
+    def maybe_pause_evolution
     end
   end
 
