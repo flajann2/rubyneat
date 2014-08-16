@@ -89,7 +89,7 @@ module NEAT
 
   # PrettyPrint to log.debug
   def self.dpp ob
-    #$log.ap ob
+    #log.ap ob
   end
 
   # Basis of all NEAT objects.

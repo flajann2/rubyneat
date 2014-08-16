@@ -190,5 +190,11 @@ module NEAT
     def dump_s
       to_s + "\npopulation:\n" + @critters.map{|crit| crit.dump_s }.join("\n")
     end
+
+    def [](crit_name)
+      csym = crit_name.to_sym
+      # FIXME: For testing we always return something. Remove that.
+      @critters.select{|crit| crit.name == csym }.first || @critters.first
+    end
   end
 end

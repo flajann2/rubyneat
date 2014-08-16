@@ -66,7 +66,7 @@ module NEAT
       # Critter to which we belong
       attr_accessor :critter
 
-      # Genes keyed by innovation numbers
+      # Genes keyed by names
       attr_accessor :genes
 
       # List of neurons hashed by name
