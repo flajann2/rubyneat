@@ -529,17 +529,31 @@ module NEAT
     def new_innovation ; self.glob_innov_num += 1 ; end
     def gaussian ; @gaussian.() ; end
 
+    # Return the latest complete history, if the generation
+    # number does not match. This is so that we can examine
+    # a single population from the Dashboard without stopping
+    # the progress of evolution.
+    #
+    ##NOTE WELL
+    # We will not return the requested generation number
+    # unless we cached it already. The latest complete one will
+    # be returned instead.
+    #
+    # TODO: Clean up the logic here. We really shoud try to
+    # TODO: pull the generation number its asking for.
+    def population_complete(gennum = nil)
+      @population_complete = nil unless @population_complete.nil? or @population_complete.generation == gennum
+      @population_complete ||= (@population_history[-2] || @population_history.last)
+    end
+
     # Run this evolution.
     def run
       pre_run_initialize
       (1..@parms.max_generations).each do |gen_number|
         maybe_pause_evolution
         @generation_num = gen_number # must be set first
-        @population_history << unless @population.nil?
-                                 @population
-                               else
-                                 @population = @population_class.new(self)
-                               end
+        @population_history << (@population ||= @population_class.new(self))
+
         @population.generation = gen_number
         @population_history.shift unless @population_history.size <= @parms.max_population_history
         @population.mutate!
