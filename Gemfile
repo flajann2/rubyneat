@@ -28,13 +28,3 @@ group :development do
   gem 'jeweler', '~> 2'
   gem 'simplecov', '~> 0'
 end
-
-#======================================================
-#= Ancillary libraries
-
-# For demo purposes, we include the gosu library, but
-# don't want this to be part of the mainstream.
-gem 'gosu', '~> 0', require: false
-
-# So we can generate some nice graphics.
-gem 'rubyvis', '~> 0', require: false
