@@ -19,6 +19,9 @@ module NEAT
     attr_reader :genotype
     attr_accessor :trait
 
+    # Hyper coordinates (Vector)
+    attr_neat :hccoord, default: nil
+
     # (assigned by wire!) Heirarchy number in the Genome / Critter
     # We need this to assure we add genes in the proper order.
     # This will be recalculated every time a new neuron is added.
@@ -42,6 +45,7 @@ module NEAT
 
     def self.bias? ; false ; end
     def bias? ; self.class.bias? ; end
+    def hyper? ; not hccoord.nil? ; end
 
     # Instantiation is of outout type?
     def output? ; !!@output ; end

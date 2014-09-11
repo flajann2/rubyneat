@@ -62,6 +62,9 @@ Neater. Eventually all will be fully documented.
 
 Release Notes
 -------------
+* `0.5.0.hyper.alpha.0`
+    Indroduction of multicritter modularity, HyperNEAT
+    
 * `0.3.5.alpha.7`
 
     Console made functional.
