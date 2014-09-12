@@ -9,7 +9,7 @@ module NEAT
       super      
     end
 
-    # Take the genotype of the critter and
+    # Take the genotype(s) of the critter and
     # create a phenotype from the genotype.
     # 
     # In the phenotype, it creates a function called stimulate(),
@@ -17,9 +17,8 @@ module NEAT
     # in the form of a response hash (which corresponds directly to the
     # output neurons).
     #
-    # This implementation assumes an acyclic graph (feed forward)
-    # and cannot handle cycles at all. Later we may fix this or create
-    # a type of Expressor that can.
+    # This implementation handles both acyclic (feed forward) and cyclic
+    # (recurrent) graphs.
     def express!(critter)
       critter.ready_for_expression!
       express_neurons! critter

@@ -6,8 +6,8 @@ GEM
     awesome_print (1.2.0)
     bond (0.5.1)
     builder (3.2.2)
-    celluloid (0.15.2)
-      timers (~> 1.1.0)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
     coderay (1.1.0)
     debase (0.0.9)
       debugger-ruby_core_source
@@ -43,6 +43,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     hashie (3.3.1)
     highline (1.6.21)
+    hitimes (1.2.2)
     jeweler (2.0.1)
       builder
       bundler (>= 1.0)
@@ -84,7 +85,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rb-readline (0.5.1)
-    rdoc (4.1.1)
+    rdoc (4.1.2)
       json (~> 1.4)
     rspec (2.99.0)
       rspec-core (~> 2.99.0)
@@ -104,7 +105,8 @@ GEM
     statistics2 (0.54)
     thor (0.19.1)
     thread_safe (0.3.4)
-    timers (1.1.0)
+    timers (4.0.1)
+      hitimes
     yard (0.8.7.4)
 
 PLATFORMS

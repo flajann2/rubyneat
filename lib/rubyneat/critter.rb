@@ -15,6 +15,15 @@ module NEAT
     # Ratings assigned by Evaluator
     attr_accessor :fitness, :novelty
 
+
+    # HyperNEAT?
+    def hyper? ; false ; end
+
+    # Do we have multiple genotypes?
+    def modular?
+      hyper?
+    end
+
     # Critter construction. We construct the genotype.
     # The phenotype will be constructed by the Expressor operator.
     def initialize(pop, mating = false, &block)
