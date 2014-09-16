@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../k-tree" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../rubyneat_examples" vcs="Git" />
   </component>
 </project>

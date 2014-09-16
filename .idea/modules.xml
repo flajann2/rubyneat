@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../k-tree/.idea/k-tree.iml" filepath="$PROJECT_DIR$/../k-tree/.idea/k-tree.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/rubyneat.iml" filepath="$PROJECT_DIR$/.idea/rubyneat.iml" />
       <module fileurl="file://$PROJECT_DIR$/../rubyneat_dashboard/.idea/rubyneat_dashboard.iml" filepath="$PROJECT_DIR$/../rubyneat_dashboard/.idea/rubyneat_dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/../rubyneat_examples/.idea/rubyneat_examples.iml" filepath="$PROJECT_DIR$/../rubyneat_examples/.idea/rubyneat_examples.iml" />

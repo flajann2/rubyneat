@@ -467,21 +467,19 @@ module NEAT
       # Enable FS-NEAT
       attr_accessor :feature_selection_switch
 
-      # Enable HyperNEAT. This will result in the critters
-      # being interpreted as CPPNs for substrate weights. Additional
-      # setup will be necessary.
-      attr_accessor :hyper_switch
+      # Enable ES HyperNEAT. This implies multiple genomes
+      # per critter.
+      attr_neat :hyper_switch, default: false
 
-      # Enable Evolved Substrate HyperNEAT. Meaningless unless
-      # hyper_switch is also enabled.
-      attr_accessor :evolved_substrate_switch
+      # HyperNEAT Band Pruning Threshold
+      attr_neat :hyper_band_pruning_threshold, default: 0.5
 
       # Enable RT-NEAT, for gradual evolution suitable for
       # games and other human-interactive systems.
       attr_accessor :real_time_switch
 
       # If true, allow for recurrent networks.
-      attr_accessor :recurrency_switch
+      attr_neat :recurrency_switch, default: false
 
       # Set up defaults for mandatory entries.
       def initialize

@@ -219,6 +219,5 @@ The basic types to RubyNEAT are represented here.
         }
       end
     end
-
   end
 end
