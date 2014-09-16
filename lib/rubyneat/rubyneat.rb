@@ -471,8 +471,11 @@ module NEAT
       # per critter.
       attr_neat :hyper_switch, default: false
 
-      # HyperNEAT Band Pruning Threshold
+      # HyperNEAT Thresholds
       attr_neat :hyper_band_pruning_threshold, default: 0.5
+      attr_neat :hyper_variance_threshold, default: 0.5
+      # the range here is taken to mean +/- the given.
+      attr_neat :hyper_weight_range, default: 4.0
 
       # Enable RT-NEAT, for gradual evolution suitable for
       # games and other human-interactive systems.

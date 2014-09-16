@@ -38,6 +38,37 @@ and a project directory will be created. Cd into that directory, and type:
 and a scaffold Neater will be generated. Note that this generator is still
 in alpha, but improvements are coming shortly.
 
+Enhanced Substrate HyperNEAT
+----------------------------
+
+This version (and all subsequent versions) has the ES HyperNEAT feature
+added. This represents a significant leap in the power of RubyNEAT, and
+as such will make this available to solve a wider class of problems.
+
+The decision to leapfrog HyperNEAT was made primarily on a number of fronts.
+for starters, HyperNEAT is very sensitive to changes in the CPPN, where
+ES HyperNEAT regenerates the neurons in the substrate on each and every
+change (evolution) of the CPPN. In this way, more stability can be had. On
+the other hand, it makes the expression phase more computationally expensive.
+
+We will seek hard-nosed ways to optimize the expressor performance.
+
+Also, with the dashboard will have to grow some extra abilities to provides
+visualization.
+
+Modularization
+--------------
+
+On the heels of ES HyperNEAT, we needed to add modularization to make that
+possible. We expose this modularization for direct usage outside of HyperNEAT,
+so that you may compose modules of ANNs and their relationships, which mirrors
+how the brain has 'modules' of specific functionality.
+
+You of course may mix and match ES HyperNEAT modules with NEAT modules. We'll
+leave that to your imagination. This modularization should not be confused with
+the modularization that may automatically arise within ES HyperNEAT itself.
+Please see the Wiki for a deeper exploration of these ideas,
+
 Examples
 --------
 
@@ -63,7 +94,7 @@ Neater. Eventually all will be fully documented.
 Release Notes
 -------------
 * `0.5.0.hyper.alpha.0`
-    Indroduction of multicritter modularity, HyperNEAT
+    Indroduction of multicritter modularity, ES HyperNEAT
     
 * `0.3.5.alpha.7`
 
