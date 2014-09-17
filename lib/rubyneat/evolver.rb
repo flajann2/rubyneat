@@ -100,11 +100,13 @@ module NEAT
     def mutate_perturb_gene_weights!
       @gperturb = Distribution::Normal::rng(0, @controller.parms.mutate_perturb_gene_weights_sd) if @gperturb.nil?
       @npop.critters.each do |critter|
-        critter.genotype.genes.each { |innov, gene|
-          if rand < @controller.parms.mutate_perturb_gene_weights_prob
-            gene.weight += per = @gperturb.()
-            log.debug { "Peturbed gene #{gene}.#{innov} by #{per}" }
-          end
+        critter.genotypes.each{ |name, genotype|
+            genotype.genes.each { |innov, gene|
+            if rand < @controller.parms.mutate_perturb_gene_weights_prob
+              gene.weight += per = @gperturb.()
+              log.debug { "Peturbed gene #{gene}.#{innov} by #{per}" }
+            end
+          }
         }
       end
     end
@@ -113,11 +115,13 @@ module NEAT
     def mutate_change_gene_weights!
       @gchange = Distribution::Normal::rng(0, @controller.parms.mutate_change_gene_weights_sd) if @gchange.nil?
       @npop.critters.each do |critter|
-        critter.genotype.genes.each { |innov, gene|
-          if rand < @controller.parms.mutate_change_gene_weights_prob
-            gene.weight = chg = @gchange.()
-            log.debug { "Change gene #{gene}.#{innov} by #{chg}" }
-          end
+        critter.genotypes.each{ |name, genotype|
+            genotype.genes.each { |innov, gene|
+            if rand < @controller.parms.mutate_change_gene_weights_prob
+              gene.weight = chg = @gchange.()
+              log.debug { "Change gene #{gene}.#{innov} by #{chg}" }
+            end
+          }
         }
       end
     end
@@ -264,14 +268,16 @@ module NEAT
       # neuron. The old gene is not replaced, but disabled. 2 new genes are
       # created along with the new neuron.
       def add_neuron!(crit)
-        gene = crit.genotype.genes.values.sample
-        neu = controller.neural_hidden.values.sample.new(controller)
-        g1 = Critter::Genotype::Gene[crit.genotype, gene.in_neuron, neu.name, gene.weight]
-        g2 = Critter::Genotype::Gene[crit.genotype, neu.name, gene.out_neuron, gene.weight]
-        gene.enabled = false
-        crit.genotype.add_neurons neu
-        crit.genotype.add_genes g1, g2
-        log.debug "add_neuron!: neu #{neu}, g1 #{g1}, g2 #{g2}"
+        crit.genotypes.each{ |name, genotype|
+          gene = genotype.genes.values.sample
+          neu = controller.neural_hidden.values.sample.new(controller)
+          g1 = Critter::Genotype::Gene[genotype, gene.in_neuron, neu.name, gene.weight]
+          g2 = Critter::Genotype::Gene[genotype, neu.name, gene.out_neuron, gene.weight]
+          gene.enabled = false
+          genotype.add_neurons neu
+          genotype.add_genes g1, g2
+          log.debug "add_neuron!(#{name}): neu #{neu}, g1 #{g1}, g2 #{g2}"
+        }
       end
 
       #= Add a gene to the genome
@@ -289,15 +295,17 @@ module NEAT
       #
       # Constructs for handling recurrency are present in Expressor.
       def add_gene!(crit)
-        n1 = crit.genotype.neurons.values.sample # input
-        n2 = crit.genotype.neurons.values.sample # output
+        crit.genotypes.each{ |name, genotype|
+          n1 = genotype.neurons.values.sample # input
+          n2 = genotype.neurons.values.sample # output
 
-        # Sanity checks!
-        unless n1 == n2 or n1.output? or n2.input?
-          gene = Critter::Genotype::Gene[crit.genotype, n1.name, n2.name, NEAT::controller.gaussian]
-          crit.genotype.add_genes gene
-          log.debug "add_gene! Added gene #{gene}(#{n1.name} -> #{n2.name}) to #{crit}"
-        end
+          # Sanity checks!
+          unless n1 == n2 or n1.output? or n2.input?
+            gene = Critter::Genotype::Gene[genotype, n1.name, n2.name, NEAT::controller.gaussian]
+            genotype.add_genes gene
+            log.debug "add_gene!(#{name}) Added gene #{gene}(#{n1.name} -> #{n2.name}) to #{crit}"
+          end
+        }
       end
 
       # Pick an enabled gene at random and disable it.

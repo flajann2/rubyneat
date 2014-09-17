@@ -10,7 +10,10 @@ module NEAT
   # The Genotype comprises Genes and Neurons.
   class Critter < NeatOb
     attr_reader :population
-    attr_accessor :genotypes, :phenotype
+
+    # Multiple genotypes in a hash by name.
+    attr_neat :genotypes, default: {}
+    attr_accessor :phenotype
 
     # Ratings assigned by Evaluator
     attr_accessor :fitness, :novelty
@@ -28,16 +31,15 @@ module NEAT
     def initialize(pop, mating = false, &block)
       super pop.controller
       @population = pop
-      @genotype = Genotype.new(self, mating)
+      genotypes[:main] = Genotype.new(self, mating)
       block.(self) unless block.nil?
     end
 
     # Get the Critter ready for the Expressor to
     # express the geneotype.
     def ready_for_expression!
-      @genotype.wire!
-      @phenotype = NEAT::Critter::Phenotype[self]
-      @phenotype
+      genotypes.each{ |k, genotype| genotype.wire! }
+      @phenotype = NEAT::Critter::Phenotype[self] #to be returned
     end
 
     # Exoress this critter using the Expressor plugin.
