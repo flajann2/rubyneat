@@ -94,7 +94,9 @@ Neater. Eventually all will be fully documented.
 Release Notes
 -------------
 * `0.5.0.hyper.alpha.0`
-    Indroduction of multicritter modularity, ES HyperNEAT
+    Indroduction of multicritter (actually multi-genenome) modularity, 
+    ES HyperNEAT (which does not require multi-genome as such, as
+    it's handled mostly in the Expressor)
     
 * `0.3.5.alpha.7`
 

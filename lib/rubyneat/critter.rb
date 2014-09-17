@@ -10,11 +10,10 @@ module NEAT
   # The Genotype comprises Genes and Neurons.
   class Critter < NeatOb
     attr_reader :population
-    attr_accessor :genotype, :phenotype
+    attr_accessor :genotypes, :phenotype
 
     # Ratings assigned by Evaluator
     attr_accessor :fitness, :novelty
-
 
     # HyperNEAT?
     def hyper? ; false ; end
