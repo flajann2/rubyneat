@@ -1,12 +1,14 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Dashboard" type="RubyRunConfigurationType" factoryName="Ruby">
-    <module name="rubyneat_dashboard" />
+  <configuration default="false" name="NEATxor" type="RubyRunConfigurationType" factoryName="Ruby">
+    <module name="rubyneat_examples" />
     <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
     <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
     <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-    <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+    <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="rbenv: 2.1.2" />
     <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-    <envs />
+    <envs>
+      <env name="IDE_DEBUGGER" value="1" />
+    </envs>
     <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
     <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
     <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
@@ -15,10 +17,12 @@
       </COVERAGE_PATTERN>
     </EXTENSION>
     <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
-    <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/lib/rubyneat_dashboard.rb" />
-    <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+    <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/neatdebug" />
+    <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="run xorexperimental" />
     <RunnerSettings RunnerId="RubyDebugRunner" />
+    <RunnerSettings RunnerId="RubyRunner" />
     <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+    <ConfigurationWrapper RunnerId="RubyRunner" />
     <method />
   </configuration>
 </component>

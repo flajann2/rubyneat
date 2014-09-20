@@ -11,8 +11,47 @@ module NEAT
     include NEAT::BasicNeuronTypes
     include Math
 
+    class Composition < NeatOb
+
+    end
+
+    # Genotype composition within our Critter embodied.
+    class TweanComposition < Composition
+      # Class map of named input and output neurons (each critter will have
+      # instantiations of these) name: InputNeuralClass (usually InputNeuron)
+      attr_neat :neural_inputs,  default: nil
+      attr_neat :neural_outputs, default: nil
+      attr_neat :neural_hidden,  default: nil
+
+      def initialize(name = :main, &block)
+        [
+            :inputs,
+            :outputs,
+            :hidden  # we really don't care about mapping hidden neurons, but we'll ignore them later.
+        ].each do |iometh|
+          instance_eval %Q[
+   def #{iometh}(nodes = nil, &block)
+     neui = unless nodes.nil?
+              nodes
+            else
+              block.()
+            end
+     NEAT::controller.neural_#{iometh} = if neui.kind_of? Hash
+                                           neui
+                                         else
+                                           Hash[neui.map{|n| [NEAT::random_name_generator, n]}]
+                                         end
+   end]
+        end
+        block.(NEAT::controller)
+
+      end
+
+    end
+    
     # DSL -- Define defines the parameters to the controller.
     def define(name = NEAT.random_name_generator, &block)
+      # TODO: DRY up the code here, replacing it with TweanComposition
       [
        :inputs,
        :outputs,

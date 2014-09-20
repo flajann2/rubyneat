@@ -41,7 +41,7 @@ in alpha, but improvements are coming shortly.
 Enhanced Substrate HyperNEAT
 ----------------------------
 
-This version (and all subsequent versions) has the ES HyperNEAT feature
+This version (and all subsequent versions) has the iterated ES HyperNEAT feature
 added. This represents a significant leap in the power of RubyNEAT, and
 as such will make this available to solve a wider class of problems.
 

@@ -29,9 +29,11 @@ module NEAT
     protected
     # Express Neurons as methods
     def express_neurons!(critter)
-      critter.genotype.neurons.each do |name, neuron|
-        neuron.express(critter.phenotype) unless neuron.input? and not neuron.bias?
-      end
+      critter.genotypes.each { |gname, genotype|
+        genotype.neurons.each do |name, neuron|
+          neuron.express(critter.phenotype) unless neuron.input? and not neuron.bias?
+        end
+      }
     end
     
     #= Expression of the Genotype as a Phenotype.
