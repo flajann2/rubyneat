@@ -12,11 +12,6 @@ module NEAT
     include Math
 
     class Composition < NeatOb
-
-    end
-
-    # Genotype composition within our Critter embodied.
-    class TweanComposition < Composition
       # Class map of named input and output neurons (each critter will have
       # instantiations of these) name: InputNeuralClass (usually InputNeuron)
       attr_neat :neural_inputs,  default: nil
@@ -24,31 +19,75 @@ module NEAT
       attr_neat :neural_hidden,  default: nil
 
       def initialize(name = :main, &block)
+        super(nil, name, controllerfrei: true)
         [
             :inputs,
             :outputs,
             :hidden  # we really don't care about mapping hidden neurons, but we'll ignore them later.
         ].each do |iometh|
           instance_eval %Q[
-   def #{iometh}(nodes = nil, &block)
-     neui = unless nodes.nil?
-              nodes
-            else
-              block.()
-            end
-     NEAT::controller.neural_#{iometh} = if neui.kind_of? Hash
-                                           neui
-                                         else
-                                           Hash[neui.map{|n| [NEAT::random_name_generator, n]}]
-                                         end
-   end]
+             def #{iometh}(nodes = nil, &block)
+               neui = unless nodes.nil?
+                        nodes
+                      else
+                        block.()
+                      end
+               NEAT::controller.neural_#{iometh} = if neui.kind_of? Hash
+                                                     neui
+                                                   else
+                                                     Hash[neui.map{|n| [NEAT::random_name_generator, n]}]
+                                                   end
+             end]
         end
-        block.(NEAT::controller)
-
+        instance_eval &block
       end
+    end
+
+    # Genotype composition within our Critter embodied.
+    class TweanComposition < Composition
 
     end
-    
+
+    class HyperComposition < Composition
+
+    end
+
+    class Connections < NeatOb
+      attr_neat :conn, default: {}
+
+      def initialize(corpus, &block)
+        super(nil, nil, controllerfrei: true)
+        corpus.compositions.each do |name, composition|
+          create_method(name) do |**cmap|
+              conn[name] = cmap
+          end
+        end
+        instance_eval(&block)
+      end
+
+      def inputs(**cmap)
+        conn[:inputs] = cmap
+      end
+    end
+
+    class Corpus < NeatOb
+      attr_neat :nexion, default: nil #connections
+      attr_neat :compositions, default: {}
+
+      def initialize(&block)
+        instance_eval &block
+      end
+
+      def twean(name, hyper: false, &block)
+        self.compositions[name] = (hyper ? HyperComposition
+                                         : TweanComposition).new(name, &block)
+      end
+
+      def connections (&block)
+        self.nexion = Connections.new(self, &block)
+      end
+    end
+
     # DSL -- Define defines the parameters to the controller.
     def define(name = NEAT.random_name_generator, &block)
       # TODO: DRY up the code here, replacing it with TweanComposition
@@ -71,6 +110,11 @@ module NEAT
                                          end
    end]
       end
+
+      def compose(&block)
+        NEAT::controller.corpus = Corpus.new(&block)
+      end
+
       block.(NEAT::controller)
     end
 

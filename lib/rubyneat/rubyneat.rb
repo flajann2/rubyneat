@@ -260,6 +260,11 @@ module NEAT
         # Add boilerplate code for queues here.
       end
     end
+
+    # Generally so we can create a method as needed anywhere.
+    def create_method(name, &block)
+      self.class.send(:define_method, name, &block)
+    end
   end
 
   class NeatException < Exception
@@ -314,6 +319,9 @@ module NEAT
 
     # global innovation number
     attr_neat :glob_innov_num, default: 0, cloneable: false
+
+    # Compositional (modular) Critters and HyperNEAT
+    attr_neat :corpus, default: nil
 
     # current sequence number being evaluated
     attr_reader :seq_num
