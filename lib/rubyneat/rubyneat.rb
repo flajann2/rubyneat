@@ -321,7 +321,7 @@ module NEAT
     attr_neat :glob_innov_num, default: 0, cloneable: false
 
     # Compositional (modular) Critters and HyperNEAT
-    attr_neat :corpus, default: nil
+    attr_neat :corpus, default: nil, cloneable: false
 
     # current sequence number being evaluated
     attr_reader :seq_num

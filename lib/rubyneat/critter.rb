@@ -31,8 +31,20 @@ module NEAT
     def initialize(pop, mating = false, &block)
       super pop.controller
       @population = pop
-      genotypes[:main] = Genotype.new(self, mating)
-      block.(self) unless block.nil?
+      corpus = pop.controller.corpus
+      unless corpus.nil?
+        corpus.keys.each{ |name|
+          genotypes[name] = Genotype.new(self, mating) do |g|
+            g.name = name
+          end
+        }
+      else
+        genotypes[:main] = Genotype.new(self, mating) do |g|
+          g.name = :main
+        end
+      end
+
+      block.(self) if block_given?
     end
 
     # Get the Critter ready for the Expressor to
@@ -340,6 +352,10 @@ module NEAT
     #
     # This is a variation of the formulation suggested by the Stanley
     # paper, which normalizes the E and D terms by N.
+    #
+    # And now, for the modularization efforts here, we have the
+    # question of how we do this calculation across the multiple
+    # gemomens to compare the critter.
     def compare(oc)
       c1 = @controller.parms.excess_coefficient
       c2 = @controller.parms.disjoint_coefficient
@@ -358,27 +374,32 @@ module NEAT
     private
     # Return a count of excesses.
     def excess(oc)
-      (@genotype.genes.size - oc.genotype.genes.size).abs
+      genotypes.keys.map{ |key|
+        (genotypes[key].genes.size - oc.genotypes[key].genes.size).abs
+      }.reduce(0, :+)
     end
 
     # Return the count of disjoint genes
     def disjoint(oc)
-      a = @genotype.genes.keys
-      b = oc.genotype.genes.keys
-      (a - b).size + (b - a).size - excess(oc)
+      genotypes.keys.map{ |key|
+        a = genotypes[key].genes.keys
+        b = oc.genotypes[key].genes.keys
+        (a - b).size + (b - a).size
+      }.reduce(0, :+) - excess(oc)
     end
 
     # 
     def weight_diff(oc)
-      ag = @genotype.genes
-      bg = oc.genotype.genes
-      matches = ag.keys & bg.keys
-      unless matches.empty?
-        matches.map{|i| (ag[i].weight - bg[i].weight).abs}.reduce{|w, ws| w + ws} / matches.size
-      else
-        0
-      end
+      genotypes.keys.map{ |key|
+        ag = genotypes[key].genes
+        bg = oc.genotypes[key].genes
+        matches = ag.keys & bg.keys
+        unless matches.empty?
+          matches.map{|i| (ag[i].weight - bg[i].weight).abs}.reduce{|w, ws| w + ws} / matches.size
+        else
+          0
+        end
+      }.reduce(0, :+)
     end
-
   end
 end

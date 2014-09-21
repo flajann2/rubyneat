@@ -43,11 +43,12 @@ module NEAT
     # the fitness average fitness calculated for the fitness vector.
     def analyze_for_fitness!(critter)
       fitvec = @crit_hist[critter].map{|seq, vio| @controller.fitness_func_hook(vio[0], vio[1], seq) }
+      fitness_cost = critter.genotypes.map{|k, g| g.fitness_cost}.reduce(0, :+)
       # Average the fitness vector to get a scalar fitness.
       critter.fitness = unless @controller.cost_func_none?
-                          @controller.cost_func_hook(fitvec, critter.genotype.fitness_cost)
+                          @controller.cost_func_hook(fitvec, fitness_cost)
                         else
-                          fitvec.reduce {|a,r| a+r} / fitvec.size.to_f + critter.genotype.fitness_cost
+                          fitvec.reduce {|a,r| a+r} / fitvec.size.to_f + fitness_cost
                         end
       log.debug "Fitness Vector: #{fitvec}, fitness of #{critter.fitness} assigned to #{critter}"
     end

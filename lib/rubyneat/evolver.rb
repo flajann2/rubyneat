@@ -310,14 +310,18 @@ module NEAT
 
       # Pick an enabled gene at random and disable it.
       def disable_gene!(crit)
-        gene = crit.genotype.genes.values.reject{|gene| gene.disabled? }.sample
-        gene.enabled = false unless gene.nil?
+        crit.genotypes.each{ |name, genotype|
+          gene = genotype.genes.values.reject{ |gene| gene.disabled? }.sample
+          gene.enabled = false unless gene.nil?
+        }
       end
 
       # Pick a disabled gene at random and reenable it.
       def reenable_gene!(crit)
-        gene = crit.genotype.genes.values.reject{|gene| gene.enabled? }.sample
-        gene.enabled = true unless gene.nil?
+        crit.genotypes.each{ |name, genotype|
+          gene = genotype.genes.values.reject{|gene| gene.enabled? }.sample
+          gene.enabled = true unless gene.nil?
+        }
       end
     end
   end

@@ -45,7 +45,8 @@ module NEAT
     # A simple approach has been taken here to allow for recurrency in
     # our Critters. Basically, a looping construct has been put around the
     # activation of the neurons so that recurrency can be done in 2 ways:
-    ## 1) Via yielding, thus treating the stimulus function as a enumerable.
+    ## 1) Via yielding, thus treating the stimulus (activation)
+    ## function as a enumerable.
     ### In this approach, one would call the Critter's phenotype with a block of
     ### code that would accept the output of the net. It would return 'true' to
     ### continue the iteration, or 'false' to end the iteration.
@@ -57,51 +58,52 @@ module NEAT
     # Since we do not allow recurrent connections to input neurons anyway, this should
     # not be an issue, though we may allow for this at a future date.
     def express_genes!(critter)
-      g = critter.genotype
       p = critter.phenotype
+      #g = critter.genotype
+      critter.genotypes.each{ |name, g|
+        init_code = "\n  def initialize_neurons\n"
 
-      init_code = "\n  def initialize_neurons\n"
+        # 'stimulate' function call (really should be 'activate', but we'll reserve this for something else)
+        p.code += "  def #{NEAT::STIMULUS}("
+        p.code += g.neural_inputs.reject{ |sym| g.neural_inputs[sym].bias? }.map{|sym, neu| sym}.join(", ")
+        p.code += ")\n"
 
-      # 'stimulate' function call (really should be 'activate', but we'll reserve this for something else)
-      p.code += "  def #{NEAT::STIMULUS}("
-      p.code += g.neural_inputs.reject{ |sym| g.neural_inputs[sym].bias? }.map{|sym, neu| sym}.join(", ")
-      p.code += ")\n"
+        # Assign all the parameters to instance variables.
+        p.code += g.neural_inputs.map{|sym, neu| "    @#{sym} = #{sym}\n"}.join("")
+        p.code += "    loop {\n"
 
-      # Assign all the parameters to instance variables.
-      p.code += g.neural_inputs.map{|sym, neu| "    @#{sym} = #{sym}\n"}.join("")
-      p.code += "    loop {\n"
+        # Resolve the order in which we shall call the neurons
+        # TODO handle the dependency list if it comes back!
+        @resolved, @dependencies = NEAT::Graph::DependencyResolver[g.neural_outputs.map{|s, neu| neu}].resolve
 
-      # Resolve the order in which we shall call the neurons
-      # TODO handle the dependency list if it comes back!
-      @resolved, @dependencies = NEAT::Graph::DependencyResolver[g.neural_outputs.map{|s, neu| neu}].resolve
-
-      # And now call them in that order!
-      @resolved.each do |neu|
-        unless neu.input?
-          init_code += "    @#{neu.name} = 0\n"
-          if g.neural_gene_map.member? neu.name
-            p.code += "      @#{neu.name} = #{neu.name}("
-            p.code += g.neural_gene_map[neu.name].map{ |gene|
-              "%s * @%s" % [gene.weight, gene.in_neuron]
-            }.join(", ") + ")\n"
-          else
-            g.dangling_neurons = true
-            log.debug "Dangling neuron in critter #{critter} -- #{neu}"
+        # And now call them in that order!
+        @resolved.each do |neu|
+          unless neu.input?
+            init_code += "    @#{neu.name} = 0\n"
+            if g.neural_gene_map.member? neu.name
+              p.code += "      @#{neu.name} = #{neu.name}("
+              p.code += g.neural_gene_map[neu.name].map{ |gene|
+                "%s * @%s" % [gene.weight, gene.in_neuron]
+              }.join(", ") + ")\n"
+            else
+              g.dangling_neurons = true
+              log.debug "Dangling neuron in critter #{critter} -- #{neu}"
+            end
           end
         end
-      end
-      init_code += "  end\n"
+        init_code += "  end\n"
 
-      # And now return the result as a vector of outputs.
-      p.code += "     @_outvec = [" + g.neural_outputs.map{|sym, neu| "@#{sym}"}.join(',') + "]\n"
-      p.code += "     break unless block_given?\n"
-      p.code += "     break unless yield @_outvec\n"
-      p.code += "  }\n"
-      p.code += "  @_outvec\n"
-      p.code += "  end\n"
-      p.code += init_code
-      log.debug p.code
-      p.express!
+        # And now return the result as a vector of outputs.
+        p.code += "     @_outvec = [" + g.neural_outputs.map{|sym, neu| "@#{sym}"}.join(',') + "]\n"
+        p.code += "     break unless block_given?\n"
+        p.code += "     break unless yield @_outvec\n"
+        p.code += "  }\n"
+        p.code += "  @_outvec\n"
+        p.code += "  end\n"
+        p.code += init_code
+        log.debug p.code
+        p.express!
+      }
     end
 
     def express_expression!(critter)

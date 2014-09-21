@@ -39,6 +39,10 @@ module NEAT
       @type_name ||= self.to_s.split('::').last.split('Neuron').first.downcase
     end
 
+    def type_name
+      self.class.type_name
+    end
+
     # Class is is of Input type?
     def self.input? ; false ; end
     def input? ; self.class.input? ; end
@@ -47,7 +51,7 @@ module NEAT
     def bias? ; self.class.bias? ; end
     def hyper? ; not hccoord.nil? ; end
 
-    # Instantiation is of outout type?
+    # Instantiation is of output type?
     def output? ; !!@output ; end
 
     def self.inherited(clazz)
@@ -63,6 +67,16 @@ module NEAT
     # and a apply an operator to the sum.
     def express(instance)
       raise NeatException.new "express() must be implemented by subclass."
+    end
+
+    # Function must be implemented by subclasses for phenotype
+    # generation.
+    #
+    # This will generate textual code so that the TWEAN may be
+    # treated as a fully independent program apart from the RubyNEAT
+    # infrastructure.
+    def express_as_code(instance)
+      raise NeatException.new "express_as_code() must be implemented by subclass."
     end
   end
 

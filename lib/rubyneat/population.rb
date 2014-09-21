@@ -13,6 +13,8 @@ module NEAT
     # than the former. Needs to be set, invalid if nil.
     attr_neat :generation, default: nil
 
+    attr_neat :corpus, default: nil
+
     # Ordered list or hash of input neuron classes 
     # (all critters generated here shall have this)
     attr_accessor :input_neurons
@@ -41,6 +43,7 @@ module NEAT
     # Create initial (ramdom) population of critters
     def initialize(c, &block)
       super
+      @corpus = c.corpus
       @input_neurons = c.neural_inputs.clone
       @output_neurons = c.neural_outputs.clone
       @hidden_neurons = unless c.neural_hidden.nil?
