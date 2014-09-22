@@ -125,7 +125,7 @@ module NEAT
         @controller = controller
       else
         raise NeatException.new "Controller Needed!" unless controllerfrei or self.is_a?(Controller) or self.is_a?(Controller::NeatSettings)
-        @controller = self unless self.is_a? Controller::NeatSettings
+        @controller = self unless self.is_a? Controller::NeatSettings unless controllerfrei
       end
     end
 
@@ -334,6 +334,7 @@ module NEAT
 
     # Class map of named input and output neurons (each critter will have 
     # instantiations of these) name: InputNeuralClass (usually InputNeuron)
+    # TODO: Deprecated. This should be from the Genome instead.
     attr_accessor :neural_inputs, :neural_outputs, :neural_hidden
 
     # Parameters for evolution (NeatParameters)

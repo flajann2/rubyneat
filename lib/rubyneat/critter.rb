@@ -33,9 +33,10 @@ module NEAT
       @population = pop
       corpus = pop.controller.corpus
       unless corpus.nil?
-        corpus.keys.each{ |name|
+        corpus.compositions.each{ |name, composition|
           genotypes[name] = Genotype.new(self, mating) do |g|
             g.name = name
+            g.composition = composition
           end
         }
       else
@@ -85,6 +86,9 @@ module NEAT
     # are indexed by their innovation numbers.
     #
     class Genotype < NeatOb
+      # We need the name to be mutable for this guy.
+      attr_writer :name
+
       # Critter to which we belong
       attr_accessor :critter
 
@@ -106,6 +110,9 @@ module NEAT
       # Just take the in_neuron name and the weight to do
       # the call to that neuron function with the appropriate weights
       attr_reader :neural_gene_map
+
+      # Composition, if modular status has been enabled.
+      attr_neat :composition, default: nil
 
       def initialize(critter, mating = false, &block)
         super critter.controller

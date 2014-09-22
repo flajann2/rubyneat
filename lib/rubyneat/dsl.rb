@@ -32,7 +32,7 @@ module NEAT
                       else
                         block.()
                       end
-               NEAT::controller.neural_#{iometh} = if neui.kind_of? Hash
+               self.neural_#{iometh} = if neui.kind_of? Hash
                                                      neui
                                                    else
                                                      Hash[neui.map{|n| [NEAT::random_name_generator, n]}]
