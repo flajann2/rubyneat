@@ -86,7 +86,7 @@ module NEAT
     #
     class Genotype < NeatOb
       # We need the name to be mutable for this guy.
-      attr_writer :name
+      attr_neat :name, default: :main
 
       # Critter to which we belong
       attr_accessor :critter
@@ -119,18 +119,22 @@ module NEAT
 
         # Initialize basic structures
         @genes = nil
-        @neural_inputs = Hash[@critter.population.input_neurons.map { |sym, ineu|
+
+        # More setup before defining the neural situation.
+        block.(self) unless block.nil?
+        composition = @critter.population.corpus.compositions[@name]
+
+        @neural_inputs = Hash[composition.neural_inputs.map { |sym, ineu|
                                 [sym, ineu.new(@controller, sym)]
                               }]
 
-        @neural_outputs = Hash[@critter.population.output_neurons.map { |sym, ineu|
+        @neural_outputs = Hash[composition.neural_outputs.map { |sym, ineu|
                                 [sym, ineu.new(@controller, sym)]
                               }]
         @neurons = @neural_inputs.clone # this must be a shallow clone!
         @neurons.merge! @neural_outputs
 
         @controller.evolver.gen_initial_genes!(self) unless mating
-        block.(self) unless block.nil?
       end
 
       # We add genes given here to the genome.

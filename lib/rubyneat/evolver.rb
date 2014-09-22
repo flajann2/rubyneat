@@ -270,7 +270,7 @@ module NEAT
       def add_neuron!(crit)
         crit.genotypes.each{ |name, genotype|
           gene = genotype.genes.values.sample
-          neu = controller.neural_hidden.values.sample.new(controller)
+          neu = genotype.composition.neural_hidden.values.sample.new(controller)
           g1 = Critter::Genotype::Gene[genotype, gene.in_neuron, neu.name, gene.weight]
           g2 = Critter::Genotype::Gene[genotype, neu.name, gene.out_neuron, gene.weight]
           gene.enabled = false
