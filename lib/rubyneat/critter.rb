@@ -378,7 +378,7 @@ module NEAT
 
     # Critter print
     def dump_s
-      to_s + @genotype.dump_s + "\n" + @phenotype.to_s + "\n"
+      to_s + @genotypes.map{|name, g| "#{name}: #{g.dump_s}"}.join("\n") + @phenotype.to_s + "\n"
     end
 
     private

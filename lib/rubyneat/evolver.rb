@@ -232,25 +232,27 @@ module NEAT
                   else
                     (rand(2) == 1) ? crit1 : crit2
                   end
-        a = crit1.genotype.genes.keys.to_set
-        b = crit2.genotype.genes.keys.to_set
-        disjoint = (a - b) + (b - a)
-        joint = (a + b) - disjoint
-        baby.genotype.neucleate { |gtype|
-          joint.map { |innov|
-            g1 = crit1.genotype.genes[innov]
-            g2 = crit2.genotype.genes[innov]
-            Critter::Genotype::Gene[gtype,
-                                    g1.in_neuron, g1.out_neuron,
-                                    (rand(2) == 1) ? g1.weight : g2.weight,
-                                    innov]
-          } + disjoint.map { |innov|
-            fitcrit.genotype.genes[innov].clone unless fitcrit.genotype.genes[innov].nil?
-          }.reject{|i| i.nil? }
+        @npop.corpus.compositions.keys.each{ |k|
+          a = crit1.genotypes[k].genes.keys.to_set
+          b = crit2.genotypes[k].genes.keys.to_set
+          disjoint = (a - b) + (b - a)
+          joint = (a + b) - disjoint
+          baby.genotypes[k].neucleate { |gtype|
+            joint.map { |innov|
+              g1 = crit1.genotypes[k].genes[innov]
+              g2 = crit2.genotypes[k].genes[innov]
+              Critter::Genotype::Gene[gtype,
+                                      g1.in_neuron, g1.out_neuron,
+                                      (rand(2) == 1) ? g1.weight : g2.weight,
+                                      innov]
+            } + disjoint.map { |innov|
+              fitcrit.genotypes[k].genes[innov].clone unless fitcrit.genotypes[k].genes[innov].nil?
+            }.reject{|i| i.nil? }
+          }
+          baby.genotypes[k].innervate! crit1.genotypes[k].neurons, crit2.genotypes[k].neurons
+          baby.genotypes[k].prune!
+          baby.genotypes[k].wire!
         }
-        baby.genotype.innervate! crit1.genotype.neurons, crit2.genotype.neurons
-        baby.genotype.prune!
-        baby.genotype.wire!
       end
     end
 
