@@ -2,8 +2,8 @@ require_relative 'rubyneat'
 
 =begin rdoc
 = RubyNEAT DSL
-DSL is a domain-specific language for RubyNEAT to allow you to configure the NEAT engine
-for various evolutionary projects.
+DSL is a domain-specific language for RubyNEAT to allow you to
+configure the NEAT engine for various evolutionary projects.
 =end
 module NEAT
   module DSL
@@ -90,27 +90,6 @@ module NEAT
 
     # DSL -- Define defines the parameters to the controller.
     def define(name = NEAT.random_name_generator, &block)
-      # TODO: DRY up the code here, replacing it with TweanComposition
-      [
-       :inputs,
-       :outputs,
-       :hidden  # we really don't care about mapping hidden neurons, but we'll ignore them later.
-      ].each do |iometh|
-        instance_eval %Q[
-   def #{iometh}(nodes = nil, &block)
-     neui = unless nodes.nil?
-              nodes
-            else
-              block.()
-            end
-     NEAT::controller.neural_#{iometh} = if neui.kind_of? Hash
-                                           neui
-                                         else
-                                           Hash[neui.map{|n| [NEAT::random_name_generator, n]}]
-                                         end
-   end]
-      end
-
       def compose(&block)
         NEAT::controller.corpus = Corpus.new(&block)
       end

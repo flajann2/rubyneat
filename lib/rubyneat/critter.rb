@@ -31,15 +31,14 @@ module NEAT
     def initialize(pop, mating = false, &block)
       super pop.controller
       @population = pop
-      corpus = pop.controller.corpus
-      unless corpus.nil?
-        corpus.compositions.each{ |name, composition|
+      unless pop.corpus.nil?
+        pop.corpus.compositions.each{ |name, composition|
           genotypes[name] = Genotype.new(self, mating) do |g|
             g.name = name
             g.composition = composition
           end
         }
-      else
+      else # TODO: this part is deprecated. Shift everything to corpus.
         genotypes[:main] = Genotype.new(self, mating) do |g|
           g.name = :main
         end

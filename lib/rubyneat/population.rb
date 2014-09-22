@@ -15,17 +15,6 @@ module NEAT
 
     attr_neat :corpus, default: nil
 
-    # Ordered list or hash of input neuron classes 
-    # (all critters generated here shall have this)
-    attr_accessor :input_neurons
-
-    # List of possible neuron classes for hidden neurons.
-    attr_accessor :hidden_neurons
-
-    # Ordered list or hash of output neuron classes
-    # (all critters generated here shall have this)
-    attr_accessor :output_neurons
-
     attr_accessor :traits
 
     # list of critter in this population
@@ -37,20 +26,10 @@ module NEAT
     # Hash list of species lists
     attr_reader :species
 
-    # in a deep dive, exclude the following from replication.
-    exclude :input_neurons, :output_neurons
-
     # Create initial (ramdom) population of critters
     def initialize(c, &block)
       super
       @corpus = c.corpus
-      @input_neurons = c.neural_inputs.clone
-      @output_neurons = c.neural_outputs.clone
-      @hidden_neurons = unless c.neural_hidden.nil?
-                          c.neural_hidden
-                        else
-                          c.neuron_catalog.keep_if {|n| not n.input?}
-                        end
       @critters = (0 ... c.parms.start_population_size || c.parms.population_size).map do
         Critter.new(self)
       end

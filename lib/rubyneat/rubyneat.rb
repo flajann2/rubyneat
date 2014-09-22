@@ -332,11 +332,6 @@ module NEAT
     # catalog of neurons classes to use { weight => nclass, ... }
     attr_accessor :neuron_catalog
 
-    # Class map of named input and output neurons (each critter will have 
-    # instantiations of these) name: InputNeuralClass (usually InputNeuron)
-    # TODO: Deprecated. This should be from the Genome instead.
-    attr_accessor :neural_inputs, :neural_outputs, :neural_hidden
-
     # Parameters for evolution (NeatParameters)
     attr_accessor :parms
 
