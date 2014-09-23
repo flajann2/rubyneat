@@ -68,6 +68,10 @@ module NEAT
       def inputs(**cmap)
         conn[:inputs] = cmap
       end
+
+      def outputs(*olist)
+        conn[:outputs] = olist
+      end
     end
 
     class Corpus < NeatOb

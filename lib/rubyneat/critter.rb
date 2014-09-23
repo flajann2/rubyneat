@@ -73,6 +73,27 @@ module NEAT
       @controller.evaluator.evaluate! self
     end
 
+    # Name of the function to initialize the Critter prior
+    # to Critter activation.
+    def init_funct
+      :"#{NEAT::INITIALIZATION}_neurons"
+    end
+
+    # Name of the function to activate the Critter.
+    def activation_funct
+      :"#{NEAT::STIMULUS}_critter"
+    end
+
+    # list of parameters for Critter activation.
+    def funct_params
+      unless population.corpus.nexion.nil?
+        population.corpus.nexion.conn[:inputs].keys
+      else
+        raise NeatException.new('If you have more than one composition, you must also have a connections block in your Neater.') unless population.corpus.compositions.size == 1
+        population.corpus.compositions.values.first.neural_inputs.keys
+      end
+    end
+
     #= Genotype part of the Critter
     # List of connections, basically.
     #
@@ -251,6 +272,21 @@ module NEAT
         to_s + "\ngenes:\n" + @genes.map{|k, gene|
           gene.to_s}.join("\n") + "\nneurons:\n" + @neurons.map{|k, neu|
           neu.to_s}.join("\n")
+      end
+
+      # The name (symbol) of our activation function
+      def activation_funct
+        :"#{NEAT::STIMULUS}_#{name}_ann"
+      end
+
+      # The name (symbol) of our initialization function
+      def init_funct
+        :"#{NEAT::INITIALIZATION}_#{name}_neurons"
+      end
+
+      # input parameters to the TWEANN here.
+      def funct_parameters
+        neural_inputs.reject{ |sym| neural_inputs[sym].bias? }.map{|sym, neu| sym}
       end
 
       #= Gene Specification

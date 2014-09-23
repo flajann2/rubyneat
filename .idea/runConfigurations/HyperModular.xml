@@ -18,7 +18,7 @@
     </EXTENSION>
     <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
     <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/neatdebug" />
-    <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="run hypermodular --verbose=3" />
+    <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="run hypermodular --verbose=4" />
     <RunnerSettings RunnerId="RubyDebugRunner" />
     <RunnerSettings RunnerId="RubyRunner" />
     <ConfigurationWrapper RunnerId="RubyDebugRunner" />

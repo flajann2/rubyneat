@@ -59,13 +59,13 @@ module NEAT
     # not be an issue, though we may allow for this at a future date.
     def express_genes!(critter)
       p = critter.phenotype
-      #g = critter.genotype
+
       critter.genotypes.each{ |name, g|
-        init_code = "\n  def initialize_neurons\n"
+        init_code = "\n  def #{g.init_funct}\n"
 
         # 'stimulate' function call (really should be 'activate', but we'll reserve this for something else)
-        p.code += "  def #{NEAT::STIMULUS}("
-        p.code += g.neural_inputs.reject{ |sym| g.neural_inputs[sym].bias? }.map{|sym, neu| sym}.join(", ")
+        p.code += "  def #{g.activation_funct}("
+        p.code += g.funct_parameters.join(', ')
         p.code += ")\n"
 
         # Assign all the parameters to instance variables.
@@ -99,11 +99,25 @@ module NEAT
         p.code += "     break unless yield @_outvec\n"
         p.code += "  }\n"
         p.code += "  @_outvec\n"
-        p.code += "  end\n"
+        p.code += "  end\n\n"
         p.code += init_code
-        log.debug p.code
-        p.express!
       }
+      p.code += xpress_wrapper critter
+      log.debug p.code
+      p.express!
+    end
+
+    # Express the wrapper code
+    def xpress_wrapper(critter)
+      corpus = critter.population.corpus
+      gtypes = critter.genotypes
+      code =  %[  def #{critter.init_funct} \n]
+      code += gtypes.map{|k, g| g.init_funct }.map{|f| "    #{f}"}.join("\n")
+      code += %[\n  end\n\n]
+
+      code += %[  def #{critter.activation_funct}(#{critter.funct_params.join(', ')})\n]
+      code += %[  end\n]
+      code
     end
 
     def express_expression!(critter)

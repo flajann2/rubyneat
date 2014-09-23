@@ -71,16 +71,21 @@ module NEAT
                   bu yu lu wu su hu
 
                   ha jim theh teh beh alif sin zin ra dhal dal kha ain dha ta
-                  dad sad shin mim lam kaf qaf feh ghain yeh waw heh nun}
+                  dad sad shin mim lam kaf qaf feh ghain yeh waw heh nun
+
+                  fritz habe hanchen senf salz alveric lirazel
+                  }
   def self.random_name_generator
     (1..3).map {
       @rng_names[rand @rng_names.size]
     }.push(@rng_count += 1).join('_').to_sym
   end
 
-  # Name of the stimulus method in NEAT::Critter::Phenotype to use
-  # for the singleton method expression of the critter.
-  STIMULUS = :stimulate
+  # (prefix) Names of the stimulus (activation) and initialization
+  # methods in NEAT::Critter::Phenotype to use
+  # for the singleton method expressions of the critter.
+  STIMULUS = :activate
+  INITIALIZATION = :initialize
 
   # Mixin for new innovation numbers.
   def self.new_innovation; @controller.new_innovation; end
