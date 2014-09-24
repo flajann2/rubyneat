@@ -94,6 +94,11 @@ module NEAT
       end
     end
 
+    # Unique instance variable for the general activation function
+    def uvar(sym)
+      :"@_#{sym}"
+    end
+
     #= Genotype part of the Critter
     # List of connections, basically.
     #
@@ -287,6 +292,20 @@ module NEAT
       # input parameters to the TWEANN here.
       def funct_parameters
         neural_inputs.reject{ |sym| neural_inputs[sym].bias? }.map{|sym, neu| sym}
+      end
+
+      # The list of output variables returned by the function.
+      # These are the raw names of the output neurons. Not namedspaced
+      # or instance variable names.
+      def funct_outputs
+          neural_outputs.map{ |sym, neu| sym }
+      end
+
+      # Generate a unique instance variable name from
+      # the given, because the TWEANs share the same
+      # namespace with the instance object.
+      def uvar(sym)
+        :"@#{name}_#{sym}"
       end
 
       #= Gene Specification

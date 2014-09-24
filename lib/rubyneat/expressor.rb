@@ -69,7 +69,7 @@ module NEAT
         p.code += ")\n"
 
         # Assign all the parameters to instance variables.
-        p.code += g.neural_inputs.map{|sym, neu| "    @#{sym} = #{sym}\n"}.join("")
+        p.code += g.neural_inputs.map{|sym, neu| "    #{g.uvar sym} = #{sym}\n"}.join("")
         p.code += "    loop {\n"
 
         # Resolve the order in which we shall call the neurons
@@ -79,11 +79,11 @@ module NEAT
         # And now call them in that order!
         @resolved.each do |neu|
           unless neu.input?
-            init_code += "    @#{neu.name} = 0\n"
+            init_code += "    #{g.uvar neu.name} = 0\n"
             if g.neural_gene_map.member? neu.name
-              p.code += "      @#{neu.name} = #{neu.name}("
+              p.code += "      #{g.uvar neu.name} = #{neu.name}("
               p.code += g.neural_gene_map[neu.name].map{ |gene|
-                "%s * @%s" % [gene.weight, gene.in_neuron]
+                "%s * %s" % [gene.weight, g.uvar(gene.in_neuron)]
               }.join(", ") + ")\n"
             else
               g.dangling_neurons = true
@@ -91,14 +91,15 @@ module NEAT
             end
           end
         end
-        init_code += "  end\n"
+        init_code += "  end\n\n"
 
         # And now return the result as a vector of outputs.
-        p.code += "     @_outvec = [" + g.neural_outputs.map{|sym, neu| "@#{sym}"}.join(',') + "]\n"
-        p.code += "     break unless block_given?\n"
-        p.code += "     break unless yield @_outvec\n"
-        p.code += "  }\n"
-        p.code += "  @_outvec\n"
+        outvec = g.uvar :_outvec
+        p.code += "      #{outvec} = [" + g.funct_outputs.map{ |sym| "#{g.uvar sym}"}.join(',') + "]\n"
+        p.code += "      break unless block_given?\n"
+        p.code += "      break unless yield #{outvec}\n"
+        p.code += "    }\n"
+        p.code += "    #{outvec}\n"
         p.code += "  end\n\n"
         p.code += init_code
       }
@@ -108,16 +109,44 @@ module NEAT
     end
 
     # Express the wrapper code
+    # TODO: We generate these calls within the activation function
+    # TODO: in the order specified in the connections directive. We
+    # TODO: do the necessary "magic" to automatically order the calls
+    # TODO: like we do in the code generation of the TWEANNs themselves.
     def xpress_wrapper(critter)
+      c = critter
       corpus = critter.population.corpus
+      conn = corpus.nexion.conn
+      plist = generate_ann_plist conn
       gtypes = critter.genotypes
+
+      # Initialize neurons for the critter function
       code =  %[  def #{critter.init_funct} \n]
       code += gtypes.map{|k, g| g.init_funct }.map{|f| "    #{f}"}.join("\n")
       code += %[\n  end\n\n]
 
+      # Main Critter Activation Function.
+      # TODO: This function currently does not handle recurrent
+      # TODO: TWEANNs.
+      annlist = conn.keys - [:inputs, :outputs] # order-preserving set op
       code += %[  def #{critter.activation_funct}(#{critter.funct_params.join(', ')})\n]
-      code += %[  end\n]
+      # make input parameters into instance variables
+      code += conn[:inputs].keys.map{ |v| %[    #{c.uvar v} = #{v}\n]}.join
+      # call the other ANNs
+      code += annlist.map{ |ann|
+        g = gtypes[ann] # genotype for the ANN
+        %[    #{c.uvar ann} = ]
+      }.join
+      code += %[  end\n\n]
       code
+    end
+
+    # Taking the conn directives, generate a parameter
+    # list (really a map) of all the ANNs.
+    # TODO: We should do a check here to ensure that all parmeters
+    # TODO: are fully specified.
+    def generate_ann_plist(conn)
+
     end
 
     def express_expression!(critter)
