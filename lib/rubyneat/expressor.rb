@@ -117,8 +117,8 @@ module NEAT
       c = critter
       corpus = critter.population.corpus
       conn = corpus.nexion.conn
-      plist = generate_ann_plist conn
       gtypes = critter.genotypes
+      plist = generate_ann_plist c, gtypes, conn
 
       # Initialize neurons for the critter function
       code =  %[  def #{critter.init_funct} \n]
@@ -128,14 +128,14 @@ module NEAT
       # Main Critter Activation Function.
       # TODO: This function currently does not handle recurrent
       # TODO: TWEANNs.
-      annlist = conn.keys - [:inputs, :outputs] # order-preserving set op
+      annlist = conn.keys - [:input, :output] # order-preserving set op
       code += %[  def #{critter.activation_funct}(#{critter.funct_params.join(', ')})\n]
       # make input parameters into instance variables
-      code += conn[:inputs].keys.map{ |v| %[    #{c.uvar v} = #{v}\n]}.join
+      code += conn[:input].keys.map{ |v| %[    #{c.uvar v, :input} = #{v}\n]}.join
       # call the other ANNs
       code += annlist.map{ |ann|
         g = gtypes[ann] # genotype for the ANN
-        %[    #{c.uvar ann} = ]
+        %[    #{c.uvar ann} = #{ann}(#{g.funct_parameters.map{|p| plist[ann][p]}.join(', ') })\n]
       }.join
       code += %[  end\n\n]
       code
@@ -144,9 +144,30 @@ module NEAT
     # Taking the conn directives, generate a parameter
     # list (really a map) of all the ANNs.
     # TODO: We should do a check here to ensure that all parmeters
-    # TODO: are fully specified.
-    def generate_ann_plist(conn)
-
+    # TODO: are fully specified and are only assigned once.
+    def generate_ann_plist(crit, gtypes, conn)
+      (conn.keys - [:output]).reduce({}){ |memo_ann, ann|
+        aplist = conn[ann].reduce({}){ |memo, (pfrom, apto)|
+          # @ann_pfrom
+          vfrom = unless ann == :input
+                    gtypes[ann].uvar pfrom
+                  else
+                    crit.uvar pfrom, :input
+                  end
+          apto.each{ |to_ann, to_parm|
+            (memo[to_ann] ||= {})[to_parm] = vfrom
+          }
+          memo
+        }
+        aplist.each{ |to_ann, plist|
+          unless memo_ann.member? to_ann
+            memo_ann[to_ann] = plist
+          else
+            memo_ann[to_ann].merge! plist
+          end
+        }
+        memo_ann
+      }
     end
 
     def express_expression!(critter)

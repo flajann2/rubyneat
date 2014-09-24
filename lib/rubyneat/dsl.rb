@@ -44,7 +44,7 @@ module NEAT
     end
 
     # Genotype composition within our Critter embodied.
-    class TweanComposition < Composition
+    class TweannComposition < Composition
 
     end
 
@@ -66,11 +66,11 @@ module NEAT
       end
 
       def inputs(**cmap)
-        conn[:inputs] = cmap
+        conn[:input] = cmap
       end
 
       def outputs(*olist)
-        conn[:outputs] = olist
+        conn[:output] = olist
       end
     end
 
@@ -82,9 +82,9 @@ module NEAT
         instance_eval &block
       end
 
-      def twean(name, hyper: false, &block)
+      def tweann(name, hyper: false, &block)
         self.compositions[name] = (hyper ? HyperComposition
-                                         : TweanComposition).new(name, &block)
+                                         : TweannComposition).new(name, &block)
       end
 
       def connections (&block)

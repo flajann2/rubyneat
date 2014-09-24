@@ -87,7 +87,7 @@ module NEAT
     # list of parameters for Critter activation.
     def funct_params
       unless population.corpus.nexion.nil?
-        population.corpus.nexion.conn[:inputs].keys
+        population.corpus.nexion.conn[:input].keys
       else
         raise NeatException.new('If you have more than one composition, you must also have a connections block in your Neater.') unless population.corpus.compositions.size == 1
         population.corpus.compositions.values.first.neural_inputs.keys
@@ -95,8 +95,8 @@ module NEAT
     end
 
     # Unique instance variable for the general activation function
-    def uvar(sym)
-      :"@_#{sym}"
+    def uvar(sym, namespace='')
+      :"@#{namespace}_#{sym}"
     end
 
     #= Genotype part of the Critter
