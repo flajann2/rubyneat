@@ -4,8 +4,6 @@
     <list default="true" id="35c96a8e-1bfd-48aa-a484-a2be6a7ea236" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../k-tree/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/../k-tree/.idea/.rakeTasks" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../rubyneat_examples/Gemfile.lock" afterPath="$PROJECT_DIR$/../rubyneat_examples/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rubyneat/critter.rb" afterPath="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rubyneat/dsl.rb" afterPath="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/rubyneat/expressor.rb" afterPath="$PROJECT_DIR$/lib/rubyneat/expressor.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb" afterPath="$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../k-tree/.idea/k-tree.iml" afterPath="$PROJECT_DIR$/../k-tree/.idea/k-tree.iml" />
@@ -24,7 +22,7 @@
   <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/rubyneat@Example.coverage" NAME="Example Coverage Results" MODIFIED="1410965959512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../rubyneat_examples" MODULE_NAME="rubyneat_examples" />
-    <SUITE FILE_PATH="coverage/rubyneat@HyperModular.coverage" NAME="HyperModular Coverage Results" MODIFIED="1411565557577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../rubyneat_examples" MODULE_NAME="rubyneat_examples" />
+    <SUITE FILE_PATH="coverage/rubyneat@HyperModular.coverage" NAME="HyperModular Coverage Results" MODIFIED="1411576350190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../rubyneat_examples" MODULE_NAME="rubyneat_examples" />
     <SUITE FILE_PATH="coverage/rubyneat@Dashboard.coverage" NAME="Dashboard Coverage Results" MODIFIED="1410959822481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../rubyneat_dashboard" MODULE_NAME="rubyneat_dashboard" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -64,8 +62,8 @@
           <file leaf-file-name="expressor.rb" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47655398" vertical-offset="2047" max-vertical-offset="3294">
-                  <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.76059324" vertical-offset="2306" max-vertical-offset="3438">
+                  <caret line="168" column="9" selection-start-line="168" selection-start-column="9" selection-end-line="168" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -84,7 +82,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.7254902">
+        <splitter split-orientation="vertical" split-proportion="0.800813">
           <split-first>
             <leaf>
               <file leaf-file-name="rubyneat.rb" pinned="false" current="false" current-in-tab="false">
@@ -110,8 +108,8 @@
               <file leaf-file-name="dsl.rb" pinned="false" current="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="3654">
-                      <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+                    <state vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="3654">
+                      <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
                       <folding />
                     </state>
                   </provider>
@@ -120,8 +118,8 @@
               <file leaf-file-name="dashboard.log" pinned="false" current="true" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/../rubyneat_examples/log/dashboard.log">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.82608694" vertical-offset="5171049" max-vertical-offset="5171670">
-                      <caret line="287309" column="0" selection-start-line="287309" selection-start-column="0" selection-end-line="287309" selection-end-column="0" />
+                    <state vertical-scroll-proportion="-4645.2373" vertical-offset="3233085" max-vertical-offset="3370068">
+                      <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -134,11 +132,11 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="hypermodular_neat.rb" pinned="false" current="false" current-in-tab="false">
+              <file leaf-file-name="hypermodular_neat.rb" pinned="false" current="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0" vertical-offset="1422" max-vertical-offset="4086">
-                      <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+                    <state vertical-scroll-proportion="2.5369127" vertical-offset="1422" max-vertical-offset="4086">
+                      <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
                       <folding />
                     </state>
                   </provider>
@@ -147,17 +145,17 @@
               <file leaf-file-name="critter.rb" pinned="false" current="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0" vertical-offset="1493" max-vertical-offset="8568">
-                      <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+                    <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="8568">
+                      <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
                       <folding />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="expressor.rb" pinned="false" current="false" current-in-tab="true">
+              <file leaf-file-name="expressor.rb" pinned="false" current="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.40807176" vertical-offset="2123" max-vertical-offset="3294">
+                    <state vertical-scroll-proportion="0.0" vertical-offset="1961" max-vertical-offset="3438">
                       <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
                       <folding />
                     </state>
@@ -197,8 +195,8 @@
         <option value="/development/ml/rubyneat/lib/rubyneat/evolver.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/rubyneat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/dsl.rb" />
-        <option value="$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/critter.rb" />
+        <option value="$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb" />
         <option value="$PROJECT_DIR$/lib/rubyneat/expressor.rb" />
         <option value="$PROJECT_DIR$/../rubyneat_examples/log/dashboard.log" />
       </list>
@@ -509,7 +507,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.157082" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27439025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47052845" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -552,7 +550,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="25" />
+      <option name="time" value="26" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -910,42 +908,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1422" max-vertical-offset="4086">
-          <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/critter.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1493" max-vertical-offset="8568">
-          <caret line="89" column="38" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40807176" vertical-offset="2123" max-vertical-offset="3294">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="8568">
+          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/rubyneat/dsl.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="3654">
-          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="3654">
+          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../rubyneat_examples/neater/hypermodular_neat.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5369127" vertical-offset="1422" max-vertical-offset="4086">
+          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/rubyneat/expressor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1961" max-vertical-offset="3294">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../rubyneat_examples/log/dashboard.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82608694" vertical-offset="5171049" max-vertical-offset="5171670">
-          <caret line="287309" column="0" selection-start-line="287309" selection-start-column="0" selection-end-line="287309" selection-end-column="0" />
+        <state vertical-scroll-proportion="-4645.2373" vertical-offset="3233085" max-vertical-offset="3370068">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

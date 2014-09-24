@@ -130,13 +130,21 @@ module NEAT
       # TODO: TWEANNs.
       annlist = conn.keys - [:input, :output] # order-preserving set op
       code += %[  def #{critter.activation_funct}(#{critter.funct_params.join(', ')})\n]
+
       # make input parameters into instance variables
       code += conn[:input].keys.map{ |v| %[    #{c.uvar v, :input} = #{v}\n]}.join
+
       # call the other ANNs
       code += annlist.map{ |ann|
         g = gtypes[ann] # genotype for the ANN
-        %[    #{c.uvar ann} = #{ann}(#{g.funct_parameters.map{|p| plist[ann][p]}.join(', ') })\n]
+        %[    #{(g.funct_outputs.map{|o| g.uvar(o) } + [:ignore]).join(', ')} = #{ann}(#{g.funct_parameters.map{|p| plist[ann][p]}.join(', ') })\n]
       }.join
+
+      # Output (return) the results.
+      outvec = conn[:output].map{ |o| plist[:output][o] }
+      code += %{    [#{outvec.join(', ')}]\n}
+
+      # code endtet hier!
       code += %[  end\n\n]
       code
     end
