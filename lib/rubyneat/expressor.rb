@@ -182,4 +182,8 @@ module NEAT
       critter.phenotype.express!      
     end
   end
+
+  class HyperExpressor < Expressor
+
+  end
 end

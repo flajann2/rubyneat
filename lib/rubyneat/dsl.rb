@@ -49,7 +49,32 @@ module NEAT
     end
 
     class HyperComposition < Composition
+      attr_neat :hyper, default: nil
 
+      class CPPN < Composition
+        attr_neat :tuple_factor, default: 2
+        attr_neat :depth_factor, default: 8
+        attr_neat :scale_factor, default: 4.0
+
+        # Dimensionality of the CPPN space
+        def tuple(t)
+          self.tuple_factor = t
+        end
+
+        # Maximum depth of the k-tree
+        def depth(d)
+          self.depth_factor = d
+        end
+
+        # Scale the weights by +/- s
+        def scale(s)
+          self.scale_factor = s
+        end
+      end
+
+      def hyper(&block)
+        self.hyper = CPPN.new(&block)
+      end
     end
 
     class Connections < NeatOb
