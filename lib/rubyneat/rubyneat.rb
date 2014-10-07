@@ -293,12 +293,16 @@ module NEAT
   class Trait < NeatOb
   end
 
-  require 'rubyneat/critter'
-  require 'rubyneat/neuron'
-  require 'rubyneat/population'
-  require 'rubyneat/evolver'
-  require 'rubyneat/expressor'
-  require 'rubyneat/evaluator'
+  # Core Includes go here!
+  require_relative 'critter'
+  require_relative 'neuron'
+  require_relative 'population'
+  require_relative 'evolver'
+  require_relative 'expressor'
+  require_relative 'evaluator'
+
+  # HyperNEAT extension
+  require_relative 'hyper_expressor'
 
   #= Controller for all operations of RubyNEAT
   # This object contains all the specifications and details for
@@ -510,12 +514,14 @@ module NEAT
                    neural_outputs: nil,
                    neural_hidden: nil,
                    parameters: NeatSettings.new,
+                   hyper: false,
                       &block)
       super(self)
       @gaussian = Distribution::Normal.rng
       @population_history = []
       @evolver = Evolver.new self
-      @expressor = Expressor.new self
+      # TODO: this is a bit ugly, but OK for now.
+      @expressor = hyper ? HyperExpressor.new(self) : Expressor.new(self)
 
       @neuron_catalog = Neuron::neuron_types.clone
       @neural_inputs  = neural_inputs
@@ -602,8 +608,8 @@ module NEAT
     private
     # We must set up the objects we need prior to the run, if not set.
     def pre_run_initialize
-      @evaluator = @evaluator_class.new(self) if @evaluator.nil?
-      @evolver = @evolver_class.new(self) if @evolver.nil?
+      @evaluator ||= @evaluator_class.new(self)
+      @evolver ||= @evolver_class.new(self)
     end
 
     # Allow us to hook in pre-exit functionality here
@@ -625,7 +631,8 @@ module NEAT
     end
   end
 
-  @controller = Controller.new
+  # TODO: putting the hyper switch here is ugly. Refactor this later.
+  @controller = Controller.new hyper: true
   def self.controller ; @controller ; end
   def self.controller=(controller) ; @controller = controller ; end
   def self.create_controller(*parms); @controller = Controller.new(*parms); end
