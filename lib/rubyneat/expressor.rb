@@ -151,7 +151,7 @@ module NEAT
 
     # Taking the conn directives, generate a parameter
     # list (really a map) of all the ANNs.
-    # TODO: We should do a check here to ensure that all parmeters
+    # TODO: We should do a check here to ensure that all parameters
     # TODO: are fully specified and are only assigned once.
     def generate_ann_plist(crit, gtypes, conn)
       (conn.keys - [:output]).reduce({}){ |memo_ann, ann|
