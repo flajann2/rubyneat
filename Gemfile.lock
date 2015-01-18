@@ -4,14 +4,23 @@ GEM
     addressable (2.3.6)
     aquarium (0.5.1)
     awesome_print (1.6.1)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bond (0.5.1)
     builder (3.2.2)
+    byebug (3.5.1)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
+    columnize (0.9.0)
     debase (0.1.1)
       debase-ruby_core_source
     debase-ruby_core_source (0.7.5)
+    debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
     deep_dive (0.2.1)
       debase
     descendants_tracker (0.0.4)
@@ -49,6 +58,7 @@ GEM
     hashie (3.3.2)
     highline (1.6.21)
     hitimes (1.2.2)
+    interception (0.5)
     jeweler (2.0.1)
       builder
       bundler (>= 1.0)
@@ -86,6 +96,21 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (2.0.0)
+      byebug (~> 3.4)
+      pry (~> 0.10)
+    pry-doc (0.6.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    pry-rescue (1.4.1)
+      interception (>= 0.5)
+      pry
+    pry-stack_explorer (0.4.9.1)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     queue_ding (0.1.0)
       aquarium (~> 0)
     rack (1.6.0)
@@ -132,6 +157,12 @@ DEPENDENCIES
   guard-rspec (~> 4)
   jeweler (~> 2)
   k-tree (~> 0)
+  pry
+  pry-byebug
+  pry-doc
+  pry-remote
+  pry-rescue
+  pry-stack_explorer
   queue_ding
   rb-readline (~> 0)
   rspec (~> 2)

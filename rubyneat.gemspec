@@ -85,6 +85,12 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<semver>, ["~> 1"])
       s.add_development_dependency(%q<jeweler>, ["~> 2"])
       s.add_development_dependency(%q<simplecov>, ["~> 0"])
+      s.add_development_dependency(%q<pry>, [">= 0"])
+      s.add_development_dependency(%q<pry-doc>, [">= 0"])
+      s.add_development_dependency(%q<pry-byebug>, [">= 0"])
+      s.add_development_dependency(%q<pry-remote>, [">= 0"])
+      s.add_development_dependency(%q<pry-rescue>, [">= 0"])
+      s.add_development_dependency(%q<pry-stack_explorer>, [">= 0"])
     else
       s.add_dependency(%q<distribution>, ["~> 0"])
       s.add_dependency(%q<statistics2>, ["~> 0"])
@@ -104,6 +110,12 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<semver>, ["~> 1"])
       s.add_dependency(%q<jeweler>, ["~> 2"])
       s.add_dependency(%q<simplecov>, ["~> 0"])
+      s.add_dependency(%q<pry>, [">= 0"])
+      s.add_dependency(%q<pry-doc>, [">= 0"])
+      s.add_dependency(%q<pry-byebug>, [">= 0"])
+      s.add_dependency(%q<pry-remote>, [">= 0"])
+      s.add_dependency(%q<pry-rescue>, [">= 0"])
+      s.add_dependency(%q<pry-stack_explorer>, [">= 0"])
     end
   else
     s.add_dependency(%q<distribution>, ["~> 0"])
@@ -124,6 +136,12 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<semver>, ["~> 1"])
     s.add_dependency(%q<jeweler>, ["~> 2"])
     s.add_dependency(%q<simplecov>, ["~> 0"])
+    s.add_dependency(%q<pry>, [">= 0"])
+    s.add_dependency(%q<pry-doc>, [">= 0"])
+    s.add_dependency(%q<pry-byebug>, [">= 0"])
+    s.add_dependency(%q<pry-remote>, [">= 0"])
+    s.add_dependency(%q<pry-rescue>, [">= 0"])
+    s.add_dependency(%q<pry-stack_explorer>, [">= 0"])
   end
 end
 
