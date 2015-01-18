@@ -28,4 +28,11 @@ group :development do
   gem 'semver', '~> 1'
   gem 'jeweler', '~> 2'
   gem 'simplecov', '~> 0'
+
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-remote'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
