@@ -1,6 +1,8 @@
 RubyNEAT -- Neural Evolution of Augmenting Topologies
 =====================================================
 
+[![Join the chat at https://gitter.im/flajann2/rubyneat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 For the latest docs, please see http://rubyneat.com
 
 RubyNEAT is under intense development, and then will be under intense documentation, as this is
@@ -118,7 +120,7 @@ Copyright Notice
 
 This code is released under the MIT license:
 
-Copyright (c) 2014 LRCSoft.com
+Copyright (c) 2014-2015 Fred Mitchell
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
