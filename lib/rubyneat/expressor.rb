@@ -1,5 +1,4 @@
 require_relative 'rubyneat'
-require 'pp'
 
 module NEAT
   #= Basis of all expressors. 
