@@ -93,11 +93,11 @@ The basic types to RubyNEAT are represented here.
     #= Special class of Neuron that takes input from the "real world"
     # Name of this neuron equates to the parameter name of the input.
     #
-    # All inputs are handled with this neuron. This type of 
+    # All inputs are handled with this neuron. This type of
     # neuron only has one input -- from the outside world.
     class InputNeuron < NEAT::Neuron
       def self.input? ; true ; end
-      
+
       # Takes a single input and passes it as is.
       def express(instance)
         instance.define_singleton_method(@name) {|input|
@@ -117,7 +117,7 @@ The basic types to RubyNEAT are represented here.
         super
         @neu_bias = 1.00
       end
-      
+
       # Just provides a bias signal
       # FIXME: we had to hard-code the value here for now. Not a biggie,
       # FIXME: but really should be @neu_bias

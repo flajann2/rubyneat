@@ -32,7 +32,7 @@ how those Neurons are connected.
 
 Each Neuron has an implicit genotype and phenotype component. Neurons,
 from the Ruby perspective, contain their own code to produce their own
-phenotypes. 
+phenotypes.
 
 There are input Neurons and output Neurons. The input Neurons are special, as
 they do not contain any input from other nodes, but serve as interfaces
@@ -281,10 +281,10 @@ module NEAT
   end
 
   #= Traits
-  # A Trait is a group of parameters that can be expressed     
-  # as a group more than one time.  Traits save a genetic      
-  # algorithm from having to search vast parameter landscapes  
-  # on every node.  Instead, each node can simply point to a trait 
+  # A Trait is a group of parameters that can be expressed
+  # as a group more than one time.  Traits save a genetic
+  # algorithm from having to search vast parameter landscapes
+  # on every node.  Instead, each node can simply point to a trait
   # and those traits can evolve on their own. (Taken from the C version of NEAT)
   #
   # Since we wish to allow for different classes of Neurons, this trait idea is
@@ -306,7 +306,7 @@ module NEAT
 
   #= Controller for all operations of RubyNEAT
   # This object contains all the specifications and details for
-  # evolving and evaluation of the RubyNEAT system.  It is 
+  # evolving and evaluation of the RubyNEAT system.  It is
   # a type of "World", if you will, for the entire enterprise.
   #
   # Your application shall only have one Controller.
@@ -347,7 +347,7 @@ module NEAT
     # population object and class specification
     attr_reader :population, :population_history, :population_class
 
-    attr_accessor :expressor, :expressor_class 
+    attr_accessor :expressor, :expressor_class
     attr_accessor :evaluator, :evaluator_class
     attr_accessor :evolver, :evolver_class
 
@@ -389,7 +389,7 @@ module NEAT
     # TODO not all of these parameters are implemented yet!!!
     class NeatSettings < NeatOb
       ## RubyNEAT specific
-      
+
       # Set to true to returned named parameters as hashes to the fitness function
       # (the default is to do ordered arrays)
       attr_accessor :hash_on_fitness
@@ -403,7 +403,7 @@ module NEAT
 
       # Speciation coffficient
       attr_accessor :disjoint_coefficient, :excess_coefficient, :weight_coefficient
-      
+
       # Max target number of species (will result in the compatability_coeifficient
       # being adjusted automatically
       attr_accessor :max_species
@@ -438,7 +438,7 @@ module NEAT
       attr_accessor :mutate_gene_trait_prob
 
       # For gene weights perturbations and changes (complete overwrites)
-      attr_accessor :mutate_perturb_gene_weights_prob, 
+      attr_accessor :mutate_perturb_gene_weights_prob,
                     :mutate_perturb_gene_weights_sd,
                     :mutate_change_gene_weights_prob,
                     :mutate_change_gene_weights_sd
@@ -457,7 +457,7 @@ module NEAT
       attr_accessor :fitness_cost_per_neuron
       attr_accessor :fitness_cost_per_gene
 
-      # If set, will start off at the specified size and 
+      # If set, will start off at the specified size and
       # grow to the bigger population size
       attr_accessor :start_population_size, :population_size
 
@@ -537,7 +537,7 @@ module NEAT
       # Handle the parameters parameter. :-)
       @parms = unless parameters.kind_of? String
                  parameters
-               else # load it from a file
+               else # load it froäm a file
                  open(parameters, 'r') { |fd| YAML::load fd.read }
                end
       block.(self) unless block.nil?

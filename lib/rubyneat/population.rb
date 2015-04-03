@@ -2,7 +2,7 @@ require_relative 'rubyneat'
 
 module NEAT
   #= Population of NEAT Critters.
-  # The Population 
+  # The Population
   # In ourselves we have the pool of neurons the critters all use.
   # the pool of neurons are indirects, of course, as during phenotype
   # expression, all the phenotypes shall be created individually.
@@ -57,7 +57,7 @@ module NEAT
     def evaluate!
        @critters.each { |critter| critter.evaluate! }
     end
-    
+
     # Alalyze evaluation results.
     def analyze!
        @critters.each { |critter| @controller.evaluator.analyze_for_fitness! critter }
@@ -68,7 +68,7 @@ module NEAT
     def evolve
       @controller.evolver.evolve self
     end
-   
+
     # Group critters into species
     # Note that the @species objects
     # have useful singleton methods:

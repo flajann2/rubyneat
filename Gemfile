@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-#gemspec
-
 gem 'distribution', '~> 0'
 
 #TODO: Check out this for a repacement of of statistics2

@@ -90,12 +90,12 @@ module NEAT
         instance_eval(&block)
       end
 
-      def inputs(**cmap)
-        conn[:input] = cmap
+      def inputs(**cmap, &block)
+        conn[:input] = block_given? ? block.() : cmap
       end
 
-      def outputs(*olist)
-        conn[:output] = olist
+      def outputs(*olist, &block)
+        conn[:output] = block_given? ? block.() : olist
       end
     end
 
