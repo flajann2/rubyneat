@@ -136,7 +136,7 @@ module NEAT
       # call the other ANNs
       code += annlist.map{ |ann|
         g = gtypes[ann] # genotype for the ANN
-        %[    #{(g.funct_outputs.map{|o| g.uvar(o) } + [:ignore]).join(', ')} = #{ann}(#{g.funct_parameters.map{|p| plist[ann][p]}.join(', ') })\n]
+        %[    #{(g.funct_outputs.map{|o| g.uvar(o) } + [:ignore]).join(', ')} = #{g.activation_funct}(#{g.funct_parameters.map{|p| plist[ann][p]}.join(', ') })\n]
       }.join
 
       # Output (return) the results.

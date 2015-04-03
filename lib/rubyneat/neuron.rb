@@ -72,7 +72,7 @@ module NEAT
     # Function must be implemented by subclasses for phenotype
     # generation.
     #
-    # This will generate textual code so that the TWEAN may be
+    # This will generate textual code so that the TWEANN may be
     # treated as a fully independent program apart from the RubyNEAT
     # infrastructure.
     def express_as_code(instance)

@@ -26,9 +26,9 @@ module NEAT
       @crit_hist[critter] = {} unless @crit_hist.member? critter
       begin
         vout = unless @controller.recurrence_func_none?
-                 critter.phenotype.stimulate *vin, &@controller.recurrence_func_hook_itself
+                 critter.phenotype.activate_critter *vin, &@controller.recurrence_func_hook_itself
                else
-                 critter.phenotype.stimulate *vin
+                 critter.phenotype.activate_critter *vin
                end
         log.debug "Critter #{critter.name}: vin=#{vin}. vout=#{vout}"
         @crit_hist[critter][@controller.seq_num] = [vin, vout]
