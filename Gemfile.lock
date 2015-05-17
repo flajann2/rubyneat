@@ -66,7 +66,7 @@ GEM
       rake
       rdoc
     json (1.8.2)
-    jwt (1.4.1)
+    jwt (1.5.0)
     k-tree (0.0.2)
     listen (2.10.0)
       celluloid (~> 0.16.0)
@@ -103,7 +103,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    pry-rescue (1.4.1)
+    pry-rescue (1.4.2)
       interception (>= 0.5)
       pry
     pry-stack_explorer (0.4.9.2)
@@ -111,7 +111,7 @@ GEM
       pry (>= 0.9.11)
     queue_ding (0.1.0)
       aquarium (~> 0)
-    rack (1.6.0)
+    rack (1.6.1)
     rake (10.4.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
