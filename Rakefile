@@ -43,7 +43,7 @@ Jeweler::Tasks.new do |gem|
   because it's also extensible and modular. See http://rubyneat.com for the
   details.
   }
-  gem.email = "lordalveric@yahoo.com"
+  gem.email = "fred.mitchell@gmx.de"
   gem.authors = ["Fred Mitchell"]
   # dependencies defined in Gemfile
 

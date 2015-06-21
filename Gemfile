@@ -24,6 +24,7 @@ group :development do
   gem 'guard', '~> 2'
   gem 'guard-rspec', '~> 4'
   gem 'semver', '~> 1'
+  gem "bundler", "~> 1"
   gem 'jeweler', '~> 2'
   gem 'simplecov', '~> 0'
 
