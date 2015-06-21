@@ -6,7 +6,6 @@ gem 'distribution', '~> 0'
 #TODO: https://github.com/thirtysixthspan/descriptive_statistics
 gem 'statistics2', '~> 0'
 
-gem 'debase', '~> 0'
 gem 'aquarium', '~> 0'
 gem 'thor', '~> 0'
 gem 'awesome_print', '~> 1'

@@ -23,10 +23,9 @@ Gem::Specification.new do |s|
     ".irbrc",
     ".ruby-version",
     ".semver",
+    ".travis.yml",
     "Gemfile",
     "Gemfile.lock",
-    "Gemfile.lock.orig",
-    "Gemfile.orig",
     "README.md",
     "Rakefile",
     "bin/neat",
@@ -69,7 +68,6 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<distribution>, ["~> 0"])
       s.add_runtime_dependency(%q<statistics2>, ["~> 0"])
-      s.add_runtime_dependency(%q<debase>, ["~> 0"])
       s.add_runtime_dependency(%q<aquarium>, ["~> 0"])
       s.add_runtime_dependency(%q<thor>, ["~> 0"])
       s.add_runtime_dependency(%q<awesome_print>, ["~> 1"])
@@ -95,7 +93,6 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<distribution>, ["~> 0"])
       s.add_dependency(%q<statistics2>, ["~> 0"])
-      s.add_dependency(%q<debase>, ["~> 0"])
       s.add_dependency(%q<aquarium>, ["~> 0"])
       s.add_dependency(%q<thor>, ["~> 0"])
       s.add_dependency(%q<awesome_print>, ["~> 1"])
@@ -122,7 +119,6 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<distribution>, ["~> 0"])
     s.add_dependency(%q<statistics2>, ["~> 0"])
-    s.add_dependency(%q<debase>, ["~> 0"])
     s.add_dependency(%q<aquarium>, ["~> 0"])
     s.add_dependency(%q<thor>, ["~> 0"])
     s.add_dependency(%q<awesome_print>, ["~> 1"])
