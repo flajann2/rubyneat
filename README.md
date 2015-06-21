@@ -11,8 +11,8 @@ http://www.cs.ucf.edu/~kstanley/
 
 
 ## Gem Version
-<img src="https://badge.fury.io/rb/rubyneat.png" alt="Gem Version" />
-
+[![Gem Version](https://badge.fury.io/rb/rubyneat.png)](https://badge.fury.io/rb/rubyneat)
+[![Travis CI](https://travis-ci.org/flajann2/rubyneat.svg?branch=hyper)](https://travis-ci.org/flajann2/rubyneat)
 
 ## Quick and Dirty Docs
 
