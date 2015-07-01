@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'semver'
 require 'distribution'
 require 'yaml'
@@ -148,7 +149,7 @@ module NEAT
       ## <sym>_set() -- set a hook, overwriting all other hooks set or added.
       ## <sym>_clear -- clear all hooks
       ## <sym>_none? -- return true if no hooks are defined.
-      ## <sym>_one? -- return true if exactly hook is defined.
+      ## <sym>_one? -- return true if exactly one hook is defined.
       ## <sym>_hook() -- for passing unnamed parameters to a singular hook.
       ## <sym>_np_hook() -- for passing unnamed parameters to a singular hook.
       ## <sym>_hook_itself() -- for getting the proc reference to the hook.
@@ -321,6 +322,16 @@ module NEAT
   # FIXME: where the controller would lord it over them all. Attention
   # FIXME: must also be given to Rubinius and JRuby so that we can
   # FIXME: run under multiple cores.
+  #
+  # RESOLUTION: We have determined that the multiple core sitation
+  # RESOLUTION: is best served by decoupling the phentype generation
+  # RESOLUTION: and evaluation to run across worker queues. This will
+  # RESOLUTION: will also buy us language agnosticy, expanding the sheer
+  # RESOLUTION: power of RubyNEAT to be applied in many more use cases, 
+  # RESOLUTION: etc. The actual housekeeping of evolution does not
+  # RESOLUTION: require a lot of computation, at least no where near
+  # RESOLUTION: evaluation requirements.
+
   class Controller < NeatOb
     # Version of RubyNEAT runing
     attr_neat :version, default: SemVer.find.format("%M.%m.%p%s")
