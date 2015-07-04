@@ -43,11 +43,12 @@ to something more suitable for the neural network.
 
 == Issues
 === Multicore / Cloud Computing
-Some thought needs to be given to how to make this amenable to multiple
-processes so that we can leverage the power of multicore systems as well
-as multiple computers in the Cloud, etc.
+There is the rubyneat_rabbitmq plugin/gem that allows the phenotype
+creation and evaluation to be done in a language-agnostic manner,
+and sclable across many workers, using the RabbitMQ technology.
 
-Our initial inclination  is to put all of that functionality in the Controller.
+=== Elitism
+Elitsm is broken for now, but will be fixed shortly.
 
 == Uniquely Generated Named Objects (UGNOs)
 Every RubyNEAT Object instance is assigned a unique name generated randomly.
