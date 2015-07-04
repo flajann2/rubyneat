@@ -508,13 +508,18 @@ module NEAT
       # If true, allow for recurrent networks.
       attr_neat :recurrency_switch, default: false
 
+      # Elitism count or percentage, use either-or.
+      # If percentage is defined, it will overwrite the count.
+      attr_neat :elite_count, default: nil
+      attr_neat :elite_percentage, default: nil
+
       # Set up defaults for mandatory entries.
       def initialize
         super
         # Default operators
         @evaluator = Evaluator.new self
         @expressor = Expressor.new self
-        @evolver = Evolver.new self
+        @evolver   = Evolver.new self
       end
     end
 

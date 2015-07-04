@@ -32,7 +32,7 @@ module NEAT
     def mutate!(population)
       @npop = population
 
-      if @controller.parms.mate_only_prob.nil? or rand > @controller.parms.mate_only_prob
+      if cparms.mate_only_prob.nil? or rand > cparms.mate_only_prob
         log.debug "[[[ Neuron and Gene Giggling!"
         mutate_perturb_gene_weights!
         mutate_change_gene_weights!
@@ -92,17 +92,26 @@ module NEAT
       end
     end
 
+    def cparms
+      @controller.parms
+    end
+
+    # Here we mark "the top number" as excluded from 
+    # breeding replacement.
+    def prepare_elitism!
+    end
+
     #TODO: write novelty code
     def prepare_novelty!
     end
 
     # Perturb existing gene weights by adding a guassian to them.
     def mutate_perturb_gene_weights!
-      @gperturb = Distribution::Normal::rng(0, @controller.parms.mutate_perturb_gene_weights_sd) if @gperturb.nil?
+      @gperturb = Distribution::Normal::rng(0, cparms.mutate_perturb_gene_weights_sd) if @gperturb.nil?
       @npop.critters.each do |critter|
         critter.genotypes.each{ |name, genotype|
             genotype.genes.each { |innov, gene|
-            if rand < @controller.parms.mutate_perturb_gene_weights_prob
+            if rand < cparms.mutate_perturb_gene_weights_prob
               gene.weight += per = @gperturb.()
               log.debug { "Peturbed gene #{gene}.#{innov} by #{per}" }
             end
@@ -113,11 +122,11 @@ module NEAT
 
     # Totally change weights to something completely different
     def mutate_change_gene_weights!
-      @gchange = Distribution::Normal::rng(0, @controller.parms.mutate_change_gene_weights_sd) if @gchange.nil?
+      @gchange = Distribution::Normal::rng(0, cparms.mutate_change_gene_weights_sd) if @gchange.nil?
       @npop.critters.each do |critter|
         critter.genotypes.each{ |name, genotype|
             genotype.genes.each { |innov, gene|
-            if rand < @controller.parms.mutate_change_gene_weights_prob
+            if rand < cparms.mutate_change_gene_weights_prob
               gene.weight = chg = @gchange.()
               log.debug { "Change gene #{gene}.#{innov} by #{chg}" }
             end
@@ -128,7 +137,7 @@ module NEAT
 
     def mutate_add_genes!
       @npop.critters.each do |critter|
-        if rand < @controller.parms.mutate_add_gene_prob
+        if rand < cparms.mutate_add_gene_prob
           log.debug "mutate_add_genes! for #{critter}"
           @critter_op.add_gene! critter
         end
@@ -137,7 +146,7 @@ module NEAT
 
     def mutate_disable_genes!
       @npop.critters.each do |critter|
-        if rand < @controller.parms.mutate_gene_disable_prob
+        if rand < cparms.mutate_gene_disable_prob
           log.debug "mutate_disable_genes! for #{critter}"
           @critter_op.disable_gene! critter
         end
@@ -146,7 +155,7 @@ module NEAT
 
     def mutate_reenable_genes!
       @npop.critters.each do |critter|
-        if rand < @controller.parms.mutate_gene_reenable_prob
+        if rand < cparms.mutate_gene_reenable_prob
           log.debug "mutate_reenable_genes! for #{critter}"
           @critter_op.reenable_gene! critter
         end
@@ -155,7 +164,7 @@ module NEAT
 
     def mutate_add_neurons!
       @npop.critters.each do |critter|
-        if rand < @controller.parms.mutate_add_neuron_prob
+        if rand < cparms.mutate_add_neuron_prob
           log.debug "mutate_add_neurons! for #{critter}"
           @critter_op.add_neuron! critter
         end
@@ -170,10 +179,9 @@ module NEAT
     # Here we select candidates for mating. We must look at species and fitness
     # to make the selection for mating.
     def mate!
-      parm = @controller.parms
-      popsize = parm.population_size
-      surv = parm.survival_threshold
-      survmin = parm.survival_mininum_per_species
+      popsize = cparms.population_size
+      surv = cparms.survival_threshold
+      survmin = cparms.survival_mininum_per_species
       mlist = [] # list of chosen mating pairs of critters [crit1, crit2], or [:carryover, crit]
 
       # species list already sorted in descending order of fitness.
