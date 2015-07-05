@@ -52,6 +52,7 @@ module NEAT
     #
     # Returns  the newly-evolved population.
     def evolve(population)
+      @opop = population #old population (for elitism reference)
       @npop = population.dclone
       
       # Population sorting and evaluation for breeding, mutations, etc.
@@ -99,6 +100,13 @@ module NEAT
     # Here we mark "the top number" as excluded from 
     # breeding replacement.
     def prepare_elitism!
+      unless cparms.elite_percentage.nil?
+        count = (cparms.population_size * cparms.elite_percentage / 100.0).to_i
+        cparms.elite_count = count unless (not cparms.elite_count.nil?) and count < cparms.elite_count
+      end
+
+      unless cparms.elite_count.nil?
+      end
     end
 
     #TODO: write novelty code
@@ -180,6 +188,7 @@ module NEAT
     # to make the selection for mating.
     def mate!
       popsize = cparms.population_size
+      elites = cparms.elite_count
       surv = cparms.survival_threshold
       survmin = cparms.survival_mininum_per_species
       mlist = [] # list of chosen mating pairs of critters [crit1, crit2], or [:carryover, crit]
@@ -205,6 +214,11 @@ module NEAT
 
       @npop.critters = mlist.map do |crit1, crit2|
         (crit1 == :carryover) ? crit2 : sex(crit1, crit2)
+      end
+      
+      # Pull over our elites into the new population
+      unless elites.nil?
+        require 'pry'; binding.pry #DEBUGGING
       end
     end
     

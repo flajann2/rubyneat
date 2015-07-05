@@ -510,7 +510,11 @@ module NEAT
       attr_neat :recurrency_switch, default: false
 
       # Elitism count or percentage, use either-or.
-      # If percentage is defined, it will overwrite the count.
+      # If percentage is defined, it will overwrite the count iff
+      # the count based on the percentage is greater than the 
+      # predefined count. This is so we can have a minimum number
+      # for small population counts.
+      # Pecentage is an integral number 0-100.
       attr_neat :elite_count, default: nil
       attr_neat :elite_percentage, default: nil
 
