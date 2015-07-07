@@ -57,7 +57,6 @@ module NEAT
       #old population (for elitism reference)
       @opop = population.dclone population: @npop
 
-      
       # Population sorting and evaluation for breeding, mutations, etc.
       prepare_speciation!
       prepare_fitness!
@@ -234,8 +233,6 @@ module NEAT
       elsif mlist.size > @npop.critters.size
         mlist = mlist.take @npop.critters.size
       end
-
-      dump_list mlist
 
       @npop.critters = mlist.map do |crit1, crit2|
         ([:carryover, :elite].member? crit1) ? crit2 : sex(crit1, crit2)
