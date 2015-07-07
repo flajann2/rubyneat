@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'rubyneat'
 require 'distribution'
 
@@ -52,8 +53,10 @@ module NEAT
     #
     # Returns  the newly-evolved population.
     def evolve(population)
-      @opop = population #old population (for elitism reference)
       @npop = population.dclone
+      #old population (for elitism reference)
+      @opop = population.dclone population: @npop
+
       
       # Population sorting and evaluation for breeding, mutations, etc.
       prepare_speciation!
@@ -81,16 +84,21 @@ module NEAT
     # If a compare block is specified in the DSL, then that function is called
     # with the *fitness values* from critters c1 and c2. The default valuation
     # is c1.fitness <=> c2.fitness. You may elect to evaluate them differently.
-    def prepare_fitness!
-      @npop.species.each do |k, sp|
-        sp.sort!{|c1, c2|
-          unless @controller.compare_func.nil?
-            @controller.compare_func_hook(c1.fitness, c2.fitness)
-          else
-            c1.fitness <=> c2.fitness
-          end
-        }
+    def prepare_fitness!(pop = @npop)
+      pop.species.each do |k, sp|
+        species_sort! sp
       end
+    end
+
+    def species_sort!(sp)
+      sp.sort!{ |c1, c2|
+        unless @controller.compare_func.nil?
+          @controller.compare_func_hook(c1.fitness, c2.fitness)
+        else
+          c1.fitness <=> c2.fitness
+        end
+      }
+      sp
     end
 
     def cparms
@@ -103,9 +111,6 @@ module NEAT
       unless cparms.elite_percentage.nil?
         count = (cparms.population_size * cparms.elite_percentage / 100.0).to_i
         cparms.elite_count = count unless (not cparms.elite_count.nil?) and count < cparms.elite_count
-      end
-
-      unless cparms.elite_count.nil?
       end
     end
 
@@ -184,14 +189,23 @@ module NEAT
       log.error "mutate_change_neurons! NIY"
     end
 
+    # Debugging only
+    def dump_list(list)
+      pp list.map{ |a| a.first.kind_of?( Symbol) ? 
+        [a.first, a.last.name, a.last.fitness] :
+        [a.first.name, a.first.fitness, a.last.name, a.last.fitness]
+      }
+    end
+
     # Here we select candidates for mating. We must look at species and fitness
     # to make the selection for mating.
     def mate!
-      popsize = cparms.population_size
+      oldcrits = Hash[@opop.critters.map{ |crit| [crit.name, crit] }]
       elites = cparms.elite_count
       surv = cparms.survival_threshold
       survmin = cparms.survival_mininum_per_species
       mlist = [] # list of chosen mating pairs of critters [crit1, crit2], or [:carryover, crit]
+      elist = [] # list of elites pulled from each species
 
       # species list already sorted in descending order of fitness.
       # We will generate the approximate number of  pairs that correspond
@@ -200,26 +214,32 @@ module NEAT
       @npop.species.each do |k, sp|
         crem = [(sp.size * surv).ceil, survmin].max
         log.warn "Minumum per species hit -- #{survmin}" unless crem > survmin
+        elist << sp[0, elites]
         spsel = sp[0, crem]
         spsel = sp if spsel.empty?
         crem.times do
           mlist << [spsel[rand spsel.size], spsel[rand spsel.size]]
         end
       end
+      elist.flatten!
+      elist = elist.map{ |crit| oldcrits[crit.name] }
+      species_sort! elist
+      elist = elist.take elites
+      elist.each{ |ecrit| mlist.unshift [:elite, ecrit] }
 
-      # And now for the backfilling
-      unless mlist.size >= @npop.critters.size
-        mlist += @npop.critters[0, @npop.critters.size - mlist.size].map{|crit| [:carryover, crit]}
+      # And now for the backfilling or culling as needed.
+      if mlist.size < @npop.critters.size
+        mlist += @npop.critters[0, @npop.critters.size - mlist.size]
+          .map{ |crit| [:carryover, crit]}
+      elsif mlist.size > @npop.critters.size
+        mlist = mlist.take @npop.critters.size
       end
+
+      dump_list mlist
 
       @npop.critters = mlist.map do |crit1, crit2|
-        (crit1 == :carryover) ? crit2 : sex(crit1, crit2)
-      end
-      
-      # Pull over our elites into the new population
-      unless elites.nil?
-        require 'pry'; binding.pry #DEBUGGING
-      end
+        ([:carryover, :elite].member? crit1) ? crit2 : sex(crit1, crit2)
+      end      
     end
     
     protected

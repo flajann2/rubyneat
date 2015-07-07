@@ -138,6 +138,7 @@ module NEAT
 
       # Composition, if modular status has been enabled.
       attr_neat :composition, default: nil
+      exclude :composition
 
       def initialize(critter, mating = false, &block)
         super critter.controller

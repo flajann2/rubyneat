@@ -14,6 +14,7 @@ module NEAT
     attr_neat :generation, default: nil
 
     attr_neat :corpus, default: nil
+    exclude :corpus
 
     attr_accessor :traits
 

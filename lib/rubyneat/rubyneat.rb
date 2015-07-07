@@ -515,7 +515,7 @@ module NEAT
       # predefined count. This is so we can have a minimum number
       # for small population counts.
       # Pecentage is an integral number 0-100.
-      attr_neat :elite_count, default: nil
+      attr_neat :elite_count, default: 2
       attr_neat :elite_percentage, default: nil
 
       # Set up defaults for mandatory entries.
@@ -631,7 +631,7 @@ module NEAT
     # We must set up the objects we need prior to the run, if not set.
     def pre_run_initialize
       @evaluator ||= @evaluator_class.new(self)
-      @evolver ||= @evolver_class.new(self)
+      @evolver   ||= @evolver_class.new(self)
     end
 
     # Allow us to hook in pre-exit functionality here
