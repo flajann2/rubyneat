@@ -466,8 +466,10 @@ module NEAT
       # fitness costs, if given, use in the computation of fitness
       # AFTER the overall fitness for the applied stimuli have been
       # calculated.
-      attr_accessor :fitness_cost_per_neuron
-      attr_accessor :fitness_cost_per_gene
+      attr_neat :fitness_cost_per_neuron, default: 0.00001
+      attr_neat :fitness_cost_per_gene,   default: 0.00001
+      attr_neat :fitness_cost_per_neuron_free_until, default: 20
+      attr_neat :fitness_cost_per_gene_free_until,   default: 40
 
       # If set, will start off at the specified size and
       # grow to the bigger population size
@@ -507,7 +509,7 @@ module NEAT
       attr_accessor :real_time_switch
 
       # If true, allow for recurrent networks.
-      attr_neat :recurrency_switch, default: false
+      attr_neat :recurrency_switch, default: false, cloneable: false
 
       # Elitism count or percentage, use either-or.
       # If percentage is defined, it will overwrite the count iff
@@ -516,7 +518,10 @@ module NEAT
       # for small population counts.
       # Pecentage is an integral number 0-100.
       attr_neat :elite_count, default: 2
-      attr_neat :elite_percentage, default: nil
+      attr_neat :elite_threshold, default: nil
+
+      # Verbose Diagnosnitics
+      attr_neat :verbose_pop_summary, default: false, cloneable: false
 
       # Set up defaults for mandatory entries.
       def initialize

@@ -271,7 +271,10 @@ module NEAT
       # Calculate the cost of this genotype.
       def fitness_cost
         p = @controller.parms
-        p.fitness_cost_per_neuron * @neurons.size + p.fitness_cost_per_gene * @genes.size
+        (@neurons.size <  p.fitness_cost_per_neuron_free_until ? 0 
+         : p.fitness_cost_per_neuron) * @neurons.size +
+          (@genes.size < p.fitness_cost_per_gene_free_until ? 0
+           : p.fitness_cost_per_gene) * @genes.size
       end
 
       def dump_s

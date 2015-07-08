@@ -108,7 +108,7 @@ module NEAT
     # breeding replacement.
     def prepare_elitism!
       unless cparms.elite_percentage.nil?
-        count = (cparms.population_size * cparms.elite_percentage / 100.0).to_i
+        count = (cparms.population_size * cparms.elite_threshold).to_i
         cparms.elite_count = count unless (not cparms.elite_count.nil?) and count < cparms.elite_count
       end
     end
@@ -233,6 +233,8 @@ module NEAT
       elsif mlist.size > @npop.critters.size
         mlist = mlist.take @npop.critters.size
       end
+
+      dump_list mlist if cparms.verbose_pop_summary
 
       @npop.critters = mlist.map do |crit1, crit2|
         ([:carryover, :elite].member? crit1) ? crit2 : sex(crit1, crit2)
