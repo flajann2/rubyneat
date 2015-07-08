@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'rubyneat'
 require_relative 'graph'
 
@@ -61,22 +62,27 @@ module NEAT
     # List of distinct neuron types (classes)
     def self.neuron_types; @@neuron_types ; end
 
-    # Function must be implemented by subclasses for phenotype
+    # Function may be implemented by subclasses for phenotype
     # generation. Basically, an instance is passed to this function
     # and it will add a function to sum all inputs
     # and a apply an operator to the sum.
     def express(instance)
-      raise NeatException.new "express() must be implemented by subclass."
+      instance.instance_eval Unparser.unparse express_ast
     end
 
     # Function must be implemented by subclasses for phenotype
     # generation.
     #
-    # This will generate textual code so that the TWEANN may be
-    # treated as a fully independent program apart from the RubyNEAT
-    # infrastructure.
-    def express_as_code(instance)
-      raise NeatException.new "express_as_code() must be implemented by subclass."
+    # This will generate Abstract Syntax Tree code so that the 
+    # TWEANN may be treated as a fully independent program apart
+    # from the RubyNEAT infrastructure.
+    #
+    # The AST code generated here must be compatable with the
+    # unparser gem. Other lanaguages that will want to unparse
+    # this same code may have to tweak this representation a bit
+    # as need be, but that aspect is beyond our scope here.
+    def express_ast
+      raise NeatException.new "express_ast() or express() must be implemented by subclass."
     end
   end
 
@@ -99,10 +105,17 @@ The basic types to RubyNEAT are represented here.
       def self.input? ; true ; end
 
       # Takes a single input and passes it as is.
-      def express(instance)
-        instance.define_singleton_method(@name) {|input|
-          input
-        }
+      #def express(instance)
+      #  instance.define_singleton_method(@name) { |input| input }
+      #end
+
+      def express_ast
+        %{
+          (def :#{@name}
+            (args
+             (arg :input))
+            (lvar :input))
+         }
       end
     end
 
