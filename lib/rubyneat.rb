@@ -8,4 +8,6 @@ require_relative 'rubyneat/dsl'
 require_relative 'rubyneat/reporting'
 require 'set'
 require 'pp'
+require 'parser/current'
+require 'unparser'
 

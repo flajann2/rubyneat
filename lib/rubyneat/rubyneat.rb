@@ -603,12 +603,7 @@ module NEAT
         @population.mutate!
         @population.express!
 
-        ## Evaluate population
-        @evaluator.ready_for_evaluation @population
-        (@parms.start_sequence_at .. @parms.end_sequence_at).each do |snum|
-          @seq_num = snum
-          @population.evaluate!
-        end
+        run_evaluate_population
 
         @population.analyze!
         @population.speciate!
@@ -630,6 +625,14 @@ module NEAT
         ## Finish up this run
         end_run_hooks(self)
       end
+    end
+
+    def run_evaluate_population()
+        @evaluator.ready_for_evaluation @population
+        (@parms.start_sequence_at .. @parms.end_sequence_at).each do |snum|
+          @seq_num = snum
+          @population.evaluate!
+        end
     end
 
     private

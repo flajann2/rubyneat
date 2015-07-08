@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Fred Mitchell"]
-  s.date = "2015-07-07"
+  s.date = "2015-07-08"
   s.description = "\n  RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.\n  By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,\n  populations of neural nets are evolved to handle pre-defined goals.\n\n  RubyNEAT is the first implementation of the NEAT algorithm for Ruby, and\n  it leverages Ruby's power to implement the NEAT algorithm in a way that would\n  be difficult to do in other languages. The 'activation function' is largely\n  standalone. Basically, activation is achieved by functional programming.\n\n  Meaning, once your network is evolved, you can extract it as source code you\n  can then utilize without the RubyNEAT engine.\n\n  RubyNEAT can be used for nearly any Machine Learning task you can dream of,\n  because it's also extensible and modular. See http://rubyneat.com for the\n  details.\n  "
   s.email = "fred.mitchell@gmx.de"
   s.executables = ["neat"]
@@ -72,6 +72,8 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<thor>, ["~> 0"])
       s.add_runtime_dependency(%q<awesome_print>, ["~> 1"])
       s.add_runtime_dependency(%q<deep_dive>, ["~> 0"])
+      s.add_runtime_dependency(%q<parser>, ["~> 2"])
+      s.add_runtime_dependency(%q<unparser>, [">= 0"])
       s.add_runtime_dependency(%q<bond>, ["~> 0"])
       s.add_runtime_dependency(%q<rb-readline>, ["~> 0"])
       s.add_runtime_dependency(%q<queue_ding>, [">= 0"])
@@ -97,6 +99,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<thor>, ["~> 0"])
       s.add_dependency(%q<awesome_print>, ["~> 1"])
       s.add_dependency(%q<deep_dive>, ["~> 0"])
+      s.add_dependency(%q<parser>, ["~> 2"])
+      s.add_dependency(%q<unparser>, [">= 0"])
       s.add_dependency(%q<bond>, ["~> 0"])
       s.add_dependency(%q<rb-readline>, ["~> 0"])
       s.add_dependency(%q<queue_ding>, [">= 0"])
@@ -123,6 +127,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<thor>, ["~> 0"])
     s.add_dependency(%q<awesome_print>, ["~> 1"])
     s.add_dependency(%q<deep_dive>, ["~> 0"])
+    s.add_dependency(%q<parser>, ["~> 2"])
+    s.add_dependency(%q<unparser>, [">= 0"])
     s.add_dependency(%q<bond>, ["~> 0"])
     s.add_dependency(%q<rb-readline>, ["~> 0"])
     s.add_dependency(%q<queue_ding>, [">= 0"])
