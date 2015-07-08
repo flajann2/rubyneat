@@ -67,6 +67,7 @@ module NEAT
     # and it will add a function to sum all inputs
     # and a apply an operator to the sum.
     def express(instance)
+      require 'pry'; binding.pry #DEBUGGING
       instance.instance_eval Unparser.unparse express_ast
     end
 
@@ -82,7 +83,7 @@ module NEAT
     # this same code may have to tweak this representation a bit
     # as need be, but that aspect is beyond our scope here.
     def express_ast
-      raise NeatException.new "express_ast() or express() must be implemented by subclass."
+      raise NeatException.new "express_ast() or express() must be implemented by #{self.class}."
     end
   end
 
@@ -105,10 +106,6 @@ The basic types to RubyNEAT are represented here.
       def self.input? ; true ; end
 
       # Takes a single input and passes it as is.
-      #def express(instance)
-      #  instance.define_singleton_method(@name) { |input| input }
-      #end
-
       def express_ast
         %{
           (def :#{@name}
@@ -134,8 +131,17 @@ The basic types to RubyNEAT are represented here.
       # Just provides a bias signal
       # FIXME: we had to hard-code the value here for now. Not a biggie,
       # FIXME: but really should be @neu_bias
-      def express(instance)
-        instance.define_singleton_method(@name) { 1.00 }
+      #def express(instance)
+      #  instance.define_singleton_method(@name) { 1.00 }
+      #end
+
+      def express_ast
+        %{
+          (def :#{@name}
+            (args
+             (arg :input))
+            (float 1.0))
+         }
       end
     end
 
