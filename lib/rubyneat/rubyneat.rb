@@ -7,6 +7,8 @@ require 'awesome_print'
 require 'deep_dive'
 require 'queue_ding'
 require 'matrix'
+require 'parser/current'
+require 'unparser'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the Neural Evolution of Augmenting Topologies.

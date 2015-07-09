@@ -9,12 +9,19 @@ We create all the neuron types for this system here.
 
 =end
 module NEAT
+  module SExpressions
+    def s(type, *children)
+      Parser::AST::Node.new(type, children)
+    end
+  end
+
   #= Neuron -- Basis of all Neat Neuron types.
   # Normally contains primatives which aids in its
   # own expression, but the details of this remains to be worked out.
   class Neuron < NeatOb
     include Math
     include Graph
+    include SExpressions
 
     # Genotype to which we belong
     attr_reader :genotype
@@ -67,7 +74,6 @@ module NEAT
     # and it will add a function to sum all inputs
     # and a apply an operator to the sum.
     def express(instance)
-      require 'pry'; binding.pry #DEBUGGING
       instance.instance_eval Unparser.unparse express_ast
     end
 
@@ -107,12 +113,10 @@ The basic types to RubyNEAT are represented here.
 
       # Takes a single input and passes it as is.
       def express_ast
-        %{
-          (def :#{@name}
-            (args
-             (arg :input))
-            (lvar :input))
-         }
+        s(:def, @name,
+          s(:args,
+            s(:arg, :input)),
+            s(:lvar, :input))
       end
     end
 
@@ -131,17 +135,11 @@ The basic types to RubyNEAT are represented here.
       # Just provides a bias signal
       # FIXME: we had to hard-code the value here for now. Not a biggie,
       # FIXME: but really should be @neu_bias
-      #def express(instance)
-      #  instance.define_singleton_method(@name) { 1.00 }
-      #end
 
       def express_ast
-        %{
-          (def :#{@name}
-            (args
-             (arg :input))
-            (float 1.0))
-         }
+        s(:def, @name,
+          s(:args),
+          s(:float, @neu_bias))
       end
     end
 
