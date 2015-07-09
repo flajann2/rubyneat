@@ -25,7 +25,7 @@ describe NEAT::BasicNeuronTypes do
       @neurons.each{ |klass|
         neu = klass.new(controllerfrei: true) 
         expect(neu.respond_to?(:express_ast)).to be true
-        expect(neu.express_ast.kind_of?(String)).to be true
+        expect(neu.express_ast.kind_of?(Parser::AST::Node)).to be true
       }
     end
   end
