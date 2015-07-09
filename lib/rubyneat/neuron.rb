@@ -133,9 +133,6 @@ The basic types to RubyNEAT are represented here.
       end
 
       # Just provides a bias signal
-      # FIXME: we had to hard-code the value here for now. Not a biggie,
-      # FIXME: but really should be @neu_bias
-
       def express_ast
         s(:def, @name,
           s(:args),
@@ -148,10 +145,32 @@ The basic types to RubyNEAT are represented here.
     class SigmoidNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          1.0 / (1.0 + exp(-4.9 * inputs.reduce {|p, q| p + q}))
-        }
+      #def express(instance)
+       # instance.define_singleton_method(@name) {|*inputs|
+       #   1.0 / (1.0 + exp(-4.9 * inputs.reduce {|p, q| p + q}))
+       # }
+      #end
+      def express_ast
+        s(:def, @name,
+          s(:args,
+            s(:restarg, :inputs)),
+          s(:send,
+            s(:float, 1.0), :/,
+            s(:begin,
+              s(:send,
+                s(:float, 1.0), :+,
+                s(:send, nil, :exp,
+                  s(:send,
+                    s(:float, -4.9), :*,
+                    s(:block,
+                      s(:send,
+                        s(:lvar, :inputs), :reduce),
+                      s(:args,
+                        s(:arg, :p),
+                        s(:arg, :q)),
+                      s(:send,
+                        s(:lvar, :p), :+,
+                        s(:lvar, :q)))))))))
       end
     end
 
@@ -159,10 +178,22 @@ The basic types to RubyNEAT are represented here.
     class TanhNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          tanh(2.4 * inputs.reduce {|p, q| p + q})
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args,
+            s(:restarg, :inputs)),
+          s(:send, nil, :tanh,
+            s(:send,
+              s(:float, 2.4), :*,
+              s(:block,
+                s(:send,
+                  s(:lvar, :inputs), :reduce),
+                s(:args,
+                  s(:arg, :p),
+                  s(:arg, :q)),
+                s(:send,
+                  s(:lvar, :p), :+,
+                  s(:lvar, :q))))))
       end
     end
 
