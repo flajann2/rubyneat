@@ -114,9 +114,8 @@ The basic types to RubyNEAT are represented here.
       # Takes a single input and passes it as is.
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:arg, :input)),
-            s(:lvar, :input))
+          s(:args, s(:arg, :input)),
+          s(:lvar, :input))
       end
     end
 
@@ -152,8 +151,7 @@ The basic types to RubyNEAT are represented here.
       #end
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:send,
             s(:float, 1.0), :/,
             s(:begin,
@@ -165,8 +163,7 @@ The basic types to RubyNEAT are represented here.
                     s(:block,
                       s(:send,
                         s(:lvar, :inputs), :reduce),
-                      s(:args,
-                        s(:arg, :p),
+                      s(:args, s(:arg, :p),
                         s(:arg, :q)),
                       s(:send,
                         s(:lvar, :p), :+,
@@ -180,20 +177,15 @@ The basic types to RubyNEAT are represented here.
       # that sums all inputs and produce a sigmoid output (using tanh)
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:send, nil, :tanh,
             s(:send,
-              s(:float, 2.4), :*,
+              s(:float, 2.4),
+              :*,
               s(:block,
-                s(:send,
-                  s(:lvar, :inputs), :reduce),
-                s(:args,
-                  s(:arg, :p),
-                  s(:arg, :q)),
-                s(:send,
-                  s(:lvar, :p), :+,
-                  s(:lvar, :q))))))
+                s(:send, s(:lvar, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q))))))
       end
     end
 
@@ -209,20 +201,15 @@ The basic types to RubyNEAT are represented here.
 
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:send, nil, :sin,
             s(:send,
-              s(:float, 1.6), :*,
+              s(:float, 1.6),
+              :*,
               s(:block,
-                s(:send,
-                  s(:lvar, :inputs), :reduce),
-                s(:args,
-                  s(:arg, :p),
-                  s(:arg, :q)),
-                s(:send,
-                  s(:lvar, :p), :+,
-                  s(:lvar, :q))))))
+                s(:send, s(:lvar, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q))))))
       end
 
     end
@@ -234,20 +221,14 @@ The basic types to RubyNEAT are represented here.
 
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:send, nil, :cos,
             s(:send,
               s(:float, 1.6), :*,
               s(:block,
-                s(:send,
-                  s(:lvar, :inputs), :reduce),
-                s(:args,
-                  s(:arg, :p),
-                  s(:arg, :q)),
-                s(:send,
-                  s(:lvar, :p), :+,
-                  s(:lvar, :q))))))
+                s(:send, s(:lvar, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q))))))
       end
 
     end
@@ -258,17 +239,11 @@ The basic types to RubyNEAT are represented here.
       # that sums all inputs only.
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:block,
-            s(:send,
-              s(:lvar, :inputs), :reduce),
-            s(:args,
-              s(:arg, :p),
-              s(:arg, :q)),
-            s(:send,
-              s(:lvar, :p), :+,
-              s(:lvar, :q))))
+            s(:send, s(:lvar, :inputs), :reduce),
+            s(:args, s(:arg, :p), s(:arg, :q)),
+            s(:send, s(:lvar, :p), :+, s(:lvar, :q))))
       end
     end
 
@@ -278,19 +253,12 @@ The basic types to RubyNEAT are represented here.
       # that multiplies all inputs only.
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:block,
-            s(:send,
-              s(:lvar, :inputs), :reduce),
-            s(:args,
-              s(:arg, :p),
-              s(:arg, :q)),
-            s(:send,
-              s(:lvar, :p), :*,
-              s(:lvar, :q))))
+            s(:send, s(:lvar, :inputs), :reduce),
+            s(:args, s(:arg, :p), s(:arg, :q)),
+            s(:send, s(:lvar, :p), :*, s(:lvar, :q))))
       end
-
     end
 
     # Heaviside (CPPN)
@@ -299,20 +267,15 @@ The basic types to RubyNEAT are represented here.
       # of the inputs.
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:restarg, :inputs)),
+          s(:args, s(:restarg, :inputs)),
           s(:if,
             s(:begin,
               s(:send,
                 s(:block,
-                  s(:send,
-                    s(:lvar, :inputs), :reduce),
-                  s(:args,
-                    s(:arg, :p),
-                    s(:arg, :q)),
-                  s(:send,
-                    s(:lvar, :p), :+,
-                    s(:lvar, :q))), :>=,
+                  s(:send, s(:lvar, :inputs), :reduce),
+                  s(:args, s(:arg, :p), s(:arg, :q)),
+                  s(:send, s(:lvar, :p), :+, s(:lvar, :q))),
+                :>=,
                 s(:float, 0.0))),
             s(:float, 1.0),
             s(:float, 0.0)))
@@ -335,14 +298,10 @@ The basic types to RubyNEAT are represented here.
                 s(:block,
                   s(:send,
                     s(:lvar, :inputs), :reduce),
-                  s(:args,
-                    s(:arg, :p),
-                    s(:arg, :q)),
-                  s(:send,
-                    s(:lvar, :p), :+,
-                    s(:lvar, :q))), :>=,
-                s(:int, 0))), :<=>,
-            s(:float, 0.0)))
+                  s(:args, s(:arg, :p), s(:arg, :q)),
+                  s(:send, s(:lvar, :p), :+, s(:lvar, :q))),
+                :>=,
+                s(:int, 0))), :<=>, s(:float, 0.0)))
       end
     end
 
@@ -362,28 +321,17 @@ The basic types to RubyNEAT are represented here.
       # }
       def express_ast
         s(:def, @name,
-          s(:args,
-            s(:arg, :p),
-            s(:arg, :q)),
+          s(:args, s(:arg, :p), s(:arg, :q)),
           s(:begin,
-            s(:lvasgn, :a,
-              s(:float, 1.0)),
-            s(:lvasgn, :b,
-              s(:float, 0.0)),
-            s(:lvasgn, :c,
-              s(:float, 1.0)),
-            s(:lvasgn, :d,
-              s(:float, 0.0)),
+            s(:lvasgn, :a, s(:float, 1.0)),
+            s(:lvasgn, :b, s(:float, 0.0)),
+            s(:lvasgn, :c, s(:float, 1.0)),
+            s(:lvasgn, :d, s(:float, 0.0)),
             s(:lvasgn, :x,
               s(:block,
-                s(:send,
-                  s(:send, nil, :inputs), :reduce),
-                s(:args,
-                  s(:arg, :p),
-                  s(:arg, :q)),
-                s(:send,
-                  s(:lvar, :p), :+,
-                  s(:lvar, :q)))),
+                s(:send, s(:send, nil, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q)))),
             s(:send,
               s(:send,
                 s(:lvar, :a), :*,
@@ -393,15 +341,12 @@ The basic types to RubyNEAT are represented here.
                       s(:send,
                         s(:send,
                           s(:begin,
-                            s(:send,
-                              s(:lvar, :x), :-,
-                              s(:lvar, :b))), :**,
+                            s(:send, s(:lvar, :x), :-, s(:lvar, :b))),
+                          :**,
                           s(:float, 2.0)), :-@), :/,
                       s(:int, 2)), :*,
-                    s(:send,
-                      s(:lvar, :c), :**,
-                      s(:float, 2.0))))), :+,
-              s(:lvar, :d))))
+                    s(:send, s(:lvar, :c), :**, s(:float, 2.0))))),
+              :+, s(:lvar, :d))))
       end
     end
   end
