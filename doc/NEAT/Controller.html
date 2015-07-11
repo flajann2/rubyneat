@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Controller
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -107,7 +107,7 @@
 <h1 id="label-Controller+for+all+operations+of+RubyNEAT">Controller for all operations of RubyNEAT</h1>
 
 <p>This object contains all the specifications and details for evolving and
-evaluation of the RubyNEAT system.  It is  a type of “World”, if you will,
+evaluation of the RubyNEAT system.  It is a type of “World”, if you will,
 for the entire enterprise.</p>
 
 <p>Your application shall only have one Controller.</p>
@@ -122,6 +122,14 @@ co-evolution, etc.</p>
 where the controller would lord it over them all. Attention FIXME: must
 also be given to Rubinius and JRuby so that we can FIXME: run under
 multiple cores.</p>
+
+<p>RESOLUTION: We have determined that the multiple core sitation RESOLUTION:
+is best served by decoupling the phentype generation RESOLUTION: and
+evaluation to run across worker queues. This will RESOLUTION: will also buy
+us language agnosticy, expanding the sheer RESOLUTION: power of RubyNEAT to
+be applied in many more use cases,  RESOLUTION: etc. The actual
+housekeeping of evolution does not RESOLUTION: require a lot of
+computation, at least no where near RESOLUTION: evaluation requirements.</p>
 
 
   </div>
@@ -369,90 +377,6 @@ multiple cores.</p>
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#neural_hidden-instance_method" title="#neural_hidden (instance method)">- (Object) <strong>neural_hidden</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Class map of named input and output neurons (each critter will have 
-instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#neural_inputs-instance_method" title="#neural_inputs (instance method)">- (Object) <strong>neural_inputs</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Class map of named input and output neurons (each critter will have 
-instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#neural_outputs-instance_method" title="#neural_outputs (instance method)">- (Object) <strong>neural_outputs</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Class map of named input and output neurons (each critter will have 
-instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#neuron_catalog-instance_method" title="#neuron_catalog (instance method)">- (Object) <strong>neuron_catalog</strong> </a>
     
 
@@ -663,7 +587,7 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Controller) <strong>initialize</strong>(neural_inputs: nil, neural_outputs: nil, neural_hidden: nil, parameters: NeatSettings.new, &amp;block) </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Controller) <strong>initialize</strong>(neural_inputs: nil, neural_outputs: nil, neural_hidden: nil, parameters: NeatSettings.new, hyper: false, &amp;block) </a>
     
 
     
@@ -714,6 +638,31 @@ create this.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#population_complete-instance_method" title="#population_complete (instance method)">- (Object) <strong>population_complete</strong>(gennum = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Return the latest complete history, if the generation number does not
+match.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#run-instance_method" title="#run (instance method)">- (Object) <strong>run</strong> </a>
     
 
@@ -735,6 +684,28 @@ create this.</p>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_evaluate_population-instance_method" title="#run_evaluate_population (instance method)">- (Object) <strong>run_evaluate_population</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -748,15 +719,16 @@ create this.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    - (<tt><span class='object_link'><a href="" title="NEAT::Controller (class)">Controller</a></span></tt>) <strong>initialize</strong>(neural_inputs: nil, neural_outputs: nil, neural_hidden: nil, parameters: NeatSettings.new, &amp;block) 
+    - (<tt><span class='object_link'><a href="" title="NEAT::Controller (class)">Controller</a></span></tt>) <strong>initialize</strong>(neural_inputs: nil, neural_outputs: nil, neural_hidden: nil, parameters: NeatSettings.new, hyper: false, &amp;block) 
   
 
   
@@ -785,50 +757,54 @@ this.</p>
       <pre class="lines">
 
 
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483
-484
-485
-486
-487
-488
-489
-490
-491
-492
-493
-494</pre>
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 465</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 539</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>neural_inputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>neural_outputs:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>neural_hidden:</span> <span class='kw'>nil</span><span class='comma'>,</span>
                <span class='label'>parameters:</span> <span class='const'>NeatSettings</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span>
+               <span class='label'>hyper:</span> <span class='kw'>false</span><span class='comma'>,</span>
                   <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
   <span class='ivar'>@gaussian</span> <span class='op'>=</span> <span class='const'>Distribution</span><span class='op'>::</span><span class='const'>Normal</span><span class='period'>.</span><span class='id identifier rubyid_rng'>rng</span>
   <span class='ivar'>@population_history</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='ivar'>@evolver</span> <span class='op'>=</span> <span class='const'>Evolver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>self</span>
-  <span class='ivar'>@expressor</span> <span class='op'>=</span> <span class='const'>Expressor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>self</span>
+  <span class='comment'># TODO: this is a bit ugly, but OK for now.
+</span>  <span class='ivar'>@expressor</span> <span class='op'>=</span> <span class='id identifier rubyid_hyper'>hyper</span> <span class='op'>?</span> <span class='const'>HyperExpressor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'>Expressor</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
 
   <span class='ivar'>@neuron_catalog</span> <span class='op'>=</span> <span class='const'>Neuron</span><span class='op'>::</span><span class='id identifier rubyid_neuron_types'>neuron_types</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
   <span class='ivar'>@neural_inputs</span>  <span class='op'>=</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span>
@@ -844,7 +820,7 @@ this.</p>
   <span class='comment'># Handle the parameters parameter. :-)
 </span>  <span class='ivar'>@parms</span> <span class='op'>=</span> <span class='kw'>unless</span> <span class='id identifier rubyid_parameters'>parameters</span><span class='period'>.</span><span class='id identifier rubyid_kind_of?'>kind_of?</span> <span class='const'>String</span>
              <span class='id identifier rubyid_parameters'>parameters</span>
-           <span class='kw'>else</span> <span class='comment'># load it from a file
+           <span class='kw'>else</span> <span class='comment'># load it froäm a file
 </span>             <span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_parameters'>parameters</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>r</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_fd'>fd</span><span class='op'>|</span> <span class='const'>YAML</span><span class='op'>::</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_fd'>fd</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span> <span class='rbrace'>}</span>
            <span class='kw'>end</span>
   <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -887,12 +863,12 @@ this.</p>
       <pre class="lines">
 
 
-304
-305
-306</pre>
+363
+364
+365</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 304</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 363</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluator'>evaluator</span>
   <span class='ivar'>@evaluator</span>
@@ -930,12 +906,12 @@ this.</p>
       <pre class="lines">
 
 
-304
-305
-306</pre>
+363
+364
+365</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 304</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 363</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evaluator_class'>evaluator_class</span>
   <span class='ivar'>@evaluator_class</span>
@@ -973,12 +949,12 @@ this.</p>
       <pre class="lines">
 
 
-305
-306
-307</pre>
+364
+365
+366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 364</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolver'>evolver</span>
   <span class='ivar'>@evolver</span>
@@ -1016,12 +992,12 @@ this.</p>
       <pre class="lines">
 
 
-305
-306
-307</pre>
+364
+365
+366</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 305</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 364</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolver_class'>evolver_class</span>
   <span class='ivar'>@evolver_class</span>
@@ -1059,12 +1035,12 @@ this.</p>
       <pre class="lines">
 
 
-303
-304
-305</pre>
+362
+363
+364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 362</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expressor'>expressor</span>
   <span class='ivar'>@expressor</span>
@@ -1102,12 +1078,12 @@ this.</p>
       <pre class="lines">
 
 
-303
-304
-305</pre>
+362
+363
+364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 303</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 362</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_expressor_class'>expressor_class</span>
   <span class='ivar'>@expressor_class</span>
@@ -1145,12 +1121,12 @@ this.</p>
       <pre class="lines">
 
 
-288
-289
-290</pre>
+351
+352
+353</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 288</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 351</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_generation_num'>generation_num</span>
   <span class='ivar'>@generation_num</span>
@@ -1188,147 +1164,15 @@ this.</p>
       <pre class="lines">
 
 
-338
-339
-340</pre>
+397
+398
+399</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 338</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 397</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_log'>log</span>
   <span class='ivar'>@log</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="neural_hidden=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="neural_hidden-instance_method">
-  
-    - (<tt>Object</tt>) <strong>neural_hidden</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Class map of named input and output neurons (each critter will have 
-instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-295
-296
-297</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_neural_hidden'>neural_hidden</span>
-  <span class='ivar'>@neural_hidden</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="neural_inputs=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="neural_inputs-instance_method">
-  
-    - (<tt>Object</tt>) <strong>neural_inputs</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Class map of named input and output neurons (each critter will have 
-instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-295
-296
-297</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span>
-  <span class='ivar'>@neural_inputs</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id="neural_outputs=-instance_method"></span>
-      <div class="method_details ">
-  <h3 class="signature " id="neural_outputs-instance_method">
-  
-    - (<tt>Object</tt>) <strong>neural_outputs</strong> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Class map of named input and output neurons (each critter will have 
-instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-295
-296
-297</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 295</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_neural_outputs'>neural_outputs</span>
-  <span class='ivar'>@neural_outputs</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1363,12 +1207,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-291
-292
-293</pre>
+354
+355
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 291</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 354</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neuron_catalog'>neuron_catalog</span>
   <span class='ivar'>@neuron_catalog</span>
@@ -1406,12 +1250,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-298
-299
-300</pre>
+357
+358
+359</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 298</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 357</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parms'>parms</span>
   <span class='ivar'>@parms</span>
@@ -1449,12 +1293,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-301
-302
-303</pre>
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 301</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population'>population</span>
   <span class='ivar'>@population</span>
@@ -1492,12 +1336,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-301
-302
-303</pre>
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 301</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_class'>population_class</span>
   <span class='ivar'>@population_class</span>
@@ -1535,12 +1379,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-301
-302
-303</pre>
+360
+361
+362</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 301</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 360</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_population_history'>population_history</span>
   <span class='ivar'>@population_history</span>
@@ -1578,12 +1422,12 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-285
-286
-287</pre>
+348
+349
+350</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 285</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 348</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_seq_num'>seq_num</span>
   <span class='ivar'>@seq_num</span>
@@ -1615,10 +1459,10 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-497</pre>
+573</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 497</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 573</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@gaussian</span><span class='period'>.</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1641,12 +1485,63 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-496</pre>
+572</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 496</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 572</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_innovation'>new_innovation</span> <span class='semicolon'>;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_glob_innov_num'>glob_innov_num</span> <span class='op'>+=</span> <span class='int'>1</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="population_complete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>population_complete</strong>(gennum = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Return the latest complete history, if the generation number does not
+match. This is so that we can examine a single population from the
+Dashboard without stopping the progress of evolution.</p>
+
+<p>NOTE WELL We will not return the requested generation number unless we
+cached it already. The latest complete one will be returned instead.</p>
+
+<p>TODO: Clean up the logic here. We really shoud try to TODO: pull the
+generation number its asking for.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+587
+588
+589
+590</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 587</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_population_complete'>population_complete</span><span class='lparen'>(</span><span class='id identifier rubyid_gennum'>gennum</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='ivar'>@population_complete</span> <span class='op'>=</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='ivar'>@population_complete</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='ivar'>@population_complete</span><span class='period'>.</span><span class='id identifier rubyid_generation'>generation</span> <span class='op'>==</span> <span class='id identifier rubyid_gennum'>gennum</span>
+  <span class='ivar'>@population_complete</span> <span class='op'>||=</span> <span class='lparen'>(</span><span class='ivar'>@population_history</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='ivar'>@population_history</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1678,70 +1573,60 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
       <pre class="lines">
 
 
-500
-501
-502
-503
-504
-505
-506
-507
-508
-509
-510
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537
-538
-539
-540</pre>
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 500</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 593</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span>
-  <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
+  <span class='comment'>#binding.pry
+</span>  <span class='id identifier rubyid_pre_run_initialize'>pre_run_initialize</span>
   <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_max_generations'>max_generations</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_gen_number'>gen_number</span><span class='op'>|</span>
-    <span class='ivar'>@generation_num</span> <span class='op'>=</span> <span class='id identifier rubyid_gen_number'>gen_number</span>
-    <span class='ivar'>@population_history</span> <span class='op'>&lt;&lt;</span> <span class='kw'>unless</span> <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-                             <span class='ivar'>@population</span>
-                           <span class='kw'>else</span>
-                             <span class='ivar'>@population</span> <span class='op'>=</span> <span class='ivar'>@population_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
-                           <span class='kw'>end</span>
+    <span class='id identifier rubyid_maybe_pause_evolution'>maybe_pause_evolution</span>
+    <span class='ivar'>@generation_num</span> <span class='op'>=</span> <span class='id identifier rubyid_gen_number'>gen_number</span> <span class='comment'># must be set first
+</span>    <span class='ivar'>@population_history</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='ivar'>@population</span> <span class='op'>||=</span> <span class='ivar'>@population_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+    <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_generation'>generation</span> <span class='op'>=</span> <span class='id identifier rubyid_gen_number'>gen_number</span>
     <span class='ivar'>@population_history</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span> <span class='kw'>unless</span> <span class='ivar'>@population_history</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;=</span> <span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_max_population_history'>max_population_history</span>
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_mutate!'>mutate!</span>
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_express!'>express!</span>
 
-    <span class='comment'>## Evaluate population
-</span>    <span class='ivar'>@evaluator</span><span class='period'>.</span><span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span> <span class='ivar'>@population</span>
-    <span class='lparen'>(</span><span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_start_sequence_at'>start_sequence_at</span> <span class='op'>..</span> <span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_end_sequence_at'>end_sequence_at</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_snum'>snum</span><span class='op'>|</span>
-      <span class='ivar'>@seq_num</span> <span class='op'>=</span> <span class='id identifier rubyid_snum'>snum</span>
-      <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span>
-    <span class='kw'>end</span>
+    <span class='id identifier rubyid_run_evaluate_population'>run_evaluate_population</span>
 
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_analyze!'>analyze!</span>
     <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_speciate!'>speciate!</span>
@@ -1769,14 +1654,52 @@ instantiations of these) name: InputNeuralClass (usually InputNeuron)</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="run_evaluate_population-instance_method">
+  
+    - (<tt>Object</tt>) <strong>run_evaluate_population</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+630
+631
+632
+633
+634
+635
+636</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 630</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_evaluate_population'>run_evaluate_population</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='ivar'>@evaluator</span><span class='period'>.</span><span class='id identifier rubyid_ready_for_evaluation'>ready_for_evaluation</span> <span class='ivar'>@population</span>
+    <span class='lparen'>(</span><span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_start_sequence_at'>start_sequence_at</span> <span class='op'>..</span> <span class='ivar'>@parms</span><span class='period'>.</span><span class='id identifier rubyid_end_sequence_at'>end_sequence_at</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_snum'>snum</span><span class='op'>|</span>
+      <span class='ivar'>@seq_num</span> <span class='op'>=</span> <span class='id identifier rubyid_snum'>snum</span>
+      <span class='ivar'>@population</span><span class='period'>.</span><span class='id identifier rubyid_evaluate!'>evaluate!</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:15 2014 by
+  Generated on Sat Jul 11 10:54:42 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

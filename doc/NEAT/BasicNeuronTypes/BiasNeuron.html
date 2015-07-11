@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::BasicNeuronTypes::BiasNeuron
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -282,7 +282,7 @@ now.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../Neuron.html#bias%3F-instance_method" title="NEAT::Neuron#bias? (method)">#bias?</a></span>, <span class='object_link'><a href="../Neuron.html#inherited-class_method" title="NEAT::Neuron.inherited (method)">inherited</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-class_method" title="NEAT::Neuron.input? (method)">input?</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-instance_method" title="NEAT::Neuron#input? (method)">#input?</a></span>, <span class='object_link'><a href="../Neuron.html#neuron_types-class_method" title="NEAT::Neuron.neuron_types (method)">neuron_types</a></span>, <span class='object_link'><a href="../Neuron.html#output%3F-instance_method" title="NEAT::Neuron#output? (method)">#output?</a></span>, <span class='object_link'><a href="../Neuron.html#type_name-class_method" title="NEAT::Neuron.type_name (method)">type_name</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../Neuron.html#bias%3F-instance_method" title="NEAT::Neuron#bias? (method)">#bias?</a></span>, <span class='object_link'><a href="../Neuron.html#express_as_code-instance_method" title="NEAT::Neuron#express_as_code (method)">#express_as_code</a></span>, <span class='object_link'><a href="../Neuron.html#hyper%3F-instance_method" title="NEAT::Neuron#hyper? (method)">#hyper?</a></span>, <span class='object_link'><a href="../Neuron.html#inherited-class_method" title="NEAT::Neuron.inherited (method)">inherited</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-class_method" title="NEAT::Neuron.input? (method)">input?</a></span>, <span class='object_link'><a href="../Neuron.html#input%3F-instance_method" title="NEAT::Neuron#input? (method)">#input?</a></span>, <span class='object_link'><a href="../Neuron.html#neuron_types-class_method" title="NEAT::Neuron.neuron_types (method)">neuron_types</a></span>, <span class='object_link'><a href="../Neuron.html#output%3F-instance_method" title="NEAT::Neuron#output? (method)">#output?</a></span>, <span class='object_link'><a href="../Neuron.html#type_name-class_method" title="NEAT::Neuron.type_name (method)">type_name</a></span>, <span class='object_link'><a href="../Neuron.html#type_name-instance_method" title="NEAT::Neuron#type_name (method)">#type_name</a></span></p>
 
   
   
@@ -305,8 +305,9 @@ now.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -336,13 +337,13 @@ now.</p>
       <pre class="lines">
 
 
-98
-99
-100
-101</pre>
+116
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_n'>n</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -386,12 +387,12 @@ now.</p>
       <pre class="lines">
 
 
-96
-97
-98</pre>
+114
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neu_bias'>neu_bias</span>
   <span class='ivar'>@neu_bias</span>
@@ -445,10 +446,10 @@ now.</p>
       <pre class="lines">
 
 
-95</pre>
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 113</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_bias?'>bias?</span> <span class='semicolon'>;</span> <span class='kw'>true</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -489,12 +490,12 @@ now. Not a biggie, FIXME: but really should be @neu_bias</p>
       <pre class="lines">
 
 
-106
-107
-108</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express'>express</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_instance'>instance</span><span class='period'>.</span><span class='id identifier rubyid_define_singleton_method'>define_singleton_method</span><span class='lparen'>(</span><span class='ivar'>@name</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='float'>1.00</span> <span class='rbrace'>}</span>
@@ -509,9 +510,9 @@ now. Not a biggie, FIXME: but really should be @neu_bias</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:14 2014 by
+  Generated on Sat Jul 11 10:54:41 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

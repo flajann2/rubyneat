@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Neuron
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -121,7 +121,7 @@ details of this remains to be worked out.</p>
 
 </div><div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="BasicNeuronTypes/CosineNeuron.html" title="NEAT::BasicNeuronTypes::CosineNeuron (class)">BasicNeuronTypes::CosineNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/GaussianNeuron.html" title="NEAT::BasicNeuronTypes::GaussianNeuron (class)">BasicNeuronTypes::GaussianNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/InputNeuron.html" title="NEAT::BasicNeuronTypes::InputNeuron (class)">BasicNeuronTypes::InputNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/LinearNeuron.html" title="NEAT::BasicNeuronTypes::LinearNeuron (class)">BasicNeuronTypes::LinearNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/SigmoidNeuron.html" title="NEAT::BasicNeuronTypes::SigmoidNeuron (class)">BasicNeuronTypes::SigmoidNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/SineNeuron.html" title="NEAT::BasicNeuronTypes::SineNeuron (class)">BasicNeuronTypes::SineNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/TanhNeuron.html" title="NEAT::BasicNeuronTypes::TanhNeuron (class)">BasicNeuronTypes::TanhNeuron</a></span></p>
+  <p class="children"><span class='object_link'><a href="BasicNeuronTypes/CosineNeuron.html" title="NEAT::BasicNeuronTypes::CosineNeuron (class)">BasicNeuronTypes::CosineNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/GaussianNeuron.html" title="NEAT::BasicNeuronTypes::GaussianNeuron (class)">BasicNeuronTypes::GaussianNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/HeavisideNeuron.html" title="NEAT::BasicNeuronTypes::HeavisideNeuron (class)">BasicNeuronTypes::HeavisideNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/InputNeuron.html" title="NEAT::BasicNeuronTypes::InputNeuron (class)">BasicNeuronTypes::InputNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/LinearNeuron.html" title="NEAT::BasicNeuronTypes::LinearNeuron (class)">BasicNeuronTypes::LinearNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/MulNeuron.html" title="NEAT::BasicNeuronTypes::MulNeuron (class)">BasicNeuronTypes::MulNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/SigmoidNeuron.html" title="NEAT::BasicNeuronTypes::SigmoidNeuron (class)">BasicNeuronTypes::SigmoidNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/SignNeuron.html" title="NEAT::BasicNeuronTypes::SignNeuron (class)">BasicNeuronTypes::SignNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/SineNeuron.html" title="NEAT::BasicNeuronTypes::SineNeuron (class)">BasicNeuronTypes::SineNeuron</a></span>, <span class='object_link'><a href="BasicNeuronTypes/TanhNeuron.html" title="NEAT::BasicNeuronTypes::TanhNeuron (class)">BasicNeuronTypes::TanhNeuron</a></span></p>
 </div>
 
   <h2>Constant Summary</h2>
@@ -456,6 +456,52 @@ to assure we add genes in the proper order.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#express_as_code-instance_method" title="#express_as_code (instance method)">- (Object) <strong>express_as_code</strong>(instance) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Function must be implemented by subclasses for phenotype generation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hyper%3F-instance_method" title="#hyper? (instance method)">- (Boolean) <strong>hyper?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#input%3F-instance_method" title="#input? (instance method)">- (Boolean) <strong>input?</strong> </a>
     
 
@@ -493,8 +539,30 @@ to assure we add genes in the proper order.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Instantiation is of outout type?.</p>
+<p>Instantiation is of output type?.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#type_name-instance_method" title="#type_name (instance method)">- (Object) <strong>type_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -524,8 +592,9 @@ to assure we add genes in the proper order.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -609,12 +678,12 @@ time a new neuron is added.</p>
       <pre class="lines">
 
 
-25
-26
-27</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_heirarchy_number'>heirarchy_number</span>
   <span class='ivar'>@heirarchy_number</span>
@@ -652,12 +721,12 @@ time a new neuron is added.</p>
       <pre class="lines">
 
 
-28
-29
-30</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_output'>output</span>
   <span class='ivar'>@output</span>
@@ -754,10 +823,10 @@ time a new neuron is added.</p>
       <pre class="lines">
 
 
-43</pre>
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_bias?'>bias?</span> <span class='semicolon'>;</span> <span class='kw'>false</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -780,12 +849,12 @@ time a new neuron is added.</p>
       <pre class="lines">
 
 
-49
-50
-51</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_inherited'>inherited</span><span class='lparen'>(</span><span class='id identifier rubyid_clazz'>clazz</span><span class='rparen'>)</span>
   <span class='cvar'>@@neuron_types</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_clazz'>clazz</span>
@@ -834,10 +903,10 @@ time a new neuron is added.</p>
       <pre class="lines">
 
 
-40</pre>
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_input?'>input?</span> <span class='semicolon'>;</span> <span class='kw'>false</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -871,10 +940,10 @@ time a new neuron is added.</p>
       <pre class="lines">
 
 
-54</pre>
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_neuron_types'>neuron_types</span><span class='semicolon'>;</span> <span class='cvar'>@@neuron_types</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -909,12 +978,12 @@ neural type names</p>
       <pre class="lines">
 
 
-35
-36
-37</pre>
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 38</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_type_name'>type_name</span>
   <span class='ivar'>@type_name</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>::</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Neuron</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
@@ -967,10 +1036,10 @@ neural type names</p>
       <pre class="lines">
 
 
-44</pre>
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bias?'>bias?</span> <span class='semicolon'>;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_bias?'>bias?</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1006,16 +1075,108 @@ function to sum all inputs and a apply an operator to the sum.</p>
       <pre class="lines">
 
 
-60
-61
-62</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 68</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express'>express</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NeatException</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>express() must be implemented by subclass.</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="express_as_code-instance_method">
+  
+    - (<tt>Object</tt>) <strong>express_as_code</strong>(instance) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Function must be implemented by subclasses for phenotype generation.</p>
+
+<p>This will generate textual code so that the TWEANN may be treated as a
+fully independent program apart from the RubyNEAT infrastructure.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_express_as_code'>express_as_code</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NeatException</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>express_as_code() must be implemented by subclass.</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hyper?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>hyper?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hyper?'>hyper?</span> <span class='semicolon'>;</span> <span class='kw'>not</span> <span class='id identifier rubyid_hccoord'>hccoord</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1058,10 +1219,10 @@ function to sum all inputs and a apply an operator to the sum.</p>
       <pre class="lines">
 
 
-41</pre>
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_input?'>input?</span> <span class='semicolon'>;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_input?'>input?</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -1081,7 +1242,7 @@ function to sum all inputs and a apply an operator to the sum.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Instantiation is of outout type?</p>
+<p>Instantiation is of output type?</p>
 
 
   </div>
@@ -1108,12 +1269,42 @@ function to sum all inputs and a apply an operator to the sum.</p>
       <pre class="lines">
 
 
-47</pre>
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_output?'>output?</span> <span class='semicolon'>;</span> <span class='op'>!</span><span class='op'>!</span><span class='ivar'>@output</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>type_name</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/neuron.rb', line 42</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_type_name'>type_name</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_type_name'>type_name</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1124,9 +1315,9 @@ function to sum all inputs and a apply an operator to the sum.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:14 2014 by
+  Generated on Sat Jul 11 10:54:41 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

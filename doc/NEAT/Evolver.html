@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Evolver
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -300,8 +300,9 @@ novelty, etc.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -331,13 +332,13 @@ novelty, etc.</p>
       <pre class="lines">
 
 
-14
 15
 16
-17</pre>
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 15</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -381,12 +382,12 @@ novelty, etc.</p>
       <pre class="lines">
 
 
-12
 13
-14</pre>
+14
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 13</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_npop'>npop</span>
   <span class='ivar'>@npop</span>
@@ -432,7 +433,6 @@ novelty, etc.</p>
       <pre class="lines">
 
 
-54
 55
 56
 57
@@ -443,14 +443,19 @@ novelty, etc.</p>
 62
 63
 64
-65</pre>
+65
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_evolve'>evolve</span><span class='lparen'>(</span><span class='id identifier rubyid_population'>population</span><span class='rparen'>)</span>
   <span class='ivar'>@npop</span> <span class='op'>=</span> <span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_dclone'>dclone</span>
-  
+  <span class='comment'>#old population (for elitism reference)
+</span>  <span class='ivar'>@opop</span> <span class='op'>=</span> <span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_dclone'>dclone</span> <span class='label'>population:</span> <span class='ivar'>@npop</span>
+
   <span class='comment'># Population sorting and evaluation for breeding, mutations, etc.
 </span>  <span class='id identifier rubyid_prepare_speciation!'>prepare_speciation!</span>
   <span class='id identifier rubyid_prepare_fitness!'>prepare_fitness!</span>
@@ -492,7 +497,6 @@ innovation numbers.</p>
       <pre class="lines">
 
 
-21
 22
 23
 24
@@ -500,10 +504,11 @@ innovation numbers.</p>
 26
 27
 28
-29</pre>
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_gen_initial_genes!'>gen_initial_genes!</span><span class='lparen'>(</span><span class='id identifier rubyid_genotype'>genotype</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -545,7 +550,6 @@ innovation numbers.</p>
       <pre class="lines">
 
 
-32
 33
 34
 35
@@ -561,15 +565,16 @@ innovation numbers.</p>
 45
 46
 47
-48</pre>
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mutate!'>mutate!</span><span class='lparen'>(</span><span class='id identifier rubyid_population'>population</span><span class='rparen'>)</span>
   <span class='ivar'>@npop</span> <span class='op'>=</span> <span class='id identifier rubyid_population'>population</span>
 
-  <span class='kw'>if</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span><span class='period'>.</span><span class='id identifier rubyid_mate_only_prob'>mate_only_prob</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_rand'>rand</span> <span class='op'>&gt;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span><span class='period'>.</span><span class='id identifier rubyid_mate_only_prob'>mate_only_prob</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_cparms'>cparms</span><span class='period'>.</span><span class='id identifier rubyid_mate_only_prob'>mate_only_prob</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='kw'>or</span> <span class='id identifier rubyid_rand'>rand</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_cparms'>cparms</span><span class='period'>.</span><span class='id identifier rubyid_mate_only_prob'>mate_only_prob</span>
     <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_debug'>debug</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[[[ Neuron and Gene Giggling!</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_mutate_perturb_gene_weights!'>mutate_perturb_gene_weights!</span>
     <span class='id identifier rubyid_mutate_change_gene_weights!'>mutate_change_gene_weights!</span>
@@ -593,9 +598,9 @@ innovation numbers.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:15 2014 by
+  Generated on Sat Jul 11 10:54:42 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

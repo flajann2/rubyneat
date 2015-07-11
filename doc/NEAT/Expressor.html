@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Expressor
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -116,7 +116,11 @@
 <div class="tags">
   
 
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="HyperExpressor.html" title="NEAT::HyperExpressor (class)">HyperExpressor</a></span></p>
 </div>
+
 
 
 
@@ -154,7 +158,8 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Take the genotype of the critter and create a phenotype from the genotype.</p>
+<p>Take the genotype(s) of the critter and create a phenotype from the
+genotype.</p>
 </div></span>
   
 </li>
@@ -205,8 +210,9 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -236,12 +242,12 @@
       <pre class="lines">
 
 
+7
 8
-9
-10</pre>
+9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 8</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 7</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
   <span class='kw'>super</span>      
@@ -270,15 +276,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Take the genotype of the critter and create a phenotype from the genotype.</p>
+<p>Take the genotype(s) of the critter and create a phenotype from the
+genotype.</p>
 
 <p>In the phenotype, it creates a function called stimulate(), which is called
 with the input parameters and returns a response in the form of a response
 hash (which corresponds directly to the output neurons).</p>
 
-<p>This implementation assumes an acyclic graph (feed forward) and cannot
-handle cycles at all. Later we may fix this or create a type of Expressor
-that can.</p>
+<p>This implementation handles both acyclic (feed forward) and cyclic
+(recurrent) graphs.</p>
 
 
   </div>
@@ -292,15 +298,15 @@ that can.</p>
       <pre class="lines">
 
 
+21
+22
 23
 24
 25
-26
-27
-28</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 21</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_ready_for_expression!'>ready_for_expression!</span>
@@ -318,9 +324,9 @@ that can.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:16 2014 by
+  Generated on Sat Jul 11 10:54:43 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

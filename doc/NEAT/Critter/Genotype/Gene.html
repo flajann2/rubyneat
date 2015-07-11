@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Critter::Genotype::Gene
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -106,7 +106,7 @@
     
 <h1 id="label-Gene+Specification">Gene Specification</h1>
 
-<p>The Gene specifices a singlular input and output neuron, which represents a
+<p>The Gene specifies a singular input and output neuron, which represents a
 connection between them, along with the weight of that connection, which
 may be positive, negative, or zero.</p>
 
@@ -200,7 +200,7 @@ may be positive, negative, or zero.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>input neuron&#39;s name (where our output goes) ouptut neuron&#39;s name
+<p>input neuron&#39;s name (where our output goes) output neuron&#39;s name
 (neuron to be queried).</p>
 </div></span>
   
@@ -255,7 +255,7 @@ may be positive, negative, or zero.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>input neuron&#39;s name (where our output goes) ouptut neuron&#39;s name
+<p>input neuron&#39;s name (where our output goes) output neuron&#39;s name
 (neuron to be queried).</p>
 </div></span>
   
@@ -447,8 +447,9 @@ may be positive, negative, or zero.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -478,17 +479,17 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-247
-248
-249
-250
-251
-252
-253
-254</pre>
+338
+339
+340
+341
+342
+343
+344
+345</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 247</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 338</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_genotype'>genotype</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
@@ -536,12 +537,12 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-245
-246
-247</pre>
+336
+337
+338</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 336</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_enabled'>enabled</span>
   <span class='ivar'>@enabled</span>
@@ -579,12 +580,12 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-233
-234
-235</pre>
+324
+325
+326</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 233</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 324</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_genotype'>genotype</span>
   <span class='ivar'>@genotype</span>
@@ -608,7 +609,7 @@ may be positive, negative, or zero.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>input neuron&#39;s name (where our output goes) ouptut neuron&#39;s name
+<p>input neuron&#39;s name (where our output goes) output neuron&#39;s name
 (neuron to be queried)</p>
 
 
@@ -623,12 +624,12 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-240
-241
-242</pre>
+331
+332
+333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 240</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 331</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_in_neuron'>in_neuron</span>
   <span class='ivar'>@in_neuron</span>
@@ -666,12 +667,12 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-236
-237
-238</pre>
+327
+328
+329</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 327</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_innovation'>innovation</span>
   <span class='ivar'>@innovation</span>
@@ -695,7 +696,7 @@ may be positive, negative, or zero.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>input neuron&#39;s name (where our output goes) ouptut neuron&#39;s name
+<p>input neuron&#39;s name (where our output goes) output neuron&#39;s name
 (neuron to be queried)</p>
 
 
@@ -710,12 +711,12 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-240
-241
-242</pre>
+331
+332
+333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 240</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 331</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_out_neuron'>out_neuron</span>
   <span class='ivar'>@out_neuron</span>
@@ -753,12 +754,12 @@ may be positive, negative, or zero.</p>
       <pre class="lines">
 
 
-243
-244
-245</pre>
+334
+335
+336</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 334</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_weight'>weight</span>
   <span class='ivar'>@weight</span>
@@ -804,17 +805,17 @@ weight to give neuron (optional) innov – innovation number of gene
       <pre class="lines">
 
 
-265
-266
-267
-268
-269
-270
-271
-272</pre>
+356
+357
+358
+359
+360
+361
+362
+363</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 356</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_genotype'>genotype</span><span class='comma'>,</span> <span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='id identifier rubyid_output'>output</span><span class='comma'>,</span> <span class='id identifier rubyid_weight'>weight</span> <span class='op'>=</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='id identifier rubyid_innov'>innov</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_g'>g</span> <span class='op'>=</span> <span class='const'>Gene</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_genotype'>genotype</span>
@@ -872,10 +873,10 @@ weight to give neuron (optional) innov – innovation number of gene
       <pre class="lines">
 
 
-257</pre>
+348</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 257</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 348</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disabled?'>disabled?</span> <span class='semicolon'>;</span> <span class='kw'>not</span> <span class='id identifier rubyid_enabled?'>enabled?</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -920,10 +921,10 @@ weight to give neuron (optional) innov – innovation number of gene
       <pre class="lines">
 
 
-256</pre>
+347</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 256</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 347</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_enabled?'>enabled?</span> <span class='semicolon'>;</span> <span class='ivar'>@enabled</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -950,12 +951,12 @@ weight to give neuron (optional) innov – innovation number of gene
       <pre class="lines">
 
 
-274
-275
-276</pre>
+365
+366
+367</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 274</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 365</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='kw'>super</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>[i%s,w%s,%s]</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='ivar'>@innovation</span><span class='comma'>,</span> <span class='ivar'>@weight</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span><span class='rbracket'>]</span>
@@ -970,9 +971,9 @@ weight to give neuron (optional) innov – innovation number of gene
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:15 2014 by
+  Generated on Sat Jul 11 10:54:42 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>
