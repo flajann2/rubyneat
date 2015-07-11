@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -64,14 +64,31 @@
     <div id="content"><div id='filecontents'>
 <h1 id="label-RubyNEAT+--+Neural+Evolution+of+Augmenting+Topologies">RubyNEAT – Neural Evolution of Augmenting Topologies</h1>
 
-<p>For the latest docs, please see <a
-href="http://rubyneat.com">rubyneat.com</a></p>
+<p><a
+href="https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img
+src="https://badges.gitter.im/Join%20Chat.svg"></a></p>
+
+<p>For the latest news and usage docs, please see:</p>
+
+<p><a href="http://rubyneat.de">rubyneat.de</a></p>
+
+<p>For code documentation, please see:</p>
+
+<p><a
+href="http://www.rubydoc.info/github/flajann2/rubyneat">www.rubydoc.info/github/flajann2/rubyneat</a></p>
 
 <p>RubyNEAT is under intense development, and then will be under intense
 documentation, as this is expected to be a full blown pure Ruby
 implementation of the NEAT algorithm by Kenneth Stanley:</p>
 
 <p><a href="http://www.cs.ucf.edu/~kstanley">www.cs.ucf.edu/~kstanley</a>/</p>
+
+<h2 id="label-Gem+Version">Gem Version</h2>
+
+<p><a href="https://badge.fury.io/rb/rubyneat"><img
+src="https://badge.fury.io/rb/rubyneat.png"></a> <a
+href="https://travis-ci.org/flajann2/rubyneat"><img
+src="https://travis-ci.org/flajann2/rubyneat.svg?branch=hyper"></a></p>
 
 <h2 id="label-Quick+and+Dirty+Docs">Quick and Dirty Docs</h2>
 
@@ -97,6 +114,38 @@ mirrored here.</p>
 <p>and a scaffold Neater will be generated. Note that this generator is still
 in alpha, but improvements are coming shortly.</p>
 
+<h2 id="label-Enhanced+Substrate+HyperNEAT">Enhanced Substrate HyperNEAT</h2>
+
+<p>This version (and all subsequent versions) has the iterated ES HyperNEAT
+feature added. This represents a significant leap in the power of RubyNEAT,
+and as such will make this available to solve a wider class of problems.</p>
+
+<p>The decision to leapfrog HyperNEAT was made primarily on a number of
+fronts. for starters, HyperNEAT is very sensitive to changes in the CPPN,
+where ES HyperNEAT regenerates the neurons in the substrate on each and
+every change (evolution) of the CPPN. In this way, more stability can be
+had. On the other hand, it makes the expression phase more computationally
+expensive.</p>
+
+<p>We will seek hard-nosed ways to optimize the expressor performance.</p>
+
+<p>Also, with the dashboard will have to grow some extra abilities to provides
+visualization.</p>
+
+<h2 id="label-Modularization">Modularization</h2>
+
+<p>On the heels of ES HyperNEAT, we needed to add modularization to make that
+possible. We expose this modularization for direct usage outside of
+HyperNEAT, so that you may compose modules of ANNs and their relationships,
+which mirrors how the brain has &#39;modules&#39; of specific
+functionality.</p>
+
+<p>You of course may mix and match ES HyperNEAT modules with NEAT modules.
+We&#39;ll leave that to your imagination. This modularization should not be
+confused with the modularization that may automatically arise within ES
+HyperNEAT itself. Please see the Wiki for a deeper exploration of these
+ideas,</p>
+
 <h2 id="label-Examples">Examples</h2>
 
 <p>For some examples, clone or fork the following:</p>
@@ -121,6 +170,10 @@ implement your own Neater. Eventually all will be fully documented.</p>
 
 <h2 id="label-Release+Notes">Release Notes</h2>
 <ul><li>
+<p><code>0.5.0.hyper.alpha.0</code> Indroduction of multicritter (actually
+multi-genenome) modularity, ES HyperNEAT (which does not require
+multi-genome as such, as it&#39;s handled mostly in the Expressor)</p>
+</li><li>
 <p><code>0.3.5.alpha.7</code></p>
 
 <p>Console made functional.</p>
@@ -141,7 +194,7 @@ functions to get notifications.</p>
 
 <p>This code is released under the MIT license:</p>
 
-<p>Copyright © 2014 LRCSoft.com</p>
+<p>Copyright © 2014-2015 Fred Mitchell</p>
 
 <p>Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the “Software”),
@@ -163,9 +216,9 @@ DEALINGS IN THE SOFTWARE.</p>
 </div></div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:13 2014 by
+  Generated on Sat Jul 11 10:51:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

@@ -4,6 +4,8 @@ module NEAT
   #= Basis of all expressors. 
   # Expressor object turn genotypes into phenotypes.
   class Expressor < Operator
+    include SExpressions
+
     def initialize(c)
       super      
     end

@@ -6,7 +6,7 @@
 <title>
   Module: NEAT
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -84,7 +84,7 @@
   
     <dt class="r2 last">Defined in:</dt>
     <dd class="r2 last">lib/rubyneat/dsl.rb<span class="defines">,<br />
-  lib/rubyneat/graph.rb,<br /> lib/rubyneat/neuron.rb,<br /> lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/population.rb</span>
+  lib/rubyneat/graph.rb,<br /> lib/rubyneat/neuron.rb,<br /> lib/rubyneat/critter.rb,<br /> lib/rubyneat/evolver.rb,<br /> lib/rubyneat/rubyneat.rb,<br /> lib/rubyneat/reporting.rb,<br /> lib/rubyneat/expressor.rb,<br /> lib/rubyneat/evaluator.rb,<br /> lib/rubyneat/population.rb,<br /> lib/rubyneat/hyper_expressor.rb</span>
 </dd>
   
 </dl>
@@ -93,43 +93,19 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<h1 id="label-NEAT+--+Module+for+RubyNEAT.">NEAT – Module for RubyNEAT.</h1>
+<h1 id="label-RubyNEAT+Reporting">RubyNEAT Reporting</h1>
 
-<h2 id="label-Synopsis">Synopsis</h2>
+<p>Here we factor out all reporting-related functionality across the entire
+RubyNEAT system to this one place, because reporting is not directly
+related to RubyNEAT functionality. As such, it will make it much easier for
+forkers to slim down RubyNEAT for some specific application where reporting
+may not be so needed.</p>
 
-<p>We have a Population of Critters, and each Critter represents a network of
-Neurons and a connection list specifying how those Neurons are connected.</p>
-
-<p>Each Neuron has an implicit genotype and phenotype component. Neurons, from
-the Ruby perspective, contain their own code to produce their own
-phenotypes.</p>
-
-<p>There are input Neurons and output Neurons. The input Neurons are special,
-as they do not contain any input from other nodes, but serve as interfaces
-from the “real world”. Their range of inputs are open, and it shall be up
-to the input Neuron&#39;s phenotype generators to condition those inputs,
-if need be, to something more suitable for the neural network.</p>
-
-<h2 id="label-Issues">Issues</h2>
-
-<h3 id="label-Multicore+%2F+Cloud+Computing">Multicore / Cloud Computing</h3>
-
-<p>Some thought needs to be given to how to make this amenable to multiple
-processes so that we can leverage the power of multicore systems as well as
-multiple computers in the Cloud, etc.</p>
-
-<p>Our initial inclination  is to put all of that functionality in the
-Controller.</p>
-
-<h2 id="label-Uniquely+Generated+Named+Objects+%28UGNOs%29">Uniquely Generated Named Objects (UGNOs)</h2>
-
-<p>Every RubyNEAT Object instance is assigned a unique name generated
-randomly. The name has no other significance other than to uniquely
-identify the object.</p>
-
-<p>We have chosen the names of the letters of various alphabets to be the core
-of those names. The list may be subject to change until we are out of
-alpha, then will be set in quick drying concrete.</p>
+<p>As far as plugins go, we could insist that all plugins do their own
+reporting. However, we wish to insulate such activities from the internal
+structures of the Population, Critters, etc. simply they are subject to
+change. This affords us the one place to look to update the API in response
+to deep structural changes.</p>
 
 
   </div>
@@ -141,11 +117,11 @@ alpha, then will be set in quick drying concrete.</p>
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="NEAT/BasicNeuronTypes.html" title="NEAT::BasicNeuronTypes (module)">BasicNeuronTypes</a></span>, <span class='object_link'><a href="NEAT/DSL.html" title="NEAT::DSL (module)">DSL</a></span>, <span class='object_link'><a href="NEAT/Graph.html" title="NEAT::Graph (module)">Graph</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="NEAT/BasicNeuronTypes.html" title="NEAT::BasicNeuronTypes (module)">BasicNeuronTypes</a></span>, <span class='object_link'><a href="NEAT/DSL.html" title="NEAT::DSL (module)">DSL</a></span>, <span class='object_link'><a href="NEAT/Graph.html" title="NEAT::Graph (module)">Graph</a></span>, <span class='object_link'><a href="NEAT/SExpressions.html" title="NEAT::SExpressions (module)">SExpressions</a></span>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="NEAT/Controller.html" title="NEAT::Controller (class)">Controller</a></span>, <span class='object_link'><a href="NEAT/Critter.html" title="NEAT::Critter (class)">Critter</a></span>, <span class='object_link'><a href="NEAT/Evaluator.html" title="NEAT::Evaluator (class)">Evaluator</a></span>, <span class='object_link'><a href="NEAT/Evolver.html" title="NEAT::Evolver (class)">Evolver</a></span>, <span class='object_link'><a href="NEAT/Expressor.html" title="NEAT::Expressor (class)">Expressor</a></span>, <span class='object_link'><a href="NEAT/NeatException.html" title="NEAT::NeatException (class)">NeatException</a></span>, <span class='object_link'><a href="NEAT/NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span>, <span class='object_link'><a href="NEAT/Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span>, <span class='object_link'><a href="NEAT/Operator.html" title="NEAT::Operator (class)">Operator</a></span>, <span class='object_link'><a href="NEAT/Population.html" title="NEAT::Population (class)">Population</a></span>, <span class='object_link'><a href="NEAT/Trait.html" title="NEAT::Trait (class)">Trait</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="NEAT/Controller.html" title="NEAT::Controller (class)">Controller</a></span>, <span class='object_link'><a href="NEAT/Critter.html" title="NEAT::Critter (class)">Critter</a></span>, <span class='object_link'><a href="NEAT/Evaluator.html" title="NEAT::Evaluator (class)">Evaluator</a></span>, <span class='object_link'><a href="NEAT/Evolver.html" title="NEAT::Evolver (class)">Evolver</a></span>, <span class='object_link'><a href="NEAT/Expressor.html" title="NEAT::Expressor (class)">Expressor</a></span>, <span class='object_link'><a href="NEAT/HyperExpressor.html" title="NEAT::HyperExpressor (class)">HyperExpressor</a></span>, <span class='object_link'><a href="NEAT/NeatException.html" title="NEAT::NeatException (class)">NeatException</a></span>, <span class='object_link'><a href="NEAT/NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span>, <span class='object_link'><a href="NEAT/Neuron.html" title="NEAT::Neuron (class)">Neuron</a></span>, <span class='object_link'><a href="NEAT/Operator.html" title="NEAT::Operator (class)">Operator</a></span>, <span class='object_link'><a href="NEAT/Population.html" title="NEAT::Population (class)">Population</a></span>, <span class='object_link'><a href="NEAT/Trait.html" title="NEAT::Trait (class)">Trait</a></span>
     
   
 </p>
@@ -158,8 +134,9 @@ alpha, then will be set in quick drying concrete.</p>
           <div class="docstring">
   <div class="discussion">
     
-<p>Name of the stimulus method in NEAT::Critter::Phenotype to use for the
-singleton method expression of the critter.</p>
+<p>(prefix) Names of the stimulus (activation) and initialization methods in
+NEAT::Critter::Phenotype to use for the singleton method expressions of the
+critter.</p>
 
 
   </div>
@@ -169,7 +146,12 @@ singleton method expression of the critter.</p>
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='symbol'>:stimulate</span></pre></dd>
+        <dd><pre class="code"><span class='symbol'>:activate</span></pre></dd>
+      
+        <dt id="INITIALIZATION-constant" class="">INITIALIZATION =
+          
+        </dt>
+        <dd><pre class="code"><span class='symbol'>:initialize</span></pre></dd>
       
     </dl>
   
@@ -372,10 +354,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-558</pre>
+668</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 558</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 668</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -398,10 +380,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-559</pre>
+669</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 559</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 669</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_controller='>controller=</span><span class='lparen'>(</span><span class='id identifier rubyid_controller'>controller</span><span class='rparen'>)</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='id identifier rubyid_controller'>controller</span> <span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -424,10 +406,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-560</pre>
+670</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 560</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 670</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_controller'>create_controller</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span> <span class='op'>=</span> <span class='const'>Controller</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_parms'>parms</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -461,15 +443,15 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-89
-90
-91</pre>
+101
+102
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_dpp'>dpp</span> <span class='id identifier rubyid_ob'>ob</span>
-  <span class='comment'>#$log.ap ob
+  <span class='comment'>#log.ap ob
 </span><span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -502,10 +484,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-86</pre>
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span> <span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_gaussian'>gaussian</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -539,10 +521,10 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-83</pre>
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 95</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_new_innovation'>new_innovation</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
     </td>
@@ -565,14 +547,14 @@ singleton method expression of the critter.</p>
       <pre class="lines">
 
 
-72
-73
-74
-75
-76</pre>
+82
+83
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/rubyneat.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_random_name_generator'>random_name_generator</span>
   <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span>
@@ -589,9 +571,9 @@ singleton method expression of the critter.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:13 2014 by
+  Generated on Sat Jul 11 10:51:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>

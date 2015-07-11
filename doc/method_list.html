@@ -20,7 +20,11 @@
   </head>
   <body>
     <script type="text/javascript" charset="utf-8">
-      if (window.top.frames.main) {
+      var hasFrames = false;
+      try {
+        hasFrames = window.top.frames.main ? true : false;
+      } catch (e) { }
+      if (hasFrames) {
         document.getElementById('base_target').target = 'main';
         document.body.className = 'frames';
       }
@@ -54,97 +58,121 @@
   
 
   <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Graph/DependencyResolver.html#%5B%5D-class_method" title="NEAT::Graph::DependencyResolver.[] (method)">[]</a></span>
+    <small>NEAT::Graph::DependencyResolver</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#%5B%5D-class_method" title="NEAT::Critter::Genotype::Gene.[] (method)">[]</a></span>
+    <small>NEAT::Critter::Genotype::Gene</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Phenotype.html#%5B%5D-class_method" title="NEAT::Critter::Phenotype.[] (method)">[]</a></span>
     <small>NEAT::Critter::Phenotype</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Graph/DependencyResolver.html#%5B%5D-class_method" title="NEAT::Graph::DependencyResolver.[] (method)">[]</a></span>
-    <small>NEAT::Graph::DependencyResolver</small>
+    <span class='object_link'><a href="NEAT/Population.html#%5B%5D-instance_method" title="NEAT::Population#[] (method)">#[]</a></span>
+    <small>NEAT::Population</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#%5B%5D-class_method" title="NEAT::Critter::Genotype::Gene.[] (method)">[]</a></span>
-    <small>NEAT::Critter::Genotype::Gene</small>
+    <span class='object_link'><a href="NEAT/Critter.html#activation_funct-instance_method" title="NEAT::Critter#activation_funct (method)">#activation_funct</a></span>
+    <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#activation_funct-instance_method" title="NEAT::Critter::Genotype#activation_funct (method)">#activation_funct</a></span>
+    <small>NEAT::Critter::Genotype</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Graph.html#add-instance_method" title="NEAT::Graph#add (method)">#add</a></span>
     <small>NEAT::Graph</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Evolver/CritterOp.html#add_gene%21-instance_method" title="NEAT::Evolver::CritterOp#add_gene! (method)">#add_gene!</a></span>
     <small>NEAT::Evolver::CritterOp</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#add_genes-instance_method" title="NEAT::Critter::Genotype#add_genes (method)">#add_genes</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Evolver/CritterOp.html#add_neuron%21-instance_method" title="NEAT::Evolver::CritterOp#add_neuron! (method)">#add_neuron!</a></span>
     <small>NEAT::Evolver::CritterOp</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#add_neurons-instance_method" title="NEAT::Critter::Genotype#add_neurons (method)">#add_neurons</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#age_significance-instance_method" title="NEAT::Controller::NeatSettings#age_significance (method)">#age_significance</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Population.html#analyze%21-instance_method" title="NEAT::Population#analyze! (method)">#analyze!</a></span>
     <small>NEAT::Population</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Evaluator.html#analyze_for_fitness%21-instance_method" title="NEAT::Evaluator#analyze_for_fitness! (method)">#analyze_for_fitness!</a></span>
     <small>NEAT::Evaluator</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>
     <small>NEAT::NeatOb</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#babies_stolen-instance_method" title="NEAT::Controller::NeatSettings#babies_stolen (method)">#babies_stolen</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Population.html#best_critter-instance_method" title="NEAT::Population#best_critter (method)">#best_critter</a></span>
     <small>NEAT::Population</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="RubyNEAT/Cli/Generator/Neater.html#bias-instance_method" title="RubyNEAT::Cli::Generator::Neater#bias (method)">#bias</a></span>
     <small>RubyNEAT::Cli::Generator::Neater</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Neuron.html#bias%3F-class_method" title="NEAT::Neuron.bias? (method)">bias?</a></span>
+    <small>NEAT::Neuron</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Neuron.html#bias%3F-instance_method" title="NEAT::Neuron#bias? (method)">#bias?</a></span>
     <small>NEAT::Neuron</small>
   </li>
   
@@ -156,44 +184,32 @@
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Neuron.html#bias%3F-instance_method" title="NEAT::Neuron#bias? (method)">#bias?</a></span>
-    <small>NEAT::Neuron</small>
-  </li>
-  
-
-  <li class="r2 ">
     <span class='object_link'><a href="String.html#camel_case-instance_method" title="String#camel_case (method)">#camel_case</a></span>
     <small>String</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="String.html#camel_case_lower-instance_method" title="String#camel_case_lower (method)">#camel_case_lower</a></span>
     <small>String</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Graph.html#clear_graph-instance_method" title="NEAT::Graph#clear_graph (method)">#clear_graph</a></span>
     <small>NEAT::Graph</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Phenotype.html#code-instance_method" title="NEAT::Critter::Phenotype#code (method)">#code</a></span>
     <small>NEAT::Critter::Phenotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Population.html#compactify%21-class_method" title="NEAT::Population.compactify! (method)">compactify!</a></span>
     <small>NEAT::Population</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter.html#compare-instance_method" title="NEAT::Critter#compare (method)">#compare</a></span>
-    <small>NEAT::Critter</small>
   </li>
   
 
@@ -204,8 +220,20 @@
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter.html#compare-instance_method" title="NEAT::Critter#compare (method)">#compare</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#compatibility_threshold-instance_method" title="NEAT::Controller::NeatSettings#compatibility_threshold (method)">#compatibility_threshold</a></span>
     <small>NEAT::Controller::NeatSettings</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/DSL.html#compose-instance_method" title="NEAT::DSL#compose (method)">#compose</a></span>
+    <small>NEAT::DSL</small>
   </li>
   
 
@@ -216,32 +244,44 @@
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/DSL/Corpus.html#connections-instance_method" title="NEAT::DSL::Corpus#connections (method)">#connections</a></span>
+    <small>NEAT::DSL::Corpus</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/NeatOb.html#controller-instance_method" title="NEAT::NeatOb#controller (method)">#controller</a></span>
     <small>NEAT::NeatOb</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT.html#controller-class_method" title="NEAT.controller (method)">controller</a></span>
     <small>NEAT</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT.html#controller%3D-class_method" title="NEAT.controller= (method)">controller=</a></span>
     <small>NEAT</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/DSL.html#cost-instance_method" title="NEAT::DSL#cost (method)">#cost</a></span>
     <small>NEAT::DSL</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT.html#create_controller-class_method" title="NEAT.create_controller (method)">create_controller</a></span>
     <small>NEAT</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>
+    <small>NEAT::NeatOb</small>
   </li>
   
 
@@ -282,38 +322,50 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Phenotype.html#critter-instance_method" title="NEAT::Critter::Phenotype#critter (method)">#critter</a></span>
-    <small>NEAT::Critter::Phenotype</small>
-  </li>
-  
-
-  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#critter-instance_method" title="NEAT::Critter::Genotype#critter (method)">#critter</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter/Phenotype.html#critter-instance_method" title="NEAT::Critter::Phenotype#critter (method)">#critter</a></span>
+    <small>NEAT::Critter::Phenotype</small>
+  </li>
+  
+
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Population.html#critters-instance_method" title="NEAT::Population#critters (method)">#critters</a></span>
+    <span class='object_link'><a href="NEAT/Population.html#critter_hash-instance_method" title="NEAT::Population#critter_hash (method)">#critter_hash</a></span>
     <small>NEAT::Population</small>
   </li>
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Population.html#critters-instance_method" title="NEAT::Population#critters (method)">#critters</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#dangling_neurons-instance_method" title="NEAT::Critter::Genotype#dangling_neurons (method)">#dangling_neurons</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="RubyNEAT/Cli/Console.html#default_command-class_method" title="RubyNEAT::Cli::Console.default_command (method)">default_command</a></span>
     <small>RubyNEAT::Cli::Console</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/DSL.html#define-instance_method" title="NEAT::DSL#define (method)">#define</a></span>
     <small>NEAT::DSL</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/DSL/HyperComposition/CPPN.html#depth-instance_method" title="NEAT::DSL::HyperComposition::CPPN#depth (method)">#depth</a></span>
+    <small>NEAT::DSL::HyperComposition::CPPN</small>
   </li>
   
 
@@ -360,14 +412,14 @@
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Population.html#dump_s-instance_method" title="NEAT::Population#dump_s (method)">#dump_s</a></span>
-    <small>NEAT::Population</small>
+    <span class='object_link'><a href="NEAT/Critter.html#dump_s-instance_method" title="NEAT::Critter#dump_s (method)">#dump_s</a></span>
+    <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter.html#dump_s-instance_method" title="NEAT::Critter#dump_s (method)">#dump_s</a></span>
-    <small>NEAT::Critter</small>
+    <span class='object_link'><a href="NEAT/Population.html#dump_s-instance_method" title="NEAT::Population#dump_s (method)">#dump_s</a></span>
+    <small>NEAT::Population</small>
   </li>
   
 
@@ -390,8 +442,8 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Population.html#evaluate%21-class_method" title="NEAT::Population.evaluate! (method)">evaluate!</a></span>
-    <small>NEAT::Population</small>
+    <span class='object_link'><a href="NEAT/Evaluator.html#evaluate%21-instance_method" title="NEAT::Evaluator#evaluate! (method)">#evaluate!</a></span>
+    <small>NEAT::Evaluator</small>
   </li>
   
 
@@ -402,8 +454,8 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Evaluator.html#evaluate%21-instance_method" title="NEAT::Evaluator#evaluate! (method)">#evaluate!</a></span>
-    <small>NEAT::Evaluator</small>
+    <span class='object_link'><a href="NEAT/Population.html#evaluate%21-class_method" title="NEAT::Population.evaluate! (method)">evaluate!</a></span>
+    <small>NEAT::Population</small>
   </li>
   
 
@@ -438,26 +490,26 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#evolved_substrate_switch-instance_method" title="NEAT::Controller::NeatSettings#evolved_substrate_switch (method)">#evolved_substrate_switch</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
-  </li>
-  
-
-  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller.html#evolver-instance_method" title="NEAT::Controller#evolver (method)">#evolver</a></span>
     <small>NEAT::Controller</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller.html#evolver_class-instance_method" title="NEAT::Controller#evolver_class (method)">#evolver_class</a></span>
     <small>NEAT::Controller</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#excess_coefficient-instance_method" title="NEAT::Controller::NeatSettings#excess_coefficient (method)">#excess_coefficient</a></span>
     <small>NEAT::Controller::NeatSettings</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="RubyNEAT/Cli/Main.html#exit_on_failure%3F-class_method" title="RubyNEAT::Cli::Main.exit_on_failure? (method)">exit_on_failure?</a></span>
+    <small>RubyNEAT::Cli::Main</small>
   </li>
   
 
@@ -468,74 +520,98 @@
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/CosineNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::CosineNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::CosineNeuron</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/InputNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::InputNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::InputNeuron</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/BiasNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::BiasNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::BiasNeuron</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/TanhNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::TanhNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::TanhNeuron</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/SineNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::SineNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::SineNeuron</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/GaussianNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::GaussianNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::GaussianNeuron</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/LinearNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::LinearNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::LinearNeuron</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/SigmoidNeuron.html#express-instance_method" title="NEAT::BasicNeuronTypes::SigmoidNeuron#express (method)">#express</a></span>
-    <small>NEAT::BasicNeuronTypes::SigmoidNeuron</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter/Phenotype.html#express%21-instance_method" title="NEAT::Critter::Phenotype#express! (method)">#express!</a></span>
-    <small>NEAT::Critter::Phenotype</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Expressor.html#express%21-instance_method" title="NEAT::Expressor#express! (method)">#express!</a></span>
-    <small>NEAT::Expressor</small>
-  </li>
-  
-
-  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Critter.html#express%21-instance_method" title="NEAT::Critter#express! (method)">#express!</a></span>
     <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter/Phenotype.html#express%21-instance_method" title="NEAT::Critter::Phenotype#express! (method)">#express!</a></span>
+    <small>NEAT::Critter::Phenotype</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Expressor.html#express%21-instance_method" title="NEAT::Expressor#express! (method)">#express!</a></span>
+    <small>NEAT::Expressor</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Population.html#express%21-instance_method" title="NEAT::Population#express! (method)">#express!</a></span>
     <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Neuron.html#express_ast-instance_method" title="NEAT::Neuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::Neuron</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/InputNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::InputNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::InputNeuron</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/BiasNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::BiasNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::BiasNeuron</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/SigmoidNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::SigmoidNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::SigmoidNeuron</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/TanhNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::TanhNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::TanhNeuron</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/SineNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::SineNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::SineNeuron</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/CosineNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::CosineNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::CosineNeuron</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/LinearNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::LinearNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::LinearNeuron</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/MulNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::MulNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::MulNeuron</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/HeavisideNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::HeavisideNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::HeavisideNeuron</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/SignNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::SignNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::SignNeuron</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/GaussianNeuron.html#express_ast-instance_method" title="NEAT::BasicNeuronTypes::GaussianNeuron#express_ast (method)">#express_ast</a></span>
+    <small>NEAT::BasicNeuronTypes::GaussianNeuron</small>
   </li>
   
 
@@ -558,7 +634,7 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Population.html#fitness-instance_method" title="NEAT::Population#fitness (method)">#fitness</a></span>
+    <span class='object_link'><a href="NEAT/Population.html#find_critters-instance_method" title="NEAT::Population#find_critters (method)">#find_critters</a></span>
     <small>NEAT::Population</small>
   </li>
   
@@ -576,26 +652,38 @@
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Population.html#fitness-instance_method" title="NEAT::Population#fitness (method)">#fitness</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#fitness_cost-instance_method" title="NEAT::Critter::Genotype#fitness_cost (method)">#fitness_cost</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#forget%21-instance_method" title="NEAT::Critter::Genotype#forget! (method)">#forget!</a></span>
+    <small>NEAT::Critter::Genotype</small>
+  </li>
+  
+
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#fitness_cost_per_gene-instance_method" title="NEAT::Controller::NeatSettings#fitness_cost_per_gene (method)">#fitness_cost_per_gene</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#funct_outputs-instance_method" title="NEAT::Critter::Genotype#funct_outputs (method)">#funct_outputs</a></span>
+    <small>NEAT::Critter::Genotype</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#fitness_cost_per_neuron-instance_method" title="NEAT::Controller::NeatSettings#fitness_cost_per_neuron (method)">#fitness_cost_per_neuron</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#funct_parameters-instance_method" title="NEAT::Critter::Genotype#funct_parameters (method)">#funct_parameters</a></span>
+    <small>NEAT::Critter::Genotype</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype.html#forget%21-instance_method" title="NEAT::Critter::Genotype#forget! (method)">#forget!</a></span>
-    <small>NEAT::Critter::Genotype</small>
+    <span class='object_link'><a href="NEAT/Critter.html#funct_params-instance_method" title="NEAT::Critter#funct_params (method)">#funct_params</a></span>
+    <small>NEAT::Critter</small>
   </li>
   
 
@@ -630,50 +718,50 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#genotype-instance_method" title="NEAT::Critter::Genotype::Gene#genotype (method)">#genotype</a></span>
-    <small>NEAT::Critter::Genotype::Gene</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter.html#genotype-instance_method" title="NEAT::Critter#genotype (method)">#genotype</a></span>
-    <small>NEAT::Critter</small>
-  </li>
-  
-
-  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Neuron.html#genotype-instance_method" title="NEAT::Neuron#genotype (method)">#genotype</a></span>
     <small>NEAT::Neuron</small>
   </li>
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#genotype-instance_method" title="NEAT::Critter::Genotype::Gene#genotype (method)">#genotype</a></span>
+    <small>NEAT::Critter::Genotype::Gene</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#hash_on_fitness-instance_method" title="NEAT::Controller::NeatSettings#hash_on_fitness (method)">#hash_on_fitness</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Neuron.html#heirarchy_number-instance_method" title="NEAT::Neuron#heirarchy_number (method)">#heirarchy_number</a></span>
     <small>NEAT::Neuron</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="RubyNEAT/Cli/Generator/Neater.html#hidden-instance_method" title="RubyNEAT::Cli::Generator::Neater#hidden (method)">#hidden</a></span>
     <small>RubyNEAT::Cli::Generator::Neater</small>
   </li>
   
 
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/DSL/HyperComposition.html#hyper-instance_method" title="NEAT::DSL::HyperComposition#hyper (method)">#hyper</a></span>
+    <small>NEAT::DSL::HyperComposition</small>
+  </li>
+  
+
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Population.html#hidden_neurons-instance_method" title="NEAT::Population#hidden_neurons (method)">#hidden_neurons</a></span>
-    <small>NEAT::Population</small>
+    <span class='object_link'><a href="NEAT/Neuron.html#hyper%3F-instance_method" title="NEAT::Neuron#hyper? (method)">#hyper?</a></span>
+    <small>NEAT::Neuron</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#hyper_switch-instance_method" title="NEAT::Controller::NeatSettings#hyper_switch (method)">#hyper_switch</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
+    <span class='object_link'><a href="NEAT/Critter.html#hyper%3F-instance_method" title="NEAT::Critter#hyper? (method)">#hyper?</a></span>
+    <small>NEAT::Critter</small>
   </li>
   
 
@@ -690,68 +778,32 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype.html#initialize-instance_method" title="NEAT::Critter::Genotype#initialize (method)">#initialize</a></span>
-    <small>NEAT::Critter::Genotype</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Evolver.html#initialize-instance_method" title="NEAT::Evolver#initialize (method)">#initialize</a></span>
-    <small>NEAT::Evolver</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter.html#initialize-instance_method" title="NEAT::Critter#initialize (method)">#initialize</a></span>
+    <span class='object_link'><a href="NEAT/Critter.html#init_funct-instance_method" title="NEAT::Critter#init_funct (method)">#init_funct</a></span>
     <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Evolver/CritterOp.html#initialize-instance_method" title="NEAT::Evolver::CritterOp#initialize (method)">#initialize</a></span>
-    <small>NEAT::Evolver::CritterOp</small>
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#init_funct-instance_method" title="NEAT::Critter::Genotype#init_funct (method)">#init_funct</a></span>
+    <small>NEAT::Critter::Genotype</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Expressor.html#initialize-instance_method" title="NEAT::Expressor#initialize (method)">#initialize</a></span>
-    <small>NEAT::Expressor</small>
+    <span class='object_link'><a href="NEAT/DSL/Composition.html#initialize-instance_method" title="NEAT::DSL::Composition#initialize (method)">#initialize</a></span>
+    <small>NEAT::DSL::Composition</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#initialize-instance_method" title="NEAT::Critter::Genotype::Gene#initialize (method)">#initialize</a></span>
-    <small>NEAT::Critter::Genotype::Gene</small>
+    <span class='object_link'><a href="NEAT/DSL/Connections.html#initialize-instance_method" title="NEAT::DSL::Connections#initialize (method)">#initialize</a></span>
+    <small>NEAT::DSL::Connections</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller.html#initialize-instance_method" title="NEAT::Controller#initialize (method)">#initialize</a></span>
-    <small>NEAT::Controller</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/BasicNeuronTypes/BiasNeuron.html#initialize-instance_method" title="NEAT::BasicNeuronTypes::BiasNeuron#initialize (method)">#initialize</a></span>
-    <small>NEAT::BasicNeuronTypes::BiasNeuron</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#initialize-instance_method" title="NEAT::Controller::NeatSettings#initialize (method)">#initialize</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Population.html#initialize-instance_method" title="NEAT::Population#initialize (method)">#initialize</a></span>
-    <small>NEAT::Population</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>
-    <small>NEAT::NeatOb</small>
+    <span class='object_link'><a href="NEAT/DSL/Corpus.html#initialize-instance_method" title="NEAT::DSL::Corpus#initialize (method)">#initialize</a></span>
+    <small>NEAT::DSL::Corpus</small>
   </li>
   
 
@@ -762,32 +814,92 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Population.html#initialize_for_recurrence%21-instance_method" title="NEAT::Population#initialize_for_recurrence! (method)">#initialize_for_recurrence!</a></span>
-    <small>NEAT::Population</small>
+    <span class='object_link'><a href="NEAT/BasicNeuronTypes/BiasNeuron.html#initialize-instance_method" title="NEAT::BasicNeuronTypes::BiasNeuron#initialize (method)">#initialize</a></span>
+    <small>NEAT::BasicNeuronTypes::BiasNeuron</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter.html#initialize_neurons%21-instance_method" title="NEAT::Critter#initialize_neurons! (method)">#initialize_neurons!</a></span>
+    <span class='object_link'><a href="NEAT/Critter.html#initialize-instance_method" title="NEAT::Critter#initialize (method)">#initialize</a></span>
     <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype.html#innervate%21-instance_method" title="NEAT::Critter::Genotype#innervate! (method)">#innervate!</a></span>
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#initialize-instance_method" title="NEAT::Critter::Genotype#initialize (method)">#initialize</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#innovation-instance_method" title="NEAT::Critter::Genotype::Gene#innovation (method)">#innovation</a></span>
+    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#initialize-instance_method" title="NEAT::Critter::Genotype::Gene#initialize (method)">#initialize</a></span>
     <small>NEAT::Critter::Genotype::Gene</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Neuron.html#input%3F-instance_method" title="NEAT::Neuron#input? (method)">#input?</a></span>
-    <small>NEAT::Neuron</small>
+    <span class='object_link'><a href="NEAT/Evolver.html#initialize-instance_method" title="NEAT::Evolver#initialize (method)">#initialize</a></span>
+    <small>NEAT::Evolver</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Evolver/CritterOp.html#initialize-instance_method" title="NEAT::Evolver::CritterOp#initialize (method)">#initialize</a></span>
+    <small>NEAT::Evolver::CritterOp</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>
+    <small>NEAT::NeatOb</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#initialize-instance_method" title="NEAT::Controller::NeatSettings#initialize (method)">#initialize</a></span>
+    <small>NEAT::Controller::NeatSettings</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Controller.html#initialize-instance_method" title="NEAT::Controller#initialize (method)">#initialize</a></span>
+    <small>NEAT::Controller</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Expressor.html#initialize-instance_method" title="NEAT::Expressor#initialize (method)">#initialize</a></span>
+    <small>NEAT::Expressor</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Population.html#initialize-instance_method" title="NEAT::Population#initialize (method)">#initialize</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Population.html#initialize_for_recurrence%21-instance_method" title="NEAT::Population#initialize_for_recurrence! (method)">#initialize_for_recurrence!</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter.html#initialize_neurons%21-instance_method" title="NEAT::Critter#initialize_neurons! (method)">#initialize_neurons!</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#innervate%21-instance_method" title="NEAT::Critter::Genotype#innervate! (method)">#innervate!</a></span>
+    <small>NEAT::Critter::Genotype</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#innovation-instance_method" title="NEAT::Critter::Genotype::Gene#innovation (method)">#innovation</a></span>
+    <small>NEAT::Critter::Genotype::Gene</small>
   </li>
   
 
@@ -798,38 +910,50 @@
   
 
   <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Neuron.html#input%3F-instance_method" title="NEAT::Neuron#input? (method)">#input?</a></span>
+    <small>NEAT::Neuron</small>
+  </li>
+  
+
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/BasicNeuronTypes/InputNeuron.html#input%3F-class_method" title="NEAT::BasicNeuronTypes::InputNeuron.input? (method)">input?</a></span>
     <small>NEAT::BasicNeuronTypes::InputNeuron</small>
   </li>
   
 
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Population.html#input_neurons-instance_method" title="NEAT::Population#input_neurons (method)">#input_neurons</a></span>
-    <small>NEAT::Population</small>
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/DSL/Connections.html#inputs-instance_method" title="NEAT::DSL::Connections#inputs (method)">#inputs</a></span>
+    <small>NEAT::DSL::Connections</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Graph.html#inputs-instance_method" title="NEAT::Graph#inputs (method)">#inputs</a></span>
     <small>NEAT::Graph</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="RubyNEAT/Cli/Generator/Neater.html#inputs-instance_method" title="RubyNEAT::Cli::Generator::Neater#inputs (method)">#inputs</a></span>
     <small>RubyNEAT::Cli::Generator::Neater</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#interspecies_mate_rate-instance_method" title="NEAT::Controller::NeatSettings#interspecies_mate_rate (method)">#interspecies_mate_rate</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#linktrait_mutation_sig-instance_method" title="NEAT::Controller::NeatSettings#linktrait_mutation_sig (method)">#linktrait_mutation_sig</a></span>
     <small>NEAT::Controller::NeatSettings</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>
+    <small>NEAT::NeatOb</small>
   </li>
   
 
@@ -846,37 +970,25 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>
-    <small>NEAT::NeatOb</small>
-  </li>
-  
-
-  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mate_multipoint_avg_prob-instance_method" title="NEAT::Controller::NeatSettings#mate_multipoint_avg_prob (method)">#mate_multipoint_avg_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mate_multipoint_prob-instance_method" title="NEAT::Controller::NeatSettings#mate_multipoint_prob (method)">#mate_multipoint_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mate_only_prob-instance_method" title="NEAT::Controller::NeatSettings#mate_only_prob (method)">#mate_only_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mate_singlepoint_prob-instance_method" title="NEAT::Controller::NeatSettings#mate_singlepoint_prob (method)">#mate_singlepoint_prob</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
-  </li>
-  
-
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#max_population_history-instance_method" title="NEAT::Controller::NeatSettings#max_population_history (method)">#max_population_history</a></span>
+    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mate_singlepoint_prob-instance_method" title="NEAT::Controller::NeatSettings#mate_singlepoint_prob (method)">#mate_singlepoint_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
@@ -900,164 +1012,152 @@
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter.html#modular%3F-instance_method" title="NEAT::Critter#modular? (method)">#modular?</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Evolver.html#mutate%21-instance_method" title="NEAT::Evolver#mutate! (method)">#mutate!</a></span>
     <small>NEAT::Evolver</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Population.html#mutate%21-instance_method" title="NEAT::Population#mutate! (method)">#mutate!</a></span>
     <small>NEAT::Population</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_add_gene_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_add_gene_prob (method)">#mutate_add_gene_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_add_neuron_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_add_neuron_prob (method)">#mutate_add_neuron_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_change_gene_weights_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_change_gene_weights_prob (method)">#mutate_change_gene_weights_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_change_gene_weights_sd-instance_method" title="NEAT::Controller::NeatSettings#mutate_change_gene_weights_sd (method)">#mutate_change_gene_weights_sd</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_gene_disable_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_gene_disable_prob (method)">#mutate_gene_disable_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_gene_reenable_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_gene_reenable_prob (method)">#mutate_gene_reenable_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_gene_trait_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_gene_trait_prob (method)">#mutate_gene_trait_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_neuron_trait_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_neuron_trait_prob (method)">#mutate_neuron_trait_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_only_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_only_prob (method)">#mutate_only_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_perturb_gene_weights_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_perturb_gene_weights_prob (method)">#mutate_perturb_gene_weights_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_perturb_gene_weights_sd-instance_method" title="NEAT::Controller::NeatSettings#mutate_perturb_gene_weights_sd (method)">#mutate_perturb_gene_weights_sd</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_random_trait_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_random_trait_prob (method)">#mutate_random_trait_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutate_toggle_enable_prob-instance_method" title="NEAT::Controller::NeatSettings#mutate_toggle_enable_prob (method)">#mutate_toggle_enable_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#mutdiff_coefficient-instance_method" title="NEAT::Controller::NeatSettings#mutdiff_coefficient (method)">#mutdiff_coefficient</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/NeatOb.html#name-instance_method" title="NEAT::NeatOb#name (method)">#name</a></span>
     <small>NEAT::NeatOb</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="RubyNEAT/Cli/Main.html#neater-instance_method" title="RubyNEAT::Cli::Main#neater (method)">#neater</a></span>
     <small>RubyNEAT::Cli::Main</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="RubyNEAT/Cli/List.html#neaters-instance_method" title="RubyNEAT::Cli::List#neaters (method)">#neaters</a></span>
     <small>RubyNEAT::Cli::List</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/BasicNeuronTypes/BiasNeuron.html#neu_bias-instance_method" title="NEAT::BasicNeuronTypes::BiasNeuron#neu_bias (method)">#neu_bias</a></span>
     <small>NEAT::BasicNeuronTypes::BiasNeuron</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#neucleate-instance_method" title="NEAT::Critter::Genotype#neucleate (method)">#neucleate</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#neural_gene_map-instance_method" title="NEAT::Critter::Genotype#neural_gene_map (method)">#neural_gene_map</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Controller.html#neural_hidden-instance_method" title="NEAT::Controller#neural_hidden (method)">#neural_hidden</a></span>
-    <small>NEAT::Controller</small>
-  </li>
-  
-
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller.html#neural_inputs-instance_method" title="NEAT::Controller#neural_inputs (method)">#neural_inputs</a></span>
-    <small>NEAT::Controller</small>
-  </li>
-  
-
-  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#neural_inputs-instance_method" title="NEAT::Critter::Genotype#neural_inputs (method)">#neural_inputs</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#neural_outputs-instance_method" title="NEAT::Critter::Genotype#neural_outputs (method)">#neural_outputs</a></span>
     <small>NEAT::Critter::Genotype</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Controller.html#neural_outputs-instance_method" title="NEAT::Controller#neural_outputs (method)">#neural_outputs</a></span>
-    <small>NEAT::Controller</small>
   </li>
   
 
@@ -1152,8 +1252,8 @@
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Population.html#output_neurons-instance_method" title="NEAT::Population#output_neurons (method)">#output_neurons</a></span>
-    <small>NEAT::Population</small>
+    <span class='object_link'><a href="NEAT/DSL/Connections.html#outputs-instance_method" title="NEAT::DSL::Connections#outputs (method)">#outputs</a></span>
+    <small>NEAT::DSL::Connections</small>
   </li>
   
 
@@ -1176,14 +1276,14 @@
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Controller.html#population-instance_method" title="NEAT::Controller#population (method)">#population</a></span>
-    <small>NEAT::Controller</small>
+    <span class='object_link'><a href="NEAT/Critter.html#population-instance_method" title="NEAT::Critter#population (method)">#population</a></span>
+    <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter.html#population-instance_method" title="NEAT::Critter#population (method)">#population</a></span>
-    <small>NEAT::Critter</small>
+    <span class='object_link'><a href="NEAT/Controller.html#population-instance_method" title="NEAT::Controller#population (method)">#population</a></span>
+    <small>NEAT::Controller</small>
   </li>
   
 
@@ -1194,80 +1294,80 @@
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller.html#population_history-instance_method" title="NEAT::Controller#population_history (method)">#population_history</a></span>
+    <span class='object_link'><a href="NEAT/Controller.html#population_complete-instance_method" title="NEAT::Controller#population_complete (method)">#population_complete</a></span>
     <small>NEAT::Controller</small>
   </li>
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Controller.html#population_history-instance_method" title="NEAT::Controller#population_history (method)">#population_history</a></span>
+    <small>NEAT::Controller</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#population_size-instance_method" title="NEAT::Controller::NeatSettings#population_size (method)">#population_size</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#print_every-instance_method" title="NEAT::Controller::NeatSettings#print_every (method)">#print_every</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter/Genotype.html#prune%21-instance_method" title="NEAT::Critter::Genotype#prune! (method)">#prune!</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/DSL.html#query-instance_method" title="NEAT::DSL#query (method)">#query</a></span>
     <small>NEAT::DSL</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT.html#random_name_generator-class_method" title="NEAT.random_name_generator (method)">random_name_generator</a></span>
     <small>NEAT</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Evaluator.html#ready_for_evaluation-instance_method" title="NEAT::Evaluator#ready_for_evaluation (method)">#ready_for_evaluation</a></span>
     <small>NEAT::Evaluator</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Critter.html#ready_for_expression%21-instance_method" title="NEAT::Critter#ready_for_expression! (method)">#ready_for_expression!</a></span>
     <small>NEAT::Critter</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#real_time_switch-instance_method" title="NEAT::Controller::NeatSettings#real_time_switch (method)">#real_time_switch</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#recur_only_prob-instance_method" title="NEAT::Controller::NeatSettings#recur_only_prob (method)">#recur_only_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#recur_prob-instance_method" title="NEAT::Controller::NeatSettings#recur_prob (method)">#recur_prob</a></span>
     <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/DSL.html#recurrence-instance_method" title="NEAT::DSL#recurrence (method)">#recurrence</a></span>
     <small>NEAT::DSL</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#recurrency_switch-instance_method" title="NEAT::Controller::NeatSettings#recurrency_switch (method)">#recurrency_switch</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
   </li>
   
 
@@ -1290,32 +1390,104 @@
   
 
   <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter.html#report-instance_method" title="NEAT::Critter#report (method)">#report</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Population.html#report_best_fit-instance_method" title="NEAT::Population#report_best_fit (method)">#report_best_fit</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Population.html#report_critters-instance_method" title="NEAT::Population#report_critters (method)">#report_critters</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Population.html#report_fitness-instance_method" title="NEAT::Population#report_fitness (method)">#report_fitness</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Population.html#report_fitness_species-instance_method" title="NEAT::Population#report_fitness_species (method)">#report_fitness_species</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter.html#report_genotype-instance_method" title="NEAT::Critter#report_genotype (method)">#report_genotype</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter.html#report_neuron_types-instance_method" title="NEAT::Critter#report_neuron_types (method)">#report_neuron_types</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Critter.html#report_phenotype-instance_method" title="NEAT::Critter#report_phenotype (method)">#report_phenotype</a></span>
+    <small>NEAT::Critter</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Population.html#report_worst_fit-instance_method" title="NEAT::Population#report_worst_fit (method)">#report_worst_fit</a></span>
+    <small>NEAT::Population</small>
+  </li>
+  
+
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Graph/DependencyResolver.html#resolve-instance_method" title="NEAT::Graph::DependencyResolver#resolve (method)">#resolve</a></span>
     <small>NEAT::Graph::DependencyResolver</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Graph/DependencyResolver.html#resolve%21-instance_method" title="NEAT::Graph::DependencyResolver#resolve! (method)">#resolve!</a></span>
     <small>NEAT::Graph::DependencyResolver</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="RubyNEAT/Cli/Generator/NewProject.html#ruby-instance_method" title="RubyNEAT::Cli::Generator::NewProject#ruby (method)">#ruby</a></span>
     <small>RubyNEAT::Cli::Generator::NewProject</small>
   </li>
   
 
-  <li class="r1 ">
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Controller.html#run-instance_method" title="NEAT::Controller#run (method)">#run</a></span>
     <small>NEAT::Controller</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/DSL.html#run_engine-instance_method" title="NEAT::DSL#run_engine (method)">#run_engine</a></span>
     <small>NEAT::DSL</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Controller.html#run_evaluate_population-instance_method" title="NEAT::Controller#run_evaluate_population (method)">#run_evaluate_population</a></span>
+    <small>NEAT::Controller</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/SExpressions.html#s-instance_method" title="NEAT::SExpressions#s (method)">#s</a></span>
+    <small>NEAT::SExpressions</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/DSL/HyperComposition/CPPN.html#scale-instance_method" title="NEAT::DSL::HyperComposition::CPPN#scale (method)">#scale</a></span>
+    <small>NEAT::DSL::HyperComposition::CPPN</small>
   </li>
   
 
@@ -1392,14 +1564,14 @@
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter/Phenotype.html#to_s-instance_method" title="NEAT::Critter::Phenotype#to_s (method)">#to_s</a></span>
-    <small>NEAT::Critter::Phenotype</small>
+    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#to_s-instance_method" title="NEAT::Critter::Genotype::Gene#to_s (method)">#to_s</a></span>
+    <small>NEAT::Critter::Genotype::Gene</small>
   </li>
   
 
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#to_s-instance_method" title="NEAT::Critter::Genotype::Gene#to_s (method)">#to_s</a></span>
-    <small>NEAT::Critter::Genotype::Gene</small>
+    <span class='object_link'><a href="NEAT/Critter/Phenotype.html#to_s-instance_method" title="NEAT::Critter::Phenotype#to_s (method)">#to_s</a></span>
+    <small>NEAT::Critter::Phenotype</small>
   </li>
   
 
@@ -1434,54 +1606,84 @@
   
 
   <li class="r2 ">
+    <span class='object_link'><a href="NEAT/DSL/HyperComposition/CPPN.html#tuple-instance_method" title="NEAT::DSL::HyperComposition::CPPN#tuple (method)">#tuple</a></span>
+    <small>NEAT::DSL::HyperComposition::CPPN</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/DSL/Corpus.html#tweann-instance_method" title="NEAT::DSL::Corpus#tweann (method)">#tweann</a></span>
+    <small>NEAT::DSL::Corpus</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="NEAT/Neuron.html#type_name-class_method" title="NEAT::Neuron.type_name (method)">type_name</a></span>
     <small>NEAT::Neuron</small>
   </li>
   
 
   <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Neuron.html#type_name-instance_method" title="NEAT::Neuron#type_name (method)">#type_name</a></span>
+    <small>NEAT::Neuron</small>
+  </li>
+  
+
+  <li class="r2 ">
     <span class='object_link'><a href="RubyNEAT/Cli/List.html#types-instance_method" title="RubyNEAT::Cli::List#types (method)">#types</a></span>
     <small>RubyNEAT::Cli::List</small>
   </li>
   
 
-  <li class="r2 ">
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/DSL.html#uncondition_boolean_vector-instance_method" title="NEAT::DSL#uncondition_boolean_vector (method)">#uncondition_boolean_vector</a></span>
     <small>NEAT::DSL</small>
   </li>
   
 
-  <li class="r1 ">
-    <span class='object_link'><a href="RubyNEAT/Cli/Main.html#version-instance_method" title="RubyNEAT::Cli::Main#version (method)">#version</a></span>
-    <small>RubyNEAT::Cli::Main</small>
-  </li>
-  
-
   <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#weigh_mut_power-instance_method" title="NEAT::Controller::NeatSettings#weigh_mut_power (method)">#weigh_mut_power</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
+    <span class='object_link'><a href="NEAT/Critter.html#uvar-instance_method" title="NEAT::Critter#uvar (method)">#uvar</a></span>
+    <small>NEAT::Critter</small>
   </li>
   
 
   <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#weight-instance_method" title="NEAT::Critter::Genotype::Gene#weight (method)">#weight</a></span>
-    <small>NEAT::Critter::Genotype::Gene</small>
-  </li>
-  
-
-  <li class="r2 ">
-    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#weight_coefficient-instance_method" title="NEAT::Controller::NeatSettings#weight_coefficient (method)">#weight_coefficient</a></span>
-    <small>NEAT::Controller::NeatSettings</small>
-  </li>
-  
-
-  <li class="r1 ">
-    <span class='object_link'><a href="NEAT/Critter/Genotype.html#wire%21-instance_method" title="NEAT::Critter::Genotype#wire! (method)">#wire!</a></span>
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#uvar-instance_method" title="NEAT::Critter::Genotype#uvar (method)">#uvar</a></span>
     <small>NEAT::Critter::Genotype</small>
   </li>
   
 
   <li class="r2 ">
+    <span class='object_link'><a href="RubyNEAT/Cli/Main.html#version-instance_method" title="RubyNEAT::Cli::Main#version (method)">#version</a></span>
+    <small>RubyNEAT::Cli::Main</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#weigh_mut_power-instance_method" title="NEAT::Controller::NeatSettings#weigh_mut_power (method)">#weigh_mut_power</a></span>
+    <small>NEAT::Controller::NeatSettings</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype/Gene.html#weight-instance_method" title="NEAT::Critter::Genotype::Gene#weight (method)">#weight</a></span>
+    <small>NEAT::Critter::Genotype::Gene</small>
+  </li>
+  
+
+  <li class="r1 ">
+    <span class='object_link'><a href="NEAT/Controller/NeatSettings.html#weight_coefficient-instance_method" title="NEAT::Controller::NeatSettings#weight_coefficient (method)">#weight_coefficient</a></span>
+    <small>NEAT::Controller::NeatSettings</small>
+  </li>
+  
+
+  <li class="r2 ">
+    <span class='object_link'><a href="NEAT/Critter/Genotype.html#wire%21-instance_method" title="NEAT::Critter::Genotype#wire! (method)">#wire!</a></span>
+    <small>NEAT::Critter::Genotype</small>
+  </li>
+  
+
+  <li class="r1 ">
     <span class='object_link'><a href="NEAT/Population.html#worst_critter-instance_method" title="NEAT::Population#worst_critter (method)">#worst_critter</a></span>
     <small>NEAT::Population</small>
   </li>

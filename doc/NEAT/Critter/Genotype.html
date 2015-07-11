@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Critter::Genotype
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -216,7 +216,7 @@ numbers.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Genes keyed by innovation numbers.</p>
+<p>Genes keyed by names.</p>
 </div></span>
   
 </li>
@@ -359,6 +359,30 @@ do the call to that neuron function with the appropriate weights.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#activation_funct-instance_method" title="#activation_funct (instance method)">- (Object) <strong>activation_funct</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The name (symbol) of our activation function.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#add_genes-instance_method" title="#add_genes (instance method)">- (Object) <strong>add_genes</strong>(*genes) </a>
     
 
@@ -469,6 +493,78 @@ do the call to that neuron function with the appropriate weights.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Make the neurons forget their wiring.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#funct_outputs-instance_method" title="#funct_outputs (instance method)">- (Object) <strong>funct_outputs</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The list of output variables returned by the function.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#funct_parameters-instance_method" title="#funct_parameters (instance method)">- (Object) <strong>funct_parameters</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>input parameters to the TWEANN here.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#init_funct-instance_method" title="#init_funct (instance method)">- (Object) <strong>init_funct</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The name (symbol) of our initialization function.</p>
 </div></span>
   
 </li>
@@ -602,6 +698,31 @@ genes.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#uvar-instance_method" title="#uvar (instance method)">- (Object) <strong>uvar</strong>(sym) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Generate a unique instance variable name from the given, because the TWEANs
+share the same namespace with the instance object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#wire%21-instance_method" title="#wire! (instance method)">- (Object) <strong>wire!</strong> </a>
     
 
@@ -636,8 +757,9 @@ genes.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -667,28 +789,32 @@ genes.</p>
       <pre class="lines">
 
 
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106</pre>
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 143</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='comma'>,</span> <span class='id identifier rubyid_mating'>mating</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
@@ -696,18 +822,22 @@ genes.</p>
 
   <span class='comment'># Initialize basic structures
 </span>  <span class='ivar'>@genes</span> <span class='op'>=</span> <span class='kw'>nil</span>
-  <span class='ivar'>@neural_inputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='ivar'>@critter</span><span class='period'>.</span><span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_input_neurons'>input_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='op'>|</span>
+
+  <span class='comment'># More setup before defining the neural situation.
+</span>  <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_composition'>composition</span> <span class='op'>=</span> <span class='ivar'>@critter</span><span class='period'>.</span><span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_corpus'>corpus</span><span class='period'>.</span><span class='id identifier rubyid_compositions'>compositions</span><span class='lbracket'>[</span><span class='ivar'>@name</span><span class='rbracket'>]</span>
+
+  <span class='ivar'>@neural_inputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_composition'>composition</span><span class='period'>.</span><span class='id identifier rubyid_neural_inputs'>neural_inputs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='op'>|</span>
                           <span class='lbracket'>[</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='comma'>,</span> <span class='id identifier rubyid_sym'>sym</span><span class='rparen'>)</span><span class='rbracket'>]</span>
                         <span class='rbrace'>}</span><span class='rbracket'>]</span>
 
-  <span class='ivar'>@neural_outputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='ivar'>@critter</span><span class='period'>.</span><span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_output_neurons'>output_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='op'>|</span>
+  <span class='ivar'>@neural_outputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_composition'>composition</span><span class='period'>.</span><span class='id identifier rubyid_neural_outputs'>neural_outputs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='op'>|</span>
                           <span class='lbracket'>[</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_ineu'>ineu</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@controller</span><span class='comma'>,</span> <span class='id identifier rubyid_sym'>sym</span><span class='rparen'>)</span><span class='rbracket'>]</span>
                         <span class='rbrace'>}</span><span class='rbracket'>]</span>
   <span class='ivar'>@neurons</span> <span class='op'>=</span> <span class='ivar'>@neural_inputs</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span> <span class='comment'># this must be a shallow clone!
 </span>  <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span> <span class='ivar'>@neural_outputs</span>
 
   <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_evolver'>evolver</span><span class='period'>.</span><span class='id identifier rubyid_gen_initial_genes!'>gen_initial_genes!</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_mating'>mating</span>
-  <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -747,12 +877,12 @@ genes.</p>
       <pre class="lines">
 
 
-67
-68
-69</pre>
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 118</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_critter'>critter</span>
   <span class='ivar'>@critter</span>
@@ -794,12 +924,12 @@ genes.</p>
       <pre class="lines">
 
 
-79
-80
-81</pre>
+130
+131
+132</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 130</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dangling_neurons'>dangling_neurons</span>
   <span class='ivar'>@dangling_neurons</span>
@@ -823,7 +953,7 @@ genes.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Genes keyed by innovation numbers</p>
+<p>Genes keyed by names</p>
 
 
   </div>
@@ -837,12 +967,12 @@ genes.</p>
       <pre class="lines">
 
 
-70
-71
-72</pre>
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 121</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_genes'>genes</span>
   <span class='ivar'>@genes</span>
@@ -882,12 +1012,12 @@ do the call to that neuron function with the appropriate weights</p>
       <pre class="lines">
 
 
-86
-87
-88</pre>
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_gene_map'>neural_gene_map</span>
   <span class='ivar'>@neural_gene_map</span>
@@ -925,12 +1055,12 @@ do the call to that neuron function with the appropriate weights</p>
       <pre class="lines">
 
 
-76
-77
-78</pre>
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span>
   <span class='ivar'>@neural_inputs</span>
@@ -968,12 +1098,12 @@ do the call to that neuron function with the appropriate weights</p>
       <pre class="lines">
 
 
-76
-77
-78</pre>
+127
+128
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neural_outputs'>neural_outputs</span>
   <span class='ivar'>@neural_outputs</span>
@@ -1011,12 +1141,12 @@ do the call to that neuron function with the appropriate weights</p>
       <pre class="lines">
 
 
-73
-74
-75</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neurons'>neurons</span>
   <span class='ivar'>@neurons</span>
@@ -1034,7 +1164,48 @@ do the call to that neuron function with the appropriate weights</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="add_genes-instance_method">
+  <h3 class="signature first" id="activation_funct-instance_method">
+  
+    - (<tt>Object</tt>) <strong>activation_funct</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The name (symbol) of our activation function</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+287
+288
+289</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 287</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_activation_funct'>activation_funct</span>
+  <span class='symbol'>:#{</span><span class='const'>NEAT</span><span class='op'>::</span><span class='const'>STIMULUS</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>_ann</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_genes-instance_method">
   
     - (<tt>Object</tt>) <strong>add_genes</strong>(*genes) 
   
@@ -1060,16 +1231,16 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-163
-164
-165
-166
-167
-168
-169</pre>
+222
+223
+224
+225
+226
+227
+228</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 222</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_genes'>add_genes</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_genes'>genes</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
@@ -1109,14 +1280,14 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-155
-156
-157
-158
-159</pre>
+214
+215
+216
+217
+218</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 155</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 214</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_neurons'>add_neurons</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_neus'>neus</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_neus'>neus</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span>
@@ -1143,14 +1314,14 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-218
-219
-220
-221
-222</pre>
+280
+281
+282
+283
+284</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 218</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 280</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dump_s'>dump_s</span>
   <span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\ngenes:\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
@@ -1188,17 +1359,23 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-213
-214
-215
-216</pre>
+272
+273
+274
+275
+276
+277
+278</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 213</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 272</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fitness_cost'>fitness_cost</span>
   <span class='id identifier rubyid_p'>p</span> <span class='op'>=</span> <span class='ivar'>@controller</span><span class='period'>.</span><span class='id identifier rubyid_parms'>parms</span>
-  <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_neuron'>fitness_cost_per_neuron</span> <span class='op'>*</span> <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>+</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_gene'>fitness_cost_per_gene</span> <span class='op'>*</span> <span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+  <span class='lparen'>(</span><span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;</span>  <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_neuron_free_until'>fitness_cost_per_neuron_free_until</span> <span class='op'>?</span> <span class='int'>0</span> 
+   <span class='op'>:</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_neuron'>fitness_cost_per_neuron</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>+</span>
+    <span class='lparen'>(</span><span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_gene_free_until'>fitness_cost_per_gene_free_until</span> <span class='op'>?</span> <span class='int'>0</span>
+     <span class='op'>:</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_fitness_cost_per_gene'>fitness_cost_per_gene</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='ivar'>@genes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1231,17 +1408,141 @@ add_neurons first!!!!</p>
       <pre class="lines">
 
 
-134
-135
-136
-137</pre>
+193
+194
+195
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_forget!'>forget!</span>
   <span class='ivar'>@neurons</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span> <span class='id identifier rubyid_neu'>neu</span><span class='period'>.</span><span class='id identifier rubyid_clear_graph'>clear_graph</span> <span class='rbrace'>}</span>
   <span class='ivar'>@neural_gene_map</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_h'>h</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='op'>|</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="funct_outputs-instance_method">
+  
+    - (<tt>Object</tt>) <strong>funct_outputs</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The list of output variables returned by the function. These are the raw
+names of the output neurons. Not namedspaced or instance variable names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+304
+305
+306</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 304</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_funct_outputs'>funct_outputs</span>
+    <span class='id identifier rubyid_neural_outputs'>neural_outputs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span> <span class='id identifier rubyid_sym'>sym</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="funct_parameters-instance_method">
+  
+    - (<tt>Object</tt>) <strong>funct_parameters</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>input parameters to the TWEANN here.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+297
+298
+299</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 297</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_funct_parameters'>funct_parameters</span>
+  <span class='id identifier rubyid_neural_inputs'>neural_inputs</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='op'>|</span> <span class='id identifier rubyid_neural_inputs'>neural_inputs</span><span class='lbracket'>[</span><span class='id identifier rubyid_sym'>sym</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_bias?'>bias?</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_sym'>sym</span><span class='comma'>,</span> <span class='id identifier rubyid_neu'>neu</span><span class='op'>|</span> <span class='id identifier rubyid_sym'>sym</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_funct-instance_method">
+  
+    - (<tt>Object</tt>) <strong>init_funct</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The name (symbol) of our initialization function</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 292</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_init_funct'>init_funct</span>
+  <span class='symbol'>:#{</span><span class='const'>NEAT</span><span class='op'>::</span><span class='const'>INITIALIZATION</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>_neurons</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1296,14 +1597,14 @@ need to randomly select a neuron in the case of clashes.</p>
       <pre class="lines">
 
 
-175
-176
-177
-178
-179</pre>
+234
+235
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 175</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 234</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_innervate!'>innervate!</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_hneus'>hneus</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_hneus'>hneus</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_neus'>neus</span><span class='op'>|</span>
@@ -1368,20 +1669,20 @@ the block and we simply add them in.</p>
       <pre class="lines">
 
 
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123</pre>
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neucleate'>neucleate</span><span class='lparen'>(</span><span class='label'>clean:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_genes'>genes</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_g'>g</span><span class='op'>|</span>
@@ -1427,12 +1728,12 @@ nuke_redundancies!</p>
       <pre class="lines">
 
 
-129
-130
-131</pre>
+188
+189
+190</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 188</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nuke_redundancies!'>nuke_redundancies!</span>
   <span class='id identifier rubyid_log'>log</span><span class='period'>.</span><span class='id identifier rubyid_warn'>warn</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>nuke_redundancies! NIY</span><span class='tstring_end'>&#39;</span></span>
@@ -1477,29 +1778,29 @@ instance neurons in @neurons</p>
       <pre class="lines">
 
 
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210</pre>
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 191</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 250</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_prune!'>prune!</span>
   <span class='comment'># Take care of dangling neurons
@@ -1520,6 +1821,48 @@ instance neurons in @neurons</p>
   <span class='comment'># Make sure @neural_inputs and @neural_outputs are consistent
 </span>  <span class='ivar'>@neural_inputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='ivar'>@neural_inputs</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='ivar'>@neurons</span><span class='lbracket'>[</span><span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
   <span class='ivar'>@neural_outputs</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='lbracket'>[</span><span class='ivar'>@neural_outputs</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='ivar'>@neurons</span><span class='lbracket'>[</span><span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='rbrace'>}</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uvar-instance_method">
+  
+    - (<tt>Object</tt>) <strong>uvar</strong>(sym) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Generate a unique instance variable name from the given, because the TWEANs
+share the same namespace with the instance object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+311
+312
+313</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 311</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_uvar'>uvar</span><span class='lparen'>(</span><span class='id identifier rubyid_sym'>sym</span><span class='rparen'>)</span>
+  <span class='symbol'>:@</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>_</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_sym'>sym</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1552,22 +1895,22 @@ instance neurons in @neurons</p>
       <pre class="lines">
 
 
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152</pre>
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 199</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_wire!'>wire!</span>
   <span class='id identifier rubyid_forget!'>forget!</span>
@@ -1592,9 +1935,9 @@ instance neurons in @neurons</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:15 2014 by
+  Generated on Sat Jul 11 10:51:27 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>
