@@ -6,7 +6,7 @@
 <title>
   Class: NEAT::Critter
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -96,7 +96,9 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/rubyneat/critter.rb</dd>
+    <dd class="r2 last">lib/rubyneat/critter.rb<span class="defines">,<br />
+  lib/rubyneat/reporting.rb</span>
+</dd>
   
 </dl>
 <div class="clear"></div>
@@ -104,10 +106,10 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<h1 id="label-Critters+for+NEAT">Critters for NEAT</h1>
+<h1 id="label-Critter+Reporting">Critter Reporting</h1>
 
-<p>The Critter class comprises a Genotype and a Phenotype. The Genotype
-comprises Genes and Neurons.</p>
+<p>The reporting functionality for critters are represented here, since this
+is only tangenial to the actual functionality of the critters themselves.</p>
 
 
   </div>
@@ -457,6 +459,94 @@ comprises Genes and Neurons.</p>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report-instance_method" title="#report (instance method)">- (Object) <strong>report</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report_genotype-instance_method" title="#report_genotype (instance method)">- (Object) <strong>report_genotype</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report_neuron_types-instance_method" title="#report_neuron_types (instance method)">- (Object) <strong>report_neuron_types</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report_phenotype-instance_method" title="#report_phenotype (instance method)">- (Object) <strong>report_phenotype</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -470,8 +560,9 @@ comprises Genes and Neurons.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
+  
   <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -1023,14 +1114,150 @@ Critter should already have expressed its genotype before this is called.</p>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="report-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/reporting.rb', line 105</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span>
+  <span class='lbrace'>{</span>
+      <span class='label'>genotype:</span> <span class='id identifier rubyid_report_genotype'>report_genotype</span><span class='comma'>,</span>
+      <span class='label'>phenotype:</span> <span class='id identifier rubyid_report_phenotype'>report_phenotype</span><span class='comma'>,</span>
+      <span class='label'>neuron_types:</span> <span class='id identifier rubyid_report_neuron_types'>report_neuron_types</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report_genotype-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report_genotype</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/reporting.rb', line 97</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report_genotype'>report_genotype</span>
+  <span class='id identifier rubyid_genotype'>genotype</span><span class='period'>.</span><span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_innov'>innov</span><span class='comma'>,</span> <span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span> <span class='lbrace'>{</span><span class='label'>in:</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_in_neuron'>in_neuron</span><span class='comma'>,</span> <span class='label'>out:</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_out_neuron'>out_neuron</span><span class='comma'>,</span> <span class='label'>innov:</span> <span class='id identifier rubyid_innov'>innov</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report_neuron_types-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report_neuron_types</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91
+92
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/reporting.rb', line 89</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report_neuron_types'>report_neuron_types</span>
+  <span class='lbrace'>{</span>
+      <span class='label'>input:</span>  <span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_input_neurons'>input_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='label'>output:</span> <span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_output_neurons'>output_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='comma'>,</span>
+      <span class='label'>hidden:</span> <span class='id identifier rubyid_population'>population</span><span class='period'>.</span><span class='id identifier rubyid_hidden_neurons'>hidden_neurons</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span> <span class='id identifier rubyid_n'>n</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report_phenotype-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report_phenotype</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/reporting.rb', line 101</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report_phenotype'>report_phenotype</span>
+  <span class='id identifier rubyid_phenotype'>phenotype</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Sat Jul  5 11:20:15 2014 by
+  Generated on Sat Jul 11 10:53:09 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.2.2).
 </div>
 
   </body>
