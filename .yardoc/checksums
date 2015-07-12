@@ -8,7 +8,7 @@ lib/rubyneat/evolver.rb bd5704c9535c1c84d9a885072f6fd12c0750188e
 lib/rubyneat/cli/main.rb 710d044fc150f9c14efc3532cb60e9e38e2556b3
 lib/rubyneat/rubyneat.rb 92c4e1c282837ca921299461037d19e53ab1cbe8
 lib/rubyneat/reporting.rb 0f6cb212f9e4e88db589e1a50445938aa528eb2a
-lib/rubyneat/expressor.rb 0ec82cbb6f86e3ba6c85da5c57bdfee59a5d5272
+lib/rubyneat/expressor.rb c43c70b9a1fb77cd8b7bbf768b5cd600a26d411e
 lib/rubyneat/evaluator.rb 6415c338693dcf9813b04956bab1f47aa0577610
 lib/rubyneat/population.rb cee9eff9bd337d0f04e0674f7dc30b6369782466
 lib/rubyneat/cli/console.rb 9d3006ab4fd9c20ed1b8d7ef649c7879fc6bb200
