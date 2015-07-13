@@ -66,13 +66,7 @@ module NEAT
       sx = [] # Where all of our child s-expressions go
 
       critter.genotypes.each{ |name, g|
-        #init_code = "\n  def #{g.init_funct}\n"
         isx = [] # Initial expressions will go here
-
-        # 'activation' function
-        #p.code += "  def #{g.activation_funct}("
-        #p.code += g.funct_parameters.join(', ')
-        #p.code += ")\n"
 
         # Resolve the order in which we shall call the neurons
         # TODO handle the dependency list if it comes back!
@@ -112,14 +106,16 @@ module NEAT
                       s(:ivasgn, g.uvar(:_outvec), 
                         s(:array, *g.funct_outputs.map{ |sym| s(:lvar, g.uvar(sym)) })),
                       s(:if, s(:send, nil, :block_given?), nil, s(:break)),
-                      s(:if, s(:yield, s(:ivar, g.uvar(:_outvec))), nil,s(:break))))))
+                      s(:if, s(:yield, s(:ivar, g.uvar(:_outvec))), nil,s(:break)))),
+                  s(:lvar, g.uvar(:_outvec))
+                  ))
         # init code
         sx << s(:def, g.init_funct, s(:args), *isx)
       }
       sx += xpress_wrapper(critter)
       p.code = s(:begin, *sx)
       log.debug p.code.inspect
-      puts Unparser.unparse( p.code )
+      log.debug Unparser.unparse( p.code )
       p.express!
     end
 
