@@ -87,7 +87,6 @@ module NEAT
                   s(:block,
                     s(send, nil, :loop), s(:args),
                     s(:begin,                      
-
                       # And now call them in that order!
                       *@resolved.map { |neu|
                         unless neu.input?
@@ -108,14 +107,15 @@ module NEAT
                             nil
                           end
                         end
-                      }.compact)),
+                      }.compact),
+                    s(:ivasgn, g.uvar(:_outvec), 
+                      s(:array, *g.funct_outputs.map{ |sym| s(:lvar, g.uvar(sym)) })),
+
+                    s(:if, s(:send, nil, :block_given?), nil, s(:break)),
+                    s(:if, s(:yield, s(:ivar, g.uvar(:_outvec))), nil,s(:break))),
       
                   # And now return the result as a vector of outputs.
-                  outvec = g.uvar :_outvec
-                  p.code += "      #{outvec} = [" + g.funct_outputs.map{ |sym| "#{g.uvar sym}"}.join(',') + "]\n"
-                  p.code += "      break unless block_given?\n"
-                  p.code += "      break unless yield #{outvec}\n"
-                  p.code += "    }\n"
+                  
                   p.code += "    #{outvec}\n"
                   p.code += "  end\n\n"
                   ))
