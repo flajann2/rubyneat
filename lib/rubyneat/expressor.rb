@@ -81,11 +81,11 @@ module NEAT
                 s(:args, *g.funct_parameters.map{ |pm| s(:arg, pm)  }),
                 s(:begin,
                   # Assign all the parameters to instance variables.
-                  *g.neural_inputs.map{|sym, neu| s(:igasgn, g.uvar(sym), s(:lvar, sym))},
+                  *g.neural_inputs.map{|sym, neu| s(:ivasgn, g.uvar(sym), s(:lvar, sym))},
                   
                   # looping construct for generator
                   s(:block,
-                    s(send, nil, :loop), s(:args),
+                    s(:send, nil, :loop), s(:args),
                     s(:begin,                      
                       # And now call them in that order!
                       *@resolved.map { |neu|
@@ -107,23 +107,19 @@ module NEAT
                             nil
                           end
                         end
-                      }.compact),
-                    s(:ivasgn, g.uvar(:_outvec), 
-                      s(:array, *g.funct_outputs.map{ |sym| s(:lvar, g.uvar(sym)) })),
+                      }.compact,
 
-                    s(:if, s(:send, nil, :block_given?), nil, s(:break)),
-                    s(:if, s(:yield, s(:ivar, g.uvar(:_outvec))), nil,s(:break))),
-      
-                  # And now return the result as a vector of outputs.
-                  
-                  p.code += "    #{outvec}\n"
-                  p.code += "  end\n\n"
-                  ))
+                      s(:ivasgn, g.uvar(:_outvec), 
+                        s(:array, *g.funct_outputs.map{ |sym| s(:lvar, g.uvar(sym)) })),
+                      s(:if, s(:send, nil, :block_given?), nil, s(:break)),
+                      s(:if, s(:yield, s(:ivar, g.uvar(:_outvec))), nil,s(:break))))))
         # init code
         sx << s(:def, g.init_funct, s(:args), *isx)
       }
-      p.code += xpress_wrapper critter
-      log.debug p.code
+      sx += xpress_wrapper(critter)
+      p.code = s(:begin, *sx)
+      log.debug p.code.inspect
+      puts Unparser.unparse( p.code )
       p.express!
     end
 
@@ -158,14 +154,14 @@ module NEAT
              s(:ivasgn, c.uvar(v, :input), s(:lvar, v))},
            
            # call the other ANNs
-           *annlist.map{ |ann| xp_ann_caller(gtypes[ann], ann, plist)},
+           *annlist.map{ |ann| xp_ann_caller(gtypes, ann, plist)},
            
            # Output (return) the results.
            s(:array, *conn[:output].map{ |o| s(:ivar, plist[:output][o]) }))),
        ]
     end
 
-    def xp_ann_caller(ann, plist)
+    def xp_ann_caller(gtypes, ann, plist)
       # call the other ANNs
       g = gtypes[ann] # genotype for the ANN
       s(:masgn,
