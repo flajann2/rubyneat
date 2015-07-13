@@ -142,6 +142,9 @@ module NEAT
       "%s<%s>" % [self.class, self.name]
     end
 
+    def cparms
+      @controller.parms
+    end
 
     class << self
       # Defaultable attributes of neat attributes.
@@ -523,6 +526,7 @@ module NEAT
       attr_neat :elite_threshold, default: nil
 
       # Verbose Diagnosnitics
+      attr_neat :verbose_logging, default: false, cloneable: false
       attr_neat :verbose_pop_summary, default: false, cloneable: false
 
       # Set up defaults for mandatory entries.

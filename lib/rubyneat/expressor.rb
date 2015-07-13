@@ -114,8 +114,7 @@ module NEAT
       }
       sx += xpress_wrapper(critter)
       p.code = s(:begin, *sx)
-      log.debug p.code.inspect
-      log.debug Unparser.unparse( p.code )
+      log.debug p.code.inspect if cparms.verbose_logging
       p.express!
     end
 
