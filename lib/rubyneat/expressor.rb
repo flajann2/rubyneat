@@ -4,6 +4,8 @@ module NEAT
   #= Basis of all expressors. 
   # Expressor object turn genotypes into phenotypes.
   class Expressor < Operator
+    include SExpressions
+
     def initialize(c)
       super      
     end
@@ -44,66 +46,75 @@ module NEAT
     # A simple approach has been taken here to allow for recurrency in
     # our Critters. Basically, a looping construct has been put around the
     # activation of the neurons so that recurrency can be done in 2 ways:
+    #
     ## 1) Via yielding, thus treating the stimulus (activation)
     ## function as a enumerable.
     ### In this approach, one would call the Critter's phenotype with a block of
     ### code that would accept the output of the net. It would return 'true' to
     ### continue the iteration, or 'false' to end the iteration.
+    ###
     ## 2) Via multiple calls to the Pheontype instance:
     ### Since the value of the prior activation is preserved in the instance variables
     ### of the phenotype, subsequent activations will iterate the network.
+    ###
     #== Cavets to recurrent activation
     # For (2) above, the input neurons would be overwritten on each subsequent call.
     # Since we do not allow recurrent connections to input neurons anyway, this should
     # not be an issue, though we may allow for this at a future date.
     def express_genes!(critter)
       p = critter.phenotype
+      sx = [] # Where all of our child s-expressions go
 
       critter.genotypes.each{ |name, g|
-        init_code = "\n  def #{g.init_funct}\n"
-
-        # 'stimulate' function call (really should be 'activate', but we'll reserve this for something else)
-        p.code += "  def #{g.activation_funct}("
-        p.code += g.funct_parameters.join(', ')
-        p.code += ")\n"
-
-        # Assign all the parameters to instance variables.
-        p.code += g.neural_inputs.map{|sym, neu| "    #{g.uvar sym} = #{sym}\n"}.join("")
-        p.code += "    loop {\n"
+        isx = [] # Initial expressions will go here
 
         # Resolve the order in which we shall call the neurons
         # TODO handle the dependency list if it comes back!
         @resolved, @dependencies = NEAT::Graph::DependencyResolver[g.neural_outputs.map{|s, neu| neu}].resolve
+        sx << s(:def, g.activation_funct,
+                s(:args, *g.funct_parameters.map{ |pm| s(:arg, pm)  }),
+                s(:begin,
+                  # Assign all the parameters to instance variables.
+                  *g.neural_inputs.map{|sym, neu| s(:ivasgn, g.uvar(sym), s(:lvar, sym))},
+                  
+                  # looping construct for generator
+                  s(:block,
+                    s(:send, nil, :loop), s(:args),
+                    s(:begin,                      
+                      # And now call them in that order!
+                      *@resolved.map { |neu|
+                        unless neu.input?
+                          isx << s(:ivasgn, g.uvar(neu.name), s(:float, 0.0))
+                          
+                          if g.neural_gene_map.member? neu.name
+                            s(:ivasgn, g.uvar(neu.name),
+                              s(:send, nil, neu.name, 
+                                *g.neural_gene_map[neu.name].map{ |gene|
+                                  s(:send,
+                                    s(:float, gene.weight),
+                                    :*,
+                                    s(:lvar, g.uvar(gene.in_neuron)))
+                                }))
+                          else
+                            g.dangling_neurons = true
+                            log.debug "Dangling neuron in critter #{critter} -- #{neu}"
+                            nil
+                          end
+                        end
+                      }.compact,
 
-        # And now call them in that order!
-        @resolved.each do |neu|
-          unless neu.input?
-            init_code += "    #{g.uvar neu.name} = 0\n"
-            if g.neural_gene_map.member? neu.name
-              p.code += "      #{g.uvar neu.name} = #{neu.name}("
-              p.code += g.neural_gene_map[neu.name].map{ |gene|
-                "%s * %s" % [gene.weight, g.uvar(gene.in_neuron)]
-              }.join(", ") + ")\n"
-            else
-              g.dangling_neurons = true
-              log.debug "Dangling neuron in critter #{critter} -- #{neu}"
-            end
-          end
-        end
-        init_code += "  end\n\n"
-
-        # And now return the result as a vector of outputs.
-        outvec = g.uvar :_outvec
-        p.code += "      #{outvec} = [" + g.funct_outputs.map{ |sym| "#{g.uvar sym}"}.join(',') + "]\n"
-        p.code += "      break unless block_given?\n"
-        p.code += "      break unless yield #{outvec}\n"
-        p.code += "    }\n"
-        p.code += "    #{outvec}\n"
-        p.code += "  end\n\n"
-        p.code += init_code
+                      s(:ivasgn, g.uvar(:_outvec), 
+                        s(:array, *g.funct_outputs.map{ |sym| s(:lvar, g.uvar(sym)) })),
+                      s(:if, s(:send, nil, :block_given?), nil, s(:break)),
+                      s(:if, s(:yield, s(:ivar, g.uvar(:_outvec))), nil,s(:break)))),
+                  s(:lvar, g.uvar(:_outvec))
+                  ))
+        # init code
+        sx << s(:def, g.init_funct, s(:args), *isx)
       }
-      p.code += xpress_wrapper critter
-      log.debug p.code
+      sx += xpress_wrapper(critter)
+      p.code = s(:begin, *sx)
+      log.debug p.code.inspect if cparms.verbose_logging
       p.express!
     end
 
@@ -118,34 +129,41 @@ module NEAT
       conn = corpus.nexion.conn
       gtypes = critter.genotypes
       plist = generate_ann_plist c, gtypes, conn
-
-      # Initialize neurons for the critter function
-      code =  %[  def #{critter.init_funct} \n]
-      code += gtypes.map{|k, g| g.init_funct }.map{|f| "    #{f}"}.join("\n")
-      code += %[\n  end\n\n]
-
-      # Main Critter Activation Function.
-      # TODO: This function currently does not handle recurrent
-      # TODO: TWEANNs.
       annlist = conn.keys - [:input, :output] # order-preserving set op
-      code += %[  def #{critter.activation_funct}(#{critter.funct_params.join(', ')})\n]
 
-      # make input parameters into instance variables
-      code += conn[:input].keys.map{ |v| %[    #{c.uvar v, :input} = #{v}\n]}.join
+      # Here we generate a couple of functions.
+      [
+       # Initialize neurons for the critter function
+       s(:def, critter.init_funct, 
+                s(:args),
+                s(:begin, *gtypes.map{ |k, g| g.init_funct }.map{|f| s(:send, nil, f)})),
 
+       # Main Critter Activation Function.
+       # TODO: This function currently does not handle recurrent TWEANNs.
+       s(:def, critter.activation_funct,
+         s(:args, *critter.funct_params.map{|arg| s(:arg, arg)}),
+         s(:begin, 
+           
+           # make input parameters into instance variables
+           *conn[:input].keys.map{ |v|
+             s(:ivasgn, c.uvar(v, :input), s(:lvar, v))},
+           
+           # call the other ANNs
+           *annlist.map{ |ann| xp_ann_caller(gtypes, ann, plist)},
+           
+           # Output (return) the results.
+           s(:array, *conn[:output].map{ |o| s(:ivar, plist[:output][o]) }))),
+       ]
+    end
+
+    def xp_ann_caller(gtypes, ann, plist)
       # call the other ANNs
-      code += annlist.map{ |ann|
-        g = gtypes[ann] # genotype for the ANN
-        %[    #{(g.funct_outputs.map{|o| g.uvar(o) } + [:ignore]).join(', ')} = #{g.activation_funct}(#{g.funct_parameters.map{|p| plist[ann][p]}.join(', ') })\n]
-      }.join
-
-      # Output (return) the results.
-      outvec = conn[:output].map{ |o| plist[:output][o] }
-      code += %{    [#{outvec.join(', ')}]\n}
-
-      # code endtet hier!
-      code += %[  end\n\n]
-      code
+      g = gtypes[ann] # genotype for the ANN
+      s(:masgn,
+        s(:mlhs,
+          *(g.funct_outputs.map{ |o| s(:ivasgn, g.uvar(o)) } + [s(:ivasgn, :ignore)])), 
+        s(:send, nil, g.activation_funct, 
+          *g.funct_parameters.map{ |p| s(:ivar, plist[ann][p]) }))
     end
 
     # Taking the conn directives, generate a parameter

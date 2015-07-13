@@ -100,10 +100,6 @@ module NEAT
       sp
     end
 
-    def cparms
-      @controller.parms
-    end
-
     # Here we mark "the top number" as excluded from 
     # breeding replacement.
     def prepare_elitism!

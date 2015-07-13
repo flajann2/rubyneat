@@ -146,7 +146,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Expressed code as a string (that was instance_eval()ed).</p>
+<p>Expressed code as s-expressions.</p>
 </div></span>
   
 </li>
@@ -314,7 +314,7 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#cparms-instance_method" title="NEAT::NeatOb#cparms (method)">#cparms</a></span>, <span class='object_link'><a href="../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../NeatOb.html#initialize-instance_method" title="NEAT::NeatOb#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span></p>
 
   
   <div id="constructor_details" class="method_details_list">
@@ -341,7 +341,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Expressed code as a string (that was instance_eval()ed)</p>
+<p>Expressed code as s-expressions</p>
 
 
   </div>
@@ -497,7 +497,7 @@
       <pre class="code"><span class="info file"># File 'lib/rubyneat/critter.rb', line 393</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span>
-  <span class='id identifier rubyid_instance_eval'>instance_eval</span> <span class='ivar'>@code</span>
+  <span class='id identifier rubyid_instance_eval'>instance_eval</span> <span class='const'>Unparser</span><span class='period'>.</span><span class='id identifier rubyid_unparse'>unparse</span> <span class='ivar'>@code</span>
   <span class='kw'>self</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -595,7 +595,7 @@ date…</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul 11 10:54:42 2015 by
+  Generated on Mon Jul 13 19:39:27 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>

@@ -1,5 +1,7 @@
-require 'rubyneat'
+# -*- coding: utf-8 -*-
+require 'spec_helper'
 
+=begin disabled because this spec is too far out of date.
 module DSLSetup
   include DSL
 
@@ -130,3 +132,5 @@ describe NEAT do
     end
   end
 end
+=end
+

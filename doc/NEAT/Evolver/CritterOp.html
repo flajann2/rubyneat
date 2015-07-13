@@ -267,7 +267,7 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="../NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="../NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="../NeatOb.html#cparms-instance_method" title="NEAT::NeatOb#cparms (method)">#cparms</a></span>, <span class='object_link'><a href="../NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="../NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="../NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="../NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
   
   <div id="constructor_details" class="method_details_list">
@@ -299,14 +299,14 @@
       <pre class="lines">
 
 
-302
-303
-304
-305
-306</pre>
+298
+299
+300
+301
+302</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 302</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 298</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_evol'>evol</span><span class='rparen'>)</span>
   <span class='kw'>super</span> <span class='id identifier rubyid_evol'>evol</span><span class='period'>.</span><span class='id identifier rubyid_controller'>controller</span>
@@ -362,6 +362,10 @@ from output neurons, and we don&#39;t do any outputs to input neurons.</p>
       <pre class="lines">
 
 
+336
+337
+338
+339
 340
 341
 342
@@ -370,14 +374,10 @@ from output neurons, and we don&#39;t do any outputs to input neurons.</p>
 345
 346
 347
-348
-349
-350
-351
-352</pre>
+348</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 340</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 336</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_gene!'>add_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotypes'>genotypes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_genotype'>genotype</span><span class='op'>|</span>
@@ -427,6 +427,10 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
+309
+310
+311
+312
 313
 314
 315
@@ -434,14 +438,10 @@ disabled. 2 new genes are created along with the new neuron.</p>
 317
 318
 319
-320
-321
-322
-323
-324</pre>
+320</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 313</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 309</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_neuron!'>add_neuron!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotypes'>genotypes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_genotype'>genotype</span><span class='op'>|</span>
@@ -486,15 +486,15 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
+351
+352
+353
+354
 355
-356
-357
-358
-359
-360</pre>
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 355</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 351</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disable_gene!'>disable_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotypes'>genotypes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_genotype'>genotype</span><span class='op'>|</span>
@@ -533,15 +533,15 @@ disabled. 2 new genes are created along with the new neuron.</p>
       <pre class="lines">
 
 
+359
+360
+361
+362
 363
-364
-365
-366
-367
-368</pre>
+364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 363</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/evolver.rb', line 359</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reenable_gene!'>reenable_gene!</span><span class='lparen'>(</span><span class='id identifier rubyid_crit'>crit</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_crit'>crit</span><span class='period'>.</span><span class='id identifier rubyid_genotypes'>genotypes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_genotype'>genotype</span><span class='op'>|</span>
@@ -559,7 +559,7 @@ disabled. 2 new genes are created along with the new neuron.</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul 11 10:54:42 2015 by
+  Generated on Mon Jul 13 19:39:27 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>

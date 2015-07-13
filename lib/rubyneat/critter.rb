@@ -379,7 +379,7 @@ module NEAT
       # Critter to which we belong
       attr_accessor :critter
 
-      # Expressed code as a string (that was instance_eval()ed)
+      # Expressed code as s-expressions
       attr_accessor :code
 
       def self.[](critter)
@@ -391,7 +391,7 @@ module NEAT
       
       # Take what is in code and express that!
       def express!
-        instance_eval @code
+        instance_eval Unparser.unparse @code
         self
       end
 

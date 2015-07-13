@@ -94,11 +94,15 @@
     
   
     
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="SExpressions.html" title="NEAT::SExpressions (module)">SExpressions</a></span></dd>
+      
+    
   
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/rubyneat/expressor.rb</dd>
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/rubyneat/expressor.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -203,6 +207,17 @@ genotype.</p>
   
   
   
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="SExpressions.html" title="NEAT::SExpressions (module)">SExpressions</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="SExpressions.html#s-instance_method" title="NEAT::SExpressions#s (method)">#s</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -210,7 +225,7 @@ genotype.</p>
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="NeatOb.html" title="NEAT::NeatOb (class)">NeatOb</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="NeatOb.html#attr_neat-class_method" title="NEAT::NeatOb.attr_neat (method)">attr_neat</a></span>, <span class='object_link'><a href="NeatOb.html#cparms-instance_method" title="NEAT::NeatOb#cparms (method)">#cparms</a></span>, <span class='object_link'><a href="NeatOb.html#create_method-instance_method" title="NEAT::NeatOb#create_method (method)">#create_method</a></span>, <span class='object_link'><a href="NeatOb.html#log-instance_method" title="NEAT::NeatOb#log (method)">#log</a></span>, <span class='object_link'><a href="NeatOb.html#log-class_method" title="NEAT::NeatOb.log (method)">log</a></span>, <span class='object_link'><a href="NeatOb.html#to_s-instance_method" title="NEAT::NeatOb#to_s (method)">#to_s</a></span></p>
 
   
   <div id="constructor_details" class="method_details_list">
@@ -242,12 +257,12 @@ genotype.</p>
       <pre class="lines">
 
 
-7
-8
-9</pre>
+9
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 7</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span>
   <span class='kw'>super</span>      
@@ -298,15 +313,15 @@ hash (which corresponds directly to the output neurons).</p>
       <pre class="lines">
 
 
-21
-22
 23
 24
 25
-26</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/rubyneat/expressor.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_express!'>express!</span><span class='lparen'>(</span><span class='id identifier rubyid_critter'>critter</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_critter'>critter</span><span class='period'>.</span><span class='id identifier rubyid_ready_for_expression!'>ready_for_expression!</span>
@@ -324,7 +339,7 @@ hash (which corresponds directly to the output neurons).</p>
 </div>
 
     <div id="footer">
-  Generated on Sat Jul 11 10:54:43 2015 by
+  Generated on Mon Jul 13 19:39:28 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.2).
 </div>

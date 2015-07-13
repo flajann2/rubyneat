@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'rubyneat'
 require_relative 'graph'
 
@@ -8,12 +9,19 @@ We create all the neuron types for this system here.
 
 =end
 module NEAT
+  module SExpressions
+    def s(type, *children)
+      Parser::AST::Node.new(type, children)
+    end
+  end
+
   #= Neuron -- Basis of all Neat Neuron types.
   # Normally contains primatives which aids in its
   # own expression, but the details of this remains to be worked out.
   class Neuron < NeatOb
     include Math
     include Graph
+    include SExpressions
 
     # Genotype to which we belong
     attr_reader :genotype
@@ -61,22 +69,27 @@ module NEAT
     # List of distinct neuron types (classes)
     def self.neuron_types; @@neuron_types ; end
 
-    # Function must be implemented by subclasses for phenotype
+    # Function may be implemented by subclasses for phenotype
     # generation. Basically, an instance is passed to this function
     # and it will add a function to sum all inputs
     # and a apply an operator to the sum.
     def express(instance)
-      raise NeatException.new "express() must be implemented by subclass."
+      instance.instance_eval Unparser.unparse express_ast
     end
 
     # Function must be implemented by subclasses for phenotype
     # generation.
     #
-    # This will generate textual code so that the TWEANN may be
-    # treated as a fully independent program apart from the RubyNEAT
-    # infrastructure.
-    def express_as_code(instance)
-      raise NeatException.new "express_as_code() must be implemented by subclass."
+    # This will generate Abstract Syntax Tree code so that the 
+    # TWEANN may be treated as a fully independent program apart
+    # from the RubyNEAT infrastructure.
+    #
+    # The AST code generated here must be compatable with the
+    # unparser gem. Other lanaguages that will want to unparse
+    # this same code may have to tweak this representation a bit
+    # as need be, but that aspect is beyond our scope here.
+    def express_ast
+      raise NeatException.new "express_ast() or express() must be implemented by #{self.class}."
     end
   end
 
@@ -99,10 +112,10 @@ The basic types to RubyNEAT are represented here.
       def self.input? ; true ; end
 
       # Takes a single input and passes it as is.
-      def express(instance)
-        instance.define_singleton_method(@name) {|input|
-          input
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:arg, :input)),
+          s(:lvar, :input))
       end
     end
 
@@ -119,10 +132,10 @@ The basic types to RubyNEAT are represented here.
       end
 
       # Just provides a bias signal
-      # FIXME: we had to hard-code the value here for now. Not a biggie,
-      # FIXME: but really should be @neu_bias
-      def express(instance)
-        instance.define_singleton_method(@name) { 1.00 }
+      def express_ast
+        s(:def, @name,
+          s(:args),
+          s(:float, @neu_bias))
       end
     end
 
@@ -131,10 +144,30 @@ The basic types to RubyNEAT are represented here.
     class SigmoidNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          1.0 / (1.0 + exp(-4.9 * inputs.reduce {|p, q| p + q}))
-        }
+      #def express(instance)
+       # instance.define_singleton_method(@name) {|*inputs|
+       #   1.0 / (1.0 + exp(-4.9 * inputs.reduce {|p, q| p + q}))
+       # }
+      #end
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:send,
+            s(:float, 1.0), :/,
+            s(:begin,
+              s(:send,
+                s(:float, 1.0), :+,
+                s(:send, nil, :exp,
+                  s(:send,
+                    s(:float, -4.9), :*,
+                    s(:block,
+                      s(:send,
+                        s(:lvar, :inputs), :reduce),
+                      s(:args, s(:arg, :p),
+                        s(:arg, :q)),
+                      s(:send,
+                        s(:lvar, :p), :+,
+                        s(:lvar, :q)))))))))
       end
     end
 
@@ -142,10 +175,17 @@ The basic types to RubyNEAT are represented here.
     class TanhNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          tanh(2.4 * inputs.reduce {|p, q| p + q})
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:send, nil, :tanh,
+            s(:send,
+              s(:float, 2.4),
+              :*,
+              s(:block,
+                s(:send, s(:lvar, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q))))))
       end
     end
 
@@ -153,32 +193,57 @@ The basic types to RubyNEAT are represented here.
     class SineNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          sin(1.6 * inputs.reduce {|p, q| p + q})
-        }
+      #def express(instance)
+      #  instance.define_singleton_method(@name) {|*inputs|
+      #    sin(1.6 * inputs.reduce {|p, q| p + q})
+      #  }
+      #end
+
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:send, nil, :sin,
+            s(:send,
+              s(:float, 1.6),
+              :*,
+              s(:block,
+                s(:send, s(:lvar, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q))))))
       end
+
     end
 
     # Cosine function (CPPN) -- adjusted to have its +1 and -1 near TanhNeuron
     class CosineNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs and produce a sigmoid output (using tanh)
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          cos(1.6 * inputs.reduce {|p, q| p + q})
-        }
+
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:send, nil, :cos,
+            s(:send,
+              s(:float, 1.6), :*,
+              s(:block,
+                s(:send, s(:lvar, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q))))))
       end
+
     end
 
     # Linear function (CPPN) -- simply add up all the inputs.
     class LinearNeuron < Neuron
       # create a function on the instance with our name
       # that sums all inputs only.
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          inputs.reduce {|p, q| p + q}
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:block,
+            s(:send, s(:lvar, :inputs), :reduce),
+            s(:args, s(:arg, :p), s(:arg, :q)),
+            s(:send, s(:lvar, :p), :+, s(:lvar, :q))))
       end
     end
 
@@ -186,10 +251,13 @@ The basic types to RubyNEAT are represented here.
     class MulNeuron < Neuron
       # create a function on the instance with our name
       # that multiplies all inputs only.
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          inputs.reduce {|p, q| p * q}
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:block,
+            s(:send, s(:lvar, :inputs), :reduce),
+            s(:args, s(:arg, :p), s(:arg, :q)),
+            s(:send, s(:lvar, :p), :*, s(:lvar, :q))))
       end
     end
 
@@ -197,10 +265,20 @@ The basic types to RubyNEAT are represented here.
     class HeavisideNeuron < Neuron
       # Peform the Heaviside function on the summation
       # of the inputs.
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          (inputs.reduce {|p, q| p + q} >= 0.0) ? 1.0 : 0.0
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:restarg, :inputs)),
+          s(:if,
+            s(:begin,
+              s(:send,
+                s(:block,
+                  s(:send, s(:lvar, :inputs), :reduce),
+                  s(:args, s(:arg, :p), s(:arg, :q)),
+                  s(:send, s(:lvar, :p), :+, s(:lvar, :q))),
+                :>=,
+                s(:float, 0.0))),
+            s(:float, 1.0),
+            s(:float, 0.0)))
       end
     end
 
@@ -210,10 +288,20 @@ The basic types to RubyNEAT are represented here.
       # of the inputs. Note that rarely will the
       # inputs be exactly zero except in some specific
       # circumstances.
-      def express(instance)
-        instance.define_singleton_method(@name) {|*inputs|
-          (inputs.reduce {|p, q| p + q} >= 0) <=> 0.0
-        }
+      def express_ast
+        s(:def, @name,
+          s(:args,
+            s(:restarg, :inputs)),
+          s(:send,
+            s(:begin,
+              s(:send,
+                s(:block,
+                  s(:send,
+                    s(:lvar, :inputs), :reduce),
+                  s(:args, s(:arg, :p), s(:arg, :q)),
+                  s(:send, s(:lvar, :p), :+, s(:lvar, :q))),
+                :>=,
+                s(:int, 0))), :<=>, s(:float, 0.0)))
       end
     end
 
@@ -222,15 +310,43 @@ The basic types to RubyNEAT are represented here.
       # create a function on the instance with our name
       # that sums all inputs and produce a gaussian of
       # standard deviation of 1.
-      def express(instance)
-        instance.define_singleton_method(@name) { |*inputs|
-          a = 1.0 #height
-          b = 0.0 #center
-          c = 1.0 #SD
-          d = 0.0 #lowest y point
-          x = inputs.reduce {|p, q| p + q}
-          a * exp(-(x - b)**2.0 / 2*c**2.0) + d
-        }
+      #
+      # { |*inputs|
+      #   a = 1.0 #height
+      #   b = 0.0 #center
+      #   c = 1.0 #SD
+      #   d = 0.0 #lowest y point
+      #   x = inputs.reduce {|p, q| p + q}
+      #  a * exp(-(x - b)**2.0 / 2*c**2.0) + d
+      # }
+      def express_ast
+        s(:def, @name,
+          s(:args, s(:arg, :p), s(:arg, :q)),
+          s(:begin,
+            s(:lvasgn, :a, s(:float, 1.0)),
+            s(:lvasgn, :b, s(:float, 0.0)),
+            s(:lvasgn, :c, s(:float, 1.0)),
+            s(:lvasgn, :d, s(:float, 0.0)),
+            s(:lvasgn, :x,
+              s(:block,
+                s(:send, s(:send, nil, :inputs), :reduce),
+                s(:args, s(:arg, :p), s(:arg, :q)),
+                s(:send, s(:lvar, :p), :+, s(:lvar, :q)))),
+            s(:send,
+              s(:send,
+                s(:lvar, :a), :*,
+                s(:send, nil, :exp,
+                  s(:send,
+                    s(:send,
+                      s(:send,
+                        s(:send,
+                          s(:begin,
+                            s(:send, s(:lvar, :x), :-, s(:lvar, :b))),
+                          :**,
+                          s(:float, 2.0)), :-@), :/,
+                      s(:int, 2)), :*,
+                    s(:send, s(:lvar, :c), :**, s(:float, 2.0))))),
+              :+, s(:lvar, :d))))
       end
     end
   end
