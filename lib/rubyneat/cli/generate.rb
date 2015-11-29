@@ -1,6 +1,6 @@
 require 'ostruct'
 
-module RubyNEAT
+module NEAT
   module Cli
     module Generator
       module GenHelpers

@@ -1,7 +1,7 @@
 require 'irb'
 require 'irb/completion'
 
-module RubyNEAT
+module NEAT
   module Cli
     class Console < Thor
       class << self

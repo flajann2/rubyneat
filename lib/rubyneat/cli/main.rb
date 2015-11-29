@@ -1,6 +1,6 @@
 require 'rubyneat/cli'
 
-module RubyNEAT
+module NEAT
   module Cli
 
     class List < Thor
