@@ -21,7 +21,6 @@ module NEAT
         puts NEAT::Neuron.neuron_types.map{|n| n.type_name }.sort.join "\n"
         #puts NEAT::Neuron.neuron_type_names.sort.join "\n"
       end
-
     end
 
     class NewMain < Thor
