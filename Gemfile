@@ -11,7 +11,7 @@ gem 'thor', '~> 0'
 gem 'awesome_print', '~> 1'
 gem 'deep_dive', '~> 0'
 gem 'parser', '~> 2'
-gem 'unparser'
+gem 'unparser', '~> 0'
 
 # So our console can have name completion
 gem 'bond', '~> 0'

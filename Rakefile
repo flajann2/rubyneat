@@ -21,7 +21,7 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "rubyneat"
-  gem.homepage = "http://rubyneat.com"
+  gem.homepage = "http://rubyneat.de"
   gem.license = "MIT"
   gem.summary = %Q{RubyNEAT NeuralEvolution of Augmenting Topologies}
   gem.version = s_version
