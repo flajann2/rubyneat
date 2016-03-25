@@ -38,7 +38,7 @@ The Critter is the embodiment of both the genetics for the neural net and also t
 
 Critters are mated through the Evolver, and have their genes expressed through the Expressor. 
 
-### Installation###
+### Installation
 
 You may install RubyNEAT by cloning the repo at GitHub:
 [https://github.com/flajann2/rubyneat RubyNEAT Github]
@@ -46,10 +46,10 @@ You may install RubyNEAT by cloning the repo at GitHub:
 Or you may get it via a gem
   > gem install rubyneat --pre 
 
-#### Requirements ####
+#### Requirements
 You will need at least Ruby 2.0.0, though we strongly recommend 2.1.1 or better. We will NOT be supporting 1.9.x, as that is being phased out anyway.
 
-### Examples ###
+### Examples
 Clone:
   > git clone git@github.com:flajann2/rubyneat_examples.git
 
@@ -61,10 +61,10 @@ Type:
 to get a list of neaters. To run one like, say, the XOR test:
   > neat run xor
 
-### Note Well ###
+### Note Well
 The pole-balancing invpend neater is still under development. It will display a window with the cart and pole, but will not balance yet. Just a matter of me finishing up that code. All the others work.
 
-#### RubyNEAT ####
+#### RubyNEAT
 
 * GitHUB
 **  [https://github.com/flajann2/rubyneat RubyNEAT GitHub]
@@ -72,15 +72,15 @@ The pole-balancing invpend neater is still under development. It will display a 
 * Ruby GEM
 **  > gem install rubyneat --pre
 
-#### RubyNEAT Examples ####
+#### RubyNEAT Examples
 * Github
 ** [https://github.com/flajann2/rubyneat_examples Example Neaters on GitHub]
 
-### RubyNEAT DSL ###
+### RubyNEAT DSL
 
 I will take the '''XOR''' neater and document it. This is not the perfect way to go, but I will get more extensive later.
 
-#### The XOR Neater Example ####
+#### The XOR Neater Example
  require 'xor'
  include NEAT::DSL
 
@@ -135,35 +135,35 @@ implementation.
   max_generations 10000
   max_population_history 10
 
-####### Evolver probabilities and SDs #######
+####### Evolver probabilities and SDs
 - Perturbations
   mutate_perturb_gene_weights_prob 0.10
   mutate_perturb_gene_weights_sd 0.25
 
-####### Complete Change of weight #######
+####### Complete Change of weight
   mutate_change_gene_weights_prob 0.10
   mutate_change_gene_weights_sd 1.00
 
-####### Adding new neurons and genes #######
+####### Adding new neurons and genes
   mutate_add_neuron_prob 0.05
   mutate_add_gene_prob 0.20
 
-####### Switching genes on and off #######
+####### Switching genes on and off
   mutate_gene_disable_prob 0.01
   mutate_gene_reenable_prob 0.01
 
   interspecies_mate_rate 0.03
   mate_only_prob 0.10 #0.7
 
-####### Mating #######
+####### Mating
   survival_threshold 0.20 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 
-####### Fitness costs #######
+####### Fitness costs
   fitness_cost_per_neuron 0.00001
   fitness_cost_per_gene   0.00001
 
-####### Speciation #######
+####### Speciation
   compatibility_threshold 2.5
   disjoint_coefficient 0.6
   excess_coefficient 0.6
@@ -172,7 +172,7 @@ implementation.
   dropoff_age 15
   smallest_species 5
 
-####### Sequencing #######
+####### Sequencing
 The evaluation function is called repeatedly, and each iteration is given a
 monotonically increasing integer which represents the sequence number. The results
 of each run is returned, and those results are evaluated elsewhere in the Neater.
@@ -183,7 +183,7 @@ end
 ##### The Evolution Block
  evolve do
 
-####### The Query Block ####### 
+####### The Query Block
 This query shall return a vector result that will serve
 as the inputs to the critter. 
    query { |seq|
@@ -192,11 +192,11 @@ as the inputs to the critter.
      condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq & (1 << i)) != 0}
    }
 
-####### The Compare Block #######
+####### The Compare Block
 Compare the fitness of two critters. We may choose a different ordering here.
   compare {|f1, f2| f2 <=> f1 }
 
-####### The Cost of Fitness Block #######
+####### The Cost of Fitness Block
 Here we integrate the cost with the fitness.
   cost { |fitvec, cost|
     fit = XOR_STATES - fitvec.reduce {|a,r| a+r} - cost
@@ -204,7 +204,7 @@ Here we integrate the cost with the fitness.
     fit
   }
 
-####### The Fitness Block #######
+####### The Fitness Block
 The fitness block is called for each activation and is given the input vector,
 the output vector, and the sequence number given to the query. The results are
 evaluated and a fitness scalar is returned.
@@ -224,7 +224,7 @@ evaluated and a fitness scalar is returned.
     end
   }
 
-####### The Termination Condition #######
+####### The Termination Condition
 When the desired fitness level is reached, you may want to end the
 Neater run. If so, provide a block to do just that.
    stop_on_fitness {|fitness, c|
@@ -233,14 +233,14 @@ Neater run. If so, provide a block to do just that.
    }
  end
 
-##### Report Generating Block #####
+##### Report Generating Block
 This particular report block just adds something to the log. You could easily
 replace that with a visual update if you like, etc.
  report do |rept|
    $log.info "REPORT #{rept.to_yaml}"
  end
 
-##### Engine Run Block #####
+##### Engine Run Block
 The block here is called upon the completion of each generation. The
 'c' parameter is the RubyNEAT Controller, the same as given to the stop_on_fitness
 block.
@@ -249,12 +249,12 @@ block.
          [c.generation_num, c.population_history.size]
  end
 
-#### Releases ####
+#### Releases
 
-### v0.4.0.alpha.4 ###
+### v0.4.0.alpha.4
 * First crude cut of a dashboard rubyneat_dashboard
 
-### 0.3.5.alpha.6 ###
+### 0.3.5.alpha.6
 * Command line workflow is a bit cleaner
 * Removed neater examples completely and place them in   
   https://github.com/flajann2/rubyneat_examples
@@ -262,11 +262,11 @@ block.
 * Uniquely Generated Named Objects (UGNOs) cleaned up to be respectable
 
 
-### 2015-06-08 ###
+### 2015-06-08
 * Working on the Iterated ES HyperNEAT still, after being side-tracked by having to make a living. Also creating a maze environment for the critters to operate as bots in order to test the new ES HyperNEAT extension.
 * rnDSL, as a result of TWEANN Compositions, is undergoing radical changes. All example Neaters will be eventually update to reflect the new syntax.
 
-### 2014-09-25 ###
+### 2014-09-25
 Hot on the efforts on adding two major features to RubyNEAT:
 
 * TWEANN Compositions -- you will be able to define composites of TWEANNs on a per critter basis. This should mirror how, say, biological brains composite themselves into regions of speciality. You may specify different selections of neurons for each TWEANN. This is totally experiential, so we'll see if this results in better convergence for some problems.
@@ -278,7 +278,7 @@ Hot on the efforts on adding two major features to RubyNEAT:
 Do not confuse the ANN compositions here with CPPNs, which are completely different. By default, all TWEANNs in HyperNEAT are potential CPPNs anyway, as you can specify more than one neuron type.
 
 
-### 2014-08-03 ###
+### 2014-08-03
 Just released a very crude alpha cut of a dashboard for RubyNEAT. You will have to install it manually, along with rubyneat. The gem is rubyneat_dashboard.
 
 * I am currently working on a Dashboard for RubyNEAT. It will be a gemmable plugin that will allow you to use the browser as the dashboard. It will have realtime updates and the like, allowing you to monitor the progress of your Neaters, and to view and possibly set parameters, and to see what your Critters look like.
