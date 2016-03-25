@@ -3,5 +3,4 @@ layout: default
 title: RubyNEAT
 ---
 * RubyNEAT -- Ruby implementation of Neural Evolution of Augmenting Topologies (NEAT)
-** What
 
