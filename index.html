@@ -1,178 +1,364 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<!-- 2016-03-26 Sat 00:01 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Lord Alveric" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>RubyNEAT by flajann2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">RubyNEAT</h1>
+      <h2 class="project-tagline">Ruby Neural Evolution of Augmenting Topologies (NEAT)</h2>
+      <a href="https://github.com/flajann2/rubyneat" class="btn">View on GitHub</a>
+      <a href="https://github.com/flajann2/rubyneat/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/flajann2/rubyneat/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  /*]]>*/-->
-</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
+    <section class="main-content">
+      <h1>
+<a id="introduction-to-rubyneat" class="anchor" href="#introduction-to-rubyneat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction to RubyNEAT</h1>
 
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
+<h2>
+<a id="what-is-neat" class="anchor" href="#what-is-neat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is NEAT?</h2>
 
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+<p>NEAT is an acronym for Neural Evolution of Augmenting Topologies. In short, neural nets that are evolved from a minimal topology, allowing selection to decide on what topologies are most adequate for resolving the problem at hand.</p>
 
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
+<h2>
+<a id="what-is-rubyneat" class="anchor" href="#what-is-rubyneat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is RubyNEAT?</h2>
 
+<p>RubyNEAT is the world's first (and currently only) implementation of the NEAT algorithm in the Ruby programming language. RubyNEAT leverages some of the benefits of Ruby, such as metaprogramming, to implement activation of the Neural Net.</p>
 
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
+<p>Basically, the Neural Nets in RubyNEAT manifests themselves in the Phenotypes as functional programs -- of a sort. You may think of it as an application of Genetic Programming techniques to resolving the NEAT algorithm. As such, once fit Critters (neural nets) are found, they may be extracted as pure Ruby code, not needing the RubyNEAT engine for activation.</p>
+
+<h2>
+<a id="architecture" class="anchor" href="#architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Architecture</h2>
+
+<p>RubyNEAT comprises many interacting modules. While it is not strictly necessary to understand RubyNEAT at this level of detail, it would be beneficial for a number of reasons, especially in understanding how to tweak the parameters to improve performance for your application. </p>
+
+<p>RubyNEAT comprises the following modules: Controller, Expressor, Evaluator, Evolver, Population, and Critter.</p>
+
+<h4>
+<a id="controller" class="anchor" href="#controller" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Controller</h4>
+
+<p>The Controller mediates all aspects of RubyNEAT evolution, the various modules involved and their interactions, and also holds the settings the other modules will refer to. </p>
+
+<p>The Controller is singular. There can only be one Controller in the RubyNEAT system. All other objects associated with the Controller shall have embedded in them a reference to their controller.</p>
+
+<h4>
+<a id="evolver" class="anchor" href="#evolver" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evolver</h4>
+
+<p>The Evolver module houses the evolving algorithms for RubyNEAT. It evolves the entire Population of Critters.</p>
+
+<h4>
+<a id="expressor" class="anchor" href="#expressor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Expressor</h4>
+
+<p>The Expressor module is responsible for interpreting the Genotype of the Critters and creating their Phenotypes. The default Expressor generates Ruby code and attaches that code to the Phenotype instances of the Critter. </p>
+
+<p>It is entirely possible to swap in a different Expressor and generate code for a different target language, or create some other construct. There is no limit to what you could have an Expressor do.</p>
+
+<h4>
+<a id="evaluator" class="anchor" href="#evaluator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evaluator</h4>
+
+<p>The Evaluator is a kind of bridge between the inner "biology" of the RubyNEAT "ecosystem" and the outside world. It has ties to the RubyNEAT DSL where you encode your own fitness functions and data links to some external problem space. It is, in a sense, the "gateway".</p>
+
+<h4>
+<a id="population" class="anchor" href="#population" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Population</h4>
+
+<p>The Population is what your intuition tells you. It is a environment that houses a collection of Critters. </p>
+
+<h4>
+<a id="critter" class="anchor" href="#critter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Critter</h4>
+
+<p>The Critter is the embodiment of both the genetics for the neural net and also the expression of the same. It contains, in other words, the Genotype and the Phenotype.</p>
+
+<p>Critters are mated through the Evolver, and have their genes expressed through the Expressor. </p>
+
+<p>== Installation==</p>
+
+<p>You may install RubyNEAT by cloning the repo at GitHub:
+[<a href="https://github.com/flajann2/rubyneat">https://github.com/flajann2/rubyneat</a> RubyNEAT Github]</p>
+
+<p>Or you may get it via a gem</p>
+
+<blockquote>
+<p>gem install rubyneat --pre </p>
+</blockquote>
+
+<p>=== Requirements ===
+You will need at least Ruby 2.0.0, though we strongly recommend 2.1.1 or better. We will NOT be supporting 1.9.x, as that is being phased out anyway.</p>
+
+<p>== Examples ==
+Clone:</p>
+
+<blockquote>
+<p>git clone <a href="mailto:git@github.com">git@github.com</a>:flajann2/rubyneat_examples.git</p>
+</blockquote>
+
+<p>and cd into the '''rubyneat_examples''' directory. </p>
+
+<p>Type: </p>
+
+<blockquote>
+<p>neat list neaters</p>
+</blockquote>
+
+<p>to get a list of neaters. To run one like, say, the XOR test:</p>
+
+<blockquote>
+<p>neat run xor</p>
+</blockquote>
+
+<p>== Note Well ==
+The pole-balancing invpend neater is still under development. It will display a window with the cart and pole, but will not balance yet. Just a matter of me finishing up that code. All the others work.</p>
+
+<p>=== RubyNEAT ===</p>
+
+<ul>
+<li><p>GitHUB
+**  [<a href="https://github.com/flajann2/rubyneat">https://github.com/flajann2/rubyneat</a> RubyNEAT GitHub]</p></li>
+<li><p>Ruby GEM
+**  &gt; gem install rubyneat --pre</p></li>
+</ul>
+
+<p>=== RubyNEAT Examples ===</p>
+
+<ul>
+<li>Github
+** [<a href="https://github.com/flajann2/rubyneat_examples">https://github.com/flajann2/rubyneat_examples</a> Example Neaters on GitHub]</li>
+</ul>
+
+<p>== RubyNEAT DSL ==</p>
+
+<p>I will take the '''XOR''' neater and document it. This is not the perfect way to go, but I will get more extensive later.</p>
+
+<p>=== The XOR Neater Example ===
+ require 'xor'
+ include NEAT::DSL</p>
+
+<p>-The first lines here includes the special XOR library, which is basically:
+ def xor(*inp)
+   inp.map{|n| (n &gt; 0) ? 1 : 0}.reduce {|p, i| p + ((i &gt; 0) ? 1 : 0) } == 1</p>
+
+<h2>
+<a id="-end" class="anchor" href="#-end" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a> end</h2>
+
+<p>-Basic settings for the '''XOR''', which can handle more than 2 inputs.
+ XOR_INPUTS = 2
+ XOR_STATES = 2 ** XOR_INPUTS
+ MAX_FIT    = XOR_STATES
+ ALMOST_FIT = XOR_STATES - 0.5</p>
+
+<ul>
+<li><p>The actual definition of the Neater. Here you specify the parameters RubyNEAT
+will use to run the evolution, as well as the CPPN neuron types, the fitness function,
+etc.
+define "XOR System" do</p></li>
+<li><p>Inputs defined as name: Neuron, name: Neuron ... hash. In this segment, we
+create a block to generate the hash since we can have a variable number of
+inputs to the XOR. The input names must be unique. Note that a bias neuron
+is also supplied, and it is always called :bias.
+inputs {
+ cinv = Hash[(1..XOR_INPUTS).map{|i| [("i%s" % i).to_sym, InputNeuron]}]
+ cinv[:bias] = BiasNeuron
+ cinv
+}</p></li>
+<li><p>Outputs are defined in a similar fashion to the inputs. The names of all the 
+output neurons must be unique. Here in this example we only have one output, and
+we use the hyperbolic tan Neuron as the output. There is also a sigmoid Neuron
+that could be used as well, but the input levels would have to be conditioned
+to vary from 0 to 1 instead of from -1 to one.
+outputs out: TanhNeuron</p></li>
+<li><p>Hidden neuron specification is optional. 
+The names given here are largely meaningless, but but follow the same rules
+for uniqueness. The neurons specified will be selected randomly as the topologies
+are augmented.
+hidden tan: TanhNeuron</p></li>
+</ul>
+
+<p>==== Settings ====
+For RubyNEAT. Extensive documentation will be provided on a later date
+as to the meanings, which closely follow the parameters for Ken Stanley's NEAT
+implementation.
+===== General =====
+  hash_on_fitness false
+  start_population_size 30
+  population_size 30
+  max_generations 10000
+  max_population_history 10</p>
+
+<p>===== Evolver probabilities and SDs =====</p>
+
+<ul>
+<li>Perturbations
+mutate_perturb_gene_weights_prob 0.10
+mutate_perturb_gene_weights_sd 0.25</li>
+</ul>
+
+<p>===== Complete Change of weight =====
+  mutate_change_gene_weights_prob 0.10
+  mutate_change_gene_weights_sd 1.00</p>
+
+<p>===== Adding new neurons and genes =====
+  mutate_add_neuron_prob 0.05
+  mutate_add_gene_prob 0.20</p>
+
+<p>===== Switching genes on and off =====
+  mutate_gene_disable_prob 0.01
+  mutate_gene_reenable_prob 0.01</p>
+
+<p>interspecies_mate_rate 0.03
+  mate_only_prob 0.10 #0.7</p>
+
+<p>===== Mating =====
+  survival_threshold 0.20 # top % allowed to mate in a species.
+  survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.</p>
+
+<p>===== Fitness costs =====
+  fitness_cost_per_neuron 0.00001
+  fitness_cost_per_gene   0.00001</p>
+
+<p>===== Speciation =====
+  compatibility_threshold 2.5
+  disjoint_coefficient 0.6
+  excess_coefficient 0.6
+  weight_coefficient 0.2
+  max_species 20
+  dropoff_age 15
+  smallest_species 5</p>
+
+<p>===== Sequencing =====
+The evaluation function is called repeatedly, and each iteration is given a
+monotonically increasing integer which represents the sequence number. The results
+of each run is returned, and those results are evaluated elsewhere in the Neater.
+  start_sequence_at 0
+  end_sequence_at 2 ** XOR_INPUTS - 1
+end</p>
+
+<p>==== The Evolution Block ====
+ evolve do</p>
+
+<p>===== The Query Block ===== 
+This query shall return a vector result that will serve
+as the inputs to the critter. 
+   query { |seq|
+     # We'll use the seq to create the xor sequences via
+     # the least signficant bits.
+     condition_boolean_vector (0 ... XOR_INPUTS).map{|i| (seq &amp; (1 &lt;&lt; i)) != 0}
+   }</p>
+
+<p>===== The Compare Block =====
+Compare the fitness of two critters. We may choose a different ordering here.
+  compare {|f1, f2| f2 &lt;=&gt; f1 }</p>
+
+<p>===== The Cost of Fitness Block =====
+Here we integrate the cost with the fitness.
+  cost { |fitvec, cost|
+    fit = XOR_STATES - fitvec.reduce {|a,r| a+r} - cost
+    $log.debug "&gt;&gt;&gt;&gt;&gt;&gt;&gt; fitvec #{fitvec} =&gt; #{fit}, cost #{cost}"
+    fit
+  }</p>
+
+<p>===== The Fitness Block =====
+The fitness block is called for each activation and is given the input vector,
+the output vector, and the sequence number given to the query. The results are
+evaluated and a fitness scalar is returned.
+  fitness { |vin, vout, seq|
+    unless vout == :error
+      bin = uncondition_boolean_vector vin
+      bout = uncondition_boolean_vector vout
+      bactual = [xor(*vin)]
+      vactual = condition_boolean_vector bactual
+      fit = (bout == bactual) ? 0.00 : 1.00
+      #simple_fitness_error(vout, vactual.map{|f| f * 0.50 })
+      bfit = (bout == bactual) ? 'T' : 'F'
+      fit
+    else
+      $log.debug "Error on #{vin} [#{seq}]"
+      1.0
+    end
+  }</p>
+
+<p>===== The Termination Condition =====
+When the desired fitness level is reached, you may want to end the
+Neater run. If so, provide a block to do just that.
+   stop_on_fitness {|fitness, c|
+     puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
+     fitness[:best] &gt;= ALMOST_FIT
    }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-</head>
-<body>
-<div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+ end</p>
+
+<p>==== Report Generating Block ====
+This particular report block just adds something to the log. You could easily
+replace that with a visual update if you like, etc.
+ report do |rept|
+   $log.info "REPORT #{rept.to_yaml}"
+ end</p>
+
+<p>==== Engine Run Block ====
+The block here is called upon the completion of each generation. The
+'c' parameter is the RubyNEAT Controller, the same as given to the stop_on_fitness
+block.
+ run_engine do |c|
+   $log.info "******** Run of generation %s completed, history count %d ********" %
+         [c.generation_num, c.population_history.size]
+ end</p>
+
+<p>=== Releases ===</p>
+
+<p>== v0.4.0.alpha.4 ==</p>
+
 <ul>
-<li><a href="#orgheadline2">1. RubyNEAT &#x2013; Ruby implementation of Neural Evolution of Augmenting Topologies (NEAT)</a>
-<ul>
-<li><a href="#orgheadline1">1.1. What</a></li>
+<li>First crude cut of a dashboard rubyneat_dashboard</li>
 </ul>
+
+<p>== 0.3.5.alpha.6 ==</p>
+
+<ul>
+<li>Command line workflow is a bit cleaner</li>
+<li>Removed neater examples completely and place them in<br>
+<a href="https://github.com/flajann2/rubyneat_examples">https://github.com/flajann2/rubyneat_examples</a>
 </li>
+<li>Cleaned up the internal docs a bit</li>
+<li>Uniquely Generated Named Objects (UGNOs) cleaned up to be respectable</li>
 </ul>
-</div>
-</div>
-<p>
-&#x2014;
-layout: default
-title: RubyNEAT
-&#x2014;
-</p>
-<div id="outline-container-orgheadline2" class="outline-2">
-<h2 id="orgheadline2"><span class="section-number-2">1</span> RubyNEAT &#x2013; Ruby implementation of Neural Evolution of Augmenting Topologies (NEAT)</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1"><span class="section-number-3">1.1</span> What</h3>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: Lord Alveric</p>
-<p class="date">Created: 2016-03-26 Sat 00:01</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
-</body>
+
+<p>== 2015-06-08 ==</p>
+
+<ul>
+<li>Working on the Iterated ES HyperNEAT still, after being side-tracked by having to make a living. Also creating a maze environment for the critters to operate as bots in order to test the new ES HyperNEAT extension.</li>
+<li>rnDSL, as a result of TWEANN Compositions, is undergoing radical changes. All example Neaters will be eventually update to reflect the new syntax.</li>
+</ul>
+
+<p>== 2014-09-25 ==
+Hot on the efforts on adding two major features to RubyNEAT:</p>
+
+<ul>
+<li><p>TWEANN Compositions -- you will be able to define composites of TWEANNs on a per critter basis. This should mirror how, say, biological brains composite themselves into regions of speciality. You may specify different selections of neurons for each TWEANN. This is totally experiential, so we'll see if this results in better convergence for some problems.</p></li>
+<li><p>iterated ES HyperNEAT -- one of the compsitions above can be specified as a Hyper TWEANN, and just represent one of the many compositions you may have.</p></li>
+<li><p>The syntax of the Neater DSL will change quite a bit to reflect the new features, and all of the examples will be rewritten to show this.</p></li>
+</ul>
+
+<p>Do not confuse the ANN compositions here with CPPNs, which are completely different. By default, all TWEANNs in HyperNEAT are potential CPPNs anyway, as you can specify more than one neuron type.</p>
+
+<p>== 2014-08-03 ==
+Just released a very crude alpha cut of a dashboard for RubyNEAT. You will have to install it manually, along with rubyneat. The gem is rubyneat_dashboard.</p>
+
+<ul>
+<li>I am currently working on a Dashboard for RubyNEAT. It will be a gemmable plugin that will allow you to use the browser as the dashboard. It will have realtime updates and the like, allowing you to monitor the progress of your Neaters, and to view and possibly set parameters, and to see what your Critters look like.</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/flajann2/rubyneat">RubyNEAT</a> is maintained by <a href="https://github.com/flajann2">flajann2</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
 </html>
