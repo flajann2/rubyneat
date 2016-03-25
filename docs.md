@@ -227,7 +227,7 @@ evaluated and a fitness scalar is returned.
 ####### The Termination Condition
 When the desired fitness level is reached, you may want to end the
 Neater run. If so, provide a block to do just that.
-   stop_on_fitness {|fitness, c|
+   stop_on_fitness { |fitness, c|
      puts "*** Generation Run #{c.generation_num}, best is #{fitness[:best]} ***\n\n"
      fitness[:best] >= ALMOST_FIT
    }
@@ -252,9 +252,9 @@ block.
 #### Releases
 
 ### v0.4.0.alpha.4
-* First crude cut of a dashboard rubyneat_dashboard
+* First crude cut of a dashboard rubyneat_dashboard#
 
-### 0.3.5.alpha.6
+*** 0.3.5.alpha.6
 * Command line workflow is a bit cleaner
 * Removed neater examples completely and place them in   
   https://github.com/flajann2/rubyneat_examples
@@ -262,11 +262,11 @@ block.
 * Uniquely Generated Named Objects (UGNOs) cleaned up to be respectable
 
 
-### 2015-06-08
+*** 2015-06-08
 * Working on the Iterated ES HyperNEAT still, after being side-tracked by having to make a living. Also creating a maze environment for the critters to operate as bots in order to test the new ES HyperNEAT extension.
 * rnDSL, as a result of TWEANN Compositions, is undergoing radical changes. All example Neaters will be eventually update to reflect the new syntax.
 
-### 2014-09-25
+*** 2014-09-25
 Hot on the efforts on adding two major features to RubyNEAT:
 
 * TWEANN Compositions -- you will be able to define composites of TWEANNs on a per critter basis. This should mirror how, say, biological brains composite themselves into regions of speciality. You may specify different selections of neurons for each TWEANN. This is totally experiential, so we'll see if this results in better convergence for some problems.
@@ -278,7 +278,7 @@ Hot on the efforts on adding two major features to RubyNEAT:
 Do not confuse the ANN compositions here with CPPNs, which are completely different. By default, all TWEANNs in HyperNEAT are potential CPPNs anyway, as you can specify more than one neuron type.
 
 
-### 2014-08-03
+*** 2014-08-03
 Just released a very crude alpha cut of a dashboard for RubyNEAT. You will have to install it manually, along with rubyneat. The gem is rubyneat_dashboard.
 
 * I am currently working on a Dashboard for RubyNEAT. It will be a gemmable plugin that will allow you to use the browser as the dashboard. It will have realtime updates and the like, allowing you to monitor the progress of your Neaters, and to view and possibly set parameters, and to see what your Critters look like.
