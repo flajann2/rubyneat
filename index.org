@@ -3,59 +3,87 @@ layout: default
 title: RubyNEAT
 ---
 * RubyNEAT -- Ruby implementation of Neural Evolution of Augmenting Topologies (NEAT)
-
-* Introduction to RubyNEAT
-
 ** What is NEAT?
-NEAT is an acronym for Neural Evolution of Augmenting Topologies. In short, neural nets that are evolved from a minimal topology, allowing selection to decide on what topologies are most adequate for resolving the problem at hand.
+   NEAT is an acronym for Neural Evolution of Augmenting Topologies.
+   In short, neural nets that are evolved from a minimal topology,
+   allowing selection to decide on what topologies are most adequate
+   for resolving the problem at hand.
 
 ** What is RubyNEAT?
-RubyNEAT is the world's first (and currently only) implementation of the NEAT algorithm in the Ruby programming language. RubyNEAT leverages some of the benefits of Ruby, such as metaprogramming, to implement activation of the Neural Net.
+   RubyNEAT is the world's first (and currently only) implementation
+   of the NEAT algorithm in the Ruby programming language. RubyNEAT
+   leverages some of the benefits of Ruby, such as metaprogramming,
+   to implement activation of the Neural Net.
 
-Basically, the Neural Nets in RubyNEAT manifests themselves in the Phenotypes as functional programs -- of a sort. You may think of it as an application of Genetic Programming techniques to resolving the NEAT algorithm. As such, once fit Critters (neural nets) are found, they may be extracted as pure Ruby code, not needing the RubyNEAT engine for activation.
+   Basically, the Neural Nets in RubyNEAT manifests themselves in the
+   Phenotypes as functional programs -- of a sort. You may think of it
+   as an application of Genetic Programming techniques to resolving the
+   NEAT algorithm. As such, once fit Critters (neural nets) are found,
+   they may be extracted as pure Ruby code, not needing the
+   RubyNEAT engine for activation.
 
 ** Architecture
+   RubyNEAT comprises many interacting modules. While it is
+   not strictly necessary to understand RubyNEAT at this level
+   of detail, it would be beneficial for a number of reasons,
+   especially in understanding how to tweak the parameters
+   to improve performance for your application. 
 
-RubyNEAT comprises many interacting modules. While it is not strictly necessary to understand RubyNEAT at this level of detail, it would be beneficial for a number of reasons, especially in understanding how to tweak the parameters to improve performance for your application. 
+   RubyNEAT comprises the following modules: 
+   Controller, Expressor, Evaluator, Evolver, Population, and Critter.
 
-RubyNEAT comprises the following modules: Controller, Expressor, Evaluator, Evolver, Population, and Critter.
+*** Controller
+    The Controller mediates all aspects of RubyNEAT
+    evolution, the various modules involved and their
+    interactions, and also holds the settings the other
+    modules will refer to. 
 
-**** Controller
-The Controller mediates all aspects of RubyNEAT evolution, the various modules involved and their interactions, and also holds the settings the other modules will refer to. 
+    The Controller is singular. There can only be one
+    Controller in the RubyNEAT system. All other objects
+    associated with the Controller shall have embedded
+    in them a reference to their controller.
 
-The Controller is singular. There can only be one Controller in the RubyNEAT system. All other objects associated with the Controller shall have embedded in them a reference to their controller.
+*** Evolver
+    The Evolver module houses the evolving algorithms
+    for RubyNEAT. It evolves the entire Population of Critters.
 
-**** Evolver
-The Evolver module houses the evolving algorithms for RubyNEAT. It evolves the entire Population of Critters.
+*** Expressor
+    The Expressor module is responsible for interpreting
+    the Genotype of the Critters and creating their
+    Phenotypes. The default Expressor generates Ruby code
+    and attaches that code to the Phenotype instances of the Critter. 
 
-**** Expressor
-The Expressor module is responsible for interpreting the Genotype of the Critters and creating their Phenotypes. The default Expressor generates Ruby code and attaches that code to the Phenotype instances of the Critter. 
+    It is entirely possible to swap in a different Expressor and
+    generate code for a different target language, or create some 
+    other construct. There is no limit to what you could
+    have an Expressor do.
 
-It is entirely possible to swap in a different Expressor and generate code for a different target language, or create some other construct. There is no limit to what you could have an Expressor do.
-
-**** Evaluator
+*** Evaluator
 The Evaluator is a kind of bridge between the inner "biology" of the RubyNEAT "ecosystem" and the outside world. It has ties to the RubyNEAT DSL where you encode your own fitness functions and data links to some external problem space. It is, in a sense, the "gateway".
 
-**** Population
+*** Population
 The Population is what your intuition tells you. It is a environment that houses a collection of Critters. 
 
-**** Critter
+*** Critter
 The Critter is the embodiment of both the genetics for the neural net and also the expression of the same. It contains, in other words, the Genotype and the Phenotype.
 
 Critters are mated through the Evolver, and have their genes expressed through the Expressor. 
 
-*** Installation
+** Installation
+   You may install RubyNEAT by cloning the repo at GitHub:
+   [[https://github.com/flajann2/rubyneat][RubyNEAT Github]]
 
-You may install RubyNEAT by cloning the repo at GitHub:
-[https://github.com/flajann2/rubyneat RubyNEAT Github]
+   Or you may get it via a gem
+   #+BEGIN_SRC bash
+   gem install rubyneat --pre 
+   #+END_SRC
 
-Or you may get it via a gem
-  > gem install rubyneat --pre 
+*** Requirements
+     You will need at least Ruby 2.0.0, though we strongly recommend 2.1.1
+     or better. We will NOT be supporting 1.9.x,
+     as that is being phased out anyway.
 
-**** Requirements
-You will need at least Ruby 2.0.0, though we strongly recommend 2.1.1 or better. We will NOT be supporting 1.9.x, as that is being phased out anyway.
-
-*** Examples
+** Examples
     Clone:
 
     #+BEGIN_SRC bash
@@ -95,11 +123,12 @@ You will need at least Ruby 2.0.0, though we strongly recommend 2.1.1 or better.
 - Github
   [[https://github.com/flajann2/rubyneat_examples][Example Neaters on GitHub]]
 
-*** RubyNEAT DSL
+** RubyNEAT DSL
+    I will take the '''XOR''' neater and document it.
+    This is not the perfect way to go,
+    but I will get more extensive later.
 
-I will take the '''XOR''' neater and document it. This is not the perfect way to go, but I will get more extensive later.
-
-**** The XOR Neater Example
+*** The XOR Neater Example
 #+BEGIN_SRC ruby
  require 'xor'
  include NEAT::DSL
@@ -163,12 +192,12 @@ I will take the '''XOR''' neater and document it. This is not the perfect way to
   hidden tan: TanhNeuron
 #+END_SRC
 
-***** Settings
-      For RubyNEAT. Extensive documentation will be provided on a later date
-      as to the meanings, which closely follow the parameters for Ken Stanley's NEAT
-      implementation.
+**** Settings
+     For RubyNEAT. Extensive documentation will be provided on a later date
+     as to the meanings, which closely follow the parameters for Ken Stanley's NEAT
+     implementation.
 
-******* General
+****** General
 #+BEGIN_SRC ruby
   hash_on_fitness false
   start_population_size 30
@@ -177,26 +206,26 @@ I will take the '''XOR''' neater and document it. This is not the perfect way to
   max_population_history 10
 #+END_SRC
 
-******* Evolver probabilities and SDs
+****** Evolver probabilities and SDs
         Perturbations
 #+BEGIN_SRC ruby
   mutate_perturb_gene_weights_prob 0.10
   mutate_perturb_gene_weights_sd 0.25
 #+END_SRC
 
-******* Complete Change of weight
+****** Complete Change of weight
 #+BEGIN_SRC ruby
   mutate_change_gene_weights_prob 0.10
   mutate_change_gene_weights_sd 1.00
 #+END_SRC
 
-******* Adding new neurons and genes
+****** Adding new neurons and genes
 #+BEGIN_SRC ruby
   mutate_add_neuron_prob 0.05
   mutate_add_gene_prob 0.20
 #+END_SRC
 
-******* Switching genes on and off
+****** Switching genes on and off
 #+BEGIN_SRC ruby
   mutate_gene_disable_prob 0.01
   mutate_gene_reenable_prob 0.01
@@ -205,19 +234,19 @@ I will take the '''XOR''' neater and document it. This is not the perfect way to
   mate_only_prob 0.10 *0.7
 #+END_SRC
 
-******* Mating
+****** Mating
 #+BEGIN_SRC ruby
   survival_threshold 0.20 # top % allowed to mate in a species.
   survival_mininum_per_species  4 # for small populations, we need SOMETHING to go on.
 #+END_SRC
 
-******* Fitness costs
+****** Fitness costs
 #+BEGIN_SRC ruby
   fitness_cost_per_neuron 0.00001
   fitness_cost_per_gene   0.00001
 #+END_SRC
 
-******* Speciation
+****** Speciation
 
 #+BEGIN_SRC ruby
   compatibility_threshold 2.5
@@ -229,7 +258,7 @@ I will take the '''XOR''' neater and document it. This is not the perfect way to
   smallest_species 5
 #+END_SRC
 
-******* Sequencing
+****** Sequencing
         The evaluation function is called repeatedly, and each iteration is given a
         monotonically increasing integer which represents the sequence number. The results
         of each run is returned, and those results are evaluated elsewhere in the Neater.
@@ -239,13 +268,13 @@ I will take the '''XOR''' neater and document it. This is not the perfect way to
   end_sequence_at 2 ** XOR_INPUTS - 1
 #+END_SRC
 
-***** The Evolution Block
+**** The Evolution Block
 
 #+BEGIN_SRC ruby
  evolve do
 #+END_SRC
 
-******* The Query Block
+****** The Query Block
         This query shall return a vector result that will serve
         as the inputs to the critter. 
 
@@ -257,14 +286,14 @@ I will take the '''XOR''' neater and document it. This is not the perfect way to
    }
 #+END_SRC
 
-******* The Compare Block
+****** The Compare Block
 Compare the fitness of two critters. We may choose a different ordering here.
 
 #+BEGIN_SRC ruby
   compare {|f1, f2| f2 <=> f1 }
 #+END_SRC
 
-******* The Cost of Fitness Block
+****** The Cost of Fitness Block
         Here we integrate the cost with the fitness.
 
 #+BEGIN_SRC ruby
@@ -275,7 +304,7 @@ Compare the fitness of two critters. We may choose a different ordering here.
   }
 #+END_SRC
 
-******* The Fitness Block
+****** The Fitness Block
         The fitness block is called for each activation and is given the input vector,
         the output vector, and the sequence number given to the query. The results are
         evaluated and a fitness scalar is returned.
@@ -298,7 +327,7 @@ Compare the fitness of two critters. We may choose a different ordering here.
   }
 #+ END_SRC
 
-******* The Termination Condition
+****** The Termination Condition
         When the desired fitness level is reached, you may want to end the
         Neater run. If so, provide a block to do just that.
 
@@ -310,7 +339,7 @@ Compare the fitness of two critters. We may choose a different ordering here.
  end
 #+END_SRC
 
-***** Report Generating Block
+**** Report Generating Block
       This particular report block just adds something to the log. You could easily
       replace that with a visual update if you like, etc.
 
@@ -320,7 +349,7 @@ Compare the fitness of two critters. We may choose a different ordering here.
  end
 #+END_SRC
 
-***** Engine Run Block
+**** Engine Run Block
       The block here is called upon the completion of each generation. The
       'c' parameter is the RubyNEAT Controller, the same as given to the stop_on_fitness
       block.
@@ -332,58 +361,58 @@ Compare the fitness of two critters. We may choose a different ordering here.
  end
 #+END_SRC
 
-**** Releases
-***** v0.4.0.alpha.4
-  + First crude cut of a dashboard rubyneat_dashboard
+*** Releases
+**** v0.4.0.alpha.4
+ + First crude cut of a dashboard rubyneat_dashboard
 
-***** 0.3.5.alpha.6
-  + Command line workflow is a bit cleaner
-  + Removed neater examples completely and place them in   
-    https://github.com/flajann2/rubyneat_examples
-  + Cleaned up the internal docs a bit
-  + Uniquely Generated Named Objects (UGNOs) cleaned up to be respectable
+**** 0.3.5.alpha.6
+ + Command line workflow is a bit cleaner
+ + Removed neater examples completely and place them in   
+   https://github.com/flajann2/rubyneat_examples
+ + Cleaned up the internal docs a bit
+ + Uniquely Generated Named Objects (UGNOs) cleaned up to be respectable
 
-***** 2015-06-08
-  + Working on the Iterated ES HyperNEAT still,
-    after being side-tracked by having to make a living.
-    Also creating a maze environment for the critters to
-    operate as bots in order to test the new ES HyperNEAT extension.
-  + rnDSL, as a result of TWEANN Compositions, is undergoing
-    radical changes. All example Neaters will be 
-    eventually update to reflect the new syntax.
+**** 2015-06-08
+ + Working on the Iterated ES HyperNEAT still,
+   after being side-tracked by having to make a living.
+   Also creating a maze environment for the critters to
+   operate as bots in order to test the new ES HyperNEAT extension.
+ + rnDSL, as a result of TWEANN Compositions, is undergoing
+   radical changes. All example Neaters will be 
+   eventually update to reflect the new syntax.
 
-***** 2014-09-25
-      Hot on the efforts on adding two major features to RubyNEAT:
+**** 2014-09-25
+     Hot on the efforts on adding two major features to RubyNEAT:
 
-  + TWEANN Compositions -- you will be able to define composites of TWEANNs on
-    a per critter basis. This should mirror how, say, biological brains composite
-    themselves into regions of speciality. You may specify different selections
-    of neurons for each TWEANN. This is totally experiential, so we'll
-    see if this results in better convergence for some problems.
+ + TWEANN Compositions -- you will be able to define composites of TWEANNs on
+   a per critter basis. This should mirror how, say, biological brains composite
+   themselves into regions of speciality. You may specify different selections
+   of neurons for each TWEANN. This is totally experiential, so we'll
+   see if this results in better convergence for some problems.
 
-  + iterated ES HyperNEAT -- one of the compsitions
-    above can be specified as a Hyper TWEANN, and just
-    represent one of the many compositions you may have.
+ + iterated ES HyperNEAT -- one of the compsitions
+   above can be specified as a Hyper TWEANN, and just
+   represent one of the many compositions you may have.
 
-  + The syntax of the Neater DSL will change quite a bit to
-    reflect the new features, and all of the examples will
-    be rewritten to show this.
+ + The syntax of the Neater DSL will change quite a bit to
+   reflect the new features, and all of the examples will
+   be rewritten to show this.
 
-  Do not confuse the ANN compositions here with CPPNs,
-  which are completely different. By default, all TWEANNs 
-  in HyperNEAT are potential CPPNs anyway, as
-  you can specify more than one neuron type.
+ Do not confuse the ANN compositions here with CPPNs,
+ which are completely different. By default, all TWEANNs 
+ in HyperNEAT are potential CPPNs anyway, as
+ you can specify more than one neuron type.
 
-***** 2014-08-03
-     Just released a very crude alpha cut of a 
-     dashboard for RubyNEAT. You will have to
-     install it manually, along with rubyneat.
-     The gem is rubyneat_dashboard.
+**** 2014-08-03
+    Just released a very crude alpha cut of a 
+    dashboard for RubyNEAT. You will have to
+    install it manually, along with rubyneat.
+    The gem is rubyneat_dashboard.
 
- + I am currently working on a Dashboard for RubyNEAT.
-   It will be a gemmable plugin that will allow you to
-   use the browser as the dashboard. It will have realtime
-   updates and the like, allowing you to monitor the progress 
-   of your Neaters, and to view and possibly set parameters,
-   and to see what your Critters look like.
++ I am currently working on a Dashboard for RubyNEAT.
+  It will be a gemmable plugin that will allow you to
+  use the browser as the dashboard. It will have realtime
+  updates and the like, allowing you to monitor the progress 
+  of your Neaters, and to view and possibly set parameters,
+  and to see what your Critters look like.
 
