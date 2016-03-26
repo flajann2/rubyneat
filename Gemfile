@@ -15,26 +15,16 @@ gem 'awesome_print', '~> 1'
 gem 'deep_dive', '~> 0'
 
 # So our console can have name completion
-gem 'bond', '~> 0.5'
-gem 'rb-readline', '~> 0.5'
+gem 'bond', '~> 0'
+gem 'rb-readline', '~> 0'
 gem 'queue_ding', '>= 0'
+gem 'semver', '~> 1'
 
 group :development do
   gem 'rspec', '~> 2'
   gem 'yard', '~> 0'
   gem 'guard', '~> 2'
   gem 'guard-rspec', '~> 4'
-  gem 'semver', '~> 1'
-  gem 'jeweler', '~> 2'
+  gem 'juwelier'
   gem 'simplecov', '~> 0'
 end
-
-#======================================================
-#= Ancillary libraries
-
-# For demo purposes, we include the gosu library, but
-# don't want this to be part of the mainstream.
-gem 'gosu', '~> 0', require: false
-
-# So we can generate some nice graphics.
-gem 'rubyvis', '~> 0', require: false

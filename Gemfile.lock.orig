@@ -57,7 +57,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     hashie (3.2.0)
     highline (1.6.21)
-    jeweler (2.0.1)
+    juwelier (2.0.1)
       builder
       bundler (>= 1.0)
       git (>= 1.2.5)
@@ -149,7 +149,7 @@ DEPENDENCIES
   gosu (~> 0)
   guard (~> 2)
   guard-rspec (~> 4)
-  jeweler (~> 2)
+  juwelier (~> 2)
   queue_ding
   rb-readline (~> 0.5)
   rspec (~> 2)

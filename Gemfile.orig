@@ -33,12 +33,12 @@ group :development do
   gem 'guard-rspec', '~> 4'
   gem 'semver', '~> 1'
 <<<<<<< HEAD
-  gem "jeweler", "~> 2"
+  gem "juwelier", "~> 2"
   gem "simplecov", '~> 0'
   #gem 'debugger'
   #gem 'ruby-debug-ide', '~> 1'
 =======
-  gem 'jeweler', '~> 2'
+  gem 'juwelier', '~> 2'
   gem 'simplecov', '~> 0'
 >>>>>>> devready
 end
