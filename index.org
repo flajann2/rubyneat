@@ -1,7 +1,7 @@
----
-layout: default
-title: RubyNEAT
----
+#+TITLE: RubyNEAT -- Ruby Neural Evolution of Augmenting Topologies
+#+LAYOUT: default
+#+TAGS: neat neural-evolution machine-learning aritifical-intelligence
+
 * RubyNEAT -- Ruby implementation of Neural Evolution of Augmenting Topologies (NEAT)
 ** What is NEAT?
    NEAT is an acronym for Neural Evolution of Augmenting Topologies.
