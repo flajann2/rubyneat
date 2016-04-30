@@ -11,4 +11,7 @@ tmp/
 .yardoc/
 rdoc
 doc
-# Neural_Docs
+_sass/
+_site/
+.sass-cache/
+
