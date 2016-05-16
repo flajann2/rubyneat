@@ -211,6 +211,7 @@ module NEAT
         $log.debug { "Caught method %s with parameter of %s" % [assignment, val] }
         NEAT::controller.parms.send(assignment, val)
       else
+        puts m, caller if m == :type 
         super
       end
     end

@@ -330,7 +330,7 @@ module NEAT
   # FIXME: run under multiple cores.
   #
   # RESOLUTION: We have determined that the multiple core sitation
-  # RESOLUTION: is best served by decoupling the phentype generation
+  # RESOLUTION: is best served by decoupling the phenotype generation
   # RESOLUTION: and evaluation to run across worker queues. This will
   # RESOLUTION: will also buy us language agnosticy, expanding the sheer
   # RESOLUTION: power of RubyNEAT to be applied in many more use cases, 
@@ -622,7 +622,7 @@ module NEAT
         report_hooks(@population.report)
 
         ## Exit if fitness criteria is reached
-        #FIXME handle this exit condition better!!!!!
+        #FIXME: handle this exit condition better!!!!!
         exit_neat if stop_on_fit_func_hook(@population.report.last[:fitness], self) unless stop_on_fit_func_none?
 
         ## Evolve population
