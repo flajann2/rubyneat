@@ -31,12 +31,11 @@ GEM
     ffi (1.9.10)
     formatador (0.2.5)
     git (1.3.0)
-    github_api (0.13.1)
+    github_api (0.14.0)
       addressable (~> 2.4.0)
       descendants_tracker (~> 0.0.4)
       faraday (~> 0.8, < 0.10)
       hashie (>= 3.4)
-      multi_json (>= 1.7.5, < 2.0)
       oauth2
     guard (2.14.0)
       formatador (>= 0.2.4)
@@ -57,7 +56,7 @@ GEM
     ice_nine (0.11.2)
     interception (0.5)
     json (1.8.3)
-    juwelier (2.1.1)
+    juwelier (2.1.2)
       builder
       bundler (>= 1.0)
       git (>= 1.2.5)
@@ -188,4 +187,4 @@ DEPENDENCIES
   yard (~> 0)
 
 BUNDLED WITH
-   1.12.0
+   1.12.4
