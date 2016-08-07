@@ -3,6 +3,8 @@
 *.bz2
 
 tmp/
+_sass/
+_site/
 
 # ignore anything that begins with foo
 [Ff]oo*
