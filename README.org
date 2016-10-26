@@ -90,42 +90,34 @@ examples of using RubyNEAT.
 
 ** Also Note
 
-For now, see
+   For now, see
 
-[[https://github.com/flajann2/rubyneat]]
+   [[https://github.com/flajann2/rubyneat]]
 
-for the Github version, and this will probably be the better option
-until this gets out of alpha. There are a couple of example Neaters
-there (one of which is still in development). Basic, but will be a good
-example of how to implement your own Neater. Eventually all will be
-fully documented.
+   for the Github version, and this will probably be the better option
+   until this gets out of alpha. There are a couple of example Neaters
+   there (one of which is still in development). Basic, but will be a good
+   example of how to implement your own Neater. Eventually all will be
+   fully documented.
 
 ** Release Notes
-
--  =0.5.0.hyper.alpha.0= Indroduction of multicritter (actually
-   multi-genenome) modularity, ES HyperNEAT (which does not require
-   multi-genome as such, as it's handled mostly in the Expressor)
-
--  =0.3.5.alpha.7=
-
-   Console made functional.
-
--  =0.4.0.alpha.0=
-
-   Added a pop parameter to the report hook function. All example code
-   in rubyneat\_examples updated. You will need to add the additional
-   parameter to your Neaters on your report hooks.
-
+   | version             | description                                                                                                                                                                                                        |
+   |---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | hyper branch        | Many new features related to HyperNEAT amd parallelism will be added here, when merged back to the master branch, the version will be bumped to 1.x. For now, I will use "regular" tags until we reach that point. |
+   | 0.5.0.hyper.alpha.0 | Indroduction of multicritter (actually multi-genenome) modularity, ES HyperNEAT (which does not require multi-genome as such, as it's handled mostly in the Expressor)                                             |
+   | 0.3.5.alpha.7       | Console made functional.                                                                                                                                                                                           |
+   | 0.4.0.alpha.0       | Added a pop parameter to the report hook function. All example code in rubyneat\_examples updated. You will need to add the additional parameter to your Neaters on your report hooks.                             |
+ 
    Also, added stronger support for plugins. In particular, an
    attr\_neat attribute processor was added to NeatOb, to support
    default settings as well as hooks. Now, all plugins need to do is to
    hook into these hook functions to get notifications.
 
-** Copyright Notice
+** Copyright Notice & Licensing Info
 
 This code is released under the MIT license:
 
-Copyright (c) 2014-2015 Fred Mitchell
+Copyright (c) 2014-2017 Fred Mitchell
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
