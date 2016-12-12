@@ -1,10 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'distribution', '~> 0'
-
-#TODO: Check out this for a repacement of of statistics2
-#TODO: https://github.com/thirtysixthspan/descriptive_statistics
-gem 'statistics2', '~> 0'
+gem 'statistics3', '~> 0'
 
 gem 'aquarium', '~> 0'
 gem 'thor', '~> 0'
@@ -21,14 +18,13 @@ gem 'k-tree', '~> 0'
 gem 'semver', '~> 1'
 
 group :development do
-  gem 'rspec', '~> 2'
+  gem 'rspec', '~> 3'
   gem 'yard', '~> 0'
   gem 'guard', '~> 2'
   gem 'guard-rspec', '~> 4'
   gem "bundler", "~> 1"
   gem 'juwelier', '~> 2'
   gem 'simplecov', '~> 0'
-
   gem 'pry'
   gem 'pry-doc'
   gem 'pry-byebug'

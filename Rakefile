@@ -19,13 +19,12 @@ require 'rake'
 
 require 'juwelier'
 Juwelier::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "rubyneat"
   gem.homepage = "http://rubyneat.de"
   gem.license = "MIT"
   gem.summary = %Q{RubyNEAT NeuralEvolution of Augmenting Topologies}
   gem.version = s_version
-  gem.required_ruby_version = '>= 2.0'
+  gem.required_ruby_version = '>= 2.3.1'
   gem.description = %Q{
   RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.
   By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,
