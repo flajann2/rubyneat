@@ -64,7 +64,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://rubyneat.de".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.3.1".freeze)
-  s.rubygems_version = "2.6.7".freeze
+  s.rubygems_version = "2.5.2".freeze
   s.summary = "RubyNEAT NeuralEvolution of Augmenting Topologies".freeze
 
   if s.respond_to? :specification_version then
@@ -72,12 +72,11 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<distribution>.freeze, ["~> 0"])
-      s.add_runtime_dependency(%q<statistics3>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<aquarium>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<thor>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<awesome_print>.freeze, ["~> 1"])
       s.add_runtime_dependency(%q<deep_dive>.freeze, ["~> 0"])
-      s.add_runtime_dependency(%q<parser>.freeze, ["~> 2"])
+      s.add_runtime_dependency(%q<parser>.freeze, [">= 0"])
       s.add_runtime_dependency(%q<unparser>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<bond>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<rb-readline>.freeze, ["~> 0"])
@@ -99,12 +98,11 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<pry-stack_explorer>.freeze, [">= 0"])
     else
       s.add_dependency(%q<distribution>.freeze, ["~> 0"])
-      s.add_dependency(%q<statistics3>.freeze, ["~> 0"])
       s.add_dependency(%q<aquarium>.freeze, ["~> 0"])
       s.add_dependency(%q<thor>.freeze, ["~> 0"])
       s.add_dependency(%q<awesome_print>.freeze, ["~> 1"])
       s.add_dependency(%q<deep_dive>.freeze, ["~> 0"])
-      s.add_dependency(%q<parser>.freeze, ["~> 2"])
+      s.add_dependency(%q<parser>.freeze, [">= 0"])
       s.add_dependency(%q<unparser>.freeze, ["~> 0"])
       s.add_dependency(%q<bond>.freeze, ["~> 0"])
       s.add_dependency(%q<rb-readline>.freeze, ["~> 0"])
@@ -127,12 +125,11 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<distribution>.freeze, ["~> 0"])
-    s.add_dependency(%q<statistics3>.freeze, ["~> 0"])
     s.add_dependency(%q<aquarium>.freeze, ["~> 0"])
     s.add_dependency(%q<thor>.freeze, ["~> 0"])
     s.add_dependency(%q<awesome_print>.freeze, ["~> 1"])
     s.add_dependency(%q<deep_dive>.freeze, ["~> 0"])
-    s.add_dependency(%q<parser>.freeze, ["~> 2"])
+    s.add_dependency(%q<parser>.freeze, [">= 0"])
     s.add_dependency(%q<unparser>.freeze, ["~> 0"])
     s.add_dependency(%q<bond>.freeze, ["~> 0"])
     s.add_dependency(%q<rb-readline>.freeze, ["~> 0"])

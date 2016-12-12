@@ -15,7 +15,6 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     coderay (1.1.1)
-    colorize (0.8.1)
     concord (0.1.5)
       adamantium (~> 0.2.0)
       equalizer (~> 0.0.9)
@@ -149,11 +148,6 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    statistics3 (0.0.1)
-      awesome_print (~> 1)
-      colorize (~> 0)
-      psych (~> 2)
-      semver (~> 1)
     thor (0.19.4)
     thread_safe (0.3.5)
     unparser (0.2.5)
@@ -180,7 +174,7 @@ DEPENDENCIES
   guard-rspec (~> 4)
   juwelier (~> 2)
   k-tree (~> 0)
-  parser (~> 2)
+  parser
   pry
   pry-byebug
   pry-doc
@@ -192,7 +186,6 @@ DEPENDENCIES
   rspec (~> 3)
   semver (~> 1)
   simplecov (~> 0)
-  statistics3 (~> 0)
   thor (~> 0)
   unparser (~> 0)
   yard (~> 0)
