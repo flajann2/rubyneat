@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'distribution', '~> 0'
-gem 'bunny',        "~> 1"
-gem 'aquarium',     '~> 0'
-gem 'thor',         '~> 0'
-gem 'awesome_print', '~> 1'
-gem 'deep_dive',    '~> 0'
-gem 'parser',       '~> 2'
-gem 'unparser',     '~> 0'
+gem 'distribution',   '~> 0'
+gem 'bunny',          '~> 1'
+gem 'aquarium',       '~> 0'
+gem 'thor',           '~> 0'
+gem 'awesome_print',  '~> 1'
+gem 'deep_dive',      '~> 0'
+gem 'parser',         '~> 2'
+gem 'unparser',       '~> 0'
+gem 'process-daemon', '~> 1'
 
 # So our console can have name completion
 gem 'bond', '~> 0'

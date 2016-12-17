@@ -1,5 +1,6 @@
 require 'thor'
 require 'semver'
+require 'process-daemon'
 
 NEATER = File.join [Dir.pwd, "neater"]
 NEATGLOB = NEATER + '/*_neat.rb'
