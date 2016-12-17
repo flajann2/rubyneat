@@ -3,10 +3,19 @@ module NEAT
     class Daemon < Thor
       class_option :address, type: :string, banner: '<ip-addr>', default: 'localhost', aliases: '-a'
       
-      desc 'background', 'Run RubyNEAT Daemon in the background'
-      def background
-        puts "Daemon Lives in the Background"
-        Eudaimonia.daemonize
+      desc 'start', 'Start the RubyNEAT Daemon'
+      def start
+        Eudaimonia.start
+      end
+      
+      desc 'stop', 'Stop the RubyNEAT Daemon'
+      def stop
+        Eudaimonia.stop
+      end
+
+      desc 'status', 'Status of the RubyNEAT Daemon'
+      def status
+        Eudaimonia.status
       end
       
       desc 'foreground', 'Run RubyNEAT Daemon in the foreground, with STDOUT/STDERR. Interrupt with ^C.'

@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
     "lib/rubyneat/critter.rb",
     "lib/rubyneat/default_neat.rb",
     "lib/rubyneat/dsl.rb",
+    "lib/rubyneat/eudaimonia.rb",
     "lib/rubyneat/evaluator.rb",
     "lib/rubyneat/evolver.rb",
     "lib/rubyneat/expressor.rb",
@@ -80,6 +81,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<deep_dive>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<parser>.freeze, ["~> 2"])
       s.add_runtime_dependency(%q<unparser>.freeze, ["~> 0"])
+      s.add_runtime_dependency(%q<process-daemon>.freeze, ["~> 1"])
       s.add_runtime_dependency(%q<bond>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<rb-readline>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<queue_ding>.freeze, [">= 0"])
@@ -107,6 +109,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<deep_dive>.freeze, ["~> 0"])
       s.add_dependency(%q<parser>.freeze, ["~> 2"])
       s.add_dependency(%q<unparser>.freeze, ["~> 0"])
+      s.add_dependency(%q<process-daemon>.freeze, ["~> 1"])
       s.add_dependency(%q<bond>.freeze, ["~> 0"])
       s.add_dependency(%q<rb-readline>.freeze, ["~> 0"])
       s.add_dependency(%q<queue_ding>.freeze, [">= 0"])
@@ -135,6 +138,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<deep_dive>.freeze, ["~> 0"])
     s.add_dependency(%q<parser>.freeze, ["~> 2"])
     s.add_dependency(%q<unparser>.freeze, ["~> 0"])
+    s.add_dependency(%q<process-daemon>.freeze, ["~> 1"])
     s.add_dependency(%q<bond>.freeze, ["~> 0"])
     s.add_dependency(%q<rb-readline>.freeze, ["~> 0"])
     s.add_dependency(%q<queue_ding>.freeze, [">= 0"])
