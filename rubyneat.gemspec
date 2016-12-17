@@ -36,6 +36,7 @@ Gem::Specification.new do |s|
     "lib/rubyneat.rb",
     "lib/rubyneat/cli.rb",
     "lib/rubyneat/cli/console.rb",
+    "lib/rubyneat/cli/daemon.rb",
     "lib/rubyneat/cli/generate.rb",
     "lib/rubyneat/cli/main.rb",
     "lib/rubyneat/cli/templates/generate/.irbrc.tt",
