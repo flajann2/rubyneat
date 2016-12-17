@@ -6,5 +6,7 @@ NEATGLOB = NEATER + '/*_neat.rb'
 
 require_relative 'cli/generate'
 require_relative 'cli/console'
+require_relative 'cli/daemon'
 require_relative 'cli/main'
+
 require 'rubyneat'

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2016-12-12"
+  s.date = "2016-12-17"
   s.description = "\n  RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.\n  By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,\n  populations of neural nets are evolved to handle pre-defined goals.\n\n  RubyNEAT is the first implementation of the NEAT algorithm for Ruby, and\n  it leverages Ruby's power to implement the NEAT algorithm in a way that would\n  be difficult to do in other languages. The 'activation function' is largely\n  standalone. Basically, activation is achieved by functional programming.\n\n  Meaning, once your network is evolved, you can extract it as source code you\n  can then utilize without the RubyNEAT engine.\n\n  RubyNEAT can be used for nearly any Machine Learning task you can dream of,\n  because it's also extensible and modular. See http://rubyneat.com for the\n  details.\n  ".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.executables = ["neat".freeze]
@@ -72,11 +72,12 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<distribution>.freeze, ["~> 0"])
+      s.add_runtime_dependency(%q<bunny>.freeze, ["~> 1"])
       s.add_runtime_dependency(%q<aquarium>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<thor>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<awesome_print>.freeze, ["~> 1"])
       s.add_runtime_dependency(%q<deep_dive>.freeze, ["~> 0"])
-      s.add_runtime_dependency(%q<parser>.freeze, [">= 0"])
+      s.add_runtime_dependency(%q<parser>.freeze, ["~> 2"])
       s.add_runtime_dependency(%q<unparser>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<bond>.freeze, ["~> 0"])
       s.add_runtime_dependency(%q<rb-readline>.freeze, ["~> 0"])
@@ -98,11 +99,12 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<pry-stack_explorer>.freeze, [">= 0"])
     else
       s.add_dependency(%q<distribution>.freeze, ["~> 0"])
+      s.add_dependency(%q<bunny>.freeze, ["~> 1"])
       s.add_dependency(%q<aquarium>.freeze, ["~> 0"])
       s.add_dependency(%q<thor>.freeze, ["~> 0"])
       s.add_dependency(%q<awesome_print>.freeze, ["~> 1"])
       s.add_dependency(%q<deep_dive>.freeze, ["~> 0"])
-      s.add_dependency(%q<parser>.freeze, [">= 0"])
+      s.add_dependency(%q<parser>.freeze, ["~> 2"])
       s.add_dependency(%q<unparser>.freeze, ["~> 0"])
       s.add_dependency(%q<bond>.freeze, ["~> 0"])
       s.add_dependency(%q<rb-readline>.freeze, ["~> 0"])
@@ -125,11 +127,12 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<distribution>.freeze, ["~> 0"])
+    s.add_dependency(%q<bunny>.freeze, ["~> 1"])
     s.add_dependency(%q<aquarium>.freeze, ["~> 0"])
     s.add_dependency(%q<thor>.freeze, ["~> 0"])
     s.add_dependency(%q<awesome_print>.freeze, ["~> 1"])
     s.add_dependency(%q<deep_dive>.freeze, ["~> 0"])
-    s.add_dependency(%q<parser>.freeze, [">= 0"])
+    s.add_dependency(%q<parser>.freeze, ["~> 2"])
     s.add_dependency(%q<unparser>.freeze, ["~> 0"])
     s.add_dependency(%q<bond>.freeze, ["~> 0"])
     s.add_dependency(%q<rb-readline>.freeze, ["~> 0"])

@@ -43,6 +43,9 @@ module NEAT
 
       desc 'console', 'Run RubyNEAT interactively'
       subcommand 'console', Console
+      
+      desc 'daemon', 'RubyNEAT Daemon, to be controlled through RabbitMQ by the Panel client or other.'
+      subcommand 'daemon', Daemon
 
       desc 'run <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
       option :log, type: :string, banner: 'info|warn|debug|error'

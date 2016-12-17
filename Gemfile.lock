@@ -6,6 +6,7 @@ GEM
       ice_nine (~> 0.11.0)
       memoizable (~> 0.4.0)
     addressable (2.4.0)
+    amq-protocol (1.9.2)
     aquarium (0.5.1)
     ast (2.3.0)
     awesome_print (1.7.0)
@@ -13,6 +14,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bond (0.5.1)
     builder (3.2.2)
+    bunny (1.7.1)
+      amq-protocol (~> 1.9.2)
     byebug (9.0.6)
     coderay (1.1.1)
     concord (0.1.5)
@@ -115,7 +118,7 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    psych (2.2.1)
+    psych (2.2.2)
     queue_ding (0.1.3)
       aquarium (~> 0)
       semver (~> 1)
@@ -168,13 +171,14 @@ DEPENDENCIES
   awesome_print (~> 1)
   bond (~> 0)
   bundler (~> 1)
+  bunny (~> 1)
   deep_dive (~> 0)
   distribution (~> 0)
   guard (~> 2)
   guard-rspec (~> 4)
   juwelier (~> 2)
   k-tree (~> 0)
-  parser
+  parser (~> 2)
   pry
   pry-byebug
   pry-doc
