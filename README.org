@@ -1,50 +1,58 @@
 * RubyNEAT -- Neural Evolution of Augmenting Topologies
 
-[[https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][[[https://badges.gitter.im/Join%20Chat.svg]]]]
+  [[https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][[[https://badges.gitter.im/Join%20Chat.svg]]]]
 
-For the latest news and usage docs, please see:
+  For the latest news and usage docs, please see:
 
-http://rubyneat.de
+  http://rubyneat.de
 
-For code documentation, please see:
+  For code documentation, please see:
 
-http://www.rubydoc.info/github/flajann2/rubyneat
+  http://www.rubydoc.info/github/flajann2/rubyneat
 
-RubyNEAT is under intense development, and then will be under intense
-documentation, as this is expected to be a full blown pure Ruby
-implementation of the NEAT algorithm by Kenneth Stanley:
+  RubyNEAT is under intense development, and then will be under intense
+  documentation, as this is expected to be a full blown pure Ruby
+  implementation of the NEAT algorithm by Kenneth Stanley:
 
-http://www.cs.ucf.edu/~kstanley/
+  http://www.cs.ucf.edu/~kstanley/
 
 ** Gem Version
 
-[[https://badge.fury.io/rb/rubyneat][[[https://badge.fury.io/rb/rubyneat.png]]]]
-[[https://travis-ci.org/flajann2/rubyneat][[[https://travis-ci.org/flajann2/rubyneat.svg?branch=hyper]]]]
+   [[https://badge.fury.io/rb/rubyneat][[[https://badge.fury.io/rb/rubyneat.png]]]]
+   [[https://travis-ci.org/flajann2/rubyneat][[[https://travis-ci.org/flajann2/rubyneat.svg?branch=hyper]]]]
 
 ** Quick and Dirty Docs
 
-There is an (extreme) alpha RubyGEM. Just do:
+   There is an (extreme) alpha RubyGEM. Just do:
 
-gem install rubyneat --pre
+   #+begin_src bash
+   gem install rubyneat --pre
+   #+end_src
 
-Then type:
+   Then type:
+   
+   #+begin_src bash
+   neat
+   #+end_src
 
-neat
+   to see the list of commands. The workflow aspect of Rails is loosely
+   mirrored here.
 
-to see the list of commands. The workflow aspect of Rails is loosely
-mirrored here.
+   To generate a new NEAT project, type:
 
-To generate a new NEAT project, type:
+   #+begin_src bash
+   neat new PROJECTNAME
+   #+end_src
 
-neat new PROJECTNAME
+   and a project directory will be created. Cd into that directory, and
+   type:
 
-and a project directory will be created. Cd into that directory, and
-type:
+   #+begin_src bash
+   neat generate neater NEATERNAME
+   #+end_src
 
-neat generate neater NEATERNAME
-
-and a scaffold Neater will be generated. Note that this generator is
-still in alpha, but improvements are coming shortly.
+   and a scaffold Neater will be generated. Note that this generator is
+   still in alpha, but improvements are coming shortly.
 
 ** Enhanced Substrate HyperNEAT
 
@@ -67,38 +75,36 @@ provides visualization.
 
 ** Modularization
 
-On the heels of ES HyperNEAT, we needed to add modularization to make
-that possible. We expose this modularization for direct usage outside of
-HyperNEAT, so that you may compose modules of ANNs and their
-relationships, which mirrors how the brain has 'modules' of specific
-functionality.
+   On the heels of ES HyperNEAT, we needed to add modularization to make
+   that possible. We expose this modularization for direct usage outside of
+   HyperNEAT, so that you may compose modules of ANNs and their
+   relationships, which mirrors how the brain has 'modules' of specific
+   functionality.
 
-You of course may mix and match ES HyperNEAT modules with NEAT modules.
-We'll leave that to your imagination. This modularization should not be
-confused with the modularization that may automatically arise within ES
-HyperNEAT itself. Please see the Wiki for a deeper exploration of these
-ideas,
+   You of course may mix and match ES HyperNEAT modules with NEAT modules.
+   We'll leave that to your imagination. This modularization should not be
+   confused with the modularization that may automatically arise within ES
+   HyperNEAT itself. Please see the Wiki for a deeper exploration of these
+   ideas,
+
+   Note that this is not the same modularization as spoken 
+   of by Ken Stanley, which has to do with virtual neurons and the like.
+   We may support Stanley Modularization in the future.
 
 ** Examples
 
-For some examples, clone or fork the following:
+   For some examples, clone or fork the following:
 
-[[https://github.com/flajann2/rubyneat_examples]]
+   [[https://github.com/flajann2/rubyneat_examples]]
 
-Feel free to add your own and do pull requests so that we can have more
-examples of using RubyNEAT.
+   Feel free to add your own and do pull requests so that we can have more
+   examples of using RubyNEAT.
 
-** Also Note
-
-   For now, see
-
-   [[https://github.com/flajann2/rubyneat]]
-
-   for the Github version, and this will probably be the better option
-   until this gets out of alpha. There are a couple of example Neaters
-   there (one of which is still in development). Basic, but will be a good
-   example of how to implement your own Neater. Eventually all will be
-   fully documented.
+** TODO Documentation 
+*** Environment Variables
+**** RUBYNEAT_AMQP_URL
+    This sets the default RabbitMQ (or other AMQP) URL for the RubyNEAT Daemon to use.
+    If not specified, the default will be set to 'localhost'
 
 ** Release Notes
    | version             | description                                                                                                                                                                                                        |

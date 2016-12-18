@@ -1,7 +1,7 @@
 module NEAT
   module Cli
     class Daemon < Thor
-      class_option :address, type: :string, banner: '<ip-addr>', default: 'localhost', aliases: '-a'
+      class_option :address, type: :string, banner: '<ip-addr>', default: ENV['RUBYNEAT_AMQP_URL'] || 'localhost', aliases: '-a'
       
       desc 'start', 'Start the RubyNEAT Daemon'
       def start
