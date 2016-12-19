@@ -1,7 +1,10 @@
+require 'set'
+require 'pp'
+require 'awesome_print'
+require 'process/daemon'
+
 require_relative 'rubyneat/rubyneat'
 require_relative 'rubyneat/graph'
 require_relative 'rubyneat/dsl'
 require_relative 'rubyneat/reporting'
 require_relative 'rubyneat/eudaimonia'
-require 'set'
-require 'pp'

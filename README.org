@@ -105,6 +105,10 @@ provides visualization.
 **** RUBYNEAT_AMQP_URL
     This sets the default RabbitMQ (or other AMQP) URL for the RubyNEAT Daemon to use.
     If not specified, the default will be set to 'localhost'
+    The format of this url given by http://rubybunny.info/articles/connecting.html
+    We expect the Bunny conventions here, for example:
+
+    amqp://guest:guest@localhost:5672
 
 ** Release Notes
    | version             | description                                                                                                                                                                                                        |

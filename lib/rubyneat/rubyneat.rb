@@ -597,7 +597,6 @@ module NEAT
 
     # Run this evolution.
     def run
-      #binding.pry
       pre_run_initialize
       (1..@parms.max_generations).each do |gen_number|
         maybe_pause_evolution
