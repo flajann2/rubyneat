@@ -147,3 +147,66 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+** The Junkyard
+   This is a dumping ground of code snippets and notes
+   that only has signifigance to myself, and is not
+   promised to be kept "up to date" or in any regard
+   made meaninful to anyone else.
+*** Tracing code
+    A rather nasty problem arose in the parser library that appears 
+    to loop endlessly. This snippet uncovered it.
+
+    #+begin_src ruby
+    set_trace_func proc { |event, file, line, id, binding, classname|
+      printf "%8s %s:%-2d %10s %8s\n", event, file, line, id, classname
+    }
+    #+end_src
+
+    And the following is a small sample of the output:
+
+    #+begin_src
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:884
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883
+->   c-call /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+-> c-return /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:884
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883
+->   c-call /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+-> c-return /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:884
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883
+->   c-call /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+-> c-return /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:884
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883
+->   c-call /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+-> c-return /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:884
+->     line /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883
+->   c-call /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+-> c-return /home/alveric/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/parser-2.3.3.1/lib/parser/ruby24.rb:883       to_i   String
+    #+end_src
+
+    And the following are the lines in parser that were found
+    to be looping forever:
+
+    #+begin_src ruby
+    '573,572,,,557,566,554,553,552,562,555,557,,554,553,552,562,555,557,565',
+    '554,553,552,562,555,557,565,554,553,552,562,555,,565,,,,,,,565,560,',
+    ',,,,,560,,,,573,572,,560,,566,,573,572,,560,,566,,573,572,,,,566,,573',
+    '572,,,,566' ]
+        racc_action_table = arr = ::Array.new(25362, nil)
+        idx = 0
+        clist.each do |str|
+          str.split(',', -1).each do |i|
+            arr[idx] = i.to_i unless i.empty?
+            idx += 1
+          end
+        end
+
+    clist = [
+    '95,444,444,601,601,17,347,95,95,95,58,340,95,95,95,24,95,26,19,385,655',
+    '661,24,341,95,386,95,95,95,61,357,657,223,1,357,348,95,95,727,95,95',
+    '95,95,95,883,906,937,938,941,351,58,587,17,673,983,655,661,330,310,19',
+    #+end_src

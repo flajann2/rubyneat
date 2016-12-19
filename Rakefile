@@ -24,7 +24,7 @@ Juwelier::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{RubyNEAT NeuralEvolution of Augmenting Topologies}
   gem.version = s_version
-  gem.required_ruby_version = '>= 2.3.1'
+  gem.required_ruby_version = '>= 2.2.6'
   gem.description = %Q{
   RubyNEAT -- Neural Evolution of Augmenting Topologies for Ruby.
   By way of an enhanced form of Genetic Algorithms -- the NEAT algorithm,
