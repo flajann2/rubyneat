@@ -1,15 +1,15 @@
 module NEAT
   class Eudaimonia < Process::Daemon
     attr_accessor :amqp
+    
     class << self
       attr_accessor :url
-      attr_accessor :queue
-      
+      attr_accessor :queue      
     end
     
     def startup
       # Setup the AMQP channel
-      @ampq ||= []
+      @amqp ||= {}
       @amqp[:conn] = Bunny.new (@amqp[:url] = self.class.url)
       @amqp[:conn].start
       @amqp[:channel]  = @amqp[:conn].create_channel
@@ -25,13 +25,7 @@ module NEAT
         @amqp[:exchange].publish('return',
                                  routing_key: prop.reply_to,
                                  correlation_id: prop.correlation_id)
-      end
-      
-      loop do
-        puts "It runs"
-        ap @ampq
-        sleep 1
-      end
+      end     
     ensure
       puts "Eudaimonia noooo."
     end

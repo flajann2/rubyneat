@@ -32,7 +32,11 @@ module NEAT
       
       desc 'foreground', 'Run RubyNEAT Daemon in the foreground, with STDOUT/STDERR. Interrupt with ^C.'
       def foreground
-        Eudaimonia.new.run
+        Eudaimonia.url = options[:url]
+        Eudaimonia.queue = options[:queue]
+        e = Eudaimonia.new
+        e.startup
+        e.run
       end      
     end
   end
