@@ -3,6 +3,8 @@ module NEAT
     attr_accessor :amqp
     class << self
       attr_accessor :url
+      attr_accessor :queue
+      
     end
     
     def startup
@@ -10,13 +12,21 @@ module NEAT
       @ampq ||= []
       @amqp[:conn] = Bunny.new (@amqp[:url] = self.class.url)
       @amqp[:conn].start
-      @amqp[:channel] = @amqp[:conn].create_channel
-      @amqp[:queue] = @amqp[:channel].queue(*@amqp[:queue_params])
-      @amqp[:reply] = @amqp[:channel].queue(*@amqp[:reply_params])
+      @amqp[:channel]  = @amqp[:conn].create_channel
+      @amqp[:queue]    = @amqp[:channel].queue(@amqp[:queue_name] = self.class.queue)
       @amqp[:exchange] = @amqp[:channel].default_exchange
     end
 
     def run
+      @amqp[:queue].subscribe(block: true) do |info, prop, payload|
+        ap info
+        ap prop
+        ap payload
+        @amqp[:exchange].publish('return',
+                                 routing_key: prop.reply_to,
+                                 correlation_id: prop.correlation_id)
+      end
+      
       loop do
         puts "It runs"
         ap @ampq

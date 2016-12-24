@@ -108,7 +108,9 @@ provides visualization.
     The format of this url given by http://rubybunny.info/articles/connecting.html
     We expect the Bunny conventions here, for example:
 
-    amqp://guest:guest@localhost:5672
+**** TODO RUBYNEAT_AMQP_ROUTING
+**** TODO RUBYNEAT_AMQP_QUEUE
+**** TODO RUBYNEAT_AMQP_REPLY_TO
 
 ** Release Notes
    | version             | description                                                                                                                                                                                                        |
