@@ -16,6 +16,7 @@ gem 'rb-readline', '~> 0'
 gem 'queue_ding', '>= 0'
 gem 'k-tree', '~> 0'
 gem 'semver', '~> 1'
+gem "json", "~> 2.0", ">= 2.0.2"
 
 group :development do
   gem 'rspec', '~> 3'

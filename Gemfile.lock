@@ -179,6 +179,7 @@ DEPENDENCIES
   distribution (~> 0)
   guard (~> 2)
   guard-rspec (~> 4)
+  json (~> 2.0, >= 2.0.2)
   juwelier (~> 2)
   k-tree (~> 0)
   parser (~> 2)
