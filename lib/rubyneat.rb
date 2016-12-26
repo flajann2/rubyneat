@@ -2,6 +2,7 @@ require 'set'
 require 'pp'
 require 'awesome_print'
 require 'process/daemon'
+require 'oj'
 
 require_relative 'rubyneat/rubyneat'
 require_relative 'rubyneat/graph'
