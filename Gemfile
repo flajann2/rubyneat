@@ -13,6 +13,8 @@ gem 'aquarium', '~> 0'
 gem 'thor', '~> 0'
 gem 'awesome_print', '~> 1'
 gem 'deep_dive', '~> 0'
+gem "json",               "~> 2.0", ">= 2.0.2"
+
 
 # So our console can have name completion
 gem 'bond', '~> 0'
@@ -21,7 +23,7 @@ gem 'queue_ding', '>= 0'
 gem 'semver', '~> 1'
 
 group :development do
-  gem 'rspec', '~> 2'
+  gem 'rspec', '~> 3'
   gem 'yard', '~> 0'
   gem 'guard', '~> 2'
   gem 'guard-rspec', '~> 4'
