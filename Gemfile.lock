@@ -61,7 +61,7 @@ GEM
     ice_nine (0.11.2)
     interception (0.5)
     json (2.0.2)
-    juwelier (2.3.2)
+    juwelier (2.3.4)
       builder
       bundler (>= 1.13)
       git (>= 1.2.5)
@@ -71,11 +71,11 @@ GEM
       psych (~> 2.2)
       rake
       rdoc
-      semver
+      semver2
     jwt (1.5.6)
-    k-tree (0.0.6)
+    k-tree (0.0.7)
       json (~> 2.0, >= 2.0.2)
-      semver (~> 1)
+      semver2 (~> 3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -126,10 +126,10 @@ GEM
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
     psych (2.2.2)
-    queue_ding (0.1.4)
+    queue_ding (0.1.5)
       aquarium (~> 0)
       json (~> 2.0, >= 2.0.2)
-      semver (~> 1)
+      semver2 (~> 3)
     rack (2.0.1)
     rainbow (2.1.0)
     rake (12.0.0)
@@ -152,7 +152,6 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby_dep (1.5.0)
-    semver (1.0.1)
     semver2 (3.4.2)
     shellany (0.0.1)
     simplecov (0.12.0)
