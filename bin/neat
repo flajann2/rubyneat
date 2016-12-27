@@ -11,7 +11,9 @@ end
 require 'rubyneat/cli'
 
 unless File.exists? NEAT_EXECUTABLE
+  puts '=' *80
   NEAT::Cli::NewMain.start
 else
+  puts '!' *80
   exec NEAT_EXECUTABLE, *ARGV
 end

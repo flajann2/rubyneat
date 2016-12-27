@@ -340,7 +340,7 @@ module NEAT
 
   class Controller < NeatOb
     # Version of RubyNEAT runing
-    attr_neat :version, default: SemVer.find.format("%M.%m.%p%s")
+    attr_neat :version, default: SemVer.find(File.dirname(__FILE__)).format("%M.%m.%p%s")
     attr_neat :neater, default: '--unspecified--'
 
     # global innovation number

@@ -196,7 +196,6 @@ set_trace_func proc { |event, file, line, id, binding, classname|
         .map{|v| [v, binding.local_variable_get(v)]}.to_h
     end
     }
-
     #+end_src
 
     And the following is a small sample of the output:

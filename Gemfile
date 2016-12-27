@@ -11,11 +11,11 @@ gem 'unparser',       '~> 0'
 gem 'process-daemon', '~> 1'
 
 # So our console can have name completion
-gem 'bond', '~> 0'
-gem 'rb-readline',    '~> 0'
-gem 'queue_ding',     '>= 0'
-gem 'k-tree',         '~> 0'
-gem 'semver',         '~> 1'
+gem 'bond',           "~> 0"
+gem 'rb-readline',    "~> 0"
+gem 'queue_ding',     ">= 0"
+gem 'k-tree',         "~> 0"
+gem 'semver2',        "~> 3"
 gem "json",           "~> 2.0", ">= 2.0.2"
 gem "oj",             "~> 2"
 
