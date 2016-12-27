@@ -1,5 +1,5 @@
 * RubyNEAT -- Neural Evolution of Augmenting Topologies
-
+** General
   [[https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][[[https://badges.gitter.im/Join%20Chat.svg]]]]
 
   For the latest news and usage docs, please see:

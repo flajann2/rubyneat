@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'distribution',   '~> 0'
-gem 'bunny',          '~> 1'
-gem 'aquarium',       '~> 0'
-gem 'thor',           '~> 0'
-gem 'awesome_print',  '~> 1'
-gem 'deep_dive',      '~> 0'
-gem 'parser',         '~> 2'
-gem 'unparser',       '~> 0'
-gem 'process-daemon', '~> 1'
+gem 'distribution',   "~> 0"
+gem 'bunny',          "~> 1"
+gem 'aquarium',       "~> 0"
+gem 'thor',           "~> 0"
+gem 'awesome_print',  "~> 1"
+gem 'deep_dive',      "~> 0"
+gem 'parser',         "~> 2"
+gem 'unparser',       "~> 0"
+gem 'process-daemon', "~> 1"
 
 # So our console can have name completion
 gem 'bond',           "~> 0"
@@ -20,13 +20,13 @@ gem "json",           "~> 2.0", ">= 2.0.2"
 gem "oj",             "~> 2"
 
 group :development do
-  gem 'rspec', '~> 3'
-  gem 'yard', '~> 0'
-  gem 'guard', '~> 2'
-  gem 'guard-rspec', '~> 4'
-  gem "bundler", "~> 1"
-  gem 'juwelier', '~> 2'
-  gem 'simplecov', '~> 0'
+  gem 'rspec',        "~> 3"
+  gem 'yard',         "~> 0"
+  gem 'guard',        "~> 2"
+  gem 'guard-rspec',  "~> 4"
+  gem "bundler",      "~> 1"
+  gem 'juwelier',     "~> 2"
+  gem 'simplecov',    "~> 0"
   gem 'pry'
   gem 'pry-doc'
   gem 'pry-byebug'

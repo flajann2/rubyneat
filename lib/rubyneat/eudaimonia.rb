@@ -31,8 +31,12 @@ module NEAT
     end
 
     def shutdown
-      # Stop everything that was setup in startup. Called as part of main daemon thread/process, not in trap context (e.g. SIGINT).
-      # Asynchronous code can call self.request_shutdown from a trap context to interrupt the main process, provided you aren't doing work in #run.
+      # Stop everything that was setup in startup.
+      # Called as part of main daemon thread/process,
+      # not in trap context (e.g. SIGINT).
+      # Asynchronous code can call self.request_shutdown
+      # from a trap context to interrupt the main process,
+      # provided you aren't doing work in #run.
       puts "Fertig"
     end
     
