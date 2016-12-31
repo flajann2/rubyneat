@@ -19,10 +19,12 @@ module NEAT
 
     def run
       @amqp[:queue].subscribe(block: true) do |info, prop, payload|
-        ap info
-        ap prop
-        ap payload
-        @amqp[:exchange].publish('return',
+        pl = Oj.load payload
+        puts '=' * 80
+        puts "reply_to: #{prop.reply_to}"
+        ap pl
+        pl.response = "got it!"
+        @amqp[:exchange].publish(Oj.dump(pl),
                                  routing_key: prop.reply_to,
                                  correlation_id: prop.correlation_id)
       end     
