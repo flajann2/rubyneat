@@ -19,10 +19,19 @@ include NEAT::Daemon
 module NEAT
   module Daemon
     COMMANDS = {
-      status: "Fetch and return the complete state of the RubyNEAT Daemon",
-      run:    "Run a Neater",
-      list:   "List the requested type",
-      version: "Get the verison of NEAT running",
+      status:  ["Fetch and return the complete state of the RubyNEAT Daemon",
+                ->(pl) {
+                  { neaters: Dir.glob(NEATGLOB).sort.map { |ne|
+                      File.basename(ne).gsub(%r{_neat\.rb}, '')
+                    },
+                  }
+                }],
+      run:     ["Run a Neater",
+                ->() { :niy }],
+      list:    ["List the requested type",
+                ->() { :niy }],
+      version: ["Get the verison of NEAT running",
+                ->() { :niy }],
     }
     class Command
       attr_accessor :cmd
@@ -30,9 +39,10 @@ module NEAT
       attr_accessor :payload # specifics for the command
       attr_accessor :response # response to the command
       
-      def initialize command = nil
+      def initialize command = nil, payload = nil
         if COMMANDS.member? command
           @cmd = command
+          @payload = payload
         else
           raise "Command #{command} is not defined."
         end unless command.nil?

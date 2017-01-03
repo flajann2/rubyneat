@@ -20,10 +20,15 @@ module NEAT
     def run
       @amqp[:queue].subscribe(block: true) do |info, prop, payload|
         pl = Oj.load payload
-        puts '=' * 80
-        puts "reply_to: #{prop.reply_to}"
+
+        begin
+          puts "Executing: #{Daemon::COMMANDS[pl.cmd].first}"
+          pl.response = [:success, Daemon::COMMANDS[pl.cmd].last.(pl.payload)]
+        rescue => e
+          pl.response = [:fail, e]
+        end
         ap pl
-        pl.response = "got it!"
+        
         @amqp[:exchange].publish(Oj.dump(pl),
                                  routing_key: prop.reply_to,
                                  correlation_id: prop.correlation_id)
