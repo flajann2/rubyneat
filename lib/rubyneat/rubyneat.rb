@@ -1,14 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'semver'
-require 'distribution'
-require 'yaml'
-require 'logger'
-require 'awesome_print'
-require 'deep_dive'
-require 'queue_ding'
-require 'matrix'
-require 'parser/current'
-require 'unparser'
 
 =begin rdoc
 = RubyNEAT -- a Ruby Implementation of the Neural Evolution of Augmenting Topologies.
@@ -670,7 +660,7 @@ module NEAT
   @controller = Controller.new hyper: true
   def self.controller ; @controller ; end
   def self.controller=(controller) ; @controller = controller ; end
-  def self.create_controller(*parms); @controller = Controller.new(*parms); end
+  def self.create_controller(*parms, &block); @controller = Controller.new(*parms, &block); end
 end
 
 # We put all the internal requires at the end to avoid conflicts.

@@ -24,7 +24,12 @@ module NEAT
                   { neaters: Dir.glob(NEATGLOB).sort.map { |ne|
                       File.basename(ne).gsub(%r{_neat\.rb}, '')
                     },
+                    neurons: NEAT::Neuron.neuron_types.map{|n| n.name }.sort,
                   }
+                }],
+      details: ["Fetch the details of a particular neater",
+                ->(neater) {
+                  load "#{neater}_neat.rb"
                 }],
       run:     ["Run a Neater",
                 ->() { :niy }],
