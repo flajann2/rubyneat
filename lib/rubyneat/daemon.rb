@@ -31,6 +31,7 @@ module NEAT
                 ->(neater) {
                   begin
                     load "#{neater}_neat.rb"
+                    
                   rescue => e
                     [:error, e]
                   end

@@ -654,7 +654,7 @@ module NEAT
 
     # This will either return immediately, or pause evolution. The run loop calls
     # maybe_pause_evolution at the head of each pass. A seperate thread will wake this
-    # up if paused. This is mainly for the Dashboard control.
+    # up if paused. This is mainly for the Rubyneat Panel control.
     #
     # Basically, this shall be overridden by a plugin needing this level of
     # control.
@@ -672,5 +672,6 @@ module NEAT
 end
 
 # We put all the internal requires at the end to avoid conflicts.
+# TODO: Do we still need this here?
 require_relative 'neuron'
 require_relative 'population'
