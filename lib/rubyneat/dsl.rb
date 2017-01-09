@@ -199,7 +199,7 @@ module NEAT
     # Run the engine. The block is called on each generation.
     def run_engine(&block)
       NEAT::controller.end_run_add( &block )
-      NEAT::controller.run
+      NEAT::controller.run unless Eudaimonia::daemonized?
     end
 
     # This is used to handle the details of our DSL.

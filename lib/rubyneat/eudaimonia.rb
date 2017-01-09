@@ -4,10 +4,17 @@ module NEAT
     
     class << self
       attr_accessor :url
-      attr_accessor :queue      
+      attr_accessor :queue
+      attr_reader :daemonized
+      def daemonized?
+        @daemonized
+      end
     end
     
     def startup
+      # Let everyone know we are running as a daemon
+      self.class.daemonized = true
+      
       # Setup the AMQP channel
       @amqp ||= {}
       @amqp[:conn] = Bunny.new (@amqp[:url] = self.class.url)
@@ -44,6 +51,7 @@ module NEAT
       # Asynchronous code can call self.request_shutdown
       # from a trap context to interrupt the main process,
       # provided you aren't doing work in #run.
+      self.class.daemonized = false
       puts "Fertig"
     end
     
