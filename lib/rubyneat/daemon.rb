@@ -29,14 +29,22 @@ module NEAT
                 }],
       details: ["Fetch the details of a particular neater",
                 ->(neater) {
-                  load "#{neater}_neat.rb"
+                  begin
+                    load "#{neater}_neat.rb"
+                  rescue => e
+                    [:error, e]
+                  end
                 }],
       run:     ["Run a Neater",
-                ->() { :niy }],
-      list:    ["List the requested type",
-                ->() { :niy }],
-      version: ["Get the verison of NEAT running",
-                ->() { :niy }],
+                ->(neater) {
+                  begin
+                    load "#{neater}_neat.rb"
+                  rescue => e
+                    [:error, e]
+                  end
+                }],
+      list:    ["List the requested type", ->() { :niy }],
+      version: ["Get the verison of NEAT running", ->() { rubyneat_version }],
     }
     class Command
       attr_accessor :cmd

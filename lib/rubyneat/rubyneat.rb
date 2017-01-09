@@ -52,7 +52,7 @@ then will be set in quick drying concrete.
 =end
 module NEAT
   @rng_count = 0
-  @rng_names = %w{alpha beta gamma delta epsilon zeta  eta theta kappa lambda
+  @rng_names = %w{alpha beta gamma delta epsilon zeta eta theta kappa lambda
                   mu nu xi omicron pi rho sigma tau upsilon phi chi psi omega
 
                   alef bet gimel dalet he vav zayin het tet yod kaf lamed
@@ -62,12 +62,18 @@ module NEAT
                   muwan pax kayab kumku wayeb
 
                   ki gi ngi ti di ni bi mi yi li wi si hi ku gu ngu tu du pu
-                  bu yu lu wu su hu
+                  bu yu lu wu su ss hu kaka
 
                   ha jim theh teh beh alif sin zin ra dhal dal kha ain dha ta
                   dad sad shin mim lam kaf qaf feh ghain yeh waw heh nun
 
-                  fritz habe hanchen senf salz alveric lirazel
+                  fritz habe hanchen senf salz alveric lirazel artemis
+                  laut zeit bleiben sofort langsam waffen kries die 
+                  der das dem damit kalt warme ich ihr sied beim null ein zwei
+                  drei feir funf sechs seben acht neun zen elf zwölf
+
+                  zero one two three four five six seven eight nine ten
+                  eleven twelve
                   }
   def self.random_name_generator
     (1..3).map {
@@ -291,6 +297,7 @@ module NEAT
   end
 
   # Core Includes go here!
+  # TODO: Do we really still need this here?
   require_relative 'critter'
   require_relative 'neuron'
   require_relative 'population'
@@ -299,6 +306,7 @@ module NEAT
   require_relative 'evaluator'
 
   # HyperNEAT extension
+  # TODO: Do we really still need this here?
   require_relative 'hyper_expressor'
 
   #= Controller for all operations of RubyNEAT

@@ -17,6 +17,10 @@ require 'matrix'
 require 'parser/current'
 require 'unparser'
 
+def rubyneat_version
+  SemVer.find.format "RubyNEAT v%M.%m.%p%s"
+end
+
 require_relative 'rubyneat/rubyneat'
 require_relative 'rubyneat/graph'
 require_relative 'rubyneat/dsl'
