@@ -5,7 +5,7 @@ module NEAT
     class << self
       attr_accessor :url
       attr_accessor :queue
-      attr_reader :daemonized
+      attr_accessor :daemonized
       def daemonized?
         @daemonized
       end
