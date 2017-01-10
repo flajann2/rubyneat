@@ -44,6 +44,38 @@ module NEAT
                     [:error, e]
                   end
                 }],
+      kill:     ["Kill a running Neater",
+                ->(neater) {
+                  begin
+                    :niy
+                  rescue => e
+                    [:error, e]
+                  end
+                }],
+      pause:     ["Pause a running Neater",
+                ->(neater) {
+                  begin
+                    :niy
+                  rescue => e
+                    [:error, e]
+                  end
+                }],
+      resume:    ["Resume a paused Neater",
+                ->(neater) {
+                  begin
+                    :niy
+                  rescue => e
+                    [:error, e]
+                  end
+                }],
+      step:     ["Step a running Neater one generation",
+                ->(neater) {
+                  begin
+                    :niy
+                  rescue => e
+                    [:error, e]
+                  end
+                }],
       list:    ["List the requested type", ->() { :niy }],
       version: ["Get the verison of NEAT running", ->() { rubyneat_version }],
     }
