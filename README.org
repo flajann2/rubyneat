@@ -1,3 +1,22 @@
+* Table of Contents                                                :TOC_5_gh:
+ - [[#rubyneat----neural-evolution-of-augmenting-topologies][RubyNEAT -- Neural Evolution of Augmenting Topologies]]
+   - [[#general][General]]
+   - [[#gem-version][Gem Version]]
+   - [[#quick-and-dirty-docs][Quick and Dirty Docs]]
+   - [[#enhanced-substrate-hyperneat][Enhanced Substrate HyperNEAT]]
+   - [[#modularization][Modularization]]
+   - [[#examples][Examples]]
+   - [[#documentation][Documentation]]
+     - [[#environment-variables][Environment Variables]]
+       - [[#rubyneat_amqp_url][RUBYNEAT_AMQP_URL]]
+       - [[#rubyneat_amqp_routing][RUBYNEAT_AMQP_ROUTING]]
+       - [[#rubyneat_amqp_queue][RUBYNEAT_AMQP_QUEUE]]
+       - [[#rubyneat_amqp_reply_to][RUBYNEAT_AMQP_REPLY_TO]]
+   - [[#release-notes][Release Notes]]
+   - [[#copyright-notice--licensing-info][Copyright Notice & Licensing Info]]
+   - [[#the-junkyard][The Junkyard]]
+     - [[#tracing-code][Tracing code]]
+
 * RubyNEAT -- Neural Evolution of Augmenting Topologies
 ** General
   [[https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][[[https://badges.gitter.im/Join%20Chat.svg]]]]
