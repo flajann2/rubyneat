@@ -35,8 +35,8 @@ module NEAT
           pl.response = [:fail, e]
         end
         ap pl
-        
-        @amqp[:exchange].publish(Oj.dump(pl),
+        retpayload = Oj.dump(pl)
+        @amqp[:exchange].publish(retpayload,
                                  routing_key: prop.reply_to,
                                  correlation_id: prop.correlation_id)
       end     
