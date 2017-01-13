@@ -29,52 +29,27 @@ module NEAT
                 }],
       details: ["Fetch the details of a particular neater",
                 ->(neater) {
-                  begin
-                    load "#{neater}_neat.rb"
-                    
-                  rescue => e
-                    [:error, e]
-                  end
+                  load "#{neater}_neat.rb"                                      
                 }],
       run:     ["Run a Neater",
-                ->(neater) {
-                  begin
-                    load "#{neater}_neat.rb"
-                  rescue => e
-                    [:error, e]
-                  end
+                 ->(neater) {
+                  load "#{neater}_neat.rb"
                 }],
-      kill:     ["Kill a running Neater",
-                ->(neater) {
-                  begin
+      kill:    ["Kill a running Neater",
+                 ->(neater) {
+                   :niy
+                 }],
+      pause:   ["Pause a running Neater",
+                  ->(neater) {
                     :niy
-                  rescue => e
-                    [:error, e]
-                  end
+                  }],
+      resume:  ["Resume a paused Neater",
+                ->(neater) {
+                  :niy
                 }],
-      pause:     ["Pause a running Neater",
+      step:    ["Step a running Neater one generation",
                 ->(neater) {
-                  begin
-                    :niy
-                  rescue => e
-                    [:error, e]
-                  end
-                }],
-      resume:    ["Resume a paused Neater",
-                ->(neater) {
-                  begin
-                    :niy
-                  rescue => e
-                    [:error, e]
-                  end
-                }],
-      step:     ["Step a running Neater one generation",
-                ->(neater) {
-                  begin
-                    :niy
-                  rescue => e
-                    [:error, e]
-                  end
+                  :niy
                 }],
       list:    ["List the requested type", ->() { :niy }],
       version: ["Get the verison of NEAT running", ->() { rubyneat_version }],

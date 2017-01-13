@@ -32,11 +32,10 @@ module NEAT
           puts "Executing: #{Daemon::COMMANDS[pl.cmd].first}"
           pl.response = [:success, Daemon::COMMANDS[pl.cmd].last.(pl.payload)]
         rescue => e
-          pl.response = [:fail, e]
+          pl.response = [:fail, ["RubyNEAT Exception: #{$!}", e.backtrace]]
         end
         ap pl
-        retpayload = Oj.dump(pl)
-        @amqp[:exchange].publish(retpayload,
+        @amqp[:exchange].publish(Oj.dump(pl),
                                  routing_key: prop.reply_to,
                                  correlation_id: prop.correlation_id)
       end     

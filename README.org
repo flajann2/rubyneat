@@ -1,5 +1,5 @@
-* Table of Contents                                                :TOC_5_gh:
- - [[#rubyneat----neural-evolution-of-augmenting-topologies][RubyNEAT -- Neural Evolution of Augmenting Topologies]]
+* RubyNEAT Table of Contents                                       :TOC_5_gh:
+ - [[#rubyneat-neural-evolution-of-augmenting-topologies-for-ruby][RubyNEAT: Neural Evolution of Augmenting Topologies for Ruby]]
    - [[#general][General]]
    - [[#gem-version][Gem Version]]
    - [[#quick-and-dirty-docs][Quick and Dirty Docs]]
@@ -17,7 +17,7 @@
    - [[#the-junkyard][The Junkyard]]
      - [[#tracing-code][Tracing code]]
 
-* RubyNEAT -- Neural Evolution of Augmenting Topologies
+* RubyNEAT: Neural Evolution of Augmenting Topologies for Ruby
 ** General
   [[https://gitter.im/flajann2/rubyneat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][[[https://badges.gitter.im/Join%20Chat.svg]]]]
 
