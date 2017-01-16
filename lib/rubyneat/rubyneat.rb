@@ -340,7 +340,8 @@ module NEAT
     # Version of RubyNEAT runing
     attr_neat :version, default: SemVer.find(File.dirname(__FILE__)).format("%M.%m.%p%s")
     attr_neat :neater, default: '--unspecified--'
-
+    attr_neat :description, default: '--unspecified--'
+    
     # global innovation number
     attr_neat :glob_innov_num, default: 0, cloneable: false
 

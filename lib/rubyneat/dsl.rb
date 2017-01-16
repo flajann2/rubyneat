@@ -123,6 +123,10 @@ module NEAT
         NEAT::controller.corpus = Corpus.new(&block)
       end
 
+      def description(desc)
+        NEAT::controller.description = desc
+      end
+      
       block.(NEAT::controller)
     end
 

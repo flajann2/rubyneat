@@ -29,7 +29,8 @@ module NEAT
                 }],
       details: ["Fetch the details of a particular neater",
                 ->(neater) {
-                  load "#{neater}_neat.rb"                                      
+                  load "#{neater}_neat.rb"
+                  NEAT.controller.description
                 }],
       run:     ["Run a Neater",
                  ->(neater) {
