@@ -30,7 +30,15 @@ module NEAT
       details: ["Fetch the details of a particular neater",
                 ->(neater) {
                   load "#{neater}_neat.rb"
-                  NEAT.controller.description
+                  { description: NEAT.controller.description,
+                    version:     NEAT.controller.version,
+                    innovation:  NEAT.controller.glob_innov_num,
+                    seq:         NEAT.controller.seq_num,
+                    generation:  NEAT.controller.generation_num,
+                    parameters:  NEAT.controller.parms.to_h(exclude: [:evaluator,
+                                                                      :expressor,
+                                                                      :evolver]),
+                  }
                 }],
       run:     ["Run a Neater",
                  ->(neater) {

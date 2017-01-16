@@ -138,6 +138,14 @@ module NEAT
       "%s<%s>" % [self.class, self.name]
     end
 
+    def to_h(exclude: [])
+      instance_variables
+        .map{ |k| [k, instance_variable_get(k)]}
+        .map{ |k, v| [k[1..-1].to_sym, v] }
+        .reject{ |k, v| exclude.member? k }
+        .to_h
+    end
+    
     def cparms
       @controller.parms
     end
