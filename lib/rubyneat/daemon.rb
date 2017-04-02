@@ -18,6 +18,18 @@ include NEAT::Daemon
 
 module NEAT
   module Daemon
+    def self.neat_details
+      { description: NEAT.controller.description,
+        version:     NEAT.controller.version,
+        innovation:  NEAT.controller.glob_innov_num,
+        seq:         NEAT.controller.seq_num,
+        generation:  NEAT.controller.generation_num,
+        parameters:  NEAT.controller.parms.to_h(exclude: [:evaluator,
+                                                          :expressor,
+                                                          :evolver]),
+      }
+    end
+    
     COMMANDS = {
       status:  ["Fetch and return the complete state of the RubyNEAT Daemon",
                 ->(pl) {
@@ -30,19 +42,12 @@ module NEAT
       details: ["Fetch the details of a particular neater",
                 ->(neater) {
                   load "#{neater}_neat.rb"
-                  { description: NEAT.controller.description,
-                    version:     NEAT.controller.version,
-                    innovation:  NEAT.controller.glob_innov_num,
-                    seq:         NEAT.controller.seq_num,
-                    generation:  NEAT.controller.generation_num,
-                    parameters:  NEAT.controller.parms.to_h(exclude: [:evaluator,
-                                                                      :expressor,
-                                                                      :evolver]),
-                  }
+                  neat_details
                 }],
       run:     ["Run a Neater",
                  ->(neater) {
                   load "#{neater}_neat.rb"
+                  neat_details
                 }],
       kill:    ["Kill a running Neater",
                  ->(neater) {
