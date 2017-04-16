@@ -463,6 +463,12 @@ module NEAT
       attr_accessor :trait_param_mut_prob
       attr_accessor :weigh_mut_power
 
+      # Here we allow for elitism, and the
+      # the absolute number of elites that
+      # will be carried over to the
+      # next generation.
+      attr_neat :elite_pop_count, default: 2
+      
       # Enable FS-NEAT
       attr_accessor :feature_selection_switch
 

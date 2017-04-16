@@ -20,7 +20,7 @@ gem "json",               "~> 2.0", ">= 2.0.2"
 gem 'bond', '~> 0'
 gem 'rb-readline', '~> 0'
 gem 'queue_ding', '>= 0'
-gem 'semver', '~> 1'
+gem 'semver2', '~> 3'
 
 group :development do
   gem 'rspec', '~> 3'
