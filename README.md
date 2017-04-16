@@ -64,6 +64,10 @@ Neater. Eventually all will be fully documented.
 
 Release Notes
 -------------
+* `0.5.0`
+
+  Activated elitism, fixed a few mating issues.
+
 * `0.3.5.alpha.7`
 
     Console made functional.
