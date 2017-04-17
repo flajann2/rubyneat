@@ -30,6 +30,7 @@ module RubyNEAT
 
     class Main < Thor
       class_option :verbose, type: :numeric, banner: '[1|2|3]', aliases: '-v'
+      class_option :logging, type: :string, banner: '[info|warn|err|debug]', aliases: ['--log', '-l']
 
       desc 'list <type>', 'List the requested type.'
       subcommand 'list', List

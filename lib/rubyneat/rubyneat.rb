@@ -11,14 +11,12 @@ require 'queue_ding'
 
 The RubyNEAT system incorporates the basis of the NEAT algorithm. Flexibility
 is the key here, allowing RubyNEAT to be leverage in a variety of applications.
-
-=== Requirements
-We make no effort to support Ruby versions less than 2.0.0. I know this will
-be a problem to some, but you are strongly urged to upgrade.
 =end
 
-$log = Logger.new(STDOUT)
-$log.level = Logger::INFO
+if $log.nil?
+  $log = Logger.new(STDOUT)
+  $log.level = Logger::INFO
+end
 AwesomePrint.defaults = { plain: true }
 
 =begin rdoc
