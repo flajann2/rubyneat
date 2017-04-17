@@ -65,7 +65,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://rubyneat.de".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.2.6".freeze)
-  s.rubygems_version = "2.6.8".freeze
+  s.rubygems_version = "2.6.11".freeze
   s.summary = "RubyNEAT NeuralEvolution of Augmenting Topologies".freeze
 
   if s.respond_to? :specification_version then
