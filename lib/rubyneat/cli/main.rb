@@ -30,7 +30,6 @@ module RubyNEAT
 
     class Main < Thor
       class_option :verbose, type: :numeric, banner: '[1|2|3]', aliases: '-v'
-      class_option :logging, type: :string, banner: '[info|warn|err|debug]', aliases: ['--log', '-l']
 
       desc 'list <type>', 'List the requested type.'
       subcommand 'list', List
@@ -48,8 +47,10 @@ module RubyNEAT
 
       desc 'run <neater> [<neater> <neater> ...] [OPTS]', 'Run a Neater'
       option :log, type: :string, banner: 'info|warn|debug|error'
+      option :logfile, type: :string, banner: 'filename.log'     
       def neater(*neaters)
         NEAT::controller.verbosity = options[:verbose].to_i if options[:verbose]
+        eval %{$log = Logger.new('#{options[:logfile]}'} if options[:logfile]
         eval %{$log.level = Logger::#{options[:log].upcase}} if options[:log]
 
         neaters.map do |neater|
