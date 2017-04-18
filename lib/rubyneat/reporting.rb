@@ -76,7 +76,6 @@ module NEAT
               worst_critter:      report_worst_fit,
               best_critter_cost:  report_best_cost,
               worst_critter_cost: report_worst_cost,
-              worst_critter:      report_worst_fit,
               all_critters:       report_critters,
           }
       ]
