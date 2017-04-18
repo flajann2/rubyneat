@@ -24,10 +24,13 @@ module NEAT
           overall: critters.map{|critter| critter.fitness}.reduce{|m, f| m + f} / critters.size,
           best: best_critter.fitness,
           worst: worst_critter.fitness,
+          best_cost: best_critter.genotype.fitness_cost,
+          worst_cost: worst_critter.genotype.fitness_cost,
       }
     end
 
     # report on the best and worst species
+    # TODO: finish report_fitness_species
     def report_fitness_species
       {
           best: nil,
@@ -40,9 +43,19 @@ module NEAT
       best_critter.phenotype.code
     end
 
+    # cost of the best critter
+    def report_best_cost
+      best_critter.genotype.fitness_cost
+    end
+    
     # Find the worst fit critter
     def report_worst_fit
       worst_critter.phenotype.code
+    end
+
+    # cost of the worst critter
+    def report_worst_cost
+      worst_critter.genotype.fitness_cost
     end
 
     # Create a hash of critter names and fitness values
@@ -56,12 +69,15 @@ module NEAT
       [
           self,
           {
-              generation:      generation,
-              fitness:         report_fitness,
-              fitness_species: report_fitness_species,
-              best_critter:    report_best_fit,
-              worst_critter:   report_worst_fit,
-              all_critters:    report_critters,
+              generation:         generation,
+              fitness:            report_fitness,
+              fitness_species:    report_fitness_species,
+              best_critter:       report_best_fit,
+              worst_critter:      report_worst_fit,
+              best_critter_cost:  report_best_cost,
+              worst_critter_cost: report_worst_cost,
+              worst_critter:      report_worst_fit,
+              all_critters:       report_critters,
           }
       ]
     end
