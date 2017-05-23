@@ -306,7 +306,7 @@ module NEAT
   # FIXME: run under multiple cores.
   class Controller < NeatOb
     # Version of RubyNEAT runing
-    attr_neat :version, default: SemVer.find.format("%M.%m.%p%s")
+    attr_neat :version, default: SemVer.find(SEMVER_PATH).format("%M.%m.%p%s")
     attr_neat :neater, default: '--unspecified--'
 
     # global innovation number
