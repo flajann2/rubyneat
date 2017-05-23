@@ -60,6 +60,11 @@ fully documented.
 
 ** Release Notes
 
+-  =0.5.3=
+  We have a branch / version issue in the 0 major,
+  and will have to be sorted. Some of the examples
+  may be broken. We will address this shortly.
+
 -  =0.5.0=
 
 Activated elitism, fixed a few mating issues.
